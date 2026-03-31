@@ -680,7 +680,7 @@ models:
 
  이 프로젝트 완료되고 나면 사용법과 구성에 대해서 전체적으로 너가 한번 정리해줘야 할 거 같은데. 일단 지금까지 이야기한 내용 중 꼭 필요한 게 있으면 dali_doc_system_dev_plan.md에 추가해줘. 굳이 새로운 게 없다면 안해도 돼. 토큰 아까우니까.
 
-AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM
+ 
 
  이건 방금 내가 google ai studio에서 발급받은 무료 Key야 더 필요한 정보가 있어? 아니면 이거면 충분해?
 
@@ -738,19 +738,19 @@ AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM
 
 *User accepted the command `source venv/bin/activate && pip install requests && python src/02_llm/llm_client.py`*
 
-*User accepted the command `GEMINI_API_KEY=AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM source venv/bin/activate && python src/02_llm/llm_client.py`*
+*User accepted the command `GEMINI_API_KEY=  source venv/bin/activate && python src/02_llm/llm_client.py`*
 
-*User accepted the command `export GEMINI_API_KEY=AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM && source venv/bin/activate && python src/02_llm/llm_client.py`*
-
-*Edited relevant file*
-
-*User accepted the command `export GEMINI_API_KEY=AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM && source venv/bin/activate && python src/02_llm/llm_client.py`*
-
-*User accepted the command `curl -s "https://generativelanguage.googleapis.com/v1beta/models?key=AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM" | grep '"name"'`*
+*User accepted the command `export GEMINI_API_KEY=  && source venv/bin/activate && python src/02_llm/llm_client.py`*
 
 *Edited relevant file*
 
-*User accepted the command `export GEMINI_API_KEY=AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM && source venv/bin/activate && python src/02_llm/llm_client.py`*
+*User accepted the command `export GEMINI_API_KEY=  && source venv/bin/activate && python src/02_llm/llm_client.py`*
+
+*User accepted the command `curl -s "https://generativelanguage.googleapis.com/v1beta/models?key= " | grep '"name"'`*
+
+*Edited relevant file*
+
+*User accepted the command `export GEMINI_API_KEY=  && source venv/bin/activate && python src/02_llm/llm_client.py`*
 
 *Checked command status*
 
@@ -810,7 +810,7 @@ Phase 2의 최상위 두뇌이자 중추 신경인 **`llm_client.py` 계층과 `
 
 *Edited relevant file*
 
-*User accepted the command `export GEMINI_API_KEY=AIzaSyDJ5jICadVaIYJO0whxHAy5N-bOFeOpryM && source venv/bin/activate && python src/02_llm/stage_a_classifier.py`*
+*User accepted the command `export GEMINI_API_KEY=  && source venv/bin/activate && python src/02_llm/stage_a_classifier.py`*
 
 *Edited relevant file*
 
