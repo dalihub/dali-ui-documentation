@@ -12,7 +12,8 @@ def generate_doxyfile(package_name: str, package_info: dict, output_dir: Path):
     """
     Generate a Doxyfile for the given package to extract XML and Call Graph.
     """
-    repo_path = Path(package_info["path"])
+    base_dir = Path(__file__).parent.parent.parent
+    repo_path = base_dir / package_info["path"]
     api_dirs = package_info.get("api_dirs", [])
     
     # Create input string (absolute paths)

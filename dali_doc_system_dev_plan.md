@@ -40,6 +40,7 @@ dali-doc-gen/
 │   └── doc_config.yaml        # 문서 카테고리, 출력 경로, Frontmatter 기본값
 ├── src/
 │   ├── 00_extract/
+│   │   ├── repo_manager.py      # GitPython으로 GitHub 주소에서 코드 Clone 및 Pull
 │   │   ├── doxygen_runner.py    # Doxyfile 자동 생성 및 Doxygen 실행
 │   │   ├── doxygen_parser.py    # Doxygen XML → 구조화 JSON 변환
 │   │   ├── callgraph_parser.py  # Call Graph XML → 호출관계 JSON
@@ -100,6 +101,11 @@ dali-doc-gen/
 ### Phase 1 — 정적 분석 파이프라인 구현 (2~3주)
 
 **목표**: LLM 없이 API 데이터를 완전히 구조화된 JSON으로 변환
+
+#### `repo_manager.py`
+- `repo_config.yaml`에 명시된 원격 저장소(`url`)와 `branch` 정보를 참조
+- 로컬 임시 폴더(예: `repos/`)에 저장소가 없으면 `git clone`, 이미 존재하면 `git pull` 실행
+- CI/CD 봇이나 초기화된 환경에서도 코드를 자동 확보
 
 #### `doxygen_parser.py`
 - Doxygen `compound.xml` 파싱
@@ -326,7 +332,7 @@ python src/pipeline.py --mode update --from-tag v2.2.0 --to-tag v2.3.0
 
 ```
 Week 1~2   : Phase 0 — 환경 설정, Doxygen 실행 검증, LLM API 연동
-Week 3~5   : Phase 1 — doxygen_parser, callgraph_parser, diff_detector, feature_clusterer
+Week 3~5   : Phase 1 — repo_manager, doxygen_parser, callgraph_parser, diff_detector, feature_clusterer
 Week 6~9   : Phase 2 — Stage A/B/C/D 프롬프트 설계 및 LLM 파이프라인 구현
 Week 10~11 : Phase 3 — md_renderer, sidebar_generator, GitHub Actions 구성
 Week 12~13 : Phase 4 — E2E 테스트, 품질 지표 측정, 프롬프트 개선
