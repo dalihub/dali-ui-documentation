@@ -111,7 +111,7 @@ dali-doc-gen/
 - Doxygen `compound.xml` 파싱
 - 추출 항목: `id`, `package`, `api_tier`, `brief`, `params`, `returns`, `notes`, `warnings`, `deprecated`, `since`
 - 내부 ID·파일 오프셋 제거 → 토큰 절감 (약 60~70%)
-- 출력: `cache/doxygen_json/{package}.json`
+- 출력: `cache/parsed_doxygen/{package}.json`
 
 #### `callgraph_parser.py`
 - Doxygen Call Graph XML에서 직접 호출 1단계만 추출

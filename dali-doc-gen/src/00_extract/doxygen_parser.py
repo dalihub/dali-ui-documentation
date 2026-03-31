@@ -1,0 +1,273 @@
+import os
+import sys
+import json
+import yaml
+import re
+from pathlib import Path
+import xml.etree.ElementTree as ET
+
+# Configure standard paths
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+CONFIG_PATH = PROJECT_ROOT / "config" / "repo_config.yaml"
+CACHE_DOXYGEN_ROOT = PROJECT_ROOT / "cache" / "doxygen_json"
+PARSED_DOXYGEN_ROOT = PROJECT_ROOT / "cache" / "parsed_doxygen"
+
+def load_config():
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+def clean_text(text):
+    if not text:
+        return ""
+    text = text.replace('\n', ' ')
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+def extract_text_recursive(element, skip_tags=None):
+    if skip_tags is None:
+        skip_tags = []
+        
+    if element is None:
+        return ""
+        
+    parts = []
+    if element.text and element.tag not in skip_tags:
+        parts.append(element.text)
+        
+    for child in element:
+        if child.tag in skip_tags:
+            # Skip this element but keep its tail
+            if child.tail:
+                parts.append(child.tail)
+            continue
+            
+        parts.append(extract_text_recursive(child, skip_tags))
+        if child.tail:
+            parts.append(child.tail)
+            
+    return "".join(parts)
+
+def parse_description(desc_elem):
+    notes = []
+    warnings = []
+    returns = ""
+    param_docs = {}
+    
+    if desc_elem is None:
+        return "", param_docs, notes, warnings, returns, ""
+        
+    for child in desc_elem.findall(".//simplesect"):
+        kind = child.get("kind")
+        sect_text = clean_text(extract_text_recursive(child))
+        if kind == "note":
+            notes.append(sect_text)
+        elif kind == "warning":
+            warnings.append(sect_text)
+        elif kind == "return":
+            returns = sect_text
+
+    for item in desc_elem.findall(".//parameteritem"):
+        name_elem = item.find("parameternamelist/parametername")
+        desc_elem_inner = item.find("parameterdescription")
+        if name_elem is not None and desc_elem_inner is not None:
+            param_name = extract_text_recursive(name_elem)
+            param_desc = clean_text(extract_text_recursive(desc_elem_inner))
+            param_docs[param_name] = param_desc
+
+    # Clean text without simplesect and parameterlist
+    main_text = clean_text(extract_text_recursive(desc_elem, skip_tags=["simplesect", "parameterlist"]))
+    
+    since = ""
+    since_match = re.search(r'@?SINCE_?([\d_\.]+)', main_text)
+    if since_match:
+        since = since_match.group(1).replace("_", ".")
+        main_text = re.sub(r'\s*@?SINCE_?[\d_\.]+\s*', ' ', main_text).strip()
+
+    return main_text, param_docs, notes, warnings, returns, since
+
+def parse_member(memberdef, api_dirs):
+    kind = memberdef.get("kind")
+    name = extract_text_recursive(memberdef.find("name"))
+    
+    # Extract file location to determine tier
+    location = memberdef.find("location")
+    api_tier = "unknown"
+    file_path = ""
+    if location is not None:
+        file_path = location.get("file", "")
+        for t in api_dirs:
+            if t in file_path:
+                api_tier = t.split("/")[-1]
+                break
+
+    brief_elem = memberdef.find("briefdescription")
+    brief, _, _, _, _, brief_since = parse_description(brief_elem)
+    
+    detailed_elem = memberdef.find("detaileddescription")
+    detailed, param_docs, notes, warnings, returns, detailed_since = parse_description(detailed_elem)
+    
+    since = brief_since if brief_since else detailed_since
+
+    member_data = {
+        "name": name,
+        "kind": kind,
+        "api_tier": api_tier,
+        "brief": brief,
+        "detailed": detailed,
+    }
+
+    if since:
+        member_data["since"] = since
+    if notes:
+        member_data["notes"] = notes
+    if warnings:
+        member_data["warnings"] = warnings
+
+    if kind == "function":
+        type_elem = memberdef.find("type")
+        args_elem = memberdef.find("argsstring")
+        member_data["type"] = extract_text_recursive(type_elem)
+        
+        args = extract_text_recursive(args_elem)
+        type_str = member_data['type'] + " " if member_data['type'] else ""
+        member_data["signature"] = f"{type_str}{name}{args}"
+        
+        if returns:
+            member_data["returns"] = returns
+        
+        params = []
+        for param in memberdef.findall("param"):
+            p_type = extract_text_recursive(param.find("type"))
+            p_declname = extract_text_recursive(param.find("declname"))
+            if not p_declname and extract_text_recursive(param.find("defname")):
+                p_declname = extract_text_recursive(param.find("defname"))
+            
+            p_desc = param_docs.get(p_declname, "")
+            params.append({
+                "type": clean_text(p_type),
+                "name": clean_text(p_declname),
+                "description": p_desc
+            })
+        if params:
+            member_data["params"] = params
+
+    return member_data
+
+def parse_compound(xml_path, api_dirs):
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    compounddef = root.find("compounddef")
+    if compounddef is None:
+        return None
+
+    compound_kind = compounddef.get("kind")
+    compound_name = extract_text_recursive(compounddef.find("compoundname"))
+    
+    location = compounddef.find("location")
+    api_tier = "unknown"
+    file_path = ""
+    if location is not None:
+        file_path = location.get("file", "")
+        for t in api_dirs:
+            if t in file_path:
+                api_tier = t.split("/")[-1]
+                break
+
+    brief_elem = compounddef.find("briefdescription")
+    brief, _, _, _, _, brief_since = parse_description(brief_elem)
+    
+    detailed_elem = compounddef.find("detaileddescription")
+    detailed, _, notes, warnings, _, detailed_since = parse_description(detailed_elem)
+
+    since = brief_since if brief_since else detailed_since
+
+    compound_data = {
+        "name": compound_name,
+        "kind": compound_kind,
+        "file": file_path,
+        "api_tier": api_tier,
+        "brief": brief,
+        "detailed": detailed,
+        "members": []
+    }
+    
+    if since:
+        compound_data["since"] = since
+    if notes:
+        compound_data["notes"] = notes
+    if warnings:
+        compound_data["warnings"] = warnings
+
+    for sectiondef in compounddef.findall("sectiondef"):
+        kind = sectiondef.get("kind")
+        if "private" in kind or "internal" in kind:
+            continue
+        
+        for memberdef in sectiondef.findall("memberdef"):
+            prot = memberdef.get("prot")
+            if prot == "private":
+                continue
+            
+            member_data = parse_member(memberdef, api_dirs)
+            compound_data["members"].append(member_data)
+
+    return compound_data
+
+def process_package(package_name, repo_config):
+    xml_dir = CACHE_DOXYGEN_ROOT / package_name / "xml"
+    index_path = xml_dir / "index.xml"
+    
+    if not index_path.exists():
+        print(f"Skipping {package_name}: index.xml not found at {index_path}")
+        return False
+        
+    print(f"Processing package: {package_name}")
+    api_dirs = repo_config.get("api_dirs", [])
+    
+    tree = ET.parse(index_path)
+    root = tree.getroot()
+    
+    results = {
+        "package": package_name,
+        "compounds": []
+    }
+    
+    target_kinds = ["class", "struct", "namespace", "file"]
+    
+    total_parsed = 0
+    for compound in root.findall("compound"):
+        kind = compound.get("kind")
+        if kind not in target_kinds:
+            continue
+            
+        refid = compound.get("refid")
+        compound_xml_path = xml_dir / f"{refid}.xml"
+        
+        if compound_xml_path.exists():
+            parsed_data = parse_compound(compound_xml_path, api_dirs)
+            if parsed_data:
+                results["compounds"].append(parsed_data)
+                total_parsed += 1
+
+    PARSED_DOXYGEN_ROOT.mkdir(parents=True, exist_ok=True)
+    out_path = PARSED_DOXYGEN_ROOT / f"{package_name}.json"
+    
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+        
+    print(f"Successfully processed {package_name}: {total_parsed} compounds saved to {out_path}")
+    return True
+
+def main():
+    config = load_config()
+    repos = config.get("repos", {})
+    
+    success_count = 0
+    for repo_name, repo_info in repos.items():
+        if process_package(repo_name, repo_info):
+            success_count += 1
+            
+    print(f"\\nDoxygen parsing complete. Processed {success_count}/{len(repos)} packages.")
+
+if __name__ == "__main__":
+    main()
