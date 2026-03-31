@@ -7,7 +7,7 @@ models:
     instruct: "custom-samsung-instruct-model"
     api_key_env: "INTERNAL_API_KEY" # Name of the shell/env variable holding the key
     rate_limit_delay_sec: 6 # E.g., 6 seconds delay for 10 requests per minute
-    max_retries: 5
+    max_retries: 10
     
   external:
     api_base: "https://generativelanguage.googleapis.com/v1beta/models"
@@ -15,4 +15,4 @@ models:
     instruct: "gemini-3.1-flash-lite-preview" # Faster, cheaper drafting model
     api_key_env: "GEMINI_API_KEY"
     rate_limit_delay_sec: 6 # Safety threshold for Google Free Tier ~15 RPM
-    max_retries: 3
+    max_retries: 10

@@ -30,7 +30,7 @@ def get_api_specs(pkg_names, api_names_list):
     specs = []
     
     # Cap matching complexity against overwhelming LLM Token usage
-    max_apidocs_to_extract = 20
+    max_apidocs_to_extract = 40  # Increased for richer context in generated docs
     
     # Build a simple lookup set from api_names_list for faster matching
     api_name_set = set(a.split("::")[-1] for a in api_names_list)
@@ -135,22 +135,47 @@ def main():
         print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
         
         # 2. Strict Generation Frame Prompting
+        # View/Actor context for dali-ui app developers
+        view_context = ""
+        if feat_name in ("actors", "views", "ui", "ui-components") or \
+           any("View" in n or "Actor" in n for n in api_names[:10]):
+            view_context = """
+        CRITICAL ARCHITECTURE CONTEXT:
+        In DALi UI applications, developers use 'Dali::Ui::View' as the primary UI object,
+        NOT 'Dali::Actor' directly. View inherits from Actor and wraps its transform,
+        rendering, and signal capabilities - but View has its own distinct API surface,
+        event model, and lifecycle that differs from raw Actor usage.
+        Rules:
+        - Explain Actor-level behaviors (position, size, parent/child, signals) ONLY as
+          context for how View surfaces or inherits them.
+        - Always show code examples using View (Dali::Ui::View), not raw Actor.
+        - When an Actor API has no View equivalent, note it as a platform-level detail,
+          not something app developers call directly.
+        """
+
         prompt = f"""
-        You are an elite C++ technical writer documenting the Samsung DALi GUI framework. 
-        Your task is to write the complete Markdown documentation content for the module '{feat_name}'.
-        
-        You MUST follow this exact mapped Table of Contents structure seamlessly:
+        You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
+        Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
+        {view_context}
+        Follow this Table of Contents structure exactly:
         {json.dumps(outline, indent=2)}
-        
-        CRITICAL ANTI-HALLUCINATION RULE: 
-        Use ONLY the following extracted C++ API Reference to write the code parameters and functional descriptions. Do not invent non-existent APIs:
+
+        ANTI-HALLUCINATION RULE:
+        Use ONLY the C++ API specs below for all signatures, parameter types, and return values.
+        Do NOT invent non-existent APIs or parameters:
         {json.dumps(specs, indent=2)}
-        
-        Guidelines:
-        - Write entirely in valid GitHub Flavored Markdown (.md).
-        - Use logical header depth (##, ###) respecting the outlined section titles.
-        - Include brief dummy C++ code snippet examples demonstrating expected usage to help App developers.
-        - Output the raw markdown text directly (Do not enclose inside a global markdown graphic wrap).
+
+        Writing Guidelines:
+        - Write entirely in valid GitHub Flavored Markdown.
+        - Use ## for section titles and ### for sub-sections.
+        - Each section must be DETAILED and THOROUGH - do not summarize, explain fully.
+        - For every important API method: explain WHAT it does, WHY you'd use it, and HOW
+          to call it correctly (parameters, return value, side effects).
+        - Include at least one complete, realistic C++ code example per section.
+          Code examples MUST use only API signatures from the spec above.
+        - Highlight important notes, warnings, or best practices using blockquotes (> Note:).
+        - Target audience is application developers (not platform/engine developers).
+        - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
         """
         
         # Utilize 'Instruct' persona for writing mass textual payloads

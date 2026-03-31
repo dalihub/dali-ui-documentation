@@ -71,21 +71,41 @@ def main():
         
         print(f"\n[{index+1}/{len(feature_list)}] Mapping structural outlines for feature module '{feat_name}' (Sampled APIs: {len(apis)})...")
         
+        # dali-ui View context hint: inject for actor/view-related features
+        view_context = ""
+        if feat_name in ("actors", "views", "ui", "ui-components") or \
+           any("View" in a or "Actor" in a for a in apis[:10]):
+            view_context = """
+        IMPORTANT CONTEXT - DALi UI Application Architecture:
+        In DALi UI applications, 'Dali::Ui::View' (not 'Dali::Actor') is the primary 
+        base UI object that all application developers work with directly.
+        View inherits from Actor and shares its transform/rendering characteristics,
+        but has its own distinct API, event model, and usage patterns.
+        When documenting actor-level behaviors (position, size, signals), frame them 
+        in terms of how View exposes or wraps those capabilities, NOT raw Actor usage.
+        """
+
         prompt = f"""
-        You are a senior technical writer documenting a C++ Graphic/UI framework.
-        Design a logical Table of Contents (TOC) layout for the feature '{feat_name}'.
-        
-        Context Vectors:
+        You are a senior technical writer documenting the Samsung DALi GUI framework.
+        Design a logical Table of Contents (TOC) layout for the feature module '{feat_name}'.
+        {view_context}
+        Context:
         - Target Audience API Tiers: {tiers}
         - Key API Methods/Classes: {json.dumps(apis, indent=2)}
-        
-        Design an intuitive document hierarchy targeting application developers.
-        Output ONLY a valid pure JSON Array containing layout objects mapping "section_title" to a short "description". 
-        Aim for 3 to 5 highly practical narrative sections (e.g. Overview, Core Architectures, Handling the API, Best Practices).
-        Do NOT output Markdown wrappers. Produce exactly this output schema format:
+
+        Based on the actual complexity and breadth of this feature module, decide the
+        appropriate number of sections yourself (between 3 and 10).
+        - A simple utility module (e.g. math helpers) needs only 3-4 sections.
+        - A moderate feature (e.g. animation, events) needs 5-7 sections.
+        - A complex subsystem with lifecycle, signals, and advanced usage needs 8-10 sections.
+
+        Each section must have a practical, developer-facing title and a concrete 1-sentence description
+        of what that section covers.
+
+        Output ONLY a valid pure JSON Array. No markdown wrappers. Schema:
         [
-          {{"section_title": "Introduction to {feat_name}", "description": "A very brief 1 liner on what it does"}},
-          {{"section_title": "Core Components", "description": "Exploring specific classes based on the method names"}}
+          {{"section_title": "Introduction to {feat_name}", "description": "What it does and when to use it"}},
+          {{"section_title": "Core Classes and Architecture", "description": "The key classes and how they relate"}}
         ]
         """
         
