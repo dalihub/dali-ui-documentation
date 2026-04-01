@@ -14,6 +14,8 @@ CACHE_DIR = PROJECT_ROOT / "cache"
 BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 OUT_DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
+VALIDATED_DRAFTS_DIR = CACHE_DIR / "validated_drafts"
+CHANGED_APIS_PATH = CACHE_DIR / "changed_apis.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 
 def load_json(path):
@@ -97,10 +99,38 @@ def strip_markdown_wrapping(text):
             stripped = stripped[:-3]
     return stripped.strip()
 
+def build_patch_prompt(feat_name, existing_draft, changed_specs, taxonomy_context, view_context):
+    """기존 문서를 최대한 보존하면서 변경된 API 부분만 수술하는 패치 프롬프트를 생성합니다. (원칙 3)"""
+    return f"""
+    You are an elite C++ technical writer updating the Samsung DALi GUI framework documentation.
+    Your task is to UPDATE the existing guide document for the '{feat_name}' module
+    by incorporating only the changed API specifications below.
+    {view_context}
+    {taxonomy_context}
+
+    [EXISTING PUBLISHED GUIDE DOCUMENT — PRESERVE AS MUCH AS POSSIBLE]
+    {existing_draft}
+
+    [CHANGED API SPECIFICATIONS — BASED ON LATEST SOURCE CODE]
+    {json.dumps(changed_specs, indent=2)}
+
+    STRICT PATCHING RULES:
+    - Keep the existing document's section structure, writing style, and example code style exactly as-is.
+    - Modify ONLY the parts of the document that describe the changed APIs listed above.
+    - Do NOT alter any content, examples, or explanations unrelated to the changed APIs.
+    - If a new API is added: insert it in the most appropriate existing section.
+    - If an API is removed: delete only the description and examples for that specific API.
+    - Output the COMPLETE updated markdown document (not just the changed sections).
+    - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
+    """
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="Terminal isolation debug boundary.")
-    parser.add_argument("--features", type=str, default="", help="Comma-separated list of features to process exclusively.")
+    parser.add_argument("--features", type=str, default="", help="Comma-separated list of features to process exclusively (full mode).")
+    parser.add_argument("--patch", action="store_true", help="Patch mode: reuse existing draft, update only changed API sections.")
+    parser.add_argument("--patch-features", type=str, default="", help="Comma-separated list of features to patch (used with --patch).")
     args = parser.parse_args()
     
     print("=================================================================")
@@ -123,11 +153,28 @@ def main():
     client = LLMClient()
     OUT_DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
     
-    if args.features:
-        target_features = [f.strip() for f in args.features.split(",") if f.strip()]
-        if target_features:
-            blueprints = [bp for bp in blueprints if bp.get("feature") in target_features]
-            print(f"[!] TARGET MODE ENGAGED: Filtering to exclusively process {len(blueprints)} requested feature(s): {target_features}")
+    # ── 패치 모드: --patch-features 로 대상 결정 ───────────────────────────────
+    if args.patch:
+        patch_feature_list = [f.strip() for f in args.patch_features.split(",") if f.strip()]
+        if patch_feature_list:
+            blueprints = [bp for bp in blueprints if bp.get("feature") in patch_feature_list]
+            print(f"[PATCH] Patch mode engaged: {len(blueprints)} feature(s) targeted: {patch_feature_list}")
+        else:
+            print("[PATCH] --patch set but --patch-features is empty. Processing all blueprints in patch mode.")
+
+        # changed_apis.json 로드 (패치 모드 전용)
+        changed_apis_data = load_json(CHANGED_APIS_PATH) if CHANGED_APIS_PATH.exists() else {}
+        changed_api_names_global = set()
+        for pkg_apis in changed_apis_data.values():
+            for api in pkg_apis:
+                changed_api_names_global.add(api.get("name", ""))
+    else:
+        # ── Full 생성 모드: --features 로 대상 결정 ──────────────────────────
+        if args.features:
+            target_features = [f.strip() for f in args.features.split(",") if f.strip()]
+            if target_features:
+                blueprints = [bp for bp in blueprints if bp.get("feature") in target_features]
+                print(f"[!] TARGET MODE ENGAGED: Filtering to exclusively process {len(blueprints)} requested feature(s): {target_features}")
 
     if args.limit > 0:
         print(f"[!] TEST MODE ENGAGED: Hard limiting the loop to process only the first {args.limit} clusters.")
@@ -138,19 +185,8 @@ def main():
         outline = bp.get("outline", [])
         packages = bp.get("packages", [])
         api_names = bp.get("apis", [])
-        
-        # Omit logic processing if outline failed in Stage B
-        if not outline:
-            print(f"\\n[{idx+1}/{len(blueprints)}] Skipping '{feat_name}': No outline blueprints detected.")
-            continue
-            
-        print(f"\n[{idx+1}/{len(blueprints)}] Drafting comprehensive Markdown page for '{feat_name}'...")
-        
-        # 1. Reverse lookup physical C++ facts 
-        specs = get_api_specs(packages, api_names)
-        print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
-        
-        # 2. Taxonomy context 주입 (tree/leaf 역할에 따른 작성 가이드)
+
+        # 공통: Taxonomy 컨텍스트 조립
         tax_entry = taxonomy.get(feat_name, {})
         tree_decision = tax_entry.get("tree_decision", "flat")
         children = tax_entry.get("children", [])
@@ -189,7 +225,6 @@ def main():
         - App developers use higher-level APIs (like View); this page covers the low-level layer.
         """
 
-        # 3. View/Actor context (dali-ui app architecture)
         view_context = ""
         if feat_name in ("actors", "views", "ui", "ui-components", "view") or \
            any("View" in n or "Actor" in n for n in api_names[:10]):
@@ -207,7 +242,45 @@ def main():
           not something app developers call directly.
         """
 
-        prompt = f"""
+        # ── 패치 모드 (원칙 3) ─────────────────────────────────────────────
+        if args.patch:
+            existing_draft_path = VALIDATED_DRAFTS_DIR / f"{feat_name}.md"
+            if not existing_draft_path.exists():
+                print(f"\n[{idx+1}/{len(blueprints)}] PATCH SKIP '{feat_name}': No existing draft found. Run full mode first.")
+                continue
+
+            existing_draft = existing_draft_path.read_text(encoding="utf-8")
+
+            # 이 피처와 관련된 변경 API 스펙만 필터링
+            specs = get_api_specs(packages, api_names)
+            # changed_apis_data 에서 이 피처 관련 항목만 추출
+            changed_specs = [
+                s for s in specs
+                if any(
+                    s.get("name", "") in changed_api_names_global or
+                    s.get("name", "").split("::")[-1] in changed_api_names_global
+                    for _ in [1]
+                )
+            ] or specs  # changed_api_names 매칭 실패 시 전체 specs 사용
+
+            print(f"\n[{idx+1}/{len(blueprints)}] PATCHING '{feat_name}' ({len(changed_specs)} changed API specs)...")
+
+            prompt = build_patch_prompt(
+                feat_name, existing_draft, changed_specs, taxonomy_context, view_context
+            )
+
+        # ── Full 생성 모드 ─────────────────────────────────────────────────
+        else:
+            if not outline:
+                print(f"\n[{idx+1}/{len(blueprints)}] Skipping '{feat_name}': No outline blueprints detected.")
+                continue
+
+            print(f"\n[{idx+1}/{len(blueprints)}] Drafting comprehensive Markdown page for '{feat_name}'...")
+
+            specs = get_api_specs(packages, api_names)
+            print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
+
+            prompt = f"""
         You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
         Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
         {view_context}
@@ -232,18 +305,16 @@ def main():
         - Target audience is application developers (not platform/engine developers).
         - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
         """
-        
-        # Utilize 'Instruct' persona for writing mass textual payloads
+
         response_md = client.generate(prompt, use_think=False)
-        
         clean_md = strip_markdown_wrapping(response_md)
-        
-        # 3. Export to filesystem Native Node
+
         out_file = OUT_DRAFTS_DIR / f"{feat_name}.md"
         with open(out_file, "w", encoding="utf-8") as f:
             f.write(clean_md)
-            
-        print(f"    [+] Documentation draft synthesized and exported -> {out_file.name}")
+
+        mode_label = "[PATCH]" if args.patch else "[DRAFT]"
+        print(f"    [+] {mode_label} Documentation exported → {out_file.name}")
         
     print(f"\n=================================================================")
     print(f" Stage C Complete! Native markdown drafts exported to:")
