@@ -14,6 +14,7 @@ CACHE_DIR = PROJECT_ROOT / "cache"
 BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 OUT_DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
+TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 
 def load_json(path):
     if not path.exists():
@@ -109,7 +110,15 @@ def main():
     if not blueprints:
         print("Blueprints corrupted. Aborting Markdown Generation.")
         return
-        
+
+    # Phase 1.5 taxonomy 로드
+    taxonomy = {}
+    if TAXONOMY_PATH.exists():
+        taxonomy = load_json(TAXONOMY_PATH) or {}
+        print(f"[Taxonomy] Loaded {len(taxonomy)} entries from feature_taxonomy.json")
+    else:
+        print("[Taxonomy] feature_taxonomy.json not found — proceeding without tree context.")
+
     client = LLMClient()
     OUT_DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
     
@@ -134,10 +143,48 @@ def main():
         specs = get_api_specs(packages, api_names)
         print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
         
-        # 2. Strict Generation Frame Prompting
-        # View/Actor context for dali-ui app developers
+        # 2. Taxonomy context 주입 (tree/leaf 역할에 따른 작성 가이드)
+        tax_entry = taxonomy.get(feat_name, {})
+        tree_decision = tax_entry.get("tree_decision", "flat")
+        children = tax_entry.get("children", [])
+        parent = tax_entry.get("parent", None)
+        audience = tax_entry.get("audience", "app")
+
+        taxonomy_context = ""
+        if tree_decision == "tree" and children:
+            child_list = ", ".join(f"`{c}`" for c in children)
+            taxonomy_context = f"""
+        DOCUMENT ROLE — PARENT OVERVIEW PAGE:
+        This is the overview (parent) page for the '{feat_name}' feature family.
+        Its child components ({child_list}) each have their own dedicated pages.
+        Writing rules:
+        - Introduce the overall concept and architecture of this feature family.
+        - Describe each child component in 2-3 sentences and add a '→ See: [ChildName]' reference.
+        - Do NOT write exhaustive API details for child components — just enough to understand when to use each.
+        - Focus on how the parent and children relate structurally.
+        """
+        elif tree_decision == "leaf" and parent:
+            taxonomy_context = f"""
+        DOCUMENT ROLE — CHILD DETAIL PAGE:
+        This is a focused detail page for '{feat_name}', which is a sub-component of '{parent}'.
+        Writing rules:
+        - Do NOT re-explain '{parent}' basics — readers have already read the parent page.
+        - Focus entirely on what makes '{feat_name}' unique: its specific constructor, properties, signals.
+        - Start with a 1-paragraph introduction explaining when to use '{feat_name}' over other {parent} variants.
+        - Provide thorough code examples specific to '{feat_name}'.
+        """
+        elif audience == "platform":
+            taxonomy_context = """
+        DOCUMENT ROLE — PLATFORM DEVELOPER PAGE:
+        This documentation targets platform/engine developers, NOT app developers.
+        - Use technical C++ detail — do not simplify for beginners.
+        - Explain internal architecture, thread safety, and lifecycle implications.
+        - App developers use higher-level APIs (like View); this page covers the low-level layer.
+        """
+
+        # 3. View/Actor context (dali-ui app architecture)
         view_context = ""
-        if feat_name in ("actors", "views", "ui", "ui-components") or \
+        if feat_name in ("actors", "views", "ui", "ui-components", "view") or \
            any("View" in n or "Actor" in n for n in api_names[:10]):
             view_context = """
         CRITICAL ARCHITECTURE CONTEXT:
@@ -157,6 +204,7 @@ def main():
         You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
         Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
         {view_context}
+        {taxonomy_context}
         Follow this Table of Contents structure exactly:
         {json.dumps(outline, indent=2)}
 

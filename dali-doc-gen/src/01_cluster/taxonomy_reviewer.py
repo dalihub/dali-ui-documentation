@@ -28,12 +28,12 @@ import argparse
 from pathlib import Path
 import sys
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(str(Path(__file__).resolve().parent.parent / "02_llm"))
 from llm_client import LLMClient
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
-CLASSIFIED_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map_classified.json"
+FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map.json"   # Phase 1 출력
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 TAXONOMY_DIR = CACHE_DIR / "feature_taxonomy"
 TAXONOMY_PATH = TAXONOMY_DIR / "feature_taxonomy.json"
@@ -129,9 +129,9 @@ def main():
     print(" Phase 1.5: Feature Taxonomy Reviewer                           ")
     print("=================================================================")
 
-    feature_list = load_json(CLASSIFIED_MAP_PATH)
+    feature_list = load_json(FEATURE_MAP_PATH)
     if not feature_list:
-        print("Error: feature_map_classified.json not found. Run Stage A first.")
+        print("Error: feature_map.json not found. Run Phase 1 (feature_clusterer.py) first.")
         return
 
     # 기존 taxonomy 로드 (증분 업데이트용)

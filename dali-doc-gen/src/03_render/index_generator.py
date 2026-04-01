@@ -1,0 +1,181 @@
+"""
+index_generator.py — Stage E: Index.md 자동 생성
+
+역할:
+  - feature_taxonomy.json의 Tree 구조를 읽어
+  - cache/markdown_drafts/ 에 실제로 생성된 .md 파일 목록과 대조
+  - Tree 형태의 링크 구조를 가진 Index.md 파일 생성
+
+출력:
+  cache/markdown_drafts/Index.md
+"""
+
+import json
+from pathlib import Path
+from datetime import datetime
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+CACHE_DIR = PROJECT_ROOT / "cache"
+TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
+DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
+INDEX_PATH = DRAFTS_DIR / "Index.md"
+
+
+def load_json(path):
+    if not path.exists():
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def doc_exists(feat_key):
+    """해당 feature의 .md 파일이 실제로 생성됐는지 확인."""
+    return (DRAFTS_DIR / f"{feat_key}.md").exists()
+
+
+def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
+    """
+    taxonomy를 재귀적으로 탐색하여 Tree 구조의 마크다운 링크 목록을 생성합니다.
+    """
+    if visited is None:
+        visited = set()
+    if feat_key in visited:
+        return []
+    visited.add(feat_key)
+
+    lines = []
+    tax_entry = taxonomy.get(feat_key, {})
+    display_name = tax_entry.get("display_name", feat_key)
+    doc_file = tax_entry.get("doc_file", f"{feat_key}.md")
+    children = tax_entry.get("children", [])
+    prefix = "  " * indent
+
+    # 링크 생성: 파일이 있으면 링크, 없으면 일반 텍스트 (미생성 표시)
+    if doc_exists(feat_key):
+        link = f"{prefix}- [{display_name}]({doc_file})"
+    else:
+        link = f"{prefix}- {display_name} *(not yet generated)*"
+
+    lines.append(link)
+
+    # 자식 노드 재귀 렌더링
+    for child_key in children:
+        lines.extend(render_tree_node(child_key, taxonomy, indent + 1, visited))
+
+    return lines
+
+
+def main():
+    print("=================================================================")
+    print(" Index Generator: Building documentation tree index              ")
+    print("=================================================================")
+
+    taxonomy = load_json(TAXONOMY_PATH)
+    if not taxonomy:
+        print("Error: feature_taxonomy.json not found. Run Phase 1.5 first.")
+        return
+
+    DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # 생성된 .md 파일 목록
+    generated_files = {p.stem for p in DRAFTS_DIR.glob("*.md") if p.name != "Index.md"}
+    print(f"[Index] Found {len(generated_files)} generated markdown files.")
+
+    # ── Index.md 구성 ──────────────────────────────────────────────────
+    lines = []
+    lines.append("# DALi Documentation Index")
+    lines.append("")
+    lines.append("> Auto-generated documentation index. "
+                 "Tree structure reflects the class hierarchy determined by Phase 1.5 Taxonomy Review.")
+    lines.append("")
+    lines.append(f"*Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    # ── 최상위 Feature 그룹별 섹션 생성 ──────────────────────────────────
+    # parent가 없고, tree_decision이 tree 또는 flat인 최상위 항목만 수집
+    top_level_roots = []
+    for feat_key, entry in taxonomy.items():
+        if entry.get("parent") is None and entry.get("tree_decision") != "leaf":
+            top_level_roots.append(feat_key)
+
+    # display_name 알파벳 순 정렬
+    top_level_roots.sort(key=lambda k: taxonomy.get(k, {}).get("display_name", k).lower())
+
+    # tree 항목(children 있음)과 flat 항목 분리
+    tree_roots = [k for k in top_level_roots
+                  if taxonomy.get(k, {}).get("tree_decision") == "tree" and taxonomy.get(k, {}).get("children")]
+    flat_roots = [k for k in top_level_roots
+                  if k not in tree_roots]
+
+    # ── Section 1: Component Hierarchies (Tree 구조) ──────────────────
+    if tree_roots:
+        lines.append("## Component Hierarchies")
+        lines.append("")
+        lines.append("Features with sub-component documentation pages:")
+        lines.append("")
+        visited_global = set()
+        for root_key in tree_roots:
+            lines.append("")
+            tax_root = taxonomy.get(root_key, {})
+            root_display = tax_root.get("display_name", root_key)
+            lines.append(f"### {root_display}")
+            lines.append("")
+            node_lines = render_tree_node(root_key, taxonomy, indent=0, visited=visited_global)
+            # 최상위 노드는 이미 루프에서 헤더로 썼으므로 첫 줄 제외
+            lines.extend(node_lines[1:] if len(node_lines) > 1 else [])
+            # 부모 링크 따로 표시
+            if doc_exists(root_key):
+                doc_file = tax_root.get("doc_file", f"{root_key}.md")
+                lines[lines.index(f"### {root_display}") + 2 - 1 if lines else -1] = \
+                    f"### [{root_display}]({doc_file})"
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+
+    # ── Section 2: All Features (Flat) ────────────────────────────────
+    lines.append("## All Features")
+    lines.append("")
+    lines.append("Complete list of all documented features:")
+    lines.append("")
+
+    # 모든 최상위 feature를 영문 정렬로 나열
+    for feat_key in top_level_roots:
+        tax_entry = taxonomy.get(feat_key, {})
+        display_name = tax_entry.get("display_name", feat_key)
+        doc_file = tax_entry.get("doc_file", f"{feat_key}.md")
+        children = tax_entry.get("children", [])
+
+        if doc_exists(feat_key):
+            lines.append(f"- **[{display_name}]({doc_file})**")
+        else:
+            lines.append(f"- **{display_name}** *(not yet generated)*")
+
+        # 자식 목록도 들여쓰기로 포함
+        for child_key in children:
+            child_entry = taxonomy.get(child_key, {})
+            child_display = child_entry.get("display_name", child_key)
+            child_file = child_entry.get("doc_file", f"{child_key}.md")
+            if doc_exists(child_key):
+                lines.append(f"  - [{child_display}]({child_file})")
+            else:
+                lines.append(f"  - {child_display} *(not yet generated)*")
+
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("*This index is auto-generated by the DALi documentation pipeline.*")
+    lines.append("*To regenerate, run `./scripts/run_extract_all.sh`.*")
+
+    # ── 파일 저장 ─────────────────────────────────────────────────────
+    INDEX_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+    print(f"\n[Index] Index.md generated: {INDEX_PATH}")
+    print(f"[Index] Total top-level entries: {len(top_level_roots)}")
+    print(f"[Index] Tree hierarchy roots: {len(tree_roots)}")
+    print("=================================================================")
+
+
+if __name__ == "__main__":
+    main()

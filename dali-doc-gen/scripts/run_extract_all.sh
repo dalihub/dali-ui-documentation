@@ -26,8 +26,8 @@
 # ============================================================
 
 # ▼▼▼ Phase 2 처리 개수 조정 (0 = 제한 없음) ▼▼▼
-STAGE_B_LIMIT=0
-STAGE_C_LIMIT=0
+STAGE_B_LIMIT=5
+STAGE_C_LIMIT=5
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 set -e
@@ -130,10 +130,15 @@ else
     python src/02_llm/stage_c_writer.py
 fi
 
+# 10. Stage E: Index.md 생성 (LLM 없음)
+echo -e "\n[Phase2 +] Stage E: Generating documentation Index.md..."
+python src/03_render/index_generator.py
+
 echo -e "\n=========================================================="
-echo " ✅ Full Pipeline Complete! (Phase 1 + Phase 2)"
+echo " ✅ Full Pipeline Complete! (Phase 1 + Phase 1.5 + Phase 2)"
 echo " - Parsed data  : cache/parsed_doxygen/"
 echo " - Feature map  : cache/feature_map/"
+echo " - Taxonomy     : cache/feature_taxonomy/"
 echo " - MD drafts    : cache/markdown_drafts/"
+echo " - Index        : cache/markdown_drafts/Index.md"
 echo "=========================================================="
-

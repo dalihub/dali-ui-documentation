@@ -14,6 +14,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 CLASSIFIED_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map_classified.json"
 OUT_BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
+TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
+PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 
 def load_json(path):
     if not path.exists():
@@ -21,6 +23,68 @@ def load_json(path):
         return None
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+def find_child_api_names(display_name):
+    """
+    Taxonomy child의 display_name(예: 'ImageView')으로 Doxygen에서
+    해당 클래스의 API 이름 목록을 검색해 반환합니다.
+    """
+    api_names = []
+    packages_found = set()
+    search_name = display_name.lower().replace("-", "").replace(" ", "")
+
+    for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
+        data = load_json(pkg_json)
+        if not data:
+            continue
+        pkg_name = data.get("package", pkg_json.stem)
+        for comp in data.get("compounds", []):
+            comp_name = comp.get("name", "")
+            # 클래스 이름의 마지막 부분이 display_name과 일치하는지 확인
+            simple_name = comp_name.split("::")[-1].lower()
+            if simple_name == search_name or search_name in simple_name:
+                api_names.append(comp_name)
+                packages_found.add(pkg_name)
+                for mb in comp.get("members", [])[:30]:
+                    api_names.append(f"{comp_name}::{mb.get('name', '')}")
+                break  # 패키지당 첫 매칭 클래스만
+        if api_names:
+            break  # 첫 번째 패키지 매칭으로 충분
+
+    return api_names[:50], list(packages_found)
+
+
+def build_child_entries(taxonomy, existing_feature_keys):
+    """
+    taxonomy에 있는 leaf child 중 feature_map_classified에 없는 항목을
+    Doxygen에서 API를 조회하여 synthetic feature entry로 만들어 반환합니다.
+    """
+    child_entries = []
+    for feat_key, tax_entry in taxonomy.items():
+        if tax_entry.get("tree_decision") != "leaf":
+            continue
+        if feat_key in existing_feature_keys:
+            continue  # 이미 feature_map에 있으면 스킵
+
+        display_name = tax_entry.get("display_name", feat_key)
+        parent = tax_entry.get("parent", "")
+        api_names, packages = find_child_api_names(display_name)
+
+        child_entries.append({
+            "feature": feat_key,
+            "display_name": display_name,
+            "packages": packages,
+            "api_tiers": ["public-api"],
+            "apis": api_names,
+            "cross_package_links": [],
+            "ambiguous": False,
+            "_is_taxonomy_child": True,   # child임을 표시
+            "parent_feature": parent
+        })
+        print(f"  [Taxonomy Child] Injected '{feat_key}' ({display_name}, {len(api_names)} APIs found)")
+
+    return child_entries
+
 
 def extract_json_from_text(text):
     """
@@ -56,9 +120,28 @@ def main():
     feature_list = load_json(CLASSIFIED_MAP_PATH)
     if not feature_list:
         return
-        
+
+    # Phase 1.5 taxonomy 로드 (없으면 빈 dict로 진행)
+    taxonomy = {}
+    if TAXONOMY_PATH.exists():
+        taxonomy = load_json(TAXONOMY_PATH) or {}
+        print(f"[Taxonomy] Loaded {len(taxonomy)} entries from feature_taxonomy.json")
+    else:
+        print("[Taxonomy] feature_taxonomy.json not found — proceeding without tree context.")
+
+    # ── Taxonomy child feature 주입 ──────────────────────────────────────
+    # feature_map에 없는 leaf child를 Doxygen에서 찾아 목록에 추가
+    existing_keys = {f["feature"] for f in feature_list}
+    if taxonomy:
+        print("[Taxonomy] Scanning for child features not in feature map...")
+        child_entries = build_child_entries(taxonomy, existing_keys)
+        if child_entries:
+            print(f"[Taxonomy] Appended {len(child_entries)} child feature(s) to processing list.")
+            feature_list.extend(child_entries)
+    # ────────────────────────────────────────────────────────────────────
+
     client = LLMClient()
-    
+
     if args.limit > 0:
         print(f"[!] TEST MODE ENGAGED: Hard limiting the loop to process only the first {args.limit} clusters.")
         feature_list = feature_list[:args.limit]
@@ -85,10 +168,41 @@ def main():
         in terms of how View exposes or wraps those capabilities, NOT raw Actor usage.
         """
 
+        # ── Taxonomy context 주입 ────────────────────────────────────────
+        tax_entry = taxonomy.get(feat_name, {})
+        tree_decision = tax_entry.get("tree_decision", "flat")
+        children = tax_entry.get("children", [])
+        parent = tax_entry.get("parent", None)
+
+        taxonomy_context = ""
+        if tree_decision == "tree" and children:
+            child_list = ", ".join(f"'{c}'" for c in children)
+            taxonomy_context = f"""
+        DOCUMENT STRUCTURE CONTEXT:
+        This feature ('{feat_name}') is a PARENT document in a tree hierarchy.
+        It should serve as an OVERVIEW page that introduces the concept and lists
+        its child sub-components: {child_list}.
+        Each child will have its own separate detailed documentation page.
+        Your TOC should include a section like "Sub-Components Overview" that
+        briefly describes each child and links to its dedicated page.
+        Do NOT write deep API details for child components here — just overview.
+        """
+        elif tree_decision == "leaf" and parent:
+            taxonomy_context = f"""
+        DOCUMENT STRUCTURE CONTEXT:
+        This feature ('{feat_name}') is a CHILD component of '{parent}'.
+        It should be a FOCUSED, DETAILED page about this specific component.
+        Readers are expected to already understand the parent '{parent}' concept.
+        Do NOT re-explain basic View/Actor fundamentals — focus on what makes
+        '{feat_name}' unique: its specific properties, signals, and use cases.
+        """
+        # ────────────────────────────────────────────────────────────────
+
         prompt = f"""
         You are a senior technical writer documenting the Samsung DALi GUI framework.
         Design a logical Table of Contents (TOC) layout for the feature module '{feat_name}'.
         {view_context}
+        {taxonomy_context}
         Context:
         - Target Audience API Tiers: {tiers}
         - Key API Methods/Classes: {json.dumps(apis, indent=2)}
@@ -98,6 +212,8 @@ def main():
         - A simple utility module (e.g. math helpers) needs only 3-4 sections.
         - A moderate feature (e.g. animation, events) needs 5-7 sections.
         - A complex subsystem with lifecycle, signals, and advanced usage needs 8-10 sections.
+        - A PARENT overview page needs 4-6 sections including a sub-components listing section.
+        - A CHILD leaf page needs 4-7 focused sections on the component's specific API.
 
         Each section must have a practical, developer-facing title and a concrete 1-sentence description
         of what that section covers.
