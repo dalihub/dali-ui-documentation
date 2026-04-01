@@ -28,6 +28,9 @@
 # ▼▼▼ Phase 2 처리 개수 조정 (0 = 제한 없음) ▼▼▼
 STAGE_B_LIMIT=3
 STAGE_C_LIMIT=3
+# 특정 Feature별로 골라서 실행하고 싶다면 쉼표(,)로 구분하여 적으세요. (비워두면 전체 실행)
+# 예: TARGET_FEATURES="view,actors"
+TARGET_FEATURES=""
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 set -e
@@ -114,21 +117,28 @@ python src/02_llm/stage_a_classifier.py
 
 # 8. Stage B: 문서 목차/뼈대 설계 (LLM Think 모델)
 echo -e "\n[Phase2 2/3] Stage B: Generating document blueprints (TOC)..."
+B_ARGS=""
 if [ "$STAGE_B_LIMIT" -gt 0 ]; then
     echo "  > Test mode: processing only first $STAGE_B_LIMIT clusters."
-    python src/02_llm/stage_b_mapper.py --limit "$STAGE_B_LIMIT"
-else
-    python src/02_llm/stage_b_mapper.py
+    B_ARGS="--limit $STAGE_B_LIMIT"
 fi
+if [ -n "$TARGET_FEATURES" ]; then
+    echo "  > Target mode: processing targeted features ($TARGET_FEATURES)."
+    B_ARGS="$B_ARGS --features $TARGET_FEATURES"
+fi
+python src/02_llm/stage_b_mapper.py $B_ARGS
 
 # 9. Stage C: Markdown 문서 본문 작성 (LLM Instruct 모델)
 echo -e "\n[Phase2 3/3] Stage C: Writing Markdown documentation drafts..."
+C_ARGS=""
 if [ "$STAGE_C_LIMIT" -gt 0 ]; then
     echo "  > Test mode: processing only first $STAGE_C_LIMIT clusters."
-    python src/02_llm/stage_c_writer.py --limit "$STAGE_C_LIMIT"
-else
-    python src/02_llm/stage_c_writer.py
+    C_ARGS="--limit $STAGE_C_LIMIT"
 fi
+if [ -n "$TARGET_FEATURES" ]; then
+    C_ARGS="$C_ARGS --features $TARGET_FEATURES"
+fi
+python src/02_llm/stage_c_writer.py $C_ARGS
 
 # 9.5. Stage D: Hallucination 검증 + FAIL 문서 자동 재생성 (Retry Loop)
 echo -e "\n[Phase2 +] Stage D: Validating generated documents for hallucinations..."

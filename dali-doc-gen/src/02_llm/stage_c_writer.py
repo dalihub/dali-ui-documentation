@@ -100,6 +100,7 @@ def strip_markdown_wrapping(text):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="Terminal isolation debug boundary.")
+    parser.add_argument("--features", type=str, default="", help="Comma-separated list of features to process exclusively.")
     args = parser.parse_args()
     
     print("=================================================================")
@@ -122,6 +123,12 @@ def main():
     client = LLMClient()
     OUT_DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
     
+    if args.features:
+        target_features = [f.strip() for f in args.features.split(",") if f.strip()]
+        if target_features:
+            blueprints = [bp for bp in blueprints if bp.get("feature") in target_features]
+            print(f"[!] TARGET MODE ENGAGED: Filtering to exclusively process {len(blueprints)} requested feature(s): {target_features}")
+
     if args.limit > 0:
         print(f"[!] TEST MODE ENGAGED: Hard limiting the loop to process only the first {args.limit} clusters.")
         blueprints = blueprints[:args.limit]

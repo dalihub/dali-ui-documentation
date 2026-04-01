@@ -111,6 +111,7 @@ def extract_json_from_text(text):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="Hard limit processing count (useful for fast-path sandbox testing to save quotas).")
+    parser.add_argument("--features", type=str, default="", help="Comma-separated list of features to process exclusively.")
     args = parser.parse_args()
     
     print("=================================================================")
@@ -141,6 +142,12 @@ def main():
     # ────────────────────────────────────────────────────────────────────
 
     client = LLMClient()
+
+    if args.features:
+        target_features = [f.strip() for f in args.features.split(",") if f.strip()]
+        if target_features:
+            feature_list = [f for f in feature_list if f.get("feature") in target_features]
+            print(f"[!] TARGET MODE ENGAGED: Filtering to exclusively process {len(feature_list)} requested feature(s): {target_features}")
 
     if args.limit > 0:
         print(f"[!] TEST MODE ENGAGED: Hard limiting the loop to process only the first {args.limit} clusters.")
