@@ -130,10 +130,10 @@ else
     python src/02_llm/stage_c_writer.py
 fi
 
-# 9.5. Stage D: Hallucination 검증
+# 9.5. Stage D: Hallucination 검증 + FAIL 문서 자동 재생성 (Retry Loop)
 echo -e "\n[Phase2 +] Stage D: Validating generated documents for hallucinations..."
-# --no-llm: FAIL 문서 LLM 재검토 건너뜀 (빠른 테스트 시 사용)
-python src/02_llm/stage_d_validator.py --no-llm
+# 빠른 테스트 시에는 --no-retry 플래그 추가 가능 (LLM 재생성 루프 건너뜀)
+python src/02_llm/stage_d_validator.py
 
 # 10. Stage E: Index.md 생성 (validated_drafts/ 기준)
 echo -e "\n[Phase2 +] Stage E: Generating documentation Index.md..."

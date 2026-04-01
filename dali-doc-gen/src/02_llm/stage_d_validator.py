@@ -6,12 +6,13 @@ stage_d_validator.py — Stage D: Hallucination Validation Engine
   - cache/parsed_doxygen/*.json(Doxygen DB)과 대조하여 존재 여부 확인
   - Pass / Warn / Fail 판정 후 결과를 JSON 리포트로 저장
   - PASS / WARN 문서는 cache/validated_drafts/ 로 복사
-  - FAIL 문서는 선택적으로 LLM에게 재검토 요청
+  - FAIL 문서는 자동으로 프롬프트 수정 후 Stage C 수준으로 재생성 (Retry Loop)
+  - Retry 후에도 FAIL이면 최종 FAIL로 확정하고 리포트에 기록
 
 판정 기준:
-  PASS  : 심볼 검증률 ≥ 70%
-  WARN  : 50% ~ <70%
-  FAIL  : < 50%  (심볼이 5개 미만이면 LOW_CONTENT 로 별도 처리)
+  PASS  : 심볼 검증률 ≥ 60%
+  WARN  : 35% ~ <60%
+  FAIL  : < 35%  (심볼이 3개 미만이면 LOW_CONTENT 로 별도 처리)
 """
 
 import os
@@ -38,6 +39,11 @@ REPORT_PATH = OUT_REPORT_DIR / "stage_d_report.json"
 PASS_THRESHOLD = 0.60    # ≥ 60%: PASS (심볼의 과반 이상 확인됨)
 WARN_THRESHOLD = 0.35    # ≥ 35%: WARN (부분적 확인, 계속 진장하되 리포트 태깅)
 MIN_SYMBOLS_FOR_SCORING = 3  # 심볼이 이 이하면 LOW_CONTENT 처리
+
+# Retry 설정
+MAX_RETRY_ATTEMPTS = 2   # FAIL 문서 자동 재생성 최대 횟수
+BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
+TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 
 
 # ── Doxygen DB 구축 ──────────────────────────────────────────────────────
@@ -94,7 +100,7 @@ def extract_symbols_from_markdown(md_text):
         symbols.update(found2)
 
     # 2. 인라인 backtick
-    inline_ticks = re.findall(r'`([^`]+)`', md_text)
+    inline_ticks = re.findall(r'`([^`\n]+)`', md_text)
     for item in inline_ticks:
         item = item.strip()
         # ClassName::MethodName
@@ -136,7 +142,7 @@ def verify_symbols(symbols, full_names, simple_names):
     return verified, unverified
 
 
-# ── LLM 보조 검증 (FAIL 문서용) ────────────────────────────────────────────
+# ── LLM 보조 검증 (원래 FAIL 진단용, 현재는 retry가 주 메커니즘) ────────────────
 def llm_review_fail(feat_name, md_text, unverified_symbols, client):
     """
     FAIL 판정 문서에 대해 LLM에게 어떤 심볼이 문제인지 설명을 요청합니다.
@@ -162,11 +168,137 @@ Be concise. Output as a plain text list. Do NOT make up API names you are unsure
         return f"[LLM review failed: {e}]"
 
 
-# ── 메인 ─────────────────────────────────────────────────────────────────
+# ── Retry 전용 헬퍼 함수 ─────────────────────────────────────────────────
+def strip_markdown_wrapping(text):
+    """markdown ``` 래퍼링 제거."""
+    stripped = text.strip()
+    if stripped.startswith("```markdown"):
+        stripped = stripped[11:]
+        if stripped.endswith("```"):
+            stripped = stripped[:-3]
+    elif stripped.startswith("```"):
+        stripped = stripped[3:]
+        if stripped.endswith("```"):
+            stripped = stripped[:-3]
+    return stripped.strip()
+
+
+def load_blueprints():
+    """
+    Stage B 블루프린트에서 feature별 outline/packages 정보 로드.
+    """
+    if not BLUEPRINTS_PATH.exists():
+        return {}
+    with open(BLUEPRINTS_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return {item["feature"]: item for item in data}
+
+
+def get_api_specs_for_retry(packages, api_names, max_specs=30):
+    """
+    Stage C와 동일한 방식으로 Doxygen에서 API spec 추출 (Retry 전용).
+    """
+    specs = []
+    api_name_set = set(a.split("::")[-1] for a in api_names)
+    for pkg in packages:
+        pkg_path = PARSED_DOXYGEN_DIR / f"{pkg}.json"
+        if not pkg_path.exists():
+            continue
+        with open(pkg_path, "r", encoding="utf-8") as f:
+            pkg_data = json.load(f)
+        for comp in pkg_data.get("compounds", []):
+            if not isinstance(comp, dict):
+                continue
+            c_name = comp.get("name", "")
+            is_match = any(a in c_name for a in api_names) or \
+                       any(c_name.split("::")[-1] in api_name_set for _ in [1])
+            if is_match:
+                specs.append({"name": c_name, "kind": comp.get("kind"), "brief": comp.get("brief", "")})
+                for mb in comp.get("members", []):
+                    if not isinstance(mb, dict):
+                        continue
+                    specs.append({
+                        "name": f"{c_name}::{mb.get('name', '')}",
+                        "kind": mb.get("kind"),
+                        "brief": mb.get("brief", ""),
+                        "signature": mb.get("signature", "")
+                    })
+                    if len(specs) >= max_specs:
+                        break
+            if len(specs) >= max_specs:
+                break
+        if len(specs) >= max_specs:
+            break
+    return specs
+
+
+def regenerate_failed_document(feat_name, blueprint, taxonomy, unverified_set, client):
+    """
+    FAIL 판정된 문서를 할루시네이션 목록을 포함한 수정된 프롬프트로 재생성합니다.
+    """
+    outline = blueprint.get("outline", [])
+    packages = blueprint.get("packages", [])
+    api_names = blueprint.get("apis", [])
+    specs = get_api_specs_for_retry(packages, api_names)
+
+    # Taxonomy context (stage_c_writer.py와 동일)
+    tax = {}
+    if TAXONOMY_PATH.exists():
+        with open(TAXONOMY_PATH, "r", encoding="utf-8") as f:
+            tax = json.load(f)
+    tax_entry = tax.get(feat_name, {})
+    tree_decision = tax_entry.get("tree_decision", "flat")
+    children = tax_entry.get("children", [])
+    parent = tax_entry.get("parent", None)
+
+    taxonomy_context = ""
+    if tree_decision == "tree" and children:
+        taxonomy_context = f"This is a PARENT OVERVIEW page for '{feat_name}'. " \
+                           f"Child pages: {', '.join(children)}."
+    elif tree_decision == "leaf" and parent:
+        taxonomy_context = f"This is a CHILD DETAIL page for '{feat_name}', " \
+                           f"sub-component of '{parent}'."
+
+    # Hallucination correction hints
+    sym_list = "\n".join(f"  - {s}" for s in sorted(unverified_set))
+    correction = f"""
+CORRECTION REQUIRED — HALLUCINATION DETECTED:
+The previous draft referenced the following symbols that do NOT exist in the DALi Doxygen DB:
+{sym_list}
+STRICT RULES FOR THIS REVISION:
+1. Do NOT use any of the above symbols.
+2. Use ONLY the verified C++ API specs provided below.
+3. If a concept cannot be expressed using verified specs, omit or generalize it.
+"""
+
+    prompt = f"""
+You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
+Rewrite the COMPLETE Markdown documentation for the '{feat_name}' module.
+{taxonomy_context}
+{correction}
+Follow this Table of Contents structure exactly:
+{json.dumps(outline, indent=2)}
+
+VERIFIED API SPECS (use ONLY these for signatures and class names):
+{json.dumps(specs, indent=2)}
+
+Writing Guidelines:
+- Write entirely in valid GitHub Flavored Markdown.
+- Use ## for section titles and ### for sub-sections.
+- Each section must be DETAILED and THOROUGH.
+- Include at least one realistic C++ code example per section.
+- Output raw markdown text only. Do NOT wrap in ```markdown blocks.
+"""
+    return client.generate(prompt, use_think=False)
+
+
+# ── 메인 ────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-llm", action="store_true",
                         help="Skip LLM review for FAIL documents.")
+    parser.add_argument("--no-retry", action="store_true",
+                        help="Skip auto-regeneration retry loop for FAIL documents.")
     args = parser.parse_args()
 
     print("=================================================================")
@@ -249,6 +381,98 @@ def main():
         })
 
     # 리포트 저장
+    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2, ensure_ascii=False)
+
+    # ── Stage D Retry Loop ───────────────────────────────────────────────
+    fail_entries = [r for r in report if r["verdict"] == "FAIL"]
+
+    if fail_entries and not args.no_retry and not args.no_llm:
+        print(f"\n[Retry] {len(fail_entries)} FAIL document(s) detected. "
+              f"Starting auto-regeneration loop (max {MAX_RETRY_ATTEMPTS} attempts)...")
+        blueprints_map = load_blueprints()
+        retry_client = client if client else LLMClient()
+
+        for attempt in range(1, MAX_RETRY_ATTEMPTS + 1):
+            still_failing = []
+            for entry in fail_entries:
+                feat_name = entry["feature"]
+                unverified_set = set(entry.get("unverified_symbols", []))
+                blueprint = blueprints_map.get(feat_name)
+                if not blueprint:
+                    print(f"  [Retry {attempt}] '{feat_name}': No blueprint found, skipping.")
+                    still_failing.append(entry)
+                    continue
+
+                print(f"  [Retry {attempt}/{MAX_RETRY_ATTEMPTS}] Regenerating '{feat_name}'.md "
+                      f"({len(unverified_set)} unverified symbols)...")
+                try:
+                    new_md_raw = regenerate_failed_document(
+                        feat_name, blueprint, {}, unverified_set, retry_client)
+                    new_md = strip_markdown_wrapping(new_md_raw)
+                except Exception as e:
+                    print(f"    [!] Regeneration failed: {e}")
+                    still_failing.append(entry)
+                    continue
+
+                # 새 draft 덯어쓰기
+                draft_path = DRAFTS_DIR / f"{feat_name}.md"
+                draft_path.write_text(new_md, encoding="utf-8")
+
+                # 재검증
+                new_symbols = extract_symbols_from_markdown(new_md)
+                if len(new_symbols) < MIN_SYMBOLS_FOR_SCORING:
+                    new_verdict = "LOW_CONTENT"
+                    new_score = None
+                    new_verified, new_unverified = [], list(new_symbols)
+                else:
+                    new_verified, new_unverified = verify_symbols(
+                        new_symbols, full_names, simple_names)
+                    new_score = len(new_verified) / len(new_symbols)
+                    if new_score >= PASS_THRESHOLD:
+                        new_verdict = "PASS"
+                    elif new_score >= WARN_THRESHOLD:
+                        new_verdict = "WARN"
+                    else:
+                        new_verdict = "FAIL"
+
+                score_disp = f"{new_score:.1%}" if new_score else "N/A"
+                print(f"    → Re-validated: [{new_verdict}] score={score_disp}")
+
+                # 리포트 업데이트
+                for r in report:
+                    if r["feature"] == feat_name:
+                        r["verdict"] = new_verdict
+                        r["score"] = round(new_score, 4) if new_score else None
+                        r["verified_symbols"] = new_verified
+                        r["unverified_symbols"] = new_unverified
+                        r["retry_attempts"] = attempt
+                        r["copy_status"] = "copied" if new_verdict != "FAIL" else "blocked"
+                        break
+
+                # PASS/WARN/LOW_CONTENT 이면 validated_drafts에 복사
+                if new_verdict != "FAIL":
+                    shutil.copy2(draft_path, OUT_VALIDATED_DIR / f"{feat_name}.md")
+                    stats[new_verdict.lower()] = stats.get(new_verdict.lower(), 0) + 1
+                    stats["fail"] = max(0, stats["fail"] - 1)
+                else:
+                    entry["unverified_symbols"] = new_unverified
+                    still_failing.append(entry)
+
+            fail_entries = still_failing
+            if not fail_entries:
+                print(f"  [Retry] All documents recovered after {attempt} attempt(s). ✅")
+                break
+
+        if fail_entries:
+            remaining = [e["feature"] for e in fail_entries]
+            print(f"  [Retry] {len(fail_entries)} document(s) remain FAIL after "
+                  f"{MAX_RETRY_ATTEMPTS} attempts: {remaining}")
+    elif fail_entries and args.no_retry:
+        print(f"\n[Retry] Skipped (--no-retry). {len(fail_entries)} FAIL document(s) not retried.")
+    # ────────────────────────────────────────────────────────────────────
+
+    # ── 리포트 최종 저장 (리트라이 정보 포함) ──────────────────────────────────
     with open(REPORT_PATH, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
 

@@ -196,16 +196,35 @@ dali-doc-gen/
 - `asyncio` + `aiohttp` 병렬 처리
 - **프롬프트 규칙**: 제공된 API JSON 범위 외 언급 금지, `@warning`/`@note` 반드시 포함
 
-#### `stage_d_reviewer.py` (Think 모델)
-- 입력: Stage C 초안 + 원본 API JSON + 정적 검증 플래그
-- 출력: 수정 지시 (삭제/교체/보완) + 최종 승인 여부
-- `validator.py`와 연동하여 미존재 API 자동 플래그 선처리
+#### `stage_d_validator.py` ✅ 구현 완료
 
-#### `validator.py`
-- 문서 내 등장한 클래스/함수명 → API DB 대조
-- 미존재 기호 → 자동 플래그 → Stage D 입력에 포함
+**역할**: Hallucination Validation Engine — Stage C 출력 문서의 품질을 정적으로 검증하고, FAIL 문서는 자동으로 재생성합니다.
 
-**산출물**: Feature별 검토 완료 Markdown 초안
+**동작 흐름**:
+```
+markdown_drafts/*.md
+  ↓
+[1] 심볼 추출: 코드 블록/인라인 backtick에서 C++ 클래스·메서드명 추출
+  ↓
+[2] Doxygen DB 대조: parsed_doxygen/*.json의 전체/단순 이름 집합과 비교
+  ↓
+[3] 판정 (PASS ≥60% / WARN ≥35% / FAIL <35% / LOW_CONTENT <3 symbols)
+  ↓
+[4] FAIL 문서 → Retry Loop (최대 2회):
+    - Stage B blueprint + 할루시네이션 심볼 목록을 프롬프트에 주입
+    - Stage C 수준으로 문서 재생성
+    - 재검증 → PASS/WARN이면 validated_drafts/에 최종 저장
+  ↓
+validated_drafts/ (PASS/WARN만 포함)
+cache/validation_report/stage_d_report.json (판정 + retry_attempts 기록)
+```
+
+**플래그**:
+- `--no-retry`: Retry Loop 건너뜀 (빠른 테스트 시 사용)
+- `--no-llm`: LLM 전체 비활성화 (정적 검증만 수행)
+
+**산출물**: `validated_drafts/` (검증 통과 문서), `stage_d_report.json` (상세 리포트)
+
 
 ---
 
