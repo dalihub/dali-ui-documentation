@@ -198,6 +198,24 @@ def parse_compound(xml_path, api_dirs):
     if warnings:
         compound_data["warnings"] = warnings
 
+    # ── 상속 관계 추출 (Phase 1.5 taxonomy_reviewer 용) ──────────────
+    base_classes = []
+    for base_ref in compounddef.findall("basecompoundref"):
+        base_name = (base_ref.text or "").strip()
+        if base_name:
+            base_classes.append(base_name)
+    if base_classes:
+        compound_data["base_classes"] = base_classes
+
+    derived_classes = []
+    for derived_ref in compounddef.findall("derivedcompoundref"):
+        derived_name = (derived_ref.text or "").strip()
+        if derived_name:
+            derived_classes.append(derived_name)
+    if derived_classes:
+        compound_data["derived_classes"] = derived_classes
+    # ─────────────────────────────────────────────────────────────────
+
     for sectiondef in compounddef.findall("sectiondef"):
         kind = sectiondef.get("kind")
         if "private" in kind or "internal" in kind:

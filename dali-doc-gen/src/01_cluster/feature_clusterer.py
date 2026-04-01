@@ -101,7 +101,41 @@ def main():
         if ambiguous:
             cluster["ambiguous"] = True
 
-    # 3. Enhance with Call Graph connections (Optional logging layer)
+    # 3. Manual Feature Injection (Phase 1.5)
+    # repo_config.yaml의 manual_features 항목을 강제 삽입/덮어쓰기
+    manual_features = config.get("manual_features", [])
+    if manual_features:
+        print(f"Injecting {len(manual_features)} manual feature override(s)...")
+        for mf in manual_features:
+            feat_key = mf.get("feature")
+            if not feat_key:
+                continue
+            if feat_key in feature_map:
+                # 기존 클러스터에 메타데이터 보강
+                feature_map[feat_key]["display_name"] = mf.get("display_name", feat_key)
+                feature_map[feat_key]["description"] = mf.get("description", "")
+                feature_map[feat_key]["base_class"] = mf.get("base_class", "")
+                feature_map[feat_key]["force_tree_review"] = mf.get("force_tree_review", False)
+                if "audience" in mf:
+                    feature_map[feat_key]["audience"] = mf["audience"]
+                print(f"  > Enriched existing feature '{feat_key}' with manual metadata.")
+            else:
+                # 신규로 강제 삽입
+                feature_map[feat_key] = {
+                    "feature": feat_key,
+                    "display_name": mf.get("display_name", feat_key),
+                    "packages": {mf.get("source_package", "unknown")},
+                    "api_tiers": set(),
+                    "apis": [],
+                    "cross_package_links": set(),
+                    "ambiguous": False,
+                    "description": mf.get("description", ""),
+                    "base_class": mf.get("base_class", ""),
+                    "force_tree_review": mf.get("force_tree_review", False),
+                    "audience": mf.get("audience", "app"),
+                    "manual_injected": True
+                }
+                print(f"  > Force-injected new feature '{feat_key}'.")
     # The actual deep mapping will evaluate these clusters next phase.
     print("Cross-referencing logic skipped for heuristic bounds (to be completed in depth by LLM or later layers).")
 

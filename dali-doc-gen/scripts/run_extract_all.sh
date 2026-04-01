@@ -83,6 +83,25 @@ python src/01_cluster/feature_clusterer.py
 
 echo -e "\n✅ Phase 1 Complete."
 
+# --- PHASE 1.5 ---
+
+echo -e "\n=========================================================="
+echo "   Phase 1.5: Feature Taxonomy Review                     "
+echo "=========================================================="
+
+# 7. Taxonomy Review: LLM이 상속 계층 Tree 구조 여부 결정
+# --full 옵션: 기존 taxonomy 무시하고 전체 재검토 (최초 1회 권장)
+# 옵션 없음:   기존 taxonomy 로드 후 신규/변경 feature만 재검토 (증분)
+echo -e "\n[Phase1.5 1/1] Taxonomy Review: Determining tree/flat structure..."
+if [ "${TAXONOMY_FULL_REVIEW:-0}" = "1" ]; then
+    echo "  > Full review mode (TAXONOMY_FULL_REVIEW=1)"
+    python src/01_cluster/taxonomy_reviewer.py --full
+else
+    python src/01_cluster/taxonomy_reviewer.py
+fi
+
+echo -e "\n✅ Phase 1.5 Complete. Taxonomy saved to cache/feature_taxonomy/"
+
 # --- PHASE 2 ---
 
 echo -e "\n=========================================================="

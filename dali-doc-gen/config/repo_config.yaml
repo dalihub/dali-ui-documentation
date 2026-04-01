@@ -25,3 +25,23 @@ repos:
       - "dali-ui-foundation/integration-api"
       - "dali-ui-components/public-api"
       - "dali-ui-components/integration-api"
+
+# ============================================================
+# Manual Feature Injection (Phase 1.5)
+# 여기에 정의된 Feature는 물리적 디렉토리 분류와 무관하게
+# feature_clusterer.py가 강제로 feature_map에 삽입합니다.
+# ============================================================
+manual_features:
+  - feature: "view"
+    display_name: "View (Base UI Object)"
+    source_package: "dali-ui"
+    base_class: "Dali::Ui::View"
+    description: "The primary UI object for DALi application developers. View inherits from Actor but provides a higher-level API designed for app development."
+    force_tree_review: true   # taxonomy_reviewer.py가 반드시 Tree 구조 여부를 검토
+
+  - feature: "actors"
+    display_name: "Actor (Scene Graph Node)"
+    source_package: "dali-core"
+    base_class: "Dali::Actor"
+    description: "Low-level scene graph node. In dali-ui apps, developers use View instead of Actor directly. Actor knowledge is background context."
+    audience: "platform"     # 이 Feature는 Platform 개발자 대상임을 명시
