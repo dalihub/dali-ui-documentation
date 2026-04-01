@@ -30,7 +30,7 @@ STAGE_B_LIMIT=3
 STAGE_C_LIMIT=3
 # 특정 Feature별로 골라서 실행하고 싶다면 쉼표(,)로 구분하여 적으세요. (비워두면 전체 실행)
 # 예: TARGET_FEATURES="view,actors"
-TARGET_FEATURES=""
+TARGET_FEATURES="view,image-view"
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 set -e
