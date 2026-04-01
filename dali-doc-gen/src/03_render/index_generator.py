@@ -17,8 +17,10 @@ from datetime import datetime
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
-DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
-INDEX_PATH = DRAFTS_DIR / "Index.md"
+VALIDATED_DIR = CACHE_DIR / "validated_drafts"   # Stage D 통과 파일
+DRAFTS_DIR = CACHE_DIR / "markdown_drafts"        # fallback (Stage D 미실행 시)
+REPORT_PATH = CACHE_DIR / "validation_report" / "stage_d_report.json"
+INDEX_PATH = CACHE_DIR / "markdown_drafts" / "Index.md"  # Index는 항상 markdown_drafts에 저장
 
 
 def load_json(path):
@@ -28,9 +30,23 @@ def load_json(path):
         return json.load(f)
 
 
+def get_verdict(feat_key, report_cache=[None]):
+    """
+    Stage D 리포트에서 해당 feature의 판정을 읽어 반환합니다.
+    리포트를 한 번만 로드하도록 내부 캐시.
+    """
+    if report_cache[0] is None:
+        report_cache[0] = load_json(REPORT_PATH) or []
+    for entry in report_cache[0]:
+        if entry.get("feature") == feat_key:
+            return entry.get("verdict")
+    return None
+
+
 def doc_exists(feat_key):
-    """해당 feature의 .md 파일이 실제로 생성됐는지 확인."""
-    return (DRAFTS_DIR / f"{feat_key}.md").exists()
+    """validated_drafts/ 또는 markdown_drafts/ 어떠에라도 .md가 있는지 확인율."""
+    return (VALIDATED_DIR / f"{feat_key}.md").exists() or \
+           (DRAFTS_DIR / f"{feat_key}.md").exists()
 
 
 def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
@@ -40,7 +56,7 @@ def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
     if visited is None:
         visited = set()
     if feat_key in visited:
-        return []
+        return []   # 순환 방지
     visited.add(feat_key)
 
     lines = []
@@ -50,11 +66,20 @@ def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
     children = tax_entry.get("children", [])
     prefix = "  " * indent
 
+    verdict = get_verdict(feat_key)
+    badge = ""
+    if verdict == "WARN":
+        badge = " ⚠️"
+    elif verdict == "FAIL":
+        badge = " ❌"
+    elif verdict == "LOW_CONTENT":
+        badge = " 📄"
+
     # 링크 생성: 파일이 있으면 링크, 없으면 일반 텍스트 (미생성 표시)
     if doc_exists(feat_key):
-        link = f"{prefix}- [{display_name}]({doc_file})"
+        link = f"{prefix}- [{display_name}]({doc_file}){badge}"
     else:
-        link = f"{prefix}- {display_name} *(not yet generated)*"
+        link = f"{prefix}- {display_name}{badge} *(not yet generated)*"
 
     lines.append(link)
 

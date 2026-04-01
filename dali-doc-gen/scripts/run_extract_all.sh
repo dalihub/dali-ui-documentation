@@ -26,8 +26,8 @@
 # ============================================================
 
 # ▼▼▼ Phase 2 처리 개수 조정 (0 = 제한 없음) ▼▼▼
-STAGE_B_LIMIT=5
-STAGE_C_LIMIT=5
+STAGE_B_LIMIT=3
+STAGE_C_LIMIT=3
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 set -e
@@ -130,7 +130,12 @@ else
     python src/02_llm/stage_c_writer.py
 fi
 
-# 10. Stage E: Index.md 생성 (LLM 없음)
+# 9.5. Stage D: Hallucination 검증
+echo -e "\n[Phase2 +] Stage D: Validating generated documents for hallucinations..."
+# --no-llm: FAIL 문서 LLM 재검토 건너뜀 (빠른 테스트 시 사용)
+python src/02_llm/stage_d_validator.py --no-llm
+
+# 10. Stage E: Index.md 생성 (validated_drafts/ 기준)
 echo -e "\n[Phase2 +] Stage E: Generating documentation Index.md..."
 python src/03_render/index_generator.py
 
