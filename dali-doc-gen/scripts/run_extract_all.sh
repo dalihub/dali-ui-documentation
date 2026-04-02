@@ -10,8 +10,11 @@
 # 만들어내는지 E2E(End-to-End)로 실험할 수 있는 테스트 스크립트입니다.
 # ============================================================
 
-# ▼▼▼ 테스트 대상 Feature 목록 (비워두면 전체) ▼▼▼
-TARGET_FEATURES="view,image-view"
+# ▼▼▼ 테스트 대상 Feature 목록 ▼▼▼
+# update 모드에서는 needs_patch/needs_regen 결과를 이 목록으로 필터링함
+# (증분 로직 자체는 전체 대상으로 동작, 처리 범위만 제한)
+# 아래는 현재 HEAD~30..HEAD 기준 needs_patch 21개 중 대표 선별
+TARGET_FEATURES="view,animation,image-view"
 LIMIT=3
 # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 

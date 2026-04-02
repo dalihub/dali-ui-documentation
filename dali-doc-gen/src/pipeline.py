@@ -10,12 +10,13 @@ import json
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 
-TAXONOMY_PATH       = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
-TAXONOMY_OLD_PATH   = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json.old"
-DRAFTS_DIR          = CACHE_DIR / "validated_drafts"
-CHANGED_APIS_PATH   = CACHE_DIR / "changed_apis.json"
-PARSED_DOXYGEN_DIR  = CACHE_DIR / "parsed_doxygen"
-LAST_RUN_PATH       = CACHE_DIR / "last_run_commits.json"
+TAXONOMY_PATH         = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
+TAXONOMY_OLD_PATH     = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json.old"
+DRAFTS_DIR            = CACHE_DIR / "validated_drafts"
+CHANGED_APIS_PATH     = CACHE_DIR / "changed_apis.json"
+PARSED_DOXYGEN_DIR    = CACHE_DIR / "parsed_doxygen"
+LAST_RUN_PATH         = CACHE_DIR / "last_run_commits.json"
+CLASSIFIED_MAP_PATH   = CACHE_DIR / "feature_map" / "feature_map_classified.json"
 
 # Taxonomy 구조 변경을 판단하는 필드 목록 (원칙 1)
 STRUCTURAL_KEYS = {"children", "parent", "tree_decision"}
@@ -167,12 +168,22 @@ def compute_incremental_targets():
                     changed_class_names.add(cls.split("::")[-1])
 
         if changed_class_names:
+            # feature_map_classified.json 에서 feature별 api 목록 로드
+            # (feature_taxonomy.json 에는 apis 필드가 없음)
+            classified = load_json(CLASSIFIED_MAP_PATH)
+            feat_apis_map = {}
+            if classified:
+                for item in classified:
+                    fid = item.get("feature", "")
+                    if fid:
+                        feat_apis_map[fid] = set(item.get("apis", []))
+
             for feat_id, feat_data in new_tax.items():
                 if feat_id in needs_regen:
                     continue  # regen 우선
-                feat_apis = set(feat_data.get("apis", []))
-                feat_apis.add(feat_data.get("display_name", ""))
-                # feature api 목록의 simple name 도 체크
+                # feature_map_classified 의 apis 우선, 없으면 display_name 만으로 체크
+                feat_apis = feat_apis_map.get(feat_id, set())
+                feat_apis = feat_apis | {feat_data.get("display_name", "")}
                 feat_simple = {a.split("::")[-1] for a in feat_apis}
                 if feat_apis & changed_class_names or feat_simple & changed_class_names:
                     print(f"  [~] API change detected for '{feat_id}' → needs_patch")
@@ -249,9 +260,19 @@ def main():
         print(f"\n>>> Starting Pipeline for Tier: {current_tier.upper()} <<<")
 
         # ── Incremental Update 분류 로직 ──────────────────────────────────
-        if args.mode == "update" and not args.features:
+        if args.mode == "update":
             print("  [*] Update Mode: Computing incremental deltas...")
             needs_regen, needs_patch = compute_incremental_targets()
+
+            # --features 가 지정된 경우: 증분 결과를 해당 feature 로만 필터링
+            # (전체 증분 로직은 동일하게 동작, 처리 범위만 제한)
+            if args.features:
+                filter_set = {f.strip() for f in args.features.split(",") if f.strip()}
+                needs_regen = needs_regen & filter_set
+                needs_patch  = needs_patch  & filter_set
+                print(f"  [*] --features filter: restricting to {sorted(filter_set)}")
+                print(f"      → needs_regen: {sorted(needs_regen)}")
+                print(f"      → needs_patch:  {sorted(needs_patch)}")
 
             if not needs_regen and not needs_patch:
                 print(f"\n  ✅ All documents up to date for '{current_tier}'. Skipping LLM stages.")
@@ -259,6 +280,7 @@ def main():
                 render_args = ["--tier", current_tier]
                 run_script(PROJECT_ROOT / "src" / "03_render" / "md_renderer.py", render_args)
                 run_script(PROJECT_ROOT / "src" / "03_render" / "sidebar_generator.py", render_args)
+                run_script(PROJECT_ROOT / "src" / "03_render" / "index_generator.py", render_args)
                 continue
 
             # ── needs_regen: Stage B → C (full) → D ──────────────────────
@@ -293,7 +315,7 @@ def main():
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py", [])
 
         else:
-            # ── Full 생성 모드 (또는 --features 수동 지정 모드) ───────────
+            # ── Full 생성 모드 ─────────────────────────────────────────────
             stage_args = []
             if args.limit > 0:
                 stage_args += ["--limit", str(args.limit)]
