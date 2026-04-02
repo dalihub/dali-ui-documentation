@@ -72,10 +72,11 @@ echo "  > Running: python3 src/pipeline.py --mode full $FULL_ARGS"
 python3 src/pipeline.py --mode full $FULL_ARGS
 
 echo -e "\n[Step 3] 생성된 Output 폴더를 output_prev로 백업"
-rm -rf output_prev
-if [ -d "output" ]; then
-    cp -r output output_prev
-    echo "  > 백업 완료: output_prev 폴더 생성"
+# output은 이제 dali-guide/app-guide/ 에 위치 (dali-doc-gen 기준으로 ../app-guide/)
+rm -rf ../app-guide_prev
+if [ -d "../app-guide" ]; then
+    cp -r ../app-guide ../app-guide_prev
+    echo "  > 백업 완료: ../app-guide_prev/ (← ../app-guide 복사)"
 fi
 
 echo -e "\n[Step 4] 증분 업데이트 (mode: update)"
@@ -90,6 +91,6 @@ python3 src/pipeline.py --mode update $UPDATE_ARGS
 
 echo -e "\n=========================================================="
 echo " E2E 시뮬레이션(롤백-업데이트) 종료!"
-echo " 현재 output/ 폴더와 백업된 output_prev/ 폴더를 비교해 보세요."
-echo " >> diff -r output_prev/app-guide/docs output/app-guide/docs"
+echo " 백업된 ../app-guide_prev/ 와 최신 ../app-guide/ 를 비교해 보세요."
+echo " >> diff -r ../app-guide_prev/docs ../app-guide/docs"
 echo "=========================================================="

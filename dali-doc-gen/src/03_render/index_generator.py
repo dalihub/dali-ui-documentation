@@ -24,8 +24,9 @@ DRAFTS_DIR = CACHE_DIR / "markdown_drafts"        # fallback (Stage D 미실행 
 REPORT_PATH = CACHE_DIR / "validation_report" / "stage_d_report.json"
 CACHE_INDEX_PATH = CACHE_DIR / "markdown_drafts" / "Index.md"
 
-APP_GUIDE_OUT = PROJECT_ROOT / "output" / "app-guide" / "docs"
-PLATFORM_GUIDE_OUT = PROJECT_ROOT / "output" / "platform-guide" / "docs"
+GUIDE_ROOT = PROJECT_ROOT.parent          # dali-guide/
+APP_GUIDE_OUT = GUIDE_ROOT / "app-guide" / "docs"
+PLATFORM_GUIDE_OUT = GUIDE_ROOT / "platform-guide" / "docs"
 
 
 def load_json(path):

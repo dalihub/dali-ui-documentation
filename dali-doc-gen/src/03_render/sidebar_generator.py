@@ -8,8 +8,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 
-APP_GUIDE_OUT = PROJECT_ROOT / "output" / "app-guide"
-PLATFORM_GUIDE_OUT = PROJECT_ROOT / "output" / "platform-guide"
+GUIDE_ROOT = PROJECT_ROOT.parent          # dali-guide/
+APP_GUIDE_OUT = GUIDE_ROOT / "app-guide"
+PLATFORM_GUIDE_OUT = GUIDE_ROOT / "platform-guide"
 
 def load_json(path):
     if not path.exists():

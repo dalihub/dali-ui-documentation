@@ -1,7 +1,5 @@
-import os
 import json
 import re
-import shutil
 import argparse
 from pathlib import Path
 from jinja2 import Template
@@ -12,8 +10,9 @@ CACHE_DIR = PROJECT_ROOT / "cache"
 VALIDATED_DIR = CACHE_DIR / "validated_drafts"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 
-APP_GUIDE_OUT = PROJECT_ROOT / "output" / "app-guide" / "docs"
-PLATFORM_GUIDE_OUT = PROJECT_ROOT / "output" / "platform-guide" / "docs"
+GUIDE_ROOT = PROJECT_ROOT.parent          # dali-guide/
+APP_GUIDE_OUT = GUIDE_ROOT / "app-guide" / "docs"
+PLATFORM_GUIDE_OUT = GUIDE_ROOT / "platform-guide" / "docs"
 
 DUMMY_DOXYGEN_BASE = "https://dummy-doxygen.tizen.org/dali/"
 
