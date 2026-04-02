@@ -31,10 +31,13 @@ fi
 source venv/bin/activate
 pip install -r requirements.txt --quiet
 
-# 파이프라인 인자 조립 (repo_manager 실행을 막기 위해 --skip-pull 추가)
-PIPELINE_ARGS="--tier app --limit $LIMIT --skip-pull"
+# full 모드 인자: repo_manager 스킵 (수동으로 HEAD~30 세팅했으므로)
+FULL_ARGS="--tier app --limit $LIMIT --skip-pull"
+# update 모드 인자: --skip-pull 없음 → pipeline 내부에서 repo_manager가 최신화
+UPDATE_ARGS="--tier app --limit $LIMIT"
 if [ -n "$TARGET_FEATURES" ]; then
-    PIPELINE_ARGS="$PIPELINE_ARGS --features $TARGET_FEATURES"
+    FULL_ARGS="$FULL_ARGS --features $TARGET_FEATURES"
+    UPDATE_ARGS="$UPDATE_ARGS --features $TARGET_FEATURES"
 fi
 
 PACKAGES=("dali-core" "dali-adaptor" "dali-ui")
@@ -64,9 +67,9 @@ for pkg in "${PACKAGES[@]}"; do
     cd ../..
 done
 
-echo -e "\n[Step 2] 구버전 바탕으로 최초 전체 생성 (mode: full) 실행"
-echo "  > Running: python src/pipeline.py --mode full $PIPELINE_ARGS"
-python src/pipeline.py --mode full $PIPELINE_ARGS
+echo -e "\n[Step 2] 구버전 바탕으로 최초 전체 생성 (mode: full, --skip-pull)"
+echo "  > Running: python3 src/pipeline.py --mode full $FULL_ARGS"
+python3 src/pipeline.py --mode full $FULL_ARGS
 
 echo -e "\n[Step 3] 생성된 Output 폴더를 output_prev로 백업"
 rm -rf output_prev
@@ -75,30 +78,18 @@ if [ -d "output" ]; then
     echo "  > 백업 완료: output_prev 폴더 생성"
 fi
 
-echo -e "\n[Step 4] 소스코드를 최신 상태로 복구 (HEAD)"
-for pkg in "${PACKAGES[@]}"; do
-    echo "  > Updating $pkg to latest HEAD..."
-    cd "repos/$pkg"
-    # dali-ui는 devel, 나머지는 master
-    if [ "$pkg" == "dali-ui" ]; then
-        git checkout devel || true
-    else
-        git checkout master || true
-    fi
-    git pull
-    cd ../..
-done
-
-echo -e "\n[Step 4.5] 변경 감지 (HEAD~30 .. HEAD)"
-echo "  > Running: python src/00_extract/diff_detector.py --from-commit HEAD~30 --to-commit HEAD"
-python src/00_extract/diff_detector.py --from-commit HEAD~30 --to-commit HEAD
-
-echo -e "\n[Step 5] 최신 소스 바탕으로 증분 업데이트 (mode: update) 실행"
-echo "  > Running: python src/pipeline.py --mode update $PIPELINE_ARGS"
-python src/pipeline.py --mode update $PIPELINE_ARGS
+echo -e "\n[Step 4] 증분 업데이트 (mode: update)"
+echo "  pipeline 내부에서 자동으로 수행:"
+echo "    - repo_manager  : 최신 HEAD로 git pull"
+echo "    - parsed_doxygen 백업 (HEAD~30 JSON → .old)"
+echo "    - doxygen_parser: 최신 코드로 새 JSON 생성"
+echo "    - diff_detector : .old vs 새 JSON 비교 → changed_apis.json"
+echo "    - 이후 증분 업데이트 로직"
+echo "  > Running: python3 src/pipeline.py --mode update $UPDATE_ARGS"
+python3 src/pipeline.py --mode update $UPDATE_ARGS
 
 echo -e "\n=========================================================="
-echo " 🎉 E2E 시뮬레이션(롤백-업데이트) 종료!"
+echo " E2E 시뮬레이션(롤백-업데이트) 종료!"
 echo " 현재 output/ 폴더와 백업된 output_prev/ 폴더를 비교해 보세요."
 echo " >> diff -r output_prev/app-guide/docs output/app-guide/docs"
 echo "=========================================================="

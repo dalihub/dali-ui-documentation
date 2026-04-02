@@ -99,27 +99,86 @@ def strip_markdown_wrapping(text):
             stripped = stripped[:-3]
     return stripped.strip()
 
-def build_patch_prompt(feat_name, existing_draft, changed_specs, taxonomy_context, view_context):
+def build_change_summary(feat_apis, changed_classes_info):
+    """
+    feature 의 API 목록에서 changed_apis.json 의 멤버 레벨 변경 정보를 추출하여
+    사람이 읽기 쉬운 텍스트 요약을 생성합니다. (Stage C 패치 프롬프트용)
+    """
+    lines = []
+    seen = set()
+
+    for api_name in feat_apis:
+        for key in [api_name, api_name.split("::")[-1]]:
+            if key in changed_classes_info and key not in seen:
+                seen.add(key)
+                entry = changed_classes_info[key]
+                cls_name = entry.get("class", key)
+
+                if entry.get("class_change") == "added":
+                    lines.append(f"Class `{cls_name}`: NEWLY ADDED to DALi API")
+                    continue
+                if entry.get("class_change") == "removed":
+                    lines.append(f"Class `{cls_name}`: REMOVED from DALi API")
+                    continue
+
+                if entry.get("class_brief_changed"):
+                    lines.append(f"Class `{cls_name}`: description updated")
+
+                for m in entry.get("changed_members", []):
+                    name = m["name"]
+                    detail_parts = []
+                    if "old_signature" in m:
+                        detail_parts.append(
+                            f"signature: `{m['old_signature']}` → `{m['new_signature']}`"
+                        )
+                    if "old_brief" in m:
+                        detail_parts.append("doc comment updated")
+                    detail = ", ".join(detail_parts) if detail_parts else "modified"
+                    lines.append(f"  - `{name}`: MODIFIED ({detail})")
+
+                for m in entry.get("added_members", []):
+                    brief = m.get("new_brief", "")
+                    sig = m.get("new_signature", "")
+                    lines.append(f"  - `{m['name']}`: ADDED — {brief}"
+                                 + (f" | signature: `{sig}`" if sig else ""))
+
+                for m in entry.get("removed_members", []):
+                    lines.append(f"  - `{m['name']}`: REMOVED — delete related description and examples")
+
+    return "\n".join(lines) if lines else ""
+
+
+def build_patch_prompt(feat_name, existing_draft, changed_specs, change_summary,
+                       taxonomy_context, view_context):
     """기존 문서를 최대한 보존하면서 변경된 API 부분만 수술하는 패치 프롬프트를 생성합니다. (원칙 3)"""
+    change_section = (
+        f"[WHAT CHANGED — UPDATE ONLY THESE PARTS]\n{change_summary}"
+        if change_summary
+        else "[CHANGED API SPECIFICATIONS — BASED ON LATEST SOURCE CODE]\n"
+             + json.dumps(changed_specs, indent=2)
+    )
     return f"""
     You are an elite C++ technical writer updating the Samsung DALi GUI framework documentation.
     Your task is to UPDATE the existing guide document for the '{feat_name}' module
-    by incorporating only the changed API specifications below.
+    by incorporating only the changes described below.
     {view_context}
     {taxonomy_context}
 
     [EXISTING PUBLISHED GUIDE DOCUMENT — PRESERVE AS MUCH AS POSSIBLE]
     {existing_draft}
 
-    [CHANGED API SPECIFICATIONS — BASED ON LATEST SOURCE CODE]
+    {change_section}
+
+    [LATEST API SPECS FOR REFERENCE]
     {json.dumps(changed_specs, indent=2)}
 
     STRICT PATCHING RULES:
     - Keep the existing document's section structure, writing style, and example code style exactly as-is.
-    - Modify ONLY the parts of the document that describe the changed APIs listed above.
-    - Do NOT alter any content, examples, or explanations unrelated to the changed APIs.
-    - If a new API is added: insert it in the most appropriate existing section.
-    - If an API is removed: delete only the description and examples for that specific API.
+    - Modify ONLY the parts of the document that correspond to the changes listed above.
+    - Do NOT alter any content, examples, or explanations unrelated to those changes.
+    - If a member is ADDED: insert it in the most appropriate existing section with a full explanation and code example.
+    - If a member is REMOVED: delete only the description and examples for that specific member.
+    - If a member is MODIFIED: update only the affected description, signature, or example — keep surrounding text.
     - Output the COMPLETE updated markdown document (not just the changed sections).
     - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
     """
@@ -162,12 +221,15 @@ def main():
         else:
             print("[PATCH] --patch set but --patch-features is empty. Processing all blueprints in patch mode.")
 
-        # changed_apis.json 로드 (패치 모드 전용)
+        # changed_apis.json 로드 — 멤버 레벨 변경 정보를 class 이름 기준 dict 로 인덱싱
         changed_apis_data = load_json(CHANGED_APIS_PATH) if CHANGED_APIS_PATH.exists() else {}
-        changed_api_names_global = set()
+        changed_classes_info = {}  # key: full_name 또는 simple_name → entry dict
         for pkg_apis in changed_apis_data.values():
-            for api in pkg_apis:
-                changed_api_names_global.add(api.get("name", ""))
+            for entry in pkg_apis:
+                cls = entry.get("class", "")
+                if cls:
+                    changed_classes_info[cls] = entry
+                    changed_classes_info[cls.split("::")[-1]] = entry
     else:
         # ── Full 생성 모드: --features 로 대상 결정 ──────────────────────────
         if args.features:
@@ -251,22 +313,17 @@ def main():
 
             existing_draft = existing_draft_path.read_text(encoding="utf-8")
 
-            # 이 피처와 관련된 변경 API 스펙만 필터링
+            # 최신 API 스펙 (참조용)
             specs = get_api_specs(packages, api_names)
-            # changed_apis_data 에서 이 피처 관련 항목만 추출
-            changed_specs = [
-                s for s in specs
-                if any(
-                    s.get("name", "") in changed_api_names_global or
-                    s.get("name", "").split("::")[-1] in changed_api_names_global
-                    for _ in [1]
-                )
-            ] or specs  # changed_api_names 매칭 실패 시 전체 specs 사용
 
-            print(f"\n[{idx+1}/{len(blueprints)}] PATCHING '{feat_name}' ({len(changed_specs)} changed API specs)...")
+            # 멤버 레벨 변경 요약 생성
+            change_summary = build_change_summary(api_names, changed_classes_info)
+
+            print(f"\n[{idx+1}/{len(blueprints)}] PATCHING '{feat_name}' "
+                  f"({len(specs)} API specs, change_summary={'yes' if change_summary else 'none'})...")
 
             prompt = build_patch_prompt(
-                feat_name, existing_draft, changed_specs, taxonomy_context, view_context
+                feat_name, existing_draft, specs, change_summary, taxonomy_context, view_context
             )
 
         # ── Full 생성 모드 ─────────────────────────────────────────────────

@@ -248,8 +248,28 @@ def main():
             ]
             
     OUT_BLUEPRINTS_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    # ── --features 로 일부만 처리한 경우: 기존 blueprints 와 merge 저장 ────────
+    # 전체 실행(--features 미사용)이면 그대로 덮어쓰기
+    if args.features:
+        existing_map = {}
+        if OUT_BLUEPRINTS_PATH.exists():
+            try:
+                with open(OUT_BLUEPRINTS_PATH, "r", encoding="utf-8") as f:
+                    for item in json.load(f):
+                        existing_map[item["feature"]] = item
+            except Exception:
+                pass
+        for item in feature_list:
+            existing_map[item["feature"]] = item
+        merged = list(existing_map.values())
+        print(f"  [*] Merged {len(feature_list)} processed feature(s) into existing blueprints "
+              f"({len(merged)} total).")
+    else:
+        merged = feature_list
+
     with open(OUT_BLUEPRINTS_PATH, "w", encoding="utf-8") as f:
-        json.dump(feature_list, f, indent=2, ensure_ascii=False)
+        json.dump(merged, f, indent=2, ensure_ascii=False)
         
     print(f"\n=================================================================")
     print(f" Stage B Complete! Generative blueprints merged downstream.")

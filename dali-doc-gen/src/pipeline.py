@@ -4,15 +4,18 @@ import shutil
 import argparse
 import subprocess
 from pathlib import Path
+from datetime import datetime, timezone
 import json
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 
-TAXONOMY_PATH     = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
-TAXONOMY_OLD_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json.old"
-DRAFTS_DIR        = CACHE_DIR / "validated_drafts"
-CHANGED_APIS_PATH = CACHE_DIR / "changed_apis.json"
+TAXONOMY_PATH       = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
+TAXONOMY_OLD_PATH   = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json.old"
+DRAFTS_DIR          = CACHE_DIR / "validated_drafts"
+CHANGED_APIS_PATH   = CACHE_DIR / "changed_apis.json"
+PARSED_DOXYGEN_DIR  = CACHE_DIR / "parsed_doxygen"
+LAST_RUN_PATH       = CACHE_DIR / "last_run_commits.json"
 
 # Taxonomy 구조 변경을 판단하는 필드 목록 (원칙 1)
 STRUCTURAL_KEYS = {"children", "parent", "tree_decision"}
@@ -25,6 +28,61 @@ def load_json(path):
         return json.load(f)
 
 
+def backup_parsed_doxygen():
+    """
+    doxygen_parser.py 실행 전에 기존 parsed_doxygen/*.json 을 *.json.old 로 백업.
+    diff_detector.py 가 이 .old 파일을 기준으로 변경분을 계산한다.
+    """
+    if not PARSED_DOXYGEN_DIR.exists():
+        print("  [*] parsed_doxygen/ not found — skipping backup.")
+        return
+    backed_up = 0
+    for json_file in PARSED_DOXYGEN_DIR.glob("*.json"):
+        if json_file.suffix == ".json" and not json_file.name.endswith(".old"):
+            old_path = json_file.with_suffix(".json.old")
+            shutil.copy2(json_file, old_path)
+            backed_up += 1
+    print(f"  [*] Backed up {backed_up} parsed_doxygen JSON(s) → *.json.old")
+
+
+def save_last_run_commits():
+    """
+    파이프라인 완료 시 각 repo 의 현재 HEAD 커밋 해시를 last_run_commits.json 에 저장.
+    다음 --mode update 실행 시 diff 기준점으로 활용된다.
+    """
+    import subprocess as _sp
+    repos_config_path = PROJECT_ROOT / "config" / "repo_config.yaml"
+    if not repos_config_path.exists():
+        return
+    try:
+        import yaml
+        with open(repos_config_path, "r", encoding="utf-8") as f:
+            config = yaml.safe_load(f)
+    except Exception:
+        return
+
+    commits = {}
+    for pkg, info in config.get("repos", {}).items():
+        repo_path = PROJECT_ROOT / info.get("path", "")
+        if not (repo_path / ".git").exists():
+            continue
+        try:
+            result = _sp.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=repo_path, capture_output=True, text=True
+            )
+            if result.returncode == 0:
+                commits[pkg] = result.stdout.strip()
+        except Exception:
+            pass
+
+    commits["saved_at"] = datetime.now(timezone.utc).isoformat()
+    LAST_RUN_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(LAST_RUN_PATH, "w", encoding="utf-8") as f:
+        json.dump(commits, f, indent=2)
+    print(f"  [*] Saved last run commits → {LAST_RUN_PATH.name}")
+
+
 def run_script(script_path, args_list):
     """지정된 파이썬 스크립트를 독립 프로세스로 실행합니다."""
     cmd = [sys.executable, str(script_path)] + args_list
@@ -32,7 +90,7 @@ def run_script(script_path, args_list):
     subprocess.check_call(cmd)
 
 
-def compute_incremental_targets(tiers_to_run):
+def compute_incremental_targets():
     """
     구 taxonomy.old ↔ 신 taxonomy 를 비교하여
     needs_regen / needs_patch 집합을 반환합니다. (원칙 1, 2, 3)
@@ -96,26 +154,27 @@ def compute_incremental_targets(tiers_to_run):
 
     # ── 원칙 3: API 변경 탐지 → needs_patch 분류 ──────────────────────────────
     # (needs_regen 피처는 이미 전체 재생성 대상이므로 제외)
+    # changed_apis.json 포맷: {pkg: [{class, changed_members, added_members, ...}]}
     changed_apis = load_json(CHANGED_APIS_PATH)
     if changed_apis:
-        # 모든 패키지의 변경 API name 합집합
-        changed_api_names = set()
+        # 모든 패키지의 변경 class 이름 합집합 (full name + simple name)
+        changed_class_names = set()
         for pkg_apis in changed_apis.values():
-            for api in pkg_apis:
-                name = api.get("name", "")
-                if name:
-                    changed_api_names.add(name)
-                    # "Dali::Actor::SetPosition" → "SetPosition", "Actor" 등도 체크
-                    changed_api_names.add(name.split("::")[-1])
+            for entry in pkg_apis:
+                cls = entry.get("class", "")
+                if cls:
+                    changed_class_names.add(cls)
+                    changed_class_names.add(cls.split("::")[-1])
 
-        if changed_api_names:
+        if changed_class_names:
             for feat_id, feat_data in new_tax.items():
                 if feat_id in needs_regen:
                     continue  # regen 우선
                 feat_apis = set(feat_data.get("apis", []))
-                # 피처 apis 필드가 없는 경우 display_name 으로도 체크
                 feat_apis.add(feat_data.get("display_name", ""))
-                if feat_apis & changed_api_names:
+                # feature api 목록의 simple name 도 체크
+                feat_simple = {a.split("::")[-1] for a in feat_apis}
+                if feat_apis & changed_class_names or feat_simple & changed_class_names:
                     print(f"  [~] API change detected for '{feat_id}' → needs_patch")
                     needs_patch.add(feat_id)
     else:
@@ -158,7 +217,16 @@ def main():
         run_script(PROJECT_ROOT / "src" / "00_extract" / "doxygen_runner.py",
                    ["--package", pkg])
 
+    # ── Update 모드: doxygen_parser 실행 전에 기존 JSON 백업 (diff 비교 기준점) ──
+    if args.mode == "update":
+        backup_parsed_doxygen()
+
     run_script(PROJECT_ROOT / "src" / "00_extract" / "doxygen_parser.py", [])
+
+    # ── Update 모드: 새 JSON vs 백업 JSON 비교 → changed_apis.json 생성 ──────
+    if args.mode == "update":
+        run_script(PROJECT_ROOT / "src" / "00_extract" / "diff_detector.py", [])
+
     run_script(PROJECT_ROOT / "src" / "00_extract" / "callgraph_parser.py", [])
     run_script(PROJECT_ROOT / "src" / "01_cluster" / "feature_clusterer.py", [])
 
@@ -183,7 +251,7 @@ def main():
         # ── Incremental Update 분류 로직 ──────────────────────────────────
         if args.mode == "update" and not args.features:
             print("  [*] Update Mode: Computing incremental deltas...")
-            needs_regen, needs_patch = compute_incremental_targets(tiers_to_run)
+            needs_regen, needs_patch = compute_incremental_targets()
 
             if not needs_regen and not needs_patch:
                 print(f"\n  ✅ All documents up to date for '{current_tier}'. Skipping LLM stages.")
@@ -242,6 +310,10 @@ def main():
         render_args = ["--tier", current_tier]
         run_script(PROJECT_ROOT / "src" / "03_render" / "md_renderer.py", render_args)
         run_script(PROJECT_ROOT / "src" / "03_render" / "sidebar_generator.py", render_args)
+        run_script(PROJECT_ROOT / "src" / "03_render" / "index_generator.py", render_args)
+
+    # ── 실행 완료 후 현재 커밋 해시 저장 (다음 update 의 diff 기준점) ─────────
+    save_last_run_commits()
 
     print("\n✅ DALi Documentation Pipeline Execution Completed!")
 
