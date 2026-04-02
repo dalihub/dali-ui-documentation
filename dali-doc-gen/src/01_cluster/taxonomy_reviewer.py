@@ -21,7 +21,6 @@ taxonomy_reviewer.py — Phase 1.5: Feature Taxonomy 설계 (LLM Think 모델)
   }
 """
 
-import os
 import re
 import json
 import argparse
@@ -59,6 +58,28 @@ def extract_json_from_text(text):
     except Exception as e:
         print(f"   [JSON Parse Error] {e}")
         return None
+
+
+def sanitize_children(parent_key, children):
+    """
+    LLM 응답의 children 목록에서 자기 참조 및 중복을 제거합니다.
+    sanitize 후 children이 비어 있으면 호출 측에서 decision을 'flat'으로 다운그레이드해야 합니다.
+    """
+    seen = set()
+    valid = []
+    for c in children:
+        feature_key = c.get("feature", "").strip()
+        if not feature_key:
+            continue
+        if feature_key == parent_key:       # 자기 참조 제거
+            print(f"   [Sanitize] Removed self-referencing child '{feature_key}' from '{parent_key}'")
+            continue
+        if feature_key in seen:             # 중복 제거
+            print(f"   [Sanitize] Removed duplicate child '{feature_key}' from '{parent_key}'")
+            continue
+        seen.add(feature_key)
+        valid.append(c)
+    return valid
 
 
 def build_inheritance_map():
@@ -186,6 +207,11 @@ def main():
         For TREE decisions, list which derived classes should become child documents.
         Use feature name slugs (lowercase-hyphenated, e.g. "image-view", "scroll-view").
 
+        IMPORTANT: Each child `feature` slug in the `children` array must be UNIQUE and must
+        NOT equal the parent feature name '{feat_name}'. Use lowercase-hyphenated slugs that
+        describe what makes each child component distinct (e.g. "animated-image-view", not
+        "{feat_name}" again). If you cannot determine distinct child slugs, use decision "flat".
+
         Reply ONLY with a raw JSON object (no markdown):
         {{
           "feature": "{feat_name}",
@@ -214,6 +240,15 @@ def main():
             decision = result.get("decision", "flat")
             reason = result.get("reason", "")
             children = result.get("children", [])
+
+            # children 후처리: 자기 참조 및 중복 제거
+            children = sanitize_children(feat_name, children)
+            # sanitize 후 children이 비어 있으면 tree → flat 다운그레이드
+            if decision == "tree" and not children:
+                print(f"   [Sanitize] No valid children remain after sanitization — downgrading to FLAT.")
+                decision = "flat"
+                reason = reason + " (downgraded to flat: no valid unique children after sanitization)"
+
             print(f"   [+] Decision: {decision.upper()} — {reason}")
             if children:
                 print(f"       Children: {[c.get('feature') for c in children]}")

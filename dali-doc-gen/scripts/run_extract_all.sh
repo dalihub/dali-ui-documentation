@@ -38,6 +38,7 @@ pip install -r requirements.txt --quiet
 FULL_ARGS="--tier app --limit $LIMIT --skip-pull"
 # update 모드 인자: --skip-pull 없음 → pipeline 내부에서 repo_manager가 최신화
 UPDATE_ARGS="--tier app --limit $LIMIT"
+# ※ platform-guide 생성이 필요하면 --tier platform 으로 별도 실행
 if [ -n "$TARGET_FEATURES" ]; then
     FULL_ARGS="$FULL_ARGS --features $TARGET_FEATURES"
     UPDATE_ARGS="$UPDATE_ARGS --features $TARGET_FEATURES"

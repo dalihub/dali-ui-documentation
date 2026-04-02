@@ -49,13 +49,16 @@ def get_verdict(feat_key, report_cache=[None]):
     return None
 
 
-def doc_exists(feat_key):
-    """validated_drafts/ 또는 markdown_drafts/ 어떠에라도 .md가 있는지 확인율."""
-    return (VALIDATED_DIR / f"{feat_key}.md").exists() or \
-           (DRAFTS_DIR / f"{feat_key}.md").exists()
+def doc_exists(feat_key, validated_dir=None, drafts_dir=None):
+    """validated_drafts/ 또는 markdown_drafts/ 어디에라도 .md가 있는지 확인."""
+    vdir = validated_dir if validated_dir is not None else VALIDATED_DIR
+    ddir = drafts_dir if drafts_dir is not None else DRAFTS_DIR
+    return (vdir / f"{feat_key}.md").exists() or \
+           (ddir / f"{feat_key}.md").exists()
 
 
-def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
+def render_tree_node(feat_key, taxonomy, indent=0, visited=None,
+                     validated_dir=None, drafts_dir=None):
     """
     taxonomy를 재귀적으로 탐색하여 Tree 구조의 마크다운 링크 목록을 생성합니다.
     """
@@ -82,7 +85,7 @@ def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
         badge = " 📄"
 
     # 링크 생성: 파일이 있으면 링크, 없으면 일반 텍스트 (미생성 표시)
-    if doc_exists(feat_key):
+    if doc_exists(feat_key, validated_dir, drafts_dir):
         link = f"{prefix}- [{display_name}]({doc_file}){badge}"
     else:
         link = f"{prefix}- {display_name}{badge} *(not yet generated)*"
@@ -91,7 +94,8 @@ def render_tree_node(feat_key, taxonomy, indent=0, visited=None):
 
     # 자식 노드 재귀 렌더링
     for child_key in children:
-        lines.extend(render_tree_node(child_key, taxonomy, indent + 1, visited))
+        lines.extend(render_tree_node(child_key, taxonomy, indent + 1, visited,
+                                      validated_dir, drafts_dir))
 
     return lines
 
@@ -102,6 +106,14 @@ def main():
                         help="Target output tier. If set, also writes to output/<tier>-guide/docs/index.md")
     args = parser.parse_args()
 
+    # 티어별 validated/drafts 경로 결정
+    if args.tier:
+        tier_validated = VALIDATED_DIR / args.tier
+        tier_drafts = DRAFTS_DIR / args.tier
+    else:
+        tier_validated = VALIDATED_DIR
+        tier_drafts = DRAFTS_DIR
+
     print("=================================================================")
     print(" Index Generator: Building documentation tree index              ")
     print("=================================================================")
@@ -111,13 +123,15 @@ def main():
         print("Error: feature_taxonomy.json not found. Run Phase 1.5 first.")
         return
 
-    DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
+    tier_validated.mkdir(parents=True, exist_ok=True)
+    tier_drafts.mkdir(parents=True, exist_ok=True)
 
     # --tier 에 따라 platform 전용 feature 를 index 에서 제외
     exclude_platform = (args.tier == "app")
 
-    # 생성된 .md 파일 목록
-    generated_files = {p.stem for p in DRAFTS_DIR.glob("*.md") if p.name != "Index.md"}
+    # 생성된 .md 파일 목록 (tier별 경로 기준)
+    generated_files = {p.stem for p in tier_drafts.glob("*.md") if p.name != "Index.md"}
+    generated_files |= {p.stem for p in tier_validated.glob("*.md") if p.name != "Index.md"}
     print(f"[Index] Found {len(generated_files)} generated markdown files.")
 
     # ── Index.md 구성 ──────────────────────────────────────────────────
@@ -164,11 +178,12 @@ def main():
             root_display = tax_root.get("display_name", root_key)
             lines.append(f"### {root_display}")
             lines.append("")
-            node_lines = render_tree_node(root_key, taxonomy, indent=0, visited=visited_global)
+            node_lines = render_tree_node(root_key, taxonomy, indent=0, visited=visited_global,
+                                          validated_dir=tier_validated, drafts_dir=tier_drafts)
             # 최상위 노드는 이미 루프에서 헤더로 썼으므로 첫 줄 제외
             lines.extend(node_lines[1:] if len(node_lines) > 1 else [])
             # 부모 링크 따로 표시
-            if doc_exists(root_key):
+            if doc_exists(root_key, tier_validated, tier_drafts):
                 doc_file = tax_root.get("doc_file", f"{root_key}.md")
                 lines[lines.index(f"### {root_display}") + 2 - 1 if lines else -1] = \
                     f"### [{root_display}]({doc_file})"
@@ -189,7 +204,7 @@ def main():
         doc_file = tax_entry.get("doc_file", f"{feat_key}.md")
         children = tax_entry.get("children", [])
 
-        if doc_exists(feat_key):
+        if doc_exists(feat_key, tier_validated, tier_drafts):
             lines.append(f"- **[{display_name}]({doc_file})**")
         else:
             lines.append(f"- **{display_name}** *(not yet generated)*")
@@ -199,7 +214,7 @@ def main():
             child_entry = taxonomy.get(child_key, {})
             child_display = child_entry.get("display_name", child_key)
             child_file = child_entry.get("doc_file", f"{child_key}.md")
-            if doc_exists(child_key):
+            if doc_exists(child_key, tier_validated, tier_drafts):
                 lines.append(f"  - [{child_display}]({child_file})")
             else:
                 lines.append(f"  - {child_display} *(not yet generated)*")

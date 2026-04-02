@@ -84,8 +84,12 @@ def main():
     print(f" MD Renderer: Formatting documents for '{args.tier}-guide'     ")
     print("=================================================================")
 
-    if not VALIDATED_DIR.exists():
-        print(f"Error: {VALIDATED_DIR} not found. Please run previous stages.")
+    # 티어별 validated 경로, fallback: 구 flat 경로
+    tier_validated_dir = VALIDATED_DIR / args.tier
+    if not tier_validated_dir.exists():
+        tier_validated_dir = VALIDATED_DIR   # 하위 호환 fallback
+    if not tier_validated_dir.exists():
+        print(f"Error: {VALIDATED_DIR / args.tier} not found. Please run Stage D --tier {args.tier} first.")
         return
 
     output_dir = APP_GUIDE_OUT if args.tier == "app" else PLATFORM_GUIDE_OUT
@@ -94,11 +98,11 @@ def main():
 
     taxonomy = load_json(TAXONOMY_PATH)
     cross_link_regex, name_to_id = build_cross_linking_regex(taxonomy)
-    
+
     if cross_link_regex:
         print(f"[Renderer] Cross-linking engine loaded with {len(name_to_id)} taxonomy keywords.")
 
-    md_files = list(VALIDATED_DIR.glob("*.md"))
+    md_files = list(tier_validated_dir.glob("*.md"))
     processed_count = 0
 
     for md_path in md_files:

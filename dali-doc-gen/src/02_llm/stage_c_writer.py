@@ -25,44 +25,52 @@ def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def get_api_specs(pkg_names, api_names_list):
+def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
     """
-    Reverse Lookup Engine mapping arbitrary ambiguous node names back 
+    Reverse Lookup Engine mapping arbitrary ambiguous node names back
     to precise C++ specification definitions pulled from Stage 1 Doxygen parsings.
+
+    allowed_tiers: set of api_tier strings to include (e.g. {"public-api"}).
+                   None means no filtering (all tiers included).
     """
     specs = []
-    
+
     # Cap matching complexity against overwhelming LLM Token usage
     max_apidocs_to_extract = 40  # Increased for richer context in generated docs
-    
+
     # Build a simple lookup set from api_names_list for faster matching
     api_name_set = set(a.split("::")[-1] for a in api_names_list)
-    
+
     for pkg in pkg_names:
         pkg_path = PARSED_DOXYGEN_DIR / f"{pkg}.json"
         pkg_data = load_json(pkg_path)
-        if not pkg_data: 
+        if not pkg_data:
             continue
-        
+
         # Real schema is: {"package": "dali-core", "compounds": [...]}
         compounds = pkg_data.get("compounds", [])
-        
+
         for comp in compounds:
             if not isinstance(comp, dict):
                 continue
+
+            # Tier 필터링: allowed_tiers가 지정된 경우 해당 tier만 포함
+            if allowed_tiers and comp.get("api_tier") not in allowed_tiers:
+                continue
+
             c_name = comp.get("name", "")
-            
+
             # Match on class name (e.g. "Dali::Actor" contains "Actor")
             is_class_match = any(a in c_name for a in api_names_list) or \
                              any(c_name.split("::")[-1] in api_name_set for _ in [1])
-            
+
             if is_class_match:
                 specs.append({
                     "name": c_name,
                     "kind": comp.get("kind", "class"),
                     "brief": comp.get("brief", "No description provided.")
                 })
-                
+
                 # Granular function parameter lookups within matched class
                 for mb in comp.get("members", []):
                     if not isinstance(mb, dict):
@@ -75,12 +83,12 @@ def get_api_specs(pkg_names, api_names_list):
                     })
                     if len(specs) >= max_apidocs_to_extract:
                         break
-                        
+
             if len(specs) >= max_apidocs_to_extract:
                 break
         if len(specs) >= max_apidocs_to_extract:
             break
-            
+
     return specs
 
 def strip_markdown_wrapping(text):
@@ -190,11 +198,18 @@ def main():
     parser.add_argument("--features", type=str, default="", help="Comma-separated list of features to process exclusively (full mode).")
     parser.add_argument("--patch", action="store_true", help="Patch mode: reuse existing draft, update only changed API sections.")
     parser.add_argument("--patch-features", type=str, default="", help="Comma-separated list of features to patch (used with --patch).")
+    parser.add_argument("--tier", type=str, choices=["app", "platform"], default="app",
+                        help="Documentation tier: 'app' (public-api only) or 'platform' (all tiers).")
     args = parser.parse_args()
     
     print("=================================================================")
-    print(" Initiating Stage C: Instruct Writer (Markdown Generation)       ")
+    print(f" Initiating Stage C: Instruct Writer (Markdown Generation) [{args.tier.upper()}]")
     print("=================================================================")
+
+    # 티어별 드래프트 출력 경로 및 API 필터
+    tier_drafts_dir = OUT_DRAFTS_DIR / args.tier
+    tier_drafts_dir.mkdir(parents=True, exist_ok=True)
+    allowed_tiers = {"public-api"} if args.tier == "app" else None
 
     blueprints = load_json(BLUEPRINTS_PATH)
     if not blueprints:
@@ -304,17 +319,37 @@ def main():
           not something app developers call directly.
         """
 
+        # ── 티어별 컨텍스트 ────────────────────────────────────────────────
+        if args.tier == "app":
+            tier_context = """
+        TIER CONSTRAINT: This is app-guide documentation.
+        ONLY reference and describe public-api classes and methods.
+        Do NOT mention devel-api, integration-api, engine internals, or platform
+        extension points. If a concept requires devel-api, note it briefly as
+        'platform-level detail' and refer readers to the platform guide.
+        """
+        else:
+            tier_context = """
+        TIER CONSTRAINT: This is platform-guide documentation.
+        Reference public-api, devel-api, and integration-api as needed.
+        Explain engine internals, thread safety, lifecycle, and extension points
+        in detail.
+        """
+
         # ── 패치 모드 (원칙 3) ─────────────────────────────────────────────
         if args.patch:
-            existing_draft_path = VALIDATED_DRAFTS_DIR / f"{feat_name}.md"
+            existing_draft_path = VALIDATED_DRAFTS_DIR / args.tier / f"{feat_name}.md"
+            if not existing_draft_path.exists():
+                # fallback: 티어 미분리 이전 경로
+                existing_draft_path = VALIDATED_DRAFTS_DIR / f"{feat_name}.md"
             if not existing_draft_path.exists():
                 print(f"\n[{idx+1}/{len(blueprints)}] PATCH SKIP '{feat_name}': No existing draft found. Run full mode first.")
                 continue
 
             existing_draft = existing_draft_path.read_text(encoding="utf-8")
 
-            # 최신 API 스펙 (참조용)
-            specs = get_api_specs(packages, api_names)
+            # 최신 API 스펙 (참조용, 티어 필터 적용)
+            specs = get_api_specs(packages, api_names, allowed_tiers)
 
             # 멤버 레벨 변경 요약 생성
             change_summary = build_change_summary(api_names, changed_classes_info)
@@ -334,14 +369,25 @@ def main():
 
             print(f"\n[{idx+1}/{len(blueprints)}] Drafting comprehensive Markdown page for '{feat_name}'...")
 
-            specs = get_api_specs(packages, api_names)
+            specs = get_api_specs(packages, api_names, allowed_tiers)
             print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
 
             prompt = f"""
         You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
         Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
         {view_context}
+        {tier_context}
         {taxonomy_context}
+
+        FOCUS AND SCOPE RULES:
+        - Write ONLY about '{feat_name}'. Stay strictly within its feature boundary.
+        - If you mention a parent class, do so only to show how '{feat_name}' inherits
+          or extends it — 1-2 sentences maximum.
+        - If you mention a sibling component, write 1 sentence and add
+          '→ See: [SiblingName]' — do not write its API details here.
+        - Begin the document with a 1-2 paragraph overview that specifically answers:
+          "What is {feat_name}?", "When should I use it?", "What makes it distinct?"
+
         Follow this Table of Contents structure exactly:
         {json.dumps(outline, indent=2)}
 
@@ -350,32 +396,42 @@ def main():
         Do NOT invent non-existent APIs or parameters:
         {json.dumps(specs, indent=2)}
 
-        Writing Guidelines:
+        WRITING STANDARD — each section and subsection must meet ALL of these:
+        1. INTRODUCTION PARAGRAPH: Every section starts with 1-2 sentences explaining
+           the overall purpose of that section in practical terms.
+        2. API METHOD COVERAGE: For every non-trivial API method in this feature:
+           - WHAT: What does this method do? (1 sentence)
+           - WHY: When and why would a developer call this? (1-2 sentences)
+           - HOW: Explain each parameter by name, type, and meaning. Explain the
+             return value. Note any important side effects, preconditions, or errors.
+           - CODE: A complete, compilable C++ code snippet showing realistic usage.
+             Code must use only the API signatures provided in the spec above.
+        3. SUBSECTION DEPTH: Each ### subsection must be self-contained. A developer
+           reading only that subsection should be able to use that API correctly.
+        4. CODE EXAMPLES: Every section must contain at least one realistic code example.
+           Show the full context: create the object, configure it, add it to scene, etc.
+        5. NOTES AND WARNINGS: Use blockquotes (> Note: or > Warning:) for non-obvious
+           behavior, performance implications, or deprecated APIs.
+        6. COMPLETENESS GOAL: A developer reading only this document should be able to
+           write a basic working application using the '{feat_name}' feature.
         - Write entirely in valid GitHub Flavored Markdown.
         - Use ## for section titles and ### for sub-sections.
-        - Each section must be DETAILED and THOROUGH - do not summarize, explain fully.
-        - For every important API method: explain WHAT it does, WHY you'd use it, and HOW
-          to call it correctly (parameters, return value, side effects).
-        - Include at least one complete, realistic C++ code example per section.
-          Code examples MUST use only API signatures from the spec above.
-        - Highlight important notes, warnings, or best practices using blockquotes (> Note:).
-        - Target audience is application developers (not platform/engine developers).
         - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
         """
 
         response_md = client.generate(prompt, use_think=False)
         clean_md = strip_markdown_wrapping(response_md)
 
-        out_file = OUT_DRAFTS_DIR / f"{feat_name}.md"
+        out_file = tier_drafts_dir / f"{feat_name}.md"
         with open(out_file, "w", encoding="utf-8") as f:
             f.write(clean_md)
 
         mode_label = "[PATCH]" if args.patch else "[DRAFT]"
-        print(f"    [+] {mode_label} Documentation exported → {out_file.name}")
+        print(f"    [+] {mode_label} Documentation exported → {out_file.relative_to(CACHE_DIR)}")
         
     print(f"\n=================================================================")
     print(f" Stage C Complete! Native markdown drafts exported to:")
-    print(f" {OUT_DRAFTS_DIR}")
+    print(f" {tier_drafts_dir}")
     print("=================================================================")
 
 if __name__ == "__main__":

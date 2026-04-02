@@ -299,21 +299,30 @@ def main():
                         help="Skip LLM review for FAIL documents.")
     parser.add_argument("--no-retry", action="store_true",
                         help="Skip auto-regeneration retry loop for FAIL documents.")
+    parser.add_argument("--tier", type=str, choices=["app", "platform"], default="app",
+                        help="Documentation tier: matches the tier used in Stage C.")
     args = parser.parse_args()
 
     print("=================================================================")
-    print(" Stage D: Hallucination Validation Engine                       ")
+    print(f" Stage D: Hallucination Validation Engine [{args.tier.upper()}]")
     print("=================================================================")
+
+    # 티어별 드래프트 읽기/검증 출력 경로
+    tier_drafts_dir = DRAFTS_DIR / args.tier
+    tier_validated_dir = OUT_VALIDATED_DIR / args.tier
 
     # 디렉터리 준비
     OUT_REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    OUT_VALIDATED_DIR.mkdir(parents=True, exist_ok=True)
+    tier_validated_dir.mkdir(parents=True, exist_ok=True)
 
     # Doxygen DB 구축
     full_names, simple_names = build_doxygen_symbol_set()
 
     # 검증 대상 파일 수집 (Index.md 제외)
-    md_files = sorted([p for p in DRAFTS_DIR.glob("*.md") if p.name != "Index.md"])
+    if not tier_drafts_dir.exists():
+        print(f"No markdown drafts found in {tier_drafts_dir}. Run Stage C --tier {args.tier} first.")
+        return
+    md_files = sorted([p for p in tier_drafts_dir.glob("*.md") if p.name != "Index.md"])
     if not md_files:
         print("No markdown drafts found in cache/markdown_drafts/. Run Stage C first.")
         return
@@ -351,9 +360,9 @@ def main():
                 verdict = "FAIL"
                 stats["fail"] += 1
 
-        # PASS / WARN / LOW_CONTENT → validated_drafts/ 복사
+        # PASS / WARN / LOW_CONTENT → validated_drafts/{tier}/ 복사
         if verdict in ("PASS", "WARN", "LOW_CONTENT"):
-            shutil.copy2(md_path, OUT_VALIDATED_DIR / md_path.name)
+            shutil.copy2(md_path, tier_validated_dir / md_path.name)
             copy_status = "copied"
         else:
             copy_status = "blocked"
@@ -415,8 +424,8 @@ def main():
                     still_failing.append(entry)
                     continue
 
-                # 새 draft 덯어쓰기
-                draft_path = DRAFTS_DIR / f"{feat_name}.md"
+                # 새 draft 덮어쓰기
+                draft_path = tier_drafts_dir / f"{feat_name}.md"
                 draft_path.write_text(new_md, encoding="utf-8")
 
                 # 재검증
@@ -450,9 +459,9 @@ def main():
                         r["copy_status"] = "copied" if new_verdict != "FAIL" else "blocked"
                         break
 
-                # PASS/WARN/LOW_CONTENT 이면 validated_drafts에 복사
+                # PASS/WARN/LOW_CONTENT 이면 validated_drafts/{tier}에 복사
                 if new_verdict != "FAIL":
-                    shutil.copy2(draft_path, OUT_VALIDATED_DIR / f"{feat_name}.md")
+                    shutil.copy2(draft_path, tier_validated_dir / f"{feat_name}.md")
                     stats[new_verdict.lower()] = stats.get(new_verdict.lower(), 0) + 1
                     stats["fail"] = max(0, stats["fail"] - 1)
                 else:
@@ -483,7 +492,7 @@ def main():
     print(f" Results: PASS={stats['pass']}, WARN={stats['warn']}, "
           f"FAIL={stats['fail']}, LOW_CONTENT={stats['low_content']} / {total} files")
     print(f" Report  : {REPORT_PATH}")
-    print(f" Validated: {OUT_VALIDATED_DIR}")
+    print(f" Validated: {tier_validated_dir}")
     print("=================================================================")
 
 

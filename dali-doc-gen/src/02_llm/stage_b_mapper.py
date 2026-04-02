@@ -112,10 +112,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="Hard limit processing count (useful for fast-path sandbox testing to save quotas).")
     parser.add_argument("--features", type=str, default="", help="Comma-separated list of features to process exclusively.")
+    parser.add_argument("--tier", type=str, choices=["app", "platform"], default="app",
+                        help="Documentation tier: 'app' (public-api only) or 'platform' (all tiers).")
     args = parser.parse_args()
     
     print("=================================================================")
-    print(" Initiating Stage B: Generative Content Mapper (TOC Outlining)   ")
+    print(f" Initiating Stage B: Generative Content Mapper (TOC Outlining) [{args.tier.upper()}]")
     print("=================================================================")
 
     feature_list = load_json(CLASSIFIED_MAP_PATH)
@@ -175,6 +177,27 @@ def main():
         in terms of how View exposes or wraps those capabilities, NOT raw Actor usage.
         """
 
+        # ── Tier context 주입 ───────────────────────────────────────────
+        if args.tier == "app":
+            tier_context = """
+        TIER CONSTRAINT — APP GUIDE:
+        Design sections for APPLICATION DEVELOPERS only.
+        - Do NOT include sections about engine internals, integration hooks, platform
+          extension points, or devel-api lifecycle management.
+        - Focus entirely on public-api usage: how to create, configure, and use this
+          feature to build apps.
+        - Do not design a section for 'Extending' or 'Subclassing' this feature unless
+          it is a direct app-developer pattern (e.g. CustomActor is for app devs).
+        """
+        else:
+            tier_context = """
+        TIER CONSTRAINT — PLATFORM GUIDE:
+        Design sections for PLATFORM/ENGINE DEVELOPERS.
+        - Include sections on internal architecture, lifecycle, thread safety, and
+          integration API usage where relevant.
+        - You may include both public-api and devel-api/integration-api patterns.
+        """
+
         # ── Taxonomy context 주입 ────────────────────────────────────────
         tax_entry = taxonomy.get(feat_name, {})
         tree_decision = tax_entry.get("tree_decision", "flat")
@@ -209,10 +232,19 @@ def main():
         You are a senior technical writer documenting the Samsung DALi GUI framework.
         Design a logical Table of Contents (TOC) layout for the feature module '{feat_name}'.
         {view_context}
+        {tier_context}
         {taxonomy_context}
         Context:
         - Target Audience API Tiers: {tiers}
         - Key API Methods/Classes: {json.dumps(apis, indent=2)}
+
+        SCOPE RULES for TOC design:
+        - Design sections ONLY for the '{feat_name}' feature itself.
+        - Do NOT design sections that primarily explain a parent class or sibling components.
+        - The first section must introduce '{feat_name}' specifically — not a general
+          overview of the parent category.
+        - Do NOT design sections for 'Extending' or 'Subclassing' '{feat_name}' unless it
+          is a documented app-developer pattern for this specific feature.
 
         Based on the actual complexity and breadth of this feature module, decide the
         appropriate number of sections yourself (between 3 and 10).

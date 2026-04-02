@@ -91,7 +91,7 @@ def run_script(script_path, args_list):
     subprocess.check_call(cmd)
 
 
-def compute_incremental_targets():
+def compute_incremental_targets(tier="app"):
     """
     구 taxonomy.old ↔ 신 taxonomy 를 비교하여
     needs_regen / needs_patch 집합을 반환합니다. (원칙 1, 2, 3)
@@ -139,16 +139,17 @@ def compute_incremental_targets():
                     needs_regen.add(parent)
 
     # ── 삭제된 피처: Draft 제거만 하고 재생성 없음 ───────────────────────────
+    tier_validated_dir = DRAFTS_DIR / tier
     for feat_id in old_tax:
         if feat_id not in new_tax:
-            draft = DRAFTS_DIR / f"{feat_id}.md"
+            draft = tier_validated_dir / f"{feat_id}.md"
             if draft.exists():
                 draft.unlink()
                 print(f"  [-] Removed obsolete draft: '{feat_id}'")
 
     # ── needs_regen 피처의 Draft 파일 삭제 (Stage B 재실행 전 반드시 선행) ───
     for feat_id in needs_regen:
-        draft = DRAFTS_DIR / f"{feat_id}.md"
+        draft = tier_validated_dir / f"{feat_id}.md"
         if draft.exists():
             draft.unlink()
             print(f"  [x] Invalidated draft for regen: '{feat_id}'")
@@ -262,7 +263,7 @@ def main():
         # ── Incremental Update 분류 로직 ──────────────────────────────────
         if args.mode == "update":
             print("  [*] Update Mode: Computing incremental deltas...")
-            needs_regen, needs_patch = compute_incremental_targets()
+            needs_regen, needs_patch = compute_incremental_targets(tier=current_tier)
 
             # --features 가 지정된 경우: 증분 결과를 해당 feature 로만 필터링
             # (전체 증분 로직은 동일하게 동작, 처리 범위만 제한)
@@ -289,14 +290,15 @@ def main():
                 for f in sorted(needs_regen):
                     print(f"          • {f}")
 
-                regen_args = ["--features", ",".join(needs_regen)]
+                regen_args = ["--tier", current_tier, "--features", ",".join(needs_regen)]
                 if args.limit > 0:
                     regen_args += ["--limit", str(args.limit)]
 
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_a_classifier.py", [])
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_b_mapper.py", regen_args)
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_c_writer.py", regen_args)
-                run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py", [])
+                run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py",
+                           ["--tier", current_tier])
 
             # ── needs_patch: Stage C (patch) → D ─────────────────────────
             if needs_patch:
@@ -305,6 +307,7 @@ def main():
                     print(f"          • {f}")
 
                 patch_args = [
+                    "--tier", current_tier,
                     "--patch",
                     "--patch-features", ",".join(needs_patch),
                 ]
@@ -312,11 +315,12 @@ def main():
                     patch_args += ["--limit", str(args.limit)]
 
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_c_writer.py", patch_args)
-                run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py", [])
+                run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py",
+                           ["--tier", current_tier])
 
         else:
             # ── Full 생성 모드 ─────────────────────────────────────────────
-            stage_args = []
+            stage_args = ["--tier", current_tier]
             if args.limit > 0:
                 stage_args += ["--limit", str(args.limit)]
             if args.features:
@@ -325,7 +329,8 @@ def main():
             run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_a_classifier.py", [])
             run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_b_mapper.py", stage_args)
             run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_c_writer.py", stage_args)
-            run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py", [])
+            run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py",
+                       ["--tier", current_tier])
 
         # ── Phase 3: 렌더링 (Tier별 무조건 실행) ─────────────────────────
         print(f"\n--- [Phase 3] Docusaurus Rendering for {current_tier} ---")
