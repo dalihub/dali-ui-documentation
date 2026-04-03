@@ -10,6 +10,23 @@ name: "E2E Incremental Update Test (run_extract_all simulation)"
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'LLM & Repo environment'
+        required: true
+        default: 'external'
+        type: choice
+        options:
+          - external
+          - internal
+      tier:
+        description: 'Documentation tier'
+        required: false
+        default: 'app'
+        type: choice
+        options:
+          - app
+          - platform
+          - all
       target_features:
         description: 'Comma-separated feature list (e.g. view,animation,image-view)'
         required: false
@@ -22,15 +39,6 @@ on:
         description: 'How many commits to roll back for full-gen simulation'
         required: false
         default: '30'
-      tier:
-        description: 'Documentation tier'
-        required: false
-        default: 'app'
-        type: choice
-        options:
-          - app
-          - platform
-          - all
 
 jobs:
   e2e-test:
@@ -48,13 +56,11 @@ jobs:
       - name: Install system dependencies (Doxygen)
         run: sudo apt-get update && sudo apt-get install -y doxygen
 
-      # doc_config.yaml의 llm_environment를 external로 강제 설정
-      # (GitHub Actions는 외부 환경이므로 Gemini API 사용)
-      - name: Set environment to external
+      - name: Set LLM environment
         run: |
-          sed -i 's/llm_environment: "internal"/llm_environment: "external"/' \
+          sed -i 's/llm_environment: ".*"/llm_environment: "${{ github.event.inputs.environment }}"/' \
             dali-doc-gen/config/doc_config.yaml
-          echo "[config] llm_environment set to external"
+          echo "[config] llm_environment set to ${{ github.event.inputs.environment }}"
 
       # Step 0: DALi repos 클론
       - name: Clone DALi repositories

@@ -12,6 +12,14 @@ on:
         - app
         - platform
         - all
+      environment:
+        description: 'LLM & Repo environment'
+        required: true
+        default: 'external'
+        type: choice
+        options:
+        - external
+        - internal
       limit:
         description: 'Test limit per pipeline (0 for unlimited)'
         required: false
@@ -27,15 +35,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
       - name: Install system dependencies (Doxygen)
         run: sudo apt-get update && sudo apt-get install -y doxygen
 
-      - name: Set environment to external
+      - name: Set LLM environment
         run: |
-          sed -i 's/llm_environment: "internal"/llm_environment: "external"/' \
+          sed -i 's/llm_environment: ".*"/llm_environment: "${{ github.event.inputs.environment }}"/' \
             dali-doc-gen/config/doc_config.yaml
+          echo "[config] llm_environment set to ${{ github.event.inputs.environment }}"
 
       - name: Run Pipeline (Full Mode)
         env:
@@ -43,7 +52,9 @@ jobs:
           INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
         run: |
           cd dali-doc-gen
-          python src/pipeline.py --mode full --tier ${{ github.event.inputs.tier }} --limit ${{ github.event.inputs.limit }}
+          python src/pipeline.py --mode full \
+            --tier ${{ github.event.inputs.tier }} \
+            --limit ${{ github.event.inputs.limit }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
