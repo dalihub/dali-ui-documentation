@@ -105,8 +105,10 @@ def render_tree_node(feat_key, taxonomy, indent=0, visited=None,
 
     lines.append(link)
 
-    # 자식 노드 재귀 렌더링
+    # 자식 노드 재귀 렌더링 — parent 필드가 이 노드를 가리키는 경우만
     for child_key in children:
+        if taxonomy.get(child_key, {}).get("parent") != feat_key:
+            continue  # 실제 parent가 다른 feature — 중복 방지
         lines.extend(render_tree_node(child_key, taxonomy, indent + 1, visited,
                                       validated_dir, drafts_dir))
 
@@ -210,9 +212,12 @@ def main():
         else:
             lines.append(f"- **{display_name}** *(not yet generated)*")
 
-        # 자식 목록도 들여쓰기로 포함
+        # 자식 목록: taxonomy의 parent 필드가 이 feature를 가리키는 경우만 표시
+        # (children 목록에 있더라도 parent가 다른 feature면 중복 방지를 위해 건너뜀)
         for child_key in children:
             child_entry = taxonomy.get(child_key, {})
+            if child_entry.get("parent") != feat_key:
+                continue  # 실제 parent가 다른 feature — 거기서 렌더링됨
             child_display = child_entry.get("display_name", child_key)
             child_file = child_entry.get("doc_file", f"{child_key}.md")
             if doc_exists(child_key, tier_validated, tier_drafts):
