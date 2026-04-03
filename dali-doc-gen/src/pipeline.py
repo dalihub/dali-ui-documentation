@@ -10,6 +10,25 @@ import json
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 
+# ── venv 자동 생성 및 재실행 ────────────────────────────────────────────────
+# 1. venv가 없으면 생성 후 requirements.txt 설치
+# 2. 현재 Python이 venv Python이 아니면 venv Python으로 재실행 (os.execv)
+# → 어떤 Python으로 실행해도 항상 venv 환경에서 실행됨
+_venv_python = PROJECT_ROOT / "venv" / "bin" / "python"
+_requirements = PROJECT_ROOT / "requirements.txt"
+
+if not _venv_python.exists():
+    print("[pipeline] venv not found — creating venv and installing requirements...")
+    subprocess.check_call([sys.executable, "-m", "venv", str(PROJECT_ROOT / "venv")])
+    if _requirements.exists():
+        subprocess.check_call([str(_venv_python), "-m", "pip", "install",
+                               "-r", str(_requirements), "--quiet"])
+    print("[pipeline] venv ready.")
+
+if Path(sys.executable).resolve() != _venv_python.resolve():
+    os.execv(str(_venv_python), [str(_venv_python)] + sys.argv)
+# ────────────────────────────────────────────────────────────────────────────
+
 TAXONOMY_PATH         = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 TAXONOMY_OLD_PATH     = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json.old"
 DRAFTS_DIR            = CACHE_DIR / "validated_drafts"
@@ -86,7 +105,11 @@ def save_last_run_commits():
 
 def run_script(script_path, args_list):
     """지정된 파이썬 스크립트를 독립 프로세스로 실행합니다."""
-    cmd = [sys.executable, str(script_path)] + args_list
+    # sys.executable이 venv symlink를 resolve해서 시스템 Python을 가리킬 수 있으므로
+    # 항상 venv Python 경로를 명시적으로 사용
+    venv_py = PROJECT_ROOT / "venv" / "bin" / "python"
+    python_exe = str(venv_py) if venv_py.exists() else sys.executable
+    cmd = [python_exe, str(script_path)] + args_list
     print(f"\n▶ Executing: {' '.join(cmd)}")
     subprocess.check_call(cmd)
 

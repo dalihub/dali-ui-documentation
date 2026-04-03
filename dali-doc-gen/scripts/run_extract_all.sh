@@ -24,6 +24,11 @@ echo "=========================================================="
 echo "   [TEST HARNESS] Incremental Update E2E Simulation       "
 echo "=========================================================="
 
+# 스크립트 위치에 상관없이 dali-doc-gen/ 루트를 기준으로 경로 결정
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_DIR"
+
 if [ -z "$GEMINI_API_KEY" ] && [ -z "$INTERNAL_API_KEY" ]; then
     echo "⚠️  경고: GEMINI_API_KEY 변수가 없습니다."
 fi
