@@ -158,6 +158,14 @@ def main():
                 continue
             top_level_roots.append(feat_key)
 
+    # 어떤 tree의 child로 등록된 항목은 최상위에서 제외
+    # (tree 구조 안에 있는 항목이 우선 — 최상위 중복 노출 방지)
+    child_keys_in_trees = set()
+    for feat_key in top_level_roots:
+        for child_key in taxonomy.get(feat_key, {}).get("children", []):
+            child_keys_in_trees.add(child_key)
+    top_level_roots = [k for k in top_level_roots if k not in child_keys_in_trees]
+
     # display_name 알파벳 순 정렬
     top_level_roots.sort(key=lambda k: taxonomy.get(k, {}).get("display_name", k).lower())
 
@@ -186,10 +194,7 @@ def main():
             lines.append(f"- **{display_name}** *(not yet generated)*")
 
         # 자식 목록도 들여쓰기로 포함
-        # top_level_roots에 있는 항목은 이미 최상위로 렌더링되므로 중복 표시 제외
         for child_key in children:
-            if child_key in top_level_roots:
-                continue
             child_entry = taxonomy.get(child_key, {})
             child_display = child_entry.get("display_name", child_key)
             child_file = child_entry.get("doc_file", f"{child_key}.md")
