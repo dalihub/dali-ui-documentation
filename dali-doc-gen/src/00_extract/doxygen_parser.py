@@ -52,10 +52,11 @@ def parse_description(desc_elem):
     warnings = []
     returns = ""
     param_docs = {}
-    
+    code_examples = []
+
     if desc_elem is None:
-        return "", param_docs, notes, warnings, returns, ""
-        
+        return "", param_docs, notes, warnings, returns, "", code_examples
+
     for child in desc_elem.findall(".//simplesect"):
         kind = child.get("kind")
         sect_text = clean_text(extract_text_recursive(child))
@@ -74,16 +75,26 @@ def parse_description(desc_elem):
             param_desc = clean_text(extract_text_recursive(desc_elem_inner))
             param_docs[param_name] = param_desc
 
+    # @code~@endcode 블록 추출 (<programlisting> 태그)
+    for listing in desc_elem.findall(".//programlisting"):
+        code_lines = []
+        for codeline in listing.findall("codeline"):
+            line_text = extract_text_recursive(codeline)
+            code_lines.append(line_text)
+        code_text = "\n".join(code_lines).strip()
+        if code_text:
+            code_examples.append(code_text)
+
     # Clean text without simplesect and parameterlist
     main_text = clean_text(extract_text_recursive(desc_elem, skip_tags=["simplesect", "parameterlist"]))
-    
+
     since = ""
     since_match = re.search(r'@?SINCE_?([\d_\.]+)', main_text)
     if since_match:
         since = since_match.group(1).replace("_", ".")
         main_text = re.sub(r'\s*@?SINCE_?[\d_\.]+\s*', ' ', main_text).strip()
 
-    return main_text, param_docs, notes, warnings, returns, since
+    return main_text, param_docs, notes, warnings, returns, since, code_examples
 
 def parse_member(memberdef, api_dirs):
     kind = memberdef.get("kind")
@@ -101,10 +112,10 @@ def parse_member(memberdef, api_dirs):
                 break
 
     brief_elem = memberdef.find("briefdescription")
-    brief, _, _, _, _, brief_since = parse_description(brief_elem)
-    
+    brief, _, _, _, _, brief_since, _ = parse_description(brief_elem)
+
     detailed_elem = memberdef.find("detaileddescription")
-    detailed, param_docs, notes, warnings, returns, detailed_since = parse_description(detailed_elem)
+    detailed, param_docs, notes, warnings, returns, detailed_since, code_examples = parse_description(detailed_elem)
     
     since = brief_since if brief_since else detailed_since
 
@@ -150,6 +161,8 @@ def parse_member(memberdef, api_dirs):
             })
         if params:
             member_data["params"] = params
+        if code_examples:
+            member_data["code_examples"] = code_examples
 
     return member_data
 
@@ -174,10 +187,10 @@ def parse_compound(xml_path, api_dirs):
                 break
 
     brief_elem = compounddef.find("briefdescription")
-    brief, _, _, _, _, brief_since = parse_description(brief_elem)
-    
+    brief, _, _, _, _, brief_since, _ = parse_description(brief_elem)
+
     detailed_elem = compounddef.find("detaileddescription")
-    detailed, _, notes, warnings, _, detailed_since = parse_description(detailed_elem)
+    detailed, _, notes, warnings, _, detailed_since, _ = parse_description(detailed_elem)
 
     since = brief_since if brief_since else detailed_since
 

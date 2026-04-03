@@ -75,12 +75,23 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
                 for mb in comp.get("members", []):
                     if not isinstance(mb, dict):
                         continue
-                    specs.append({
+                    mb_spec = {
                         "name": f"{c_name}::{mb.get('name', '')}",
                         "kind": mb.get("kind", "function"),
                         "brief": mb.get("brief", ""),
                         "signature": mb.get("signature", "")
-                    })
+                    }
+                    if mb.get("params"):
+                        mb_spec["params"] = mb["params"]
+                    if mb.get("returns"):
+                        mb_spec["returns"] = mb["returns"]
+                    if mb.get("notes"):
+                        mb_spec["notes"] = mb["notes"]
+                    if mb.get("warnings"):
+                        mb_spec["warnings"] = mb["warnings"]
+                    if mb.get("code_examples"):
+                        mb_spec["code_examples"] = mb["code_examples"]
+                    specs.append(mb_spec)
                     if len(specs) >= max_apidocs_to_extract:
                         break
 
