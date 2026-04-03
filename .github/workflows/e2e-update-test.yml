@@ -1,0 +1,147 @@
+name: "E2E Incremental Update Test (run_extract_all simulation)"
+
+# run_extract_all.sh와 동일한 흐름:
+#   1. DALi repos를 HEAD~N으로 롤백
+#   2. Full 생성 (--skip-pull)
+#   3. output 백업
+#   4. Update 모드 실행 (repo_manager가 최신 HEAD로 pull)
+#   5. 결과 비교용 artifact 업로드
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_features:
+        description: 'Comma-separated feature list (e.g. view,animation,image-view)'
+        required: false
+        default: 'view,animation,image-view'
+      limit:
+        description: 'Max features per stage (0 = unlimited)'
+        required: false
+        default: '3'
+      rollback_depth:
+        description: 'How many commits to roll back for full-gen simulation'
+        required: false
+        default: '30'
+      tier:
+        description: 'Documentation tier'
+        required: false
+        default: 'app'
+        type: choice
+        options:
+          - app
+          - platform
+          - all
+
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dali-guide repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies (Doxygen)
+        run: sudo apt-get update && sudo apt-get install -y doxygen
+
+      # doc_config.yaml의 llm_environment를 external로 강제 설정
+      # (GitHub Actions는 외부 환경이므로 Gemini API 사용)
+      - name: Set environment to external
+        run: |
+          sed -i 's/llm_environment: "internal"/llm_environment: "external"/' \
+            dali-doc-gen/config/doc_config.yaml
+          echo "[config] llm_environment set to external"
+
+      # Step 0: DALi repos 클론
+      - name: Clone DALi repositories
+        run: |
+          mkdir -p dali-doc-gen/repos
+          for pkg in dali-core dali-adaptor; do
+            if [ ! -d "dali-doc-gen/repos/$pkg" ]; then
+              git clone --depth 200 https://github.com/dalihub/$pkg.git dali-doc-gen/repos/$pkg
+            fi
+          done
+          if [ ! -d "dali-doc-gen/repos/dali-ui" ]; then
+            git clone --depth 200 -b devel https://github.com/dalihub/dali-ui.git dali-doc-gen/repos/dali-ui
+          fi
+
+      # Step 1: repos를 HEAD~N으로 롤백 (full-gen 시뮬레이션)
+      - name: Rollback repos to HEAD~${{ github.event.inputs.rollback_depth }}
+        run: |
+          DEPTH=${{ github.event.inputs.rollback_depth }}
+          for pkg in dali-core dali-adaptor; do
+            echo "  > Rewinding $pkg to HEAD~$DEPTH..."
+            git -C dali-doc-gen/repos/$pkg checkout HEAD~$DEPTH
+          done
+          echo "  > Rewinding dali-ui to HEAD~$DEPTH..."
+          git -C dali-doc-gen/repos/dali-ui checkout HEAD~$DEPTH
+
+      # Step 2: Full 생성 (--skip-pull: 이미 롤백된 상태 유지)
+      - name: Run Full Generation
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd dali-doc-gen
+          ARGS="--mode full --tier ${{ github.event.inputs.tier }} --skip-pull"
+          ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          if [ -n "${{ github.event.inputs.target_features }}" ]; then
+            ARGS="$ARGS --features ${{ github.event.inputs.target_features }}"
+          fi
+          echo "Running: python src/pipeline.py $ARGS"
+          python src/pipeline.py $ARGS
+
+      # Step 3: Full 생성 결과 백업 (업로드)
+      - name: Upload Full Generation output as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-full-gen-${{ github.run_id }}
+          path: |
+            app-guide/docs/
+            platform-guide/docs/
+          if-no-files-found: ignore
+
+      # Step 4: repos를 최신 HEAD로 되돌리기
+      - name: Restore repos to latest HEAD
+        run: |
+          for pkg in dali-core dali-adaptor; do
+            git -C dali-doc-gen/repos/$pkg checkout master
+            git -C dali-doc-gen/repos/$pkg pull
+          done
+          git -C dali-doc-gen/repos/dali-ui checkout devel
+          git -C dali-doc-gen/repos/dali-ui pull
+
+      # Step 5: Incremental Update 실행 (repo_manager가 내부적으로 pull 처리)
+      - name: Run Incremental Update
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd dali-doc-gen
+          ARGS="--mode update --tier ${{ github.event.inputs.tier }}"
+          ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          if [ -n "${{ github.event.inputs.target_features }}" ]; then
+            ARGS="$ARGS --features ${{ github.event.inputs.target_features }}"
+          fi
+          echo "Running: python src/pipeline.py $ARGS"
+          python src/pipeline.py $ARGS
+
+      # Step 6: Update 결과 업로드 (full과 비교용)
+      - name: Upload Update output as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-update-gen-${{ github.run_id }}
+          path: |
+            app-guide/docs/
+            platform-guide/docs/
+          if-no-files-found: ignore
+
+      # Step 7: validation report 업로드
+      - name: Upload validation reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-reports-${{ github.run_id }}
+          path: dali-doc-gen/cache/validation_report/
+          if-no-files-found: ignore
