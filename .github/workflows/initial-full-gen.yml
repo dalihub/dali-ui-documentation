@@ -13,13 +13,13 @@ on:
         - platform
         - all
       environment:
-        description: 'LLM & Repo environment'
+        description: 'LLM environment (Repo URL is auto-detected: external in CI, internal locally)'
         required: true
         default: 'internal'
         type: choice
         options:
-        - external
         - internal
+        - external
       limit:
         description: 'Test limit per pipeline (0 for unlimited)'
         required: false

@@ -19,7 +19,16 @@ def load_repo_config():
         return yaml.safe_load(f)
 
 def load_environment():
-    """doc_config.yaml에서 llm_environment(internal/external)를 읽어 반환."""
+    """doc_config.yaml에서 llm_environment(internal/external)를 읽어 반환.
+    
+    CI 환경(GitHub Actions 등)에서는 자동으로 'external'을 사용하여
+    사외 GitHub HTTPS URL을 사용하도록 한다.
+    로컬 환경에서는 doc_config.yaml 설정을 따른다.
+    """
+    # CI 환경에서는 자동으로 external 사용 (SSH 키 문제 회피)
+    if os.environ.get("CI", "").lower() == "true":
+        return "external"
+    
     doc_config_path = root_path / "config" / "doc_config.yaml"
     try:
         with open(doc_config_path, "r", encoding="utf-8") as f:

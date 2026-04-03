@@ -11,13 +11,13 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'LLM & Repo environment'
+        description: 'LLM environment (Repo URL is auto-detected: external in CI, internal locally)'
         required: true
-        default: 'external'
+        default: 'internal'
         type: choice
         options:
-          - external
           - internal
+          - external
       tier:
         description: 'Documentation tier'
         required: false
