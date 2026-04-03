@@ -207,6 +207,20 @@ def main():
                 if "merge_into" in mf:
                     feature_map[feat_key]["merge_into"] = mf["merge_into"]
                 print(f"  > Force-injected new feature '{feat_key}'.")
+
+            # base_class가 있고 apis가 비어있으면, parsed doxygen에서 자동 매핑
+            # 정확히 base_class 이름이거나 base_class:: 로 시작하는 compound만 포함
+            # (예: "Dali::Ui::View", "Dali::Ui::View::Property" 포함,
+            #      "Dali::Ui::ImageView" 등 서브클래스는 제외)
+            base_class = mf.get("base_class", "")
+            if base_class and not feature_map[feat_key].get("apis"):
+                auto_apis = [
+                    name for name in all_compounds_by_name
+                    if name == base_class or name.startswith(base_class + "::")
+                ]
+                if auto_apis:
+                    feature_map[feat_key]["apis"] = auto_apis
+                    print(f"    > Auto-populated {len(auto_apis)} API(s) from base_class '{base_class}': {auto_apis}")
     # The actual deep mapping will evaluate these clusters next phase.
     print("Cross-referencing logic skipped for heuristic bounds (to be completed in depth by LLM or later layers).")
 
@@ -238,6 +252,8 @@ def main():
             existing = class_feature_map.get(cls_name)
             if existing is None:
                 class_feature_map[cls_name] = feat_name
+            elif existing == "uncategorized_ambiguous_root" and feat_name != "uncategorized_ambiguous_root":
+                class_feature_map[cls_name] = feat_name  # named feature가 uncategorized보다 항상 우선
             elif is_suppressed and not feature_map.get(existing, {}).get("suppress_doc", False):
                 pass  # 이미 suppress 아닌 feature가 소유 중 — 유지
             elif not is_suppressed and feature_map.get(existing, {}).get("suppress_doc", False):
