@@ -1,18 +1,21 @@
-llm_environment: "external" # Toggle between "internal" and "external"
+llm_environment: "internal" # Toggle between "internal" and "external"
 
 models:
   internal:
-    api_base: "http://internal.company.api/v1/generate"
-    think: "custom-samsung-think-model"
-    instruct: "custom-samsung-instruct-model"
-    api_key_env: "INTERNAL_API_KEY" # Name of the shell/env variable holding the key
-    rate_limit_delay_sec: 6 # E.g., 6 seconds delay for 10 requests per minute
+    api_base: "https://inference-webtrial-api.shuttle.sr-cloud.com"
+    think_endpoint: "gauss2-3-37b-think"
+    instruct_endpoint: "gauss2-3-37b-instruct"
+    think: "gauss2.3-37b-think"
+    instruct: "gauss2.3-37b"
+    api_key_env: "INTERNAL_API_KEY" # Base64 encoded "ACCESS_KEY:SECRET_KEY"
+    auth_type: "basic" # Shuttle API uses Basic Auth
+    rate_limit_delay_sec: 4 # ~15 RPM for safety (API limit: 20 RPM)
     max_retries: 10
     
   external:
     api_base: "https://generativelanguage.googleapis.com/v1beta/models"
-    think: "gemini-3.1-flash-lite-preview" # Powerful thinking model
-    instruct: "gemini-3.1-flash-lite-preview" # Faster, cheaper drafting model
+    think: "gemini-3.1-flash-lite-preview"
+    instruct: "gemini-3.1-flash-lite-preview"
     api_key_env: "GEMINI_API_KEY"
-    rate_limit_delay_sec: 6 # Safety threshold for Google Free Tier ~15 RPM
+    rate_limit_delay_sec: 6
     max_retries: 10

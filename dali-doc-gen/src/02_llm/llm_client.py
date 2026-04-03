@@ -3,7 +3,11 @@ import time
 import json
 import yaml
 import requests
+import urllib3
 from pathlib import Path
+
+# Disable SSL warnings for internal networks with self-signed certificates
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Absolute Path Context Setup
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -38,6 +42,13 @@ class LLMClient:
         self.think_model = self.settings.get("think")
         self.instruct_model = self.settings.get("instruct")
         
+        # Shuttle API uses separate endpoints per model type
+        self.think_endpoint = self.settings.get("think_endpoint", "")
+        self.instruct_endpoint = self.settings.get("instruct_endpoint", "")
+        
+        # Auth type: "basic" for Shuttle API, "bearer" for others
+        self.auth_type = self.settings.get("auth_type", "bearer")
+        
         # Pull defensive limits (Rate Limiting)
         self.delay_sec = self.settings.get("rate_limit_delay_sec", 4)
         self.max_retries = self.settings.get("max_retries", 3)
@@ -67,21 +78,35 @@ class LLMClient:
         except (KeyError, IndexError):
             return f"Error extracting Gemini Content payload: {res_json}"
 
-    def _call_internal(self, prompt, model_name):
+    def _call_internal(self, prompt, model_name, use_think=False):
         """
         Private dispatcher routing toward Internal Custom OpenAI format clusters.
+        Supports Shuttle API with Basic Auth and per-model endpoints.
         """
-        url = self.api_base
+        # Determine endpoint based on model type (Shuttle API uses separate endpoints)
+        if self.think_endpoint and self.instruct_endpoint:
+            endpoint = self.think_endpoint if use_think else self.instruct_endpoint
+            url = f"{self.api_base}/{endpoint}/v1/chat/completions"
+        else:
+            url = f"{self.api_base}/v1/chat/completions"
+        
+        # Set authorization header based on auth_type
+        if self.auth_type == "basic":
+            auth_header = f'Basic {self.api_key}'
+        else:
+            auth_header = f'Bearer {self.api_key}'
+        
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': f'Bearer {self.api_key}'
+            'Authorization': auth_header
         }
         payload = {
             "model": model_name,
-            "messages": [{"role": "user", "content": prompt}]
+            "messages": [{"role": "user", "content": prompt}],
+            "stream": False
         }
         
-        response = requests.post(url, headers=headers, json=payload, timeout=60)
+        response = requests.post(url, headers=headers, json=payload, timeout=120, verify=False)
         response.raise_for_status()
         
         res_json = response.json()
@@ -111,7 +136,7 @@ class LLMClient:
                 if self.env == "external":
                     response_text = self._call_gemini(prompt, model_name)
                 else:
-                    response_text = self._call_internal(prompt, model_name)
+                    response_text = self._call_internal(prompt, model_name, use_think)
                     
                 return response_text
                 
