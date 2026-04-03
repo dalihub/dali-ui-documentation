@@ -57,6 +57,14 @@ def doc_exists(feat_key, validated_dir=None, drafts_dir=None):
            (ddir / f"{feat_key}.md").exists()
 
 
+def notier_exists(feat_key, validated_dir=None, drafts_dir=None):
+    """이 tier에 스펙이 없어 stage_c가 .notier 마커를 남긴 경우 True."""
+    vdir = validated_dir if validated_dir is not None else VALIDATED_DIR
+    ddir = drafts_dir if drafts_dir is not None else DRAFTS_DIR
+    return (vdir / f"{feat_key}.notier").exists() or \
+           (ddir / f"{feat_key}.notier").exists()
+
+
 def render_tree_node(feat_key, taxonomy, indent=0, visited=None,
                      validated_dir=None, drafts_dir=None):
     """
@@ -84,9 +92,14 @@ def render_tree_node(feat_key, taxonomy, indent=0, visited=None,
     elif verdict == "LOW_CONTENT":
         badge = " 📄"
 
-    # 링크 생성: 파일이 있으면 링크, 없으면 일반 텍스트 (미생성 표시)
+    # 링크 생성: 3-way 구분
+    # 1) .md 있음 → 링크
+    # 2) .notier 있음 → 이 티어에 스펙 없음 → 숨김
+    # 3) 둘 다 없음 → 생성 예정 표시
     if doc_exists(feat_key, validated_dir, drafts_dir):
         link = f"{prefix}- [{display_name}]({doc_file}){badge}"
+    elif notier_exists(feat_key, validated_dir, drafts_dir):
+        return []   # 이 티어에 스펙 없음 — 인덱스에서 완전히 숨김
     else:
         link = f"{prefix}- {display_name}{badge} *(not yet generated)*"
 
@@ -153,6 +166,8 @@ def main():
     for feat_key, entry in taxonomy.items():
         if feat_key == "uncategorized_ambiguous_root":
             continue
+        if entry.get("suppress_doc"):
+            continue
         if entry.get("parent") is None and entry.get("tree_decision") != "leaf":
             if exclude_platform and entry.get("audience") == "platform":
                 continue
@@ -190,6 +205,8 @@ def main():
 
         if doc_exists(feat_key, tier_validated, tier_drafts):
             lines.append(f"- **[{display_name}]({doc_file})**")
+        elif notier_exists(feat_key, tier_validated, tier_drafts):
+            pass  # 이 티어에 스펙 없음 — 숨김
         else:
             lines.append(f"- **{display_name}** *(not yet generated)*")
 
@@ -200,6 +217,8 @@ def main():
             child_file = child_entry.get("doc_file", f"{child_key}.md")
             if doc_exists(child_key, tier_validated, tier_drafts):
                 lines.append(f"  - [{child_display}]({child_file})")
+            elif notier_exists(child_key, tier_validated, tier_drafts):
+                pass  # 숨김
             else:
                 lines.append(f"  - {child_display} *(not yet generated)*")
 

@@ -19,6 +19,8 @@ VALIDATED_DRAFTS_DIR = CACHE_DIR / "validated_drafts"
 CHANGED_APIS_PATH = CACHE_DIR / "changed_apis.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
+FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map.json"
+CLASS_FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "class_feature_map.json"
 
 def load_doc_config():
     if not DOC_CONFIG_PATH.exists():
@@ -190,15 +192,24 @@ def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
+def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
+                  owning_feature=None, class_feature_map=None):
     """
     Reverse Lookup Engine mapping arbitrary ambiguous node names back
     to precise C++ specification definitions pulled from Stage 1 Doxygen parsings.
 
     allowed_tiers: set of api_tier strings to include (e.g. {"public-api"}).
                    None means no filtering (all tiers included).
+    owning_feature: 현재 생성 중인 feature 이름. class_feature_map과 함께 사용하면
+                    다른 feature 소속 클래스를 foreign_classes로 분리한다.
+    class_feature_map: {class_name: feature_name} 역매핑.
+
+    반환: (specs, foreign_classes)
+      specs: 이 feature에 포함할 스펙 목록
+      foreign_classes: 다른 feature 소속으로 제외된 클래스 이름 목록
     """
     specs = []
+    foreign_classes = []
 
     # Build a simple lookup set from api_names_list for faster matching
     api_name_set = set(a.split("::")[-1] for a in api_names_list)
@@ -225,6 +236,16 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
             # Match on class name (e.g. "Dali::Actor" contains "Actor")
             is_class_match = any(a in c_name for a in api_names_list) or \
                              any(c_name.split("::")[-1] in api_name_set for _ in [1])
+
+            if not is_class_match:
+                continue
+
+            # class_feature_map이 있으면 다른 feature 소속 클래스를 foreign_classes로 분리
+            if class_feature_map and owning_feature:
+                mapped = class_feature_map.get(c_name)
+                if mapped and mapped != owning_feature:
+                    foreign_classes.append(c_name)
+                    continue
 
             if is_class_match:
                 specs.append({
@@ -255,7 +276,7 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
                         mb_spec["code_examples"] = mb["code_examples"]
                     specs.append(mb_spec)
 
-    return specs
+    return specs, foreign_classes
 
 def strip_markdown_wrapping(text):
     """
@@ -397,6 +418,26 @@ def main():
     else:
         print("[Taxonomy] feature_taxonomy.json not found — proceeding without tree context.")
 
+    # feature_map 로드 (suppress_doc / merge_into 판단용)
+    feature_map_list = load_json(FEATURE_MAP_PATH) or []
+    feature_map_index = {f["feature"]: f for f in feature_map_list}
+
+    # class_feature_map 로드 (foreign_classes 필터링용)
+    class_feature_map = {}
+    if CLASS_FEATURE_MAP_PATH.exists():
+        class_feature_map = load_json(CLASS_FEATURE_MAP_PATH) or {}
+        print(f"[ClassMap] Loaded {len(class_feature_map)} class→feature mappings.")
+    else:
+        print("[ClassMap] class_feature_map.json not found — skipping foreign class filtering.")
+
+    # merge_into 역매핑: target_feature → [source_feature, ...]
+    # 예: {"view": ["actors"]}
+    merge_sources = {}
+    for f in feature_map_list:
+        target = f.get("merge_into")
+        if target and f.get("suppress_doc"):
+            merge_sources.setdefault(target, []).append(f)
+
     client = LLMClient()
     OUT_DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
     
@@ -525,7 +566,7 @@ def main():
             existing_draft = existing_draft_path.read_text(encoding="utf-8")
 
             # 최신 API 스펙 (참조용, 티어 필터 적용)
-            specs = get_api_specs(packages, api_names, allowed_tiers)
+            specs, _ = get_api_specs(packages, api_names, allowed_tiers)
 
             # 멤버 레벨 변경 요약 생성
             change_summary = build_change_summary(api_names, changed_classes_info)
@@ -539,14 +580,87 @@ def main():
 
         # ── Full 생성 모드 ─────────────────────────────────────────────────
         else:
+            # suppress_doc 체크: taxonomy 또는 feature_map 어느 쪽이든 suppress이면 스킵
+            fm_entry = feature_map_index.get(feat_name, {})
+            if fm_entry.get("suppress_doc") or taxonomy.get(feat_name, {}).get("suppress_doc"):
+                print(f"\n[{idx+1}/{len(blueprints)}] SKIP '{feat_name}': suppress_doc=true")
+                continue
+
             if not outline:
                 print(f"\n[{idx+1}/{len(blueprints)}] Skipping '{feat_name}': No outline blueprints detected.")
                 continue
 
             print(f"\n[{idx+1}/{len(blueprints)}] Drafting comprehensive Markdown page for '{feat_name}'...")
 
-            specs = get_api_specs(packages, api_names, allowed_tiers)
+            specs, foreign_classes = get_api_specs(
+                packages, api_names, allowed_tiers,
+                owning_feature=feat_name,
+                class_feature_map=class_feature_map if class_feature_map else None
+            )
+
+            # 이 티어에 스펙이 없으면 .notier 마커 파일만 남기고 스킵
+            if not specs:
+                print(f"    [SKIP] '{feat_name}': no {args.tier} specs — writing .notier marker.")
+                (tier_drafts_dir / f"{feat_name}.notier").touch()
+                continue
+
             print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
+            if foreign_classes:
+                print(f"    [!] Excluded {len(foreign_classes)} foreign-feature class(es): {foreign_classes[:5]}"
+                      + (" ..." if len(foreign_classes) > 5 else ""))
+
+            # ── merge_into 처리: 이 feature가 다른 feature의 통합 대상인 경우 ──
+            inherited_specs = []
+            inherited_context = ""
+            sources = merge_sources.get(feat_name, [])
+            if sources:
+                for src in sources:
+                    src_specs_raw, _ = get_api_specs(
+                        src.get("packages", []), src.get("apis", []),
+                        allowed_tiers={"public-api"}
+                    )
+                    # View 메서드 이름 집합
+                    view_method_names = {
+                        s["name"].split("::")[-1]
+                        for s in specs
+                        if s.get("kind") != "class"
+                    }
+                    # View에 없는 것만 압축 형태(name+brief+signature)로 추출
+                    gap_specs = [
+                        {"name": s["name"],
+                         "brief": s.get("brief", ""),
+                         "signature": s.get("signature", "")}
+                        for s in src_specs_raw
+                        if s.get("kind") != "class"
+                        and s["name"].split("::")[-1] not in view_method_names
+                    ]
+                    inherited_specs.extend(gap_specs)
+                    print(f"    [+] Inherited from '{src['feature']}': "
+                          f"{len(gap_specs)} API(s) not in {feat_name} "
+                          f"(of {len(src_specs_raw)} total)")
+
+            if inherited_specs:
+                inherited_context = f"""
+        INHERITED API CONTEXT (from base class — NOT defined in {feat_name} directly):
+        The following APIs exist on the base class but are NOT part of {feat_name}'s own API.
+        {feat_name} inherits them. Rules:
+        - Do NOT write dedicated ## sections for these — weave into existing sections naturally.
+        - Mention them briefly when relevant (e.g., "inherited SetColor() controls opacity").
+        - Always use {feat_name} references in code examples, not the raw base class.
+        - If an inherited API has no practical relevance to {feat_name} usage, skip it.
+        {json.dumps(inherited_specs, indent=2)}
+        """
+
+            # foreign_classes 제외 지시 (spec 오염 방지)
+            foreign_context = ""
+            if foreign_classes:
+                foreign_list = "\n".join(f"  - {c}" for c in foreign_classes)
+                foreign_context = f"""
+        SCOPE BOUNDARY — DO NOT DOCUMENT THESE CLASSES:
+        The following classes appear in the codebase but belong to OTHER feature documents.
+        Do NOT describe, mention in detail, or write code examples using them:
+{foreign_list}
+        """
 
             # ── 토큰 초과 여부 판단: taxonomy oversized_single 또는 토큰 추정값 기반 ──
             tax_entry = taxonomy.get(feat_name, {})
@@ -568,6 +682,7 @@ def main():
         {view_context}
         {tier_context}
         {taxonomy_context}
+        {foreign_context}
 
         FOCUS AND SCOPE RULES:
         - Write ONLY about '{feat_name}'. Stay strictly within its feature boundary.
@@ -588,6 +703,7 @@ def main():
         name appears in the API specs list below. If a method name is not listed, do NOT use it —
         not even if it sounds plausible (e.g. do not use MoveTo if only AnimateTo is listed).
         {json.dumps(specs, indent=2)}
+        {inherited_context}
 
         WRITING STANDARD — each section and subsection must meet ALL of these:
         1. INTRODUCTION PARAGRAPH: Every section starts with 1-2 sentences explaining

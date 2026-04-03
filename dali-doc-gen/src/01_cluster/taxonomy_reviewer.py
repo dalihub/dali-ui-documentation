@@ -394,8 +394,9 @@ def main():
                 reason = reason + " (downgraded to flat: no Doxygen-verified children)"
             children = verified_children
 
-            # taxonomy에 기록
-            existing_taxonomy[feat_name] = {
+            # taxonomy에 기록 (feature_map의 suppress_doc/merge_into 플래그 유지)
+            feat_meta = next((f for f in feature_list if f.get("feature") == feat_name), {})
+            tax_entry = {
                 "display_name": cand.get("display_name", feat_name),
                 "base_class": base_class,
                 "parent": None,
@@ -404,6 +405,11 @@ def main():
                 "tree_decision": decision,
                 "decision_reason": reason
             }
+            if feat_meta.get("suppress_doc"):
+                tax_entry["suppress_doc"] = True
+            if feat_meta.get("merge_into"):
+                tax_entry["merge_into"] = feat_meta["merge_into"]
+            existing_taxonomy[feat_name] = tax_entry
             # 자식 항목도 taxonomy에 등록
             # 이미 존재하는 항목은 parent 필드만 업데이트 (독립 feature로 먼저 등록된 경우 불일치 수정)
             for child in children:
@@ -524,7 +530,7 @@ def _write_default_taxonomy(feature_list, existing_taxonomy):
     for feat in feature_list:
         feat_name = feat.get("feature", "")
         if feat_name and feat_name not in existing_taxonomy:
-            existing_taxonomy[feat_name] = {
+            entry = {
                 "display_name": feat.get("display_name", feat_name),
                 "parent": None,
                 "children": [],
@@ -532,6 +538,11 @@ def _write_default_taxonomy(feature_list, existing_taxonomy):
                 "tree_decision": "flat",
                 "decision_reason": "Default initialization"
             }
+            if feat.get("suppress_doc"):
+                entry["suppress_doc"] = True
+            if feat.get("merge_into"):
+                entry["merge_into"] = feat["merge_into"]
+            existing_taxonomy[feat_name] = entry
     TAXONOMY_DIR.mkdir(parents=True, exist_ok=True)
     with open(TAXONOMY_PATH, "w", encoding="utf-8") as f:
         json.dump(existing_taxonomy, f, indent=2, ensure_ascii=False)

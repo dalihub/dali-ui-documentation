@@ -1,4 +1,3 @@
-import os
 import re
 import json
 import yaml
@@ -180,6 +179,11 @@ def main():
                 feature_map[feat_key]["force_tree_review"] = mf.get("force_tree_review", False)
                 if "audience" in mf:
                     feature_map[feat_key]["audience"] = mf["audience"]
+                # suppress_doc / merge_into 플래그 전파
+                if "suppress_doc" in mf:
+                    feature_map[feat_key]["suppress_doc"] = mf["suppress_doc"]
+                if "merge_into" in mf:
+                    feature_map[feat_key]["merge_into"] = mf["merge_into"]
                 print(f"  > Enriched existing feature '{feat_key}' with manual metadata.")
             else:
                 # 신규로 강제 삽입
@@ -197,6 +201,11 @@ def main():
                     "audience": mf.get("audience", "app"),
                     "manual_injected": True
                 }
+                # suppress_doc / merge_into 플래그 전파
+                if "suppress_doc" in mf:
+                    feature_map[feat_key]["suppress_doc"] = mf["suppress_doc"]
+                if "merge_into" in mf:
+                    feature_map[feat_key]["merge_into"] = mf["merge_into"]
                 print(f"  > Force-injected new feature '{feat_key}'.")
     # The actual deep mapping will evaluate these clusters next phase.
     print("Cross-referencing logic skipped for heuristic bounds (to be completed in depth by LLM or later layers).")
@@ -217,21 +226,45 @@ def main():
     if oversized_count:
         print(f">> {oversized_count} oversized feature(s) detected and marked.")
 
-    # 5. Serialize Output mappings
+    # 5. class_feature_map 생성 — 클래스 이름 → 소속 feature 역매핑
+    # 동일 클래스가 여러 feature에 중복 등록된 경우 suppress_doc이 없는 feature를 우선
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    class_feature_map = {}
+    for feat_name, cluster in feature_map.items():
+        is_suppressed = cluster.get("suppress_doc", False)
+        for cls_name in cluster.get("apis", []):
+            if not cls_name:
+                continue
+            existing = class_feature_map.get(cls_name)
+            if existing is None:
+                class_feature_map[cls_name] = feat_name
+            elif is_suppressed and not feature_map.get(existing, {}).get("suppress_doc", False):
+                pass  # 이미 suppress 아닌 feature가 소유 중 — 유지
+            elif not is_suppressed and feature_map.get(existing, {}).get("suppress_doc", False):
+                class_feature_map[cls_name] = feat_name  # suppress 아닌 것으로 교체
+
+    class_map_path = OUTPUT_DIR / "class_feature_map.json"
+    with open(class_map_path, "w", encoding="utf-8") as f:
+        json.dump(class_feature_map, f, indent=2, ensure_ascii=False)
+    print(f"Saved class→feature map ({len(class_feature_map)} entries) to {class_map_path}")
+
+    # 6. Serialize Output mappings
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUTPUT_DIR / "feature_map.json"
-    
+
     feature_list = []
     for f in feature_map.values():
         f["packages"] = list(f["packages"])
         f["api_tiers"] = list(f["api_tiers"])
         f["cross_package_links"] = list(f["cross_package_links"])
         feature_list.append(f)
-        
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(feature_list, f, indent=2, ensure_ascii=False)
-        
+
+    suppressed = sum(1 for f in feature_list if f.get("suppress_doc"))
     print(f"\nSuccessfully clustered {len(all_apis)} unique APIs into {len(feature_list)} distinct feature themes.")
+    print(f"  {suppressed} feature(s) marked suppress_doc=true.")
     print(f"Saved feature map schema to {out_path}")
 
 if __name__ == "__main__":

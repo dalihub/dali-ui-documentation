@@ -50,4 +50,12 @@ manual_features:
     source_package: "dali-core"
     base_class: "Dali::Actor"
     description: "Low-level scene graph node. In dali-ui apps, developers use View instead of Actor directly. Actor knowledge is background context."
-    audience: "platform"     # 이 Feature는 Platform 개발자 대상임을 명시
+    audience: "platform"
+    suppress_doc: true        # actors.md 생성 안 함 — View 문서에 통합
+    merge_into: "view"        # View 문서 생성 시 Actor public-api를 inherited context로 포함
+
+  - feature: "custom-actor"
+    display_name: "CustomActor"
+    source_package: "dali-core"
+    description: "Internal extension mechanism. App and platform developers do not use CustomActor directly."
+    suppress_doc: true        # custom-actor.md 생성 안 함, 어디에도 통합하지 않음
