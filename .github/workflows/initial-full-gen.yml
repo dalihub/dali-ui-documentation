@@ -15,7 +15,7 @@ on:
       environment:
         description: 'LLM & Repo environment'
         required: true
-        default: 'external'
+        default: 'internal'
         type: choice
         options:
         - external
@@ -57,10 +57,18 @@ jobs:
             --limit ${{ github.event.inputs.limit }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "docs(auto): initial full generation for ${{ github.event.inputs.tier }}"
-          title: "docs: Initial Full Generation (${{ github.event.inputs.tier }})"
-          body: "Automated PR from Phase 3 initial-full-gen workflow."
-          branch: "docs/initial-full-${{ github.event.inputs.tier }}"
-          base: main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dali-doc-gen
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b docs/initial-full-${{ github.event.inputs.tier }}
+          git add output/
+          git commit -m "docs(auto): initial full generation for ${{ github.event.inputs.tier }}" || echo "No changes to commit"
+          git push origin docs/initial-full-${{ github.event.inputs.tier }} --force || echo "Branch already exists or push failed"
+          gh pr create --title "docs: Initial Full Generation (${{ github.event.inputs.tier }})" \
+            --body "Automated PR from Phase 3 initial-full-gen workflow." \
+            --base main \
+            --head docs/initial-full-${{ github.event.inputs.tier }} \
+            || echo "PR may already exist"

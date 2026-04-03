@@ -9,7 +9,7 @@ on:
       environment:
         description: 'LLM & Repo environment'
         required: true
-        default: 'external'
+        default: 'internal'
         type: choice
         options:
         - external
@@ -61,10 +61,18 @@ jobs:
           python src/pipeline.py --mode update --tier $TIER
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "docs(auto): weekly incremental update"
-          title: "docs(auto): Weekly Incremental Update Sync"
-          body: "Automated PR from weekly-update pipeline. This captures API deltas and newly generated structural documentation."
-          branch: "docs/weekly-update"
-          base: main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dali-doc-gen
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b docs/weekly-update
+          git add output/
+          git commit -m "docs(auto): weekly incremental update" || echo "No changes to commit"
+          git push origin docs/weekly-update --force || echo "Branch already exists or push failed"
+          gh pr create --title "docs(auto): Weekly Incremental Update Sync" \
+            --body "Automated PR from weekly-update pipeline. This captures API deltas and newly generated structural documentation." \
+            --base main \
+            --head docs/weekly-update \
+            || echo "PR may already exist"
