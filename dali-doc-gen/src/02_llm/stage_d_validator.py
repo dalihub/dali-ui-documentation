@@ -134,6 +134,15 @@ def verify_symbols(symbols, full_names, simple_names):
             continue
         # 단순 이름 매칭 (마지막 :: 이후 부분)
         simple = sym.split("::")[-1]
+        # ClassName::Method 패턴인 경우 class 부분도 존재하는지 확인
+        # (예: StaticImageView::New → StaticImageView가 실제로 있는지 체크)
+        parts = sym.split("::")
+        if len(parts) >= 2:
+            class_part = parts[-2]
+            if class_part and class_part not in simple_names:
+                # class 자체가 Doxygen에 없으면 unverified
+                unverified.append(sym)
+                continue
         if simple in simple_names:
             verified.append(sym)
         else:

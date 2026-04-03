@@ -82,6 +82,23 @@ def sanitize_children(parent_key, children):
     return valid
 
 
+def class_exists_in_doxygen(display_name):
+    """
+    display_name(예: 'AnimatedImageView')으로 Doxygen에 실제 클래스가
+    존재하는지 확인합니다. exact match(소문자, 공백/하이픈 제거)만 허용.
+    """
+    search_name = display_name.lower().replace("-", "").replace(" ", "")
+    for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
+        data = load_json(pkg_json)
+        if not data:
+            continue
+        for comp in data.get("compounds", []):
+            simple_name = comp.get("name", "").split("::")[-1].lower()
+            if simple_name == search_name:
+                return True
+    return False
+
+
 def build_inheritance_map():
     """
     parsed_doxygen/*.json에서 derived_classes 정보를 수집하여
@@ -252,6 +269,22 @@ def main():
             print(f"   [+] Decision: {decision.upper()} — {reason}")
             if children:
                 print(f"       Children: {[c.get('feature') for c in children]}")
+
+            # Doxygen 존재 여부로 child 검증 (없으면 제외)
+            verified_children = []
+            for c in children:
+                c_display = c.get("display_name", c.get("feature", ""))
+                if class_exists_in_doxygen(c_display):
+                    verified_children.append(c)
+                else:
+                    print(f"   [Doxygen Check] Rejected child '{c.get('feature')}' "
+                          f"({c_display}): not found in Doxygen — skipping.")
+            # verified_children이 비어 있으면 tree → flat 다운그레이드
+            if decision == "tree" and not verified_children:
+                print(f"   [Doxygen Check] No verified children remain — downgrading '{feat_name}' to FLAT.")
+                decision = "flat"
+                reason = reason + " (downgraded to flat: no Doxygen-verified children)"
+            children = verified_children
 
             # taxonomy에 기록
             existing_taxonomy[feat_name] = {

@@ -42,7 +42,7 @@ def find_child_api_names(display_name):
             comp_name = comp.get("name", "")
             # 클래스 이름의 마지막 부분이 display_name과 일치하는지 확인
             simple_name = comp_name.split("::")[-1].lower()
-            if simple_name == search_name or search_name in simple_name:
+            if simple_name == search_name:
                 api_names.append(comp_name)
                 packages_found.add(pkg_name)
                 for mb in comp.get("members", [])[:30]:
@@ -165,16 +165,17 @@ def main():
         
         # dali-ui View context hint: inject for actor/view-related features
         view_context = ""
+        tax_entry_b = taxonomy.get(feat_name, {})
+        parent_b = tax_entry_b.get("parent", None)
         if feat_name in ("actors", "views", "ui", "ui-components") or \
-           any("View" in a or "Actor" in a for a in apis[:10]):
+           parent_b in ("view", "actors", "ui-components") or \
+           any("View" in a or "Actor" in a for a in apis):
             view_context = """
-        IMPORTANT CONTEXT - DALi UI Application Architecture:
-        In DALi UI applications, 'Dali::Ui::View' (not 'Dali::Actor') is the primary 
-        base UI object that all application developers work with directly.
-        View inherits from Actor and shares its transform/rendering characteristics,
-        but has its own distinct API, event model, and usage patterns.
-        When documenting actor-level behaviors (position, size, signals), frame them 
-        in terms of how View exposes or wraps those capabilities, NOT raw Actor usage.
+        IMPORTANT CONTEXT - DALi UI Architecture:
+        All DALi UI code must be based on dali-ui (Dali::Ui::*). Do NOT use raw Dali::Actor.
+        Use Dali::Ui::View (or its subclasses) as the primary UI object.
+        When designing TOC sections about actor-level behaviors (position, size, signals),
+        frame them in terms of how Dali::Ui::View exposes or wraps those capabilities.
         """
 
         # ── Tier context 주입 ───────────────────────────────────────────
