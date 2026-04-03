@@ -406,13 +406,16 @@ def main():
         WRITING STANDARD — each section and subsection must meet ALL of these:
         1. INTRODUCTION PARAGRAPH: Every section starts with 1-2 sentences explaining
            the overall purpose of that section in practical terms.
-        2. API METHOD COVERAGE: For every non-trivial API method in this feature:
-           - WHAT: What does this method do? (1 sentence)
-           - WHY: When and why would a developer call this? (1-2 sentences)
-           - HOW: Explain each parameter by name, type, and meaning. Explain the
-             return value. Note any important side effects, preconditions, or errors.
-           - CODE: A complete, compilable C++ code snippet showing realistic usage.
-             Code must use only the API signatures provided in the spec above.
+        2. API METHOD COVERAGE: For every non-trivial API method in this feature,
+           write naturally flowing prose that covers:
+           - What the method does (integrate into the explanation, do NOT use "What:" labels)
+           - When and why a developer would call it (weave into context naturally)
+           - Each parameter's name, type, and meaning (explain in sentences)
+           - Return value and any important side effects, preconditions, or errors
+           - A complete, compilable C++ code snippet showing realistic usage
+           IMPORTANT: Do NOT use explicit labels like "What:", "Why:", "How:", "Code:".
+           Instead, write smooth, professional technical prose where this information
+           flows naturally. Use subheadings (###) to organize, not inline labels.
         3. SUBSECTION DEPTH: Each ### subsection must be self-contained. A developer
            reading only that subsection should be able to use that API correctly.
         4. CODE EXAMPLES: Every section must contain at least one realistic code example.

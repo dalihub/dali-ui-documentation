@@ -60,11 +60,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd dali-doc-gen
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b docs/initial-full-${{ github.event.inputs.tier }}
-          git add output/
+          git add app-guide/ platform-guide/ || echo "No guide directories to add"
           git commit -m "docs(auto): initial full generation for ${{ github.event.inputs.tier }}" || echo "No changes to commit"
           git push origin docs/initial-full-${{ github.event.inputs.tier }} --force || echo "Branch already exists or push failed"
           gh pr create --title "docs: Initial Full Generation (${{ github.event.inputs.tier }})" \
