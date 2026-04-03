@@ -41,8 +41,10 @@ jobs:
 
       - name: Set LLM environment
         run: |
-          # schedule 실행 시에는 input이 없으므로 external을 기본값으로 사용
+          # schedule 실행 시에는 input이 없으므로 Repository Variable로 fallback
+          # Settings > Variables > Actions 에서 DEFAULT_ENVIRONMENT 설정 필요
           ENV="${{ github.event.inputs.environment }}"
+          ENV="${ENV:-${{ vars.DEFAULT_ENVIRONMENT }}}"
           ENV="${ENV:-external}"
           sed -i "s/llm_environment: \".*\"/llm_environment: \"$ENV\"/" \
             dali-doc-gen/config/doc_config.yaml
