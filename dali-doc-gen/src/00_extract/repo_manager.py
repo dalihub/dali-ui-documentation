@@ -18,13 +18,25 @@ def load_repo_config():
     with open(config_path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
+def load_environment():
+    """doc_config.yaml에서 llm_environment(internal/external)를 읽어 반환."""
+    doc_config_path = root_path / "config" / "doc_config.yaml"
+    try:
+        with open(doc_config_path, "r", encoding="utf-8") as f:
+            doc_config = yaml.safe_load(f)
+        return doc_config.get("llm_environment", "external")
+    except Exception:
+        return "external"
+
 def manage_repos():
     config = load_repo_config()
     repos = config.get("repos", {})
-    
+    env = load_environment()
+    logger.info(f"Repository environment: {env}")
+
     for package_name, info in repos.items():
-        url = info.get("url")
-        branch = info.get("branch", "master")
+        url = info.get(f"{env}_url") or info.get("url")
+        branch = info.get(f"{env}_branch") or info.get("branch", "master")
         rel_path = info.get("path")
         
         if not url or not rel_path:
