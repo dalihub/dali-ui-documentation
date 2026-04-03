@@ -297,9 +297,17 @@ def main():
                 "decision_reason": reason
             }
             # 자식 항목도 taxonomy에 등록
+            # 이미 존재하는 항목은 parent 필드만 업데이트 (독립 feature로 먼저 등록된 경우 불일치 수정)
             for child in children:
                 child_key = child.get("feature", "")
-                if child_key and child_key not in existing_taxonomy:
+                if not child_key:
+                    continue
+                if child_key in existing_taxonomy:
+                    if existing_taxonomy[child_key].get("parent") != feat_name:
+                        print(f"   [Taxonomy Fix] '{child_key}' parent updated: "
+                              f"{existing_taxonomy[child_key].get('parent')!r} → {feat_name!r}")
+                        existing_taxonomy[child_key]["parent"] = feat_name
+                else:
                     existing_taxonomy[child_key] = {
                         "display_name": child.get("display_name", child_key),
                         "base_class": "",
