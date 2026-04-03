@@ -35,9 +35,6 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
     """
     specs = []
 
-    # Cap matching complexity against overwhelming LLM Token usage
-    max_apidocs_to_extract = 40  # Increased for richer context in generated docs
-
     # Build a simple lookup set from api_names_list for faster matching
     api_name_set = set(a.split("::")[-1] for a in api_names_list)
 
@@ -92,13 +89,6 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None):
                     if mb.get("code_examples"):
                         mb_spec["code_examples"] = mb["code_examples"]
                     specs.append(mb_spec)
-                    if len(specs) >= max_apidocs_to_extract:
-                        break
-
-            if len(specs) >= max_apidocs_to_extract:
-                break
-        if len(specs) >= max_apidocs_to_extract:
-            break
 
     return specs
 
@@ -407,7 +397,10 @@ def main():
 
         ANTI-HALLUCINATION RULE:
         Use ONLY the C++ API specs below for all signatures, parameter types, and return values.
-        Do NOT invent non-existent APIs or parameters:
+        Do NOT invent non-existent APIs or parameters.
+        CODE EXAMPLE STRICT RULE: In every code example, you may ONLY call methods whose exact
+        name appears in the API specs list below. If a method name is not listed, do NOT use it —
+        not even if it sounds plausible (e.g. do not use MoveTo if only AnimateTo is listed).
         {json.dumps(specs, indent=2)}
 
         WRITING STANDARD — each section and subsection must meet ALL of these:

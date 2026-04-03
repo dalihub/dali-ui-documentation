@@ -186,7 +186,10 @@ def main():
             lines.append(f"- **{display_name}** *(not yet generated)*")
 
         # 자식 목록도 들여쓰기로 포함
+        # top_level_roots에 있는 항목은 이미 최상위로 렌더링되므로 중복 표시 제외
         for child_key in children:
+            if child_key in top_level_roots:
+                continue
             child_entry = taxonomy.get(child_key, {})
             child_display = child_entry.get("display_name", child_key)
             child_file = child_entry.get("doc_file", f"{child_key}.md")
