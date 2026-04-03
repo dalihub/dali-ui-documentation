@@ -1,5 +1,6 @@
 import os
 import json
+import yaml
 import argparse
 from pathlib import Path
 import sys
@@ -17,6 +18,170 @@ OUT_DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
 VALIDATED_DRAFTS_DIR = CACHE_DIR / "validated_drafts"
 CHANGED_APIS_PATH = CACHE_DIR / "changed_apis.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
+DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
+
+def load_doc_config():
+    if not DOC_CONFIG_PATH.exists():
+        return {}
+    with open(DOC_CONFIG_PATH, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+def estimate_prompt_tokens(text):
+    """JSON 직렬화 문자열의 토큰 수를 근사 추정한다 (chars / 3.5)."""
+    return int(len(text) / 3.5)
+
+def chunk_specs_by_class(specs, token_budget):
+    """
+    클래스 단위로 묶어서 청크 분할한다.
+    같은 클래스의 메서드가 두 청크에 걸치지 않도록 보장한다.
+    token_budget을 초과하면 새 청크를 시작한다.
+    """
+    # 클래스 이름(Dali::Actor::SetPos → Dali::Actor)별로 그룹화
+    groups = {}
+    for spec in specs:
+        cls = "::".join(spec.get("name", "").split("::")[:-1]) or spec.get("name", "")
+        groups.setdefault(cls, []).append(spec)
+
+    chunks, current, current_tokens = [], [], 0
+    for cls_specs in groups.values():
+        size = estimate_prompt_tokens(json.dumps(cls_specs))
+        if current and current_tokens + size > token_budget:
+            chunks.append(current)
+            current, current_tokens = [], 0
+        current.extend(cls_specs)
+        current_tokens += size
+
+    if current:
+        chunks.append(current)
+    return chunks if chunks else [specs]
+
+def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classes,
+                                  total_classes, taxonomy_context, view_context, tier_context):
+    """롤링 정제 1차 호출 프롬프트: 전체 스펙의 일부만 받았음을 인지하고 초안 작성."""
+    return f"""
+    You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
+    Your task is to write the FIRST PASS of the documentation for the '{feat_name}' module.
+    {view_context}
+    {tier_context}
+    {taxonomy_context}
+
+    IMPORTANT — INCREMENTAL WRITING MODE:
+    This batch covers class group {covered_classes} of {total_classes} total groups.
+    More API specs will follow in subsequent passes.
+
+    Rules for this pass:
+    - Write COMPLETE sections for all classes provided in the specs below.
+    - For sections in the outline that have NO specs in this batch, write the ## heading
+      followed by exactly this placeholder on its own line: <!-- PENDING -->
+    - Do NOT write a conclusion section yet.
+    - Do NOT claim this document covers all APIs.
+
+    Follow this Table of Contents structure:
+    {json.dumps(outline, indent=2)}
+
+    ANTI-HALLUCINATION RULE:
+    Use ONLY the C++ API specs below. Do NOT invent APIs or parameters.
+    CODE EXAMPLE STRICT RULE: Only call methods whose exact name appears in the specs below.
+    {json.dumps(specs_chunk, indent=2)}
+
+    WRITING STANDARD — each section must meet ALL of these:
+    1. Every section starts with 1-2 sentences explaining the purpose in practical terms.
+    2. For every non-trivial API method: what it does, when to call it, parameters, return value,
+       and a complete compilable C++ code snippet showing realistic usage.
+    3. Use > Note: or > Warning: blockquotes for non-obvious behavior.
+    - Write entirely in valid GitHub Flavored Markdown.
+    - Use ## for section titles and ### for sub-sections.
+    - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
+    """
+
+def build_rolling_refine_prompt(feat_name, existing_draft, specs_chunk, is_last):
+    """롤링 정제 후속 호출 프롬프트: 기존 초안을 보존하면서 새 스펙 섹션만 보강."""
+    final_instruction = (
+        "This is the FINAL batch.\n"
+        "- Replace ALL remaining <!-- PENDING --> placeholders with a note: "
+        "'> Note: Full API details for this section are available in the platform guide.'\n"
+        "- Write a proper ## Summary or ## Next Steps conclusion section at the end."
+    ) if is_last else (
+        "More spec batches will follow. "
+        "Keep <!-- PENDING --> placeholders for sections that still have no specs in this batch."
+    )
+
+    return f"""
+    You are enriching an existing documentation draft for the Samsung DALi '{feat_name}' module.
+
+    [EXISTING DRAFT — PRESERVE ALL EXISTING CONTENT]
+    {existing_draft}
+
+    [NEW API SPECS TO INCORPORATE]
+    {json.dumps(specs_chunk, indent=2)}
+
+    ENRICHMENT RULES:
+    - Find the <!-- PENDING --> placeholder in each section relevant to the new specs above.
+    - Replace it with complete documentation for those classes (API coverage + code examples).
+    - If no placeholder exists for a class, find the most logical existing section and INSERT.
+    - Do NOT modify, rephrase, or "improve" any existing text unrelated to the new specs.
+    - Do NOT rewrite sections that already have content — only fill placeholders or insert.
+    - ANTI-HALLUCINATION: Only use method names that appear in the new specs above.
+    {final_instruction}
+
+    Output the COMPLETE updated markdown document.
+    Output raw markdown text only. Do NOT wrap in ```markdown blocks.
+    """
+
+def run_rolling_refinement(feat_name, outline, specs, client,
+                            taxonomy_context, view_context, tier_context,
+                            context_limit, prompt_overhead):
+    """
+    토큰 예산 초과 feature를 다중 LLM 호출로 점진적으로 문서화한다.
+    Pass 1: 첫 번째 클래스 그룹으로 초안 생성 (미처리 섹션에 PENDING 마커)
+    Pass N: 기존 초안 + 다음 클래스 그룹 → 보강
+    """
+    # 1차 청크: 드래프트 없으므로 전체 예산의 60% 할당
+    initial_spec_budget = int((context_limit - prompt_overhead) * 0.6)
+    chunks = chunk_specs_by_class(specs, initial_spec_budget)
+    total_chunks = len(chunks)
+
+    print(f"    [Rolling] {len(specs)} specs → {total_chunks} chunk(s). Starting Pass 1/{total_chunks}...")
+
+    # Pass 1
+    draft = strip_markdown_wrapping(client.generate(
+        build_rolling_initial_prompt(
+            feat_name, outline, chunks[0],
+            covered_classes=1, total_classes=total_chunks,
+            taxonomy_context=taxonomy_context,
+            view_context=view_context,
+            tier_context=tier_context
+        ),
+        use_think=False
+    ))
+
+    # Pass 2~N
+    for i, chunk in enumerate(chunks[1:], start=2):
+        is_last = (i == total_chunks)
+        draft_tokens = estimate_prompt_tokens(draft)
+        remaining_budget = context_limit - prompt_overhead - draft_tokens
+
+        # 드래프트 성장으로 남은 공간이 부족하면 현재 청크를 재분할
+        chunk_tokens = estimate_prompt_tokens(json.dumps(chunk))
+        if chunk_tokens > remaining_budget * 0.8:
+            sub_chunks = chunk_specs_by_class(chunk, int(remaining_budget * 0.7))
+            print(f"    [Rolling] Pass {i}: chunk too large ({chunk_tokens} tok, budget {remaining_budget}) "
+                  f"→ re-split into {len(sub_chunks)} sub-chunk(s)")
+            for j, sub in enumerate(sub_chunks):
+                sub_is_last = is_last and (j == len(sub_chunks) - 1)
+                print(f"    [Rolling] Pass {i}.{j+1}/{len(sub_chunks)}...")
+                draft = strip_markdown_wrapping(client.generate(
+                    build_rolling_refine_prompt(feat_name, draft, sub, sub_is_last),
+                    use_think=False
+                ))
+        else:
+            print(f"    [Rolling] Pass {i}/{total_chunks} ({'FINAL' if is_last else ''})...")
+            draft = strip_markdown_wrapping(client.generate(
+                build_rolling_refine_prompt(feat_name, draft, chunk, is_last),
+                use_think=False
+            ))
+
+    return draft
 
 def load_json(path):
     if not path.exists():
@@ -207,6 +372,13 @@ def main():
     print(f" Initiating Stage C: Instruct Writer (Markdown Generation) [{args.tier.upper()}]")
     print("=================================================================")
 
+    # token_overflow 설정 로드
+    doc_config = load_doc_config()
+    overflow_cfg = doc_config.get("token_overflow", {})
+    SPEC_TOKEN_THRESHOLD = overflow_cfg.get("spec_token_threshold", 60000)
+    CONTEXT_LIMIT = overflow_cfg.get("context_limit", 120000)
+    PROMPT_OVERHEAD = overflow_cfg.get("prompt_overhead", 4000)
+
     # 티어별 드래프트 출력 경로 및 API 필터
     tier_drafts_dir = OUT_DRAFTS_DIR / args.tier
     tier_drafts_dir.mkdir(parents=True, exist_ok=True)
@@ -376,7 +548,21 @@ def main():
             specs = get_api_specs(packages, api_names, allowed_tiers)
             print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
 
-            prompt = f"""
+            # ── 토큰 초과 여부 판단: taxonomy oversized_single 또는 토큰 추정값 기반 ──
+            tax_entry = taxonomy.get(feat_name, {})
+            specs_token_estimate = estimate_prompt_tokens(json.dumps(specs))
+            use_rolling = tax_entry.get("oversized_single", False) or specs_token_estimate > SPEC_TOKEN_THRESHOLD
+
+            if use_rolling:
+                print(f"    [!] Specs token estimate: {specs_token_estimate:,} "
+                      f"(threshold: {SPEC_TOKEN_THRESHOLD:,}) — switching to rolling refinement mode.")
+                clean_md = run_rolling_refinement(
+                    feat_name, outline, specs, client,
+                    taxonomy_context, view_context, tier_context,
+                    CONTEXT_LIMIT, PROMPT_OVERHEAD
+                )
+            else:
+                prompt = f"""
         You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
         Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
         {view_context}
@@ -428,9 +614,7 @@ def main():
         - Use ## for section titles and ### for sub-sections.
         - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
         """
-
-        response_md = client.generate(prompt, use_think=False)
-        clean_md = strip_markdown_wrapping(response_md)
+                clean_md = strip_markdown_wrapping(client.generate(prompt, use_think=False))
 
         out_file = tier_drafts_dir / f"{feat_name}.md"
         with open(out_file, "w", encoding="utf-8") as f:

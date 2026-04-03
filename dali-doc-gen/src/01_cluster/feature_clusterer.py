@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import yaml
 from pathlib import Path
@@ -6,6 +7,7 @@ from pathlib import Path
 # Paths Setup
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG_PATH = PROJECT_ROOT / "config" / "repo_config.yaml"
+DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
 CACHE_DIR = PROJECT_ROOT / "cache"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 CALLGRAPH_DIR = CACHE_DIR / "callgraph_json"
@@ -20,6 +22,61 @@ def load_json(path):
 def load_config():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+def load_doc_config():
+    if not DOC_CONFIG_PATH.exists():
+        return {}
+    with open(DOC_CONFIG_PATH, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+def compute_split_candidates(api_names):
+    """
+    클래스 이름 목록을 네임스페이스 기반으로 그룹화하여 후보 서브 그룹을 반환한다.
+
+    그룹화 우선순위:
+      1. 3레벨 네임스페이스가 있는 경우 (예: Dali::Addon::Manager → 'Addon::Manager')
+         같은 2레벨 네임스페이스(Dali::Addon) 아래 3레벨 컴포넌트를 기준으로 묶음
+      2. 2레벨 네임스페이스만 있는 경우 (예: Dali::Actor)
+         'Impl', 'Devel', 'Property', 'Internal' 접미사를 제거한 기본 이름으로 묶음
+
+    반환: [{"group_name": str, "apis": [str, ...]}, ...]  (그룹 수 >= 2인 경우만)
+    """
+    groups = {}
+    for name in api_names:
+        if not name:
+            continue
+        parts = name.split("::")
+        if len(parts) >= 3:
+            # Dali::Addon::Manager → key: "Addon::Manager" (3레벨 네임스페이스 컴포넌트)
+            # 같은 2레벨(Dali::Addon) 아래 3레벨 컴포넌트별로 그룹화
+            key = parts[2]
+        else:
+            # Dali::Actor, Dali::DevelActor, Dali::ActorProperty → key: "Actor"
+            base = parts[-1]
+            key = re.sub(r"(Impl|Property|Devel|Internal)$", "", base) or base
+        groups.setdefault(key, []).append(name)
+
+    # 그룹명을 feature slug 형식으로 변환 (CamelCase → kebab-case)
+    candidates = []
+    for key, apis in groups.items():
+        slug = re.sub(r"([A-Z])", r"-\1", key).lstrip("-").lower()
+        candidates.append({"group_name": slug, "apis": apis})
+
+    return candidates
+
+def count_feature_specs(api_names, all_compounds_by_name):
+    """
+    feature에 속한 클래스들의 전체 멤버(스펙) 수를 반환한다.
+    클래스 자체도 1개로 카운트한다.
+    """
+    total = 0
+    for name in api_names:
+        compound = all_compounds_by_name.get(name)
+        if compound:
+            total += 1 + len(compound.get("members", []))
+        else:
+            total += 1
+    return total
 
 def extract_feature_name(file_path, api_tiers):
     """
@@ -42,10 +99,13 @@ def extract_feature_name(file_path, api_tiers):
 
 def main():
     config = load_config()
+    doc_config = load_doc_config()
     repos = config.get("repos", {})
+    max_specs = doc_config.get("token_overflow", {}).get("max_specs_per_feature", 2000)
 
     all_apis = []
-    
+    all_compounds_by_name = {}  # class name → compound dict (멤버 수 카운팅용)
+
     # 1. Load parsed_doxygen JSONs from Phase 0
     print("Loading extracted API definitions...")
     for pkg, info in repos.items():
@@ -53,14 +113,16 @@ def main():
         data = load_json(parsed_path)
         if not data:
             continue
-            
+
         api_tiers = info.get("api_dirs", [])
-        
+
         compounds = data.get("compounds", [])
         for c in compounds:
             c["package"] = pkg
             c["config_tiers"] = api_tiers
             all_apis.append(c)
+            # 이름으로 빠른 조회를 위해 인덱싱 (멤버 수 카운팅용)
+            all_compounds_by_name[c.get("name", "")] = c
 
     # 2. Heuristic Clustering (Directory-driven)
     print("Clustering APIs by feature domains...")
@@ -139,7 +201,23 @@ def main():
     # The actual deep mapping will evaluate these clusters next phase.
     print("Cross-referencing logic skipped for heuristic bounds (to be completed in depth by LLM or later layers).")
 
-    # 4. Serialize Output mappings
+    # 4. Oversized Feature 감지 및 마킹
+    oversized_count = 0
+    for cluster in feature_map.values():
+        spec_count = count_feature_specs(cluster["apis"], all_compounds_by_name)
+        if spec_count > max_specs:
+            candidates = compute_split_candidates(cluster["apis"])
+            cluster["oversized"] = True
+            cluster["total_spec_count"] = spec_count
+            cluster["split_candidates"] = candidates if len(candidates) >= 3 else []
+            oversized_count += 1
+            split_info = f"{len(candidates)} candidate groups" if len(candidates) >= 3 else "no split (single doc)"
+            print(f"  [Oversized] '{cluster['feature']}': {spec_count} specs — {split_info}")
+
+    if oversized_count:
+        print(f">> {oversized_count} oversized feature(s) detected and marked.")
+
+    # 5. Serialize Output mappings
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = OUTPUT_DIR / "feature_map.json"
     
@@ -153,7 +231,7 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(feature_list, f, indent=2, ensure_ascii=False)
         
-    print(f"\\nSuccessfully clustered {len(all_apis)} unique APIs into {len(feature_list)} distinct feature themes.")
+    print(f"\nSuccessfully clustered {len(all_apis)} unique APIs into {len(feature_list)} distinct feature themes.")
     print(f"Saved feature map schema to {out_path}")
 
 if __name__ == "__main__":

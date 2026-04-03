@@ -1,4 +1,17 @@
-llm_environment: "internal" # Toggle between "internal" and "external"
+llm_environment: "external" # Toggle between "internal" and "external"
+
+token_overflow:
+  # feature_clusterer: 이 스펙 수 초과 시 oversized 마킹 및 후보 그룹 계산
+  max_specs_per_feature: 2000
+
+  # stage_c_writer: 이 토큰 수 초과 시 롤링 정제 모드 전환 (taxonomy oversized_single 무관하게 fallback)
+  spec_token_threshold: 60000
+
+  # 사내 LLM 컨텍스트 한도 (131,072에서 안전 마진 적용)
+  context_limit: 120000
+
+  # 프롬프트 고정 텍스트 + system instructions 토큰 추정치
+  prompt_overhead: 4000
 
 models:
   internal:
@@ -17,5 +30,6 @@ models:
     think: "gemini-3.1-flash-lite-preview"
     instruct: "gemini-3.1-flash-lite-preview"
     api_key_env: "GEMINI_API_KEY"
-    rate_limit_delay_sec: 6
+    rate_limit_delay_sec: 6        # 최소 요청 간격 (초) — 토큰 제한과 함께 적용
+    tokens_per_minute: 250000      # Gemini free tier 분당 입력 토큰 한도
     max_retries: 10
