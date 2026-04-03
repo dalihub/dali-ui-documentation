@@ -17,6 +17,43 @@ OUT_BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 
+def sample_apis(api_names, max_count=50):
+    """
+    Blueprint용 API 샘플링 (클래스명+메서드명 혼재 리스트 대응).
+
+    - 클래스 수 >= max_count : 클래스 선언만 전부 반환 (메서드 제외)
+    - 클래스 수 < max_count  : 모든 클래스 선언 포함 +
+                               나머지 슬롯을 전체 메서드 풀에서 균등 간격으로 채움
+                               (메서드가 많은 클래스가 자연스럽게 더 많이 할당됨)
+    - 메서드 항목이 없는 경우 : 그대로 반환 (클래스명 전용 리스트)
+    """
+    name_set = set(api_names)
+    # 다른 항목의 prefix인 것 = 클래스 선언 (e.g. "Dali::Actor" → "Dali::Actor::SetPos")
+    class_entries = [n for n in api_names
+                     if any(other.startswith(n + "::") for other in name_set)]
+    method_entries = [n for n in api_names if n not in set(class_entries)]
+
+    # 메서드 항목이 없으면 클래스명 전용 리스트 — 캡 없이 그대로 반환
+    if not method_entries:
+        return api_names
+
+    num_classes = len(class_entries)
+
+    if num_classes >= max_count:
+        # Case 1: 클래스 선언만 전부 (메서드 없이)
+        return class_entries
+
+    # Case 2: 모든 클래스 + 나머지 슬롯을 메서드 풀에서 균등 간격 샘플
+    remaining = max_count - num_classes
+    if len(method_entries) <= remaining:
+        extra = method_entries
+    else:
+        step = len(method_entries) / remaining
+        extra = [method_entries[int(i * step)] for i in range(remaining)]
+
+    return class_entries + extra
+
+
 def load_json(path):
     if not path.exists():
         print(f"Error: Could not locate map inside '{path}'. Have you run Stage A?")
@@ -51,7 +88,7 @@ def find_child_api_names(display_name):
         if api_names:
             break  # 첫 번째 패키지 매칭으로 충분
 
-    return api_names[:50], list(packages_found)
+    return sample_apis(api_names), list(packages_found)
 
 
 def build_child_entries(taxonomy, existing_feature_keys):
@@ -157,8 +194,8 @@ def main():
         
     for index, cluster in enumerate(feature_list):
         feat_name = cluster.get("feature", "Unknown")
-        # Hard cap the tokens shown to prevent AI memory overflow/loss of track.
-        apis = cluster.get("apis", [])[:50] 
+        # 클래스명만 있는 리스트 → sample_apis가 캡 없이 그대로 반환
+        apis = sample_apis(cluster.get("apis", []))
         tiers = cluster.get("api_tiers", [])
         
         print(f"\n[{index+1}/{len(feature_list)}] Mapping structural outlines for feature module '{feat_name}' (Sampled APIs: {len(apis)})...")
