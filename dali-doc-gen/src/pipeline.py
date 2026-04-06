@@ -230,8 +230,27 @@ def main():
                         help="Exclusive features to process (comma-separated)")
     parser.add_argument("--skip-pull", action="store_true",
                         help="Skip running repo_manager (useful for local rollback testing)")
+    parser.add_argument("--llm", choices=["internal", "external"], default=None,
+                        help="LLM environment to use (overrides doc_config.yaml)")
 
     args = parser.parse_args()
+
+    # --llm 인자가 있으면 doc_config.yaml의 llm_environment 값 수정
+    original_llm_env = None
+    doc_config_path = PROJECT_ROOT / "config" / "doc_config.yaml"
+    if args.llm:
+        try:
+            import yaml
+            with open(doc_config_path, "r", encoding="utf-8") as f:
+                doc_config = yaml.safe_load(f)
+            original_llm_env = doc_config.get("llm_environment", "external")
+            if original_llm_env != args.llm:
+                doc_config["llm_environment"] = args.llm
+                with open(doc_config_path, "w", encoding="utf-8") as f:
+                    yaml.dump(doc_config, f, default_flow_style=False, allow_unicode=True)
+                print(f"[pipeline] LLM environment changed: {original_llm_env} → {args.llm}")
+        except Exception as e:
+            print(f"[pipeline] Warning: Failed to update doc_config.yaml: {e}")
 
     if not os.environ.get("GEMINI_API_KEY") and not os.environ.get("INTERNAL_API_KEY"):
         print("⚠️  Warning: GEMINI_API_KEY or INTERNAL_API_KEY is not set.")
