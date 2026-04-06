@@ -19,16 +19,23 @@ def load_repo_config():
         return yaml.safe_load(f)
 
 def load_environment():
-    """doc_config.yaml에서 llm_environment(internal/external)를 읽어 반환.
-    
-    CI 환경(GitHub Actions 등)에서는 자동으로 'external'을 사용하여
-    사외 GitHub HTTPS URL을 사용하도록 한다.
-    로컬 환경에서는 doc_config.yaml 설정을 따른다.
+    """git clone에 사용할 환경(internal/external)을 결정한다.
+
+    우선순위:
+    1. CI=true  → 항상 external (GitHub Actions에서 SSH 키 없음)
+    2. DALI_LLM_ENV 환경변수 → pipeline.py --llm 인자에서 설정
+    3. doc_config.yaml llm_environment
+    4. 기본값 external
     """
-    # CI 환경에서는 자동으로 external 사용 (SSH 키 문제 회피)
+    # CI 환경에서는 항상 external (git clone 기준)
     if os.environ.get("CI", "").lower() == "true":
         return "external"
-    
+
+    # pipeline.py --llm 인자 전달용 환경변수
+    env_override = os.environ.get("DALI_LLM_ENV")
+    if env_override:
+        return env_override
+
     doc_config_path = root_path / "config" / "doc_config.yaml"
     try:
         with open(doc_config_path, "r", encoding="utf-8") as f:
