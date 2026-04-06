@@ -15,9 +15,33 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
 
 
+SESSION_STATS_PATH = PROJECT_ROOT / "cache" / "llm_session_stats.json"
+
+
 def estimate_prompt_tokens(text):
     """프롬프트 문자열의 토큰 수를 근사 추정한다 (chars / 3.5)."""
     return int(len(text) / 3.5)
+
+
+def _record_session_stats(input_tokens):
+    """
+    세션 통계 파일에 입력 토큰 수와 요청 횟수를 누적한다.
+    subprocess 경계를 넘어 pipeline.py가 최종 집계할 수 있도록 파일 기반으로 공유한다.
+    실패해도 파이프라인을 중단하지 않는다.
+    """
+    try:
+        if SESSION_STATS_PATH.exists():
+            with open(SESSION_STATS_PATH, "r", encoding="utf-8") as f:
+                stats = json.load(f)
+        else:
+            stats = {"total_input_tokens": 0, "total_requests": 0}
+        stats["total_input_tokens"] += input_tokens
+        stats["total_requests"] += 1
+        SESSION_STATS_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(SESSION_STATS_PATH, "w", encoding="utf-8") as f:
+            json.dump(stats, f)
+    except Exception:
+        pass
 
 
 class TokenRateLimiter:
@@ -241,6 +265,9 @@ class LLMClient:
                 # 실제 토큰 수로 슬롯 업데이트 (다음 호출의 대기 계산 정확도 향상)
                 if self.token_limiter and actual_tokens > 0:
                     self.token_limiter.record_actual(actual_tokens)
+
+                # 세션 통계 누적 (실제값 우선, 없으면 추정값)
+                _record_session_stats(actual_tokens if actual_tokens > 0 else estimated_tokens)
 
                 return response_text
 

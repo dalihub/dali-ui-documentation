@@ -29,6 +29,7 @@ if Path(sys.executable).resolve() != _venv_python.resolve():
     os.execv(str(_venv_python), [str(_venv_python)] + sys.argv)
 # ────────────────────────────────────────────────────────────────────────────
 
+SESSION_STATS_PATH    = CACHE_DIR / "llm_session_stats.json"
 TAXONOMY_PATH         = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 TAXONOMY_OLD_PATH     = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json.old"
 DRAFTS_DIR            = CACHE_DIR / "validated_drafts"
@@ -275,6 +276,11 @@ def main():
 
 def _run_pipeline(args):
     """파이프라인 본체. main()의 try 블록에서 호출된다."""
+    # LLM 세션 통계 초기화 (이전 실행 잔재 제거)
+    SESSION_STATS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(SESSION_STATS_PATH, "w", encoding="utf-8") as f:
+        json.dump({"total_input_tokens": 0, "total_requests": 0}, f)
+
     # ══════════════════════════════════════════════════════════════════════
     #  Phase 1: 코드 파싱 & Taxonomy 추출
     # ══════════════════════════════════════════════════════════════════════
@@ -403,6 +409,19 @@ def _run_pipeline(args):
 
     # ── 실행 완료 후 현재 커밋 해시 저장 (다음 update 의 diff 기준점) ─────────
     save_last_run_commits()
+
+    # ── LLM 세션 통계 출력 ────────────────────────────────────────────────
+    try:
+        stats = load_json(SESSION_STATS_PATH)
+        total_tokens = stats.get("total_input_tokens", 0)
+        total_requests = stats.get("total_requests", 0)
+        print("\n─────────────────────────────────────────────────")
+        print(f"  LLM Session Summary")
+        print(f"    Requests sent : {total_requests:,}")
+        print(f"    Input tokens  : {total_tokens:,}")
+        print("─────────────────────────────────────────────────")
+    except Exception:
+        pass
 
     print("\n✅ DALi Documentation Pipeline Execution Completed!")
 
