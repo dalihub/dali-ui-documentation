@@ -509,11 +509,16 @@ def main():
 
         taxonomy_context = ""
         if tree_decision == "tree" and children:
-            child_list = ", ".join(f"`{c}`" for c in children)
+            child_list = ", ".join(
+                f"`{c}` ({taxonomy.get(c, {}).get('display_name', c)})"
+                for c in children
+            )
             taxonomy_context = f"""
         DOCUMENT ROLE — PARENT OVERVIEW PAGE:
         This is the overview (parent) page for the '{feat_name}' feature family.
         Its child components ({child_list}) each have their own dedicated pages.
+        IMPORTANT: Use the exact class names shown above in parentheses for all code examples.
+        Do NOT invent or abbreviate class names (e.g. use 'ImageView', not 'Image').
         Writing rules:
         - Introduce the overall concept and architecture of this feature family.
         - Describe each child component in 2-3 sentences and add a '→ See: [ChildName]' reference.
