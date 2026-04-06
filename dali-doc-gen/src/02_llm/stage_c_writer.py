@@ -58,7 +58,8 @@ def chunk_specs_by_class(specs, token_budget):
     return chunks if chunks else [specs]
 
 def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classes,
-                                  total_classes, taxonomy_context, view_context, tier_context):
+                                  total_classes, taxonomy_context, view_context, tier_context,
+                                  chaining_context="", feature_hint_block=""):
     """롤링 정제 1차 호출 프롬프트: 전체 스펙의 일부만 받았음을 인지하고 초안 작성."""
     return f"""
     You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
@@ -66,6 +67,8 @@ def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classe
     {view_context}
     {tier_context}
     {taxonomy_context}
+    {chaining_context}
+    {feature_hint_block}
 
     IMPORTANT — INCREMENTAL WRITING MODE:
     This batch covers class group {covered_classes} of {total_classes} total groups.
@@ -132,7 +135,8 @@ def build_rolling_refine_prompt(feat_name, existing_draft, specs_chunk, is_last)
 
 def run_rolling_refinement(feat_name, outline, specs, client,
                             taxonomy_context, view_context, tier_context,
-                            context_limit, prompt_overhead):
+                            context_limit, prompt_overhead,
+                            chaining_context="", feature_hint_block=""):
     """
     토큰 예산 초과 feature를 다중 LLM 호출로 점진적으로 문서화한다.
     Pass 1: 첫 번째 클래스 그룹으로 초안 생성 (미처리 섹션에 PENDING 마커)
@@ -152,7 +156,9 @@ def run_rolling_refinement(feat_name, outline, specs, client,
             covered_classes=1, total_classes=total_chunks,
             taxonomy_context=taxonomy_context,
             view_context=view_context,
-            tier_context=tier_context
+            tier_context=tier_context,
+            chaining_context=chaining_context,
+            feature_hint_block=feature_hint_block
         ),
         use_think=False
     ))
@@ -276,6 +282,18 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
                         mb_spec["warnings"] = mb["warnings"]
                     if mb.get("code_examples"):
                         mb_spec["code_examples"] = mb["code_examples"]
+                    # chainable 플래그: Fluent API setter 판별
+                    # 조건: 반환 타입이 참조(&), const 아님, operator/Signal 제외
+                    # e.g. "Label &" SetText → True
+                    # e.g. "Actor &" operator= → False (operator 제외)
+                    # e.g. "TouchEventSignalType &" TouchedSignal → False (Signal 제외)
+                    ret_type = mb.get("type", "")
+                    mb_name = mb.get("name", "")
+                    if (ret_type.endswith("&")
+                            and not ret_type.startswith("const")
+                            and not mb_name.startswith("operator")
+                            and not mb_name.endswith("Signal")):
+                        mb_spec["chainable"] = True
                     specs.append(mb_spec)
 
     return specs, foreign_classes
@@ -395,12 +413,13 @@ def main():
     print(f" Initiating Stage C: Instruct Writer (Markdown Generation) [{args.tier.upper()}]")
     print("=================================================================")
 
-    # token_overflow 설정 로드
+    # token_overflow 설정 및 feature_hints 로드
     doc_config = load_doc_config()
     overflow_cfg = doc_config.get("token_overflow", {})
     SPEC_TOKEN_THRESHOLD = overflow_cfg.get("spec_token_threshold", 60000)
     CONTEXT_LIMIT = overflow_cfg.get("context_limit", 120000)
     PROMPT_OVERHEAD = overflow_cfg.get("prompt_overhead", 4000)
+    feature_hints = doc_config.get("feature_hints", {})
 
     # 티어별 드래프트 출력 경로 및 API 필터
     tier_drafts_dir = OUT_DRAFTS_DIR / args.tier
@@ -664,6 +683,35 @@ def main():
 {foreign_list}
         """
 
+            # ── chaining 스타일 지시 조립 ────────────────────────────────────────
+            # specs 중 chainable 플래그가 하나라도 있으면 체이닝 스타일을 권장,
+            # 없으면 void 반환임을 명시하여 dali-core 등에서 오용 방지
+            has_chaining = any(s.get("chainable") for s in specs)
+            if has_chaining:
+                chaining_context = """
+        CODE EXAMPLE STYLE — METHOD CHAINING:
+        This feature's setter methods return a reference to the object (marked "chainable": true in specs).
+        ALWAYS prefer the chained initialization style in code examples:
+            auto view = ComponentName::New()
+              .SetProperty1(value1)
+              .SetProperty2(value2);
+        Do NOT use separate-statement style for chainable setters unless showing a specific
+        multi-step workflow where intermediate state must be captured.
+        """
+            else:
+                chaining_context = """
+        CODE EXAMPLE STYLE:
+        This feature's setters return void. Use separate statements for each setter call.
+        Do NOT attempt to chain setter calls on this feature's objects.
+        """
+
+            # ── feature_hints 주입 ───────────────────────────────────────────────
+            hint_extra = feature_hints.get(feat_name, {}).get("extra_context", "")
+            feature_hint_block = f"""
+        FEATURE-SPECIFIC GUIDANCE:
+        {hint_extra}
+        """ if hint_extra else ""
+
             # ── 토큰 초과 여부 판단: taxonomy oversized_single 또는 토큰 추정값 기반 ──
             tax_entry = taxonomy.get(feat_name, {})
             specs_token_estimate = estimate_prompt_tokens(json.dumps(specs))
@@ -675,7 +723,9 @@ def main():
                 clean_md = run_rolling_refinement(
                     feat_name, outline, specs, client,
                     taxonomy_context, view_context, tier_context,
-                    CONTEXT_LIMIT, PROMPT_OVERHEAD
+                    CONTEXT_LIMIT, PROMPT_OVERHEAD,
+                    chaining_context=chaining_context,
+                    feature_hint_block=feature_hint_block
                 )
             else:
                 prompt = f"""
@@ -685,6 +735,8 @@ def main():
         {tier_context}
         {taxonomy_context}
         {foreign_context}
+        {chaining_context}
+        {feature_hint_block}
 
         FOCUS AND SCOPE RULES:
         - Write ONLY about '{feat_name}'. Stay strictly within its feature boundary.

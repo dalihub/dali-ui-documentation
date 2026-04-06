@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import yaml
 import argparse
 from pathlib import Path
 
@@ -16,6 +17,13 @@ CLASSIFIED_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map_classified.json"
 OUT_BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
+DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
+
+def load_doc_config():
+    if not DOC_CONFIG_PATH.exists():
+        return {}
+    with open(DOC_CONFIG_PATH, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 def sample_apis(api_names, max_count=50):
     """
@@ -161,6 +169,12 @@ def main():
     if not feature_list:
         return
 
+    # feature_hints 로드
+    doc_config = load_doc_config()
+    feature_hints = doc_config.get("feature_hints", {})
+    if feature_hints:
+        print(f"[FeatureHints] Loaded hints for: {list(feature_hints.keys())}")
+
     # Phase 1.5 taxonomy 로드 (없으면 빈 dict로 진행)
     taxonomy = {}
     if TAXONOMY_PATH.exists():
@@ -266,12 +280,21 @@ def main():
         """
         # ────────────────────────────────────────────────────────────────
 
+        # ── feature_hints 주입 ───────────────────────────────────────────
+        hint_extra = feature_hints.get(feat_name, {}).get("extra_context", "")
+        feature_hint_block = f"""
+        FEATURE-SPECIFIC GUIDANCE FOR TOC DESIGN:
+        {hint_extra}
+        """ if hint_extra else ""
+        # ────────────────────────────────────────────────────────────────
+
         prompt = f"""
         You are a senior technical writer documenting the Samsung DALi GUI framework.
         Design a logical Table of Contents (TOC) layout for the feature module '{feat_name}'.
         {view_context}
         {tier_context}
         {taxonomy_context}
+        {feature_hint_block}
         Context:
         - Target Audience API Tiers: {tiers}
         - Key API Methods/Classes: {json.dumps(apis, indent=2)}

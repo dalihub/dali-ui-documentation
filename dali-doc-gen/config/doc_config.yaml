@@ -1,5 +1,21 @@
 llm_environment: "external" # Toggle between "internal" and "external"
 
+# ============================================================
+# Feature-specific hints injected into Stage B (TOC design)
+# and Stage C (document generation) prompts.
+# extra_context is free-form text appended to the prompt for
+# the named feature only — other features are unaffected.
+# ============================================================
+feature_hints:
+  view:
+    extra_context: |
+      View supports Fluent API through method chaining. All property setters return
+      View& (or the concrete subclass &) so they can be chained together.
+      IMPORTANT: Include a dedicated section explaining the method chaining pattern.
+      Show declarative UI tree construction using Children({...}), AsInteractive(lambda),
+      AsSelectable(lambda), With(lambda), and As(view&) methods.
+      Always prefer chained initialization style over separate-statement style in examples.
+
 token_overflow:
   # feature_clusterer: 이 스펙 수 초과 시 oversized 마킹 및 후보 그룹 계산
   max_specs_per_feature: 2000
