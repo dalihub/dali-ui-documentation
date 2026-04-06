@@ -122,7 +122,8 @@ class LLMClient:
         with open(CONFIG_PATH, "r", encoding="utf-8") as f:
             config = yaml.safe_load(f)
             
-        self.env = config.get("llm_environment", "external")
+        # DALI_LLM_ENV 환경변수가 있으면 doc_config.yaml보다 우선 적용
+        self.env = os.environ.get("DALI_LLM_ENV") or config.get("llm_environment", "external")
         self.settings = config.get("models", {}).get(self.env, {})
         
         self.api_base = self.settings.get("api_base")

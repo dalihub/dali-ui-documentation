@@ -236,42 +236,16 @@ def main():
 
     args = parser.parse_args()
 
-    # --llm 인자가 있으면 doc_config.yaml의 llm_environment 값 수정
-    # try/finally로 파이프라인 종료(성공/실패/인터럽트) 시 원래 값을 반드시 복원
-    original_llm_env = None
-    doc_config_path = PROJECT_ROOT / "config" / "doc_config.yaml"
+    # --llm 인자가 있으면 환경변수로 전달 (doc_config.yaml 수정 없음)
+    # 자식 subprocess들은 환경변수를 상속하므로 별도 처리 불필요
     if args.llm:
-        try:
-            import yaml
-            with open(doc_config_path, "r", encoding="utf-8") as f:
-                doc_config = yaml.safe_load(f)
-            original_llm_env = doc_config.get("llm_environment", "external")
-            if original_llm_env != args.llm:
-                doc_config["llm_environment"] = args.llm
-                with open(doc_config_path, "w", encoding="utf-8") as f:
-                    yaml.dump(doc_config, f, default_flow_style=False, allow_unicode=True)
-                print(f"[pipeline] LLM environment changed: {original_llm_env} → {args.llm}")
-        except Exception as e:
-            print(f"[pipeline] Warning: Failed to update doc_config.yaml: {e}")
+        os.environ["DALI_LLM_ENV"] = args.llm
+        print(f"[pipeline] LLM environment override: {args.llm} (via DALI_LLM_ENV)")
 
     if not os.environ.get("GEMINI_API_KEY") and not os.environ.get("INTERNAL_API_KEY"):
         print("⚠️  Warning: GEMINI_API_KEY or INTERNAL_API_KEY is not set.")
 
-    try:
-        _run_pipeline(args)
-    finally:
-        # --llm 으로 변경한 llm_environment 를 원래 값으로 복원
-        if args.llm and original_llm_env is not None and original_llm_env != args.llm:
-            try:
-                import yaml
-                with open(doc_config_path, "r", encoding="utf-8") as f:
-                    doc_config = yaml.safe_load(f)
-                doc_config["llm_environment"] = original_llm_env
-                with open(doc_config_path, "w", encoding="utf-8") as f:
-                    yaml.dump(doc_config, f, default_flow_style=False, allow_unicode=True)
-                print(f"[pipeline] LLM environment restored: {args.llm} → {original_llm_env}")
-            except Exception as e:
-                print(f"[pipeline] Warning: Failed to restore doc_config.yaml: {e}")
+    _run_pipeline(args)
 
 
 def _run_pipeline(args):
