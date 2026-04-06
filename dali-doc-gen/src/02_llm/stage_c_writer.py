@@ -241,9 +241,11 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
                 continue
 
             # class_feature_map이 있으면 다른 feature 소속 클래스를 foreign_classes로 분리
+            # uncategorized_ambiguous_root는 "다른 feature 소유"가 아닌 "미분류" 상태이므로
+            # owning_feature가 api_names에 명시한 경우 foreign 처리하지 않음
             if class_feature_map and owning_feature:
                 mapped = class_feature_map.get(c_name)
-                if mapped and mapped != owning_feature:
+                if mapped and mapped != owning_feature and mapped != "uncategorized_ambiguous_root":
                     foreign_classes.append(c_name)
                     continue
 

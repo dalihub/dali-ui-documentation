@@ -92,8 +92,10 @@ def extract_feature_name(file_path, api_tiers):
                     # e.g., "actors/actor.h" returns "actors"
                     return sub_parts[0]
                 else:
-                    # No sub-folder (e.g. root level inside the tier path directly like "common.h")
-                    return None
+                    # tier 루트 직속 파일: 파일명 stem을 feature 이름으로 사용
+                    # e.g., "label.h" → "label", "input-field.h" → "input-field"
+                    stem = sub_parts[0].rsplit(".", 1)[0]
+                    return stem if stem else None
     return None
 
 def main():
