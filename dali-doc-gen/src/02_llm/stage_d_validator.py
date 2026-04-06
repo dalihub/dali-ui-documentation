@@ -110,8 +110,9 @@ def extract_symbols_from_markdown(md_text):
         elif re.match(r'^[A-Z][a-zA-Z]{2,}$', item):
             symbols.add(item)
 
-    # 불필요한 키워드 제거 (C++ 예약어 등)
-    noise = {'Include', 'Note', 'Warning', 'View', 'Actor', 'True', 'False', 'nullptr',
+    # 불필요한 키워드 제거 (C++ 예약어 및 Markdown 메타 키워드만 포함)
+    # View / Actor 는 DALi 핵심 클래스이므로 제외하지 않음 — 할루시네이션 검증 대상
+    noise = {'Include', 'Note', 'Warning', 'True', 'False', 'nullptr',
              'Void', 'Return', 'This', 'Class', 'New', 'Delete', 'Public', 'Private'}
     symbols -= noise
     return symbols
@@ -203,9 +204,12 @@ def load_blueprints():
     return {item["feature"]: item for item in data}
 
 
-def get_api_specs_for_retry(packages, api_names, max_specs=30):
+def get_api_specs_for_retry(packages, api_names, allowed_tiers=None, max_specs=30):
     """
     Stage C와 동일한 방식으로 Doxygen에서 API spec 추출 (Retry 전용).
+
+    allowed_tiers: set of api_tier strings to include (e.g. {"public-api"}).
+                   None means no filtering (all tiers included).
     """
     specs = []
     api_name_set = set(a.split("::")[-1] for a in api_names)
@@ -217,6 +221,8 @@ def get_api_specs_for_retry(packages, api_names, max_specs=30):
             pkg_data = json.load(f)
         for comp in pkg_data.get("compounds", []):
             if not isinstance(comp, dict):
+                continue
+            if allowed_tiers and comp.get("api_tier") not in allowed_tiers:
                 continue
             c_name = comp.get("name", "")
             is_match = any(a in c_name for a in api_names) or \
@@ -248,7 +254,8 @@ def regenerate_failed_document(feat_name, blueprint, taxonomy, unverified_set, c
     outline = blueprint.get("outline", [])
     packages = blueprint.get("packages", [])
     api_names = blueprint.get("apis", [])
-    specs = get_api_specs_for_retry(packages, api_names)
+    allowed_tiers = blueprint.get("allowed_tiers")
+    specs = get_api_specs_for_retry(packages, api_names, allowed_tiers=allowed_tiers)
 
     # Taxonomy context (stage_c_writer.py와 동일)
     tax = {}
@@ -424,9 +431,14 @@ def main():
 
                 print(f"  [Retry {attempt}/{MAX_RETRY_ATTEMPTS}] Regenerating '{feat_name}'.md "
                       f"({len(unverified_set)} unverified symbols)...")
+                # tier 필터를 blueprint에 주입하여 get_api_specs_for_retry가 올바른 tier만 조회하게 함
+                blueprint_with_tier = dict(blueprint)
+                blueprint_with_tier["allowed_tiers"] = (
+                    {"public-api"} if args.tier == "app" else None
+                )
                 try:
                     new_md_raw = regenerate_failed_document(
-                        feat_name, blueprint, {}, unverified_set, retry_client)
+                        feat_name, blueprint_with_tier, {}, unverified_set, retry_client)
                     new_md = strip_markdown_wrapping(new_md_raw)
                 except Exception as e:
                     print(f"    [!] Regeneration failed: {e}")

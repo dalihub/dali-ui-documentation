@@ -364,7 +364,7 @@ def build_change_summary(feat_apis, changed_classes_info):
 
 
 def build_patch_prompt(feat_name, existing_draft, changed_specs, change_summary,
-                       taxonomy_context, view_context):
+                       taxonomy_context, view_context, tier_context=""):
     """기존 문서를 최대한 보존하면서 변경된 API 부분만 수술하는 패치 프롬프트를 생성합니다. (원칙 3)"""
     change_section = (
         f"[WHAT CHANGED — UPDATE ONLY THESE PARTS]\n{change_summary}"
@@ -378,6 +378,7 @@ def build_patch_prompt(feat_name, existing_draft, changed_specs, change_summary,
     by incorporating only the changes described below.
     {view_context}
     {taxonomy_context}
+    {tier_context}
 
     [EXISTING PUBLISHED GUIDE DOCUMENT — PRESERVE AS MUCH AS POSSIBLE]
     {existing_draft}
@@ -394,6 +395,7 @@ def build_patch_prompt(feat_name, existing_draft, changed_specs, change_summary,
     - If a member is ADDED: insert it in the most appropriate existing section with a full explanation and code example.
     - If a member is REMOVED: delete only the description and examples for that specific member.
     - If a member is MODIFIED: update only the affected description, signature, or example — keep surrounding text.
+    - Do NOT add any new top-level section such as 'API Updates', 'Changelog', 'What Changed', or 'What's New'.
     - Output the COMPLETE updated markdown document (not just the changed sections).
     - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
     """
@@ -596,7 +598,8 @@ def main():
                   f"({len(specs)} API specs, change_summary={'yes' if change_summary else 'none'})...")
 
             prompt = build_patch_prompt(
-                feat_name, existing_draft, specs, change_summary, taxonomy_context, view_context
+                feat_name, existing_draft, specs, change_summary,
+                taxonomy_context, view_context, tier_context
             )
 
         # ── Full 생성 모드 ─────────────────────────────────────────────────
