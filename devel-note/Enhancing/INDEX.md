@@ -49,6 +49,16 @@ Phase 3 직후, 문서 품질과 LLM 정확도를 높이기 위한 기능 추가
 
 ---
 
+## 5단계 — Taxonomy 구조 버그 수정 (Taxonomy Fix)
+
+Taxonomy child feature 관련 구조적 버그 수정.
+
+| # | 파일 | 주제 | 구현 상태 |
+|---|------|------|-----------|
+| ENH-10 | [ENH-10_taxonomy_child_notier_hierarchy_autogen_fix.md](ENH-10_taxonomy_child_notier_hierarchy_autogen_fix.md) | Taxonomy Child 3종 버그 — 부모-자식 계층 혼란(Fix A), child .notier 원인 class_feature_map 미갱신(Fix B), autogen 억제 프롬프트(Fix C) | 🔴 미구현 |
+
+---
+
 ## 중간 점검 — Phase 3 완료 시점 정합성 점검 (Checkpoint)
 
 Phase 3 기능 구현 완료 후, 요구사항-코드 정합성 전수 점검 결과.

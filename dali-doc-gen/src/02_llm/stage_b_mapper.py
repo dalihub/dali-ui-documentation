@@ -14,6 +14,7 @@ from llm_client import LLMClient
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 CLASSIFIED_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map_classified.json"
+CLASS_FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "class_feature_map.json"
 OUT_BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
@@ -97,6 +98,32 @@ def find_child_api_names(display_name):
             break  # 첫 번째 패키지 매칭으로 충분
 
     return sample_apis(api_names), list(packages_found)
+
+
+def update_class_feature_map_for_children(child_entries):
+    """
+    Fix B: taxonomy child feature에 속하는 클래스를 class_feature_map.json에 재등록한다.
+    feature_clusterer가 부모 feature로 매핑한 항목을 child feature로 덮어써서
+    Stage C의 foreign class 필터가 올바르게 동작하도록 한다.
+    기존에 class_feature_map에 등재된 클래스만 업데이트한다 (신규 키 추가 없음).
+    """
+    if not child_entries or not CLASS_FEATURE_MAP_PATH.exists():
+        return
+    with open(CLASS_FEATURE_MAP_PATH, "r", encoding="utf-8") as f:
+        cfm = json.load(f)
+
+    updated_count = 0
+    for entry in child_entries:
+        child_name = entry.get("feature", "")
+        for api_name in entry.get("apis", []):
+            if api_name in cfm and cfm[api_name] != child_name:
+                cfm[api_name] = child_name
+                updated_count += 1
+
+    if updated_count > 0:
+        with open(CLASS_FEATURE_MAP_PATH, "w", encoding="utf-8") as f:
+            json.dump(cfm, f, indent=2, ensure_ascii=False)
+        print(f"[ClassMap] Updated {updated_count} class→feature mapping(s) for {len(child_entries)} taxonomy child(ren).")
 
 
 def build_child_entries(taxonomy, existing_feature_keys):
@@ -192,6 +219,8 @@ def main():
         if child_entries:
             print(f"[Taxonomy] Appended {len(child_entries)} child feature(s) to processing list.")
             feature_list.extend(child_entries)
+            # Fix B: child feature의 클래스를 class_feature_map에 재등록 (Stage C foreign filter 교정)
+            update_class_feature_map_for_children(child_entries)
     # ────────────────────────────────────────────────────────────────────
 
     client = LLMClient()

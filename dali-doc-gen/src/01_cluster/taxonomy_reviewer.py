@@ -281,6 +281,14 @@ def main():
         print("Error: feature_map.json not found. Run Phase 1 (feature_clusterer.py) first.")
         return
 
+    # Fix C: .autogen 항목은 method chaining 보일러플레이트이므로 taxonomy 대상에서 제외
+    autogen_before = len(feature_list)
+    feature_list = [f for f in feature_list if not f.get("feature", "").endswith(".autogen")]
+    filtered = autogen_before - len(feature_list)
+    if filtered:
+        print(f">> [AutogenFilter] Excluded {filtered} .autogen feature(s) from taxonomy review.")
+
+
     # 기존 taxonomy 로드 (증분 업데이트용)
     existing_taxonomy = {}
     if not args.full and TAXONOMY_PATH.exists():
@@ -418,6 +426,12 @@ def main():
                     continue
                 if child_key in existing_taxonomy:
                     if existing_taxonomy[child_key].get("parent") != feat_name:
+                        # Fix A: 이전 부모의 children 배열에서 제거
+                        old_parent_name = existing_taxonomy[child_key].get("parent")
+                        if old_parent_name and old_parent_name in existing_taxonomy:
+                            old_children = existing_taxonomy[old_parent_name].get("children", [])
+                            if child_key in old_children:
+                                old_children.remove(child_key)
                         print(f"   [Taxonomy Fix] '{child_key}' parent updated: "
                               f"{existing_taxonomy[child_key].get('parent')!r} → {feat_name!r}")
                         existing_taxonomy[child_key]["parent"] = feat_name
@@ -480,6 +494,12 @@ def main():
                             "decision_reason": f"Sub-feature of oversized '{feat_name}'"
                         }
                     else:
+                        # Fix A: 이전 부모의 children 배열에서 제거 (oversized split 경로)
+                        old_parent_name = existing_taxonomy[child_key].get("parent")
+                        if old_parent_name and old_parent_name in existing_taxonomy:
+                            old_children = existing_taxonomy[old_parent_name].get("children", [])
+                            if child_key in old_children:
+                                old_children.remove(child_key)
                         existing_taxonomy[child_key]["parent"] = feat_name
             else:
                 # SINGLE: stage_c가 롤링 정제 모드로 처리
@@ -513,6 +533,13 @@ def main():
                     "decision_reason": f"Oversized ({feat.get('total_spec_count')} specs) — fewer than 3 candidate groups, rolling refinement"
                 }
                 print(f"   [Auto] '{feat_name}': oversized_single (< 3 groups, no LLM needed)")
+
+    # Fix C: 이전 실행에서 유입된 .autogen 항목 정리 (2차 방어선)
+    autogen_keys = [k for k in existing_taxonomy if k.endswith(".autogen")]
+    for k in autogen_keys:
+        del existing_taxonomy[k]
+    if autogen_keys:
+        print(f">> [AutogenFilter] Removed {len(autogen_keys)} stale .autogen entry/entries from taxonomy.")
 
     # 영속화
     TAXONOMY_DIR.mkdir(parents=True, exist_ok=True)
