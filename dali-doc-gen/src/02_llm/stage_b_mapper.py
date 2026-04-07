@@ -86,14 +86,16 @@ def find_child_api_names(display_name):
         pkg_name = data.get("package", pkg_json.stem)
         for comp in data.get("compounds", []):
             comp_name = comp.get("name", "")
-            # 클래스 이름의 마지막 부분이 display_name과 일치하는지 확인
+            # 정확히 일치하거나 XxxImpl 변형(Integration 구현체)도 함께 수집
             simple_name = comp_name.split("::")[-1].lower()
-            if simple_name == search_name:
+            is_exact = simple_name == search_name
+            is_impl = simple_name.startswith(search_name + "impl")
+            if is_exact or is_impl:
                 api_names.append(comp_name)
                 packages_found.add(pkg_name)
                 for mb in comp.get("members", [])[:30]:
                     api_names.append(f"{comp_name}::{mb.get('name', '')}")
-                break  # 패키지당 첫 매칭 클래스만
+                # break 제거: impl 변형도 같은 패키지에서 계속 수집
         if api_names:
             break  # 첫 번째 패키지 매칭으로 충분
 
@@ -113,12 +115,29 @@ def update_class_feature_map_for_children(child_entries):
         cfm = json.load(f)
 
     updated_count = 0
+    remapped_classes = {}  # simple_class_name → child_feature (Pass 2용)
+
+    # Pass 1: child entry의 apis에 있는 항목 직접 remapping (기존 로직)
     for entry in child_entries:
         child_name = entry.get("feature", "")
         for api_name in entry.get("apis", []):
             if api_name in cfm and cfm[api_name] != child_name:
                 cfm[api_name] = child_name
                 updated_count += 1
+                simple = api_name.split("::")[-1]
+                remapped_classes[simple] = child_name
+
+    # Pass 2: remapping된 클래스명을 포함하는 관련 항목 전파
+    # (예: AnimatedImageView → animated-image-view 확정 후,
+    #       Integration::AnimatedImageViewImpl::Property 등 별도 compound도 함께 처리)
+    for key in list(cfm.keys()):
+        for simple_class, child_name in remapped_classes.items():
+            if len(simple_class) < 6:
+                continue  # 너무 짧은 이름으로 인한 오매칭 방지
+            if simple_class in key and cfm[key] != child_name:
+                cfm[key] = child_name
+                updated_count += 1
+                break  # 키당 첫 번째 매칭만 적용
 
     if updated_count > 0:
         with open(CLASS_FEATURE_MAP_PATH, "w", encoding="utf-8") as f:
