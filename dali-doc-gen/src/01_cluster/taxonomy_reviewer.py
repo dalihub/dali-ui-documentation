@@ -541,6 +541,32 @@ def main():
     if autogen_keys:
         print(f">> [AutogenFilter] Removed {len(autogen_keys)} stale .autogen entry/entries from taxonomy.")
 
+    # Fix D: 후처리 검증 — LLM 결정 간 충돌로 인한 tree_decision/decision_reason 불일치 교정
+    fix_d_count = 0
+    for feat_key, entry in existing_taxonomy.items():
+        # ① tree인데 children이 없으면 leaf/flat으로 다운그레이드 + decision_reason 교정
+        if entry.get("tree_decision") == "tree" and not entry.get("children"):
+            if entry.get("parent"):
+                entry["tree_decision"] = "leaf"
+                entry["decision_reason"] = f"Child of {entry['parent']}"
+            else:
+                entry["tree_decision"] = "flat"
+            fix_d_count += 1
+            print(f"   [Fix D] '{feat_key}': tree+no-children → {entry['tree_decision']}")
+
+        # ② decision_reason의 "Child of X"와 실제 parent가 불일치하면 교정
+        dr = entry.get("decision_reason", "")
+        parent = entry.get("parent", "")
+        if dr.startswith("Child of ") and parent:
+            stated = dr.replace("Child of ", "").strip().rstrip(".")
+            if stated != parent:
+                entry["decision_reason"] = f"Child of {parent}"
+                fix_d_count += 1
+                print(f"   [Fix D] '{feat_key}': decision_reason '{stated}' → '{parent}'")
+
+    if fix_d_count:
+        print(f">> [Fix D] Corrected {fix_d_count} taxonomy inconsistency/inconsistencies.")
+
     # 영속화
     TAXONOMY_DIR.mkdir(parents=True, exist_ok=True)
     with open(TAXONOMY_PATH, "w", encoding="utf-8") as f:
