@@ -51,9 +51,16 @@ def build_doxygen_symbol_set():
     """
     모든 parsed_doxygen JSON에서 compound 이름 + member 이름을 수집하여
     검색용 집합(set)을 반환합니다.
+
+    반환:
+      full_names  : "Dali::Ui::ImageView::SetResourceUrl" 등 완전한 심볼 이름
+      simple_names: "SetResourceUrl" 등 단순 이름
+      pair_names  : "ImageView::SetResourceUrl" 등 (클래스 simple name)::(메서드 simple name) 쌍
+                    → verify_symbols()에서 ClassName::Method 쌍이 실제로 존재하는지 확인하는 데 사용
     """
-    full_names = set()    # "Dali::Actor::SetPosition" 등
-    simple_names = set()  # "SetPosition" 등
+    full_names = set()
+    simple_names = set()
+    pair_names = set()  # "ClassName::MethodName" 쌍 (네임스페이스 제외)
 
     for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
         try:
@@ -66,16 +73,20 @@ def build_doxygen_symbol_set():
             comp_name = comp.get("name", "")
             if comp_name:
                 full_names.add(comp_name)
-                simple_names.add(comp_name.split("::")[-1])
+                comp_simple = comp_name.split("::")[-1]
+                simple_names.add(comp_simple)
 
             for mb in comp.get("members", []):
                 mb_name = mb.get("name", "")
                 if mb_name:
                     full_names.add(f"{comp_name}::{mb_name}")
                     simple_names.add(mb_name)
+                    if comp_name:
+                        pair_names.add(f"{comp_simple}::{mb_name}")
 
-    print(f"[Validator] Doxygen DB built: {len(full_names)} full symbols, {len(simple_names)} simple names.")
-    return full_names, simple_names
+    print(f"[Validator] Doxygen DB built: {len(full_names)} full symbols, "
+          f"{len(simple_names)} simple names, {len(pair_names)} class::method pairs.")
+    return full_names, simple_names, pair_names
 
 
 # ── 심볼 추출 ─────────────────────────────────────────────────────────────
@@ -84,6 +95,8 @@ def extract_symbols_from_markdown(md_text):
     Markdown 텍스트에서 C++ 심볼 참조를 추출합니다.
     추출 대상:
       - 코드 블록 내 Dali:: / Ui:: 네임스페이스 패턴
+      - 코드 블록 내 ClassName::MethodName 패턴
+      - 코드 블록 내 variable.MethodName() 형태의 dot-call 패턴 (simple name으로 등록)
       - 인라인 backtick 내 ClassName::MethodName 패턴
       - 인라인 backtick 내 CamelCase 식별자 (단독 클래스명)
     """
@@ -98,6 +111,10 @@ def extract_symbols_from_markdown(md_text):
         # ClassName::MethodName 패턴
         found2 = re.findall(r'[A-Z][a-zA-Z0-9]+::[A-Za-z][a-zA-Z0-9_]+', block)
         symbols.update(found2)
+        # dot-call 패턴: 소문자 변수명.UpperCaseMethod( → 메서드명만 simple name으로 추출
+        # 예: component.SetAccessibilityRole( → "SetAccessibilityRole"
+        dot_calls = re.findall(r'\b[a-z_][a-zA-Z0-9_]*\.([A-Z][a-zA-Z0-9_]+)\s*\(', block)
+        symbols.update(dot_calls)
 
     # 2. 인라인 backtick
     inline_ticks = re.findall(r'`([^`\n]+)`', md_text)
@@ -119,35 +136,42 @@ def extract_symbols_from_markdown(md_text):
 
 
 # ── 심볼 검증 ─────────────────────────────────────────────────────────────
-def verify_symbols(symbols, full_names, simple_names):
+def verify_symbols(symbols, full_names, simple_names, pair_names):
     """
     추출된 심볼 각각을 Doxygen DB에서 검색합니다.
-    full_names (전체 네임스페이스) 또는 simple_names (단순 이름) 중 하나라도
-    포함되면 verified로 처리합니다.
+
+    검증 전략:
+      1. full_names 직접 매칭 (가장 정확)
+      2. ClassName::Method 패턴 → pair_names에서 쌍이 존재하는지 확인
+         (클래스와 메서드가 각각 존재해도 쌍이 없으면 unverified)
+      3. simple name 단독 → simple_names에서 확인 (dot-call 추출 심볼 등)
     """
     verified = []
     unverified = []
 
     for sym in symbols:
-        # 전체 이름 직접 매칭
+        # 1. 전체 이름 직접 매칭
         if sym in full_names:
             verified.append(sym)
             continue
-        # 단순 이름 매칭 (마지막 :: 이후 부분)
-        simple = sym.split("::")[-1]
-        # ClassName::Method 패턴인 경우 class 부분도 존재하는지 확인
-        # (예: StaticImageView::New → StaticImageView가 실제로 있는지 체크)
+
         parts = sym.split("::")
+
         if len(parts) >= 2:
-            class_part = parts[-2]
-            if class_part and class_part not in simple_names:
-                # class 자체가 Doxygen에 없으면 unverified
+            # 2. ClassName::Method 쌍 검증
+            # pair_names에는 "ImageView::SetResourceUrl" 형태로 저장되어 있음
+            # sym이 "Dali::Ui::ImageView::SetResourceUrl"처럼 길어도 마지막 두 파트로 쌍 구성
+            pair_key = f"{parts[-2]}::{parts[-1]}"
+            if pair_key in pair_names:
+                verified.append(sym)
+            else:
                 unverified.append(sym)
-                continue
-        if simple in simple_names:
-            verified.append(sym)
         else:
-            unverified.append(sym)
+            # 3. simple name 단독 (dot-call 추출 심볼 등)
+            if sym in simple_names:
+                verified.append(sym)
+            else:
+                unverified.append(sym)
 
     return verified, unverified
 
@@ -176,6 +200,93 @@ Be concise. Output as a plain text list. Do NOT make up API names you are unsure
         return client.generate(prompt, use_think=False)
     except Exception as e:
         return f"[LLM review failed: {e}]"
+
+
+# ── Surgical Patch ───────────────────────────────────────────────────────
+def extract_hallucinated_blocks(md_text, unverified_symbols):
+    """
+    unverified 심볼이 포함된 코드 블록과 직전 섹션 헤더를 추출합니다.
+    전체 문서 재생성 대신 오염된 블록만 교체하는 surgical patch에 사용합니다.
+
+    반환: [(section_header, code_block), ...] 리스트
+    """
+    unverified_simples = {s.split("::")[-1] for s in unverified_symbols}
+
+    results = []
+    # 코드 블록과 나머지 텍스트를 분리 (코드 블록 구분자 포함)
+    pattern = re.compile(r'(```(?:cpp|c\+\+)?[^\n]*\n.*?```)', re.DOTALL | re.IGNORECASE)
+    segments = pattern.split(md_text)
+
+    current_header = ""
+    for seg in segments:
+        if seg.startswith('```'):
+            contains_hallucination = any(sym_part in seg for sym_part in unverified_simples)
+            if contains_hallucination:
+                results.append((current_header, seg))
+        else:
+            headers = re.findall(r'^#{1,3} .+', seg, re.MULTILINE)
+            if headers:
+                current_header = headers[-1]
+
+    return results
+
+
+def surgical_patch_document(feat_name, md_text, unverified_symbols, specs, client):
+    """
+    unverified 심볼이 포함된 코드 블록만 재생성하여 문서에 적용합니다.
+    전체 문서 재생성 대신 오염된 블록만 교체하므로 토큰 사용량을 크게 줄입니다.
+
+    반환: (patched_md_text, patch_count)
+      patch_count: 실제로 교체된 블록 수 (0이면 패치 대상 없음)
+    """
+    bad_blocks = extract_hallucinated_blocks(md_text, unverified_symbols)
+    if not bad_blocks:
+        return md_text, 0
+
+    permitted = sorted({
+        s["name"].split("::")[-1]
+        for s in specs
+        if s.get("kind") == "function"
+        and not s["name"].split("::")[-1].startswith(("operator", "~"))
+    })
+    permitted_str = (
+        "\n".join(f"  - {m}" for m in permitted)
+        if permitted
+        else "  (no callable methods — use only type declarations from specs)"
+    )
+
+    patched_text = md_text
+    patch_count = 0
+
+    for section_header, bad_block in bad_blocks:
+        prompt = f"""You are a C++ technical writer for the Samsung DALi GUI framework.
+The following code example in the '{feat_name}' documentation contains incorrect API calls.
+
+Section: {section_header}
+
+[INCORRECT CODE BLOCK]
+{bad_block}
+
+[VERIFIED API SPECS]
+{json.dumps(specs[:15], indent=2)}
+
+Permitted method names — call ONLY these in the fixed code:
+{permitted_str}
+
+Rewrite ONLY the code block above. Fix incorrect method names using only the permitted list above.
+Keep the overall structure and intent of the example intact.
+Output only the corrected ```cpp ... ``` block. No explanation before or after."""
+        try:
+            new_block = client.generate(prompt, use_think=False).strip()
+            if new_block.startswith('```') and '```' in new_block[3:]:
+                patched_text = patched_text.replace(bad_block, new_block, 1)
+                patch_count += 1
+            else:
+                print(f"    [Surgical] Block replacement skipped — LLM did not return a code block.")
+        except Exception as e:
+            print(f"    [Surgical] Patch failed for block in '{section_header}': {e}")
+
+    return patched_text, patch_count
 
 
 # ── Retry 전용 헬퍼 함수 ─────────────────────────────────────────────────
@@ -332,7 +443,7 @@ def main():
     tier_validated_dir.mkdir(parents=True, exist_ok=True)
 
     # Doxygen DB 구축
-    full_names, simple_names = build_doxygen_symbol_set()
+    full_names, simple_names, pair_names = build_doxygen_symbol_set()
 
     # 검증 대상 파일 수집 (Index.md 제외)
     if not tier_drafts_dir.exists():
@@ -363,7 +474,7 @@ def main():
             verified_syms, unverified_syms = [], list(symbols)
             stats["low_content"] += 1
         else:
-            verified_syms, unverified_syms = verify_symbols(symbols, full_names, simple_names)
+            verified_syms, unverified_syms = verify_symbols(symbols, full_names, simple_names, pair_names)
             score = len(verified_syms) / len(symbols) if symbols else 1.0
 
             if score >= PASS_THRESHOLD:
@@ -376,6 +487,56 @@ def main():
                 verdict = "FAIL"
                 stats["fail"] += 1
 
+        # WARN/FAIL이고 LLM 클라이언트가 있으면 surgical patch 시도
+        # PASS / LOW_CONTENT는 그대로 복사
+        llm_comment = None
+        surgical_patches = 0
+
+        if verdict in ("WARN", "FAIL") and client and unverified_syms and not args.no_retry:
+            pre_verdict = verdict  # stats 재조정 시 원래 verdict 참조용
+            print(f"  [Surgical] '{feat_name}': {len(unverified_syms)} unverified symbol(s) — "
+                  f"attempting block-level patch...")
+            # API 스펙 로드 (surgical patch 프롬프트용)
+            blueprints_map_local = load_blueprints()
+            bp_local = blueprints_map_local.get(feat_name, {})
+            allowed_tiers_local = {"public-api"} if args.tier == "app" else None
+            patch_specs = get_api_specs_for_retry(
+                bp_local.get("packages", []),
+                bp_local.get("apis", []),
+                allowed_tiers=allowed_tiers_local
+            )
+            patched_md, surgical_patches = surgical_patch_document(
+                feat_name, md_text, set(unverified_syms), patch_specs, client
+            )
+            if surgical_patches > 0:
+                # 패치된 내용으로 draft 파일 갱신 후 재검증
+                md_path.write_text(patched_md, encoding="utf-8")
+                new_symbols = extract_symbols_from_markdown(patched_md)
+                if len(new_symbols) >= MIN_SYMBOLS_FOR_SCORING:
+                    new_verified, new_unverified = verify_symbols(
+                        new_symbols, full_names, simple_names, pair_names)
+                    new_score = len(new_verified) / len(new_symbols)
+                    if new_score >= PASS_THRESHOLD:
+                        verdict = "PASS"
+                    elif new_score >= WARN_THRESHOLD:
+                        verdict = "WARN"
+                    else:
+                        verdict = "FAIL"
+                    verified_syms, unverified_syms = new_verified, new_unverified
+                    score = new_score
+                    print(f"  [Surgical] Re-validated after patch: [{verdict}] "
+                          f"score={score:.1%} ({surgical_patches} block(s) replaced)")
+                    # stats 재조정: 원래 verdict(pre_verdict)를 -1, 새 verdict를 +1
+                    stats[pre_verdict.lower()] = max(0, stats.get(pre_verdict.lower(), 0) - 1)
+                    stats[verdict.lower()] = stats.get(verdict.lower(), 0) + 1
+            else:
+                print(f"  [Surgical] No patchable blocks found — keeping original verdict.")
+
+        elif verdict == "FAIL" and client and unverified_syms:
+            # --no-retry 또는 surgical patch 미적용 경우 LLM 분석만
+            print(f"  [LLM Review] Requesting analysis for FAIL document '{feat_name}'...")
+            llm_comment = llm_review_fail(feat_name, md_text, unverified_syms, client)
+
         # PASS / WARN / LOW_CONTENT → validated_drafts/{tier}/ 복사
         if verdict in ("PASS", "WARN", "LOW_CONTENT"):
             shutil.copy2(md_path, tier_validated_dir / md_path.name)
@@ -383,16 +544,10 @@ def main():
         else:
             copy_status = "blocked"
 
-        # FAIL 문서 LLM 재검증
-        llm_comment = None
-        if verdict == "FAIL" and client and unverified_syms:
-            print(f"  [LLM Review] Requesting analysis for FAIL document '{feat_name}'...")
-            llm_comment = llm_review_fail(feat_name, md_text, unverified_syms, client)
-
         score_display = f"{score:.1%}" if score is not None else "N/A"
         print(f"  [{verdict:12s}] {feat_name}.md  "
               f"symbols={len(symbols)}, verified={len(verified_syms)}, "
-              f"score={score_display}  → {copy_status}")
+              f"score={score_display}  surgical_patches={surgical_patches}  → {copy_status}")
 
         report.append({
             "feature": feat_name,
@@ -402,6 +557,7 @@ def main():
             "verified_symbols": verified_syms,
             "unverified_symbols": unverified_syms,
             "copy_status": copy_status,
+            "surgical_patches": surgical_patches,
             "llm_review": llm_comment
         })
 
@@ -457,7 +613,7 @@ def main():
                     new_verified, new_unverified = [], list(new_symbols)
                 else:
                     new_verified, new_unverified = verify_symbols(
-                        new_symbols, full_names, simple_names)
+                        new_symbols, full_names, simple_names, pair_names)
                     new_score = len(new_verified) / len(new_symbols)
                     if new_score >= PASS_THRESHOLD:
                         new_verdict = "PASS"

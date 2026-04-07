@@ -59,7 +59,8 @@ def chunk_specs_by_class(specs, token_budget):
 
 def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classes,
                                   total_classes, taxonomy_context, view_context, tier_context,
-                                  chaining_context="", feature_hint_block=""):
+                                  chaining_context="", feature_hint_block="",
+                                  permitted_method_block="", code_example_strategy=""):
     """롤링 정제 1차 호출 프롬프트: 전체 스펙의 일부만 받았음을 인지하고 초안 작성."""
     return f"""
     You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
@@ -86,7 +87,8 @@ def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classe
 
     ANTI-HALLUCINATION RULE:
     Use ONLY the C++ API specs below. Do NOT invent APIs or parameters.
-    CODE EXAMPLE STRICT RULE: Only call methods whose exact name appears in the specs below.
+    {permitted_method_block}
+    {code_example_strategy}
     {json.dumps(specs_chunk, indent=2)}
 
     WRITING STANDARD — each section must meet ALL of these:
@@ -137,7 +139,8 @@ def build_rolling_refine_prompt(feat_name, existing_draft, specs_chunk, is_last)
 def run_rolling_refinement(feat_name, outline, specs, client,
                             taxonomy_context, view_context, tier_context,
                             context_limit, prompt_overhead,
-                            chaining_context="", feature_hint_block=""):
+                            chaining_context="", feature_hint_block="",
+                            permitted_method_block="", code_example_strategy=""):
     """
     토큰 예산 초과 feature를 다중 LLM 호출로 점진적으로 문서화한다.
     Pass 1: 첫 번째 클래스 그룹으로 초안 생성 (미처리 섹션에 PENDING 마커)
@@ -159,7 +162,9 @@ def run_rolling_refinement(feat_name, outline, specs, client,
             view_context=view_context,
             tier_context=tier_context,
             chaining_context=chaining_context,
-            feature_hint_block=feature_hint_block
+            feature_hint_block=feature_hint_block,
+            permitted_method_block=permitted_method_block,
+            code_example_strategy=code_example_strategy
         ),
         use_think=False
     ))
@@ -299,9 +304,37 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
 
     return specs, foreign_classes
 
+def build_permitted_method_list(specs):
+    """
+    specs에서 호출 가능한 메서드 이름만 추출하여 프롬프트용 허용 목록 블록을 반환합니다.
+    LLM이 specs JSON을 직접 파싱하지 않고도 사용 가능한 메서드를 명확히 인식하도록 합니다.
+    메서드가 없으면 빈 문자열을 반환합니다.
+    """
+    methods = sorted({
+        s["name"].split("::")[-1]
+        for s in specs
+        if s.get("kind") == "function"
+        and not s["name"].split("::")[-1].startswith("operator")
+        and not s["name"].split("::")[-1].startswith("~")
+    })
+    if not methods:
+        return ""
+    return (
+        "PERMITTED API CALLS — complete list of callable methods for this feature.\n"
+        "        Call ONLY methods from this list in ALL code examples. "
+        "Do not call any method not in this list, even if it sounds plausible:\n"
+        + "\n".join(f"          - {m}" for m in methods)
+    )
+
+
+def is_enum_only_feature(specs):
+    """specs에 호출 가능한 함수가 없으면 True (enum/struct 정의만 있는 feature)."""
+    return not any(s.get("kind") == "function" for s in specs)
+
+
 def strip_markdown_wrapping(text):
     """
-    Forces pure raw markdown content preventing API from mistakenly 
+    Forces pure raw markdown content preventing API from mistakenly
     double wrapping output in generic ```markdown chunks
     """
     stripped = text.strip()
@@ -365,7 +398,8 @@ def build_change_summary(feat_apis, changed_classes_info):
 
 
 def build_patch_prompt(feat_name, existing_draft, changed_specs, change_summary,
-                       taxonomy_context, view_context, tier_context=""):
+                       taxonomy_context, view_context, tier_context="",
+                       permitted_method_block=""):
     """기존 문서를 최대한 보존하면서 변경된 API 부분만 수술하는 패치 프롬프트를 생성합니다. (원칙 3)"""
     change_section = (
         f"[WHAT CHANGED — UPDATE ONLY THESE PARTS]\n{change_summary}"
@@ -388,6 +422,7 @@ def build_patch_prompt(feat_name, existing_draft, changed_specs, change_summary,
 
     [LATEST API SPECS FOR REFERENCE]
     {json.dumps(changed_specs, indent=2)}
+    {permitted_method_block}
 
     STRICT PATCHING RULES:
     - Keep the existing document's section structure, writing style, and example code style exactly as-is.
@@ -433,6 +468,9 @@ def main():
     if not blueprints:
         print("Blueprints corrupted. Aborting Markdown Generation.")
         return
+
+    # child 메서드 주입 시 빠른 조회를 위한 blueprint 인덱스
+    blueprints_index = {bp.get("feature"): bp for bp in blueprints}
 
     # Phase 1.5 taxonomy 로드
     taxonomy = {}
@@ -514,6 +552,37 @@ def main():
                 f"`{c}` ({taxonomy.get(c, {}).get('display_name', c)})"
                 for c in children
             )
+
+            # child 클래스별 허용 메서드 이름 목록을 최소한으로 수집
+            # LLM이 child 메서드를 추론하지 않고 실제 존재하는 이름만 쓰도록 제한
+            child_method_lines = []
+            for child_name in children:
+                child_bp = blueprints_index.get(child_name, {})
+                child_specs_raw, _ = get_api_specs(
+                    child_bp.get("packages", []),
+                    child_bp.get("apis", []),
+                    allowed_tiers
+                )
+                child_methods = sorted({
+                    s["name"].split("::")[-1]
+                    for s in child_specs_raw
+                    if s.get("kind") == "function"
+                    and not s["name"].split("::")[-1].startswith(("operator", "~"))
+                })[:8]
+                if child_methods:
+                    display = taxonomy.get(child_name, {}).get("display_name", child_name)
+                    child_method_lines.append(
+                        f"          {display}: [{', '.join(child_methods)}]"
+                    )
+
+            child_methods_block = ""
+            if child_method_lines:
+                child_methods_block = (
+                    "\n        CHILD COMPONENT PERMITTED METHODS"
+                    " — call ONLY these when child classes appear in code examples:\n"
+                    + "\n".join(child_method_lines)
+                )
+
             taxonomy_context = f"""
         DOCUMENT ROLE — PARENT OVERVIEW PAGE:
         This is the overview (parent) page for the '{feat_name}' feature family.
@@ -525,6 +594,7 @@ def main():
         - Describe each child component in 2-3 sentences and add a '→ See: [ChildName]' reference.
         - Do NOT write exhaustive API details for child components — just enough to understand when to use each.
         - Focus on how the parent and children relate structurally.
+        {child_methods_block}
         """
         elif tree_decision == "leaf" and parent:
             taxonomy_context = f"""
@@ -605,7 +675,8 @@ def main():
 
             prompt = build_patch_prompt(
                 feat_name, existing_draft, specs, change_summary,
-                taxonomy_context, view_context, tier_context
+                taxonomy_context, view_context, tier_context,
+                permitted_method_block=build_permitted_method_list(specs)
             )
 
         # ── Full 생성 모드 ─────────────────────────────────────────────────
@@ -721,6 +792,24 @@ def main():
         {hint_extra}
         """ if hint_extra else ""
 
+            # ── 허용 메서드 목록 블록 ──────────────────────────────────────────────
+            # specs에 실제 존재하는 메서드 이름만 나열하여 LLM의 이름 추론을 억제한다.
+            # child 메서드는 taxonomy_context에서 별도로 주입되므로 여기서는 이 feature 자신의 메서드만.
+            permitted_method_block = build_permitted_method_list(specs)
+
+            # ── Enum-only feature 감지 → 코드 예제 억제 ────────────────────────
+            if is_enum_only_feature(specs):
+                code_example_strategy = """
+        CODE EXAMPLE STRATEGY — TYPE DEFINITIONS ONLY:
+        This feature contains only type definitions (enums or structs). There are NO callable methods.
+        - Do NOT write any code block that calls SetXxx(), GetXxx(), or any method on a DALi object.
+        - Instead, describe each enum/struct value and its semantic meaning in prose.
+        - If a type usage is needed, show only variable declarations: TypeName var = TypeName::VALUE;
+        - Do NOT show integration with View or other classes via method calls.
+        """
+            else:
+                code_example_strategy = ""
+
             # ── 토큰 초과 여부 판단: taxonomy oversized_single 또는 토큰 추정값 기반 ──
             tax_entry = taxonomy.get(feat_name, {})
             specs_token_estimate = estimate_prompt_tokens(json.dumps(specs))
@@ -734,7 +823,9 @@ def main():
                     taxonomy_context, view_context, tier_context,
                     CONTEXT_LIMIT, PROMPT_OVERHEAD,
                     chaining_context=chaining_context,
-                    feature_hint_block=feature_hint_block
+                    feature_hint_block=feature_hint_block,
+                    permitted_method_block=permitted_method_block,
+                    code_example_strategy=code_example_strategy
                 )
             else:
                 prompt = f"""
@@ -762,9 +853,8 @@ def main():
         ANTI-HALLUCINATION RULE:
         Use ONLY the C++ API specs below for all signatures, parameter types, and return values.
         Do NOT invent non-existent APIs or parameters.
-        CODE EXAMPLE STRICT RULE: In every code example, you may ONLY call methods whose exact
-        name appears in the API specs list below. If a method name is not listed, do NOT use it —
-        not even if it sounds plausible (e.g. do not use MoveTo if only AnimateTo is listed).
+        {permitted_method_block}
+        {code_example_strategy}
         {json.dumps(specs, indent=2)}
         {inherited_context}
 
