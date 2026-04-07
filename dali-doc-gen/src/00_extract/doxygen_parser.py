@@ -166,12 +166,77 @@ def parse_member(memberdef, api_dirs):
 
     return member_data
 
+def extract_enum_synthetics(compounddef, namespace_name, api_dirs):
+    """namespace compound에서 kind="enum" memberdef를 synthetic compound 목록으로 추출.
+
+    Doxygen은 enum class를 별도 compound로 생성하지 않고 namespace compound의
+    memberdef로 처리한다. 이 함수는 그런 enum memberdef를 독립 compound처럼 추출해
+    feature_clusterer가 파일 경로 기반으로 올바른 feature에 라우팅할 수 있게 한다.
+    """
+    synthetics = []
+    for sectiondef in compounddef.findall("sectiondef"):
+        sec_kind = sectiondef.get("kind", "")
+        if "private" in sec_kind or "internal" in sec_kind:
+            continue
+        for memberdef in sectiondef.findall("memberdef"):
+            if memberdef.get("kind") != "enum":
+                continue
+            if memberdef.get("prot") == "private":
+                continue
+
+            enum_name = extract_text_recursive(memberdef.find("name"))
+            qualified_name = f"{namespace_name}::{enum_name}"
+
+            location = memberdef.find("location")
+            file_path = ""
+            api_tier = "unknown"
+            if location is not None:
+                file_path = location.get("file", "")
+                for t in api_dirs:
+                    if t in file_path:
+                        api_tier = t.split("/")[-1]
+                        break
+
+            if not file_path:
+                continue  # location 없으면 feature 라우팅 불가 — 스킵
+
+            brief_elem = memberdef.find("briefdescription")
+            brief, _, _, _, _, _, _ = parse_description(brief_elem)
+
+            # enumvalue 자식 추출 (이름 + brief)
+            members = []
+            for ev in memberdef.findall("enumvalue"):
+                ev_name = extract_text_recursive(ev.find("name"))
+                ev_brief = ""
+                ev_brief_elem = ev.find("briefdescription")
+                if ev_brief_elem is not None:
+                    ev_brief, _, _, _, _, _, _ = parse_description(ev_brief_elem)
+                members.append({
+                    "name": ev_name,
+                    "kind": "enumvalue",
+                    "brief": ev_brief,
+                })
+
+            synthetics.append({
+                "name": qualified_name,
+                "kind": "enum",
+                "file": file_path,
+                "api_tier": api_tier,
+                "brief": brief,
+                "detailed": "",
+                "members": members,
+                "synthetic": True,
+            })
+
+    return synthetics
+
+
 def parse_compound(xml_path, api_dirs):
     tree = ET.parse(xml_path)
     root = tree.getroot()
     compounddef = root.find("compounddef")
     if compounddef is None:
-        return None
+        return []
 
     compound_kind = compounddef.get("kind")
     compound_name = extract_text_recursive(compounddef.find("compoundname"))
@@ -242,7 +307,12 @@ def parse_compound(xml_path, api_dirs):
             member_data = parse_member(memberdef, api_dirs)
             compound_data["members"].append(member_data)
 
-    return compound_data
+    # namespace compound의 경우 enum memberdef를 synthetic compound로 추출해 함께 반환
+    if compound_kind == "namespace":
+        synthetics = extract_enum_synthetics(compounddef, compound_name, api_dirs)
+        return [compound_data] + synthetics
+
+    return [compound_data]
 
 def process_package(package_name, repo_config):
     xml_dir = CACHE_DOXYGEN_ROOT / package_name / "xml"
@@ -275,10 +345,10 @@ def process_package(package_name, repo_config):
         compound_xml_path = xml_dir / f"{refid}.xml"
         
         if compound_xml_path.exists():
-            parsed_data = parse_compound(compound_xml_path, api_dirs)
-            if parsed_data:
-                results["compounds"].append(parsed_data)
-                total_parsed += 1
+            parsed_list = parse_compound(compound_xml_path, api_dirs)
+            if parsed_list:
+                results["compounds"].extend(parsed_list)
+                total_parsed += len(parsed_list)
 
     PARSED_DOXYGEN_ROOT.mkdir(parents=True, exist_ok=True)
     out_path = PARSED_DOXYGEN_ROOT / f"{package_name}.json"
