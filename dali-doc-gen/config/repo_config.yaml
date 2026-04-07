@@ -59,3 +59,10 @@ manual_features:
     source_package: "dali-core"
     description: "Internal extension mechanism. App and platform developers do not use CustomActor directly."
     suppress_doc: true        # custom-actor.md 생성 안 함, 어디에도 통합하지 않음
+
+  - feature: "image-view-types"
+    display_name: "ImageView Types"
+    source_package: "dali-ui"
+    description: "Shared enum types for image-view family (LoadPolicy, ReleasePolicy, FittingMode, MaskingType, etc.). Documented as part of the image-view page."
+    suppress_doc: true        # image-view-types.md 생성 안 함 — image-view 문서에 통합
+    merge_into: "image-view"  # image-view 생성 시 이 enum 타입들을 inherited context로 포함
