@@ -96,6 +96,7 @@ def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classe
     3. Use > Note: or > Warning: blockquotes for non-obvious behavior.
     - Write entirely in valid GitHub Flavored Markdown.
     - Use ## for section titles and ### for sub-sections.
+    - Do NOT include an explicit Table of Contents list at the top of the document.
     - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
     """
 
@@ -790,6 +791,7 @@ def main():
            write a basic working application using the '{feat_name}' feature.
         - Write entirely in valid GitHub Flavored Markdown.
         - Use ## for section titles and ### for sub-sections.
+        - Do NOT include an explicit Table of Contents list at the top of the document.
         - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
         """
                 clean_md = strip_markdown_wrapping(client.generate(prompt, use_think=False))

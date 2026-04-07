@@ -50,11 +50,21 @@ def get_verdict(feat_key, report_cache=[None]):
 
 
 def doc_exists(feat_key, validated_dir=None, drafts_dir=None):
-    """validated_drafts/ 또는 markdown_drafts/ 어디에라도 .md가 있는지 확인."""
+    """validated_drafts/ 또는 markdown_drafts/ 어디에라도 .md가 있는지 확인.
+
+    Stage D 리포트가 존재하는 경우(Stage D가 실행된 경우)에는 validated_drafts/만 신뢰한다.
+    Stage D FAIL로 markdown_drafts/에만 남아있는 파일을 index에 포함하면
+    md_renderer가 app-guide/에 복사하지 않아 링크가 깨지기 때문이다.
+    Stage D를 실행하지 않은 경우에만 markdown_drafts/를 폴백으로 사용한다.
+    """
     vdir = validated_dir if validated_dir is not None else VALIDATED_DIR
     ddir = drafts_dir if drafts_dir is not None else DRAFTS_DIR
-    return (vdir / f"{feat_key}.md").exists() or \
-           (ddir / f"{feat_key}.md").exists()
+    if (vdir / f"{feat_key}.md").exists():
+        return True
+    # Stage D가 실행된 경우: validated_drafts만 신뢰, markdown_drafts 폴백 사용 안 함
+    if REPORT_PATH.exists():
+        return False
+    return (ddir / f"{feat_key}.md").exists()
 
 
 def notier_exists(feat_key, validated_dir=None, drafts_dir=None):
@@ -186,11 +196,9 @@ def main():
     # display_name 알파벳 순 정렬
     top_level_roots.sort(key=lambda k: taxonomy.get(k, {}).get("display_name", k).lower())
 
-    # tree 항목(children 있음)과 flat 항목 분리
+    # tree 항목(children 있음) — 로그 출력용
     tree_roots = [k for k in top_level_roots
                   if taxonomy.get(k, {}).get("tree_decision") == "tree" and taxonomy.get(k, {}).get("children")]
-    flat_roots = [k for k in top_level_roots
-                  if k not in tree_roots]
 
     # ── Section 1: All Features (Flat) ───────────────────────────────
     lines.append("## All Features")

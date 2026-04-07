@@ -331,13 +331,16 @@ def main():
         SCOPE RULES for TOC design:
         - Design sections ONLY for the '{feat_name}' feature itself.
         - Do NOT design sections that primarily explain a parent class or sibling components.
-        - The first section must introduce '{feat_name}' specifically — not a general
-          overview of the parent category.
         - Do NOT design sections for 'Extending' or 'Subclassing' '{feat_name}' unless it
           is a documented app-developer pattern for this specific feature.
 
+        FIRST SECTION RULE (mandatory):
+        - The first entry MUST always be exactly {{"section_title": "Overview", "description": "<your 1-sentence description>"}}.
+        - Do NOT rename it to "Introduction", "What is X", or anything else. The title must be "Overview".
+        - The description should answer: what '{feat_name}' is, when to use it, and what makes it distinct.
+
         Based on the actual complexity and breadth of this feature module, decide the
-        appropriate number of sections yourself (between 3 and 10).
+        appropriate number of sections yourself (between 3 and 10, NOT counting the mandatory Overview).
         - A simple utility module (e.g. math helpers) needs only 3-4 sections.
         - A moderate feature (e.g. animation, events) needs 5-7 sections.
         - A complex subsystem with lifecycle, signals, and advanced usage needs 8-10 sections.
@@ -349,7 +352,7 @@ def main():
 
         Output ONLY a valid pure JSON Array. No markdown wrappers. Schema:
         [
-          {{"section_title": "Introduction to {feat_name}", "description": "What it does and when to use it"}},
+          {{"section_title": "Overview", "description": "What {feat_name} is, when to use it, and what makes it distinct"}},
           {{"section_title": "Core Classes and Architecture", "description": "The key classes and how they relate"}}
         ]
         """
