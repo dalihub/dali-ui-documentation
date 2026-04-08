@@ -33,7 +33,6 @@ DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 OUT_REPORT_DIR = CACHE_DIR / "validation_report"
 OUT_VALIDATED_DIR = CACHE_DIR / "validated_drafts"
-REPORT_PATH = OUT_REPORT_DIR / "stage_d_report.json"
 
 # 판정 임계값
 PASS_THRESHOLD = 1.00    # ≥ 100%: PASS (무관용 원칙 적용, 1개라도 거짓 심볼 사용 시 FAIL 처리)
@@ -440,6 +439,7 @@ def main():
     # 티어별 드래프트 읽기/검증 출력 경로
     tier_drafts_dir = DRAFTS_DIR / args.tier
     tier_validated_dir = OUT_VALIDATED_DIR / args.tier
+    report_path = OUT_REPORT_DIR / f"stage_d_report_{args.tier}.json"
 
     # 디렉터리 준비
     OUT_REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -494,6 +494,18 @@ def main():
         # PASS / LOW_CONTENT는 그대로 복사
         llm_comment = None
         surgical_patches = 0
+        
+        history = [{
+            "attempt": 0,
+            "type": "initial",
+            "verdict": verdict,
+            "score": round(score, 4) if score is not None else None,
+            "verified_symbols": verified_syms[:],
+            "unverified_symbols": unverified_syms[:],
+            "copy_status": "pending",
+            "surgical_patches": 0,
+            "llm_review": None
+        }]
 
         if verdict in ("WARN", "FAIL") and client and unverified_syms and not args.no_retry:
             pre_verdict = verdict  # stats 재조정 시 원래 verdict 참조용
@@ -529,6 +541,19 @@ def main():
                     score = new_score
                     print(f"  [Surgical] Re-validated after patch: [{verdict}] "
                           f"score={score:.1%} ({surgical_patches} block(s) replaced)")
+                    
+                    history.append({
+                        "attempt": 0,
+                        "type": "surgical_patch",
+                        "verdict": verdict,
+                        "score": round(score, 4) if score is not None else None,
+                        "verified_symbols": verified_syms[:],
+                        "unverified_symbols": unverified_syms[:],
+                        "copy_status": "pending",
+                        "surgical_patches": surgical_patches,
+                        "llm_review": None
+                    })
+
                     # stats 재조정: 원래 verdict(pre_verdict)를 -1, 새 verdict를 +1
                     stats[pre_verdict.lower()] = max(0, stats.get(pre_verdict.lower(), 0) - 1)
                     stats[verdict.lower()] = stats.get(verdict.lower(), 0) + 1
@@ -555,17 +580,12 @@ def main():
         report.append({
             "feature": feat_name,
             "verdict": verdict,
-            "score": round(score, 4) if score is not None else None,
             "total_symbols": len(symbols),
-            "verified_symbols": verified_syms,
-            "unverified_symbols": unverified_syms,
-            "copy_status": copy_status,
-            "surgical_patches": surgical_patches,
-            "llm_review": llm_comment
+            "history": history
         })
 
     # 리포트 저장
-    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+    with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
 
     # ── Stage D Retry Loop ───────────────────────────────────────────────
@@ -581,7 +601,7 @@ def main():
             still_failing = []
             for entry in fail_entries:
                 feat_name = entry["feature"]
-                unverified_set = set(entry.get("unverified_symbols", []))
+                unverified_set = set(entry["history"][-1].get("unverified_symbols", []))
                 blueprint = blueprints_map.get(feat_name)
                 if not blueprint:
                     print(f"  [Retry {attempt}] '{feat_name}': No blueprint found, skipping.")
@@ -632,11 +652,17 @@ def main():
                 for r in report:
                     if r["feature"] == feat_name:
                         r["verdict"] = new_verdict
-                        r["score"] = round(new_score, 4) if new_score else None
-                        r["verified_symbols"] = new_verified
-                        r["unverified_symbols"] = new_unverified
-                        r["retry_attempts"] = attempt
-                        r["copy_status"] = "copied" if new_verdict != "FAIL" else "blocked"
+                        r.setdefault("history", []).append({
+                            "attempt": attempt,
+                            "type": "full_regeneration",
+                            "verdict": new_verdict,
+                            "score": round(new_score, 4) if new_score else None,
+                            "verified_symbols": new_verified[:],
+                            "unverified_symbols": new_unverified[:],
+                            "copy_status": "copied" if new_verdict != "FAIL" else "blocked",
+                            "surgical_patches": 0,
+                            "llm_review": None
+                        })
                         break
 
                 # PASS/WARN/LOW_CONTENT 이면 validated_drafts/{tier}에 복사
@@ -662,7 +688,7 @@ def main():
     # ────────────────────────────────────────────────────────────────────
 
     # ── 리포트 최종 저장 (리트라이 정보 포함) ──────────────────────────────────
-    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+    with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
 
     # 최종 요약
@@ -671,7 +697,7 @@ def main():
     print(f" Stage D Complete! Validation report saved.")
     print(f" Results: PASS={stats['pass']}, WARN={stats['warn']}, "
           f"FAIL={stats['fail']}, LOW_CONTENT={stats['low_content']} / {total} files")
-    print(f" Report  : {REPORT_PATH}")
+    print(f" Report  : {report_path}")
     print(f" Validated: {tier_validated_dir}")
     print("=================================================================")
 
