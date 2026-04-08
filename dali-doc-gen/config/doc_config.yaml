@@ -16,6 +16,17 @@ feature_hints:
       AsSelectable(lambda), With(lambda), and As(view&) methods.
       Always prefer chained initialization style over separate-statement style in examples.
 
+  image-view:
+    extra_context: |
+      ImageView displays ONLY static image formats (e.g. PNG, JPEG, BMP, SVG).
+      It does NOT support animated formats such as GIF or WEBP.
+      Do NOT describe or imply any animated image playback capability for ImageView.
+
+  animated-image-view:
+    extra_context: |
+      AnimatedImageView supports GIF and WEBP animated image formats.
+      It does NOT support APNG. Do NOT mention APNG under any circumstances.
+
 token_overflow:
   # feature_clusterer: 이 스펙 수 초과 시 oversized 마킹 및 후보 그룹 계산
   max_specs_per_feature: 2000

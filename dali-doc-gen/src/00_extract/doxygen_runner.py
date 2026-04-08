@@ -33,6 +33,7 @@ EXTRACT_PRIVATE        = NO
 EXTRACT_STATIC         = YES
 MACRO_EXPANSION        = YES
 EXPAND_ONLY_PREDEF     = YES
+PREDEFINED             = DALI_INTERNAL=
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = {repo_path}
 CALL_GRAPH             = YES
