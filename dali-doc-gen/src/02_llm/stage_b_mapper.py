@@ -256,6 +256,9 @@ def main():
     if not feature_list:
         return
 
+    # Fix: .autogen 항목들은 method chaining 보일러플레이트이므로 Blueprint 문서화 대상에서 완전히 배제
+    feature_list = [f for f in feature_list if not f.get("feature", "").endswith(".autogen")]
+
     out_blueprints_path = CACHE_DIR / "doc_blueprints" / f"stage_b_blueprints_{args.tier}.json"
 
     # feature_hints 로드

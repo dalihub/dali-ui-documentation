@@ -36,8 +36,8 @@ OUT_VALIDATED_DIR = CACHE_DIR / "validated_drafts"
 REPORT_PATH = OUT_REPORT_DIR / "stage_d_report.json"
 
 # 판정 임계값
-PASS_THRESHOLD = 0.60    # ≥ 60%: PASS (심볼의 과반 이상 확인됨)
-WARN_THRESHOLD = 0.35    # ≥ 35%: WARN (부분적 확인, 계속 진장하되 리포트 태깅)
+PASS_THRESHOLD = 1.00    # ≥ 100%: PASS (무관용 원칙 적용, 1개라도 거짓 심볼 사용 시 FAIL 처리)
+WARN_THRESHOLD = 1.00    # WARN 단계 병합 (100% 미만은 모두 FAIL 취급)
 MIN_SYMBOLS_FOR_SCORING = 3  # 심볼이 이 이하면 LOW_CONTENT 처리
 
 # Retry 설정

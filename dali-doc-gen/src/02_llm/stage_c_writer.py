@@ -319,10 +319,20 @@ def build_permitted_method_list(specs):
     if not methods:
         return ""
     return (
-        "PERMITTED API CALLS — complete list of callable methods for this feature.\n"
-        "        Call ONLY methods from this list in ALL code examples. "
-        "Do not call any method not in this list, even if it sounds plausible:\n"
-        + "\n".join(f"          - {m}" for m in methods)
+        "CRITICAL CONSTRAINT - PERMITTED API CALLS ONLY:\n"
+        "        You are strictly bounded to the following complete list of callable methods for this feature.\n"
+        "        - NEVER use, invent, or assume the existence of any method not explicitly listed here.\n"
+        "        - (e.g., SetVisible, Show, Hide, SetSize etc. must NEVER be used unless they are explicitly present in this list).\n"
+        "        - Using a non-permitted method will trigger a FATAL pipeline validation failure.\n"
+        "        Permitted List:\n"
+        + "\n".join(f"          - {m}" for m in methods) + "\n\n"
+        "        CRITICAL CONSTRAINT - TERMINOLOGY OVERRIDE (ACTOR -> VIEW):\n"
+        "        In DALi, 'View' is the official high-level UI object that replaces 'Actor'.\n"
+        "        Therefore, in ALL natural language explanations AND code examples:\n"
+        "        - Replace the word 'Actor' or 'Actors' with 'View' or 'Views'.\n"
+        "        - Replace the class name 'Dali::Actor' with 'Dali::Ui::View'.\n"
+        "        - Do NOT declare or use 'Dali::Actor actor = ...'. Instead use 'Dali::Ui::View view = Dali::Ui::View::New()'.\n"
+        "        - Exception: If referring to base enumerations like 'Dali::Actor::Property::...', you may keep the namespace, but otherwise ALWAYS use View.\n"
     )
 
 
