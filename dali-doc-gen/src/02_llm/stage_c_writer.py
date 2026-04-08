@@ -12,7 +12,6 @@ from llm_client import LLMClient
 # Context Directories
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
-BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 OUT_DRAFTS_DIR = CACHE_DIR / "markdown_drafts"
 VALIDATED_DRAFTS_DIR = CACHE_DIR / "validated_drafts"
@@ -464,7 +463,11 @@ def main():
     tier_drafts_dir.mkdir(parents=True, exist_ok=True)
     allowed_tiers = {"public-api"} if args.tier == "app" else None
 
-    blueprints = load_json(BLUEPRINTS_PATH)
+    blueprints_path = CACHE_DIR / "doc_blueprints" / f"stage_b_blueprints_{args.tier}.json"
+    if not blueprints_path.exists():
+        blueprints_path = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
+
+    blueprints = load_json(blueprints_path)
     if not blueprints:
         print("Blueprints corrupted. Aborting Markdown Generation.")
         return

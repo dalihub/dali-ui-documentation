@@ -42,8 +42,8 @@ MIN_SYMBOLS_FOR_SCORING = 3  # 심볼이 이 이하면 LOW_CONTENT 처리
 
 # Retry 설정
 MAX_RETRY_ATTEMPTS = 2   # FAIL 문서 자동 재생성 최대 횟수
-BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
+
 
 
 # ── Doxygen DB 구축 ──────────────────────────────────────────────────────
@@ -304,13 +304,16 @@ def strip_markdown_wrapping(text):
     return stripped.strip()
 
 
-def load_blueprints():
+def load_blueprints(tier):
     """
     Stage B 블루프린트에서 feature별 outline/packages 정보 로드.
     """
-    if not BLUEPRINTS_PATH.exists():
+    path = CACHE_DIR / "doc_blueprints" / f"stage_b_blueprints_{tier}.json"
+    if not path.exists():
+        path = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
+    if not path.exists():
         return {}
-    with open(BLUEPRINTS_PATH, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return {item["feature"]: item for item in data}
 
@@ -497,7 +500,7 @@ def main():
             print(f"  [Surgical] '{feat_name}': {len(unverified_syms)} unverified symbol(s) — "
                   f"attempting block-level patch...")
             # API 스펙 로드 (surgical patch 프롬프트용)
-            blueprints_map_local = load_blueprints()
+            blueprints_map_local = load_blueprints(args.tier)
             bp_local = blueprints_map_local.get(feat_name, {})
             allowed_tiers_local = {"public-api"} if args.tier == "app" else None
             patch_specs = get_api_specs_for_retry(
@@ -571,7 +574,7 @@ def main():
     if fail_entries and not args.no_retry and not args.no_llm:
         print(f"\n[Retry] {len(fail_entries)} FAIL document(s) detected. "
               f"Starting auto-regeneration loop (max {MAX_RETRY_ATTEMPTS} attempts)...")
-        blueprints_map = load_blueprints()
+        blueprints_map = load_blueprints(args.tier)
         retry_client = client if client else LLMClient()
 
         for attempt in range(1, MAX_RETRY_ATTEMPTS + 1):

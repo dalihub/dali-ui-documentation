@@ -15,7 +15,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 CLASSIFIED_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map_classified.json"
 CLASS_FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "class_feature_map.json"
-OUT_BLUEPRINTS_PATH = CACHE_DIR / "doc_blueprints" / "stage_b_blueprints.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
@@ -70,10 +69,47 @@ def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def find_child_api_names(display_name):
+def build_api_tier_index():
+    """parsed_doxygen에서 {compound_name: api_tier} 인덱스를 구축한다."""
+    index = {}
+    for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
+        data = load_json(pkg_json)
+        if not data:
+            continue
+        for comp in data.get("compounds", []):
+            name = comp.get("name", "")
+            tier = comp.get("api_tier", "unknown")
+            if name:
+                index[name] = tier
+                for mb in comp.get("members", []):
+                    mb_name = mb.get("name", "")
+                    if mb_name:
+                        index[f"{name}::{mb_name}"] = tier
+    return index
+
+
+def filter_apis_by_tier(apis, api_tier_index, allowed_tiers):
+    """
+    APIs 목록에서 allowed_tiers에 속하는 compound만 반환.
+    파일명(.cpp/.h) 항목과 인덱스에 없는 항목은 제외한다.
+    allowed_tiers가 None이면 원본 목록을 그대로 반환한다.
+    """
+    if allowed_tiers is None:
+        return apis
+    filtered = []
+    for name in apis:
+        if name.endswith((".cpp", ".h")):
+            continue
+        if api_tier_index.get(name) in allowed_tiers:
+            filtered.append(name)
+    return filtered
+
+
+def find_child_api_names(display_name, allowed_tiers=None):
     """
     Taxonomy child의 display_name(예: 'ImageView')으로 Doxygen에서
     해당 클래스의 API 이름 목록을 검색해 반환합니다.
+    allowed_tiers가 지정된 경우 해당 tier의 compound만 포함합니다.
     """
     api_names = []
     packages_found = set()
@@ -85,6 +121,11 @@ def find_child_api_names(display_name):
             continue
         pkg_name = data.get("package", pkg_json.stem)
         for comp in data.get("compounds", []):
+            if allowed_tiers is not None:
+                tier = comp.get("api_tier", "unknown")
+                if tier not in allowed_tiers:
+                    continue
+
             comp_name = comp.get("name", "")
             # 정확히 일치하거나 XxxImpl 변형(Integration 구현체)도 함께 수집
             simple_name = comp_name.split("::")[-1].lower()
@@ -145,7 +186,7 @@ def update_class_feature_map_for_children(child_entries):
         print(f"[ClassMap] Updated {updated_count} class→feature mapping(s) for {len(child_entries)} taxonomy child(ren).")
 
 
-def build_child_entries(taxonomy, existing_feature_keys):
+def build_child_entries(taxonomy, existing_feature_keys, allowed_tiers=None):
     """
     taxonomy에 있는 leaf child 중 feature_map_classified에 없는 항목을
     Doxygen에서 API를 조회하여 synthetic feature entry로 만들어 반환합니다.
@@ -159,7 +200,7 @@ def build_child_entries(taxonomy, existing_feature_keys):
 
         display_name = tax_entry.get("display_name", feat_key)
         parent = tax_entry.get("parent", "")
-        api_names, packages = find_child_api_names(display_name)
+        api_names, packages = find_child_api_names(display_name, allowed_tiers)
 
         child_entries.append({
             "feature": feat_key,
@@ -215,6 +256,8 @@ def main():
     if not feature_list:
         return
 
+    out_blueprints_path = CACHE_DIR / "doc_blueprints" / f"stage_b_blueprints_{args.tier}.json"
+
     # feature_hints 로드
     doc_config = load_doc_config()
     feature_hints = doc_config.get("feature_hints", {})
@@ -231,10 +274,11 @@ def main():
 
     # ── Taxonomy child feature 주입 ──────────────────────────────────────
     # feature_map에 없는 leaf child를 Doxygen에서 찾아 목록에 추가
+    allowed_tiers = {"public-api"} if args.tier == "app" else None
     existing_keys = {f["feature"] for f in feature_list}
     if taxonomy:
         print("[Taxonomy] Scanning for child features not in feature map...")
-        child_entries = build_child_entries(taxonomy, existing_keys)
+        child_entries = build_child_entries(taxonomy, existing_keys, allowed_tiers)
         if child_entries:
             print(f"[Taxonomy] Appended {len(child_entries)} child feature(s) to processing list.")
             feature_list.extend(child_entries)
@@ -243,6 +287,7 @@ def main():
     # ────────────────────────────────────────────────────────────────────
 
     client = LLMClient()
+    api_tier_index = build_api_tier_index()
 
     if args.features:
         target_features = [f.strip() for f in args.features.split(",") if f.strip()]
@@ -256,8 +301,16 @@ def main():
         
     for index, cluster in enumerate(feature_list):
         feat_name = cluster.get("feature", "Unknown")
-        # 클래스명만 있는 리스트 → sample_apis가 캡 없이 그대로 반환
-        apis = sample_apis(cluster.get("apis", []))
+        
+        # 1. Filter apis first
+        raw_apis = cluster.get("apis", [])
+        filtered_apis = filter_apis_by_tier(raw_apis, api_tier_index, allowed_tiers)
+        
+        # 2. Sample filtered apis
+        apis = sample_apis(filtered_apis)
+        cluster["apis"] = apis
+        cluster["allowed_tiers"] = list(allowed_tiers) if allowed_tiers else None
+        
         tiers = cluster.get("api_tiers", [])
         
         print(f"\n[{index+1}/{len(feature_list)}] Mapping structural outlines for feature module '{feat_name}' (Sampled APIs: {len(apis)})...")
@@ -391,15 +444,15 @@ def main():
                 {"section_title": "Key Classes and Usages", "description": "Detailed implementation walkthroughs."}
             ]
             
-    OUT_BLUEPRINTS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    out_blueprints_path.parent.mkdir(parents=True, exist_ok=True)
 
     # ── --features 로 일부만 처리한 경우: 기존 blueprints 와 merge 저장 ────────
     # 전체 실행(--features 미사용)이면 그대로 덮어쓰기
     if args.features:
         existing_map = {}
-        if OUT_BLUEPRINTS_PATH.exists():
+        if out_blueprints_path.exists():
             try:
-                with open(OUT_BLUEPRINTS_PATH, "r", encoding="utf-8") as f:
+                with open(out_blueprints_path, "r", encoding="utf-8") as f:
                     for item in json.load(f):
                         existing_map[item["feature"]] = item
             except Exception:
@@ -412,12 +465,12 @@ def main():
     else:
         merged = feature_list
 
-    with open(OUT_BLUEPRINTS_PATH, "w", encoding="utf-8") as f:
+    with open(out_blueprints_path, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
         
     print(f"\n=================================================================")
     print(f" Stage B Complete! Generative blueprints merged downstream.")
-    print(f" JSON schema finalized at: {OUT_BLUEPRINTS_PATH}")
+    print(f" JSON schema finalized at: {out_blueprints_path}")
     print("=================================================================")
 
 if __name__ == "__main__":
