@@ -342,6 +342,50 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
                         mb_spec["chainable"] = True
                     specs.append(mb_spec)
 
+    # ── Secondary enum scan: 메서드 시그니처에서 참조된 enum 타입을 추가 로드 ──
+    # ex) SetFittingMode(Ui::FittingMode::Type) → FittingMode::Type compound 로드
+    # → build_permitted_method_list에서 enum value 그룹을 생성할 수 있게 됨
+    sig_type_re = re.compile(r'\b(?:Ui::)?([A-Z][A-Za-z0-9_]+)(?:::Type)?\b')
+    referenced_types = set()
+    for s in specs:
+        sig = s.get("signature", "")
+        if sig:
+            for m in sig_type_re.finditer(sig):
+                referenced_types.add(m.group(1))
+    # 이미 포함된 compound 이름(simple)은 제외
+    existing_simples = {s["name"].split("::")[-2] if "::" in s["name"] else s["name"]
+                        for s in specs if s.get("kind") in ("class", "struct", "enumvalue")}
+
+    for pkg in pkg_names:
+        pkg_path = PARSED_DOXYGEN_DIR / f"{pkg}.json"
+        pkg_data = load_json(pkg_path)
+        if not pkg_data:
+            continue
+        for comp in pkg_data.get("compounds", []):
+            if not isinstance(comp, dict):
+                continue
+            if allowed_tiers and comp.get("api_tier") not in allowed_tiers:
+                continue
+            c_name = comp.get("name", "")
+            parts = c_name.split("::")
+            simple = parts[-1]
+            parent_simple = parts[-2] if len(parts) >= 2 else ""
+            # 참조된 타입이거나 그 Type 하위 compound인 경우만
+            if simple not in referenced_types and parent_simple not in referenced_types:
+                continue
+            ev_members = [mb for mb in comp.get("members", [])
+                          if isinstance(mb, dict) and mb.get("kind") == "enumvalue"]
+            if not ev_members:
+                continue
+            if parent_simple in existing_simples or simple in existing_simples:
+                continue
+            for mb in ev_members:
+                specs.append({
+                    "name": f"{c_name}::{mb.get('name', '')}",
+                    "kind": "enumvalue",
+                    "brief": mb.get("brief", "")
+                })
+
     return specs, foreign_classes
 
 def build_permitted_method_list(specs):
@@ -357,17 +401,54 @@ def build_permitted_method_list(specs):
         and not s["name"].split("::")[-1].startswith("operator")
         and not s["name"].split("::")[-1].startswith("~")
     })
-    if not methods:
+
+    # enum value를 부모 타입별로 그룹화 (set으로 자동 중복 제거)
+    # Dali::Ui::FittingMode::Type::SCALE_TO_FILL → parent: FittingMode, value: SCALE_TO_FILL
+    enum_groups: dict = {}
+    for s in specs:
+        if s.get("kind") != "enumvalue":
+            continue
+        parts = s["name"].split("::")
+        if len(parts) < 2:
+            continue
+        value = parts[-1]
+        if not value:
+            continue
+        parent_full = "::".join(parts[:-1])
+        parent = _strip_dali_prefix(parent_full)
+        # ::Type 접미사 제거 (LoadPolicy::Type → LoadPolicy)
+        if parent.endswith("::Type"):
+            parent = parent[:-len("::Type")]
+        parent = parent.strip(":")
+        if not parent:
+            continue
+        enum_groups.setdefault(parent, set()).add(value)
+
+    if not methods and not enum_groups:
         return ""
-    return (
-        "CRITICAL CONSTRAINT - PERMITTED API CALLS ONLY:\n"
-        "        You are strictly bounded to the following complete list of callable methods for this feature.\n"
-        "        - NEVER use, invent, or assume the existence of any method not explicitly listed here.\n"
-        "        - (e.g., SetVisible, Show, Hide, SetSize etc. must NEVER be used unless they are explicitly present in this list).\n"
-        "        - Using a non-permitted method will trigger a FATAL pipeline validation failure.\n"
-        "        Permitted List:\n"
-        + "\n".join(f"          - {m}" for m in methods) + "\n\n"
+
+    result = "CRITICAL CONSTRAINT - PERMITTED API CALLS ONLY:\n"
+    if methods:
+        result += (
+            "        You are strictly bounded to the following complete list of callable methods for this feature.\n"
+            "        - NEVER use, invent, or assume the existence of any method not explicitly listed here.\n"
+            "        - (e.g., SetVisible, Show, Hide, SetSize etc. must NEVER be used unless they are explicitly present in this list).\n"
+            "        - Using a non-permitted method will trigger a FATAL pipeline validation failure.\n"
+            "        Permitted Methods:\n"
+            + "\n".join(f"          - {m}" for m in methods) + "\n\n"
+        )
+    if enum_groups:
+        result += (
+            "        PERMITTED ENUM VALUES — ONLY these values exist. Using any other value is a hallucination:\n"
+            + "\n".join(
+                f"          {parent}: {', '.join(sorted(vals))}"
+                for parent, vals in sorted(enum_groups.items())
+                if vals
+            ) + "\n\n"
+        )
+    return result + (
         "        CRITICAL CONSTRAINT - USING NAMESPACE DECLARATIONS:\n"
+
         "        ALL C++ code examples MUST begin with exactly these two lines:\n"
         "          using namespace Dali;\n"
         "          using namespace Dali::Ui;\n"
