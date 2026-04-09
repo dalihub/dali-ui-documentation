@@ -172,38 +172,59 @@ if kind == "enum":
 - 선언 파싱으로 `변수명 → Dali:: 타입` 매핑 구축.
 - dot-call 검증 시 타입 매핑 기반으로 `Dali::타입::메서드` 재구성 후 `full_names` 검증.
 
-### Phase 2 — 2-Pass 샘플코드 생성 (다음 Sprint)
+### Phase 2 — 2-Pass 샘플코드 생성 (배치 호출 방식)
 
 #### 수정 파일: `src/02_llm/stage_c_writer.py`
 
 **Pass 1 함수** (`generate_natural_language_draft`):
 - 기존 프롬프트와 유사하지만 코드 블록 대신 `<!-- SAMPLE_CODE: ... -->` 태그로 남김.
 - 샘플 목적(어떤 API를 어떤 상황에서 보여줄 것)을 자연어로 태그에 기술.
+- 대형 feature(토큰 초과)의 경우 기존 롤링 정제(`run_rolling_refinement`)를 Pass 1에 그대로 활용.
+- Pass 1 프롬프트에 코드 생략 지시를 추가: "코드 예제가 필요한 위치에 태그만 삽입하고 코드 블록은 작성하지 마라."
 
-**Pass 2 함수** (`generate_code_blocks`):
-- 태그를 순회하며 각각 독립 LLM 호출.
-- 프롬프트: "이 태그의 목적에 맞는 C++ 샘플코드만 작성하라."
-- 제약: `#include` 금지, 완전 네임스페이스 필수, permitted 목록 외 사용 금지.
-- 생성 후 즉시 정적 검증 실행.
+**Pass 2 함수** (`generate_code_blocks_batch`):
 
-**블록 단위 선택적 재시도**:
-- 하나의 feature 문서에는 코드 블록이 여러 개 있을 수 있다.
-- 검증 후 실패한 블록(N개)과 통과한 블록(M개)을 분리 관리한다.
-- 재시도 LLM 호출은 **실패한 블록에만** 적용한다. 통과한 블록은 재생성하지 않는다.
-  - 이유: 이미 통과한 블록을 재생성하면 의도치 않은 새로운 환각이 유입될 수 있다.
-- 실패 블록만 컨텍스트로 담아 재요청: "이 코드 블록에 {unverified_symbols} 가 있다. 해당 심볼을 사용하지 말고 재작성하라."
-- 이 구조는 현재 Stage D의 `surgical_patch_document()`와 개념적으로 동일하나,
-  2-Pass에서는 블록이 태그 단위로 이미 분리되어 있어 훨씬 자연스럽게 구현된다.
+*핵심 설계: 모든 태그를 **배치(1회 LLM 호출)**로 처리*
 
-**N회 재시도 후에도 실패한 블록의 Graceful Degradation**:
-- 재시도 횟수를 소진한 이후에도 특정 코드 블록이 여전히 실패인 경우:
-  - **통과한 블록**: 자연어 문서의 태그 위치에 코드를 정상 삽입.
-  - **실패한 블록**: 자연어 문서에서 해당 태그(`<!-- SAMPLE_CODE: ... -->`) 자체를 삭제. 코드 블록 없이 자연어 설명만 남긴 상태로 통합.
-  - 문서 자체는 PARTIAL (WARN 수준)로 처리하여 validated_drafts에 복사 허용.
-  - 근거: 품질이 낮은 코드가 포함된 문서보다 코드 없는 문서가 더 낫다.
+- 태그 파싱: `re.findall(r'<!-- SAMPLE_CODE: (.+?) -->', draft)` 로 전체 태그 수집.
+- 태그 번호 매핑: `[BLOCK_0]`, `[BLOCK_1]`, ... 헤더로 레이블링.
+- **단일 LLM 호출**: 모든 태그 목적을 한 프롬프트에 담아 전송.
+  - 응답 형식: `[BLOCK_N]` 구분자로 각 코드 블록 구분.
+- 응답 파싱: 구분자로 블록 분리 후 각 블록 개별 심볼 검증.
+- 검증 통과 블록: 즉시 태그 위치에 삽입, 이후 재생성 없음.
+- 검증 실패 블록: 실패 블록만 모아 **같은 배치 방식으로 재전송** (통과 블록은 재전송하지 않음).
+  - 재전송 시 실패 원인(unverified_symbols) 포함하여 수정 지시.
+- 최대 재시도 횟수: `MAX_CODE_RETRY = 5`
+- 응답 파싱 자체가 실패한 블록: FAIL 처리 (graceful).
 
-**Verification Report 기록**:
-- 블록 단위 상세 정보를 `stage_d_report_{tier}.json`의 `history` 내에 기록한다.
+**Pass 2 토큰 절감 구조** (Pass 1과의 차이):
+
+| 항목 | Pass 1 (자연어) | Pass 2 (코드 배치) |
+|------|----------------|-------------------|
+| Doxygen 풀 스펙 JSON | 전송 (주요 토큰 소비) | **미전송** |
+| API 정보 | 풀 스펙 (brief, params, notes 등 포함) | 슬림 시그니처만 (`name::method(type) → return`) |
+| 예상 토큰 비율 | 100% | ~10~15% |
+
+`build_slim_signatures()` 헬퍼 함수로 specs에서 signature 줄만 추출:
+```
+- AbsoluteLayoutParams::SetBounds(float x, float y, float w, float h)
+- AbsoluteLayoutParams::SetX(float x)
+- AbsoluteLayout::New() -> AbsoluteLayout
+```
+
+오직 **permitted 메서드 목록 + 슬림 시그니처 + 규칙(namespace/no-include)** 만 전송.
+롤링 정제 없음 — 태그 목록과 시그니처만이라 토큰 초과 없음.
+
+**Graceful Degradation**:
+- `MAX_CODE_RETRY` 소진 후에도 특정 블록이 실패이면:
+  - 통과 블록: 태그 위치에 코드 정상 삽입.
+  - 실패 블록: `<!-- SAMPLE_CODE: ... -->` 태그 자체를 삭제. 자연어 설명만 유지.
+  - 문서는 `PARTIAL` (WARN 수준)으로 처리하여 `validated_drafts`에 복사 허용.
+  - 근거: 환각 코드가 포함된 문서보다 코드 없는 문서가 낫다.
+
+**블록별 결과 저장**:
+- `cache/code_block_results/{tier}/{feat_name}.json`에 Pass 2 진행 내역 저장.
+- Stage D가 이 파일을 참조해 history에 Pass 2 결과를 기록.
 
 ```json
 {
@@ -221,7 +242,7 @@ if kind == "enum":
       "block_index": 3,
       "block_purpose": "AnimationGroup으로 복수 속성 동시 애니메이션",
       "verdict": "FAIL",
-      "attempts": 3,
+      "attempts": 5,
       "unverified_symbols": ["SetLayoutParameters"],
       "action": "tag_removed"
     }
@@ -229,7 +250,10 @@ if kind == "enum":
 }
 ```
 
-**통합**: Pass 1 결과에서 태그를 Pass 2 생성 코드로 치환하고, 실패 태그는 삭제하여 최종 draft 완성.
+**통합** (`run_two_pass_generation`):
+- Pass 1 결과에서 태그를 Pass 2 생성 코드로 치환.
+- 최종 실패 태그는 삭제하여 최종 draft 완성.
+- `main()` 루프 내 Full 생성 분기에서 기존 단일 호출을 `run_two_pass_generation()`으로 교체.
 
 ---
 
@@ -264,11 +288,11 @@ if kind == "enum":
 
 - **파서 수정 후 parsed_doxygen 캐시를 반드시 재생성해야 한다.**
   (`stage_a_extract` 재실행 필요)
-- **Phase 2의 2-Pass 구조는 LLM 호출 횟수가 최소 2배로 증가한다.**
-  그러나 코드 생성 품질 향상으로 검증 재시도 횟수 자체가 감소하므로,
-  전체 토큰 소모는 오히려 감소할 것으로 예상된다. 2-Pass는 별도 플래그 없이 기본 동작으로 적용한다.
+- **Phase 2의 배치 방식은 Pass 2 LLM 호출을 1~2회(배치 전송 + 실패분 재전송)로 제한한다.**
+  Pass 2는 Doxygen 풀 스펙 대신 슬림 시그니처만 전송하므로, Pass 1보다 토큰이 ~85% 적게 소모된다.
+  전체 파이프라인 토큰 증가는 Pass 2 비용이지만, Stage D retry 감소로 상쇄된다.
 - **`auto` 타입 추론 한계**: 변수가 `auto`로 선언된 경우 dot-call 타입 매핑을 구축할 수 없다.
-  이 경우는 `simple_names` 폴백으로 처리하거나 LLM에게 `auto` 사용 금지를 강제한다.
+  Phase 1-C에서 `auto` 사용 금지를 LLM에게 이미 강제했으므로, 이 문제는 대부분 차단된다.
 
 ---
 
@@ -339,6 +363,13 @@ python3 -m py_compile src/02_llm/stage_d_validator.py    → OK
 python3 -m py_compile src/02_llm/stage_c_writer.py       → OK
 ```
 
-### Phase 2 — 미착수 ⏳
+### Phase 2 — 진행 중 🔄
 
-Stage C 2-Pass 분리(자연어/코드 분리 + 블록 단위 Graceful Degradation)는 다음 Sprint에서 진행.
+#### 확정된 설계 사항
+
+- **배치 LLM 호출**: 태그를 개별 호출하지 않고 한 번에 모아서 배치 전송. 실패분만 같은 방식으로 재전송.
+- **슬림 시그니처**: Pass 2는 Doxygen 풀 스펙 대신 `method(type) → return` 형태의 간소화 시그니처만 전송. 토큰 ~85% 절감.
+- **MAX_CODE_RETRY = 5**: 배치 재전송 최대 5회. 소진 후 최종 실패 블록은 태그 삭제(Graceful Degradation).
+- **롤링 정제 연동**: 대형 feature는 Pass 1에서 기존 `run_rolling_refinement()` 그대로 사용. Pass 2는 동일한 배치 방식 적용.
+- **오케스트레이터**: `run_two_pass_generation()` 함수로 Pass 1→2 전체 흐름 통제.
+- **블록 결과 저장**: `cache/code_block_results/{tier}/{feat_name}.json`으로 Pass 2 진행 내역 기록.

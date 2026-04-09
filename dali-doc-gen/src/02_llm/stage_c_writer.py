@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import yaml
 import argparse
@@ -20,6 +21,10 @@ TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
 FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map.json"
 CLASS_FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "class_feature_map.json"
+CODE_BLOCK_RESULTS_DIR = CACHE_DIR / "code_block_results"
+
+# Phase 2: 2-Pass 코드 생성 설정
+MAX_CODE_RETRY = 5   # 배치 재전송 최대 횟수
 
 def load_doc_config():
     if not DOC_CONFIG_PATH.exists():
@@ -351,6 +356,413 @@ def build_permitted_method_list(specs):
 def is_enum_only_feature(specs):
     """specs에 호출 가능한 함수가 없으면 True (enum/struct 정의만 있는 feature)."""
     return not any(s.get("kind") == "function" for s in specs)
+
+
+# ── Phase 2: 2-Pass 코드 생성 관련 함수 ──────────────────────────────────────
+
+def build_slim_signatures(specs):
+    """
+    Pass 2 전용: specs에서 method signature 한 줄짜리 요약만 추출한다.
+    Doxygen 풀 스펙(brief, params detail, notes 등)은 제외하여 토큰을 ~85% 절감한다.
+
+    반환 형태:
+        ClassName::Method(type1 p1, type2 p2) -> ReturnType
+    """
+    lines = []
+    for s in specs:
+        if s.get("kind") not in ("function", "enumvalue", "class", "struct"):
+            continue
+        name = s.get("name", "")
+        sig = s.get("signature", "")
+        if sig:
+            lines.append(f"  {name}{sig}")
+        elif s.get("kind") == "function":
+            # signature 없으면 name만
+            lines.append(f"  {name}(...)")
+        else:
+            # class/struct/enumvalue
+            lines.append(f"  {name}")
+    return "\n".join(lines)
+
+
+def _parse_block_responses(response_text, num_blocks):
+    """
+    LLM이 [BLOCK_N] 구분자로 반환한 응답을 파싱하여
+    {block_index: code_block_text} 딕셔너리로 반환한다.
+    파싱 실패한 인덱스는 포함하지 않는다.
+    """
+    result = {}
+    # [BLOCK_N] 헤더를 구분자로 분리
+    pattern = re.compile(r'\[BLOCK_(\d+)\]', re.IGNORECASE)
+    parts = pattern.split(response_text)
+    # parts: ['preamble', '0', 'block0_content', '1', 'block1_content', ...]
+    i = 1
+    while i + 1 < len(parts):
+        try:
+            idx = int(parts[i])
+            content = parts[i + 1].strip()
+            if idx < num_blocks:
+                result[idx] = content
+        except (ValueError, IndexError):
+            pass
+        i += 2
+    return result
+
+
+def _verify_code_block(block_text, full_names, simple_names):
+    """
+    단일 코드 블록에서 심볼을 추출하여 검증한다.
+    stage_d_validator의 로직을 간소화하여 인라인 사용.
+
+    반환: (verified_list, unverified_list)
+    """
+    symbols = set()
+    # ```cpp ... ``` 블록만 또는 전체 텍스트에서 추출
+    code_blocks = re.findall(r'```(?:cpp|c\+\+)?\s*(.*?)\s*```', block_text, re.DOTALL | re.IGNORECASE)
+    target = code_blocks if code_blocks else [block_text]
+    for block in target:
+        # Dali:: 네임스페이스 심볼
+        symbols.update(re.findall(r'(?:Dali|Ui|Dali::Ui)::[A-Za-z:_]+', block))
+        # dot-call 타입 추론
+        var_type_map = {}
+        for m in re.finditer(
+            r'((?:Dali|Ui)(?:::[A-Za-z0-9_]+)+)\s+([a-z_][a-zA-Z0-9_]*)\s*[=;{(]', block
+        ):
+            var_type_map[m.group(2)] = m.group(1)
+        for m in re.finditer(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(', block):
+            var_name, method = m.group(1), m.group(2)
+            if var_name in var_type_map:
+                symbols.add(f"{var_type_map[var_name]}::{method}")
+            else:
+                symbols.add(method)
+
+    noise = {'Include', 'Note', 'Warning', 'True', 'False', 'nullptr',
+             'Void', 'Return', 'This', 'Class', 'New', 'Delete', 'Public', 'Private'}
+    symbols -= noise
+
+    verified, unverified = [], []
+    for sym in symbols:
+        if '::' in sym:
+            (verified if sym in full_names else unverified).append(sym)
+        else:
+            (verified if sym in simple_names else unverified).append(sym)
+    return verified, unverified
+
+
+def _build_batch_prompt(pending_blocks, slim_sigs, permitted_method_block):
+    """
+    Pass 2 배치 프롬프트 생성.
+    pending_blocks: [(block_index, purpose_str), ...]
+    """
+    block_lines = []
+    for idx, purpose in pending_blocks:
+        block_lines.append(f"[BLOCK_{idx}] {purpose}")
+    blocks_text = "\n".join(block_lines)
+
+    return f"""You are a C++ code example writer for the Samsung DALi GUI framework.
+
+Write ONLY the C++ code blocks for each of the following tagged scenarios.
+
+IMPORTANT RESPONSE FORMAT:
+- For each [BLOCK_N] tag, output the label followed immediately by a ```cpp ... ``` code block.
+- Do NOT include any explanation or prose between blocks.
+- Example:
+  [BLOCK_0]
+  ```cpp
+  // code here
+  ```
+  [BLOCK_1]
+  ```cpp
+  // code here
+  ```
+
+Scenarios to implement:
+{blocks_text}
+
+API Signatures (use ONLY these):
+{slim_sigs}
+
+{permitted_method_block}
+
+OUTPUT: Respond with all blocks in order using the [BLOCK_N] format above."""
+
+
+def generate_code_blocks_batch(feat_name, tags, specs, client,
+                               full_names, simple_names, permitted_method_block):
+    """
+    Pass 2: 모든 SAMPLE_CODE 태그를 배치 LLM 호출로 처리한다.
+
+    tags: [(tag_text, purpose_str), ...]
+    반환: {tag_index: code_block_text_or_None}
+      - code_block_text: 검증 통과한 코드 블록
+      - None: MAX_CODE_RETRY 소진 후 최종 실패
+    """
+    slim_sigs = build_slim_signatures(specs)
+    num_blocks = len(tags)
+
+    # 초기 pending: 모든 태그
+    pending = [(i, purpose) for i, (_, purpose) in enumerate(tags)]
+    results = {}  # {index: code_block_text}
+    block_history = [[] for _ in range(num_blocks)]  # 블록별 시도 기록
+
+    for attempt in range(1, MAX_CODE_RETRY + 1):
+        if not pending:
+            break
+
+        # 재시도 시 실패 원인 추가
+        pending_with_hints = []
+        for idx, purpose in pending:
+            hist = block_history[idx]
+            if hist:
+                last = hist[-1]
+                unverified = last.get("unverified_symbols", [])
+                if unverified:
+                    hint = f"{purpose} [DO NOT USE: {', '.join(unverified)}]"
+                else:
+                    hint = purpose
+            else:
+                hint = purpose
+            pending_with_hints.append((idx, hint))
+
+        print(f"    [Pass2] Attempt {attempt}/{MAX_CODE_RETRY}: "
+              f"generating {len(pending)} block(s) for '{feat_name}'...")
+
+        prompt = _build_batch_prompt(pending_with_hints, slim_sigs, permitted_method_block)
+        try:
+            response = client.generate(prompt, use_think=False)
+        except Exception as e:
+            print(f"    [Pass2] LLM call failed: {e}")
+            # 모든 pending 블록을 실패로 기록
+            for idx, _ in pending:
+                block_history[idx].append({
+                    "attempt": attempt,
+                    "verdict": "FAIL",
+                    "unverified_symbols": [],
+                    "error": str(e)
+                })
+            continue
+
+        # 응답 파싱
+        parsed = _parse_block_responses(response, num_blocks)
+
+        still_failing = []
+        for idx, purpose in pending:
+            block_text = parsed.get(idx)
+            if block_text is None:
+                # 파싱 실패
+                print(f"    [Pass2] BLOCK_{idx}: parse failed — will retry.")
+                block_history[idx].append({
+                    "attempt": attempt,
+                    "verdict": "FAIL",
+                    "unverified_symbols": [],
+                    "error": "parse_failed"
+                })
+                still_failing.append((idx, purpose))
+                continue
+
+            # 심볼 검증
+            verified, unverified = _verify_code_block(block_text, full_names, simple_names)
+            if not unverified:
+                results[idx] = block_text
+                print(f"    [Pass2] BLOCK_{idx}: PASS (attempt {attempt})")
+                block_history[idx].append({
+                    "attempt": attempt,
+                    "verdict": "PASS",
+                    "verified_symbols": verified,
+                    "unverified_symbols": []
+                })
+            else:
+                print(f"    [Pass2] BLOCK_{idx}: FAIL "
+                      f"(unverified: {unverified[:5]}) — will retry.")
+                block_history[idx].append({
+                    "attempt": attempt,
+                    "verdict": "FAIL",
+                    "verified_symbols": verified,
+                    "unverified_symbols": unverified
+                })
+                still_failing.append((idx, purpose))
+
+        pending = still_failing
+
+    # MAX_CODE_RETRY 소진 후 최종 실패 처리
+    for idx, _ in pending:
+        print(f"    [Pass2] BLOCK_{idx}: final FAIL after {MAX_CODE_RETRY} attempts — tag will be removed.")
+        results[idx] = None  # None = 태그 삭제
+        if not block_history[idx]:
+            block_history[idx].append({"attempt": MAX_CODE_RETRY, "verdict": "FAIL",
+                                       "unverified_symbols": [], "error": "max_retry_exceeded"})
+
+    return results, block_history
+
+
+def run_two_pass_generation(feat_name, outline, specs, client,
+                            taxonomy_context, view_context, tier_context,
+                            context_limit, prompt_overhead,
+                            chaining_context="", feature_hint_block="",
+                            permitted_method_block="", code_example_strategy="",
+                            full_names=None, simple_names=None,
+                            tier="app",
+                            use_rolling=False):
+    """
+    Phase 2: 2-Pass 문서 생성 오케스트레이터.
+
+    Pass 1: 자연어 초안 생성 (코드 위치에 <!-- SAMPLE_CODE: ... --> 태그 삽입)
+    Pass 2: 배치 LLM 호출로 태그 → 코드 블록 변환
+            검증 실패 블록만 배치 재전송 (MAX_CODE_RETRY=5)
+            최종 실패 블록은 태그 삭제 (Graceful Degradation)
+
+    반환: (final_md, block_results_list)
+      final_md: 최종 마크다운 (코드 삽입 완료)
+      block_results_list: [{block_index, purpose, verdict, attempts, ...}, ...]
+    """
+    # ── Pass 1: 자연어 초안 생성 ──────────────────────────────────────────────
+    pass1_instruction = (
+        "\n        PASS 1 INSTRUCTION — NATURAL LANGUAGE ONLY:\n"
+        "        Do NOT write any C++ code blocks (``` ... ```) in this pass.\n"
+        "        Instead, wherever a code example would normally appear, insert a placeholder tag:\n"
+        "          <!-- SAMPLE_CODE: <brief description of what the example should show> -->\n"
+        "        The description should be one concise sentence stating which API/scenario to demonstrate.\n"
+        "        All prose, explanations, tables, and notes should be written fully and completely.\n"
+    )
+
+    if use_rolling:
+        print(f"    [Pass1] Rolling refinement mode (large feature).")
+        # 롤링 정제: Pass 1에 코드 생략 지시 추가
+        # code_example_strategy에 pass1_instruction을 합산하여 전달
+        combined_strategy = pass1_instruction + (code_example_strategy or "")
+        draft = run_rolling_refinement(
+            feat_name, outline, specs, client,
+            taxonomy_context, view_context, tier_context,
+            context_limit, prompt_overhead,
+            chaining_context=chaining_context,
+            feature_hint_block=feature_hint_block,
+            permitted_method_block=permitted_method_block,
+            code_example_strategy=combined_strategy
+        )
+    else:
+        print(f"    [Pass1] Single-call natural language draft...")
+        prompt = f"""
+        You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
+        Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
+        {view_context}
+        {tier_context}
+        {taxonomy_context}
+        {chaining_context}
+        {feature_hint_block}
+        {pass1_instruction}
+
+        Follow this Table of Contents structure exactly:
+        {json.dumps(outline, indent=2)}
+
+        ANTI-HALLUCINATION RULE:
+        Use ONLY the C++ API specs below for all signatures, parameter types, and return values.
+        Do NOT invent non-existent APIs or parameters.
+        {permitted_method_block}
+        {code_example_strategy}
+        {json.dumps(specs, indent=2)}
+
+        WRITING STANDARD — each section and subsection must meet ALL of these:
+        1. INTRODUCTION PARAGRAPH: Every section starts with 1-2 sentences explaining the purpose.
+        2. API METHOD COVERAGE: For every non-trivial API method, write naturally flowing prose covering
+           what it does, when to call it, parameters, and return value.
+        3. CODE EXAMPLES: Where a code example is needed, insert only the <!-- SAMPLE_CODE: ... --> tag.
+           Do NOT write actual code blocks — they will be generated in the next pass.
+        4. NOTES AND WARNINGS: Use blockquotes (> Note: or > Warning:) for non-obvious behavior.
+        - Write entirely in valid GitHub Flavored Markdown.
+        - Use ## for section titles and ### for sub-sections.
+        - Do NOT include an explicit Table of Contents list at the top of the document.
+        - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
+        """
+        draft = strip_markdown_wrapping(client.generate(prompt, use_think=False))
+
+    # ── Pass 2: 태그 파싱 → 배치 코드 생성 ────────────────────────────────────
+    tag_pattern = re.compile(r'<!-- SAMPLE_CODE: (.+?) -->')
+    tag_matches = list(tag_pattern.finditer(draft))
+    tags = [(m.group(0), m.group(1).strip()) for m in tag_matches]
+
+    block_results_list = []
+
+    if not tags:
+        print(f"    [Pass2] No SAMPLE_CODE tags found — Pass 1 may have written code directly.")
+        return draft, block_results_list
+
+    print(f"    [Pass2] {len(tags)} SAMPLE_CODE tag(s) found. Starting batch code generation...")
+
+    # full_names / simple_names가 없으면 Doxygen DB 구축
+    if full_names is None or simple_names is None:
+        # stage_d_validator의 build_doxygen_symbol_set 대신 인라인 구축
+        _full_names = set()
+        _simple_names = set()
+        for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
+            try:
+                with open(pkg_json, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                for comp in data.get("compounds", []):
+                    cn = comp.get("name", "")
+                    if cn:
+                        _full_names.add(cn)
+                        _simple_names.add(cn.split("::")[-1])
+                    for mb in comp.get("members", []):
+                        mn = mb.get("name", "")
+                        if mn:
+                            _full_names.add(f"{cn}::{mn}")
+                            _simple_names.add(mn)
+            except Exception:
+                continue
+        full_names, simple_names = _full_names, _simple_names
+        print(f"    [Pass2] Doxygen DB built inline: {len(full_names)} full symbols.")
+
+    code_results, block_history = generate_code_blocks_batch(
+        feat_name, tags, specs, client,
+        full_names, simple_names, permitted_method_block
+    )
+
+    # ── 통합: 태그를 코드로 치환 ───────────────────────────────────────────────
+    final_md = draft
+    pass_count = fail_count = 0
+    for i, (tag_full, purpose) in enumerate(tags):
+        code_block = code_results.get(i)
+        hist = block_history[i] if i < len(block_history) else []
+        attempts = len(hist)
+        last = hist[-1] if hist else {}
+        verdict = last.get("verdict", "FAIL")
+
+        block_result = {
+            "block_index": i,
+            "block_purpose": purpose,
+            "verdict": verdict,
+            "attempts": attempts,
+            "unverified_symbols": last.get("unverified_symbols", []),
+            "action": "inserted" if code_block else "tag_removed"
+        }
+        block_results_list.append(block_result)
+
+        if code_block:
+            final_md = final_md.replace(tag_full, code_block, 1)
+            pass_count += 1
+        else:
+            # 실패: 태그 삭제 (Graceful Degradation)
+            final_md = final_md.replace(tag_full, "", 1)
+            fail_count += 1
+
+    print(f"    [Pass2] Done: {pass_count} block(s) inserted, "
+          f"{fail_count} tag(s) removed (graceful degradation).")
+
+    # ── 블록 결과 저장 ───────────────────────────────────────────────────────
+    results_dir = CODE_BLOCK_RESULTS_DIR / tier
+    results_dir.mkdir(parents=True, exist_ok=True)
+    results_path = results_dir / f"{feat_name}.json"
+    with open(results_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "feature": feat_name,
+            "total_code_blocks": len(tags),
+            "pass_count": pass_count,
+            "fail_count": fail_count,
+            "verdict": "PARTIAL" if fail_count > 0 else "FULL",
+            "history": block_results_list
+        }, f, indent=2, ensure_ascii=False)
+
+    return final_md, block_results_list
 
 
 def strip_markdown_wrapping(text):
@@ -842,74 +1254,45 @@ def main():
 
             if use_rolling:
                 print(f"    [!] Specs token estimate: {specs_token_estimate:,} "
-                      f"(threshold: {SPEC_TOKEN_THRESHOLD:,}) — switching to rolling refinement mode.")
-                clean_md = run_rolling_refinement(
-                    feat_name, outline, specs, client,
-                    taxonomy_context, view_context, tier_context,
-                    CONTEXT_LIMIT, PROMPT_OVERHEAD,
-                    chaining_context=chaining_context,
-                    feature_hint_block=feature_hint_block,
-                    permitted_method_block=permitted_method_block,
-                    code_example_strategy=code_example_strategy
-                )
-            else:
-                prompt = f"""
-        You are an elite C++ technical writer documenting the Samsung DALi GUI framework.
-        Your task is to write the COMPLETE and DETAILED Markdown documentation for the '{feat_name}' module.
-        {view_context}
-        {tier_context}
-        {taxonomy_context}
-        {foreign_context}
-        {chaining_context}
-        {feature_hint_block}
+                      f"(threshold: {SPEC_TOKEN_THRESHOLD:,}) — switching to 2-pass + rolling mode.")
 
-        FOCUS AND SCOPE RULES:
-        - Write ONLY about '{feat_name}'. Stay strictly within its feature boundary.
-        - If you mention a parent class, do so only to show how '{feat_name}' inherits
-          or extends it — 1-2 sentences maximum.
-        - If you mention a sibling component, write 1 sentence and add
-          '→ See: [SiblingName]' — do not write its API details here.
-        - Begin the document with a 1-2 paragraph overview that specifically answers:
-          "What is {feat_name}?", "When should I use it?", "What makes it distinct?"
+            # ── 2-Pass 생성 (Phase 2) ────────────────────────────────────────
+            # Doxygen DB: 루프 전체에서 1회만 구축하여 client에 캐시
+            if not hasattr(client, '_dali_full_names'):
+                _fn, _sn = set(), set()
+                for _pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
+                    try:
+                        with open(_pkg_json, "r", encoding="utf-8") as _f:
+                            _data = json.load(_f)
+                        for _comp in _data.get("compounds", []):
+                            _cn = _comp.get("name", "")
+                            if _cn:
+                                _fn.add(_cn); _sn.add(_cn.split("::")[-1])
+                            for _mb in _comp.get("members", []):
+                                _mn = _mb.get("name", "")
+                                if _mn:
+                                    _fn.add(f"{_cn}::{_mn}"); _sn.add(_mn)
+                    except Exception:
+                        continue
+                client._dali_full_names = _fn
+                client._dali_simple_names = _sn
+                print(f"    [Pass2-DB] Doxygen symbol DB built: "
+                      f"{len(_fn)} full, {len(_sn)} simple.")
 
-        Follow this Table of Contents structure exactly:
-        {json.dumps(outline, indent=2)}
-
-        ANTI-HALLUCINATION RULE:
-        Use ONLY the C++ API specs below for all signatures, parameter types, and return values.
-        Do NOT invent non-existent APIs or parameters.
-        {permitted_method_block}
-        {code_example_strategy}
-        {json.dumps(specs, indent=2)}
-        {inherited_context}
-
-        WRITING STANDARD — each section and subsection must meet ALL of these:
-        1. INTRODUCTION PARAGRAPH: Every section starts with 1-2 sentences explaining
-           the overall purpose of that section in practical terms.
-        2. API METHOD COVERAGE: For every non-trivial API method in this feature,
-           write naturally flowing prose that covers:
-           - What the method does (integrate into the explanation, do NOT use "What:" labels)
-           - When and why a developer would call it (weave into context naturally)
-           - Each parameter's name, type, and meaning (explain in sentences)
-           - Return value and any important side effects, preconditions, or errors
-           - A complete, compilable C++ code snippet showing realistic usage
-           IMPORTANT: Do NOT use explicit labels like "What:", "Why:", "How:", "Code:".
-           Instead, write smooth, professional technical prose where this information
-           flows naturally. Use subheadings (###) to organize, not inline labels.
-        3. SUBSECTION DEPTH: Each ### subsection must be self-contained. A developer
-           reading only that subsection should be able to use that API correctly.
-        4. CODE EXAMPLES: Every section must contain at least one realistic code example.
-           Show the full context: create the object, configure it, add it to scene, etc.
-        5. NOTES AND WARNINGS: Use blockquotes (> Note: or > Warning:) for non-obvious
-           behavior, performance implications, or deprecated APIs.
-        6. COMPLETENESS GOAL: A developer reading only this document should be able to
-           write a basic working application using the '{feat_name}' feature.
-        - Write entirely in valid GitHub Flavored Markdown.
-        - Use ## for section titles and ### for sub-sections.
-        - Do NOT include an explicit Table of Contents list at the top of the document.
-        - Output raw markdown text only. Do NOT wrap in ```markdown blocks.
-        """
-                clean_md = strip_markdown_wrapping(client.generate(prompt, use_think=False))
+            clean_md, _block_results = run_two_pass_generation(
+                feat_name, outline, specs, client,
+                taxonomy_context, view_context, tier_context,
+                CONTEXT_LIMIT, PROMPT_OVERHEAD,
+                chaining_context=chaining_context,
+                feature_hint_block=feature_hint_block,
+                permitted_method_block=permitted_method_block,
+                code_example_strategy=code_example_strategy,
+                full_names=client._dali_full_names,
+                simple_names=client._dali_simple_names,
+                tier=args.tier,
+                use_rolling=use_rolling
+            )
+            clean_md = strip_markdown_wrapping(clean_md)
 
         out_file = tier_drafts_dir / f"{feat_name}.md"
         with open(out_file, "w", encoding="utf-8") as f:
