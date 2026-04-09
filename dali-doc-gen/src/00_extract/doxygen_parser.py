@@ -303,7 +303,46 @@ def parse_compound(xml_path, api_dirs):
             prot = memberdef.get("prot")
             if prot == "private":
                 continue
-            
+
+            mb_kind = memberdef.get("kind", "")
+            mb_name = (extract_text_recursive(memberdef.find("name")) or "").strip()
+
+            # ── 익명 enum 특수 처리 ─────────────────────────────────────────
+            # struct Property { enum { SIZE, POSITION, ... }; } 패턴:
+            # Doxygen은 익명 enum을 name=""인 memberdef로 기록하고,
+            # 실제 값(SIZE, POSITION 등)은 하위 enumvalue로만 저장한다.
+            # 빈 이름 그대로 members에 추가하면 DB에 등록할 수 없으므로,
+            # enumvalue들을 부모 compound 이름 기준의 개별 member로 펼쳐서 추가한다.
+            # 예: Dali::Actor::Property compound → members에 "SIZE", "POSITION" 추가
+            #   → build_doxygen_symbol_set()이 "Dali::Actor::Property::SIZE"를 full_names에 등록
+            if mb_kind == "enum" and not mb_name:
+                # memberdef 자신의 location에서 api_tier 결정 (compound tier 폴백)
+                mb_location = memberdef.find("location")
+                mb_api_tier = api_tier  # default: inherit from compound
+                if mb_location is not None:
+                    mb_file_path = mb_location.get("file", "")
+                    for t in api_dirs:
+                        if t in mb_file_path:
+                            mb_api_tier = t.split("/")[-1]
+                            break
+
+                for ev in memberdef.findall("enumvalue"):
+                    ev_name = extract_text_recursive(ev.find("name"))
+                    if not ev_name:
+                        continue
+                    ev_brief = ""
+                    ev_brief_elem = ev.find("briefdescription")
+                    if ev_brief_elem is not None:
+                        ev_brief, _, _, _, _, _, _ = parse_description(ev_brief_elem)
+                    compound_data["members"].append({
+                        "name": ev_name,
+                        "kind": "enumvalue",
+                        "api_tier": mb_api_tier,
+                        "brief": ev_brief,
+                    })
+                continue  # 빈 이름의 enum member 자체는 추가하지 않음
+            # ───────────────────────────────────────────────────────────────
+
             member_data = parse_member(memberdef, api_dirs)
             compound_data["members"].append(member_data)
 

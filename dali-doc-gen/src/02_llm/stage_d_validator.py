@@ -52,14 +52,12 @@ def build_doxygen_symbol_set():
     검색용 집합(set)을 반환합니다.
 
     반환:
-      full_names  : "Dali::Ui::ImageView::SetResourceUrl" 등 완전한 심볼 이름
+      full_names  : "Dali::Actor::Property::SIZE" 등 완전한 심볼 이름 (기본 검증 기준)
       simple_names: "SetResourceUrl" 등 단순 이름
-      pair_names  : "ImageView::SetResourceUrl" 등 (클래스 simple name)::(메서드 simple name) 쌍
-                    → verify_symbols()에서 ClassName::Method 쌍이 실제로 존재하는지 확인하는 데 사용
+                    → dot-call 타입 추론 실패 시 폴백 검증으로만 사용
     """
     full_names = set()
     simple_names = set()
-    pair_names = set()  # "ClassName::MethodName" 쌍 (네임스페이스 제외)
 
     for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
         try:
@@ -72,20 +70,17 @@ def build_doxygen_symbol_set():
             comp_name = comp.get("name", "")
             if comp_name:
                 full_names.add(comp_name)
-                comp_simple = comp_name.split("::")[-1]
-                simple_names.add(comp_simple)
+                simple_names.add(comp_name.split("::")[-1])
 
             for mb in comp.get("members", []):
                 mb_name = mb.get("name", "")
                 if mb_name:
                     full_names.add(f"{comp_name}::{mb_name}")
                     simple_names.add(mb_name)
-                    if comp_name:
-                        pair_names.add(f"{comp_simple}::{mb_name}")
 
     print(f"[Validator] Doxygen DB built: {len(full_names)} full symbols, "
-          f"{len(simple_names)} simple names, {len(pair_names)} class::method pairs.")
-    return full_names, simple_names, pair_names
+          f"{len(simple_names)} simple names.")
+    return full_names, simple_names
 
 
 # ── 심볼 추출 ─────────────────────────────────────────────────────────────
@@ -93,40 +88,52 @@ def extract_symbols_from_markdown(md_text):
     """
     Markdown 텍스트에서 C++ 심볼 참조를 추출합니다.
     추출 대상:
-      - 코드 블록 내 Dali:: / Ui:: 네임스페이스 패턴
-      - 코드 블록 내 ClassName::MethodName 패턴
-      - 코드 블록 내 variable.MethodName() 형태의 dot-call 패턴 (simple name으로 등록)
-      - 인라인 backtick 내 ClassName::MethodName 패턴
-      - 인라인 backtick 내 CamelCase 식별자 (단독 클래스명)
+      - 코드 블록 내 Dali:: / Ui:: 네임스페이스 패턴 (완전 네임스페이스)
+      - 코드 블록 내 dot-call 패턴:
+          * 선언부에서 변수명 → Dali:: 타입 매핑 구축 후
+            "Dali::Ui::ImageView::SetResourceUrl" 형태로 재구성 → full_names 검증
+          * 타입 추론 불가(auto 등)인 경우 메서드 단순이름으로 폴백
+      - 인라인 backtick 내 Dali:: 패턴 또는 CamelCase 식별자
     """
     symbols = set()
 
     # 1. 코드 블록 전체 추출
     code_blocks = re.findall(r'```(?:cpp|c\+\+)?\s*(.*?)\s*```', md_text, re.DOTALL | re.IGNORECASE)
     for block in code_blocks:
-        # Dali::나 Ui:: 로 시작하는 전체 심볼
-        found = re.findall(r'(?:Dali|Ui|Dali::Ui)::[A-Za-z:]+', block)
+        # 1-a. Dali:: 로 시작하는 완전 네임스페이스 심볼
+        found = re.findall(r'(?:Dali|Ui|Dali::Ui)::[A-Za-z:_]+', block)
         symbols.update(found)
-        # ClassName::MethodName 패턴
-        found2 = re.findall(r'[A-Z][a-zA-Z0-9]+::[A-Za-z][a-zA-Z0-9_]+', block)
-        symbols.update(found2)
-        # dot-call 패턴: 소문자 변수명.UpperCaseMethod( → 메서드명만 simple name으로 추출
-        # 예: component.SetAccessibilityRole( → "SetAccessibilityRole"
-        dot_calls = re.findall(r'\b[a-z_][a-zA-Z0-9_]*\.([A-Z][a-zA-Z0-9_]+)\s*\(', block)
-        symbols.update(dot_calls)
+
+        # 1-b. dot-call 타입 추론
+        #   선언부: "Dali::Ui::ImageView imageView = ..." → {"imageView": "Dali::Ui::ImageView"}
+        var_type_map = {}
+        for m in re.finditer(
+            r'((?:Dali|Ui)(?:::[A-Za-z0-9_]+)+)\s+([a-z_][a-zA-Z0-9_]*)\s*[=;{(]',
+            block
+        ):
+            var_type_map[m.group(2)] = m.group(1)
+
+        for m in re.finditer(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(', block):
+            var_name, method = m.group(1), m.group(2)
+            if var_name in var_type_map:
+                # 타입 추론 성공 → full_names 검증 대상 ('::' 포함)
+                symbols.add(f"{var_type_map[var_name]}::{method}")
+            else:
+                # 타입 추론 불가(auto, 반환값 체인 등) → simple_names 폴백 ('::'  미포함)
+                symbols.add(method)
 
     # 2. 인라인 backtick
     inline_ticks = re.findall(r'`([^`\n]+)`', md_text)
     for item in inline_ticks:
         item = item.strip()
-        # ClassName::MethodName
         if '::' in item:
-            symbols.add(item)
-        # CamelCase 단독 클래스명 (최소 2글자 이상, 대문자 시작)
+            # Dali:: 로 시작하는 것만 검증 대상 (부분 네임스페이스 무시)
+            if item.startswith('Dali') or item.startswith('Ui::'):
+                symbols.add(item)
         elif re.match(r'^[A-Z][a-zA-Z]{2,}$', item):
             symbols.add(item)
 
-    # 불필요한 키워드 제거 (C++ 예약어 및 Markdown 메타 키워드만 포함)
+    # 노이즈 제거 (C++ 예약어 / Markdown 메타 키워드)
     # View / Actor 는 DALi 핵심 클래스이므로 제외하지 않음 — 할루시네이션 검증 대상
     noise = {'Include', 'Note', 'Warning', 'True', 'False', 'nullptr',
              'Void', 'Return', 'This', 'Class', 'New', 'Delete', 'Public', 'Private'}
@@ -135,44 +142,35 @@ def extract_symbols_from_markdown(md_text):
 
 
 # ── 심볼 검증 ─────────────────────────────────────────────────────────────
-def verify_symbols(symbols, full_names, simple_names, pair_names):
+def verify_symbols(symbols, full_names, simple_names):
     """
     추출된 심볼 각각을 Doxygen DB에서 검색합니다.
 
     검증 전략:
-      1. full_names 직접 매칭 (가장 정확)
-      2. ClassName::Method 패턴 → pair_names에서 쌍이 존재하는지 확인
-         (클래스와 메서드가 각각 존재해도 쌍이 없으면 unverified)
-      3. simple name 단독 → simple_names에서 확인 (dot-call 추출 심볼 등)
+      1. '::' 포함 심볼 → full_names 직접 매칭
+         (Dali:: 접두사 심볼 및 dot-call 타입추론 재구성 심볼 모두)
+         pair_names 폴백 없음 — full_names에 없으면 unverified
+      2. '::' 미포함 심볼 → simple_names 폴백
+         (dot-call 타입 추론 실패 시 메서드명 검증)
     """
     verified = []
     unverified = []
 
     for sym in symbols:
-        # 1. 전체 이름 직접 매칭
-        if sym in full_names:
-            verified.append(sym)
-            continue
-
-        parts = sym.split("::")
-
-        if len(parts) >= 2:
-            # 2. ClassName::Method 쌍 검증
-            # pair_names에는 "ImageView::SetResourceUrl" 형태로 저장되어 있음
-            # sym이 "Dali::Ui::ImageView::SetResourceUrl"처럼 길어도 마지막 두 파트로 쌍 구성
-            pair_key = f"{parts[-2]}::{parts[-1]}"
-            if pair_key in pair_names:
+        if '::' in sym:
+            if sym in full_names:
                 verified.append(sym)
             else:
                 unverified.append(sym)
         else:
-            # 3. simple name 단독 (dot-call 추출 심볼 등)
             if sym in simple_names:
                 verified.append(sym)
             else:
                 unverified.append(sym)
 
     return verified, unverified
+
+
 
 
 # ── LLM 보조 검증 (원래 FAIL 진단용, 현재는 retry가 주 메커니즘) ────────────────
@@ -446,7 +444,8 @@ def main():
     tier_validated_dir.mkdir(parents=True, exist_ok=True)
 
     # Doxygen DB 구축
-    full_names, simple_names, pair_names = build_doxygen_symbol_set()
+    full_names, simple_names = build_doxygen_symbol_set()
+
 
     # 검증 대상 파일 수집 (Index.md 제외)
     if not tier_drafts_dir.exists():
@@ -477,7 +476,8 @@ def main():
             verified_syms, unverified_syms = [], list(symbols)
             stats["low_content"] += 1
         else:
-            verified_syms, unverified_syms = verify_symbols(symbols, full_names, simple_names, pair_names)
+            verified_syms, unverified_syms = verify_symbols(symbols, full_names, simple_names)
+
             score = len(verified_syms) / len(symbols) if symbols else 1.0
 
             if score >= PASS_THRESHOLD:
@@ -529,7 +529,8 @@ def main():
                 new_symbols = extract_symbols_from_markdown(patched_md)
                 if len(new_symbols) >= MIN_SYMBOLS_FOR_SCORING:
                     new_verified, new_unverified = verify_symbols(
-                        new_symbols, full_names, simple_names, pair_names)
+                        new_symbols, full_names, simple_names)
+
                     new_score = len(new_verified) / len(new_symbols)
                     if new_score >= PASS_THRESHOLD:
                         verdict = "PASS"
@@ -636,7 +637,8 @@ def main():
                     new_verified, new_unverified = [], list(new_symbols)
                 else:
                     new_verified, new_unverified = verify_symbols(
-                        new_symbols, full_names, simple_names, pair_names)
+                        new_symbols, full_names, simple_names)
+
                     new_score = len(new_verified) / len(new_symbols)
                     if new_score >= PASS_THRESHOLD:
                         new_verdict = "PASS"
