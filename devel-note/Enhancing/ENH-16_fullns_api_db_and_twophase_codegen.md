@@ -303,7 +303,108 @@ Phase 1-A (우선): doxygen_parser.py — 익명 enum 추출 수정
 Phase 1-B (우선): stage_d_validator.py — pair_names 제거, 타입 추론 검증 추가
 Phase 1-C (우선): stage_c_writer.py — 완전 네임스페이스 강제, #include 금지
 Phase 2   (다음): stage_c_writer.py — 2-Pass 자연어/코드 분리
+Phase 3   (다음): 네임스페이스 Strip 전략으로 전환 — 네임스페이스 불일치 환각 근본 해소
 ```
+
+---
+
+---
+
+## Phase 3 — 네임스페이스 Strip 전략 (using Dali 가정)
+
+### 3-1. 문제 상황
+
+Phase 2 적용 후 테스트 결과, 코드블록 검증 FAIL 외에도 인라인 백틱에서 **네임스페이스 계층 오류**가 빈번히 발생함이 확인됐다.
+
+```
+LLM 생성: Dali::Text::Alignment::CENTER
+실제 경로: Dali::Ui::Text::Alignment::CENTER
+```
+
+이 문제는 다음 이유로 기존 방식으로 수정이 어렵다.
+
+- `Dali::Ui::` 하위 레이어가 여러 깊이로 구성되어(`Dali::Ui::Text::`, `Dali::Ui::Layout::` 등) LLM이 중간 레이어를 빠뜨리거나 잘못 추론한다.
+- 프롬프트에 "올바른 경로만 써라" 지시를 추가해도, 학습 데이터에 강하게 각인된 잘못된 경로 패턴이 지시를 무시한다.
+- `view.json` BLOCK_2 케이스(`Dali::Ui::View::InteractionEffect::SCALE_UP`)처럼 아예 존재하지 않는 심볼을 그럴싸하게 만드는 전형적인 환각도 있다.
+
+### 3-2. 해결 전략
+
+**`Dali::`, `Dali::Ui::` 접두어를 문서/코드 전체에서 제거하고, 예제 상단에 항상 `using` 선언이 있다고 가정한다.**
+
+```cpp
+// 모든 코드 예제 상단에 고정 삽입
+using namespace Dali;
+using namespace Dali::Ui;
+
+// 이후 짧은 이름 사용
+AbsoluteLayout layout = AbsoluteLayout::New();
+Text::Alignment align = Text::Alignment::CENTER;
+```
+
+이렇게 하면:
+- LLM이 `Dali::` vs `Dali::Ui::` 중 어느 레이어를 골라야 하는지 판단할 필요가 없다.
+- 검증도 strip된 short name 기준으로만 수행하면 되므로 로직이 단순해진다.
+- 가이드 문서 가독성도 향상된다 (Qt, Android 공식 예제도 동일 패턴).
+
+### 3-3. 검토한 대안 비교
+
+| 옵션 | 설명 | 채택 여부 |
+|------|------|----------|
+| A. 네임스페이스 정규화 후처리 | 생성 후 잘못된 경로를 API DB 기반으로 자동 보정 | ❌ 매핑 테이블 관리 부담, 미등록 패턴은 여전히 FAIL |
+| B. 프롬프트 강화 | CRITICAL CONSTRAINT로 정확한 전체 경로 사용 지시 | ❌ 이미 Phase 1-C에서 시도. 강하게 각인된 패턴엔 효과 제한적 |
+| **C. 네임스페이스 Strip** | 문서 전체에서 `Dali::`, `Dali::Ui::` 제거, using 가정 | **✅ 채택** |
+
+### 3-4. 구현 범위
+
+#### Strip 규칙
+
+```python
+def strip_dali_prefix(symbol: str) -> str:
+    """Dali::Ui:: → '' , Dali:: → '' 순으로 제거"""
+    if symbol.startswith("Dali::Ui::"):
+        return symbol[len("Dali::Ui::"):]
+    if symbol.startswith("Dali::"):
+        return symbol[len("Dali::"):]
+    return symbol
+```
+
+`Dali::Ui::` 를 먼저 처리해야 `Dali::Ui::Text::Alignment::CENTER`가 `Text::Alignment::CENTER`로 올바르게 변환된다. (`Dali::` 먼저 처리하면 `Ui::Text::Alignment::CENTER`가 남음)
+
+#### 수정 파일 및 적용 지점
+
+| 파일 | 적용 위치 | 변경 내용 |
+|------|-----------|-----------|
+| `stage_d_validator.py` | `build_doxygen_symbol_set()` | `full_names`에 strip된 short name도 추가 등록 |
+| `stage_d_validator.py` | `extract_symbols_from_markdown()` | 추출한 심볼을 strip 후 비교 |
+| `stage_c_writer.py` | `_verify_code_block()` | 검증 전 심볼 strip 적용 |
+| `stage_c_writer.py` | `build_slim_signatures()` | 시그니처 출력 시 prefix strip |
+| `stage_c_writer.py` | `_build_batch_prompt()` | Pass 2 프롬프트에 using 선언 규칙 명시, 짧은 이름 사용 지시 |
+| `stage_c_writer.py` | `generate_natural_language_draft()` / rolling | Pass 1 프롬프트 규칙에서 "완전 네임스페이스 필수" → "using 이후 짧은 이름 사용" 변경 |
+
+#### 검증 DB 구조 변화
+
+```
+기존: full_names = {"Dali::Ui::AbsoluteLayout", "Dali::Actor::Property::SIZE", ...}
+변경: full_names = {"Dali::Ui::AbsoluteLayout", "AbsoluteLayout",           ← strip 추가
+                    "Dali::Actor::Property::SIZE", "Actor::Property::SIZE",  ← strip 추가
+                    ...}
+```
+
+strip된 이름을 추가 등록하는 방식으로 기존 full name 항목은 유지한다. (하위 호환)
+
+#### Pass 2 프롬프트 규칙 변경
+
+```
+기존: "모든 클래스/메서드는 반드시 Dali:: 접두사를 포함할 것"
+변경: "코드 예제 첫 줄에 반드시 using namespace Dali; using namespace Dali::Ui; 를 포함할 것.
+       이후 모든 심볼은 짧은 이름으로 작성할 것 (Dali::, Dali::Ui:: 접두사 사용 금지)"
+```
+
+### 3-5. 주의 사항
+
+- **내부 식별자는 유지**: API DB 내부에서 심볼을 고유하게 식별하는 key는 full name을 그대로 사용. short name은 검증용 추가 alias로만 등록.
+- **`Dali::` 직하 타입 처리**: `Dali::Vector2`, `Dali::Actor` 등 `Ui::` 레이어 없이 바로 오는 타입도 `using namespace Dali;` 하나로 커버됨. strip 함수가 `Dali::` → `""` 처리하므로 동일하게 동작.
+- **인라인 백틱도 동일하게 적용**: Stage D의 `extract_symbols_from_markdown()`이 추출한 심볼도 strip 후 비교하므로 코드블록·백틱 구분 없이 일관되게 처리됨.
 
 ---
 
@@ -363,13 +464,23 @@ python3 -m py_compile src/02_llm/stage_d_validator.py    → OK
 python3 -m py_compile src/02_llm/stage_c_writer.py       → OK
 ```
 
-### Phase 2 — 진행 중 🔄
+### Phase 2 — 완료 ✅
 
-#### 확정된 설계 사항
+커밋: `Feature: Phase 2 — 2-Pass code generation with batch LLM calls`
 
-- **배치 LLM 호출**: 태그를 개별 호출하지 않고 한 번에 모아서 배치 전송. 실패분만 같은 방식으로 재전송.
-- **슬림 시그니처**: Pass 2는 Doxygen 풀 스펙 대신 `method(type) → return` 형태의 간소화 시그니처만 전송. 토큰 ~85% 절감.
+추가된 함수:
+
+| 함수 | 역할 |
+|------|------|
+| `build_slim_signatures()` | specs → 한 줄 시그니처 (~85% 토큰 절감) |
+| `_parse_block_responses()` | `[BLOCK_N]` 구분자로 LLM 응답 파싱 |
+| `_verify_code_block()` | 단일 코드 블록 심볼 검증 (인라인, stage_d 의존 없음) |
+| `_build_batch_prompt()` | Pass 2 배치 프롬프트 생성 |
+| `generate_code_blocks_batch()` | 배치 LLM 1회 호출 → 블록별 검증 → 실패분만 재전송 (×5) |
+| `run_two_pass_generation()` | Pass 1(자연어+태그) → Pass 2(배치 코드) 오케스트레이터 |
+
 - **MAX_CODE_RETRY = 5**: 배치 재전송 최대 5회. 소진 후 최종 실패 블록은 태그 삭제(Graceful Degradation).
-- **롤링 정제 연동**: 대형 feature는 Pass 1에서 기존 `run_rolling_refinement()` 그대로 사용. Pass 2는 동일한 배치 방식 적용.
-- **오케스트레이터**: `run_two_pass_generation()` 함수로 Pass 1→2 전체 흐름 통제.
+- **롤링 정제 연동**: 대형 feature는 Pass 1에서 기존 `run_rolling_refinement()` 그대로 사용.
 - **블록 결과 저장**: `cache/code_block_results/{tier}/{feat_name}.json`으로 Pass 2 진행 내역 기록.
+
+### Phase 3 — 진행 중 🔄

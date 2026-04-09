@@ -45,6 +45,49 @@ TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 
 
 
+# ── 네임스페이스 Strip 헬퍼 (Phase 3) ──────────────────────────────────────
+def _strip_dali_prefix(symbol: str) -> str:
+    """
+    Dali::Ui::X → X, Dali::X → X 변환.
+    'using namespace Dali; using namespace Dali::Ui;' 가정 하에
+    짧은 이름으로 검증할 때 사용.
+    Dali::Ui:: 를 먼저 처리해야 Dali::Ui::Text::Alignment 가 올바르게 변환된다.
+    """
+    if symbol.startswith("Dali::Ui::"):
+        return symbol[len("Dali::Ui::"):]
+    if symbol.startswith("Dali::"):
+        return symbol[len("Dali::"):]
+    return symbol
+
+
+def _symbol_aliases(symbol: str) -> list:
+    """
+    심볼에 대한 검증용 alias 목록을 반환합니다 (원본 제외).
+    1. Dali::Ui:: / Dali:: 접두사 strip
+    2. ::Type:: 중간 레이어 skip
+       ex) LoadPolicy::Type::IMMEDIATE → LoadPolicy::IMMEDIATE
+       (DALi의 'struct { struct Type { enum {...}; }; }' 패턴 대응)
+    """
+    aliases = set()
+
+    stripped = _strip_dali_prefix(symbol)
+    if stripped != symbol:
+        aliases.add(stripped)
+
+    # ::Type:: skip — strip 전/후 모두 적용
+    for s in [symbol, stripped]:
+        if "::Type::" in s:
+            no_type = s.replace("::Type::", "::")
+            aliases.add(no_type)
+            # strip + type-skip 조합
+            stripped_no_type = _strip_dali_prefix(no_type)
+            if stripped_no_type != no_type:
+                aliases.add(stripped_no_type)
+
+    aliases.discard(symbol)
+    return list(aliases)
+
+
 # ── Doxygen DB 구축 ──────────────────────────────────────────────────────
 def build_doxygen_symbol_set():
     """
@@ -70,12 +113,15 @@ def build_doxygen_symbol_set():
             comp_name = comp.get("name", "")
             if comp_name:
                 full_names.add(comp_name)
+                full_names.update(_symbol_aliases(comp_name))
                 simple_names.add(comp_name.split("::")[-1])
 
             for mb in comp.get("members", []):
                 mb_name = mb.get("name", "")
                 if mb_name:
-                    full_names.add(f"{comp_name}::{mb_name}")
+                    full_sym = f"{comp_name}::{mb_name}"
+                    full_names.add(full_sym)
+                    full_names.update(_symbol_aliases(full_sym))
                     simple_names.add(mb_name)
 
     print(f"[Validator] Doxygen DB built: {len(full_names)} full symbols, "
@@ -100,36 +146,47 @@ def extract_symbols_from_markdown(md_text):
     # 1. 코드 블록 전체 추출
     code_blocks = re.findall(r'```(?:cpp|c\+\+)?\s*(.*?)\s*```', md_text, re.DOTALL | re.IGNORECASE)
     for block in code_blocks:
-        # 1-a. Dali:: 로 시작하는 완전 네임스페이스 심볼
-        found = re.findall(r'(?:Dali|Ui|Dali::Ui)::[A-Za-z:_]+', block)
-        symbols.update(found)
+        # 1-a. 스코프 해소 심볼 추출 (Dali:: 전체 네임스페이스 및 CamelCase::Name 단축 이름 모두)
+        #      Phase 3: using namespace 스타일 코드는 Dali:: 없이 CamelCase::Name 형태로 작성됨
+        #      ex) Dali::Ui::AbsoluteLayout::New() 또는 AbsoluteLayout::New() 모두 캡처
+        found = re.findall(
+            r'\b(?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)+',
+            block
+        )
+        # 추출된 심볼을 strip 정규화 후 추가 (Dali::Ui::X → X, Dali::X → X)
+        for sym in found:
+            symbols.add(_strip_dali_prefix(sym))
 
         # 1-b. dot-call 타입 추론
-        #   선언부: "Dali::Ui::ImageView imageView = ..." → {"imageView": "Dali::Ui::ImageView"}
+        #   선언부: "Dali::Ui::ImageView imageView = ..." 또는 "ImageView imageView = ..."
+        #   → {"imageView": "ImageView"}  (strip 후 저장)
         var_type_map = {}
         for m in re.finditer(
-            r'((?:Dali|Ui)(?:::[A-Za-z0-9_]+)+)\s+([a-z_][a-zA-Z0-9_]*)\s*[=;{(]',
+            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s+'
+            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(]',
             block
         ):
-            var_type_map[m.group(2)] = m.group(1)
+            var_type_map[m.group(2)] = _strip_dali_prefix(m.group(1))
 
         for m in re.finditer(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(', block):
             var_name, method = m.group(1), m.group(2)
             if var_name in var_type_map:
-                # 타입 추론 성공 → full_names 검증 대상 ('::' 포함)
+                # 타입 추론 성공 → short name 기반 full path 재구성
                 symbols.add(f"{var_type_map[var_name]}::{method}")
             else:
-                # 타입 추론 불가(auto, 반환값 체인 등) → simple_names 폴백 ('::'  미포함)
+                # 타입 추론 불가(반환값 체인 등) → simple_names 폴백 ('::' 미포함)
                 symbols.add(method)
 
     # 2. 인라인 backtick
+    #    Phase 3: Dali:: 없는 CamelCase::Name 패턴도 검증 대상 (using namespace 스타일)
     inline_ticks = re.findall(r'`([^`\n]+)`', md_text)
     for item in inline_ticks:
         item = item.strip()
         if '::' in item:
-            # Dali:: 로 시작하는 것만 검증 대상 (부분 네임스페이스 무시)
-            if item.startswith('Dali') or item.startswith('Ui::'):
-                symbols.add(item)
+            # Dali:: / Ui:: 전체 네임스페이스 또는 CamelCase::Name 단축형 모두 대상
+            if (item.startswith('Dali') or item.startswith('Ui::')
+                    or re.match(r'^[A-Z][A-Za-z0-9_]+::', item)):
+                symbols.add(_strip_dali_prefix(item))
         elif re.match(r'^[A-Z][a-zA-Z]{2,}$', item):
             symbols.add(item)
 

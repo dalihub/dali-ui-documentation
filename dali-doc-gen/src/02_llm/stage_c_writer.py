@@ -26,6 +26,42 @@ CODE_BLOCK_RESULTS_DIR = CACHE_DIR / "code_block_results"
 # Phase 2: 2-Pass 코드 생성 설정
 MAX_CODE_RETRY = 5   # 배치 재전송 최대 횟수
 
+# Phase 3: 네임스페이스 Strip 헬퍼
+def _strip_dali_prefix(symbol: str) -> str:
+    """
+    Dali::Ui::X → X, Dali::X → X 변환.
+    'using namespace Dali; using namespace Dali::Ui;' 가정 하에
+    짧은 이름으로 검증할 때 사용.
+    Dali::Ui:: 를 먼저 처리해야 Dali::Ui::Text::Alignment 가 올바르게 변환된다.
+    """
+    if symbol.startswith("Dali::Ui::"):
+        return symbol[len("Dali::Ui::"):]
+    if symbol.startswith("Dali::"):
+        return symbol[len("Dali::"):]
+    return symbol
+
+
+def _symbol_aliases(symbol: str) -> list:
+    """
+    심볼에 대한 검증용 alias 목록을 반환합니다 (원본 제외).
+    1. Dali::Ui:: / Dali:: 접두사 strip
+    2. ::Type:: 중간 레이어 skip
+       ex) LoadPolicy::Type::IMMEDIATE → LoadPolicy::IMMEDIATE
+    """
+    aliases = set()
+    stripped = _strip_dali_prefix(symbol)
+    if stripped != symbol:
+        aliases.add(stripped)
+    for s in [symbol, stripped]:
+        if "::Type::" in s:
+            no_type = s.replace("::Type::", "::")
+            aliases.add(no_type)
+            stripped_no_type = _strip_dali_prefix(no_type)
+            if stripped_no_type != no_type:
+                aliases.add(stripped_no_type)
+    aliases.discard(symbol)
+    return list(aliases)
+
 def load_doc_config():
     if not DOC_CONFIG_PATH.exists():
         return {}
@@ -331,14 +367,15 @@ def build_permitted_method_list(specs):
         "        - Using a non-permitted method will trigger a FATAL pipeline validation failure.\n"
         "        Permitted List:\n"
         + "\n".join(f"          - {m}" for m in methods) + "\n\n"
-        "        CRITICAL CONSTRAINT - FULLY QUALIFIED NAMESPACES IN CODE:\n"
-        "        ALL C++ code examples MUST use complete Dali:: namespace prefixes. No exceptions.\n"
-        "        - Class declarations:  Dali::Ui::ImageView  (NOT ImageView, NOT Ui::ImageView)\n"
-        "        - Static calls:        Dali::Ui::ImageView::New()  (NOT ImageView::New())\n"
-        "        - Enum / Property:     Dali::Actor::Property::SIZE  (NOT Property::SIZE, NOT SIZE)\n"
-        "        - Instance dot-calls:  'imageView.SetResourceUrl(...)' are allowed AFTER a fully\n"
-        "          qualified declaration like 'Dali::Ui::ImageView imageView = Dali::Ui::ImageView::New();'\n"
-        "        - NEVER use 'auto' as the declared type; always write the full Dali:: type explicitly.\n\n"
+        "        CRITICAL CONSTRAINT - USING NAMESPACE DECLARATIONS:\n"
+        "        ALL C++ code examples MUST begin with exactly these two lines:\n"
+        "          using namespace Dali;\n"
+        "          using namespace Dali::Ui;\n"
+        "        After these declarations, use SHORT names WITHOUT Dali:: or Dali::Ui:: prefix:\n"
+        "        - Class declarations:  ImageView imageView = ImageView::New();  (NOT Dali::Ui::ImageView)\n"
+        "        - Enum / Property:     Actor::Property::SIZE  (NOT Dali::Actor::Property::SIZE)\n"
+        "        - Instance dot-calls:  imageView.SetResourceUrl(...)  (allowed after declaration above)\n"
+        "        - NEVER use 'auto' as the declared type; always write the explicit type name.\n\n"
         "        CRITICAL CONSTRAINT - NO #include DIRECTIVES:\n"
         "        Do NOT write any #include lines in code examples.\n"
         "        You do not have access to DALi's internal file structure, and incorrect includes\n"
@@ -347,9 +384,15 @@ def build_permitted_method_list(specs):
         "        In DALi, 'View' is the official high-level UI object that replaces 'Actor'.\n"
         "        Therefore, in ALL natural language explanations AND code examples:\n"
         "        - Replace the word 'Actor' or 'Actors' with 'View' or 'Views'.\n"
-        "        - Replace the class name 'Dali::Actor' with 'Dali::Ui::View'.\n"
-        "        - Do NOT declare or use 'Dali::Actor actor = ...'. Instead use 'Dali::Ui::View view = Dali::Ui::View::New()'.\n"
-        "        - Exception: If referring to base enumerations like 'Dali::Actor::Property::...', you may keep the namespace, but otherwise ALWAYS use View.\n"
+        "        - Replace the class type 'Actor' with 'View' (e.g. View::New(), not Actor::New()).\n"
+        "        - Do NOT declare or use 'Actor actor = ...' or 'Dali::Actor actor = ...'.\n"
+        "          Instead use: View view = View::New();\n"
+        "        - CRITICAL EXCEPTION — Actor::Property enum values:\n"
+        "          Position, size, and visibility properties belong to Actor::Property, NOT View::Property.\n"
+        "          View::Property has NO POSITION, SIZE, or VISIBLE members.\n"
+        "          You MUST write: Actor::Property::POSITION (NOT View::Property::POSITION)\n"
+        "                          Actor::Property::SIZE    (NOT View::Property::SIZE)\n"
+        "          Do NOT substitute 'Actor' with 'View' inside '::Property::' expressions.\n"
     )
 
 
@@ -364,6 +407,7 @@ def build_slim_signatures(specs):
     """
     Pass 2 전용: specs에서 method signature 한 줄짜리 요약만 추출한다.
     Doxygen 풀 스펙(brief, params detail, notes 등)은 제외하여 토큰을 ~85% 절감한다.
+    Phase 3: Dali:: / Dali::Ui:: 접두사를 strip하여 using namespace 스타일로 출력.
 
     반환 형태:
         ClassName::Method(type1 p1, type2 p2) -> ReturnType
@@ -372,15 +416,13 @@ def build_slim_signatures(specs):
     for s in specs:
         if s.get("kind") not in ("function", "enumvalue", "class", "struct"):
             continue
-        name = s.get("name", "")
+        name = _strip_dali_prefix(s.get("name", ""))
         sig = s.get("signature", "")
         if sig:
             lines.append(f"  {name}{sig}")
         elif s.get("kind") == "function":
-            # signature 없으면 name만
             lines.append(f"  {name}(...)")
         else:
-            # class/struct/enumvalue
             lines.append(f"  {name}")
     return "\n".join(lines)
 
@@ -421,14 +463,20 @@ def _verify_code_block(block_text, full_names, simple_names):
     code_blocks = re.findall(r'```(?:cpp|c\+\+)?\s*(.*?)\s*```', block_text, re.DOTALL | re.IGNORECASE)
     target = code_blocks if code_blocks else [block_text]
     for block in target:
-        # Dali:: 네임스페이스 심볼
-        symbols.update(re.findall(r'(?:Dali|Ui|Dali::Ui)::[A-Za-z:_]+', block))
-        # dot-call 타입 추론
+        # Phase 3: Dali:: 전체 네임스페이스 및 CamelCase::Name 단축 이름 모두 추출
+        found = re.findall(
+            r'\b(?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)+',
+            block
+        )
+        for sym in found:
+            symbols.add(_strip_dali_prefix(sym))
+        # dot-call 타입 추론 (Phase 3: CamelCase 선언도 처리)
         var_type_map = {}
         for m in re.finditer(
-            r'((?:Dali|Ui)(?:::[A-Za-z0-9_]+)+)\s+([a-z_][a-zA-Z0-9_]*)\s*[=;{(]', block
+            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s+'
+            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(]', block
         ):
-            var_type_map[m.group(2)] = m.group(1)
+            var_type_map[m.group(2)] = _strip_dali_prefix(m.group(1))
         for m in re.finditer(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(', block):
             var_name, method = m.group(1), m.group(2)
             if var_name in var_type_map:
@@ -475,6 +523,17 @@ IMPORTANT RESPONSE FORMAT:
   ```cpp
   // code here
   ```
+
+CRITICAL CONSTRAINT - USING NAMESPACE DECLARATIONS:
+Every code block MUST begin with exactly these two lines:
+  using namespace Dali;
+  using namespace Dali::Ui;
+After these declarations, use SHORT names WITHOUT Dali:: or Dali::Ui:: prefix:
+  - Class declarations:  ImageView imageView = ImageView::New();  (NOT Dali::Ui::ImageView)
+  - Enum / Property:     Actor::Property::SIZE  (NOT Dali::Actor::Property::SIZE)
+  - Instance dot-calls:  imageView.SetResourceUrl(...)  (allowed after declaration above)
+  - NEVER use 'auto'; always write the explicit type name.
+  - Do NOT write any #include lines.
 
 Scenarios to implement:
 {blocks_text}
@@ -701,11 +760,14 @@ def run_two_pass_generation(feat_name, outline, specs, client,
                     cn = comp.get("name", "")
                     if cn:
                         _full_names.add(cn)
+                        _full_names.update(_symbol_aliases(cn))
                         _simple_names.add(cn.split("::")[-1])
                     for mb in comp.get("members", []):
                         mn = mb.get("name", "")
                         if mn:
-                            _full_names.add(f"{cn}::{mn}")
+                            full_sym = f"{cn}::{mn}"
+                            _full_names.add(full_sym)
+                            _full_names.update(_symbol_aliases(full_sym))
                             _simple_names.add(mn)
             except Exception:
                 continue
@@ -1267,17 +1329,22 @@ def main():
                         for _comp in _data.get("compounds", []):
                             _cn = _comp.get("name", "")
                             if _cn:
-                                _fn.add(_cn); _sn.add(_cn.split("::")[-1])
+                                _fn.add(_cn)
+                                _fn.update(_symbol_aliases(_cn))
+                                _sn.add(_cn.split("::")[-1])
                             for _mb in _comp.get("members", []):
                                 _mn = _mb.get("name", "")
                                 if _mn:
-                                    _fn.add(f"{_cn}::{_mn}"); _sn.add(_mn)
+                                    _full_sym = f"{_cn}::{_mn}"
+                                    _fn.add(_full_sym)
+                                    _fn.update(_symbol_aliases(_full_sym))
+                                    _sn.add(_mn)
                     except Exception:
                         continue
                 client._dali_full_names = _fn
                 client._dali_simple_names = _sn
                 print(f"    [Pass2-DB] Doxygen symbol DB built: "
-                      f"{len(_fn)} full, {len(_sn)} simple.")
+                      f"{len(_fn)} full+alias, {len(_sn)} simple.")
 
             clean_md, _block_results = run_two_pass_generation(
                 feat_name, outline, specs, client,
