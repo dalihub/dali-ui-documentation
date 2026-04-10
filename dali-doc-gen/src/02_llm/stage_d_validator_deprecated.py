@@ -1,4 +1,14 @@
 """
+[DEPRECATED — ENH-18]
+stage_d 는 stage_c 에 흡수되었습니다.
+
+- validated_drafts/ 복사: stage_c_writer.py main() 루프 내 shutil.copy2()
+- validation report:      stage_c_writer.py _write_validation_report()
+- 심볼 검증 / Pass 2 retry: stage_c_writer.py _verify_code_block() + generate_code_blocks_batch()
+
+이 파일은 참조 보존 목적으로만 남겨두며 파이프라인에서 실행되지 않습니다.
+---
+
 stage_d_validator.py — Stage D: Hallucination Validation Engine
 
 역할:

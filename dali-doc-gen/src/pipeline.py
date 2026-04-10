@@ -121,8 +121,8 @@ def compute_incremental_targets(tier="app"):
     needs_regen / needs_patch 집합을 반환합니다. (원칙 1, 2, 3)
 
     Returns:
-        needs_regen (set): Draft 삭제 후 B+C+D 전체 재생성 대상
-        needs_patch  (set): 기존 Draft 유지하며 C(patch)+D 만 실행할 대상
+        needs_regen (set): Draft 삭제 후 B+C 전체 재생성 대상
+        needs_patch  (set): 기존 Draft 유지하며 C(patch) 만 실행할 대상
     """
     needs_regen = set()
     needs_patch  = set()
@@ -326,7 +326,7 @@ def _run_pipeline(args):
                 run_script(PROJECT_ROOT / "src" / "03_render" / "index_generator.py", render_args)
                 continue
 
-            # ── needs_regen: Stage B → C (full) → D ──────────────────────
+            # ── needs_regen: Stage B → C (full) ──────────────────────────
             if needs_regen:
                 print(f"\n  [REGEN] {len(needs_regen)} feature(s) require full regeneration:")
                 for f in sorted(needs_regen):
@@ -339,10 +339,8 @@ def _run_pipeline(args):
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_a_classifier.py", [])
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_b_mapper.py", regen_args)
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_c_writer.py", regen_args)
-                run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py",
-                           ["--tier", current_tier])
 
-            # ── needs_patch: Stage C (patch) → D ─────────────────────────
+            # ── needs_patch: Stage C (patch) ─────────────────────────────
             if needs_patch:
                 print(f"\n  [PATCH] {len(needs_patch)} feature(s) require incremental patching:")
                 for f in sorted(needs_patch):
@@ -357,8 +355,6 @@ def _run_pipeline(args):
                     patch_args += ["--limit", str(args.limit)]
 
                 run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_c_writer.py", patch_args)
-                run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py",
-                           ["--tier", current_tier])
 
         else:
             # ── Full 생성 모드 ─────────────────────────────────────────────
@@ -371,8 +367,6 @@ def _run_pipeline(args):
             run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_a_classifier.py", [])
             run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_b_mapper.py", stage_args)
             run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_c_writer.py", stage_args)
-            run_script(PROJECT_ROOT / "src" / "02_llm" / "stage_d_validator.py",
-                       ["--tier", current_tier])
 
         # ── Phase 3: 렌더링 (Tier별 무조건 실행) ─────────────────────────
         print(f"\n--- [Phase 3] Docusaurus Rendering for {current_tier} ---")

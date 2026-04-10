@@ -3,6 +3,7 @@ import re
 import json
 import yaml
 import argparse
+import shutil
 from pathlib import Path
 import sys
 
@@ -723,11 +724,15 @@ def _verify_code_block(block_text, full_names, simple_names):
 def _build_batch_prompt(pending_blocks, slim_sigs, permitted_method_block):
     """
     Pass 2 배치 프롬프트 생성.
-    pending_blocks: [(block_index, purpose_str), ...]
+    pending_blocks: [(block_index, purpose_str, tag_type), ...]
+      tag_type: "SAMPLE_CODE" | "INLINE_CODE"
     """
     block_lines = []
-    for idx, purpose in pending_blocks:
-        block_lines.append(f"[BLOCK_{idx}] {purpose}")
+    for idx, purpose, tag_type in pending_blocks:
+        if tag_type == "INLINE_CODE":
+            block_lines.append(f"[BLOCK_{idx}] (inline) {purpose}")
+        else:
+            block_lines.append(f"[BLOCK_{idx}] (code block) {purpose}")
     blocks_text = "\n".join(block_lines)
 
     return f"""You are a C++ code example writer for the Samsung DALi GUI framework.
@@ -735,28 +740,41 @@ def _build_batch_prompt(pending_blocks, slim_sigs, permitted_method_block):
 Write ONLY the C++ code blocks for each of the following tagged scenarios.
 
 IMPORTANT RESPONSE FORMAT:
-- For each [BLOCK_N] tag, output the label followed immediately by a ```cpp ... ``` code block.
-- Do NOT include any explanation or prose between blocks.
-- Example:
+Two types of blocks exist — follow the format exactly for each type:
+
+(code block) → output the label followed by a ```cpp ... ``` code block:
   [BLOCK_0]
   ```cpp
-  // code here
-  ```
-  [BLOCK_1]
-  ```cpp
-  // code here
+  // multi-line code here
   ```
 
+(inline) → output the label followed by a SINGLE LINE of symbol text only.
+  No backticks, no code fences, no explanation — just the symbol(s):
+  [BLOCK_1]
+  SetPositionX, SetPositionY
+
+  [BLOCK_2]
+  LoadPolicy::IMMEDIATE
+
+Do NOT include any explanation or prose between blocks.
+
 CRITICAL CONSTRAINT - USING NAMESPACE DECLARATIONS:
-Every code block MUST begin with exactly these two lines:
+Every code block assumes the following declarations are already in effect (DO NOT write them):
   using namespace Dali;
   using namespace Dali::Ui;
-After these declarations, use SHORT names WITHOUT Dali:: or Dali::Ui:: prefix:
+Use SHORT names WITHOUT Dali:: or Dali::Ui:: prefix throughout:
   - Class declarations:  ImageView imageView = ImageView::New();  (NOT Dali::Ui::ImageView)
   - Enum / Property:     Actor::Property::SIZE  (NOT Dali::Actor::Property::SIZE)
-  - Instance dot-calls:  imageView.SetResourceUrl(...)  (allowed after declaration above)
+  - Instance dot-calls:  imageView.SetResourceUrl(...)
   - NEVER use 'auto'; always write the explicit type name.
   - Do NOT write any #include lines.
+  - Every code fence (``` or ```cpp) MUST start on its own line.
+
+CRITICAL CONSTRAINT - ENUM VALUES:
+  - All DALi enum values are written in SCREAMING_SNAKE_CASE (ALL_CAPS_WITH_UNDERSCORES).
+  - NEVER use Pascal case or lower case for enum values.
+  - CORRECT: NONE, SCALE_TO_FIT, POSITION_PROPORTIONAL
+  - WRONG:   None, ScaleToFit, positionProportional
 
 Scenarios to implement:
 {blocks_text}
@@ -774,17 +792,19 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
     """
     Pass 2: 모든 SAMPLE_CODE 태그를 배치 LLM 호출로 처리한다.
 
-    tags: [(tag_text, purpose_str), ...]
-    반환: {tag_index: code_block_text_or_None}
-      - code_block_text: 검증 통과한 코드 블록
+    tags: [(tag_text, purpose_str, tag_type), ...]
+      tag_type: "SAMPLE_CODE" | "INLINE_CODE"
+    반환: {tag_index: text_or_None}
+      - SAMPLE_CODE: 검증 통과한 코드 블록 텍스트
+      - INLINE_CODE: 검증 통과한 한 줄 심볼 텍스트
       - None: MAX_CODE_RETRY 소진 후 최종 실패
     """
     slim_sigs = build_slim_signatures(specs)
     num_blocks = len(tags)
 
-    # 초기 pending: 모든 태그
-    pending = [(i, purpose) for i, (_, purpose) in enumerate(tags)]
-    results = {}  # {index: code_block_text}
+    # 초기 pending: 모든 태그 (idx, purpose, tag_type)
+    pending = [(i, purpose, tag_type) for i, (_, purpose, tag_type) in enumerate(tags)]
+    results = {}  # {index: text}
     block_history = [[] for _ in range(num_blocks)]  # 블록별 시도 기록
 
     for attempt in range(1, MAX_CODE_RETRY + 1):
@@ -793,7 +813,7 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
 
         # 재시도 시 실패 원인 추가
         pending_with_hints = []
-        for idx, purpose in pending:
+        for idx, purpose, tag_type in pending:
             hist = block_history[idx]
             if hist:
                 last = hist[-1]
@@ -804,7 +824,7 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
                     hint = purpose
             else:
                 hint = purpose
-            pending_with_hints.append((idx, hint))
+            pending_with_hints.append((idx, hint, tag_type))
 
         print(f"    [Pass2] Attempt {attempt}/{MAX_CODE_RETRY}: "
               f"generating {len(pending)} block(s) for '{feat_name}'...")
@@ -814,8 +834,7 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
             response = client.generate(prompt, use_think=False)
         except Exception as e:
             print(f"    [Pass2] LLM call failed: {e}")
-            # 모든 pending 블록을 실패로 기록
-            for idx, _ in pending:
+            for idx, _, _tt in pending:
                 block_history[idx].append({
                     "attempt": attempt,
                     "verdict": "FAIL",
@@ -828,10 +847,9 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
         parsed = _parse_block_responses(response, num_blocks)
 
         still_failing = []
-        for idx, purpose in pending:
+        for idx, purpose, tag_type in pending:
             block_text = parsed.get(idx)
             if block_text is None:
-                # 파싱 실패
                 print(f"    [Pass2] BLOCK_{idx}: parse failed — will retry.")
                 block_history[idx].append({
                     "attempt": attempt,
@@ -839,14 +857,19 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
                     "unverified_symbols": [],
                     "error": "parse_failed"
                 })
-                still_failing.append((idx, purpose))
+                still_failing.append((idx, purpose, tag_type))
                 continue
 
             # 심볼 검증
-            verified, unverified = _verify_code_block(block_text, full_names, simple_names)
+            # INLINE_CODE는 한 줄 텍스트이므로 cpp 펜스 없이 직접 검증
+            if tag_type == "INLINE_CODE":
+                verified, unverified = _verify_code_block(block_text, full_names, simple_names)
+            else:
+                verified, unverified = _verify_code_block(block_text, full_names, simple_names)
+
             if not unverified:
                 results[idx] = block_text
-                print(f"    [Pass2] BLOCK_{idx}: PASS (attempt {attempt})")
+                print(f"    [Pass2] BLOCK_{idx} [{tag_type}]: PASS (attempt {attempt})")
                 block_history[idx].append({
                     "attempt": attempt,
                     "verdict": "PASS",
@@ -854,7 +877,7 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
                     "unverified_symbols": []
                 })
             else:
-                print(f"    [Pass2] BLOCK_{idx}: FAIL "
+                print(f"    [Pass2] BLOCK_{idx} [{tag_type}]: FAIL "
                       f"(unverified: {unverified[:5]}) — will retry.")
                 block_history[idx].append({
                     "attempt": attempt,
@@ -862,12 +885,12 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
                     "verified_symbols": verified,
                     "unverified_symbols": unverified
                 })
-                still_failing.append((idx, purpose))
+                still_failing.append((idx, purpose, tag_type))
 
         pending = still_failing
 
     # MAX_CODE_RETRY 소진 후 최종 실패 처리
-    for idx, _ in pending:
+    for idx, _, _tt in pending:
         print(f"    [Pass2] BLOCK_{idx}: final FAIL after {MAX_CODE_RETRY} attempts — tag will be removed.")
         results[idx] = None  # None = 태그 삭제
         if not block_history[idx]:
@@ -905,6 +928,25 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         "          <!-- SAMPLE_CODE: <brief description of what the example should show> -->\n"
         "        The description should be one concise sentence stating which API/scenario to demonstrate.\n"
         "        All prose, explanations, tables, and notes should be written fully and completely.\n"
+        "\n"
+        "        CRITICAL — SELF-CONTAINED PROSE:\n"
+        "        Do NOT write sentences that reference or depend on an upcoming code block.\n"
+        "        WRONG: 'as shown below', 'see the following example', 'the code below demonstrates',\n"
+        "               'refer to the snippet', 'the following code shows'\n"
+        "        Every sentence must be complete and meaningful even if the code block is removed.\n"
+        "        Code blocks are supplementary illustrations, not part of the explanation.\n"
+        "\n"
+        "        INLINE API REFERENCES — use <!-- INLINE_CODE: --> tags instead of backticks:\n"
+        "        When mentioning a specific API symbol inline (method name, enum value, property),\n"
+        "        do NOT write it directly with backticks. Instead:\n"
+        "          1. Write a complete sentence that makes sense WITHOUT the symbol.\n"
+        "          2. Append <!-- INLINE_CODE: brief description of the symbol --> at the END of the sentence, after the period.\n"
+        "        GOOD: 'The x-coordinate of a View can be set independently.<!-- INLINE_CODE: SetPositionX method -->'\n"
+        "        GOOD: 'Immediate loading can be requested at creation time.<!-- INLINE_CODE: LoadPolicy::IMMEDIATE enum value -->'\n"
+        "        BAD:  'Use <!-- INLINE_CODE: SetPositionX --> to set the position.'  (symbol is the subject)\n"
+        "        BAD:  'The <!-- INLINE_CODE: SetPositionX --> method sets x.'  (tag in the middle)\n"
+        "        BAD:  '`SetPositionX` sets the position.'  (direct backtick usage)\n"
+        "        The sentence MUST remain grammatically complete if the tag is deleted entirely.\n"
     )
 
     if use_rolling:
@@ -958,17 +1000,21 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         draft = strip_markdown_wrapping(client.generate(prompt, use_think=False))
 
     # ── Pass 2: 태그 파싱 → 배치 코드 생성 ────────────────────────────────────
-    tag_pattern = re.compile(r'<!-- SAMPLE_CODE: (.+?) -->')
-    tag_matches = list(tag_pattern.finditer(draft))
-    tags = [(m.group(0), m.group(1).strip()) for m in tag_matches]
+    # SAMPLE_CODE: 여러 줄 코드블럭 생성
+    # INLINE_CODE: 한 줄 심볼/표현식 생성 → 문장 끝 괄호로 치환
+    all_tags = []  # [(tag_full, purpose, tag_type), ...]
+    for m in re.finditer(r'<!-- (SAMPLE_CODE|INLINE_CODE): (.+?) -->', draft):
+        all_tags.append((m.group(0), m.group(2).strip(), m.group(1)))
 
     block_results_list = []
 
-    if not tags:
-        print(f"    [Pass2] No SAMPLE_CODE tags found — Pass 1 may have written code directly.")
+    if not all_tags:
+        print(f"    [Pass2] No SAMPLE_CODE/INLINE_CODE tags found — Pass 1 may have written code directly.")
         return draft, block_results_list
 
-    print(f"    [Pass2] {len(tags)} SAMPLE_CODE tag(s) found. Starting batch code generation...")
+    sample_count = sum(1 for _, _, t in all_tags if t == "SAMPLE_CODE")
+    inline_count = sum(1 for _, _, t in all_tags if t == "INLINE_CODE")
+    print(f"    [Pass2] {sample_count} SAMPLE_CODE + {inline_count} INLINE_CODE tag(s) found. Starting batch generation...")
 
     # full_names / simple_names가 없으면 Doxygen DB 구축
     if full_names is None or simple_names is None:
@@ -1000,14 +1046,14 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         print(f"    [Pass2] Doxygen DB built inline: {len(full_names)} full symbols.")
 
     code_results, block_history = generate_code_blocks_batch(
-        feat_name, tags, specs, client,
+        feat_name, all_tags, specs, client,
         full_names, simple_names, permitted_method_block
     )
 
-    # ── 통합: 태그를 코드로 치환 ───────────────────────────────────────────────
+    # ── 통합: 태그를 코드/인라인 심볼로 치환 ──────────────────────────────────
     final_md = draft
     pass_count = fail_count = 0
-    for i, (tag_full, purpose) in enumerate(tags):
+    for i, (tag_full, purpose, tag_type) in enumerate(all_tags):
         code_block = code_results.get(i)
         hist = block_history[i] if i < len(block_history) else []
         attempts = len(hist)
@@ -1017,6 +1063,7 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         block_result = {
             "block_index": i,
             "block_purpose": purpose,
+            "block_type": tag_type,
             "verdict": verdict,
             "attempts": attempts,
             "unverified_symbols": last.get("unverified_symbols", []),
@@ -1025,15 +1072,22 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         block_results_list.append(block_result)
 
         if code_block:
-            final_md = final_md.replace(tag_full, code_block, 1)
+            if tag_type == "INLINE_CODE":
+                # 인라인 치환: 문장 끝 태그를 (symbol) 형태로 교체
+                final_md = final_md.replace(tag_full, f"({code_block.strip()})", 1)
+            else:
+                final_md = final_md.replace(tag_full, code_block, 1)
             pass_count += 1
         else:
-            # 실패: 태그 삭제 (Graceful Degradation)
+            # 실패: 태그만 제거, 문장은 유지 (Graceful Degradation)
             final_md = final_md.replace(tag_full, "", 1)
             fail_count += 1
 
     print(f"    [Pass2] Done: {pass_count} block(s) inserted, "
           f"{fail_count} tag(s) removed (graceful degradation).")
+
+    # 후처리: using namespace 제거, 코드블럭 줄바꿈 강제
+    final_md = _postprocess_markdown(final_md)
 
     # ── 블록 결과 저장 ───────────────────────────────────────────────────────
     results_dir = CODE_BLOCK_RESULTS_DIR / tier
@@ -1042,7 +1096,7 @@ def run_two_pass_generation(feat_name, outline, specs, client,
     with open(results_path, "w", encoding="utf-8") as f:
         json.dump({
             "feature": feat_name,
-            "total_code_blocks": len(tags),
+            "total_code_blocks": len(all_tags),
             "pass_count": pass_count,
             "fail_count": fail_count,
             "verdict": "PARTIAL" if fail_count > 0 else "FULL",
@@ -1050,6 +1104,43 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         }, f, indent=2, ensure_ascii=False)
 
     return final_md, block_results_list
+
+
+def _postprocess_markdown(text: str) -> str:
+    """
+    생성된 마크다운에 대한 후처리를 적용한다.
+
+    1. 코드블럭 내 'using namespace Dali' 계열 줄 제거
+       (LLM은 short name 기준으로 생성하되, 출력에서는 선언 줄을 제거해 깔끔하게 유지)
+    2. 코드 펜스(```cpp, ```) 앞에 줄바꿈이 없으면 강제 삽입
+       (일부 LLM이 산문 바로 뒤에 펜스를 붙이는 경우 방어)
+    """
+    # 1. using namespace 제거
+    def _strip_using_ns(m):
+        inner = m.group(1)
+        lang = m.group(0).split('\n')[0]  # ```cpp 또는 ```
+        lines = inner.splitlines()
+        lines = [l for l in lines
+                 if not re.match(r'\s*using namespace Dali(::Ui)?;\s*$', l)]
+        # 앞뒤 빈 줄 정리
+        while lines and not lines[0].strip():
+            lines.pop(0)
+        while lines and not lines[-1].strip():
+            lines.pop()
+        body = '\n'.join(lines)
+        return f"{lang}\n{body}\n```"
+
+    text = re.sub(
+        r'(```(?:cpp|c\+\+)?)\n(.*?)\n```',
+        lambda m: _strip_using_ns(m),
+        text,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+
+    # 2. ``` 앞에 줄바꿈 강제
+    text = re.sub(r'([^\n])(```)', r'\1\n\2', text)
+
+    return text
 
 
 def strip_markdown_wrapping(text):
@@ -1592,13 +1683,65 @@ def main():
         with open(out_file, "w", encoding="utf-8") as f:
             f.write(clean_md)
 
+        # validated_drafts에 즉시 복사 (stage_d 역할 흡수)
+        validated_dir = VALIDATED_DRAFTS_DIR / args.tier
+        validated_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(out_file, validated_dir / f"{feat_name}.md")
+
         mode_label = "[PATCH]" if args.patch else "[DRAFT]"
-        print(f"    [+] {mode_label} Documentation exported → {out_file.relative_to(CACHE_DIR)}")
-        
+        print(f"    [+] {mode_label} Documentation exported → {out_file.relative_to(CACHE_DIR)}"
+              f"  (validated_drafts/ updated)")
+
+    # ── 검증 리포트 생성 (code_block_results 집계) ────────────────────────────
+    _write_validation_report(args.tier)
+
     print(f"\n=================================================================")
     print(f" Stage C Complete! Native markdown drafts exported to:")
     print(f" {tier_drafts_dir}")
     print("=================================================================")
+
+
+def _write_validation_report(tier: str):
+    """
+    code_block_results/{tier}/*.json 을 집계하여
+    cache/validation_report/stage_c_report_{tier}.json 을 생성한다.
+    """
+    results_dir = CODE_BLOCK_RESULTS_DIR / tier
+    report_dir = CACHE_DIR / "validation_report"
+    report_dir.mkdir(parents=True, exist_ok=True)
+
+    if not results_dir.exists():
+        return
+
+    report = []
+    stats = {"full": 0, "partial": 0, "no_blocks": 0}
+
+    for result_file in sorted(results_dir.glob("*.json")):
+        try:
+            with open(result_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
+
+        verdict = data.get("verdict", "NO_BLOCKS")
+        report.append({
+            "feature": data.get("feature", result_file.stem),
+            "verdict": verdict,
+            "total_code_blocks": data.get("total_code_blocks", 0),
+            "pass_count": data.get("pass_count", 0),
+            "fail_count": data.get("fail_count", 0),
+        })
+        key = verdict.lower().replace("no_blocks", "no_blocks")
+        if key in stats:
+            stats[key] += 1
+        elif verdict == "NO_BLOCKS":
+            stats["no_blocks"] += 1
+
+    report_path = report_dir / f"stage_c_report_{tier}.json"
+    with open(report_path, "w", encoding="utf-8") as f:
+        json.dump({"stats": stats, "features": report}, f, indent=2, ensure_ascii=False)
+    print(f"    [Report] Validation report → {report_path.relative_to(CACHE_DIR.parent)}")
+
 
 if __name__ == "__main__":
     main()
