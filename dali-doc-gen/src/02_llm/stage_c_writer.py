@@ -1205,8 +1205,8 @@ def _postprocess_markdown(text: str) -> str:
     """
     # 1. using namespace 제거
     def _strip_using_ns(m):
-        inner = m.group(1)
-        lang = m.group(0).split('\n')[0]  # ```cpp 또는 ```
+        lang = m.group(1)   # ```cpp 또는 ```
+        inner = m.group(2)  # 코드 내용
         lines = inner.splitlines()
         lines = [l for l in lines
                  if not re.match(r'\s*using namespace Dali(::Ui)?;\s*$', l)]
