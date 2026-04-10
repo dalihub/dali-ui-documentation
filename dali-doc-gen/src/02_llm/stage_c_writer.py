@@ -837,10 +837,13 @@ Two types of blocks exist — follow the format exactly for each type:
   // multi-line code here
   ```
 
-(inline) → output the label followed by a SINGLE LINE of symbol text only.
-  No backticks, no code fences, no explanation — just the symbol(s):
+(inline) → output the label followed by a SINGLE LINE symbol.
+  - Method/function: write MethodName(Type1, Type2) — param types only, no variable names, no return type.
+    If overloaded, choose the variant that best matches the surrounding prose context.
+  - Enum value, property, or class name: write the symbol as-is.
+  No backticks, no code fences, no explanation.
   [BLOCK_1]
-  SetPositionX, SetPositionY
+  SetPositionX(float)
 
   [BLOCK_2]
   LoadPolicy::IMMEDIATE
@@ -1220,7 +1223,7 @@ def _postprocess_markdown(text: str) -> str:
         return f"{lang}\n{body}\n```"
 
     text = re.sub(
-        r'(```(?:cpp|c\+\+)?)\n(.*?)\n```',
+        r'(```(?:cpp|c\+\+)?)\n(.*?)\n\s*```',
         lambda m: _strip_using_ns(m),
         text,
         flags=re.DOTALL | re.IGNORECASE
