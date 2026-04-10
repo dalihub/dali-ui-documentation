@@ -27,6 +27,18 @@ CODE_BLOCK_RESULTS_DIR = CACHE_DIR / "code_block_results"
 # Phase 2: 2-Pass 코드 생성 설정
 MAX_CODE_RETRY = 5   # 배치 재전송 최대 횟수
 
+# ── 모듈 레벨 컴파일 정규식 (함수 호출마다 재컴파일 방지) ──────────────────
+_RE_SIG_TYPE    = re.compile(r'\b(?:Ui::)?([A-Z][A-Za-z0-9_]+)(?:::Type)?\b')
+_RE_ENUM_PARAM  = re.compile(r'\b([A-Z][A-Za-z0-9_]+)(?:::Type|::Filter|::Mode)?\b')
+_RE_BLOCK_LABEL = re.compile(r'\[BLOCK_(\d+)\]', re.IGNORECASE)
+_RE_SCOPE_SYM   = re.compile(r'\b(?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)+')
+_RE_VAR_DECL    = re.compile(
+    r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s*&?\s+'
+    r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(,)]'
+)
+_RE_DOT_CALL    = re.compile(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(')
+# ──────────────────────────────────────────────────────────────────────────────
+
 # Phase 3: 네임스페이스 Strip 헬퍼
 def _strip_dali_prefix(symbol: str) -> str:
     """
@@ -215,23 +227,24 @@ def _build_typedef_aliases(parsed_doxygen_dir) -> set:
         if aliased_comp is None:
             continue
 
-        # alias의 경로 변형: 전체 / Dali:: strip / 리프만
+        # alias의 경로 변형: 전체 / Dali:: strip
+        # alias_leaf(FontWeight 단독)는 제외 — using namespace Dali::Ui::Text; 를 가정해야만
+        # 유효한 형태이므로 우리 스타일 규칙과 맞지 않음
         alias_full = f"{container_cn}::{alias_name}"       # Dali::Ui::Text::FontWeight
         alias_short = _strip_dali_prefix(alias_full)        # Text::FontWeight
-        alias_leaf = alias_name                             # FontWeight
 
         # aliased compound의 enum값/변수를 alias 경로 아래에 등록
         for child_mb in aliased_comp.get("members", []):
             child_name = child_mb.get("name", "")
             if not child_name or child_mb.get("kind") not in ("enumvalue", "variable"):
                 continue
-            for prefix in (alias_full, alias_short, alias_leaf):
+            for prefix in (alias_full, alias_short):
                 sym = f"{prefix}::{child_name}"
                 alias_set.add(sym)
                 alias_set.update(_symbol_aliases(sym))
 
         # alias 타입 자체도 등록
-        for sym in (alias_full, alias_short, alias_leaf):
+        for sym in (alias_full, alias_short):
             alias_set.add(sym)
             alias_set.update(_symbol_aliases(sym))
 
@@ -494,16 +507,6 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
                         "brief": mb.get("brief", ""),
                         "signature": mb.get("signature", "")
                     }
-                    if mb.get("params"):
-                        mb_spec["params"] = mb["params"]
-                    if mb.get("returns"):
-                        mb_spec["returns"] = mb["returns"]
-                    if mb.get("notes"):
-                        mb_spec["notes"] = mb["notes"]
-                    if mb.get("warnings"):
-                        mb_spec["warnings"] = mb["warnings"]
-                    if mb.get("code_examples"):
-                        mb_spec["code_examples"] = mb["code_examples"]
                     # chainable 플래그: Fluent API setter 판별
                     # 조건: 반환 타입이 참조(&), const 아님, operator/Signal 제외
                     # e.g. "Label &" SetText → True
@@ -521,12 +524,11 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
     # ── Secondary enum scan: 메서드 시그니처에서 참조된 enum 타입을 추가 로드 ──
     # ex) SetFittingMode(Ui::FittingMode::Type) → FittingMode::Type compound 로드
     # → build_permitted_method_list에서 enum value 그룹을 생성할 수 있게 됨
-    sig_type_re = re.compile(r'\b(?:Ui::)?([A-Z][A-Za-z0-9_]+)(?:::Type)?\b')
     referenced_types = set()
     for s in specs:
         sig = s.get("signature", "")
         if sig:
-            for m in sig_type_re.finditer(sig):
+            for m in _RE_SIG_TYPE.finditer(sig):
                 referenced_types.add(m.group(1))
     # 이미 포함된 compound 이름(simple)은 제외
     existing_simples = {s["name"].split("::")[-2] if "::" in s["name"] else s["name"]
@@ -610,7 +612,6 @@ def build_permitted_method_list(specs):
 
     # signature에서 enum 파라미터 타입 추출 → 메서드별 인라인 힌트 맵 구성
     # signature 예: "(std::string url, FittingMode::Type fit, SamplingMode::Filter smp)"
-    _enum_param_re = re.compile(r'\b([A-Z][A-Za-z0-9_]+)(?:::Type|::Filter|::Mode)?\b')
     # method_name → [enum_parent, ...] (enum_groups에 있는 것만)
     method_enum_hints: dict = {}
     for s in specs:
@@ -621,7 +622,7 @@ def build_permitted_method_list(specs):
             continue
         sig = s.get("signature", "")
         hints = []
-        for m in _enum_param_re.finditer(sig):
+        for m in _RE_ENUM_PARAM.finditer(sig):
             candidate = m.group(1)
             if candidate in enum_groups:
                 hints.append(candidate)
@@ -677,6 +678,27 @@ def build_permitted_method_list(specs):
                 if vals
             ) + "\n\n"
         )
+    has_view_or_actor = any(
+        ("View" in s["name"] or "Actor" in s["name"])
+        for s in specs
+        if s.get("kind") in ("class", "function", "enumvalue")
+    )
+    terminology_block = (
+        "        CRITICAL CONSTRAINT - TERMINOLOGY OVERRIDE (ACTOR -> VIEW):\n"
+        "        In DALi, 'View' is the official high-level UI object that replaces 'Actor'.\n"
+        "        Therefore, in ALL natural language explanations AND code examples:\n"
+        "        - Replace the word 'Actor' or 'Actors' with 'View' or 'Views'.\n"
+        "        - Replace the class type 'Actor' with 'View' (e.g. View::New(), not Actor::New()).\n"
+        "        - Do NOT declare or use 'Actor actor = ...' or 'Dali::Actor actor = ...'.\n"
+        "          Instead use: View view = View::New();\n"
+        "        - CRITICAL EXCEPTION — Actor::Property enum values:\n"
+        "          Position, size, and visibility properties belong to Actor::Property, NOT View::Property.\n"
+        "          View::Property has NO POSITION, SIZE, or VISIBLE members.\n"
+        "          You MUST write: Actor::Property::POSITION (NOT View::Property::POSITION)\n"
+        "                          Actor::Property::SIZE    (NOT View::Property::SIZE)\n"
+        "          Do NOT substitute 'Actor' with 'View' inside '::Property::' expressions.\n"
+        if has_view_or_actor else ""
+    )
     return result + (
         "        CRITICAL CONSTRAINT - USING NAMESPACE DECLARATIONS:\n"
         "        ALL C++ code examples MUST begin with exactly these two lines:\n"
@@ -691,20 +713,7 @@ def build_permitted_method_list(specs):
         "        Do NOT write any #include lines in code examples.\n"
         "        You do not have access to DALi's internal file structure, and incorrect includes\n"
         "        will cause compilation errors. Omit all #include directives entirely.\n\n"
-        "        CRITICAL CONSTRAINT - TERMINOLOGY OVERRIDE (ACTOR -> VIEW):\n"
-        "        In DALi, 'View' is the official high-level UI object that replaces 'Actor'.\n"
-        "        Therefore, in ALL natural language explanations AND code examples:\n"
-        "        - Replace the word 'Actor' or 'Actors' with 'View' or 'Views'.\n"
-        "        - Replace the class type 'Actor' with 'View' (e.g. View::New(), not Actor::New()).\n"
-        "        - Do NOT declare or use 'Actor actor = ...' or 'Dali::Actor actor = ...'.\n"
-        "          Instead use: View view = View::New();\n"
-        "        - CRITICAL EXCEPTION — Actor::Property enum values:\n"
-        "          Position, size, and visibility properties belong to Actor::Property, NOT View::Property.\n"
-        "          View::Property has NO POSITION, SIZE, or VISIBLE members.\n"
-        "          You MUST write: Actor::Property::POSITION (NOT View::Property::POSITION)\n"
-        "                          Actor::Property::SIZE    (NOT View::Property::SIZE)\n"
-        "          Do NOT substitute 'Actor' with 'View' inside '::Property::' expressions.\n"
-    )
+    ) + terminology_block
 
 
 def is_enum_only_feature(specs):
@@ -746,8 +755,7 @@ def _parse_block_responses(response_text, num_blocks):
     """
     result = {}
     # [BLOCK_N] 헤더를 구분자로 분리
-    pattern = re.compile(r'\[BLOCK_(\d+)\]', re.IGNORECASE)
-    parts = pattern.split(response_text)
+    parts = _RE_BLOCK_LABEL.split(response_text)
     # parts: ['preamble', '0', 'block0_content', '1', 'block1_content', ...]
     i = 1
     while i + 1 < len(parts):
@@ -775,21 +783,14 @@ def _verify_code_block(block_text, full_names, simple_names):
     target = code_blocks if code_blocks else [block_text]
     for block in target:
         # Phase 3: Dali:: 전체 네임스페이스 및 CamelCase::Name 단축 이름 모두 추출
-        found = re.findall(
-            r'\b(?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)+',
-            block
-        )
-        for sym in found:
+        for sym in _RE_SCOPE_SYM.findall(block):
             symbols.add(_strip_dali_prefix(sym))
         # dot-call 타입 추론 (Phase 3: CamelCase 선언도 처리)
         # "Type& varname" 레퍼런스 파라미터도 캡처 (함수 파라미터로 받은 View 타입 추론)
         var_type_map = {}
-        for m in re.finditer(
-            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s*&?\s+'
-            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(,)]', block
-        ):
+        for m in _RE_VAR_DECL.finditer(block):
             var_type_map[m.group(2)] = _strip_dali_prefix(m.group(1))
-        for m in re.finditer(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(', block):
+        for m in _RE_DOT_CALL.finditer(block):
             var_name, method = m.group(1), m.group(2)
             if var_name in var_type_map:
                 symbols.add(f"{var_type_map[var_name]}::{method}")
