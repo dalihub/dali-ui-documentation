@@ -134,6 +134,15 @@ def parse_member(memberdef, api_dirs):
     if warnings:
         member_data["warnings"] = warnings
 
+    if kind == "typedef":
+        # `using Alias = OriginalType` 선언의 원본 타입을 저장.
+        # stage_c가 이를 읽어 alias 심볼(Text::FontWeight::BOLD 등)을 full_names에 등록한다.
+        type_elem = memberdef.find("type")
+        if type_elem is not None:
+            aliased = "".join(type_elem.itertext()).strip()
+            if aliased:
+                member_data["aliased_type"] = aliased
+
     if kind == "function":
         type_elem = memberdef.find("type")
         args_elem = memberdef.find("argsstring")

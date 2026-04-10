@@ -150,6 +150,94 @@ def _build_inheritance_aliases(parsed_doxygen_dir) -> set:
     return alias_set
 
 
+def _build_typedef_aliases(parsed_doxygen_dir) -> set:
+    """
+    `using Alias = OriginalType` 선언을 읽어 alias 심볼 집합을 반환한다.
+
+    예) Dali::Ui::Text::FontWeight = Dali::TextAbstraction::FontWeight::Type
+        → FontWeight::Type 의 enum 값(BOLD, REGULAR 등)을 다음 경로로 등록:
+          "Text::FontWeight::BOLD", "FontWeight::BOLD"
+
+    doxygen_parser.py 가 typedef memberdef 의 <type> 요소를 `aliased_type` 필드로
+    저장해야 동작한다.  해당 필드가 없는 typedef는 무시한다.
+
+    주의: 같은 이름의 compound가 여러 번 등장할 수 있으므로(Doxygen이 namespace를
+    파일별로 분리 출력) 단순 dict 덮어쓰기를 피하고 전체 목록을 탐색한다.
+    """
+    # 이름 → compound 목록 (동일 이름이 여러 번 나올 수 있음)
+    comps_by_name: dict = {}
+    typedef_entries: list = []  # (container_full_name, alias_name, aliased_type)
+
+    for pkg_json in Path(parsed_doxygen_dir).glob("*.json"):
+        try:
+            with open(pkg_json, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
+        for comp in data.get("compounds", []):
+            cn = comp.get("name", "")
+            if not cn:
+                continue
+            comps_by_name.setdefault(cn, []).append(comp)
+            for mb in comp.get("members", []):
+                if mb.get("kind") != "typedef":
+                    continue
+                aliased_type = mb.get("aliased_type", "")
+                alias_name = mb.get("name", "")
+                if aliased_type and alias_name:
+                    typedef_entries.append((cn, alias_name, aliased_type))
+
+    # 단축명 → [전체명] 역매핑 (cross-package 조회용)
+    short_to_full: dict = {}
+    for cn in comps_by_name:
+        parts = cn.split("::")
+        for i in range(len(parts)):
+            key = "::".join(parts[i:])
+            short_to_full.setdefault(key, []).append(cn)
+
+    def find_comp(type_name: str):
+        """aliased_type 문자열로 compound 객체(첫 번째 일치)를 반환한다."""
+        stripped = _strip_dali_prefix(type_name)
+        for candidate in (type_name, stripped):
+            comps = comps_by_name.get(candidate)
+            if comps:
+                return comps[0]
+        for candidate in (type_name, stripped):
+            hits = short_to_full.get(candidate, [])
+            if hits:
+                return comps_by_name[hits[0]][0]
+        return None
+
+    alias_set: set = set()
+
+    for container_cn, alias_name, aliased_type in typedef_entries:
+        aliased_comp = find_comp(aliased_type)
+        if aliased_comp is None:
+            continue
+
+        # alias의 경로 변형: 전체 / Dali:: strip / 리프만
+        alias_full = f"{container_cn}::{alias_name}"       # Dali::Ui::Text::FontWeight
+        alias_short = _strip_dali_prefix(alias_full)        # Text::FontWeight
+        alias_leaf = alias_name                             # FontWeight
+
+        # aliased compound의 enum값/변수를 alias 경로 아래에 등록
+        for child_mb in aliased_comp.get("members", []):
+            child_name = child_mb.get("name", "")
+            if not child_name or child_mb.get("kind") not in ("enumvalue", "variable"):
+                continue
+            for prefix in (alias_full, alias_short, alias_leaf):
+                sym = f"{prefix}::{child_name}"
+                alias_set.add(sym)
+                alias_set.update(_symbol_aliases(sym))
+
+        # alias 타입 자체도 등록
+        for sym in (alias_full, alias_short, alias_leaf):
+            alias_set.add(sym)
+            alias_set.update(_symbol_aliases(sym))
+
+    return alias_set
+
+
 def load_doc_config():
     if not DOC_CONFIG_PATH.exists():
         return {}
@@ -1658,11 +1746,17 @@ def main():
                     except Exception:
                         continue
                 # 상속 체인 alias 등록 (View::Add, ImageView::Add 등 파생 클래스 메서드 검증 지원)
-                _fn.update(_build_inheritance_aliases(PARSED_DOXYGEN_DIR))
+                _inh = _build_inheritance_aliases(PARSED_DOXYGEN_DIR)
+                _fn.update(_inh)
+                # typedef alias 등록 (Text::FontWeight::BOLD 등 using 선언 alias 검증 지원)
+                _tdef = _build_typedef_aliases(PARSED_DOXYGEN_DIR)
+                _fn.update(_tdef)
                 client._dali_full_names = _fn
                 client._dali_simple_names = _sn
                 print(f"    [Pass2-DB] Doxygen symbol DB built: "
-                      f"{len(_fn)} full+alias, {len(_sn)} simple.")
+                      f"{len(_fn)} full+alias "
+                      f"(+{len(_inh)} inheritance, +{len(_tdef)} typedef), "
+                      f"{len(_sn)} simple.")
 
             clean_md, _block_results = run_two_pass_generation(
                 feat_name, outline, specs, client,
