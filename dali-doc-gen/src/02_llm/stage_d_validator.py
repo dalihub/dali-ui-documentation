@@ -88,6 +88,75 @@ def _symbol_aliases(symbol: str) -> list:
     return list(aliases)
 
 
+# ── 상속 Alias 빌더 ──────────────────────────────────────────────────────
+def _build_inheritance_aliases(parsed_doxygen_dir) -> set:
+    """
+    모든 parsed_doxygen JSON을 읽어 상속 체인을 재귀 탐색하고,
+    부모 클래스의 메서드를 자식 클래스 이름으로 alias한 full_names 집합을 반환한다.
+
+    예) Dali::Ui::ImageView → Dali::Ui::View → Dali::Actor
+        → "ImageView::Add", "View::Add" 등을 full_names에 추가
+
+    cross-package 상속 대응:
+      base_classes에 단축명("CustomActor")이 들어있는 경우
+      전체 compounds 맵에서 short name으로도 탐색한다.
+    """
+    all_comps: dict = {}
+    short_to_full: dict = {}
+
+    for pkg_json in Path(parsed_doxygen_dir).glob("*.json"):
+        try:
+            with open(pkg_json, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
+        for comp in data.get("compounds", []):
+            cn = comp.get("name", "")
+            if not cn:
+                continue
+            all_comps[cn] = comp
+            short = cn.split("::")[-1]
+            short_to_full.setdefault(short, []).append(cn)
+
+    def resolve_base(base_name: str):
+        if base_name in all_comps:
+            return all_comps[base_name]
+        candidates = short_to_full.get(base_name, [])
+        return all_comps[candidates[0]] if candidates else None
+
+    def collect_ancestor_members(class_name: str, visited: set) -> list:
+        if class_name in visited:
+            return []
+        visited.add(class_name)
+        comp = resolve_base(class_name)
+        if comp is None:
+            return []
+        members = [mb.get("name", "") for mb in comp.get("members", []) if mb.get("name")]
+        for base in comp.get("base_classes", []):
+            members.extend(collect_ancestor_members(base, visited))
+        return members
+
+    alias_set: set = set()
+    for cn, comp in all_comps.items():
+        bases = comp.get("base_classes", [])
+        if not bases:
+            continue
+        inherited = []
+        for base in bases:
+            inherited.extend(collect_ancestor_members(base, set()))
+        short_cn = _strip_dali_prefix(cn)
+        for mn in inherited:
+            if mn.startswith("~") or mn.startswith("operator") or not mn:
+                continue
+            full_sym = f"{cn}::{mn}"
+            short_sym = f"{short_cn}::{mn}"
+            alias_set.add(full_sym)
+            alias_set.add(short_sym)
+            alias_set.update(_symbol_aliases(full_sym))
+
+    return alias_set
+
+
 # ── Doxygen DB 구축 ──────────────────────────────────────────────────────
 def build_doxygen_symbol_set():
     """
@@ -124,7 +193,12 @@ def build_doxygen_symbol_set():
                     full_names.update(_symbol_aliases(full_sym))
                     simple_names.add(mb_name)
 
-    print(f"[Validator] Doxygen DB built: {len(full_names)} full symbols, "
+    # 상속 체인 alias 등록 (View::Add, ImageView::Add 등 파생 클래스 메서드 검증 지원)
+    inheritance_aliases = _build_inheritance_aliases(PARSED_DOXYGEN_DIR)
+    full_names.update(inheritance_aliases)
+
+    print(f"[Validator] Doxygen DB built: {len(full_names)} full symbols "
+          f"(+{len(inheritance_aliases)} inheritance aliases), "
           f"{len(simple_names)} simple names.")
     return full_names, simple_names
 
@@ -159,11 +233,12 @@ def extract_symbols_from_markdown(md_text):
 
         # 1-b. dot-call 타입 추론
         #   선언부: "Dali::Ui::ImageView imageView = ..." 또는 "ImageView imageView = ..."
+        #   "Type& varname" 레퍼런스 파라미터도 캡처 (함수 파라미터로 받은 View 타입 추론)
         #   → {"imageView": "ImageView"}  (strip 후 저장)
         var_type_map = {}
         for m in re.finditer(
-            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s+'
-            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(]',
+            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s*&?\s+'
+            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(,)]',
             block
         ):
             var_type_map[m.group(2)] = _strip_dali_prefix(m.group(1))

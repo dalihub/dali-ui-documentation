@@ -62,6 +62,93 @@ def _symbol_aliases(symbol: str) -> list:
     aliases.discard(symbol)
     return list(aliases)
 
+# Actor에서 상속받은 메서드 중 View 파생 클래스에서 실제로 쓰일 법한 것만 허가
+# (Permitted List의 INHERITED METHODS 섹션에 출력되며, full_names DB에도 alias로 등록된다)
+ACTOR_INHERITED_METHODS = {
+    "Add", "Remove", "Unparent",
+    "GetParent", "GetChildCount", "GetChildAt",
+    "FindChildByName",
+    "Raise", "Lower", "RaiseToTop", "LowerToBottom",
+    "SetResizePolicy", "GetResizePolicy",
+    "GetNaturalSize", "GetTargetSize",
+}
+
+
+def _build_inheritance_aliases(parsed_doxygen_dir) -> set:
+    """
+    모든 parsed_doxygen JSON을 읽어 상속 체인을 재귀 탐색하고,
+    부모 클래스의 메서드를 자식 클래스 이름으로 alias한 full_names 집합을 반환한다.
+
+    예) Dali::Ui::ImageView → Dali::Ui::View → Dali::Actor
+        → "ImageView::Add", "View::Add" 등을 full_names에 추가
+
+    cross-package 상속 대응:
+      base_classes에 단축명("CustomActor")이 들어있는 경우
+      전체 compounds 맵에서 short name으로도 탐색한다.
+    """
+    # 1. 전체 compounds를 full_name → comp 맵으로 수집
+    all_comps: dict = {}   # full_name → comp dict
+    short_to_full: dict = {}  # short_name → [full_name, ...]
+
+    for pkg_json in Path(parsed_doxygen_dir).glob("*.json"):
+        try:
+            with open(pkg_json, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
+        for comp in data.get("compounds", []):
+            cn = comp.get("name", "")
+            if not cn:
+                continue
+            all_comps[cn] = comp
+            short = cn.split("::")[-1]
+            short_to_full.setdefault(short, []).append(cn)
+
+    def resolve_base(base_name: str):
+        """단축명/full name 모두 시도해 comp dict 반환."""
+        if base_name in all_comps:
+            return all_comps[base_name]
+        # short name 탐색
+        candidates = short_to_full.get(base_name, [])
+        if candidates:
+            return all_comps[candidates[0]]
+        return None
+
+    def collect_ancestor_members(class_name: str, visited: set) -> list:
+        """재귀적으로 부모 클래스 메서드 이름 목록을 수집한다."""
+        if class_name in visited:
+            return []
+        visited.add(class_name)
+        comp = resolve_base(class_name)
+        if comp is None:
+            return []
+        members = [mb.get("name", "") for mb in comp.get("members", []) if mb.get("name")]
+        for base in comp.get("base_classes", []):
+            members.extend(collect_ancestor_members(base, visited))
+        return members
+
+    # 2. 각 클래스에 대해 상속받은 메서드를 alias로 추가
+    alias_set: set = set()
+    for cn, comp in all_comps.items():
+        bases = comp.get("base_classes", [])
+        if not bases:
+            continue
+        inherited = []
+        for base in bases:
+            inherited.extend(collect_ancestor_members(base, set()))
+        short_cn = _strip_dali_prefix(cn)
+        for mn in inherited:
+            if mn.startswith("~") or mn.startswith("operator") or not mn:
+                continue
+            full_sym = f"{cn}::{mn}"
+            short_sym = f"{short_cn}::{mn}"
+            alias_set.add(full_sym)
+            alias_set.add(short_sym)
+            alias_set.update(_symbol_aliases(full_sym))
+
+    return alias_set
+
+
 def load_doc_config():
     if not DOC_CONFIG_PATH.exists():
         return {}
@@ -393,6 +480,11 @@ def build_permitted_method_list(specs):
     specs에서 호출 가능한 메서드 이름만 추출하여 프롬프트용 허용 목록 블록을 반환합니다.
     LLM이 specs JSON을 직접 파싱하지 않고도 사용 가능한 메서드를 명확히 인식하도록 합니다.
     메서드가 없으면 빈 문자열을 반환합니다.
+
+    enum 인라인: 메서드 signature에 enum 파라미터가 있으면 첫 등장 시 값 목록을 인라인 표시.
+        같은 enum 타입이 이후 메서드에 재등장하면 anchor("↳ EnumType: see above")만 표시해 토큰 절약.
+    inherited methods: ACTOR_INHERITED_METHODS 화이트리스트를 별도 섹션으로 추가.
+    setter 우선 규칙: SetProperty 남용 방지 및 "없는 메서드 창작 금지" 규칙 추가.
     """
     methods = sorted({
         s["name"].split("::")[-1]
@@ -427,6 +519,29 @@ def build_permitted_method_list(specs):
     if not methods and not enum_groups:
         return ""
 
+    # signature에서 enum 파라미터 타입 추출 → 메서드별 인라인 힌트 맵 구성
+    # signature 예: "(std::string url, FittingMode::Type fit, SamplingMode::Filter smp)"
+    _enum_param_re = re.compile(r'\b([A-Z][A-Za-z0-9_]+)(?:::Type|::Filter|::Mode)?\b')
+    # method_name → [enum_parent, ...] (enum_groups에 있는 것만)
+    method_enum_hints: dict = {}
+    for s in specs:
+        if s.get("kind") != "function":
+            continue
+        mname = s["name"].split("::")[-1]
+        if mname.startswith("operator") or mname.startswith("~"):
+            continue
+        sig = s.get("signature", "")
+        hints = []
+        for m in _enum_param_re.finditer(sig):
+            candidate = m.group(1)
+            if candidate in enum_groups:
+                hints.append(candidate)
+        if hints:
+            method_enum_hints.setdefault(mname, [])
+            for h in hints:
+                if h not in method_enum_hints[mname]:
+                    method_enum_hints[mname].append(h)
+
     result = "CRITICAL CONSTRAINT - PERMITTED API CALLS ONLY:\n"
     if methods:
         result += (
@@ -434,9 +549,36 @@ def build_permitted_method_list(specs):
             "        - NEVER use, invent, or assume the existence of any method not explicitly listed here.\n"
             "        - (e.g., SetVisible, Show, Hide, SetSize etc. must NEVER be used unless they are explicitly present in this list).\n"
             "        - Using a non-permitted method will trigger a FATAL pipeline validation failure.\n"
+            # setter 우선 규칙 및 없는 메서드 창작 금지
+            "        - Prefer dedicated setter/getter methods over SetProperty/GetProperty.\n"
+            "          If a method you need is not listed here, search this list for related terms — do NOT invent methods.\n"
             "        Permitted Methods:\n"
-            + "\n".join(f"          - {m}" for m in methods) + "\n\n"
         )
+        # enum 인라인 — 첫 등장에 값 표시, 이후엔 anchor만 (토큰 절약)
+        seen_enums: set = set()
+        for m in methods:
+            result += f"          - {m}\n"
+            hints = method_enum_hints.get(m, [])
+            for enum_parent in hints:
+                if enum_parent not in seen_enums:
+                    vals = ", ".join(sorted(enum_groups[enum_parent]))
+                    result += f"              ↳ {enum_parent} values: {vals}\n"
+                    seen_enums.add(enum_parent)
+                else:
+                    result += f"              ↳ {enum_parent}: see above\n"
+        result += "\n"
+
+    # Actor 상속 메서드 섹션 — View 파생 클래스에서 공통으로 사용 가능
+    result += (
+        "        INHERITED METHODS (from Actor, available on all View-derived classes):\n"
+        "          Add(View child), Remove(View child), Unparent()\n"
+        "          GetParent() -> View, GetChildCount() -> uint32_t, GetChildAt(uint32_t) -> View\n"
+        "          FindChildByName(std::string) -> View\n"
+        "          Raise(), Lower(), RaiseToTop(), LowerToBottom()\n"
+        "          SetResizePolicy(ResizePolicy::Type, Dimension::Type), GetResizePolicy(Dimension::Type)\n"
+        "          GetNaturalSize() -> Vector3, GetTargetSize() -> Vector3\n\n"
+    )
+
     if enum_groups:
         result += (
             "        PERMITTED ENUM VALUES — ONLY these values exist. Using any other value is a hallucination:\n"
@@ -448,7 +590,6 @@ def build_permitted_method_list(specs):
         )
     return result + (
         "        CRITICAL CONSTRAINT - USING NAMESPACE DECLARATIONS:\n"
-
         "        ALL C++ code examples MUST begin with exactly these two lines:\n"
         "          using namespace Dali;\n"
         "          using namespace Dali::Ui;\n"
@@ -552,10 +693,11 @@ def _verify_code_block(block_text, full_names, simple_names):
         for sym in found:
             symbols.add(_strip_dali_prefix(sym))
         # dot-call 타입 추론 (Phase 3: CamelCase 선언도 처리)
+        # "Type& varname" 레퍼런스 파라미터도 캡처 (함수 파라미터로 받은 View 타입 추론)
         var_type_map = {}
         for m in re.finditer(
-            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s+'
-            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(]', block
+            r'((?:Dali::Ui::|Dali::)?[A-Z][A-Za-z0-9_]*(?:::[A-Za-z0-9_]+)*)\s*&?\s+'
+            r'([a-z_][a-zA-Z0-9_]*)\s*[=;{(,)]', block
         ):
             var_type_map[m.group(2)] = _strip_dali_prefix(m.group(1))
         for m in re.finditer(r'\b([a-z_][a-zA-Z0-9_]*)\.([A-Z][a-zA-Z0-9_]+)\s*\(', block):
@@ -852,6 +994,8 @@ def run_two_pass_generation(feat_name, outline, specs, client,
                             _simple_names.add(mn)
             except Exception:
                 continue
+        # 상속 체인 alias 등록 (View::Add, ImageView::Add 등 파생 클래스 메서드 검증 지원)
+        _full_names.update(_build_inheritance_aliases(PARSED_DOXYGEN_DIR))
         full_names, simple_names = _full_names, _simple_names
         print(f"    [Pass2] Doxygen DB built inline: {len(full_names)} full symbols.")
 
@@ -1422,6 +1566,8 @@ def main():
                                     _sn.add(_mn)
                     except Exception:
                         continue
+                # 상속 체인 alias 등록 (View::Add, ImageView::Add 등 파생 클래스 메서드 검증 지원)
+                _fn.update(_build_inheritance_aliases(PARSED_DOXYGEN_DIR))
                 client._dali_full_names = _fn
                 client._dali_simple_names = _sn
                 print(f"    [Pass2-DB] Doxygen symbol DB built: "
