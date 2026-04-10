@@ -66,3 +66,45 @@ manual_features:
     description: "Shared enum types for image-view family (LoadPolicy, ReleasePolicy, FittingMode, MaskingType, etc.). Documented as part of the image-view page."
     suppress_doc: true        # image-view-types.md 생성 안 함 — image-view 문서에 통합
     merge_into: "image-view"  # image-view 생성 시 이 enum 타입들을 inherited context로 포함
+
+  - feature: "align-enumerations"
+    display_name: "Align Enumerations"
+    source_package: "dali-core"
+    description: "Low-level alignment enum definitions. Not documented separately."
+    suppress_doc: true
+
+  - feature: "callback"
+    display_name: "Callback"
+    source_package: "dali-core"
+    description: "Internal callback utility. Not exposed as a user-facing feature."
+    suppress_doc: true
+
+  - feature: "camera-view"
+    display_name: "CameraView"
+    source_package: "dali-ui"
+    description: "Camera preview view. Not included in current documentation scope."
+    suppress_doc: true
+
+  - feature: "common"
+    display_name: "Common"
+    source_package: "dali-core"
+    description: "Common internal definitions shared across packages. Not documented separately."
+    suppress_doc: true
+
+  - feature: "drawable-actor"
+    display_name: "DrawableActor"
+    source_package: "dali-core"
+    description: "Low-level drawable actor. Platform-tier only, not for app documentation."
+    suppress_doc: true
+
+  - feature: "dummy-component"
+    display_name: "DummyComponent"
+    source_package: "dali-ui"
+    description: "Internal test/placeholder component. Not documented."
+    suppress_doc: true
+
+  - feature: "size-negotiation"
+    display_name: "Size Negotiation"
+    source_package: "dali-core"
+    description: "Internal size negotiation enums and types. Covered implicitly via layout documentation."
+    suppress_doc: true
