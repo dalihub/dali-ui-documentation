@@ -1191,8 +1191,8 @@ def run_two_pass_generation(feat_name, outline, specs, client,
 
         if code_block:
             if tag_type == "INLINE_CODE":
-                # 인라인 치환: 문장 끝 태그를 (symbol) 형태로 교체
-                final_md = final_md.replace(tag_full, f"({code_block.strip()})", 1)
+                # 인라인 치환: 문장 끝 태그를 `symbol` 백틱 형태로 교체
+                final_md = final_md.replace(tag_full, f"`{code_block.strip()}`", 1)
             else:
                 final_md = final_md.replace(tag_full, code_block, 1)
             pass_count += 1
