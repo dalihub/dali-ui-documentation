@@ -801,6 +801,10 @@ def _verify_code_block(block_text, full_names, simple_names):
              'Void', 'Return', 'This', 'Class', 'New', 'Delete', 'Public', 'Private'}
     symbols -= noise
 
+    # 사용자 정의 클래스 심볼 스킵 (My 접두사 — 콜백 핸들러 등 앱 코드)
+    # Pass 2 프롬프트가 My 접두사 사용을 강제하므로 이 클래스들은 DALi API 환각이 아님
+    symbols = {s for s in symbols if not s.split("::")[0].startswith("My")}
+
     verified, unverified = [], []
     for sym in symbols:
         if '::' in sym:
@@ -867,6 +871,11 @@ CRITICAL CONSTRAINT - ENUM VALUES:
   - NEVER use Pascal case or lower case for enum values.
   - CORRECT: NONE, SCALE_TO_FIT, POSITION_PROPORTIONAL
   - WRONG:   None, ScaleToFit, positionProportional
+
+CRITICAL CONSTRAINT - USER-DEFINED CLASSES IN EXAMPLES:
+  - When example code requires a user-defined class (e.g. a callback handler, app class),
+    ALWAYS name it with a 'My' prefix: MyApp, MyHandler, MyView, MyCallback.
+  - NEVER use other names (AppHandler, CustomView, Listener, etc.) for user-defined classes.
 
 Scenarios to implement:
 {blocks_text}
@@ -1028,16 +1037,19 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         "        Every sentence must be complete and meaningful even if the code block is removed.\n"
         "        Code blocks are supplementary illustrations, not part of the explanation.\n"
         "\n"
-        "        INLINE API REFERENCES — use <!-- INLINE_CODE: --> tags instead of backticks:\n"
-        "        When mentioning a specific API symbol inline (method name, enum value, property),\n"
-        "        do NOT write it directly with backticks. Instead:\n"
+        "        INLINE API REFERENCES — MANDATORY TAG USAGE:\n"
+        "        EVERY method name, enum value, property name, or class name mentioned inline in prose\n"
+        "        MUST use the <!-- INLINE_CODE: --> tag. Writing a symbol directly with backticks\n"
+        "        (e.g. `SetPositionX`) bypasses validation and is STRICTLY FORBIDDEN.\n"
+        "        Rules:\n"
         "          1. Write a complete sentence that makes sense WITHOUT the symbol.\n"
         "          2. Append <!-- INLINE_CODE: brief description of the symbol --> at the END of the sentence, after the period.\n"
         "        GOOD: 'The x-coordinate of a View can be set independently.<!-- INLINE_CODE: SetPositionX method -->'\n"
         "        GOOD: 'Immediate loading can be requested at creation time.<!-- INLINE_CODE: LoadPolicy::IMMEDIATE enum value -->'\n"
         "        BAD:  'Use <!-- INLINE_CODE: SetPositionX --> to set the position.'  (symbol is the subject)\n"
         "        BAD:  'The <!-- INLINE_CODE: SetPositionX --> method sets x.'  (tag in the middle)\n"
-        "        BAD:  '`SetPositionX` sets the position.'  (direct backtick usage)\n"
+        "        BAD:  '`SetPositionX` sets the position.'  (direct backtick — FORBIDDEN)\n"
+        "        BAD:  'Use `SetPositionX` ...'  (any backtick around a symbol — FORBIDDEN)\n"
         "        The sentence MUST remain grammatically complete if the tag is deleted entirely.\n"
     )
 
@@ -1130,16 +1142,19 @@ def run_two_pass_generation(feat_name, outline, specs, client,
                             _full_names.add(full_sym)
                             _full_names.update(_symbol_aliases(full_sym))
                             _simple_names.add(mn)
-                        # named regular enum: enumvalue를 Class::VALUE 단축형으로 추가 등록
-                        # (일반 enum은 C++ outer scope 노출로 Class::VALUE 문법이 유효)
-                        # struct/enum class의 경우 해당 compound가 별도로 처리되므로 여기선 건드리지 않음
+                        # named regular enum: enumvalue를 단축형 + 완전형 모두 등록
+                        # 단축형: Class::VALUE (일반 enum은 C++ outer scope 노출로 유효)
+                        # 완전형: Class::EnumName::VALUE (명시적 enum 이름 포함)
+                        # struct/enum class의 경우 별도 compound로 처리되므로 여기선 건드리지 않음
                         if mb.get("kind") == "enum" and mn:
                             for ev in mb.get("enumvalues", []):
                                 ev_name = ev.get("name", "")
                                 if ev_name:
-                                    shortcut = f"{cn}::{ev_name}"
-                                    _full_names.add(shortcut)
-                                    _full_names.update(_symbol_aliases(shortcut))
+                                    shortcut = f"{cn}::{ev_name}"        # AlphaFunction::BOUNCE
+                                    fullpath = f"{cn}::{mn}::{ev_name}"  # AlphaFunction::BuiltinFunction::BOUNCE
+                                    for sym in (shortcut, fullpath):
+                                        _full_names.add(sym)
+                                        _full_names.update(_symbol_aliases(sym))
                                     _simple_names.add(ev_name)
             except Exception:
                 continue
@@ -1772,6 +1787,17 @@ def main():
                                     _fn.add(_full_sym)
                                     _fn.update(_symbol_aliases(_full_sym))
                                     _sn.add(_mn)
+                                # named regular enum: 단축형 + 완전형 모두 등록
+                                if _mb.get("kind") == "enum" and _mn:
+                                    for _ev in _mb.get("enumvalues", []):
+                                        _ev_name = _ev.get("name", "")
+                                        if _ev_name:
+                                            _shortcut = f"{_cn}::{_ev_name}"
+                                            _fullpath = f"{_cn}::{_mn}::{_ev_name}"
+                                            for _sym in (_shortcut, _fullpath):
+                                                _fn.add(_sym)
+                                                _fn.update(_symbol_aliases(_sym))
+                                            _sn.add(_ev_name)
                     except Exception:
                         continue
                 # 상속 체인 alias 등록 (View::Add, ImageView::Add 등 파생 클래스 메서드 검증 지원)

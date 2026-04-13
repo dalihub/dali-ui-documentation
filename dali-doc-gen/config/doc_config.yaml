@@ -30,8 +30,29 @@ feature_hints:
   absolute-layout:
     extra_context: |
       For AbsoluteLayoutParams, you can use either 'SetBounds()' OR the individual setters ('SetX()', 'SetY()', 'SetWidth()', 'SetHeight()').
-      IMPORTANT: Do NOT mix them together in the same code example or on the same object. 
+      IMPORTANT: Do NOT mix them together in the same code example or on the same object.
       Use one approach exclusively to keep code snippets redundance-free and idiomatic.
+      CRITICAL: To apply layout parameters to a View, use 'parentView.SetLayoutParams(params)' —
+      NOT SetLayout(), SetLayoutMode(), or SetLayoutParameters(). The exact method name on View
+      is 'SetLayoutParams'. Any other name will cause a fatal validation failure.
+
+  layouts:
+    extra_context: |
+      CRITICAL: If example code needs to apply a layout to a View, use 'parentView.SetLayoutParams(params)' —
+      NOT SetLayout(), SetLayoutMode(), or SetLayoutParameters(). The exact method name on View
+      is 'SetLayoutParams'. Any other name will cause a fatal validation failure.
+
+  flex-layout:
+    extra_context: |
+      CRITICAL: If example code needs to apply a layout to a View, use 'parentView.SetLayoutParams(params)' —
+      NOT SetLayout(), SetLayoutMode(), or SetLayoutParameters(). The exact method name on View
+      is 'SetLayoutParams'. Any other name will cause a fatal validation failure.
+
+  grid-layout:
+    extra_context: |
+      CRITICAL: If example code needs to apply a layout to a View, use 'parentView.SetLayoutParams(params)' —
+      NOT SetLayout(), SetLayoutMode(), or SetLayoutParameters(). The exact method name on View
+      is 'SetLayoutParams'. Any other name will cause a fatal validation failure.
 
 token_overflow:
   # feature_clusterer: 이 스펙 수 초과 시 oversized 마킹 및 후보 그룹 계산
