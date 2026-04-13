@@ -1415,7 +1415,9 @@ def main():
     merge_sources = {}
     for f in feature_map_list:
         target = f.get("merge_into")
-        if target and f.get("suppress_doc"):
+        # merge_mode:full 피처는 feature_clusterer가 이미 target.apis에 병합했으므로
+        # 1차 get_api_specs에서 자동 포함됨 — merge_sources에 중복 추가하지 않음
+        if target and f.get("suppress_doc") and f.get("merge_mode") != "full":
             merge_sources.setdefault(target, []).append(f)
 
     client = LLMClient()
