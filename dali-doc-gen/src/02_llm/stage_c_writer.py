@@ -316,6 +316,13 @@ def build_rolling_initial_prompt(feat_name, outline, specs_chunk, covered_classe
 
     ANTI-HALLUCINATION RULE:
     Use ONLY the C++ API specs below. Do NOT invent APIs or parameters.
+
+    UICOLOR RULE:
+    UiColor does NOT have color presets like UiColor::RED, UiColor::BLUE, UiColor::GREEN.
+    The ONLY valid UiColor static presets are: UiColor::PRIMARY, UiColor::BACKGROUND, UiColor::OUTLINE.
+    Where a UiColor value is needed, use: UiColor(r, g, b, a), UiColor(Color::RED), or UiColor::PRIMARY/BACKGROUND/OUTLINE.
+    NEVER write UiColor::RED, UiColor::BLUE, etc.
+
     {permitted_method_block}
     {code_example_strategy}
     {json.dumps(specs_chunk, indent=2)}
@@ -814,7 +821,7 @@ def _verify_code_block(block_text, full_names, simple_names):
     return verified, unverified
 
 
-def _build_batch_prompt(pending_blocks, slim_sigs, permitted_method_block):
+def _build_batch_prompt(pending_blocks, slim_sigs, permitted_method_block, feature_hint_block=""):
     """
     Pass 2 배치 프롬프트 생성.
     pending_blocks: [(block_index, purpose_str, tag_type), ...]
@@ -877,6 +884,15 @@ CRITICAL CONSTRAINT - USER-DEFINED CLASSES IN EXAMPLES:
     ALWAYS name it with a 'My' prefix: MyApp, MyHandler, MyView, MyCallback.
   - NEVER use other names (AppHandler, CustomView, Listener, etc.) for user-defined classes.
 
+CRITICAL CONSTRAINT - UiColor:
+  - UiColor does NOT have color presets like UiColor::RED, UiColor::BLUE, UiColor::GREEN.
+  - The ONLY valid UiColor static presets are: UiColor::PRIMARY, UiColor::BACKGROUND, UiColor::OUTLINE.
+  - Where a UiColor value is needed, use one of:
+      UiColor(r, g, b, a)              — RGBA float constructor (e.g. UiColor(1.0f, 0.0f, 0.0f, 1.0f))
+      UiColor(Color::RED)              — wrap a Dali::Color constant (Vector4) in UiColor constructor
+      UiColor::PRIMARY / BACKGROUND / OUTLINE  — built-in semantic presets
+  - NEVER write UiColor::RED, UiColor::BLUE, UiColor::WHITE, etc. — these do not exist.
+
 Scenarios to implement:
 {blocks_text}
 
@@ -884,12 +900,13 @@ API Signatures (use ONLY these):
 {slim_sigs}
 
 {permitted_method_block}
-
+{feature_hint_block}
 OUTPUT: Respond with all blocks in order using the [BLOCK_N] format above."""
 
 
 def generate_code_blocks_batch(feat_name, tags, specs, client,
-                               full_names, simple_names, permitted_method_block):
+                               full_names, simple_names, permitted_method_block,
+                               feature_hint_block=""):
     """
     Pass 2: 모든 SAMPLE_CODE 태그를 배치 LLM 호출로 처리한다.
 
@@ -930,7 +947,7 @@ def generate_code_blocks_batch(feat_name, tags, specs, client,
         print(f"    [Pass2] Attempt {attempt}/{MAX_CODE_RETRY}: "
               f"generating {len(pending)} block(s) for '{feat_name}'...")
 
-        prompt = _build_batch_prompt(pending_with_hints, slim_sigs, permitted_method_block)
+        prompt = _build_batch_prompt(pending_with_hints, slim_sigs, permitted_method_block, feature_hint_block)
         try:
             response = client.generate(prompt, use_think=False)
         except Exception as e:
@@ -1085,6 +1102,13 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         ANTI-HALLUCINATION RULE:
         Use ONLY the C++ API specs below for all signatures, parameter types, and return values.
         Do NOT invent non-existent APIs or parameters.
+
+        UICOLOR RULE:
+        UiColor does NOT have color presets like UiColor::RED, UiColor::BLUE, UiColor::GREEN.
+        The ONLY valid UiColor static presets are: UiColor::PRIMARY, UiColor::BACKGROUND, UiColor::OUTLINE.
+        Where a UiColor value is needed, use: UiColor(r, g, b, a), UiColor(Color::RED), or UiColor::PRIMARY/BACKGROUND/OUTLINE.
+        NEVER write UiColor::RED, UiColor::BLUE, etc.
+
         {permitted_method_block}
         {code_example_strategy}
         {json.dumps(specs, indent=2)}
@@ -1165,7 +1189,8 @@ def run_two_pass_generation(feat_name, outline, specs, client,
 
     code_results, block_history = generate_code_blocks_batch(
         feat_name, all_tags, specs, client,
-        full_names, simple_names, permitted_method_block
+        full_names, simple_names, permitted_method_block,
+        feature_hint_block=feature_hint_block
     )
 
     # ── 통합: 태그를 코드/인라인 심볼로 치환 ──────────────────────────────────
