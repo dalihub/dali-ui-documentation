@@ -181,11 +181,13 @@ def main():
                 feature_map[feat_key]["force_tree_review"] = mf.get("force_tree_review", False)
                 if "audience" in mf:
                     feature_map[feat_key]["audience"] = mf["audience"]
-                # suppress_doc / merge_into 플래그 전파
+                # suppress_doc / merge_into / merge_mode 플래그 전파
                 if "suppress_doc" in mf:
                     feature_map[feat_key]["suppress_doc"] = mf["suppress_doc"]
                 if "merge_into" in mf:
                     feature_map[feat_key]["merge_into"] = mf["merge_into"]
+                if "merge_mode" in mf:
+                    feature_map[feat_key]["merge_mode"] = mf["merge_mode"]
                 print(f"  > Enriched existing feature '{feat_key}' with manual metadata.")
             else:
                 # 신규로 강제 삽입
@@ -203,11 +205,13 @@ def main():
                     "audience": mf.get("audience", "app"),
                     "manual_injected": True
                 }
-                # suppress_doc / merge_into 플래그 전파
+                # suppress_doc / merge_into / merge_mode 플래그 전파
                 if "suppress_doc" in mf:
                     feature_map[feat_key]["suppress_doc"] = mf["suppress_doc"]
                 if "merge_into" in mf:
                     feature_map[feat_key]["merge_into"] = mf["merge_into"]
+                if "merge_mode" in mf:
+                    feature_map[feat_key]["merge_mode"] = mf["merge_mode"]
                 print(f"  > Force-injected new feature '{feat_key}'.")
 
             # base_class가 있고 apis가 비어있으면, parsed doxygen에서 자동 매핑
@@ -223,6 +227,23 @@ def main():
                 if auto_apis:
                     feature_map[feat_key]["apis"] = auto_apis
                     print(f"    > Auto-populated {len(auto_apis)} API(s) from base_class '{base_class}': {auto_apis}")
+    # merge_mode:full 처리: suppress_doc 소스의 apis를 target feature의 apis에 병합
+    # class_feature_map 생성 시 suppress 우선순위 로직이 소스 클래스를 target으로 자동 재매핑함
+    for feat_name, cluster in list(feature_map.items()):
+        if cluster.get("merge_mode") == "full" and cluster.get("suppress_doc") \
+                and cluster.get("merge_into"):
+            target = cluster["merge_into"]
+            if target in feature_map:
+                existing = set(feature_map[target].get("apis", []))
+                added = []
+                for a in cluster.get("apis", []):
+                    if a and a not in existing:
+                        feature_map[target].setdefault("apis", []).append(a)
+                        existing.add(a)
+                        added.append(a)
+                if added:
+                    print(f"  > merge_mode:full — merged {len(added)} API(s) from '{feat_name}' into '{target}'")
+
     # The actual deep mapping will evaluate these clusters next phase.
     print("Cross-referencing logic skipped for heuristic bounds (to be completed in depth by LLM or later layers).")
 

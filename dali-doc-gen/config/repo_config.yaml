@@ -108,3 +108,33 @@ manual_features:
     source_package: "dali-core"
     description: "Internal size negotiation enums and types. Covered implicitly via layout documentation."
     suppress_doc: true
+
+  - feature: "interactive-trait"
+    display_name: "InteractiveTrait"
+    source_package: "dali-ui"
+    description: "Click/press/long-press interaction behavior trait for View. Documented as part of the view page."
+    suppress_doc: true
+    merge_into: "view"
+    merge_mode: "full"     # specs에 완전 통합 — permitted list, slim_sigs에 포함
+
+  - feature: "selectable-trait"
+    display_name: "SelectableTrait"
+    source_package: "dali-ui"
+    description: "Selection state behavior trait for View. Documented as part of the view page."
+    suppress_doc: true
+    merge_into: "view"
+    merge_mode: "full"
+
+  - feature: "ui-state"
+    display_name: "UiState"
+    source_package: "dali-ui"
+    description: "Bitmask value type representing view states (PRESSED, SELECTED, FOCUSED, etc.). Documented as part of the view page."
+    suppress_doc: true
+    merge_into: "view"
+    merge_mode: "full"
+
+  - feature: "trait"
+    display_name: "Trait"
+    source_package: "dali-ui"
+    description: "Base handle for all trait types. Not documented separately."
+    suppress_doc: true

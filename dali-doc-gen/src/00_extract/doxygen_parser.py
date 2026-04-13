@@ -143,6 +143,22 @@ def parse_member(memberdef, api_dirs):
             if aliased:
                 member_data["aliased_type"] = aliased
 
+    if kind == "enum":
+        # named enum (non-anonymous)의 enumvalue를 저장.
+        # stage_c DB 빌드 시 Class::VALUE 단축형 alias 등록에 사용된다.
+        # (anonymous enum은 parse_compound에서 별도 처리되므로 여기는 named enum만 해당)
+        enumvalues = []
+        for ev in memberdef.findall("enumvalue"):
+            ev_name = extract_text_recursive(ev.find("name"))
+            if ev_name:
+                ev_brief = ""
+                ev_brief_elem = ev.find("briefdescription")
+                if ev_brief_elem is not None:
+                    ev_brief, _, _, _, _, _, _ = parse_description(ev_brief_elem)
+                enumvalues.append({"name": ev_name, "brief": ev_brief})
+        if enumvalues:
+            member_data["enumvalues"] = enumvalues
+
     if kind == "function":
         type_elem = memberdef.find("type")
         args_elem = memberdef.find("argsstring")

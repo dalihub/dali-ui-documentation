@@ -1130,6 +1130,17 @@ def run_two_pass_generation(feat_name, outline, specs, client,
                             _full_names.add(full_sym)
                             _full_names.update(_symbol_aliases(full_sym))
                             _simple_names.add(mn)
+                        # named regular enum: enumvalue를 Class::VALUE 단축형으로 추가 등록
+                        # (일반 enum은 C++ outer scope 노출로 Class::VALUE 문법이 유효)
+                        # struct/enum class의 경우 해당 compound가 별도로 처리되므로 여기선 건드리지 않음
+                        if mb.get("kind") == "enum" and mn:
+                            for ev in mb.get("enumvalues", []):
+                                ev_name = ev.get("name", "")
+                                if ev_name:
+                                    shortcut = f"{cn}::{ev_name}"
+                                    _full_names.add(shortcut)
+                                    _full_names.update(_symbol_aliases(shortcut))
+                                    _simple_names.add(ev_name)
             except Exception:
                 continue
         # 상속 체인 alias 등록 (View::Add, ImageView::Add 등 파생 클래스 메서드 검증 지원)
@@ -1627,6 +1638,18 @@ def main():
                         src.get("packages", []), src.get("apis", []),
                         allowed_tiers={"public-api"}
                     )
+
+                    if src.get("merge_mode") == "full":
+                        # merge_mode:full — specs에 직접 병합
+                        # permitted list, slim_sigs에 완전 포함됨
+                        # class_feature_map이 이미 소스 클래스를 target으로 재매핑했으므로
+                        # get_api_specs의 foreign_classes 필터가 소스 클래스를 제외하지 않음
+                        specs.extend(src_specs_raw)
+                        print(f"    [+] Full-merged from '{src['feature']}': "
+                              f"{len(src_specs_raw)} spec(s) added to {feat_name}")
+                        continue
+
+                    # 기존 동작: inherited_context (briefly mention)
                     # View 메서드 이름 집합
                     view_method_names = {
                         s["name"].split("::")[-1]

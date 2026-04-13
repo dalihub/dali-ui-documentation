@@ -69,6 +69,56 @@ def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def enrich_apis_with_members(apis, allowed_tiers):
+    """
+    feature_map의 apis에 실제 function 멤버가 없는 경우 parsed_doxygen에서 보완해 반환한다.
+
+    feature_clusterer.py는 compound name(클래스/중첩 타입)만 apis에 등록하므로
+    single-class 피처(image-view, label 등)에서 stage_b outline 생성 시
+    메서드 목록 없이 LLM 추론에만 의존하는 문제를 해결한다.
+
+    판단 기준: parsed_doxygen에서 apis 내 클래스의 실제 function 멤버가
+    apis에 하나도 없으면 보완 진행. Label::Property처럼 중첩 타입 compound가
+    apis에 있어도 function 멤버가 없으면 보완한다.
+
+    sample_apis()의 50개 캡 로직이 그대로 동작하므로 메서드가 많아도 자동 제한된다.
+    """
+    class_entries = [a for a in apis if not a.endswith((".cpp", ".h"))]
+    if not class_entries:
+        return apis
+
+    class_set = set(class_entries)
+    apis_set = set(apis)
+    enriched = list(apis)
+    has_function = False
+
+    for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
+        data = load_json(pkg_json)
+        if not data:
+            continue
+        for comp in data.get("compounds", []):
+            cn = comp.get("name", "")
+            if cn not in class_set:
+                continue
+            if allowed_tiers and comp.get("api_tier") not in allowed_tiers:
+                continue
+            for mb in comp.get("members", []):
+                mb_kind = mb.get("kind", "")
+                mb_name = mb.get("name", "")
+                if mb_kind != "function" or not mb_name \
+                        or mb_name.startswith("operator") \
+                        or mb_name.startswith("~"):
+                    continue
+                full_sym = f"{cn}::{mb_name}"
+                if full_sym in apis_set:
+                    # 이미 실제 function 멤버가 apis에 있음 — 보완 불필요
+                    return apis
+                has_function = True
+                enriched.append(full_sym)
+
+    return enriched if has_function else apis
+
+
 def build_api_tier_index():
     """parsed_doxygen에서 {compound_name: api_tier} 인덱스를 구축한다."""
     index = {}
@@ -308,8 +358,11 @@ def main():
         # 1. Filter apis first
         raw_apis = cluster.get("apis", [])
         filtered_apis = filter_apis_by_tier(raw_apis, api_tier_index, allowed_tiers)
-        
-        # 2. Sample filtered apis
+
+        # 2. 메서드가 없는 단일 클래스 피처의 경우 parsed_doxygen에서 메서드 보완
+        filtered_apis = enrich_apis_with_members(filtered_apis, allowed_tiers)
+
+        # 3. Sample filtered apis
         apis = sample_apis(filtered_apis)
         cluster["apis"] = apis
         cluster["allowed_tiers"] = list(allowed_tiers) if allowed_tiers else None
