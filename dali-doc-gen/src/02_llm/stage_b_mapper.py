@@ -14,7 +14,6 @@ from llm_client import LLMClient
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
 CLASSIFIED_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map_classified.json"
-CLASS_FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "class_feature_map.json"
 TAXONOMY_PATH = CACHE_DIR / "feature_taxonomy" / "feature_taxonomy.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 DOC_CONFIG_PATH = PROJECT_ROOT / "config" / "doc_config.yaml"
@@ -155,117 +154,6 @@ def filter_apis_by_tier(apis, api_tier_index, allowed_tiers):
     return filtered
 
 
-def find_child_api_names(display_name, allowed_tiers=None):
-    """
-    Taxonomy child의 display_name(예: 'ImageView')으로 Doxygen에서
-    해당 클래스의 API 이름 목록을 검색해 반환합니다.
-    allowed_tiers가 지정된 경우 해당 tier의 compound만 포함합니다.
-    """
-    api_names = []
-    packages_found = set()
-    search_name = display_name.lower().replace("-", "").replace(" ", "")
-
-    for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
-        data = load_json(pkg_json)
-        if not data:
-            continue
-        pkg_name = data.get("package", pkg_json.stem)
-        for comp in data.get("compounds", []):
-            if allowed_tiers is not None:
-                tier = comp.get("api_tier", "unknown")
-                if tier not in allowed_tiers:
-                    continue
-
-            comp_name = comp.get("name", "")
-            # 정확히 일치하거나 XxxImpl 변형(Integration 구현체)도 함께 수집
-            simple_name = comp_name.split("::")[-1].lower()
-            is_exact = simple_name == search_name
-            is_impl = simple_name.startswith(search_name + "impl")
-            if is_exact or is_impl:
-                api_names.append(comp_name)
-                packages_found.add(pkg_name)
-                for mb in comp.get("members", [])[:30]:
-                    api_names.append(f"{comp_name}::{mb.get('name', '')}")
-                # break 제거: impl 변형도 같은 패키지에서 계속 수집
-        if api_names:
-            break  # 첫 번째 패키지 매칭으로 충분
-
-    return sample_apis(api_names), list(packages_found)
-
-
-def update_class_feature_map_for_children(child_entries):
-    """
-    Fix B: taxonomy child feature에 속하는 클래스를 class_feature_map.json에 재등록한다.
-    feature_clusterer가 부모 feature로 매핑한 항목을 child feature로 덮어써서
-    Stage C의 foreign class 필터가 올바르게 동작하도록 한다.
-    기존에 class_feature_map에 등재된 클래스만 업데이트한다 (신규 키 추가 없음).
-    """
-    if not child_entries or not CLASS_FEATURE_MAP_PATH.exists():
-        return
-    with open(CLASS_FEATURE_MAP_PATH, "r", encoding="utf-8") as f:
-        cfm = json.load(f)
-
-    updated_count = 0
-    remapped_classes = {}  # simple_class_name → child_feature (Pass 2용)
-
-    # Pass 1: child entry의 apis에 있는 항목 직접 remapping (기존 로직)
-    for entry in child_entries:
-        child_name = entry.get("feature", "")
-        for api_name in entry.get("apis", []):
-            if api_name in cfm and cfm[api_name] != child_name:
-                cfm[api_name] = child_name
-                updated_count += 1
-                simple = api_name.split("::")[-1]
-                remapped_classes[simple] = child_name
-
-    # Pass 2: remapping된 클래스명을 포함하는 관련 항목 전파
-    # (예: AnimatedImageView → animated-image-view 확정 후,
-    #       Integration::AnimatedImageViewImpl::Property 등 별도 compound도 함께 처리)
-    for key in list(cfm.keys()):
-        for simple_class, child_name in remapped_classes.items():
-            if len(simple_class) < 6:
-                continue  # 너무 짧은 이름으로 인한 오매칭 방지
-            if simple_class in key and cfm[key] != child_name:
-                cfm[key] = child_name
-                updated_count += 1
-                break  # 키당 첫 번째 매칭만 적용
-
-    if updated_count > 0:
-        with open(CLASS_FEATURE_MAP_PATH, "w", encoding="utf-8") as f:
-            json.dump(cfm, f, indent=2, ensure_ascii=False)
-        print(f"[ClassMap] Updated {updated_count} class→feature mapping(s) for {len(child_entries)} taxonomy child(ren).")
-
-
-def build_child_entries(taxonomy, existing_feature_keys, allowed_tiers=None):
-    """
-    taxonomy에 있는 leaf child 중 feature_map_classified에 없는 항목을
-    Doxygen에서 API를 조회하여 synthetic feature entry로 만들어 반환합니다.
-    """
-    child_entries = []
-    for feat_key, tax_entry in taxonomy.items():
-        if tax_entry.get("tree_decision") != "leaf":
-            continue
-        if feat_key in existing_feature_keys:
-            continue  # 이미 feature_map에 있으면 스킵
-
-        display_name = tax_entry.get("display_name", feat_key)
-        parent = tax_entry.get("parent", "")
-        api_names, packages = find_child_api_names(display_name, allowed_tiers)
-
-        child_entries.append({
-            "feature": feat_key,
-            "display_name": display_name,
-            "packages": packages,
-            "api_tiers": ["public-api"],
-            "apis": api_names,
-            "cross_package_links": [],
-            "ambiguous": False,
-            "_is_taxonomy_child": True,   # child임을 표시
-            "parent_feature": parent
-        })
-        print(f"  [Taxonomy Child] Injected '{feat_key}' ({display_name}, {len(api_names)} APIs found)")
-
-    return child_entries
 
 
 def extract_json_from_text(text):
@@ -325,19 +213,7 @@ def main():
     else:
         print("[Taxonomy] feature_taxonomy.json not found — proceeding without tree context.")
 
-    # ── Taxonomy child feature 주입 ──────────────────────────────────────
-    # feature_map에 없는 leaf child를 Doxygen에서 찾아 목록에 추가
     allowed_tiers = {"public-api"} if args.tier == "app" else None
-    existing_keys = {f["feature"] for f in feature_list}
-    if taxonomy:
-        print("[Taxonomy] Scanning for child features not in feature map...")
-        child_entries = build_child_entries(taxonomy, existing_keys, allowed_tiers)
-        if child_entries:
-            print(f"[Taxonomy] Appended {len(child_entries)} child feature(s) to processing list.")
-            feature_list.extend(child_entries)
-            # Fix B: child feature의 클래스를 class_feature_map에 재등록 (Stage C foreign filter 교정)
-            update_class_feature_map_for_children(child_entries)
-    # ────────────────────────────────────────────────────────────────────
 
     client = LLMClient()
     api_tier_index = build_api_tier_index()

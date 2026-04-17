@@ -1,20 +1,29 @@
 """
-taxonomy_reviewer.py — Phase 1.5: Feature Taxonomy 설계 (LLM Think 모델)
+taxonomy_reviewer.py — Phase 1.5: Feature 재구조화 및 Taxonomy Tree 설계
 
-역할:
-  - feature_map_classified.json + parsed_doxygen의 상속 관계(derived_classes)를 분석
-  - LLM(Think)이 각 상속 계층의 Tree 문서 구조 생성 여부를 판단
-  - 결과를 cache/feature_taxonomy/feature_taxonomy.json에 영속화
-  - 증분 모드: 기존 taxonomy 로드 후 신규/변경 클래스만 LLM 재검토
+Phase A: Feature 재구조화
+  A-1: Oversized feature를 split_candidates 기반으로 분할 → feature_map.json에 sub-feature 추가
+  A-2: 소규모 feature를 LLM 판단으로 통합 → suppress_doc + merge_into 설정
+  A-3: 변경된 feature_map.json 저장 (class_feature_map 재계산은 stage_a 책임)
 
-출력 schema:
+Phase B: 전체 일괄 Tree 설계 (LLM 1회 호출)
+  - 재구조화된 전체 feature 목록을 한 번에 LLM에 전달
+  - 최대 2뎁스 트리 생성
+  - split locked 그룹 제약 적용
+  - 증분 모드: 기존 taxonomy를 컨텍스트로 제공하여 변경사항만 반영
+
+출력:
+  feature_taxonomy.json — 트리 구조 정보
+  feature_map.json      — split/merge 반영된 feature 목록 (갱신)
+
+출력 schema (feature_taxonomy.json):
   {
     "view": {
       "display_name": "View (Base UI Object)",
       "parent": null,
       "children": ["image-view", "label", "scroll-view"],
       "doc_file": "view.md",
-      "tree_decision": "tree",         # "tree" | "flat"
+      "tree_decision": "tree",
       "decision_reason": "..."
     },
     ...
@@ -32,7 +41,7 @@ from llm_client import LLMClient
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_DIR = PROJECT_ROOT / "cache"
-FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map.json"   # Phase 1 출력
+FEATURE_MAP_PATH = CACHE_DIR / "feature_map" / "feature_map.json"
 PARSED_DOXYGEN_DIR = CACHE_DIR / "parsed_doxygen"
 TAXONOMY_DIR = CACHE_DIR / "feature_taxonomy"
 TAXONOMY_PATH = TAXONOMY_DIR / "feature_taxonomy.json"
@@ -55,13 +64,22 @@ def load_doc_config():
 
 
 def extract_json_from_text(text):
+    """JSON 배열 또는 객체를 텍스트에서 추출."""
     match = re.search(r'```(?:json)?\s*(.*?)\s*```', text, re.DOTALL)
     if match:
         text_to_parse = match.group(1)
     else:
-        start = text.find('{')
-        end = text.rfind('}') + 1
-        text_to_parse = text[start:end] if start != -1 and end > 0 else text
+        # 배열 우선 탐색
+        start_arr = text.find('[')
+        start_obj = text.find('{')
+        if start_arr != -1 and (start_obj == -1 or start_arr < start_obj):
+            end = text.rfind(']') + 1
+            text_to_parse = text[start_arr:end] if end > 0 else text
+        elif start_obj != -1:
+            end = text.rfind('}') + 1
+            text_to_parse = text[start_obj:end] if end > 0 else text
+        else:
+            text_to_parse = text
     try:
         return json.loads(text_to_parse)
     except Exception as e:
@@ -69,108 +87,40 @@ def extract_json_from_text(text):
         return None
 
 
-def sanitize_children(parent_key, children):
-    """
-    LLM 응답의 children 목록에서 자기 참조 및 중복을 제거합니다.
-    sanitize 후 children이 비어 있으면 호출 측에서 decision을 'flat'으로 다운그레이드해야 합니다.
-    """
-    seen = set()
-    valid = []
-    for c in children:
-        feature_key = c.get("feature", "").strip()
-        if not feature_key:
-            continue
-        if feature_key == parent_key:       # 자기 참조 제거
-            print(f"   [Sanitize] Removed self-referencing child '{feature_key}' from '{parent_key}'")
-            continue
-        if feature_key in seen:             # 중복 제거
-            print(f"   [Sanitize] Removed duplicate child '{feature_key}' from '{parent_key}'")
-            continue
-        seen.add(feature_key)
-        valid.append(c)
-    return valid
+def count_feature_specs(feat, all_compounds_by_name):
+    """feature의 총 spec 수(클래스 + 멤버)를 반환."""
+    total = 0
+    for name in feat.get("apis", []):
+        compound = all_compounds_by_name.get(name)
+        if compound:
+            total += 1 + len(compound.get("members", []))
+        else:
+            total += 1
+    return total
 
 
-def class_exists_in_doxygen(display_name):
-    """
-    display_name(예: 'AnimatedImageView')으로 Doxygen에 실제 클래스가
-    존재하는지 확인합니다. exact match(소문자, 공백/하이픈 제거)만 허용.
-    """
-    search_name = display_name.lower().replace("-", "").replace(" ", "")
+def build_all_compounds_index():
+    """parsed_doxygen에서 {class_name: compound_dict} 인덱스 구축."""
+    index = {}
     for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
         data = load_json(pkg_json)
         if not data:
             continue
         for comp in data.get("compounds", []):
-            simple_name = comp.get("name", "").split("::")[-1].lower()
-            if simple_name == search_name:
-                return True
-    return False
-
-
-def build_inheritance_map():
-    """
-    parsed_doxygen/*.json에서 derived_classes 정보를 수집하여
-    {class_name: [derived_class1, derived_class2, ...]} 형태로 반환.
-    """
-    inheritance_map = {}
-    for pkg_json in PARSED_DOXYGEN_DIR.glob("*.json"):
-        data = load_json(pkg_json)
-        if not data:
-            continue
-        for comp in data.get("compounds", []):
-            if not isinstance(comp, dict):
-                continue
             name = comp.get("name", "")
-            derived = comp.get("derived_classes", [])
-            if derived:
-                inheritance_map[name] = derived
-    return inheritance_map
+            if name:
+                index[name] = comp
+    return index
 
 
-def get_candidates_for_review(feature_list, existing_taxonomy, inheritance_map):
-    """
-    Tree 구조 검토가 필요한 Feature 후보를 선별합니다.
-    - force_tree_review: true인 Feature
-    - derived_classes가 3개 이상인 Feature
-    - 기존 taxonomy에 없는(신규) Feature
-    """
-    candidates = []
-    existing_keys = set(existing_taxonomy.keys())
-
-    for feat in feature_list:
-        feat_name = feat.get("feature", "")
-        base_class = feat.get("base_class", "")
-        force_review = feat.get("force_tree_review", False)
-
-        # 상속 관계 수집
-        derived = inheritance_map.get(base_class, [])
-
-        # 검토 필요 여부 판단
-        needs_review = (
-            force_review or
-            len(derived) >= 3 or
-            feat_name not in existing_keys
-        )
-
-        if needs_review:
-            candidates.append({
-                "feature": feat_name,
-                "display_name": feat.get("display_name", feat_name),
-                "base_class": base_class,
-                "derived_classes": derived,
-                "apis_sample": feat.get("apis", [])[:10],
-                "force_review": force_review
-            })
-
-    return candidates
-
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase A-1: Oversized Feature 분할
+# ─────────────────────────────────────────────────────────────────────────────
 
 def get_oversized_candidates(feature_list, existing_taxonomy):
     """
-    feature_clusterer가 마킹한 oversized: true feature 중
-    split_candidates가 3개 이상인 것만 LLM 판단 대상으로 반환한다.
-    이미 taxonomy에 등록된(tree/leaf/oversized_single) feature는 재검토하지 않는다.
+    oversized: true이고 split_candidates가 3개 이상인 feature 중
+    아직 taxonomy에 등록되지 않은 것을 반환.
     """
     candidates = []
     for feat in feature_list:
@@ -179,9 +129,7 @@ def get_oversized_candidates(feature_list, existing_taxonomy):
         feat_name = feat.get("feature", "")
         split_candidates = feat.get("split_candidates", [])
         if len(split_candidates) < 3:
-            # 그룹이 3개 미만 → LLM 판단 없이 바로 oversized_single로 처리
             continue
-        # 이미 taxonomy에 등록되어 있고 oversized 관련 결정이 있으면 스킵
         existing = existing_taxonomy.get(feat_name, {})
         if existing.get("tree_decision") in ("tree", "flat", "leaf") or existing.get("oversized_single"):
             continue
@@ -191,8 +139,8 @@ def get_oversized_candidates(feature_list, existing_taxonomy):
 
 def review_oversized_feature(feat, client):
     """
-    oversized feature의 split_candidates를 LLM에게 제시하고
-    각 그룹이 독립적인 개발자 시나리오를 갖는지 판단받는다.
+    oversized feature의 split_candidates를 LLM에 제시하고
+    split/single 여부를 판단받는다.
 
     반환: ("split", [children_list]) 또는 ("single", [])
     """
@@ -200,7 +148,6 @@ def review_oversized_feature(feat, client):
     split_candidates = feat.get("split_candidates", [])
     total_specs = feat.get("total_spec_count", 0)
 
-    # 각 그룹의 대표 클래스 이름 샘플 (최대 5개)
     groups_summary = [
         {"group": c["group_name"], "sample_apis": c["apis"][:5]}
         for c in split_candidates
@@ -216,13 +163,12 @@ def review_oversized_feature(feat, client):
     {json.dumps(groups_summary, indent=2)}
 
     Decide: should this feature be SPLIT into separate documentation pages per group,
-    or kept as a SINGLE document (using multi-pass generation)?
+    or kept as a SINGLE document?
 
     Decision rules:
     - SPLIT: if each group represents a distinct component that app developers would use
-      independently (e.g., a developer uses only AddonManager without needing AddonEvent)
+      independently
     - SINGLE: if the groups are tightly coupled and must be explained together
-      (e.g., all groups are always used together in the same workflow)
 
     Reply ONLY with a raw JSON object (no markdown):
     For SPLIT:
@@ -230,7 +176,7 @@ def review_oversized_feature(feat, client):
       "decision": "split",
       "reason": "1-sentence explanation",
       "children": [
-        {{"feature": "group-slug", "display_name": "GroupDisplayName", "doc_file": "group-slug.md"}},
+        {{"feature": "group-slug", "display_name": "GroupDisplayName"}},
         ...
       ]
     }}
@@ -251,13 +197,6 @@ def review_oversized_feature(feat, client):
 
     decision = result.get("decision", "single")
     children = result.get("children", [])
-
-    if decision == "split":
-        children = sanitize_children(feat_name, children)
-        if not children:
-            print(f"   [Sanitize] No valid children after sanitization — downgrading '{feat_name}' to SINGLE.")
-            decision = "single"
-
     reason = result.get("reason", "")
     print(f"   [+] Oversized decision: {decision.upper()} — {reason}")
     if decision == "split":
@@ -266,11 +205,505 @@ def review_oversized_feature(feat, client):
     return decision, children
 
 
+def apply_oversized_splits(feature_list, existing_taxonomy, client):
+    """
+    Phase A-1: oversized feature를 분할하여 feature_list에 sub-feature를 추가.
+    split된 그룹(locked_groups)을 반환하여 Phase B에서 활용.
+
+    반환: (updated_feature_list, locked_groups)
+      locked_groups: [{"parent": str, "children": [str, ...]}]
+    """
+    feature_map_index = {f["feature"]: f for f in feature_list}
+    candidates = get_oversized_candidates(feature_list, existing_taxonomy)
+    locked_groups = []
+    new_entries = []
+
+    if not candidates:
+        return feature_list, locked_groups
+
+    print(f"\n>> {len(candidates)} oversized feature(s) require split/single decision.")
+
+    for feat in candidates:
+        feat_name = feat.get("feature", "")
+        split_candidates = feat.get("split_candidates", [])
+        print(f"\n -> Reviewing oversized feature '{feat_name}' "
+              f"({feat.get('total_spec_count', 0)} specs, "
+              f"{len(split_candidates)} candidate groups)...")
+
+        decision, children = review_oversized_feature(feat, client)
+
+        if decision == "split":
+            child_ids = []
+            all_child_apis = set()
+            # split_candidates group_name → apis 역매핑 (순서 독립적 매칭용)
+            candidate_by_slug = {c["group_name"]: c["apis"] for c in split_candidates}
+            for i, child in enumerate(children):
+                child_id = child.get("feature", "")
+                if not child_id or child_id in feature_map_index:
+                    continue
+                # group_name slug 기반 매칭 우선, fallback은 순서 기반
+                child_apis = (
+                    candidate_by_slug.get(child_id)
+                    or candidate_by_slug.get(child.get("display_name", "").lower().replace(" ", "-"))
+                    or (split_candidates[i]["apis"] if i < len(split_candidates) else [])
+                )
+                all_child_apis.update(child_apis)
+                new_entry = {
+                    "feature": child_id,
+                    "display_name": child.get("display_name", child_id),
+                    "packages": feat.get("packages", []),
+                    "api_tiers": feat.get("api_tiers", []),
+                    "apis": child_apis,
+                    "cross_package_links": [],
+                    "ambiguous": False,
+                    "_taxonomy_split": True,
+                    "_split_parent": feat_name,
+                }
+                new_entries.append(new_entry)
+                feature_map_index[child_id] = new_entry
+                child_ids.append(child_id)
+                print(f"   [+] Sub-feature added: '{child_id}' ({len(child_apis)} APIs)")
+
+            if child_ids:
+                # 부모 A의 apis에서 children이 가져간 APIs 제거 (overview만 유지)
+                original_count = len(feat.get("apis", []))
+                feat["apis"] = [a for a in feat.get("apis", []) if a not in all_child_apis]
+                # _split_root: True — stage_a에서 ambiguous 분류 대상(target_candidates)에서 제외
+                feat["_split_root"] = True
+                print(f"   [+] Parent '{feat_name}' overview APIs: "
+                      f"{original_count} → {len(feat['apis'])} (children took {len(all_child_apis)})")
+                locked_groups.append({"parent": feat_name, "children": child_ids})
+        else:
+            # SINGLE: feature_map에서 oversized_single 마킹
+            feat["oversized_single"] = True
+            print(f"   [~] '{feat_name}': oversized_single — kept as single doc")
+
+    feature_list = list(feature_map_index.values())
+    return feature_list, locked_groups
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase A-2: 소규모 Feature 통합
+# ─────────────────────────────────────────────────────────────────────────────
+
+def apply_small_feature_merges(feature_list, all_compounds_index, min_specs, client):
+    """
+    Phase A-2: spec_count < min_specs인 소규모 feature를 LLM 판단으로 통합.
+    suppress_doc + merge_into 설정.
+
+    반환: updated_feature_list
+    """
+    if min_specs <= 0:
+        print(">> Small feature merge disabled (min_specs_for_standalone = 0).")
+        return feature_list
+
+    feature_map_index = {f["feature"]: f for f in feature_list}
+    stable_features = [
+        f for f in feature_list
+        if not f.get("suppress_doc") and not f.get("ambiguous")
+        and not f.get("feature", "").endswith(".autogen")
+        and not f.get("_taxonomy_split")   # split 자식은 locked_group 제약 대상, merge 금지
+        and not f.get("_split_root")       # split 부모는 overview 페이지, merge 대상 아님
+    ]
+
+    small_feats = []
+    stable_feats = []
+    for feat in stable_features:
+        spec_count = count_feature_specs(feat, all_compounds_index)
+        if spec_count < min_specs:
+            small_feats.append(feat)
+        else:
+            stable_feats.append(feat)
+
+    if not small_feats:
+        print(">> No small features found for merge evaluation.")
+        return feature_list
+
+    print(f"\n>> {len(small_feats)} small feature(s) (< {min_specs} specs) evaluated for merge.")
+
+    stable_ids = [f["feature"] for f in stable_feats]
+    small_summary = [
+        {
+            "feature_id": f["feature"],
+            "display_name": f.get("display_name", f["feature"]),
+            "brief": f.get("description", ""),
+            "api_count": count_feature_specs(f, all_compounds_index),
+        }
+        for f in small_feats
+    ]
+
+    prompt = f"""
+    You are a C++ framework documentation architect for the Samsung DALi UI framework.
+
+    The following features are too small (few APIs) to warrant standalone documentation pages.
+    Decide whether each should be merged into an existing larger feature or kept as-is.
+
+    Small features to evaluate:
+    {json.dumps(small_summary, indent=2)}
+
+    Available merge targets (existing stable features):
+    {json.dumps(stable_ids, indent=2)}
+
+    Rules:
+    - MERGE: if the small feature is conceptually a sub-part of an existing stable feature
+    - KEEP: if the small feature is a standalone concept with no natural parent
+
+    Reply ONLY with a raw JSON array (no markdown):
+    [
+      {{"action": "merge", "source": "small-feat-a", "into": "larger-feat-x"}},
+      {{"action": "keep", "feature": "small-feat-b"}}
+    ]
+    """
+
+    response = client.generate(prompt, use_think=True)
+    result = extract_json_from_text(response)
+
+    if not result or not isinstance(result, list):
+        print("   [-] Failed to parse merge decisions. Keeping all small features as-is.")
+        return feature_list
+
+    merged_count = 0
+    for decision in result:
+        action = decision.get("action", "keep")
+        if action != "merge":
+            continue
+        source_id = decision.get("source", "")
+        target_id = decision.get("into", "")
+
+        # 유효성 검증
+        if source_id not in feature_map_index:
+            print(f"   [!] Merge source '{source_id}' not found — skipping.")
+            continue
+        if target_id not in feature_map_index:
+            print(f"   [!] Merge target '{target_id}' not found — skipping.")
+            continue
+        if feature_map_index[target_id].get("suppress_doc"):
+            print(f"   [!] Merge target '{target_id}' is suppressed — skipping.")
+            continue
+        if source_id == target_id:
+            print(f"   [!] Circular merge '{source_id}' → '{target_id}' — skipping.")
+            continue
+
+        feature_map_index[source_id]["suppress_doc"] = True
+        feature_map_index[source_id]["merge_into"] = target_id
+        # merge_mode:full 설정 — stage_c가 B/C를 inherited_context(brief)가 아닌
+        # 완전 스펙으로 문서화하도록, 그리고 merge_sources 이중 처리를 방지한다.
+        feature_map_index[source_id]["merge_mode"] = "full"
+
+        # merge_mode:full 동작: source apis를 target apis에 물리 병합
+        # (feature_clusterer의 merge_mode:full 처리와 동일한 방식)
+        target_feat = feature_map_index[target_id]
+        source_apis = feature_map_index[source_id].get("apis", [])
+        existing_apis = set(target_feat.get("apis", []))
+        new_apis = [a for a in source_apis if a not in existing_apis]
+        if new_apis:
+            target_feat["apis"] = target_feat.get("apis", []) + new_apis
+
+        merged_count += 1
+        print(f"   [Merge] '{source_id}' → '{target_id}' "
+              f"(merge_mode:full, +{len(new_apis)} APIs merged into target)")
+
+    print(f">> Merged {merged_count} small feature(s).")
+    return list(feature_map_index.values())
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase B: 전체 일괄 Tree 설계
+# ─────────────────────────────────────────────────────────────────────────────
+
+def build_active_feature_summary(feature_list, all_compounds_index):
+    """LLM에 전달할 active feature 요약 목록 생성."""
+    summaries = []
+    for feat in feature_list:
+        if feat.get("suppress_doc"):
+            continue
+        if feat.get("feature", "").endswith(".autogen"):
+            continue
+        summaries.append({
+            "feature_id": feat["feature"],
+            "display_name": feat.get("display_name", feat["feature"]),
+            "brief": feat.get("description", feat.get("base_class", "")),
+            "api_count": count_feature_specs(feat, all_compounds_index),
+        })
+    return summaries
+
+
+def design_tree_full(feature_summaries, locked_groups, client):
+    """
+    Full 모드: 전체 feature 목록을 한 번에 LLM에 전달하여 tree 설계.
+    """
+    locked_hint = ""
+    if locked_groups:
+        locked_hint = f"""
+LOCKED GROUPS (split decisions already made — do NOT reassign these):
+{json.dumps(locked_groups, indent=2)}
+- The parent of each locked group must remain a root-level feature (cannot be a child of anything).
+- The children of each locked group cannot be assigned to a different parent.
+"""
+
+    prompt = f"""
+You are a C++ framework documentation architect for the Samsung DALi UI framework.
+
+Design a documentation tree structure for the following features.
+Organize them into a logical hierarchy of at most 2 depth levels (root → children only).
+
+Feature list:
+{json.dumps(feature_summaries, indent=2)}
+{locked_hint}
+CONSTRAINTS:
+1. Tree depth must not exceed 2 levels. Grandchildren are NOT allowed.
+   If a child feature has sub-components, flatten them as siblings under the same root.
+2. children must only contain feature_ids from the provided feature list above.
+3. A feature can appear as a child of at most one parent.
+4. Locked group parents must not appear as children of any other feature.
+5. Locked group children must remain under their designated parent.
+
+For each feature, decide:
+- "tree": this feature is a parent with children listed
+- "flat": this feature stands alone (no children, no parent)
+
+Features not mentioned in the response will be treated as "flat".
+
+Reply ONLY with a raw JSON array (no markdown):
+[
+  {{"feature_id": "view", "tree_decision": "tree", "children": ["image-view", "label"]}},
+  {{"feature_id": "image-view", "tree_decision": "flat", "children": []}}
+]
+"""
+
+    response = client.generate(prompt, use_think=True)
+    result = extract_json_from_text(response)
+    if not result or not isinstance(result, list):
+        print("   [-] Failed to parse tree design response.")
+        return []
+    return result
+
+
+def design_tree_incremental(feature_summaries, locked_groups, existing_taxonomy,
+                             new_features, removed_features, client):
+    """
+    Incremental 모드: 기존 taxonomy를 컨텍스트로 제공하고 변경사항만 LLM에 요청.
+    """
+    locked_hint = ""
+    if locked_groups:
+        locked_hint = f"""
+LOCKED GROUPS:
+{json.dumps(locked_groups, indent=2)}
+"""
+
+    # 기존 taxonomy 요약 (display_name 제외 최소 정보)
+    existing_summary = [
+        {
+            "feature_id": k,
+            "tree_decision": v.get("tree_decision", "flat"),
+            "children": v.get("children", []),
+            "parent": v.get("parent"),
+        }
+        for k, v in existing_taxonomy.items()
+        if not v.get("suppress_doc")
+    ]
+
+    prompt = f"""
+You are a C++ framework documentation architect for the Samsung DALi UI framework.
+
+Below is the EXISTING tree structure. Update it minimally to reflect the listed changes.
+Keep unchanged features exactly as they are.
+
+EXISTING TREE:
+{json.dumps(existing_summary, indent=2)}
+
+CHANGES:
+- Added features: {json.dumps([s for s in feature_summaries if s["feature_id"] in new_features], indent=2)}
+- Removed feature IDs: {json.dumps(list(removed_features), indent=2)}
+{locked_hint}
+CONSTRAINTS:
+1. Tree depth must not exceed 2 levels. No grandchildren.
+2. children must only contain feature_ids from the current active feature list.
+3. Locked group parents must not appear as children of any other feature.
+
+Return ONLY the entries that need to change (new, modified, or affected by removal).
+Unchanged entries should be omitted from the response.
+
+Reply ONLY with a raw JSON array (no markdown):
+[
+  {{"feature_id": "...", "tree_decision": "tree/flat", "children": [...]}}
+]
+"""
+
+    response = client.generate(prompt, use_think=True)
+    result = extract_json_from_text(response)
+    if not result or not isinstance(result, list):
+        print("   [-] Failed to parse incremental tree response.")
+        return []
+    return result
+
+
+def validate_and_build_taxonomy(tree_decisions, feature_summaries,
+                                 locked_groups, existing_taxonomy=None):
+    """
+    LLM 응답을 검증하고 taxonomy dict를 구축.
+
+    검증 항목:
+    1. children의 feature_id가 active feature 목록에 없음 → 제거
+    2. 3뎁스 탐지 → grandchildren을 parent 레벨로 flatten
+    3. 한 feature가 여러 parent에 등재 → 첫 등장 parent만 유지
+    4. tree인데 children 없음 → flat 다운그레이드
+    5. locked 그룹 위반 → 복원
+    """
+    feature_id_set = {s["feature_id"] for s in feature_summaries}
+    feature_display = {s["feature_id"]: s.get("display_name", s["feature_id"])
+                       for s in feature_summaries}
+
+    # locked 그룹 정보
+    locked_parents = set()
+    locked_child_to_parent = {}
+    for grp in locked_groups:
+        parent_id = grp["parent"]
+        locked_parents.add(parent_id)
+        for child_id in grp["children"]:
+            locked_child_to_parent[child_id] = parent_id
+
+    # tree_decisions를 dict로 변환
+    decisions = {}
+    for entry in tree_decisions:
+        fid = entry.get("feature_id", "")
+        if not fid or fid not in feature_id_set:
+            continue
+        decisions[fid] = {
+            "tree_decision": entry.get("tree_decision", "flat"),
+            "children": [c for c in entry.get("children", []) if c in feature_id_set and c != fid],
+        }
+
+    # incremental 모드: 기존 taxonomy 항목을 base로 사용
+    if existing_taxonomy:
+        for fid, entry in existing_taxonomy.items():
+            if fid not in decisions and fid in feature_id_set:
+                decisions[fid] = {
+                    "tree_decision": entry.get("tree_decision", "flat"),
+                    "children": [c for c in entry.get("children", []) if c in feature_id_set],
+                }
+
+    # 검증 1: children 중복 parent 탐지 (첫 등장 우선)
+    assigned_parent = {}
+    for fid, dec in decisions.items():
+        valid_children = []
+        for child_id in dec["children"]:
+            if child_id in assigned_parent:
+                print(f"   [Validate] '{child_id}' already assigned to '{assigned_parent[child_id]}' "
+                      f"— removing from '{fid}'")
+                continue
+            assigned_parent[child_id] = fid
+            valid_children.append(child_id)
+        dec["children"] = valid_children
+
+    # 검증 2: locked 그룹 위반 복원
+    for grp in locked_groups:
+        parent_id = grp["parent"]
+        # locked parent가 누군가의 child가 되면 제거
+        if parent_id in assigned_parent:
+            offending_parent = assigned_parent[parent_id]
+            if offending_parent in decisions:
+                decisions[offending_parent]["children"] = [
+                    c for c in decisions[offending_parent]["children"] if c != parent_id
+                ]
+            del assigned_parent[parent_id]
+            print(f"   [Locked] '{parent_id}' removed from children of '{offending_parent}' (locked parent)")
+        # locked children을 올바른 parent 아래 배치
+        locked_children = grp["children"]
+        if parent_id not in decisions:
+            decisions[parent_id] = {"tree_decision": "tree", "children": []}
+        for child_id in locked_children:
+            # 잘못된 parent의 children 목록에서 제거
+            if child_id in assigned_parent and assigned_parent[child_id] != parent_id:
+                wrong_parent = assigned_parent[child_id]
+                if wrong_parent in decisions:
+                    decisions[wrong_parent]["children"] = [
+                        c for c in decisions[wrong_parent]["children"] if c != child_id
+                    ]
+                    print(f"   [Locked] '{child_id}' removed from '{wrong_parent}' children "
+                          f"— belongs under locked parent '{parent_id}'")
+            if child_id not in decisions[parent_id]["children"]:
+                decisions[parent_id]["children"].append(child_id)
+            assigned_parent[child_id] = parent_id
+
+    # 검증 3: 3뎁스 탐지 — child가 다시 children을 가지면 flatten
+    for fid, dec in list(decisions.items()):
+        if dec["tree_decision"] != "tree":
+            continue
+        grandchildren_to_adopt = []
+        for child_id in list(dec["children"]):
+            child_dec = decisions.get(child_id, {})
+            if child_dec.get("children"):
+                print(f"   [Flatten] '{child_id}' has grandchildren under '{fid}' — flattening")
+                grandchildren_to_adopt.extend(child_dec["children"])
+                child_dec["children"] = []
+                child_dec["tree_decision"] = "flat"
+        for gc in grandchildren_to_adopt:
+            if gc not in dec["children"]:
+                dec["children"].append(gc)
+                assigned_parent[gc] = fid
+
+    # 검증 4: tree인데 children 없음 → flat
+    for fid, dec in decisions.items():
+        if dec["tree_decision"] == "tree" and not dec["children"]:
+            dec["tree_decision"] = "flat"
+            print(f"   [Fix] '{fid}': tree+no-children → flat")
+
+    # taxonomy dict 구축
+    taxonomy = {}
+    for fid, dec in decisions.items():
+        tree_decision = dec["tree_decision"]
+        children = dec["children"]
+        parent = assigned_parent.get(fid, None)
+
+        # tree_decision 재결정
+        if parent and tree_decision != "tree":
+            tree_decision = "leaf"
+        elif not parent and tree_decision == "leaf":
+            tree_decision = "flat"
+
+        taxonomy[fid] = {
+            "display_name": feature_display.get(fid, fid),
+            "parent": parent,
+            "children": children,
+            "doc_file": f"{fid}.md",
+            "tree_decision": tree_decision,
+            "decision_reason": (
+                f"Child of {parent}" if parent
+                else ("Has child components" if children else "Standalone feature")
+            ),
+        }
+
+    # feature_summaries에 있지만 decisions에 없는 feature → flat으로 추가
+    for fid in feature_id_set:
+        if fid not in taxonomy:
+            parent = assigned_parent.get(fid)
+            taxonomy[fid] = {
+                "display_name": feature_display.get(fid, fid),
+                "parent": parent,
+                "children": [],
+                "doc_file": f"{fid}.md",
+                "tree_decision": "leaf" if parent else "flat",
+                "decision_reason": f"Child of {parent}" if parent else "Standalone feature",
+            }
+
+    return taxonomy
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Main
+# ─────────────────────────────────────────────────────────────────────────────
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--full", action="store_true",
-                        help="기존 taxonomy 무시하고 전체 재검토 (최초 1회 또는 taxonomy 초기화 시)")
+                        help="기존 taxonomy 무시하고 전체 재검토")
+    parser.add_argument("--mode", choices=["full", "update"], default="full",
+                        help="실행 모드 (full: 전체 재생성, update: 증분)")
     args = parser.parse_args()
+
+    # --full 플래그는 --mode full과 동일
+    is_full = args.full or args.mode == "full"
 
     print("=================================================================")
     print(" Phase 1.5: Feature Taxonomy Reviewer                           ")
@@ -281,325 +714,120 @@ def main():
         print("Error: feature_map.json not found. Run Phase 1 (feature_clusterer.py) first.")
         return
 
-    # Fix C: .autogen 항목은 method chaining 보일러플레이트이므로 taxonomy 대상에서 제외
+    # .autogen 항목 제외
     autogen_before = len(feature_list)
     feature_list = [f for f in feature_list if not f.get("feature", "").endswith(".autogen")]
     filtered = autogen_before - len(feature_list)
     if filtered:
-        print(f">> [AutogenFilter] Excluded {filtered} .autogen feature(s) from taxonomy review.")
+        print(f">> [AutogenFilter] Excluded {filtered} .autogen feature(s).")
 
+    doc_config = load_doc_config()
+    min_specs = doc_config.get("token_overflow", {}).get("min_specs_for_standalone", 0)
 
-    # 기존 taxonomy 로드 (증분 업데이트용)
+    # 기존 taxonomy 로드
     existing_taxonomy = {}
-    if not args.full and TAXONOMY_PATH.exists():
+    if not is_full and TAXONOMY_PATH.exists():
         existing_taxonomy = load_json(TAXONOMY_PATH) or {}
         print(f">> Loaded existing taxonomy: {len(existing_taxonomy)} entries.")
     else:
-        print(">> Full review mode: starting fresh taxonomy.")
+        print(">> Full mode: starting fresh taxonomy.")
 
-    # 상속 관계 맵 구축
-    print(">> Building inheritance map from Doxygen data...")
-    inheritance_map = build_inheritance_map()
-    print(f"   Found {len(inheritance_map)} classes with derived classes.")
+    # 전체 compound 인덱스 구축 (spec count 계산용)
+    print(">> Building compound index from Doxygen data...")
+    all_compounds_index = build_all_compounds_index()
+    print(f"   Found {len(all_compounds_index)} compounds.")
 
-    # 검토 후보 선별
-    candidates = get_candidates_for_review(feature_list, existing_taxonomy, inheritance_map)
-    print(f">> {len(candidates)} feature(s) require taxonomy review.")
+    client = LLMClient()
 
-    if not candidates:
-        print(">> No new features to review. Existing taxonomy is up-to-date.")
-        # taxonomy 파일이 없으면 기존 flat 정보로 초기화
-        if not TAXONOMY_PATH.exists():
-            _write_default_taxonomy(feature_list, existing_taxonomy)
+    # ── Phase A-1: Oversized Feature 분할 ────────────────────────────────────
+    print("\n>> Phase A-1: Oversized feature split evaluation...")
+    feature_list, locked_groups = apply_oversized_splits(
+        feature_list, existing_taxonomy, client
+    )
+    if locked_groups:
+        print(f">> {len(locked_groups)} locked group(s) from split decisions:")
+        for grp in locked_groups:
+            print(f"   {grp['parent']} → {grp['children']}")
 
-    client = LLMClient() if candidates else None
+    # ── Phase A-2: 소규모 Feature 통합 ──────────────────────────────────────
+    print("\n>> Phase A-2: Small feature merge evaluation...")
+    feature_list = apply_small_feature_merges(
+        feature_list, all_compounds_index, min_specs, client
+    )
 
-    for cand in candidates:
-        feat_name = cand["feature"]
-        base_class = cand["base_class"]
-        derived = cand["derived_classes"]
+    # ── A-3: feature_map.json 저장 ───────────────────────────────────────────
+    # sets를 list로 변환 (JSON 직렬화)
+    for feat in feature_list:
+        for key in ("packages", "api_tiers", "cross_package_links"):
+            if isinstance(feat.get(key), set):
+                feat[key] = list(feat[key])
 
-        print(f"\n -> Reviewing taxonomy for '{feat_name}' "
-              f"(base: {base_class}, derived count: {len(derived)})...")
+    FEATURE_MAP_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(FEATURE_MAP_PATH, "w", encoding="utf-8") as f:
+        json.dump(feature_list, f, indent=2, ensure_ascii=False)
+    print(f"\n>> feature_map.json updated ({len(feature_list)} features).")
 
-        prompt = f"""
-        You are a C++ framework documentation architect for the Samsung DALi UI framework.
-        
-        Analyze whether the following class hierarchy warrants a TREE document structure
-        (parent page + individual child pages) or a FLAT document structure (single page).
+    # ── Phase B: 전체 일괄 Tree 설계 ─────────────────────────────────────────
+    print("\n>> Phase B: Tree design (single LLM call)...")
+    feature_summaries = build_active_feature_summary(feature_list, all_compounds_index)
+    active_ids = {s["feature_id"] for s in feature_summaries}
+    print(f"   Active features: {len(feature_summaries)}")
 
-        Feature: '{feat_name}'
-        Base Class: '{base_class}'
-        Derived Classes: {json.dumps(derived, indent=2)}
-        Sample APIs: {json.dumps(cand['apis_sample'], indent=2)}
+    if is_full or not existing_taxonomy:
+        print("   Mode: FULL — designing complete tree from scratch.")
+        tree_decisions = design_tree_full(feature_summaries, locked_groups, client)
+        taxonomy = validate_and_build_taxonomy(
+            tree_decisions, feature_summaries, locked_groups
+        )
+    else:
+        # 변경 감지
+        existing_ids = set(existing_taxonomy.keys())
+        new_features = active_ids - existing_ids
+        removed_features = existing_ids - active_ids
+        # split으로 생성된 feature도 신규로 처리
+        split_ids = {f["feature"] for f in feature_list if f.get("_taxonomy_split")}
+        new_features |= split_ids
 
-        Decision rules:
-        - TREE: if there are 3+ derived classes AND each has distinct app-developer use cases
-        - FLAT: if derived classes are minor variants, internal, or not directly used by app developers
+        print(f"   Mode: INCREMENTAL — new: {len(new_features)}, "
+              f"removed: {len(removed_features)}")
 
-        For TREE decisions, list which derived classes should become child documents.
-        Use feature name slugs (lowercase-hyphenated, e.g. "image-view", "scroll-view").
-
-        IMPORTANT: Each child `feature` slug in the `children` array must be UNIQUE and must
-        NOT equal the parent feature name '{feat_name}'. Use lowercase-hyphenated slugs that
-        describe what makes each child component distinct (e.g. "animated-image-view", not
-        "{feat_name}" again). If you cannot determine distinct child slugs, use decision "flat".
-
-        Reply ONLY with a raw JSON object (no markdown):
-        {{
-          "feature": "{feat_name}",
-          "decision": "tree",
-          "reason": "1-sentence explanation",
-          "parent_doc_file": "{feat_name}.md",
-          "children": [
-            {{"feature": "image-view", "display_name": "ImageView", "doc_file": "image-view.md"}},
-            {{"feature": "label", "display_name": "Label", "doc_file": "label.md"}}
-          ]
-        }}
-        OR for flat:
-        {{
-          "feature": "{feat_name}",
-          "decision": "flat",
-          "reason": "1-sentence explanation",
-          "parent_doc_file": "{feat_name}.md",
-          "children": []
-        }}
-        """
-
-        response = client.generate(prompt, use_think=True)
-        result = extract_json_from_text(response)
-
-        if result and "decision" in result:
-            decision = result.get("decision", "flat")
-            reason = result.get("reason", "")
-            children = result.get("children", [])
-
-            # children 후처리: 자기 참조 및 중복 제거
-            children = sanitize_children(feat_name, children)
-            # sanitize 후 children이 비어 있으면 tree → flat 다운그레이드
-            if decision == "tree" and not children:
-                print(f"   [Sanitize] No valid children remain after sanitization — downgrading to FLAT.")
-                decision = "flat"
-                reason = reason + " (downgraded to flat: no valid unique children after sanitization)"
-
-            print(f"   [+] Decision: {decision.upper()} — {reason}")
-            if children:
-                print(f"       Children: {[c.get('feature') for c in children]}")
-
-            # Doxygen 존재 여부로 child 검증 (없으면 제외)
-            verified_children = []
-            for c in children:
-                c_display = c.get("display_name", c.get("feature", ""))
-                if class_exists_in_doxygen(c_display):
-                    verified_children.append(c)
-                else:
-                    print(f"   [Doxygen Check] Rejected child '{c.get('feature')}' "
-                          f"({c_display}): not found in Doxygen — skipping.")
-            # verified_children이 비어 있으면 tree → flat 다운그레이드
-            if decision == "tree" and not verified_children:
-                print(f"   [Doxygen Check] No verified children remain — downgrading '{feat_name}' to FLAT.")
-                decision = "flat"
-                reason = reason + " (downgraded to flat: no Doxygen-verified children)"
-            children = verified_children
-
-            # taxonomy에 기록 (feature_map의 suppress_doc/merge_into 플래그 유지)
-            feat_meta = next((f for f in feature_list if f.get("feature") == feat_name), {})
-            tax_entry = {
-                "display_name": cand.get("display_name", feat_name),
-                "base_class": base_class,
-                "parent": None,
-                "children": [c.get("feature") for c in children],
-                "doc_file": result.get("parent_doc_file", f"{feat_name}.md"),
-                "tree_decision": decision,
-                "decision_reason": reason
-            }
-            if feat_meta.get("suppress_doc"):
-                tax_entry["suppress_doc"] = True
-            if feat_meta.get("merge_into"):
-                tax_entry["merge_into"] = feat_meta["merge_into"]
-            existing_taxonomy[feat_name] = tax_entry
-            # 자식 항목도 taxonomy에 등록
-            # 이미 존재하는 항목은 parent 필드만 업데이트 (독립 feature로 먼저 등록된 경우 불일치 수정)
-            for child in children:
-                child_key = child.get("feature", "")
-                if not child_key:
-                    continue
-                if child_key in existing_taxonomy:
-                    if existing_taxonomy[child_key].get("parent") != feat_name:
-                        # Fix A: 이전 부모의 children 배열에서 제거
-                        old_parent_name = existing_taxonomy[child_key].get("parent")
-                        if old_parent_name and old_parent_name in existing_taxonomy:
-                            old_children = existing_taxonomy[old_parent_name].get("children", [])
-                            if child_key in old_children:
-                                old_children.remove(child_key)
-                        print(f"   [Taxonomy Fix] '{child_key}' parent updated: "
-                              f"{existing_taxonomy[child_key].get('parent')!r} → {feat_name!r}")
-                        existing_taxonomy[child_key]["parent"] = feat_name
-                else:
-                    existing_taxonomy[child_key] = {
-                        "display_name": child.get("display_name", child_key),
-                        "base_class": "",
-                        "parent": feat_name,
-                        "children": [],
-                        "doc_file": child.get("doc_file", f"{child_key}.md"),
-                        "tree_decision": "leaf",
-                        "decision_reason": f"Child of {feat_name}"
-                    }
+        if not new_features and not removed_features:
+            print("   No changes detected. Reusing existing taxonomy.")
+            taxonomy = existing_taxonomy
         else:
-            print(f"   [-] Failed to parse LLM response. Defaulting to FLAT.")
-            existing_taxonomy[feat_name] = {
-                "display_name": cand.get("display_name", feat_name),
-                "base_class": base_class,
-                "parent": None,
-                "children": [],
-                "doc_file": f"{feat_name}.md",
-                "tree_decision": "flat",
-                "decision_reason": "LLM parse failure — defaulted to flat"
-            }
+            tree_decisions = design_tree_incremental(
+                feature_summaries, locked_groups, existing_taxonomy,
+                new_features, removed_features, client
+            )
+            taxonomy = validate_and_build_taxonomy(
+                tree_decisions, feature_summaries, locked_groups, existing_taxonomy
+            )
 
-    # ── Oversized Feature 독립성 판단 ─────────────────────────────────────────
-    oversized_candidates = get_oversized_candidates(feature_list, existing_taxonomy)
-    if oversized_candidates:
-        print(f"\n>> {len(oversized_candidates)} oversized feature(s) require split/single decision.")
-        if not client:
-            client = LLMClient()
-        for feat in oversized_candidates:
-            feat_name = feat.get("feature", "")
-            print(f"\n -> Reviewing oversized feature '{feat_name}' "
-                  f"({feat.get('total_spec_count', 0)} specs, "
-                  f"{len(feat.get('split_candidates', []))} candidate groups)...")
+    # .autogen 잔존 항목 정리
+    stale_autogen = [k for k in taxonomy if k.endswith(".autogen")]
+    for k in stale_autogen:
+        del taxonomy[k]
+    if stale_autogen:
+        print(f">> [AutogenFilter] Removed {len(stale_autogen)} stale .autogen entry/entries.")
 
-            decision, children = review_oversized_feature(feat, client)
-
-            if decision == "split":
-                existing_taxonomy[feat_name] = {
-                    "display_name": feat.get("display_name", feat_name),
-                    "parent": None,
-                    "children": [c.get("feature") for c in children],
-                    "doc_file": f"{feat_name}.md",
-                    "tree_decision": "tree",
-                    "decision_reason": f"Oversized ({feat.get('total_spec_count')} specs) — split into sub-features"
-                }
-                for child in children:
-                    child_key = child.get("feature", "")
-                    if not child_key:
-                        continue
-                    if child_key not in existing_taxonomy:
-                        existing_taxonomy[child_key] = {
-                            "display_name": child.get("display_name", child_key),
-                            "parent": feat_name,
-                            "children": [],
-                            "doc_file": child.get("doc_file", f"{child_key}.md"),
-                            "tree_decision": "leaf",
-                            "decision_reason": f"Sub-feature of oversized '{feat_name}'"
-                        }
-                    else:
-                        # Fix A: 이전 부모의 children 배열에서 제거 (oversized split 경로)
-                        old_parent_name = existing_taxonomy[child_key].get("parent")
-                        if old_parent_name and old_parent_name in existing_taxonomy:
-                            old_children = existing_taxonomy[old_parent_name].get("children", [])
-                            if child_key in old_children:
-                                old_children.remove(child_key)
-                        existing_taxonomy[child_key]["parent"] = feat_name
-            else:
-                # SINGLE: stage_c가 롤링 정제 모드로 처리
-                existing_taxonomy[feat_name] = {
-                    "display_name": feat.get("display_name", feat_name),
-                    "parent": None,
-                    "children": [],
-                    "doc_file": f"{feat_name}.md",
-                    "tree_decision": "flat",
-                    "oversized_single": True,
-                    "decision_reason": f"Oversized ({feat.get('total_spec_count')} specs) — kept single, rolling refinement"
-                }
-
-        # split_candidates가 3개 미만인 oversized feature는 taxonomy 미등록 상태로 남겨두면
-        # stage_c의 token 기반 fallback이 자동으로 롤링 정제를 처리한다.
-        # 단, taxonomy 파일에 명시적으로 oversized_single 등록 (추적 가능성 확보)
-        for feat in feature_list:
-            if not feat.get("oversized"):
-                continue
-            feat_name = feat.get("feature", "")
-            if feat_name in existing_taxonomy:
-                continue  # 이미 처리됨
-            if len(feat.get("split_candidates", [])) < 3:
-                existing_taxonomy[feat_name] = {
-                    "display_name": feat.get("display_name", feat_name),
-                    "parent": None,
-                    "children": [],
-                    "doc_file": f"{feat_name}.md",
-                    "tree_decision": "flat",
-                    "oversized_single": True,
-                    "decision_reason": f"Oversized ({feat.get('total_spec_count')} specs) — fewer than 3 candidate groups, rolling refinement"
-                }
-                print(f"   [Auto] '{feat_name}': oversized_single (< 3 groups, no LLM needed)")
-
-    # Fix C: 이전 실행에서 유입된 .autogen 항목 정리 (2차 방어선)
-    autogen_keys = [k for k in existing_taxonomy if k.endswith(".autogen")]
-    for k in autogen_keys:
-        del existing_taxonomy[k]
-    if autogen_keys:
-        print(f">> [AutogenFilter] Removed {len(autogen_keys)} stale .autogen entry/entries from taxonomy.")
-
-    # Fix D: 후처리 검증 — LLM 결정 간 충돌로 인한 tree_decision/decision_reason 불일치 교정
-    fix_d_count = 0
-    for feat_key, entry in existing_taxonomy.items():
-        # ① tree인데 children이 없으면 leaf/flat으로 다운그레이드 + decision_reason 교정
-        if entry.get("tree_decision") == "tree" and not entry.get("children"):
-            if entry.get("parent"):
-                entry["tree_decision"] = "leaf"
-                entry["decision_reason"] = f"Child of {entry['parent']}"
-            else:
-                entry["tree_decision"] = "flat"
-            fix_d_count += 1
-            print(f"   [Fix D] '{feat_key}': tree+no-children → {entry['tree_decision']}")
-
-        # ② decision_reason의 "Child of X"와 실제 parent가 불일치하면 교정
-        dr = entry.get("decision_reason", "")
-        parent = entry.get("parent", "")
-        if dr.startswith("Child of ") and parent:
-            stated = dr.replace("Child of ", "").strip().rstrip(".")
-            if stated != parent:
-                entry["decision_reason"] = f"Child of {parent}"
-                fix_d_count += 1
-                print(f"   [Fix D] '{feat_key}': decision_reason '{stated}' → '{parent}'")
-
-    if fix_d_count:
-        print(f">> [Fix D] Corrected {fix_d_count} taxonomy inconsistency/inconsistencies.")
+    # 삭제된 feature의 taxonomy 항목 제거
+    for fid in list(taxonomy.keys()):
+        feat_in_map = any(f["feature"] == fid for f in feature_list)
+        if not feat_in_map and not taxonomy[fid].get("parent"):
+            # suppress된 feature도 taxonomy에서 제거
+            pass  # suppress된 것은 taxonomy에 없어야 함
+        if not feat_in_map:
+            del taxonomy[fid]
 
     # 영속화
     TAXONOMY_DIR.mkdir(parents=True, exist_ok=True)
     with open(TAXONOMY_PATH, "w", encoding="utf-8") as f:
-        json.dump(existing_taxonomy, f, indent=2, ensure_ascii=False)
+        json.dump(taxonomy, f, indent=2, ensure_ascii=False)
 
     print(f"\n=================================================================")
     print(f" Phase 1.5 Complete! Taxonomy saved to: {TAXONOMY_PATH}")
-    print(f" Total entries: {len(existing_taxonomy)}")
+    print(f" Total entries: {len(taxonomy)}")
     print("=================================================================")
-
-
-def _write_default_taxonomy(feature_list, existing_taxonomy):
-    """taxonomy 파일이 없을 때 기본 flat 구조로 초기화."""
-    for feat in feature_list:
-        feat_name = feat.get("feature", "")
-        if feat_name and feat_name not in existing_taxonomy:
-            entry = {
-                "display_name": feat.get("display_name", feat_name),
-                "parent": None,
-                "children": [],
-                "doc_file": f"{feat_name}.md",
-                "tree_decision": "flat",
-                "decision_reason": "Default initialization"
-            }
-            if feat.get("suppress_doc"):
-                entry["suppress_doc"] = True
-            if feat.get("merge_into"):
-                entry["merge_into"] = feat["merge_into"]
-            existing_taxonomy[feat_name] = entry
-    TAXONOMY_DIR.mkdir(parents=True, exist_ok=True)
-    with open(TAXONOMY_PATH, "w", encoding="utf-8") as f:
-        json.dump(existing_taxonomy, f, indent=2, ensure_ascii=False)
-    print(f">> Default taxonomy initialized: {TAXONOMY_PATH}")
 
 
 if __name__ == "__main__":

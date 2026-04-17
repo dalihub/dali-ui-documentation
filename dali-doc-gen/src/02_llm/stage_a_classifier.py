@@ -44,6 +44,41 @@ def extract_json_from_text(text):
         print(f"JSON Parsing Error: {e} | Text: {text_to_parse}")
         return None
 
+def _rebuild_class_feature_map(final_classified_map, out_map_path):
+    """
+    classified feature map 기반으로 class_feature_map.json을 재생성한다.
+    ambiguous 해소 결과 및 taxonomy_reviewer의 split/merge 반영이 목적.
+    조기 반환 경로와 정상 경로 모두에서 호출된다.
+    """
+    class_feature_map = {}
+    for feat in final_classified_map:
+        feat_id = feat.get("feature", "")
+        if not feat_id or feat.get("suppress_doc"):
+            continue
+        for cls_name in feat.get("apis", []):
+            if cls_name and cls_name not in class_feature_map:
+                class_feature_map[cls_name] = feat_id
+
+    # suppress_doc feature의 클래스는 merge_into target으로 재매핑
+    # (classified에는 suppress_doc feature가 포함되지 않으므로 feature_map에서 로드)
+    feature_map_path = out_map_path.parent / "feature_map.json"
+    if feature_map_path.exists():
+        with open(feature_map_path, "r", encoding="utf-8") as f:
+            raw_feature_map = json.load(f)
+        for feat in raw_feature_map:
+            if feat.get("suppress_doc") and feat.get("merge_into"):
+                target = feat["merge_into"]
+                for cls_name in feat.get("apis", []):
+                    if cls_name:
+                        class_feature_map[cls_name] = target
+
+    class_map_path = out_map_path.parent / "class_feature_map.json"
+    with open(class_map_path, "w", encoding="utf-8") as f:
+        json.dump(class_feature_map, f, indent=2, ensure_ascii=False)
+    print(f"[ClassMap] Rebuilt class→feature map ({len(class_feature_map)} entries) "
+          f"from classified → {class_map_path.name}")
+
+
 def main():
     print("=================================================================")
     print(" Initiating Stage A: Intelligent Classification of Features")
@@ -71,10 +106,18 @@ def main():
         with open(OUT_MAP_PATH, "w", encoding="utf-8") as f:
             json.dump(feature_list, f, indent=2, ensure_ascii=False)
         print(f"Final feature map schema output securely tied to {OUT_MAP_PATH}")
+        # taxonomy_reviewer의 split/merge 결과가 feature_map.json에 반영됐으므로
+        # ambiguous cluster가 없어도 class_feature_map은 반드시 재생성해야 한다.
+        _rebuild_class_feature_map(feature_list, OUT_MAP_PATH)
         return
 
     # Extract clean target candidate namespaces
-    target_candidates = [c["feature"] for c in stable_clusters]
+    # _split_root: True인 feature는 split 후 apis가 비워진 overview 껍데기이므로
+    # ambiguous API 분류 대상에서 제외 (A1/A2/A3 등 실제 자식에게 분류되도록)
+    target_candidates = [
+        c["feature"] for c in stable_clusters
+        if not c.get("_split_root")
+    ]
     
     if not target_candidates:
         print("Fatal Error: No stable cluster rooms exist to merge target orphans toward.")
@@ -142,11 +185,15 @@ def main():
             
     # Serialize definitive data maps into export lists
     final_classified_map = list(stable_dict.values())
-    
+
     OUT_MAP_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_MAP_PATH, "w", encoding="utf-8") as f:
         json.dump(final_classified_map, f, indent=2, ensure_ascii=False)
-        
+
+    # ── class_feature_map 재계산 (classified 기반 최종본) ──────────────────────
+    _rebuild_class_feature_map(final_classified_map, OUT_MAP_PATH)
+    # ──────────────────────────────────────────────────────────────────────────
+
     print(f"\n=================================================================")
     print(f" Stage A Complete! Ambiguous elements permanently structured.")
     print(f" Clean exported schema successfully routed to {OUT_MAP_PATH}")

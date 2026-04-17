@@ -448,18 +448,30 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
 
     allowed_tiers: set of api_tier strings to include (e.g. {"public-api"}).
                    None means no filtering (all tiers included).
-    owning_feature: 현재 생성 중인 feature 이름. class_feature_map과 함께 사용하면
-                    다른 feature 소속 클래스를 foreign_classes로 분리한다.
+    owning_feature: 현재 생성 중인 feature 이름.
     class_feature_map: {class_name: feature_name} 역매핑.
+                       owning_feature와 함께 제공되면 class_feature_map 기반
+                       exact match로 검색한다 (primary 경로).
+                       없으면 api_names_list 기반 substring 매칭 fallback.
 
     반환: (specs, foreign_classes)
       specs: 이 feature에 포함할 스펙 목록
-      foreign_classes: 다른 feature 소속으로 제외된 클래스 이름 목록
+      foreign_classes: 다른 feature 소속으로 제외된 클래스 이름 목록 (fallback 경로에서만 채워짐)
     """
     specs = []
     foreign_classes = []
 
-    # Build a simple lookup set from api_names_list for faster matching
+    # ── Primary: class_feature_map 기반 exact match ───────────────────────────
+    # owning_feature + class_feature_map이 모두 제공된 경우에만 활성화.
+    # stage_a가 classified 기반으로 재계산한 최종 class_feature_map을 사용하므로
+    # ambiguous 해소 결과까지 반영된 정확한 클래스 집합을 검색한다.
+    class_keys_set = set()
+    if class_feature_map and owning_feature:
+        class_keys_set = {cls for cls, fid in class_feature_map.items()
+                          if fid == owning_feature}
+
+    # ── Fallback: api_names_list 기반 substring 매칭 ─────────────────────────
+    # class_keys_set이 없을 때 (child 메서드 수집 등 보조 조회)만 사용.
     api_name_set = set(a.split("::")[-1] for a in api_names_list)
 
     for pkg in pkg_names:
@@ -468,65 +480,62 @@ def get_api_specs(pkg_names, api_names_list, allowed_tiers=None,
         if not pkg_data:
             continue
 
-        # Real schema is: {"package": "dali-core", "compounds": [...]}
         compounds = pkg_data.get("compounds", [])
 
         for comp in compounds:
             if not isinstance(comp, dict):
                 continue
 
-            # Tier 필터링: allowed_tiers가 지정된 경우 해당 tier만 포함
+            # Tier 필터링
             if allowed_tiers and comp.get("api_tier") not in allowed_tiers:
                 continue
 
             c_name = comp.get("name", "")
 
-            # Match on class name (e.g. "Dali::Actor" contains "Actor")
-            is_class_match = any(a in c_name for a in api_names_list) or \
-                             any(c_name.split("::")[-1] in api_name_set for _ in [1])
+            if class_keys_set:
+                # Primary: exact match — class_feature_map 소속 클래스만
+                # 소속이 다른 클래스는 class_keys_set에 없으므로 자동 배제
+                is_class_match = c_name in class_keys_set
+            else:
+                # Fallback: substring 매칭
+                is_class_match = any(a in c_name for a in api_names_list) or \
+                                 any(c_name.split("::")[-1] in api_name_set for _ in [1])
+                # fallback 경로에서 다른 feature 소속 클래스를 foreign_classes로 분리
+                if is_class_match and class_feature_map and owning_feature:
+                    mapped = class_feature_map.get(c_name)
+                    if mapped and mapped != owning_feature and mapped != "uncategorized_ambiguous_root":
+                        foreign_classes.append(c_name)
+                        is_class_match = False
 
             if not is_class_match:
                 continue
 
-            # class_feature_map이 있으면 다른 feature 소속 클래스를 foreign_classes로 분리
-            # uncategorized_ambiguous_root는 "다른 feature 소유"가 아닌 "미분류" 상태이므로
-            # owning_feature가 api_names에 명시한 경우 foreign 처리하지 않음
-            if class_feature_map and owning_feature:
-                mapped = class_feature_map.get(c_name)
-                if mapped and mapped != owning_feature and mapped != "uncategorized_ambiguous_root":
-                    foreign_classes.append(c_name)
+            specs.append({
+                "name": c_name,
+                "kind": comp.get("kind", "class"),
+                "brief": comp.get("brief", "No description provided.")
+            })
+
+            # Granular function parameter lookups within matched class
+            for mb in comp.get("members", []):
+                if not isinstance(mb, dict):
                     continue
-
-            if is_class_match:
-                specs.append({
-                    "name": c_name,
-                    "kind": comp.get("kind", "class"),
-                    "brief": comp.get("brief", "No description provided.")
-                })
-
-                # Granular function parameter lookups within matched class
-                for mb in comp.get("members", []):
-                    if not isinstance(mb, dict):
-                        continue
-                    mb_spec = {
-                        "name": f"{c_name}::{mb.get('name', '')}",
-                        "kind": mb.get("kind", "function"),
-                        "brief": mb.get("brief", ""),
-                        "signature": mb.get("signature", "")
-                    }
-                    # chainable 플래그: Fluent API setter 판별
-                    # 조건: 반환 타입이 참조(&), const 아님, operator/Signal 제외
-                    # e.g. "Label &" SetText → True
-                    # e.g. "Actor &" operator= → False (operator 제외)
-                    # e.g. "TouchEventSignalType &" TouchedSignal → False (Signal 제외)
-                    ret_type = mb.get("type", "")
-                    mb_name = mb.get("name", "")
-                    if (ret_type.endswith("&")
-                            and not ret_type.startswith("const")
-                            and not mb_name.startswith("operator")
-                            and not mb_name.endswith("Signal")):
-                        mb_spec["chainable"] = True
-                    specs.append(mb_spec)
+                mb_spec = {
+                    "name": f"{c_name}::{mb.get('name', '')}",
+                    "kind": mb.get("kind", "function"),
+                    "brief": mb.get("brief", ""),
+                    "signature": mb.get("signature", "")
+                }
+                # chainable 플래그: Fluent API setter 판별
+                # 조건: 반환 타입이 참조(&), const 아님, operator/Signal 제외
+                ret_type = mb.get("type", "")
+                mb_name = mb.get("name", "")
+                if (ret_type.endswith("&")
+                        and not ret_type.startswith("const")
+                        and not mb_name.startswith("operator")
+                        and not mb_name.endswith("Signal")):
+                    mb_spec["chainable"] = True
+                specs.append(mb_spec)
 
     # ── Secondary enum scan: 메서드 시그니처에서 참조된 enum 타입을 추가 로드 ──
     # ex) SetFittingMode(Ui::FittingMode::Type) → FittingMode::Type compound 로드
@@ -1625,7 +1634,9 @@ def main():
             existing_draft = existing_draft_path.read_text(encoding="utf-8")
 
             # 최신 API 스펙 (참조용, 티어 필터 적용)
-            specs, _ = get_api_specs(packages, api_names, allowed_tiers)
+            specs, _ = get_api_specs(packages, api_names, allowed_tiers,
+                                     owning_feature=feat_name,
+                                     class_feature_map=class_feature_map if class_feature_map else None)
 
             # 멤버 레벨 변경 요약 생성
             change_summary = build_change_summary(api_names, changed_classes_info)
@@ -1660,10 +1671,19 @@ def main():
             )
 
             # 이 티어에 스펙이 없으면 .notier 마커 파일만 남기고 스킵
-            if not specs:
+            # 단, split_root(tree parent with children)는 overview 페이지이므로
+            # 직접 API가 없어도 문서를 생성해야 한다.
+            is_split_root_overview = (
+                fm_entry.get("_split_root") and
+                tree_decision == "tree" and
+                bool(children)
+            )
+            if not specs and not is_split_root_overview:
                 print(f"    [SKIP] '{feat_name}': no {args.tier} specs — writing .notier marker.")
                 (tier_drafts_dir / f"{feat_name}.notier").touch()
                 continue
+            if not specs and is_split_root_overview:
+                print(f"    [Overview] '{feat_name}': split parent overview page — generating without direct specs.")
 
             print(f"    [+] Joined {len(specs)} factual C++ parameter structures from Doxygen mappings.")
             if foreign_classes:
