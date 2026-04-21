@@ -445,7 +445,10 @@ LOCKED GROUPS (split decisions already made — do NOT reassign these):
 You are a C++ framework documentation architect for the Samsung DALi UI framework.
 
 Design a documentation tree structure for the following features.
-Organize them into a logical hierarchy of at most 2 depth levels (root → children only).
+Group features into parent-child relationships ONLY when there is a clear conceptual
+ownership (e.g., a base class and its specializations, a container and its elements).
+When in doubt, keep features as flat standalone pages. Prefer fewer tree relationships
+over forcing artificial groupings.
 
 Feature list:
 {json.dumps(feature_summaries, indent=2)}
@@ -459,10 +462,11 @@ CONSTRAINTS:
 5. Locked group children must remain under their designated parent.
 
 For each feature, decide:
-- "tree": this feature is a parent with children listed
-- "flat": this feature stands alone (no children, no parent)
+- "tree": this feature is a logical parent that owns the listed child sub-components
+- "flat": this feature is an independent concept with no natural parent (DEFAULT)
 
 Features not mentioned in the response will be treated as "flat".
+Only emit "tree" entries when the grouping is semantically clear and beneficial to readers.
 
 Reply ONLY with a raw JSON array (no markdown):
 [
@@ -520,6 +524,8 @@ CONSTRAINTS:
 1. Tree depth must not exceed 2 levels. No grandchildren.
 2. children must only contain feature_ids from the current active feature list.
 3. Locked group parents must not appear as children of any other feature.
+4. Only group features into tree-leaf relationships when there is a clear conceptual
+   ownership between them. Prefer flat for new features unless a natural parent exists.
 
 Return ONLY the entries that need to change (new, modified, or affected by removal).
 Unchanged entries should be omitted from the response.

@@ -288,19 +288,27 @@ def main():
         tree_decision = tax_entry.get("tree_decision", "flat")
         children = tax_entry.get("children", [])
         parent = tax_entry.get("parent", None)
+        is_split_root = cluster.get("_split_root", False)
 
         taxonomy_context = ""
         if tree_decision == "tree" and children:
             child_list = ", ".join(f"'{c}'" for c in children)
-            taxonomy_context = f"""
+            if is_split_root:
+                taxonomy_context = f"""
         DOCUMENT STRUCTURE CONTEXT:
-        This feature ('{feat_name}') is a PARENT document in a tree hierarchy.
-        It should serve as an OVERVIEW page that introduces the concept and lists
-        its child sub-components: {child_list}.
-        Each child will have its own separate detailed documentation page.
-        Your TOC should include a section like "Sub-Components Overview" that
-        briefly describes each child and links to its dedicated page.
-        Do NOT write deep API details for child components here — just overview.
+        This feature ('{feat_name}') is a PARENT OVERVIEW page for a split feature family.
+        Its child sub-components ({child_list}) contain all the detailed APIs.
+        Your TOC should introduce the feature family concept and briefly describe each child.
+        Do NOT write API details here — each child has its own dedicated page.
+        """
+            else:
+                taxonomy_context = f"""
+        DOCUMENT STRUCTURE CONTEXT:
+        This feature ('{feat_name}') has its own APIs and also serves as a logical parent
+        for child sub-components: {child_list}.
+        Design the TOC to fully cover '{feat_name}' own APIs (same depth as a standalone feature).
+        At the end, include a "Related Sub-Components" section that briefly introduces each child
+        component and links to its dedicated page (1-2 sentences per child, no API details).
         """
         elif tree_decision == "leaf" and parent:
             taxonomy_context = f"""
