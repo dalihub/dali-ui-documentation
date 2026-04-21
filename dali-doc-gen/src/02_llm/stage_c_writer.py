@@ -1515,6 +1515,8 @@ def main():
         parent = tax_entry.get("parent", None)
         audience = tax_entry.get("audience", "app")
 
+        is_split_root = feature_map_index.get(feat_name, {}).get("_split_root", False)
+
         taxonomy_context = ""
         if tree_decision == "tree" and children:
             child_list = ", ".join(
@@ -1552,10 +1554,11 @@ def main():
                     + "\n".join(child_method_lines)
                 )
 
-            taxonomy_context = f"""
-        DOCUMENT ROLE — PARENT OVERVIEW PAGE:
-        This is the overview (parent) page for the '{feat_name}' feature family.
-        Its child components ({child_list}) each have their own dedicated pages.
+            if is_split_root:
+                taxonomy_context = f"""
+        DOCUMENT ROLE — PARENT OVERVIEW PAGE (split family):
+        This is the overview page for the '{feat_name}' feature family.
+        Its child components ({child_list}) contain all the detailed APIs and each have their own dedicated pages.
         IMPORTANT: Use the exact class names shown above in parentheses for all code examples.
         Do NOT invent or abbreviate class names (e.g. use 'ImageView', not 'Image').
         Writing rules:
@@ -1563,6 +1566,20 @@ def main():
         - Describe each child component in 2-3 sentences and add a '→ See: [ChildName]' reference.
         - Do NOT write exhaustive API details for child components — just enough to understand when to use each.
         - Focus on how the parent and children relate structurally.
+        {child_methods_block}
+        """
+            else:
+                taxonomy_context = f"""
+        DOCUMENT ROLE — PRIMARY FEATURE PAGE WITH SUB-COMPONENTS:
+        This feature ('{feat_name}') has its own APIs to document and also serves as a logical
+        parent for child sub-components: {child_list}.
+        IMPORTANT: Use the exact class names shown above in parentheses for all code examples.
+        Do NOT invent or abbreviate class names (e.g. use 'ImageView', not 'Image').
+        Writing rules:
+        - Document '{feat_name}' own APIs fully and in detail, exactly as you would for a standalone feature.
+        - At the end of the document, add a "Related Sub-Components" section.
+          For each child, write 1-2 sentences describing its role and add a '→ See: [ChildName]' link.
+        - Do NOT write exhaustive API details for child components in this page — they have their own pages.
         {child_methods_block}
         """
         elif tree_decision == "leaf" and parent:
