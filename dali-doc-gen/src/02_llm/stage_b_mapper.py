@@ -322,20 +322,37 @@ def main():
         # ────────────────────────────────────────────────────────────────
 
         # ── feature_hints 주입 ───────────────────────────────────────────
-        hint_extra = feature_hints.get(feat_name, {}).get("extra_context", "")
+        feat_hints = feature_hints.get(feat_name, {})
+        hint_extra = feat_hints.get("extra_context", "")
         feature_hint_block = f"""
         FEATURE-SPECIFIC GUIDANCE FOR TOC DESIGN:
         {hint_extra}
         """ if hint_extra else ""
+
+        typical_use_cases = feat_hints.get("typical_use_cases", [])
+        use_cases_block = ""
+        if typical_use_cases:
+            use_cases_str = "\n".join(f"          - {uc}" for uc in typical_use_cases)
+            use_cases_block = f"""
+        TYPICAL USE CASES — Ensure the TOC covers these developer workflows:
+{use_cases_str}
+        """
         # ────────────────────────────────────────────────────────────────
 
         prompt = f"""
         You are a senior technical writer documenting the Samsung DALi GUI framework.
-        Design a logical Table of Contents (TOC) layout for the feature module '{feat_name}'.
+        Design a Table of Contents (TOC) layout for the feature module '{feat_name}'.
+        Organize sections around meaningful UI development topics
+        (e.g., "Layout & Sizing", "Event Handling", "Visual Configuration", "Loading & Lifecycle")
+        that reflect how developers actually use this feature in real applications.
+        Do NOT enumerate APIs alphabetically or group sections by class name.
+        Each section should represent a distinct developer task or concern,
+        not a list of methods that happen to share a class.
         {view_context}
         {tier_context}
         {taxonomy_context}
         {feature_hint_block}
+        {use_cases_block}
         Context:
         - Target Audience API Tiers: {tiers}
         - Key API Methods/Classes: {json.dumps(apis, indent=2)}
