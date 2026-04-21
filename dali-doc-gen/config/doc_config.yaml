@@ -87,3 +87,18 @@ models:
     rate_limit_delay_sec: 6        # 최소 요청 간격 (초) — 토큰 제한과 함께 적용
     tokens_per_minute: 250000      # Gemini free tier 분당 입력 토큰 한도
     max_retries: 10
+
+# ── 공통 코드 관용 패턴 (stage_c Pass 1 프롬프트에 주입) ─────────────────────────
+# 실제 DALi 헤더 기준으로 검토 후 수정하세요. (devel-note/TODO.md 참고)
+code_patterns: |
+  // ── Animation (property 기반 값 변경) ──────────────────────────────
+  Dali::Animation anim = Dali::Animation::New(1.0f);  // duration in seconds
+  anim.AnimateTo(Dali::Property(view, Dali::Actor::Property::POSITION),
+                 Dali::Vector3(200.0f, 0.0f, 0.0f));
+  anim.Play();
+
+  // ── Property 설정 (전용 setter 우선, SetProperty는 fallback) ─────────
+  // Preferred: 전용 setter 사용
+  imageView.SetProperty(Dali::Ui::ImageView::Property::RESOURCE_URL, url);
+  // Fallback: 전용 setter가 없는 경우에만
+  view.SetProperty(Dali::Actor::Property::SIZE, Dali::Vector2(width, height));

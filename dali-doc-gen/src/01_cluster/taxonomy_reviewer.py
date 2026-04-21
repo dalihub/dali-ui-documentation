@@ -321,13 +321,19 @@ def apply_small_feature_merges(feature_list, all_compounds_index, min_specs, cli
 
     print(f"\n>> {len(small_feats)} small feature(s) (< {min_specs} specs) evaluated for merge.")
 
-    stable_ids = [f["feature"] for f in stable_feats]
+    stable_summary = [
+        {
+            "feature_id": f["feature"],
+            "display_name": f.get("display_name", f["feature"]),
+            "brief": f.get("description", ""),
+        }
+        for f in stable_feats
+    ]
     small_summary = [
         {
             "feature_id": f["feature"],
             "display_name": f.get("display_name", f["feature"]),
             "brief": f.get("description", ""),
-            "api_count": count_feature_specs(f, all_compounds_index),
         }
         for f in small_feats
     ]
@@ -342,7 +348,7 @@ def apply_small_feature_merges(feature_list, all_compounds_index, min_specs, cli
     {json.dumps(small_summary, indent=2)}
 
     Available merge targets (existing stable features):
-    {json.dumps(stable_ids, indent=2)}
+    {json.dumps(stable_summary, indent=2)}
 
     Rules:
     - MERGE: if the small feature is conceptually a sub-part of an existing stable feature
