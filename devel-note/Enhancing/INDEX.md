@@ -140,6 +140,29 @@ CHECKPOINT 점검에서 즉시 수정이 필요하다고 판정된 항목.
 
 ---
 
+---
+
+## 10단계 — Taxonomy Reviewer 트리 재설계
+
+Feature 재구조화(분할/통합)와 전체 일괄 Taxonomy Tree 설계를 자동화하는 대규모 리팩터링.
+
+| # | 파일 | 주제 | 구현 상태 |
+|---|------|------|-----------|
+| ENH-24 | [ENH-24_taxonomy_reviewer_tree_redesign.md](ENH-24_taxonomy_reviewer_tree_redesign.md) | Feature 재구조화 및 Taxonomy Tree 품질 개선 — Phase A oversized 분할·소규모 통합, Phase B LLM 1회 호출 2-depth 트리 생성, `stage_a` class_feature_map 재계산, `stage_b` Fix B 로직 제거 | ✅ 완료 |
+
+---
+
+## 11단계 — Taxonomy Tree 품질 및 문서 생성 품질 개선
+
+트리 계층 품질과 LLM 문서 생성 품질을 함께 개선하는 연속 작업.
+
+| # | 파일 | 주제 | 구현 상태 |
+|---|------|------|-----------|
+| ENH-25 | [ENH-25_taxonomy_tree_quality_and_tree_doc_generation.md](ENH-25_taxonomy_tree_quality_and_tree_doc_generation.md) | Taxonomy Tree 품질 및 Tree 문서 생성 개선 — Phase B 과도 계층화 억제 프롬프트, `_split_root` 기반 overview 분기 생성 | ✅ 완료 |
+| ENH-26 | [ENH-26_doc_quality_improvements.md](ENH-26_doc_quality_improvements.md) | 문서 퀄리티 향상 5종 — Phase A-2 merge target brief 추가, stage_b TOC UI 주제 단위 재편, `typical_use_cases` 힌트 지원, stage_c 주의사항 Doxygen 근거 제약, 시그널 패턴 + `code_patterns` 주입 | ✅ 완료 |
+
+---
+
 ## 전체 진행 현황 요약
 
 | 단계 | 범위 | 상태 |
@@ -154,3 +177,5 @@ CHECKPOINT 점검에서 즉시 수정이 필요하다고 판정된 항목.
 | 7단계 완전 NS API DB + 2-Phase 코드 생성 | ENH-16 | ✅ 완료 |
 | 8단계 코드 생성 개선 및 파이프라인 단순화 | ENH-17~20 | ✅ 전체 완료 |
 | 9단계 심볼 DB 커버리지 및 잔여 환각 수정 | ENH-21~23 | ✅ 전체 완료 |
+| 10단계 Taxonomy Reviewer 트리 재설계 | ENH-24 | ✅ 완료 |
+| 11단계 Taxonomy Tree 품질 및 문서 생성 품질 개선 | ENH-25~26 | ✅ 전체 완료 |

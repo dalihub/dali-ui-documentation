@@ -1032,6 +1032,7 @@ def run_two_pass_generation(feat_name, outline, specs, client,
                             context_limit, prompt_overhead,
                             chaining_context="", feature_hint_block="",
                             permitted_method_block="", code_example_strategy="",
+                            code_patterns_block="",
                             full_names=None, simple_names=None,
                             tier="app",
                             use_rolling=False):
@@ -1083,7 +1084,7 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         print(f"    [Pass1] Rolling refinement mode (large feature).")
         # 롤링 정제: Pass 1에 코드 생략 지시 추가
         # code_example_strategy에 pass1_instruction을 합산하여 전달
-        combined_strategy = pass1_instruction + (code_example_strategy or "")
+        combined_strategy = pass1_instruction + (code_patterns_block or "") + (code_example_strategy or "")
         draft = run_rolling_refinement(
             feat_name, outline, specs, client,
             taxonomy_context, view_context, tier_context,
@@ -1119,6 +1120,7 @@ def run_two_pass_generation(feat_name, outline, specs, client,
         NEVER write UiColor::RED, UiColor::BLUE, etc.
 
         {permitted_method_block}
+        {code_patterns_block}
         {code_example_strategy}
         {json.dumps(specs, indent=2)}
 
@@ -1128,7 +1130,9 @@ def run_two_pass_generation(feat_name, outline, specs, client,
            what it does, when to call it, parameters, and return value.
         3. CODE EXAMPLES: Where a code example is needed, insert only the <!-- SAMPLE_CODE: ... --> tag.
            Do NOT write actual code blocks — they will be generated in the next pass.
-        4. NOTES AND WARNINGS: Use blockquotes (> Note: or > Warning:) for non-obvious behavior.
+        4. NOTES AND WARNINGS: Use blockquotes (> Note: or > Warning:) ONLY for behaviors
+           explicitly present in the warnings[] or notes[] fields of the API specs below.
+           Do NOT invent pitfalls or warnings not grounded in the provided documentation.
         - Write entirely in valid GitHub Flavored Markdown.
         - Use ## for section titles and ### for sub-sections.
         - Do NOT include an explicit Table of Contents list at the top of the document.
@@ -1619,6 +1623,11 @@ def main():
           as context for how Dali::Ui::View exposes or inherits them.
         - If a concept requires raw Actor, note it as an internal implementation detail
           and do not show it as the recommended usage pattern.
+        - Signal connection patterns (use the correct style for context):
+            Style 1 — member function:  view.SignalName().Connect(this, &MyClass::OnHandler);
+            Style 2 — free/static:      view.SignalName().Connect(&OnHandler);
+          Access signals via the dedicated accessor method (e.g., TouchedSignal(), KeyEventSignal()).
+          NEVER use lowercase connect() or Qt-style SIGNAL/SLOT macros.
         """
 
         # ── 티어별 컨텍스트 ────────────────────────────────────────────────
@@ -1819,6 +1828,13 @@ def main():
             else:
                 code_example_strategy = ""
 
+            # ── doc_config code_patterns 주입 ──────────────────────────────────
+            _code_patterns = doc_config.get("code_patterns", "")
+            code_patterns_block = f"""
+        DALi COMMON CODE PATTERNS — use these idioms in code examples where applicable:
+        {_code_patterns}
+        """ if _code_patterns else ""
+
             # ── 토큰 초과 여부 판단: taxonomy oversized_single 또는 토큰 추정값 기반 ──
             tax_entry = taxonomy.get(feat_name, {})
             specs_token_estimate = estimate_prompt_tokens(json.dumps(specs))
@@ -1883,6 +1899,7 @@ def main():
                 feature_hint_block=feature_hint_block,
                 permitted_method_block=permitted_method_block,
                 code_example_strategy=code_example_strategy,
+                code_patterns_block=code_patterns_block,
                 full_names=client._dali_full_names,
                 simple_names=client._dali_simple_names,
                 tier=args.tier,
