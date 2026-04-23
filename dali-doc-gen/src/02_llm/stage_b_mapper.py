@@ -290,6 +290,15 @@ def main():
         parent = tax_entry.get("parent", None)
         is_split_root = cluster.get("_split_root", False)
 
+        # tier 필터: 이 tier에 스펙이 없는 child는 LLM 컨텍스트에서 제외
+        # (app-guide에서 integration-api 전용 child가 TOC/overview에 노출되는 문제 방지)
+        if allowed_tiers:
+            fm_index = {f["feature"]: f for f in feature_list}
+            children = [
+                c for c in children
+                if set(fm_index.get(c, {}).get("api_tiers", [])) & allowed_tiers
+            ]
+
         taxonomy_context = ""
         if tree_decision == "tree" and children:
             child_list = ", ".join(f"'{c}'" for c in children)

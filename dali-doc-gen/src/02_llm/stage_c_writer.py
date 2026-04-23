@@ -1521,6 +1521,14 @@ def main():
 
         is_split_root = feature_map_index.get(feat_name, {}).get("_split_root", False)
 
+        # tier 필터: 이 tier에 스펙이 없는 child는 LLM 컨텍스트에서 제외
+        # (app-guide에서 integration-api 전용 child가 "Related Sub-Components"에 노출되는 문제 방지)
+        if allowed_tiers:
+            children = [
+                c for c in children
+                if set(feature_map_index.get(c, {}).get("api_tiers", [])) & allowed_tiers
+            ]
+
         taxonomy_context = ""
         if tree_decision == "tree" and children:
             child_list = ", ".join(
