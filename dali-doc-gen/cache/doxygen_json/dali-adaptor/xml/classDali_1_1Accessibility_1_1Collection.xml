@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1Collection" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Accessibility::Collection</compoundname>
+    <basecompoundref refid="structDali_1_1Accessibility_1_1IAccessibilityFeature" prot="public" virt="non-virtual">Dali::Accessibility::IAccessibilityFeature</basecompoundref>
+    <derivedcompoundref refid="classDali_1_1Accessibility_1_1ActorAccessible" prot="public" virt="non-virtual">Dali::Accessibility::ActorAccessible</derivedcompoundref>
+    <includes refid="collection_8h" local="no">collection.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" prot="public" static="no">
+        <type>std::tuple&lt; std::array&lt; int32_t, 2 &gt;, int32_t, std::unordered_map&lt; std::string, std::string &gt;, int32_t, std::array&lt; int32_t, 4 &gt;, int32_t, std::vector&lt; std::string &gt;, int32_t, bool &gt;</type>
+        <definition>using Dali::Accessibility::Collection::MatchRule =  std::tuple&lt; std::array&lt;int32_t, 2&gt;, int32_t, std::unordered_map&lt;std::string, std::string&gt;, int32_t, std::array&lt;int32_t, 4&gt;, int32_t, std::vector&lt;std::string&gt;, int32_t, bool&gt;</definition>
+        <argsstring></argsstring>
+        <name>MatchRule</name>
+        <qualifiedname>Dali::Accessibility::Collection::MatchRule</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MatchRule type is a tuple that only carries data of de-serialized parameter from BridgeCollection::GetMatches dbus method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/collection.h" line="38" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/collection.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Collection_1a3a8605188fb5e10f33386c190ead2da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt;</type>
+        <definition>virtual std::vector&lt; Accessible * &gt; Dali::Accessibility::Collection::GetMatches</definition>
+        <argsstring>(MatchRule rule, uint32_t sortBy, size_t maxCount)=0</argsstring>
+        <name>GetMatches</name>
+        <qualifiedname>Dali::Accessibility::Collection::GetMatches</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a5c6ae278209d67be890552ac9661f0be">GetMatches</reimplementedby>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">MatchRule</ref></type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>sortBy</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>maxCount</declname>
+        </param>
+        <briefdescription>
+<para>Gets the matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects with MatchRule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">Collection::MatchRule</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sortBy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SortOrder::CANONICAL or SortOrder::REVERSE_CANONICAL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of objects; returns all matches if 0 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/collection.h" line="57" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Collection_1aa2df792aa988fcec63ae9a426dc6c85c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt;</type>
+        <definition>virtual std::vector&lt; Accessible * &gt; Dali::Accessibility::Collection::GetMatchesInMatches</definition>
+        <argsstring>(MatchRule firstRule, MatchRule secondRule, uint32_t sortBy, int32_t firstCount, int32_t secondCount)=0</argsstring>
+        <name>GetMatchesInMatches</name>
+        <qualifiedname>Dali::Accessibility::Collection::GetMatchesInMatches</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1adc3e74eea4b10b89ac085850199725f7">GetMatchesInMatches</reimplementedby>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">MatchRule</ref></type>
+          <declname>firstRule</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">MatchRule</ref></type>
+          <declname>secondRule</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>sortBy</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>firstCount</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>secondCount</declname>
+        </param>
+        <briefdescription>
+<para>Gets the matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects with two MatchRules. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">firstRule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial <ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">Collection::MatchRule</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">secondRule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An secondary <ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">Collection::MatchRule</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sortBy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SortOrder::CANONICAL or SortOrder::REVERSE_CANONICAL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">firstCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of objects to return for the initial match.; returns all matches if 0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">secondCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of objects to return for the secondary match.; returns all matches if 0 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/collection.h" line="69" column="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface enabling advanced quering of accessibility objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>Since all methods can be implemented inside bridge, no methods have to be overriden. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Dali::Accessibility::ActorAccessible</label>
+        <link refid="classDali_1_1Accessibility_1_1ActorAccessible"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Collection</label>
+        <link refid="classDali_1_1Accessibility_1_1Collection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::Accessibility::Collection</label>
+        <link refid="classDali_1_1Accessibility_1_1Collection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/collection.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/collection.h" bodystart="33" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Collection_1a3a8605188fb5e10f33386c190ead2da0" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Collection</scope><name>GetMatches</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Collection_1aa2df792aa988fcec63ae9a426dc6c85c" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Collection</scope><name>GetMatchesInMatches</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" prot="public" virt="non-virtual"><scope>Dali::Accessibility::Collection</scope><name>MatchRule</name></member>
+      <member refid="structDali_1_1Accessibility_1_1IAccessibilityFeature_1a6e182386d889c026bb3337b7863104d7" prot="public" virt="virtual"><scope>Dali::Accessibility::Collection</scope><name>~IAccessibilityFeature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

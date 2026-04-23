@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1RoundRobinContainerView" kind="class" language="C++" prot="public">
+    <compoundname>Dali::RoundRobinContainerView</compoundname>
+    <includes refid="round-robin-container-view_8h" local="no">round-robin-container-view.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1RoundRobinContainerView_1afe0221be55565327efdad7fe95a73a8b" prot="public" static="no">
+        <type>std::vector&lt; T &gt;</type>
+        <definition>using Dali::RoundRobinContainerView&lt; T &gt;::ContainerType =  std::vector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>ContainerType</name>
+        <qualifiedname>Dali::RoundRobinContainerView::ContainerType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="34" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1RoundRobinContainerView_1ac5d4ab0568821bd6dcda318caf974041" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1RoundRobinContainerView_1afe0221be55565327efdad7fe95a73a8b" kindref="member">ContainerType</ref></type>
+        <definition>ContainerType Dali::RoundRobinContainerView&lt; T &gt;::mElements</definition>
+        <argsstring></argsstring>
+        <name>mElements</name>
+        <qualifiedname>Dali::RoundRobinContainerView::mElements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="122" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RoundRobinContainerView_1af2113cddadf25a0e739270c088953d41" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Dali::RoundRobinContainerView&lt; T &gt;::mNextIndex</definition>
+        <argsstring></argsstring>
+        <name>mNextIndex</name>
+        <qualifiedname>Dali::RoundRobinContainerView::mNextIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="123" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a511fd3fad26ae89c668f8d2fd5460879" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FactoryType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Dali::RoundRobinContainerView&lt; T &gt;::RoundRobinContainerView</definition>
+        <argsstring>(size_t numberOfElements, const FactoryType &amp;factory)</argsstring>
+        <name>RoundRobinContainerView</name>
+        <qualifiedname>Dali::RoundRobinContainerView::RoundRobinContainerView</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>numberOfElements</declname>
+        </param>
+        <param>
+          <type>const FactoryType &amp;</type>
+          <declname>factory</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new RoundRobinControlView with the given number elements using the provided factory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">numberOfElements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements in the container </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">factory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Factory function of functor that will be used to create instances of the elements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="42" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="42" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1ae55cb4097d29587977ad0441085ac09e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RoundRobinContainerView&lt; T &gt;::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>Dali::RoundRobinContainerView::Clear</qualifiedname>
+        <briefdescription>
+<para>Clear all elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="56" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1adaf62a6acd7d2b864f1733aa4f507e02" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RoundRobinContainerView&lt; T &gt;::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Dali::RoundRobinContainerView::Reset</qualifiedname>
+        <briefdescription>
+<para>Reset the position of the iterator returned by <ref refid="classDali_1_1RoundRobinContainerView_1a76d57f066f0a9231a3b2451663a33b37" kindref="member">GetNext()</ref> to the first element. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="64" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="64" bodyend="67"/>
+        <referencedby refid="classDali_1_1RoundRobinContainerView_1aaa81555a82b9afae8bed603506920ca5">Dali::RoundRobinContainerView&lt; T &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a76d57f066f0a9231a3b2451663a33b37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ContainerType::iterator</type>
+        <definition>ContainerType::iterator Dali::RoundRobinContainerView&lt; T &gt;::GetNext</definition>
+        <argsstring>()</argsstring>
+        <name>GetNext</name>
+        <qualifiedname>Dali::RoundRobinContainerView::GetNext</qualifiedname>
+        <briefdescription>
+<para>Returns the next element on the container. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Iterator for the next element </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="73" column="36" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="73" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a95bd6f72539ecbd4daa680b7aa54a9ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>ContainerType::const_iterator</type>
+        <definition>ContainerType::const_iterator Dali::RoundRobinContainerView&lt; T &gt;::End</definition>
+        <argsstring>() const</argsstring>
+        <name>End</name>
+        <qualifiedname>Dali::RoundRobinContainerView::End</qualifiedname>
+        <briefdescription>
+<para>Returns the iterator to the end of the container. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Can be used to compare against <ref refid="classDali_1_1RoundRobinContainerView_1a76d57f066f0a9231a3b2451663a33b37" kindref="member">GetNext()</ref> to check if the container is empty.</para>
+<para><simplesect kind="return"><para>The container end() element </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="87" column="42" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a549efac62fcd23704f0d00f42404dd32" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Dali::RoundRobinContainerView&lt; T &gt;::GetElementCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetElementCount</name>
+        <qualifiedname>Dali::RoundRobinContainerView::GetElementCount</qualifiedname>
+        <briefdescription>
+<para>Returns the element count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The element count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="96" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1acad4f4ac8d559fa83e0fa220f791f9c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RoundRobinContainerView&lt; T &gt;::~RoundRobinContainerView</definition>
+        <argsstring>()=default</argsstring>
+        <name>~RoundRobinContainerView</name>
+        <qualifiedname>Dali::RoundRobinContainerView::~RoundRobinContainerView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="102" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a397427f73f9563efadcf9f8279711113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RoundRobinContainerView&lt; T &gt;::RoundRobinContainerView</definition>
+        <argsstring>(const RoundRobinContainerView &amp;)=delete</argsstring>
+        <name>RoundRobinContainerView</name>
+        <qualifiedname>Dali::RoundRobinContainerView::RoundRobinContainerView</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="104" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a40f4af3c7c417c884e8fab2f3934d998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> &amp;</type>
+        <definition>RoundRobinContainerView &amp; Dali::RoundRobinContainerView&lt; T &gt;::operator=</definition>
+        <argsstring>(const RoundRobinContainerView &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::RoundRobinContainerView::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="105" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a3b1e420958d9ae73ef75774c2dee5759" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RoundRobinContainerView&lt; T &gt;::RoundRobinContainerView</definition>
+        <argsstring>(RoundRobinContainerView &amp;&amp;) noexcept=default</argsstring>
+        <name>RoundRobinContainerView</name>
+        <qualifiedname>Dali::RoundRobinContainerView::RoundRobinContainerView</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="106" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1aaa81555a82b9afae8bed603506920ca5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> &amp;</type>
+        <definition>RoundRobinContainerView &amp; Dali::RoundRobinContainerView&lt; T &gt;::operator=</definition>
+        <argsstring>(RoundRobinContainerView &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::RoundRobinContainerView::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="107" column="27"/>
+        <references refid="classDali_1_1RoundRobinContainerView_1adaf62a6acd7d2b864f1733aa4f507e02" compoundref="round-robin-container-view_8h" startline="64" endline="67">Dali::RoundRobinContainerView&lt; T &gt;::Reset</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1RoundRobinContainerView_1a77b46a32c56c9ab0c2514666d2172e27" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RoundRobinContainerView&lt; T &gt;::SetValidNextIndex</definition>
+        <argsstring>()</argsstring>
+        <name>SetValidNextIndex</name>
+        <qualifiedname>Dali::RoundRobinContainerView::SetValidNextIndex</qualifiedname>
+        <briefdescription>
+<para>Check the current index and reset if necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="113" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="113" bodyend="119"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1RoundRobinContainerView" kindref="compound">RoundRobinContainerView</ref> is a view to a container that allows iterating through the elements cyclically. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" line="31" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/round-robin-container-view.h" bodystart="32" bodyend="124"/>
+    <listofallmembers>
+      <member refid="classDali_1_1RoundRobinContainerView_1ae55cb4097d29587977ad0441085ac09e" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>Clear</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1afe0221be55565327efdad7fe95a73a8b" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>ContainerType</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a95bd6f72539ecbd4daa680b7aa54a9ac" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>End</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a549efac62fcd23704f0d00f42404dd32" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>GetElementCount</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a76d57f066f0a9231a3b2451663a33b37" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>GetNext</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1ac5d4ab0568821bd6dcda318caf974041" prot="private" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>mElements</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1af2113cddadf25a0e739270c088953d41" prot="private" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>mNextIndex</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a40f4af3c7c417c884e8fab2f3934d998" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1aaa81555a82b9afae8bed603506920ca5" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1adaf62a6acd7d2b864f1733aa4f507e02" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>Reset</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a511fd3fad26ae89c668f8d2fd5460879" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>RoundRobinContainerView</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a397427f73f9563efadcf9f8279711113" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>RoundRobinContainerView</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a3b1e420958d9ae73ef75774c2dee5759" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>RoundRobinContainerView</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1a77b46a32c56c9ab0c2514666d2172e27" prot="private" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>SetValidNextIndex</name></member>
+      <member refid="classDali_1_1RoundRobinContainerView_1acad4f4ac8d559fa83e0fa220f791f9c2" prot="public" virt="non-virtual"><scope>Dali::RoundRobinContainerView</scope><name>~RoundRobinContainerView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

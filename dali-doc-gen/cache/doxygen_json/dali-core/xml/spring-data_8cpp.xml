@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="spring-data_8cpp" kind="file" language="C++">
+    <compoundname>spring-data.cpp</compoundname>
+    <includes refid="spring-data_8h" local="no">dali/public-api/animation/spring-data.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cmath</includes>
+    <includes refid="constants_8h" local="no">dali/public-api/common/constants.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/spring-data.cpp</label>
+        <link refid="spring-data_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/animation/spring-data.h</label>
+        <link refid="spring-data_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="13">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="8">
+        <label>dali/public-api/math/compile-time-math.h</label>
+        <link refid="compile-time-math_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dali/public-api/math/vector3.h</label>
+        <link refid="vector3_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/math/vector4.h</label>
+        <link refid="vector4_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>algorithm</label>
+      </node>
+      <node id="9">
+        <label>cfloat</label>
+      </node>
+      <node id="5">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>cstdint</label>
+      </node>
+      <node id="10">
+        <label>cstdlib</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structDali_1_1SpringData_1_1Impl" prot="public">Dali::SpringData::Impl</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="spring-data_8h" kindref="compound">dali/public-api/animation/spring-data.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="constants_8h" kindref="compound">dali/public-api/common/constants.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>MIN_STIFFNESS<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0.1f;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>MIN_DAMPING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0.1f;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/>MIN_MASS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0.1f;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TIME_STEP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1.0<sp/>/<sp/>60.0;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>EPSILON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0.001;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MINIMUM_DIFFERENCE<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceDali_1_1Math_1a88cc011f4e6c36516016b3a6b22e9c73" kindref="member">Dali::Math::MACHINE_EPSILON_10</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structDali_1_1SpringData_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDali_1_1SpringData_1_1Impl" kindref="compound">SpringData::Impl</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43" refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref>;<sp/></highlight></codeline>
+<codeline lineno="44" refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structDali_1_1SpringData_1_1Impl_1a7fc69bda61965e878e859906d3957428" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a7fc69bda61965e878e859906d3957428" kindref="member">Impl</ref>()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref>(MIN_STIFFNESS),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref>(MIN_DAMPING),</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref>(MIN_MASS)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structDali_1_1SpringData_1_1Impl_1af7fb2f9c37538b43e8466d6c5e0eb4ed" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1af7fb2f9c37538b43e8466d6c5e0eb4ed" kindref="member">Impl</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>stiffnessParam,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dampingParam,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>massParam)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref>(std::max(stiffnessParam,<sp/>MIN_STIFFNESS)),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref>(std::max(dampingParam,<sp/>MIN_DAMPING)),</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref>(std::max(massParam,<sp/>MIN_MASS))</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classDali_1_1SpringData_1a3296a0944a03826716ca6b577db02206" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData_1a3296a0944a03826716ca6b577db02206" kindref="member">SpringData::SpringData</ref>()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1SpringData_1_1Impl" kindref="compound">Impl</ref>())</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classDali_1_1SpringData_1a81001f15fa97b7f2b78a8f44fc31598c" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData_1a3296a0944a03826716ca6b577db02206" kindref="member">SpringData::SpringData</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>stiffness,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>damping,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>mass)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1SpringData_1_1Impl" kindref="compound">Impl</ref>(stiffness,<sp/>damping,<sp/>mass))</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1SpringData_1a433763972db3c38f47eabed137f15561" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData_1a433763972db3c38f47eabed137f15561" kindref="member">SpringData::~SpringData</ref>()</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1SpringData_1a7af32d3f5249957dd0aa134b1873d005" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData_1a3296a0944a03826716ca6b577db02206" kindref="member">SpringData::SpringData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1SpringData_1_1Impl" kindref="compound">Impl</ref>(*rhs.mImpl))</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classDali_1_1SpringData_1a395c9c027ccef0ede3e719c22840177f" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData_1a3296a0944a03826716ca6b577db02206" kindref="member">SpringData::SpringData</ref>(<ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;&amp;<sp/>rhs)<sp/>noexcept</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">:<sp/>mImpl(rhs.mImpl)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>rhs.mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classDali_1_1SpringData_1af804dce575ce66fffbe0e4a1458713d4" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;<sp/><ref refid="classDali_1_1SpringData_1af804dce575ce66fffbe0e4a1458713d4" kindref="member">SpringData::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>&amp;rhs)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>mImpl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1SpringData_1_1Impl" kindref="compound">Impl</ref>(*rhs.mImpl);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classDali_1_1SpringData_1a1c67724348835aff4c16cca14438e237" refkind="member"><highlight class="normal"><ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;<sp/><ref refid="classDali_1_1SpringData_1af804dce575ce66fffbe0e4a1458713d4" kindref="member">SpringData::operator=</ref>(<ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>&amp;rhs)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>mImpl<sp/><sp/><sp/><sp/><sp/>=<sp/>rhs.mImpl;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>rhs.mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classDali_1_1SpringData_1aa44c315c0fa048fc0333152fe4d6e8ce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1aa44c315c0fa048fc0333152fe4d6e8ce" kindref="member">SpringData::SetStiffness</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>stiffness)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref><sp/>=<sp/>std::max(stiffness,<sp/>MIN_STIFFNESS);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classDali_1_1SpringData_1a327fe04f21db99dbba99b66552041b0e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1a327fe04f21db99dbba99b66552041b0e" kindref="member">SpringData::GetStiffness</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="121"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classDali_1_1SpringData_1a91433c1e719b904dfbda4004164e92c3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1a91433c1e719b904dfbda4004164e92c3" kindref="member">SpringData::SetDamping</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>damping)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref><sp/>=<sp/>std::max(damping,<sp/>MIN_DAMPING);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classDali_1_1SpringData_1a3e37120ff9709cf460fe3c5547003cb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1a3e37120ff9709cf460fe3c5547003cb1" kindref="member">SpringData::GetDamping</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="131"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="classDali_1_1SpringData_1a93e0d4361ba78794bb562994ad3726e0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1a93e0d4361ba78794bb562994ad3726e0" kindref="member">SpringData::SetMass</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>mass)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref><sp/>=<sp/>std::max(mass,<sp/>MIN_MASS);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="classDali_1_1SpringData_1a29af94765eb8c1df75507d0ad10e3554" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1a29af94765eb8c1df75507d0ad10e3554" kindref="member">SpringData::GetMass</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="141"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classDali_1_1SpringData_1a5270d95d79794f4d057411e41c76e75b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData_1a5270d95d79794f4d057411e41c76e75b" kindref="member">SpringData::GetDuration</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="146"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref><sp/>&lt;<sp/>MIN_STIFFNESS<sp/>||<sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref><sp/>&lt;<sp/>MIN_DAMPING<sp/>||<sp/>mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref><sp/>&lt;<sp/>MIN_MASS)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0f;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>omega0<sp/>=<sp/>std::sqrt(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref>)<sp/>/<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref>));</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>zeta<sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a7dc92e9ccdd99a3b031bb67e2087d166" kindref="member">damping</ref>)<sp/>/<sp/>(2.0<sp/>*<sp/>std::sqrt(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a81b63f0088f3d312c71a1e458830d27d" kindref="member">stiffness</ref>)<sp/>*<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;<ref refid="structDali_1_1SpringData_1_1Impl_1a18c1c8df65875d81bc7475d8d702c145" kindref="member">mass</ref>)));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time<sp/><sp/><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(zeta<sp/>&lt;<sp/>1.0)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>time<sp/>=<sp/>-std::log(EPSILON)<sp/>/<sp/>(zeta<sp/>*<sp/>omega0);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sqrtTerm<sp/>=<sp/>std::sqrt(std::max(zeta<sp/>*<sp/>zeta<sp/>-<sp/>1.0f,<sp/>1e-6));</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r1<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>-omega0<sp/>*<sp/>(zeta<sp/>-<sp/>sqrtTerm);<sp/></highlight><highlight class="comment">//<sp/>dominant(Slower)<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>time<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::log(1.0<sp/>/<sp/>EPSILON)<sp/>/<sp/>std::abs(r1);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(time);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/spring-data.cpp"/>
+  </compounddef>
+</doxygen>

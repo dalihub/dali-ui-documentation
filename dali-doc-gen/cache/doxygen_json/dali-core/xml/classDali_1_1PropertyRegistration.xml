@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1PropertyRegistration" kind="class" language="C++" prot="public">
+    <compoundname>Dali::PropertyRegistration</compoundname>
+    <includes refid="type-registry_8h" local="no">type-registry.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1PropertyRegistration_1acf6f1276a3aa8faf55cf8f74bd29985a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::PropertyRegistration::PropertyRegistration</definition>
+        <argsstring>(TypeRegistration &amp;registered, Dali::String name, Property::Index index, Property::Type type, TypeInfo::SetPropertyFunction setFunc, TypeInfo::GetPropertyFunction getFunc)</argsstring>
+        <name>PropertyRegistration</name>
+        <qualifiedname>Dali::PropertyRegistration::PropertyRegistration</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1TypeRegistration" kindref="compound">TypeRegistration</ref> &amp;</type>
+          <declname>registered</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1acb569f557811bc94d2e98b5c880d759c" kindref="member">Property::Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1TypeInfo_1abff02929579f3ab55a5ac76b926958a7" kindref="member">TypeInfo::SetPropertyFunction</ref></type>
+          <declname>setFunc</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1TypeInfo_1a2d2accbc33edbbad9e4c5e15241127d0" kindref="member">TypeInfo::GetPropertyFunction</ref></type>
+          <declname>getFunc</declname>
+        </param>
+        <briefdescription>
+<para>This constructor registers the property with the registered type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor is for event-thread only properties where the value of the property can be retrieved and set via specified functions.</para>
+<para>Functions of the following type may be used for setFunc and getFunc respectively: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetProperty(<sp/>BaseObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref><sp/>index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Value&amp;<sp/>value<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">Property::Value<sp/>GetProperty(<sp/>BaseObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref><sp/>index<sp/>);</highlight></codeline>
+</programlisting></para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">registered</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1TypeRegistration" kindref="compound">TypeRegistration</ref> object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property index. Must be a value between PROPERTY_REGISTRATION_START_INDEX and PROPERTY_REGISTRATION_MAX_INDEX inclusive </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">setFunc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to call when setting the property. If NULL, then the property becomes read-only </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">getFunc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to call to retrieve the current value of the property. MUST be provided </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>&quot;registered&quot; must be registered with the <ref refid="classDali_1_1TypeRegistry" kindref="compound">TypeRegistry</ref>. </para>
+</simplesect>
+<simplesect kind="note"><para>The &quot;index&quot; value must be between START_INDEX and MAX_INDEX inclusive. </para>
+</simplesect>
+<simplesect kind="note"><para>If &quot;setFunc&quot; is NULL, then the property becomes a read-only property. </para>
+</simplesect>
+<simplesect kind="note"><para>&quot;getFunc&quot; MUST be provided. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.h" line="371" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.cpp" bodystart="145" bodyend="150"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a558d3e8261f61fa62f055052015963b8" compoundref="property-index-ranges_8h" startline="56">Dali::PROPERTY_REGISTRATION_MAX_INDEX</references>
+        <references refid="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a680b51575d73dc8a6613390ef248207a" compoundref="property-index-ranges_8h" startline="53">Dali::PROPERTY_REGISTRATION_START_INDEX</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Registers a property for the given type. @SINCE_1_0.0. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.h" line="342" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.h" bodystart="343" bodyend="377"/>
+    <listofallmembers>
+      <member refid="classDali_1_1PropertyRegistration_1acf6f1276a3aa8faf55cf8f74bd29985a" prot="public" virt="non-virtual"><scope>Dali::PropertyRegistration</scope><name>PropertyRegistration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1SignalObserver" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::SignalObserver</compoundname>
+    <derivedcompoundref refid="classDali_1_1ConnectionTrackerInterface" prot="public" virt="non-virtual">Dali::ConnectionTrackerInterface</derivedcompoundref>
+    <includes refid="signal-slot-observers_8h" local="no">signal-slot-observers.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1SignalObserver_1a05912a85c234baeae3a4c9c72317c455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SignalObserver::SignalObserver</definition>
+        <argsstring>()</argsstring>
+        <name>SignalObserver</name>
+        <qualifiedname>Dali::SignalObserver::SignalObserver</qualifiedname>
+        <briefdescription>
+<para>Constructor. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/signal-slot-observers.h" line="47" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SignalObserver_1a90bf4e0c8ae70bd6a50c27d8fe8f5bad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Dali::SignalObserver::~SignalObserver</definition>
+        <argsstring>()</argsstring>
+        <name>~SignalObserver</name>
+        <qualifiedname>Dali::SignalObserver::~SignalObserver</qualifiedname>
+        <briefdescription>
+<para>Virtual destructor. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/signal-slot-observers.h" line="53" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SignalObserver_1ac2c1d6dadce870e454f92f0f22c21c73" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::SignalObserver::SignalDisconnected</definition>
+        <argsstring>(SlotObserver *slotObserver, CallbackBase *callback)=0</argsstring>
+        <name>SignalDisconnected</name>
+        <qualifiedname>Dali::SignalObserver::SignalDisconnected</qualifiedname>
+        <reimplementedby refid="classDali_1_1ConnectionTracker_1a8b8cbea88f253c0341bce0e1274b4308">SignalDisconnected</reimplementedby>
+        <param>
+          <type><ref refid="classDali_1_1SlotObserver" kindref="compound">SlotObserver</ref> *</type>
+          <declname>slotObserver</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>This method is called when the signal is disconnecting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">slotObserver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signal that has disconnected </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback attached to the signal disconnected </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/signal-slot-observers.h" line="62" column="16"/>
+        <referencedby refid="classDali_1_1BaseSignal_1a8e4b53432b7cf152cd2849724423ef31" compoundref="base-signal_8cpp" startline="196" endline="217">Dali::BaseSignal::OnDisconnect</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract interface used by a signal to inform a slot it is disconnecting. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This will happen if the object owning the signal is destroyed. @SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Dali::ConnectionTracker</label>
+        <link refid="classDali_1_1ConnectionTracker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::ConnectionTrackerInterface</label>
+        <link refid="classDali_1_1ConnectionTrackerInterface"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::SignalObserver</label>
+        <link refid="classDali_1_1SignalObserver"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/signal-slot-observers.h" line="40" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/signal-slot-observers.h" bodystart="41" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classDali_1_1SignalObserver_1ac2c1d6dadce870e454f92f0f22c21c73" prot="public" virt="pure-virtual"><scope>Dali::SignalObserver</scope><name>SignalDisconnected</name></member>
+      <member refid="classDali_1_1SignalObserver_1a05912a85c234baeae3a4c9c72317c455" prot="public" virt="non-virtual"><scope>Dali::SignalObserver</scope><name>SignalObserver</name></member>
+      <member refid="classDali_1_1SignalObserver_1a90bf4e0c8ae70bd6a50c27d8fe8f5bad" prot="public" virt="virtual"><scope>Dali::SignalObserver</scope><name>~SignalObserver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1TouchEventCombiner" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Integration::TouchEventCombiner</compoundname>
+    <includes refid="touch-event-combiner_8h" local="no">touch-event-combiner.h</includes>
+    <innerclass refid="structDali_1_1Integration_1_1TouchEventCombiner_1_1PointInfo" prot="public">Dali::Integration::TouchEventCombiner::PointInfo</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EventDispatchType</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::EventDispatchType</qualifiedname>
+        <enumvalue id="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237ad30e3d830f173623d2a0cddaf7ad30ac" prot="public">
+          <name>DISPATCH_TOUCH</name>
+          <briefdescription>
+<para>The touch event should be dispatched. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237ae5ca0aa6412775954e38602b21068793" prot="public">
+          <name>DISPATCH_HOVER</name>
+          <briefdescription>
+<para>The hover event should be dispatched. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237a9f22357550fdaefd47ac44dbf22f1146" prot="public">
+          <name>DISPATCH_BOTH</name>
+          <briefdescription>
+<para>Both touch event and hover event should be dispatched. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237afa83240a93ae660c0a457bd65da69a05" prot="public">
+          <name>DISPATCH_NONE</name>
+          <briefdescription>
+<para>Neither touch event nor hover event should be dispatched. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="52" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="53" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1TouchEventCombiner_1ac82fe503d56384f6bd91f0fb3c554d9c" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="structDali_1_1Integration_1_1TouchEventCombiner_1_1PointInfo" kindref="compound">PointInfo</ref> &gt;</type>
+        <definition>typedef std::vector&lt;PointInfo&gt; Dali::Integration::TouchEventCombiner::PointInfoContainer</definition>
+        <argsstring></argsstring>
+        <name>PointInfoContainer</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::PointInfoContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="158" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1TouchEventCombiner_1af6ef8c5674b47d1e61573c072af31026" prot="private" static="no" mutable="no">
+        <type>PointInfoContainer</type>
+        <definition>PointInfoContainer Dali::Integration::TouchEventCombiner::mPressedPoints</definition>
+        <argsstring></argsstring>
+        <name>mPressedPoints</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::mPressedPoints</qualifiedname>
+        <briefdescription>
+<para>A container of touched point and time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="159" column="34" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1TouchEventCombiner_1abd6384e123c4bb7b45c5ac85a40e4383" prot="private" static="no" mutable="no">
+        <type>PointInfoContainer</type>
+        <definition>PointInfoContainer Dali::Integration::TouchEventCombiner::mHoveredPoints</definition>
+        <argsstring></argsstring>
+        <name>mHoveredPoints</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::mHoveredPoints</qualifiedname>
+        <briefdescription>
+<para>A container of hovered point and time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="160" column="34" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1TouchEventCombiner_1a54662a5666db4475d2ecee7459131bc1" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Integration::TouchEventCombiner::mMinMotionTime</definition>
+        <argsstring></argsstring>
+        <name>mMinMotionTime</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::mMinMotionTime</qualifiedname>
+        <briefdescription>
+<para>The minimum time that should elapse before considering a new motion event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="162" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1TouchEventCombiner_1ad78f637af9ce424e84e4637d7c2157b7" prot="private" static="no" mutable="no">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::Integration::TouchEventCombiner::mMinMotionDistance</definition>
+        <argsstring></argsstring>
+        <name>mMinMotionDistance</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::mMinMotionDistance</qualifiedname>
+        <briefdescription>
+<para>The minimum distance in the X and Y direction before considering a new motion event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="163" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a403474001fe61a8384a55ebd06112eea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::TouchEventCombiner::TouchEventCombiner</definition>
+        <argsstring>()</argsstring>
+        <name>TouchEventCombiner</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::TouchEventCombiner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default Constructor. <simplesect kind="note"><para>The default minimum motion time is 1 ms between motion events and the default behaviour is to throttle X and Y movement by 1. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="65" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a283226080f2211c923cd4de4f92aebeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::TouchEventCombiner::TouchEventCombiner</definition>
+        <argsstring>(uint32_t minMotionTime, float minMotionXDistance, float minMotionYDistance)</argsstring>
+        <name>TouchEventCombiner</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::TouchEventCombiner</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>minMotionTime</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>minMotionXDistance</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>minMotionYDistance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construction with parameters. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">minMotionTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum time (in ms) that should occur between motion events. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">minMotionXDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum distance a finger has to be moved between horizontal motion events. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">minMotionYDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum distance a finger has to be moved between vertical motion events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Will assert if any of the parameters is negative. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="74" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="74" bodyend="79"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a28de6bd4154ac183449176a8e2b27d08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::TouchEventCombiner::TouchEventCombiner</definition>
+        <argsstring>(uint32_t minMotionTime, Vector2 minMotionDistance)</argsstring>
+        <name>TouchEventCombiner</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::TouchEventCombiner</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>minMotionTime</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+          <declname>minMotionDistance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construction with parameters. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">minMotionTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum time (in ms) that should occur between motion events. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">minMotionDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> representing the minimum distance a finger has to be moved between horizontal and vertical motion events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Will assert if any of the parameters is negative. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="82" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="81" bodyend="86"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" compoundref="vector2_8h" startline="466">Dali::Vector2::x</references>
+        <references refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" compoundref="vector2_8h" startline="472">Dali::Vector2::y</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1af8fe5b79bc19bfa2d0a9287edc123962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::TouchEventCombiner::~TouchEventCombiner</definition>
+        <argsstring>()</argsstring>
+        <name>~TouchEventCombiner</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::~TouchEventCombiner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Non virtual destructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="87" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a2e4c710feafc78daedcd02ecb54b73c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237" kindref="member">EventDispatchType</ref></type>
+        <definition>TouchEventCombiner::EventDispatchType Dali::Integration::TouchEventCombiner::GetNextTouchEvent</definition>
+        <argsstring>(const Point &amp;point, uint32_t time, TouchEvent &amp;touchEvent, HoverEvent &amp;hoverEvent, bool isMultiTouchEvent=false)</argsstring>
+        <name>GetNextTouchEvent</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::GetNextTouchEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Point</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Integration_1_1TouchEvent" kindref="compound">TouchEvent</ref> &amp;</type>
+          <declname>touchEvent</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Integration_1_1HoverEvent" kindref="compound">HoverEvent</ref> &amp;</type>
+          <declname>hoverEvent</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isMultiTouchEvent</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows the caller to pass in a point which is processed and the <ref refid="structDali_1_1Integration_1_1TouchEvent" kindref="compound">TouchEvent</ref> and/or <ref refid="structDali_1_1Integration_1_1HoverEvent" kindref="compound">HoverEvent</ref> is appropriately filled with the new, and previously stored <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Point</ref> information.</para>
+<para><simplesect kind="note"><para>If the thresholds set have not been passed, then false is returned and the <ref refid="structDali_1_1Integration_1_1TouchEvent" kindref="compound">TouchEvent</ref> and/or <ref refid="structDali_1_1Integration_1_1HoverEvent" kindref="compound">HoverEvent</ref> should not be sent to <ref refid="namespaceDali" kindref="compound">Dali</ref> <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref>.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Point</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time the event occurred. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">touchEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This is populated with the correct Point(s) and time information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">hoverEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This is populated with the correct Point(s) and time information. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">isMultiTouchEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Flag whether multitouch is being.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the point is beyond the different thresholds set thus, should be sent to core, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="105" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="90" bodyend="380"/>
+        <references refid="structDali_1_1Integration_1_1MultiPointEvent_1a074b94acb7ee6965a8af04a5a82458a3" compoundref="multi-point-event-integ_8cpp" startline="49" endline="52">Dali::Integration::MultiPointEvent::AddPoint</references>
+        <references refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237a9f22357550fdaefd47ac44dbf22f1146" compoundref="touch-event-combiner_8h" startline="56">DISPATCH_BOTH</references>
+        <references refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237ae5ca0aa6412775954e38602b21068793" compoundref="touch-event-combiner_8h" startline="55">DISPATCH_HOVER</references>
+        <references refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237afa83240a93ae660c0a457bd65da69a05" compoundref="touch-event-combiner_8h" startline="57">DISPATCH_NONE</references>
+        <references refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237ad30e3d830f173623d2a0cddaf7ad30ac" compoundref="touch-event-combiner_8h" startline="54">DISPATCH_TOUCH</references>
+        <references refid="namespaceDali_1_1PointState_1a6a1bea9b393f61a1f5f54690c99918f7ac85fd46f126142d63d76b89e575e633e" compoundref="point-state_8h" startline="41">Dali::PointState::FINISHED</references>
+        <references refid="structDali_1_1Integration_1_1Point_1aceb9c9e27b0e5449f3ae6ba489934535" compoundref="point_8cpp" startline="160" endline="163">Dali::Integration::Point::GetDeviceClass</references>
+        <references refid="structDali_1_1Integration_1_1Point_1a739702acee89c8bcae8d9ac5f34fb75a" compoundref="point_8cpp" startline="90" endline="93">Dali::Integration::Point::GetDeviceId</references>
+        <references refid="structDali_1_1Integration_1_1Point_1a664acadd27ff6b3e7833127f6cf0cfdf" compoundref="point_8cpp" startline="170" endline="173">Dali::Integration::Point::GetMouseButton</references>
+        <references refid="structDali_1_1Integration_1_1Point_1af4b7d44c4bc65b8e979b920a53cd9b2c" compoundref="point_8cpp" startline="100" endline="103">Dali::Integration::Point::GetScreenPosition</references>
+        <references refid="structDali_1_1Integration_1_1Point_1acfa14a8aa50724b4d59b234adc2d130f" compoundref="point_8cpp" startline="95" endline="98">Dali::Integration::Point::GetState</references>
+        <references refid="namespaceDali_1_1PointState_1a6a1bea9b393f61a1f5f54690c99918f7a69318fc1aa5eb3b0e7c8270ccf2cccc9" compoundref="point-state_8h" startline="49">Dali::PointState::INTERRUPTED</references>
+        <references refid="namespaceDali_1_1PointState_1a6a1bea9b393f61a1f5f54690c99918f7a83c1abd464d39abcf203a1d8d82ab561" compoundref="point-state_8h" startline="44">Dali::PointState::MOTION</references>
+        <references refid="namespaceDali_1_1Device_1_1Class_1acbb4d1aa71933df9f9b09df79e3b206cae4d085249bf30a26bd5d4b513827e10c" compoundref="device_8h" startline="54">Dali::Device::Class::MOUSE</references>
+        <references refid="structDali_1_1Integration_1_1TouchEventCombiner_1_1PointInfo_1a8b2fae89d1201343428d440c66b6ab9b" compoundref="touch-event-combiner_8cpp" startline="64">Dali::Integration::TouchEventCombiner::PointInfo::point</references>
+        <references refid="classDali_1_1Integration_1_1TouchEventCombiner_1a1d46ffa7d7d366198693ec577b89e3a4" compoundref="touch-event-combiner_8cpp" startline="419" endline="423">Reset</references>
+        <references refid="structDali_1_1Integration_1_1Point_1a7da513761c7983a5afa023e1fd4904aa" compoundref="point_8cpp" startline="175" endline="178">Dali::Integration::Point::SetMouseButton</references>
+        <references refid="structDali_1_1Integration_1_1Point_1a68c6ed3dd8aa4940f6dea83de25645fc" compoundref="point_8cpp" startline="59" endline="62">Dali::Integration::Point::SetState</references>
+        <references refid="namespaceDali_1_1PointState_1a6a1bea9b393f61a1f5f54690c99918f7a707449cd8718935d89b36e5e1c87fa18" compoundref="point-state_8h" startline="40">Dali::PointState::STARTED</references>
+        <references refid="namespaceDali_1_1PointState_1a6a1bea9b393f61a1f5f54690c99918f7a637886cb21d1eab15f40f87b19288232" compoundref="point-state_8h" startline="46">Dali::PointState::STATIONARY</references>
+        <references refid="structDali_1_1Integration_1_1MultiPointEvent_1a34375501861f8bc58c02d60470b6ba7f" compoundref="multi-point-event-integ_8h" startline="78">Dali::Integration::MultiPointEvent::time</references>
+        <references refid="namespaceDali_1_1Device_1_1Class_1acbb4d1aa71933df9f9b09df79e3b206ca39c2b539dbb09cc11db5e1a8c10cfc8d" compoundref="device_8h" startline="55">Dali::Device::Class::TOUCH</references>
+        <references refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" compoundref="vector2_8h" startline="466">Dali::Vector2::x</references>
+        <references refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" compoundref="vector2_8h" startline="472">Dali::Vector2::y</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a48594c7ff32595a25aa5a9c5e353121b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::TouchEventCombiner::SetMinimumMotionTimeThreshold</definition>
+        <argsstring>(uint32_t minTime)</argsstring>
+        <name>SetMinimumMotionTimeThreshold</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::SetMinimumMotionTimeThreshold</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>minTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the minimum time (in ms) that should occur between motion events. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">minTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum time between motion events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="111" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="382" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1ade952fa22f54e848a707436174f97e8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::TouchEventCombiner::SetMinimumMotionDistanceThreshold</definition>
+        <argsstring>(float minDistance)</argsstring>
+        <name>SetMinimumMotionDistanceThreshold</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::SetMinimumMotionDistanceThreshold</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>minDistance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the minimum distance a finger has to be moved (both X and Y) between motion events. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">minDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum distance between motion events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Will assert if parameter is negative. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="118" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="387" bodyend="392"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" compoundref="vector2_8h" startline="466">Dali::Vector2::x</references>
+        <references refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" compoundref="vector2_8h" startline="472">Dali::Vector2::y</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a6c01fdf4460b12abe5e1a6ec98799c5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::TouchEventCombiner::SetMinimumMotionDistanceThreshold</definition>
+        <argsstring>(float minXDistance, float minYDistance)</argsstring>
+        <name>SetMinimumMotionDistanceThreshold</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::SetMinimumMotionDistanceThreshold</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>minXDistance</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>minYDistance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the minimum distance a finger has to be moved between motion events. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">minXDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum X distance between motion events. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">minYDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum Y distance between motion events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Use this method if the X and Y threshold required is different. </para>
+</simplesect>
+<simplesect kind="note"><para>Will assert if any of the parameters is negative. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="127" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="394" bodyend="400"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" compoundref="vector2_8h" startline="466">Dali::Vector2::x</references>
+        <references refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" compoundref="vector2_8h" startline="472">Dali::Vector2::y</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1adb618019b9a007cd55dd19f7e19166ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::TouchEventCombiner::SetMinimumMotionDistanceThreshold</definition>
+        <argsstring>(Vector2 minDistance)</argsstring>
+        <name>SetMinimumMotionDistanceThreshold</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::SetMinimumMotionDistanceThreshold</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+          <declname>minDistance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the minimum distance a finger has to be moved between motion events. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">minDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> representing the minimum X and Y thresholds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Use this method if the X and Y threshold required is different. </para>
+</simplesect>
+<simplesect kind="note"><para>Will assert if any of the parameters is negative. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="135" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="402" bodyend="407"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" compoundref="vector2_8h" startline="466">Dali::Vector2::x</references>
+        <references refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" compoundref="vector2_8h" startline="472">Dali::Vector2::y</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a2856dce75f0aba8f2b8a0738e8ce76ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long Dali::Integration::TouchEventCombiner::GetMinimumMotionTimeThreshold</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMinimumMotionTimeThreshold</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::GetMinimumMotionTimeThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the minimum motion time threshold. <simplesect kind="return"><para>the minimum time threshold. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="141" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="409" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a8d846a5abab368eaeb20a2a163b58108" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::Integration::TouchEventCombiner::GetMinimumMotionDistanceThreshold</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMinimumMotionDistanceThreshold</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::GetMinimumMotionDistanceThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the minimum distance a finger has to be moved (both X and Y) between motion events. <simplesect kind="return"><para>A <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> representing the x and y thresholds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="147" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="414" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1TouchEventCombiner_1a1d46ffa7d7d366198693ec577b89e3a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::TouchEventCombiner::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Dali::Integration::TouchEventCombiner::Reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This resets any information contained by the <ref refid="classDali_1_1Integration_1_1TouchEventCombiner" kindref="compound">TouchEventCombiner</ref>. This may be required if some platform event has occurred which makes it necessary to reset any <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Point</ref> information that the combiner may store. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="154" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp" bodystart="419" bodyend="423"/>
+        <referencedby refid="classDali_1_1Integration_1_1TouchEventCombiner_1a2e4c710feafc78daedcd02ecb54b73c4" compoundref="touch-event-combiner_8cpp" startline="90" endline="380">GetNextTouchEvent</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1Integration_1_1TouchEventCombiner" kindref="compound">Dali::Integration::TouchEventCombiner</ref> is a utility class, an instance of which, should be created upon initialisation. It accepts single Point(s) containing information about a touch area and creates a <ref refid="structDali_1_1Integration_1_1TouchEvent" kindref="compound">TouchEvent</ref> and/or <ref refid="structDali_1_1Integration_1_1HoverEvent" kindref="compound">HoverEvent</ref> combining the latest event&apos;s information with previous Point(s).</para>
+<para>The created <ref refid="structDali_1_1Integration_1_1TouchEvent" kindref="compound">TouchEvent</ref> and/or <ref refid="structDali_1_1Integration_1_1HoverEvent" kindref="compound">HoverEvent</ref> can then be sent to the <ref refid="namespaceDali" kindref="compound">Dali</ref> <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref> as indicated by the <ref refid="classDali_1_1Integration_1_1TouchEventCombiner_1a2e4c710feafc78daedcd02ecb54b73c4" kindref="member">GetNextTouchEvent()</ref> method.</para>
+<para>The <ref refid="classDali_1_1Integration_1_1TouchEventCombiner" kindref="compound">TouchEventCombiner</ref> ensures that the following rules are also adhered to:<itemizedlist>
+<listitem><para>If two Down events are accidentally received, then the second one is ignored.</para>
+</listitem><listitem><para>Motion events are not processed if a Down event does not precede it.</para>
+</listitem><listitem><para>Motion event throttling is carried out to satisfy the minimum distance and time delta required.</para>
+</listitem><listitem><para>If an interrupted event is received, then any stored <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Point</ref> history is cleared. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" line="47" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h" bodystart="48" bodyend="164"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237a9f22357550fdaefd47ac44dbf22f1146" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>DISPATCH_BOTH</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237ae5ca0aa6412775954e38602b21068793" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>DISPATCH_HOVER</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237afa83240a93ae660c0a457bd65da69a05" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>DISPATCH_NONE</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237ad30e3d830f173623d2a0cddaf7ad30ac" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>DISPATCH_TOUCH</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1adc4ec933abbb7024fcdf5a42974c7237" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>EventDispatchType</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a8d846a5abab368eaeb20a2a163b58108" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>GetMinimumMotionDistanceThreshold</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a2856dce75f0aba8f2b8a0738e8ce76ad" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>GetMinimumMotionTimeThreshold</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a2e4c710feafc78daedcd02ecb54b73c4" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>GetNextTouchEvent</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1abd6384e123c4bb7b45c5ac85a40e4383" prot="private" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>mHoveredPoints</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1ad78f637af9ce424e84e4637d7c2157b7" prot="private" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>mMinMotionDistance</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a54662a5666db4475d2ecee7459131bc1" prot="private" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>mMinMotionTime</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1af6ef8c5674b47d1e61573c072af31026" prot="private" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>mPressedPoints</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1ac82fe503d56384f6bd91f0fb3c554d9c" prot="private" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>PointInfoContainer</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a1d46ffa7d7d366198693ec577b89e3a4" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1ade952fa22f54e848a707436174f97e8b" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>SetMinimumMotionDistanceThreshold</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a6c01fdf4460b12abe5e1a6ec98799c5c" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>SetMinimumMotionDistanceThreshold</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1adb618019b9a007cd55dd19f7e19166ee" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>SetMinimumMotionDistanceThreshold</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a48594c7ff32595a25aa5a9c5e353121b" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>SetMinimumMotionTimeThreshold</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a403474001fe61a8384a55ebd06112eea" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>TouchEventCombiner</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a283226080f2211c923cd4de4f92aebeb" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>TouchEventCombiner</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1a28de6bd4154ac183449176a8e2b27d08" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>TouchEventCombiner</name></member>
+      <member refid="classDali_1_1Integration_1_1TouchEventCombiner_1af8fe5b79bc19bfa2d0a9287edc123962" prot="public" virt="non-virtual"><scope>Dali::Integration::TouchEventCombiner</scope><name>~TouchEventCombiner</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

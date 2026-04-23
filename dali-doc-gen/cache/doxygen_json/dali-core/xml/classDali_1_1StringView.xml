@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1StringView" kind="class" language="C++" prot="public">
+    <compoundname>Dali::StringView</compoundname>
+    <includes refid="dali-string-view_8h" local="no">dali-string-view.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classDali_1_1StringView_1ab219db5f277a2ef0768da53077798159" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t Dali::StringView::StorageSize</definition>
+        <argsstring></argsstring>
+        <name>StorageSize</name>
+        <qualifiedname>Dali::StringView::StorageSize</qualifiedname>
+        <initializer>= 16</initializer>
+        <briefdescription>
+<para>Opaque storage sized for std::string_view. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="157" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1StringView_1ad388ca17ff2d5da25d9df9f1542a2a28" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t Dali::StringView::StorageAlign</definition>
+        <argsstring></argsstring>
+        <name>StorageAlign</name>
+        <qualifiedname>Dali::StringView::StorageAlign</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Opaque storage aligned for std::string_view. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="158" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1StringView_1a2dfe7ba32ecc794493a34baa11946ee9" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Dali::StringView::mStorage[StorageSize]</definition>
+        <argsstring>[StorageSize]</argsstring>
+        <name>mStorage</name>
+        <qualifiedname>Dali::StringView::mStorage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="159" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1StringView_1a4bed88f7509d0e1f5ed22ebc44ca86fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::StringView::StringView</definition>
+        <argsstring>()</argsstring>
+        <name>StringView</name>
+        <qualifiedname>Dali::StringView::StringView</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an empty string view.</para>
+<para>@SINCE_2_5.15 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="54" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1adac073c52a1bf4711b7ecff615aa2186" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::StringView::StringView</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>StringView</name>
+        <qualifiedname>Dali::StringView::StringView</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from a null-terminated string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A null-terminated string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="62" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="54" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a877d0b67921979c4315ab8800e186322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::StringView::StringView</definition>
+        <argsstring>(const char *str, uint32_t length)</argsstring>
+        <name>StringView</name>
+        <qualifiedname>Dali::StringView::StringView</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from a pointer and length. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to character data (not necessarily null-terminated) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of characters </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="71" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a2d8277b86a229f8b5d5b2a890d36dbbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::StringView::StringView</definition>
+        <argsstring>(const String &amp;str)</argsstring>
+        <name>StringView</name>
+        <qualifiedname>Dali::StringView::StringView</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to view </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="79" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="71" bodyend="82"/>
+        <references refid="classDali_1_1String_1a86a66f7917bdbcd1f1873e40a4544ce0" compoundref="dali-string_8cpp" startline="156" endline="159">Dali::String::CStr</references>
+        <references refid="classDali_1_1String_1a125a1720dcc816202d606d188f8b9658" compoundref="dali-string_8cpp" startline="141" endline="144">Dali::String::Size</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a4b11e0270885b84dcfb828440f47a9d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::StringView::~StringView</definition>
+        <argsstring>()</argsstring>
+        <name>~StringView</name>
+        <qualifiedname>Dali::StringView::~StringView</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="84" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a2a65050be0bfb1b99e10f7637cd23321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::StringView::StringView</definition>
+        <argsstring>(const StringView &amp;other)</argsstring>
+        <name>StringView</name>
+        <qualifiedname>Dali::StringView::StringView</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">StringView</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string view to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="92" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1addfb36111194195cca4617babe1b7f30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1StringView" kindref="compound">StringView</ref> &amp;</type>
+        <definition>StringView &amp; Dali::StringView::operator=</definition>
+        <argsstring>(const StringView &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::StringView::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">StringView</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string view to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this string view </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="101" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="94" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a4fc1f244189e2056e8bbb0b46a5eba7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::StringView::Size</definition>
+        <argsstring>() const</argsstring>
+        <name>Size</name>
+        <qualifiedname>Dali::StringView::Size</qualifiedname>
+        <briefdescription>
+<para>Get the number of bytes in the view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <simplesect kind="return"><para>The number of bytes in the view </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="109" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="101" bodyend="104"/>
+        <referencedby refid="classDali_1_1String_1a724e98e961a3ed5b26d4b9dc4af9c510" compoundref="dali-string_8cpp" startline="113" endline="125">Dali::String::operator=</referencedby>
+        <referencedby refid="classDali_1_1String_1a9109699e9de025d6d9aa07675730e374" compoundref="dali-string_8cpp" startline="67" endline="78">Dali::String::String</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a76f77ecc8afafb672b203125aeac2e06" compoundref="string-utils_8h" startline="71" endline="75">Dali::Integration::ToStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a8d1e3f0b1f1238dad46597ca30ef33c4" compoundref="string-utils_8h" startline="214" endline="218">Dali::Integration::ToStdStringView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1ae37457fa0fa09c41bdce4a4efd3bb9de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::StringView::Empty</definition>
+        <argsstring>() const</argsstring>
+        <name>Empty</name>
+        <qualifiedname>Dali::StringView::Empty</qualifiedname>
+        <briefdescription>
+<para>Determine if the view is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <simplesect kind="return"><para>true if the view has no characters </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="117" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a39cfe10cff4b164eaf874f9edb9560b3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * Dali::StringView::Data</definition>
+        <argsstring>() const</argsstring>
+        <name>Data</name>
+        <qualifiedname>Dali::StringView::Data</qualifiedname>
+        <briefdescription>
+<para>Get a pointer to the character data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The returned pointer is not guaranteed to be null-terminated.</para>
+</simplesect>
+@SINCE_2_5.15 <simplesect kind="return"><para>A pointer to the character data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="127" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="111" bodyend="114"/>
+        <referencedby refid="classDali_1_1String_1a724e98e961a3ed5b26d4b9dc4af9c510" compoundref="dali-string_8cpp" startline="113" endline="125">Dali::String::operator=</referencedby>
+        <referencedby refid="classDali_1_1String_1a9109699e9de025d6d9aa07675730e374" compoundref="dali-string_8cpp" startline="67" endline="78">Dali::String::String</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a76f77ecc8afafb672b203125aeac2e06" compoundref="string-utils_8h" startline="71" endline="75">Dali::Integration::ToStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a8d1e3f0b1f1238dad46597ca30ef33c4" compoundref="string-utils_8h" startline="214" endline="218">Dali::Integration::ToStdStringView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a5703a4a73a4e1d5472e14bc2baad8c92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::StringView::operator==</definition>
+        <argsstring>(const StringView &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>Dali::StringView::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">StringView</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Comparison equality operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to compare </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if both strings are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="136" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1a2c64363220955d40c4a3b41f56c20ee3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::StringView::operator==</definition>
+        <argsstring>(const char *other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>Dali::StringView::operator==</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Comparison equality operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.15 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to compare </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if both strings are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="145" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1StringView_1ad221d17eb277ad0d9eae00707018be8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::StringView::operator==</definition>
+        <argsstring>(const String &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>Dali::StringView::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Comparison equality operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.18 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to compare </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if both strings are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="154" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.cpp" bodystart="126" bodyend="130"/>
+        <references refid="classDali_1_1String_1a86a66f7917bdbcd1f1873e40a4544ce0" compoundref="dali-string_8cpp" startline="156" endline="159">Dali::String::CStr</references>
+        <references refid="classDali_1_1String_1a125a1720dcc816202d606d188f8b9658" compoundref="dali-string_8cpp" startline="141" endline="144">Dali::String::Size</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A non-owning wrapper around the standard string_view object, to ensure future binary compatibility of public API symbols.</para>
+<para>The view data is stored in opaque inline storage, avoiding heap allocation.</para>
+<para>@SINCE_2_5.15 </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" line="44" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-string-view.h" bodystart="45" bodyend="160"/>
+    <listofallmembers>
+      <member refid="classDali_1_1StringView_1a39cfe10cff4b164eaf874f9edb9560b3" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>Data</name></member>
+      <member refid="classDali_1_1StringView_1ae37457fa0fa09c41bdce4a4efd3bb9de" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>Empty</name></member>
+      <member refid="classDali_1_1StringView_1a2dfe7ba32ecc794493a34baa11946ee9" prot="private" virt="non-virtual"><scope>Dali::StringView</scope><name>mStorage</name></member>
+      <member refid="classDali_1_1StringView_1addfb36111194195cca4617babe1b7f30" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>operator=</name></member>
+      <member refid="classDali_1_1StringView_1a5703a4a73a4e1d5472e14bc2baad8c92" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>operator==</name></member>
+      <member refid="classDali_1_1StringView_1a2c64363220955d40c4a3b41f56c20ee3" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>operator==</name></member>
+      <member refid="classDali_1_1StringView_1ad221d17eb277ad0d9eae00707018be8c" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>operator==</name></member>
+      <member refid="classDali_1_1StringView_1a4fc1f244189e2056e8bbb0b46a5eba7c" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>Size</name></member>
+      <member refid="classDali_1_1StringView_1ad388ca17ff2d5da25d9df9f1542a2a28" prot="private" virt="non-virtual"><scope>Dali::StringView</scope><name>StorageAlign</name></member>
+      <member refid="classDali_1_1StringView_1ab219db5f277a2ef0768da53077798159" prot="private" virt="non-virtual"><scope>Dali::StringView</scope><name>StorageSize</name></member>
+      <member refid="classDali_1_1StringView_1a4bed88f7509d0e1f5ed22ebc44ca86fb" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>StringView</name></member>
+      <member refid="classDali_1_1StringView_1adac073c52a1bf4711b7ecff615aa2186" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>StringView</name></member>
+      <member refid="classDali_1_1StringView_1a877d0b67921979c4315ab8800e186322" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>StringView</name></member>
+      <member refid="classDali_1_1StringView_1a2d8277b86a229f8b5d5b2a890d36dbbe" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>StringView</name></member>
+      <member refid="classDali_1_1StringView_1a2a65050be0bfb1b99e10f7637cd23321" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>StringView</name></member>
+      <member refid="classDali_1_1StringView_1a4b11e0270885b84dcfb828440f47a9d0" prot="public" virt="non-virtual"><scope>Dali::StringView</scope><name>~StringView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

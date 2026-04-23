@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structDali_1_1Detail_1_1ConvertibleHelper" kind="struct" language="C++" prot="public">
+    <compoundname>Dali::Detail::ConvertibleHelper</compoundname>
+    <includes refid="type-traits_8h" local="no">type-traits.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename To</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structDali_1_1Detail_1_1ConvertibleHelper_1a1bcfde715be2cc5dc5a51c869b7ea2dd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename From</type>
+          </param>
+        </templateparamlist>
+        <type>To</type>
+        <definition>static To Dali::Detail::ConvertibleHelper&lt; To &gt;::Test</definition>
+        <argsstring>(From from)</argsstring>
+        <name>Test</name>
+        <qualifiedname>Dali::Detail::ConvertibleHelper::Test</qualifiedname>
+        <param>
+          <type>From</type>
+          <declname>from</declname>
+        </param>
+        <briefdescription>
+<para>Test function that accepts a convertible type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If From is implicitly convertible to To, this function will be selected by overload resolution because it&apos;s a better match than the <ref refid="structDali_1_1Detail_1_1AnyType" kindref="compound">AnyType</ref> constructor.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>from</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source type to test </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A value of type To </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="191" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structDali_1_1Detail_1_1ConvertibleHelper_1a38fcf2426366a4a357c0d8f8382e966d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>static char Dali::Detail::ConvertibleHelper&lt; To &gt;::Test</definition>
+        <argsstring>(AnyType anyType)</argsstring>
+        <name>Test</name>
+        <qualifiedname>Dali::Detail::ConvertibleHelper::Test</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1Detail_1_1AnyType" kindref="compound">AnyType</ref></type>
+          <declname>anyType</declname>
+        </param>
+        <briefdescription>
+<para>Fallback test function for non-convertible types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If From cannot be implicitly converted to To, the first Test function fails SFINAE and this fallback is selected instead.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anyType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>that accepts any type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A char value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="202" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper struct to test convertibility. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains two test functions:<itemizedlist>
+<listitem><para><ref refid="structDali_1_1Detail_1_1ConvertibleHelper_1a1bcfde715be2cc5dc5a51c869b7ea2dd" kindref="member">Test(From)</ref>: Accepts the source type and returns the target type</para>
+</listitem><listitem><para><ref refid="structDali_1_1Detail_1_1ConvertibleHelper_1a38fcf2426366a4a357c0d8f8382e966d" kindref="member">Test(AnyType)</ref>: Accepts anything via the <ref refid="structDali_1_1Detail_1_1AnyType" kindref="compound">AnyType</ref> constructor and returns char</para>
+</listitem></itemizedlist>
+</para>
+<para>The compiler will select the best match based on overload resolution, which allows us to detect implicit convertibility. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="179" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="180" bodyend="203"/>
+    <listofallmembers>
+      <member refid="structDali_1_1Detail_1_1ConvertibleHelper_1a1bcfde715be2cc5dc5a51c869b7ea2dd" prot="public" virt="non-virtual"><scope>Dali::Detail::ConvertibleHelper</scope><name>Test</name></member>
+      <member refid="structDali_1_1Detail_1_1ConvertibleHelper_1a38fcf2426366a4a357c0d8f8382e966d" prot="public" virt="non-virtual"><scope>Dali::Detail::ConvertibleHelper</scope><name>Test</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

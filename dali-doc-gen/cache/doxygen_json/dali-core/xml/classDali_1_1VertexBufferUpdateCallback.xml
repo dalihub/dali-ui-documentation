@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1VertexBufferUpdateCallback" kind="class" language="C++" prot="public">
+    <compoundname>Dali::VertexBufferUpdateCallback</compoundname>
+    <includes refid="vertex-buffer-update-callback_8h" local="no">vertex-buffer-update-callback.h</includes>
+    <innerclass refid="structDali_1_1VertexBufferUpdateCallback_1_1Impl" prot="public">Dali::VertexBufferUpdateCallback::Impl</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1VertexBufferUpdateCallback_1a84dfffa47dc9ddfd2597fa34a77486b5" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>uint32_t(T::*)(void *, size_t)</type>
+        <definition>using Dali::VertexBufferUpdateCallback::FuncType =  uint32_t (T::*)(void*, size_t)</definition>
+        <argsstring></argsstring>
+        <name>FuncType</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::FuncType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Callback" kindref="compound">Callback</ref> functor signature: </para>
+        </briefdescription>
+        <detaileddescription>
+<para>uint32_t T::*(void* pointer, size_t dataSizeInBytes) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="58" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1VertexBufferUpdateCallback_1ab1371dde8bd253403dd24e85d27cc7dd" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="structDali_1_1VertexBufferUpdateCallback_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>UniquePtr&lt;Impl&gt; Dali::VertexBufferUpdateCallback::mImpl</definition>
+        <argsstring></argsstring>
+        <name>mImpl</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::mImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="90" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1VertexBufferUpdateCallback_1a5b007b5451bdc0368a2b6a72efdf26a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::VertexBufferUpdateCallback::~VertexBufferUpdateCallback</definition>
+        <argsstring>()</argsstring>
+        <name>~VertexBufferUpdateCallback</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::~VertexBufferUpdateCallback</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="50" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VertexBufferUpdateCallback_1aaed662bf9585eacf9e56eeb2735e3518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::VertexBufferUpdateCallback::Invoke</definition>
+        <argsstring>(void *data, size_t size)</argsstring>
+        <name>Invoke</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::Invoke</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Invokes callback directly. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to write into </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of region in bytes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of bytes written </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="83" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/vertex-buffer.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1VertexBufferUpdateCallback_1a55a3816d5a08c715632ae4c286e8a6e4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="classDali_1_1VertexBufferUpdateCallback" kindref="compound">VertexBufferUpdateCallback</ref> &gt;</type>
+        <definition>static UniquePtr&lt; VertexBufferUpdateCallback &gt; Dali::VertexBufferUpdateCallback::New</definition>
+        <argsstring>(T *object, FuncType&lt; T &gt; functor)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::New</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1VertexBufferUpdateCallback_1a84dfffa47dc9ddfd2597fa34a77486b5" kindref="member">FuncType</ref>&lt; T &gt;</type>
+          <declname>functor</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new instance of <ref refid="classDali_1_1VertexBufferUpdateCallback" kindref="compound">VertexBufferUpdateCallback</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>class the functor is a member of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object associated with callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">functor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function to be executed</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns valid <ref refid="classDali_1_1VertexBufferUpdateCallback" kindref="compound">VertexBufferUpdateCallback</ref> object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="70" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" bodystart="70" bodyend="74"/>
+        <references refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" compoundref="callback_8h" startline="1324" endline="1327">Dali::MakeCallback</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classDali_1_1VertexBufferUpdateCallback_1aa5ea2b9673fe05a6dca56824a4599d9c" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="classDali_1_1VertexBufferUpdateCallback" kindref="compound">VertexBufferUpdateCallback</ref> &gt;</type>
+        <definition>UniquePtr&lt; VertexBufferUpdateCallback &gt; Dali::VertexBufferUpdateCallback::New</definition>
+        <argsstring>(CallbackBase *callbackBase)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callbackBase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="86" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/vertex-buffer.cpp" bodystart="44" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1VertexBufferUpdateCallback_1a751c15da14a3caa07f8502b5ad288e77" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::VertexBufferUpdateCallback::VertexBufferUpdateCallback</definition>
+        <argsstring>(UniquePtr&lt; VertexBufferUpdateCallback::Impl &gt; &amp;&amp;impl)</argsstring>
+        <name>VertexBufferUpdateCallback</name>
+        <qualifiedname>Dali::VertexBufferUpdateCallback::VertexBufferUpdateCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="structDali_1_1VertexBufferUpdateCallback_1_1Impl" kindref="compound">VertexBufferUpdateCallback::Impl</ref> &gt; &amp;&amp;</type>
+          <declname>impl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="89" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/vertex-buffer.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The class defines a callback that <ref refid="classDali_1_1VertexBuffer" kindref="compound">VertexBuffer</ref> object may call to obtain new data. The callback runs before draw call is issued and it will run on update/render thread (developers must synchronize explicitly).</para>
+<para><ref refid="classDali_1_1Callback" kindref="compound">Callback</ref> returns number of bytes written. This will limit next draw call to number of elements that have been written by the callback.</para>
+<para>Using callback invalidates current vertex buffer data. Unchanged data stays undefined. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" line="44" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/vertex-buffer-update-callback.h" bodystart="45" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1a84dfffa47dc9ddfd2597fa34a77486b5" prot="public" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>FuncType</name></member>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1aaed662bf9585eacf9e56eeb2735e3518" prot="public" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>Invoke</name></member>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1ab1371dde8bd253403dd24e85d27cc7dd" prot="private" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>mImpl</name></member>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1a55a3816d5a08c715632ae4c286e8a6e4" prot="public" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>New</name></member>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1aa5ea2b9673fe05a6dca56824a4599d9c" prot="private" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>New</name></member>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1a751c15da14a3caa07f8502b5ad288e77" prot="private" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>VertexBufferUpdateCallback</name></member>
+      <member refid="classDali_1_1VertexBufferUpdateCallback_1a5b007b5451bdc0368a2b6a72efdf26a2" prot="public" virt="non-virtual"><scope>Dali::VertexBufferUpdateCallback</scope><name>~VertexBufferUpdateCallback</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

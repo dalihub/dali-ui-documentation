@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property" kind="namespace" language="C++">
+    <compoundname>Dali::Ui::MeshVisual::Property</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>Dali::Ui::MeshVisual::Property</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079a794d2233fe72af7f6165b0fdd54165b9" prot="public">
+          <name>OBJECT_URL</name>
+          <initializer>= VISUAL_PROPERTY_START_INDEX</initializer>
+          <briefdescription>
+<para>The location of the &quot;.obj&quot; file. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;objectUrl&quot;, type Property::STRING. <simplesect kind="note"><para>Mandatory. </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079a0eb72fdd90e46dd3220da408cb45196e" prot="public">
+          <name>MATERIAL_URL</name>
+          <briefdescription>
+<para>The location of the &quot;.mtl&quot; file. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;materialUrl&quot;, type Property::STRING. <simplesect kind="note"><para>Optional. If not specified, then a textureless object is assumed. </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079aabccbf6f39fb153584ad69caa779a2a8" prot="public">
+          <name>TEXTURES_PATH</name>
+          <briefdescription>
+<para>Path to the directory the textures (including gloss and normal) are stored in. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;texturesPath&quot;, type Property::STRING. <simplesect kind="note"><para>Mandatory if using material. </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079a5ee3c09d84aa09cfa68b43bd4c983bfd" prot="public">
+          <name>SHADING_MODE</name>
+          <briefdescription>
+<para>Sets the type of shading mode that the mesh will use. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;shadingMode&quot;, type <ref refid="namespaceDali_1_1Ui_1_1MeshVisual_1_1ShadingMode_1a14bf03a9631186041a293d9c9ff3de46" kindref="member">ShadingMode::Value</ref> (Property::INTEGER) or Property::STRING. If anything the specified shading mode requires is missing, a simpler mode that can be handled with what has been supplied will be used instead. <simplesect kind="note"><para>Optional. If not specified, it will use the best it can support (will try <ref refid="namespaceDali_1_1Ui_1_1MeshVisual_1_1ShadingMode_1a14bf03a9631186041a293d9c9ff3de46ae17381cfe0592a6adf22aebe851ae948" kindref="member">ShadingMode::TEXTURED_WITH_DETAILED_SPECULAR_LIGHTING</ref> first). </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Ui_1_1MeshVisual_1_1ShadingMode_1a14bf03a9631186041a293d9c9ff3de46" kindref="member">ShadingMode::Value</ref> </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079a5196372e8130a8de2036b94e7adc5648" prot="public">
+          <name>USE_MIPMAPPING</name>
+          <briefdescription>
+<para>Whether to use mipmaps for textures or not. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;useMipmapping&quot;, type Property::BOOLEAN. <simplesect kind="note"><para>Optional. If not specified, the default is true. </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079aa2cd92bf30027d509a6b5a533806e4e6" prot="public">
+          <name>USE_SOFT_NORMALS</name>
+          <briefdescription>
+<para>Whether to average normals at each point to smooth textures or not. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;useSoftNormals&quot;, type Property::BOOLEAN. <simplesect kind="note"><para>Optional. If not specified, the default is true. </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property_1a2e2353ee81cb649ac96451914b552079a5bbac4c89dd811d0dff05fe465549269" prot="public">
+          <name>LIGHT_POSITION</name>
+          <briefdescription>
+<para>The position, in stage space, of the point light that applies lighting to the model. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;lightPosition&quot;, type Property::VECTOR3. This is based off the stage&apos;s dimensions, so using the width and height of the stage halved will correspond to the center, and using all zeroes will place the light at the top left corner. <simplesect kind="note"><para>Optional. If not specified, the default is an offset outwards from the center of the screen. </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the instance of properties belonging to the <ref refid="namespaceDali_1_1Ui_1_1MeshVisual" kindref="compound">MeshVisual</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/visuals/mesh-visual-properties.h" line="46" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/visuals/mesh-visual-properties.h" bodystart="47" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="namespaceDali_1_1Ui_1_1MeshVisual" kindref="compound">MeshVisual</ref> <ref refid="namespaceDali_1_1Ui_1_1MeshVisual_1_1Property" kindref="compound">Property</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/visuals/mesh-visual-properties.h" line="41" column="1"/>
+  </compounddef>
+</doxygen>

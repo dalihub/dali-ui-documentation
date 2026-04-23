@@ -1,0 +1,699 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1SharedPtr" kind="class" language="C++" prot="public">
+    <compoundname>Dali::SharedPtr</compoundname>
+    <includes refid="shared-ptr_8h" local="no">shared-ptr.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classDali_1_1SharedPtr_1adf66bfb5d9f0f374ec092232e6b43eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename</type>
+          </param>
+        </templateparamlist>
+        <type>class</type>
+        <definition>friend class SharedPtr</definition>
+        <argsstring></argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="44" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1SharedPtr_1ab4cde8b1826444fc7a902e7c3b3e7b5b" prot="private" static="no" mutable="no">
+        <type>Type *</type>
+        <definition>Type* Dali::SharedPtr&lt; Type &gt;::mPtr</definition>
+        <argsstring></argsstring>
+        <name>mPtr</name>
+        <qualifiedname>Dali::SharedPtr::mPtr</qualifiedname>
+        <briefdescription>
+<para>Pointer to the managed object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="346" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1SharedPtr_1a000c00fc072235131c2f49f21e8f10ee" prot="private" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* Dali::SharedPtr&lt; Type &gt;::mRefCount</definition>
+        <argsstring></argsstring>
+        <name>mRefCount</name>
+        <qualifiedname>Dali::SharedPtr::mRefCount</qualifiedname>
+        <briefdescription>
+<para>Pointer to the reference counter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="347" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a8cfa32b53531c3d2cbcbd5f56f30951f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::SharedPtr</definition>
+        <argsstring>()</argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <briefdescription>
+<para>Default constructor. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="50" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1af4221a7347e576b11515e865e8f004e6" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::SharedPtr</definition>
+        <argsstring>(Type *ptr)</argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <param>
+          <type>Type *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Constructor that manages the given pointer. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Raw pointer to take ownership of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="61" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="61" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a23eb2c189c6b95338003d669ed5c4cfe" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::SharedPtr</definition>
+        <argsstring>(const SharedPtr &amp;other) noexcept</argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be copied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="72" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="72" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a893af84c8139e80b5d6d813b101f8309" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::SharedPtr</definition>
+        <argsstring>(SharedPtr &amp;&amp;other) noexcept</argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be moved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="87" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="87" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1aa87520d2403adc2fe1d2476b09441673" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::~SharedPtr</definition>
+        <argsstring>()</argsstring>
+        <name>~SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::~SharedPtr</qualifiedname>
+        <briefdescription>
+<para>Destructor. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="99" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a23ccb85409b86124d03b800a23de14c7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+        <definition>SharedPtr &amp; Dali::SharedPtr&lt; Type &gt;::operator=</definition>
+        <argsstring>(const SharedPtr &amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::SharedPtr::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy assignment operator. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be copied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="109" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="109" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1ab0a72d11c475547f916859b0cf84c797" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+        <definition>SharedPtr &amp; Dali::SharedPtr&lt; Type &gt;::operator=</definition>
+        <argsstring>(SharedPtr &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::SharedPtr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be moved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="129" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="129" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a00b44992cad21742e78d82407dca67a5" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename <ref refid="structDali_1_1EnableIf" kindref="compound">EnableIf</ref>&lt;<ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;U*, Type*&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::SharedPtr</definition>
+        <argsstring>(const SharedPtr&lt; U &gt; &amp;other) noexcept</argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref>&lt; U &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Converting copy constructor from derived type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a SharedPtr&lt;Base&gt; from a SharedPtr&lt;Derived&gt;.</para>
+<para>@SINCE_2_5.16 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Enabled only if U* is convertible to Type* </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="153" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="153" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a23b8f6df193c3b4341bf9941db23739e" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename <ref refid="structDali_1_1EnableIf" kindref="compound">EnableIf</ref>&lt;<ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;U*, Type*&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::SharedPtr</definition>
+        <argsstring>(SharedPtr&lt; U &gt; &amp;&amp;other) noexcept</argsstring>
+        <name>SharedPtr</name>
+        <qualifiedname>Dali::SharedPtr::SharedPtr</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref>&lt; U &gt; &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Converting move constructor from derived type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a SharedPtr&lt;Base&gt; from a SharedPtr&lt;Derived&gt;.</para>
+<para>@SINCE_2_5.16 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Enabled only if U* is convertible to Type* </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="174" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="174" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a5e05d5d9251a130d5f878636ea662340" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename <ref refid="structDali_1_1EnableIf" kindref="compound">EnableIf</ref>&lt;<ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;U*, Type*&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+        <definition>SharedPtr &amp; Dali::SharedPtr&lt; Type &gt;::operator=</definition>
+        <argsstring>(const SharedPtr&lt; U &gt; &amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::SharedPtr::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref>&lt; U &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Converting copy assignment operator from derived type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assigns a SharedPtr&lt;Base&gt; from a SharedPtr&lt;Derived&gt;.</para>
+<para>@SINCE_2_5.16 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this object </para>
+</simplesect>
+<simplesect kind="note"><para>Enabled only if U* is convertible to Type* </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="194" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="194" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a8333e899aec4aa80e5cc0a844ab91e1d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename <ref refid="structDali_1_1EnableIf" kindref="compound">EnableIf</ref>&lt;<ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;U*, Type*&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+        <definition>SharedPtr &amp; Dali::SharedPtr&lt; Type &gt;::operator=</definition>
+        <argsstring>(SharedPtr&lt; U &gt; &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::SharedPtr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref>&lt; U &gt; &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Converting move assignment operator from derived type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assigns a SharedPtr&lt;Base&gt; from a SharedPtr&lt;Derived&gt;.</para>
+<para>@SINCE_2_5.11 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this object </para>
+</simplesect>
+<simplesect kind="note"><para>Enabled only if U* is convertible to Type* </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="218" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="218" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1adfbe9aa59117837aca59a92c0378a027" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type &amp;</type>
+        <definition>Type &amp; Dali::SharedPtr&lt; Type &gt;::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Dali::SharedPtr::operator*</qualifiedname>
+        <briefdescription>
+<para>Overloaded dereference operator. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="233" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1aa06dac0b7bf6e9991231ae7cc771eaba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Type &amp;</type>
+        <definition>const Type &amp; Dali::SharedPtr&lt; Type &gt;::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Dali::SharedPtr::operator*</qualifiedname>
+        <briefdescription>
+<para>Overloaded const dereference operator. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="243" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="243" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a8a06493473833f69a75f7244ead2fd01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type *</type>
+        <definition>Type * Dali::SharedPtr&lt; Type &gt;::operator-&gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>Dali::SharedPtr::operator-&gt;</qualifiedname>
+        <briefdescription>
+<para>Overloaded pointer operator. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="253" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="253" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a42619f416bf33bcae78eefd860559b44" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Type *</type>
+        <definition>const Type * Dali::SharedPtr&lt; Type &gt;::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>Dali::SharedPtr::operator-&gt;</qualifiedname>
+        <briefdescription>
+<para>Overloaded pointer to const operator. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to a const object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="263" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="263" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1ab783025b4e2dbbcb2e85c6e026645811" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::SharedPtr&lt; Type &gt;::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>Dali::SharedPtr::operator bool</qualifiedname>
+        <briefdescription>
+<para>Explicit conversion to bool. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="272" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="272" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1ac03bd639918e05bde7c70ac40b8ca958" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type *</type>
+        <definition>Type * Dali::SharedPtr&lt; Type &gt;::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::SharedPtr::Get</qualifiedname>
+        <briefdescription>
+<para>Get the raw pointer to the managed object. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The raw pointer to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="282" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="282" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1af1df459f74dbc7afbe3353287f384a91" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Type *</type>
+        <definition>const Type * Dali::SharedPtr&lt; Type &gt;::Get</definition>
+        <argsstring>() const</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::SharedPtr::Get</qualifiedname>
+        <briefdescription>
+<para>Get the raw pointer to const object. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The raw pointer to the const object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="292" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="292" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a7f704732c4251aeabd3984508b4c2e43" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::SharedPtr&lt; Type &gt;::UseCount</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>UseCount</name>
+        <qualifiedname>Dali::SharedPtr::UseCount</qualifiedname>
+        <briefdescription>
+<para>Get the number of <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> objects referring to the same managed object. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The use count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="302" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="302" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1ae179a1aa1cfc4470b9efee4547f85566" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::SharedPtr&lt; Type &gt;::Reset</definition>
+        <argsstring>(Type *ptr=nullptr) noexcept</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Dali::SharedPtr::Reset</qualifiedname>
+        <param>
+          <type>Type *</type>
+          <declname>ptr</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Reset the managed object. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to take ownership of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="312" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="312" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1a936117ecdfc2c49b2e6c436c681246bb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::SharedPtr&lt; Type &gt;::Swap</definition>
+        <argsstring>(SharedPtr &amp;other) noexcept</argsstring>
+        <name>Swap</name>
+        <qualifiedname>Dali::SharedPtr::Swap</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Swap two <ref refid="classDali_1_1SharedPtr" kindref="compound">SharedPtr</ref> instances. @SINCE_2_5.16. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="333" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="333" bodyend="343"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1SharedPtr_1af55269e129f74aa8822daf2668d54845" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::SharedPtr&lt; Type &gt;::ResetInternal</definition>
+        <argsstring>()</argsstring>
+        <name>ResetInternal</name>
+        <qualifiedname>Dali::SharedPtr::ResetInternal</qualifiedname>
+        <briefdescription>
+<para>Helper function to reset the internal state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="350" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="350" bodyend="362"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Templated shared pointer class with a default deleter. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>@SINCE_2_5.16 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the pointer stored </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" line="39" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/shared-ptr.h" bodystart="40" bodyend="363"/>
+    <listofallmembers>
+      <member refid="classDali_1_1SharedPtr_1ac03bd639918e05bde7c70ac40b8ca958" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>Get</name></member>
+      <member refid="classDali_1_1SharedPtr_1af1df459f74dbc7afbe3353287f384a91" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>Get</name></member>
+      <member refid="classDali_1_1SharedPtr_1ab4cde8b1826444fc7a902e7c3b3e7b5b" prot="private" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>mPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a000c00fc072235131c2f49f21e8f10ee" prot="private" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>mRefCount</name></member>
+      <member refid="classDali_1_1SharedPtr_1ab783025b4e2dbbcb2e85c6e026645811" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1SharedPtr_1adfbe9aa59117837aca59a92c0378a027" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator*</name></member>
+      <member refid="classDali_1_1SharedPtr_1aa06dac0b7bf6e9991231ae7cc771eaba" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator*</name></member>
+      <member refid="classDali_1_1SharedPtr_1a8a06493473833f69a75f7244ead2fd01" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator-&gt;</name></member>
+      <member refid="classDali_1_1SharedPtr_1a42619f416bf33bcae78eefd860559b44" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator-&gt;</name></member>
+      <member refid="classDali_1_1SharedPtr_1a23ccb85409b86124d03b800a23de14c7" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1SharedPtr_1ab0a72d11c475547f916859b0cf84c797" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1SharedPtr_1a5e05d5d9251a130d5f878636ea662340" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1SharedPtr_1a8333e899aec4aa80e5cc0a844ab91e1d" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1SharedPtr_1ae179a1aa1cfc4470b9efee4547f85566" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>Reset</name></member>
+      <member refid="classDali_1_1SharedPtr_1af55269e129f74aa8822daf2668d54845" prot="private" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>ResetInternal</name></member>
+      <member refid="classDali_1_1SharedPtr_1adf66bfb5d9f0f374ec092232e6b43eb3" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a8cfa32b53531c3d2cbcbd5f56f30951f" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1af4221a7347e576b11515e865e8f004e6" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a23eb2c189c6b95338003d669ed5c4cfe" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a893af84c8139e80b5d6d813b101f8309" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a00b44992cad21742e78d82407dca67a5" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a23b8f6df193c3b4341bf9941db23739e" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>SharedPtr</name></member>
+      <member refid="classDali_1_1SharedPtr_1a936117ecdfc2c49b2e6c436c681246bb" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>Swap</name></member>
+      <member refid="classDali_1_1SharedPtr_1a7f704732c4251aeabd3984508b4c2e43" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>UseCount</name></member>
+      <member refid="classDali_1_1SharedPtr_1aa87520d2403adc2fe1d2476b09441673" prot="public" virt="non-virtual"><scope>Dali::SharedPtr</scope><name>~SharedPtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

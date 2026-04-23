@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="asset-manager_8cpp" kind="file" language="C++">
+    <compoundname>asset-manager.cpp</compoundname>
+    <includes refid="asset-manager_8h" local="no">dali-ui-foundation/devel-api/asset-manager/asset-manager.h</includes>
+    <includes local="no">dali/devel-api/adaptor-framework/environment-variable.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/asset-manager/asset-manager.cpp</label>
+        <link refid="asset-manager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/devel-api/asset-manager/asset-manager.h</label>
+        <link refid="asset-manager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/devel-api/adaptor-framework/environment-variable.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" prot="public" static="no">
+        <name>TOKEN_STRING</name>
+        <param><defname>x</defname></param>
+        <initializer>#x</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/asset-manager/asset-manager.cpp" line="26" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/asset-manager/asset-manager.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="asset-manager_8h" kindref="compound">dali-ui-foundation/devel-api/asset-manager/asset-manager.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/devel-api/adaptor-framework/environment-variable.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TOKEN_STRING(x)<sp/>#x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>unnamed<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34" refid="classDali_1_1Ui_1_1AssetManager_1ad6a05837cac43aaf75c9d8091b0f217b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1Ui_1_1AssetManager_1ad6a05837cac43aaf75c9d8091b0f217b" kindref="member">AssetManager::GetDaliImagePath</ref>()</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>==<sp/>DALI_IMAGE_DIR)<sp/>?<sp/>EnvironmentVariable::GetEnvironmentVariable(<ref refid="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(DALI_IMAGE_DIR))</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>DALI_IMAGE_DIR;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classDali_1_1Ui_1_1AssetManager_1aa4a39e1da2daa76869e539aa9c97aa27" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1Ui_1_1AssetManager_1aa4a39e1da2daa76869e539aa9c97aa27" kindref="member">AssetManager::GetDaliSoundPath</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>==<sp/>DALI_SOUND_DIR)<sp/>?<sp/>EnvironmentVariable::GetEnvironmentVariable(<ref refid="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(DALI_SOUND_DIR))</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>DALI_SOUND_DIR;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1Ui_1_1AssetManager_1a040d6027ff6dc3a8b0a06e0be8a555cb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1Ui_1_1AssetManager_1a040d6027ff6dc3a8b0a06e0be8a555cb" kindref="member">AssetManager::GetDaliStylePath</ref>()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>==<sp/>DALI_STYLE_DIR)<sp/>?<sp/>EnvironmentVariable::GetEnvironmentVariable(<ref refid="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(DALI_STYLE_DIR))</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>DALI_STYLE_DIR;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classDali_1_1Ui_1_1AssetManager_1a57e1a1be0022351065005790a2f18e43" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1Ui_1_1AssetManager_1a57e1a1be0022351065005790a2f18e43" kindref="member">AssetManager::GetDaliStyleImagePath</ref>()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>==<sp/>DALI_STYLE_IMAGE_DIR)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>EnvironmentVariable::GetEnvironmentVariable(<ref refid="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(DALI_STYLE_IMAGE_DIR))</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>DALI_STYLE_IMAGE_DIR;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classDali_1_1Ui_1_1AssetManager_1adb1c40f8a88a17ad26bf0d7f90668336" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1Ui_1_1AssetManager_1adb1c40f8a88a17ad26bf0d7f90668336" kindref="member">AssetManager::GetDaliDataReadOnlyPath</ref>()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>==<sp/>DALI_DATA_READ_ONLY_DIR)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>EnvironmentVariable::GetEnvironmentVariable(<ref refid="asset-manager_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(DALI_DATA_READ_ONLY_DIR))</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>DALI_DATA_READ_ONLY_DIR;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/asset-manager/asset-manager.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Ui_1_1ThemeLoaderInterface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Ui::ThemeLoaderInterface</compoundname>
+    <derivedcompoundref refid="classDali_1_1Ui_1_1Integration_1_1DefaultThemeLoader" prot="public" virt="non-virtual">Dali::Ui::Integration::DefaultThemeLoader</derivedcompoundref>
+    <includes refid="theme-loader-interface_8h" local="no">theme-loader-interface.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1a2293d3ef969d5673924e6010509b0681" prot="public" static="no">
+        <type>Signal&lt; void()&gt;</type>
+        <definition>using Dali::Ui::ThemeLoaderInterface::ThemeChangedSignalType =  Signal&lt;void()&gt;</definition>
+        <argsstring></argsstring>
+        <name>ThemeChangedSignalType</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::ThemeChangedSignalType</qualifiedname>
+        <briefdescription>
+<para>Signal type emitted when the current theme changes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="49" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1a268926573ddb0c479fbab686335d73c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::Ui::ThemeLoaderInterface::~ThemeLoaderInterface</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ThemeLoaderInterface</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::~ThemeLoaderInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="51" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1a22f9970931842725bd2155886568eef8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Ui::ThemeLoaderInterface::GetColor</definition>
+        <argsstring>(StringView colorId, Vector4 &amp;outColor)=0</argsstring>
+        <name>GetColor</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::GetColor</qualifiedname>
+        <reimplementedby refid="classDali_1_1Ui_1_1Integration_1_1DefaultThemeLoader_1a73774d7b84e19c91e62674b5920eeb29">GetColor</reimplementedby>
+        <param>
+          <type>StringView</type>
+          <declname>colorId</declname>
+        </param>
+        <param>
+          <type>Vector4 &amp;</type>
+          <declname>outColor</declname>
+        </param>
+        <briefdescription>
+<para>Looks up a color by its identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">colorId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color identifier (e.g. &quot;Primary&quot;, &quot;Background&quot;) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">outColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resolved RGBA value if found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the color was found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="60" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1a2c02eb721fec5d4ea0c3adf21a43cc5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>String</type>
+        <definition>virtual String Dali::Ui::ThemeLoaderInterface::GetCurrentThemeId</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCurrentThemeId</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::GetCurrentThemeId</qualifiedname>
+        <reimplementedby refid="classDali_1_1Ui_1_1Integration_1_1DefaultThemeLoader_1a7c621ee877623a6814e0e1fd8e869503">GetCurrentThemeId</reimplementedby>
+        <briefdescription>
+<para>Returns the identifier of the current theme. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The theme identifier, or an empty string if none </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="67" column="18"/>
+        <referencedby refid="classDali_1_1Ui_1_1Integration_1_1UiThemeManagerImpl_1a4887f408c0e9f2419645531dda4da23a" compoundref="ui-theme-manager-impl_8cpp" startline="120" endline="127">Dali::Ui::Integration::UiThemeManagerImpl::GetCurrentThemeId</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1ac6757705c9aa5da2594f1efd7f2c5dd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a2293d3ef969d5673924e6010509b0681" kindref="member">ThemeChangedSignalType</ref> &amp;</type>
+        <definition>virtual ThemeChangedSignalType &amp; Dali::Ui::ThemeLoaderInterface::ThemeChangedSignal</definition>
+        <argsstring>()=0</argsstring>
+        <name>ThemeChangedSignal</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::ThemeChangedSignal</qualifiedname>
+        <reimplementedby refid="classDali_1_1Ui_1_1Integration_1_1DefaultThemeLoader_1a3d95b96fd6500ee483d2f1f8e01cc2aa">ThemeChangedSignal</reimplementedby>
+        <briefdescription>
+<para>Returns the signal emitted when the theme changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the theme-changed signal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="74" column="34"/>
+        <referencedby refid="classDali_1_1Ui_1_1Integration_1_1UiThemeManagerImpl_1aae7ba5eba1cad96052c1ba9bbe3418e4" compoundref="ui-theme-manager-impl_8cpp" startline="98" endline="112">Dali::Ui::Integration::UiThemeManagerImpl::EnsureThemeLoader</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1a42530d275efcf58c52bd7652b67fb928" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::ThemeLoaderInterface::ThemeLoaderInterface</definition>
+        <argsstring>()=default</argsstring>
+        <name>ThemeLoaderInterface</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::ThemeLoaderInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="77" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1a3dabc5b65244c4f700dbb476bd5b14c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::ThemeLoaderInterface::ThemeLoaderInterface</definition>
+        <argsstring>(const ThemeLoaderInterface &amp;)=delete</argsstring>
+        <name>ThemeLoaderInterface</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::ThemeLoaderInterface</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1ThemeLoaderInterface" kindref="compound">ThemeLoaderInterface</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="80" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1ThemeLoaderInterface_1acfade2b96a672b9092539048357833e0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1ThemeLoaderInterface" kindref="compound">ThemeLoaderInterface</ref> &amp;</type>
+        <definition>ThemeLoaderInterface &amp; Dali::Ui::ThemeLoaderInterface::operator=</definition>
+        <argsstring>(const ThemeLoaderInterface &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Ui::ThemeLoaderInterface::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1ThemeLoaderInterface" kindref="compound">ThemeLoaderInterface</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="81" column="24"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract interface for theme-based color loading. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Platform or derived config implementations implement this interface. A concrete instance is created via UiConfigImpl::CreateThemeLoader().</para>
+<para>The virtual method set is fixed for ABI stability. Future extensions should be added as non-virtual helper methods only. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Ui::Integration::DefaultThemeLoader</label>
+        <link refid="classDali_1_1Ui_1_1Integration_1_1DefaultThemeLoader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::ThemeLoaderInterface</label>
+        <link refid="classDali_1_1Ui_1_1ThemeLoaderInterface"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" line="43" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/theme-loader-interface.h" bodystart="44" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a22f9970931842725bd2155886568eef8" prot="public" virt="pure-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>GetColor</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a2c02eb721fec5d4ea0c3adf21a43cc5b" prot="public" virt="pure-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>GetCurrentThemeId</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1acfade2b96a672b9092539048357833e0" prot="private" virt="non-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1ac6757705c9aa5da2594f1efd7f2c5dd7" prot="public" virt="pure-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>ThemeChangedSignal</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a2293d3ef969d5673924e6010509b0681" prot="public" virt="non-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>ThemeChangedSignalType</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a42530d275efcf58c52bd7652b67fb928" prot="protected" virt="non-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>ThemeLoaderInterface</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a3dabc5b65244c4f700dbb476bd5b14c4" prot="private" virt="non-virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>ThemeLoaderInterface</name></member>
+      <member refid="classDali_1_1Ui_1_1ThemeLoaderInterface_1a268926573ddb0c479fbab686335d73c5" prot="public" virt="virtual"><scope>Dali::Ui::ThemeLoaderInterface</scope><name>~ThemeLoaderInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

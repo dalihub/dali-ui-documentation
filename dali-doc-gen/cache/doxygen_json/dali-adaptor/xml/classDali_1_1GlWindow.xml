@@ -1,0 +1,1331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1GlWindow" kind="class" language="C++" prot="public">
+    <compoundname>Dali::GlWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseHandle</basecompoundref>
+    <includes refid="gl-window_8h" local="no">gl-window.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1GlWindow_1a1b93cc4262731f7b750a96c8f30f771b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GlesVersion</name>
+        <qualifiedname>Dali::GlWindow::GlesVersion</qualifiedname>
+        <enumvalue id="classDali_1_1GlWindow_1a1b93cc4262731f7b750a96c8f30f771bab1cc65dd5a624d4541067ab1bc76166c" prot="public">
+          <name>VERSION_2_0</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>GLES version 2.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1GlWindow_1a1b93cc4262731f7b750a96c8f30f771ba1e2de59df9b515190b174c5acad8bbcf" prot="public">
+          <name>VERSION_3_0</name>
+          <briefdescription>
+<para>GLES version 3.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for GLES verion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This Enumeration is used the GLES version for EGL configuration. If the device can not support GLES version 3.0 over, the version will be chosen with GLES version 2.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="84" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670f" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>RenderingMode</name>
+        <qualifiedname>Dali::GlWindow::RenderingMode</qualifiedname>
+        <enumvalue id="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670fab1fa9dd3af034b3ef4291579aa673c07" prot="public">
+          <name>CONTINUOUS</name>
+          <briefdescription>
+<para>continuous mode </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670faf8b192d38bbbbb85ba880bd85e66a88e" prot="public">
+          <name>ON_DEMAND</name>
+          <briefdescription>
+<para>on demand by application </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for rendering mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This Enumeration is used to choose the rendering mode. It has two options. One of them is continuous mode. It is rendered continuously. The other is on demand mode. It is rendered by application. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="98" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1GlWindow_1aac0b9145691a61316a8ff200b7721090" prot="public" static="no">
+        <type>Uint16Pair</type>
+        <definition>using Dali::GlWindow::WindowSize =  Uint16Pair</definition>
+        <argsstring></argsstring>
+        <name>WindowSize</name>
+        <qualifiedname>Dali::GlWindow::WindowSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="66" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1GlWindow_1ae2fbc5031fba41ee579249b039da1460" prot="public" static="no">
+        <type>Signal&lt; void(const KeyEvent &amp;)&gt;</type>
+        <definition>typedef Signal&lt;void(const KeyEvent&amp;)&gt; Dali::GlWindow::KeyEventSignalType</definition>
+        <argsstring></argsstring>
+        <name>KeyEventSignalType</name>
+        <qualifiedname>Dali::GlWindow::KeyEventSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> Key Event signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="68" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1GlWindow_1ac7d540b68016adf0e955713467bdafdf" prot="public" static="no">
+        <type>Signal&lt; void(const TouchEvent &amp;)&gt;</type>
+        <definition>typedef Signal&lt;void(const TouchEvent&amp;)&gt; Dali::GlWindow::TouchEventSignalType</definition>
+        <argsstring></argsstring>
+        <name>TouchEventSignalType</name>
+        <qualifiedname>Dali::GlWindow::TouchEventSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> Touch Event signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="69" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1GlWindow_1a36ca1faa389d2a50b32264b7101fc64d" prot="public" static="no">
+        <type>Signal&lt; void(<ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>, bool)&gt;</type>
+        <definition>typedef Signal&lt;void(GlWindow, bool)&gt; Dali::GlWindow::FocusChangeSignalType</definition>
+        <argsstring></argsstring>
+        <name>FocusChangeSignalType</name>
+        <qualifiedname>Dali::GlWindow::FocusChangeSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> Focus signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="70" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1GlWindow_1afbd4c1ac6d0bda5ef1b289f791544f9c" prot="public" static="no">
+        <type>Signal&lt; void(<ref refid="classDali_1_1GlWindow_1aac0b9145691a61316a8ff200b7721090" kindref="member">WindowSize</ref>)&gt;</type>
+        <definition>typedef Signal&lt;void(WindowSize)&gt; Dali::GlWindow::ResizeSignalType</definition>
+        <argsstring></argsstring>
+        <name>ResizeSignalType</name>
+        <qualifiedname>Dali::GlWindow::ResizeSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> resize signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="71" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1GlWindow_1a7924c7f6b2500a0f478fa66303964212" prot="public" static="no">
+        <type>Signal&lt; void(<ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>, bool)&gt;</type>
+        <definition>typedef Signal&lt;void(GlWindow, bool)&gt; Dali::GlWindow::VisibilityChangedSignalType</definition>
+        <argsstring></argsstring>
+        <name>VisibilityChangedSignalType</name>
+        <qualifiedname>Dali::GlWindow::VisibilityChangedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> visibility change signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="72" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a3923d682b212746336250d3c8ef54156" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref></type>
+        <definition>GlWindow Dali::GlWindow::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::GlWindow::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A new <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>This creates an extra <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> in addition to the default main <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="110" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="84" bodyend="88"/>
+        <references refid="classDali_1_1GlWindow_1a3923d682b212746336250d3c8ef54156" compoundref="gl-window_8cpp" startline="84" endline="88">New</references>
+        <referencedby refid="classDali_1_1GlWindow_1a3923d682b212746336250d3c8ef54156" compoundref="gl-window_8cpp" startline="84" endline="88">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a46fdfe1ec60d30c37cbc727a902d8aed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref></type>
+        <definition>GlWindow Dali::GlWindow::New</definition>
+        <argsstring>(PositionSize positionSize, const std::string &amp;name, const std::string &amp;className, bool isTransparent=false)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::GlWindow::New</qualifiedname>
+        <param>
+          <type><ref refid="group__dali__adaptor__framework_1gaf7230637d9ef067424cef8f36354e3de" kindref="member">PositionSize</ref></type>
+          <declname>positionSize</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>className</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isTransparent</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">positionSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position and size of the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> title </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">className</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> class name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">isTransparent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> is transparent </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This creates an extra <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> in addition to the default main <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> </para>
+</simplesect>
+<simplesect kind="return"><para>A new <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="122" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="90" bodyend="102"/>
+        <references refid="namespaceDali_1_1Graphics_1aed95f07baa198f8cc4f3aa4339e0bd26" compoundref="graphics-backend_8cpp" startline="32" endline="35">Dali::Graphics::GetCurrentGraphicsBackend</references>
+        <references refid="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8a7e384ec7ebbb4403911770ab90cd91a1">Dali::Graphics::GLES</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1GlWindow_1aa430eb983a205771d848bfd347910a2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::GlWindow::GlWindow</definition>
+        <argsstring>()</argsstring>
+        <name>GlWindow</name>
+        <qualifiedname>Dali::GlWindow::GlWindow</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be initialized using Dali::Application::GetGlWindow() or <ref refid="classDali_1_1GlWindow_1a3923d682b212746336250d3c8ef54156" kindref="member">Dali::GlWindow::New()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="131" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a2eef3a38aa83f8c4195f6f53a1763504" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::GlWindow::~GlWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~GlWindow</name>
+        <qualifiedname>Dali::GlWindow::~GlWindow</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived Handle types must not contain data or virtual methods. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="139" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1ac16b0cc0a6e4069924b4cf1b9fdcaa6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::GlWindow::GlWindow</definition>
+        <argsstring>(const GlWindow &amp;handle)</argsstring>
+        <name>GlWindow</name>
+        <qualifiedname>Dali::GlWindow::GlWindow</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="146" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a96b89a0a54e56ff4c1367ce244dd1424" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> &amp;</type>
+        <definition>GlWindow &amp; Dali::GlWindow::operator=</definition>
+        <argsstring>(const GlWindow &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::GlWindow::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="154" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a15f1ff78fcfe6811862d01896722b813" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::GlWindow::GlWindow</definition>
+        <argsstring>(GlWindow &amp;&amp;rhs) noexcept</argsstring>
+        <name>GlWindow</name>
+        <qualifiedname>Dali::GlWindow::GlWindow</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="161" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1aeec26b04e6be5e8103861e3fac2153c7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> &amp;</type>
+        <definition>GlWindow &amp; Dali::GlWindow::operator=</definition>
+        <argsstring>(GlWindow &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::GlWindow::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="169" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a4d4388194edf3750ee8f5afccc702663" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetGraphicsConfig</definition>
+        <argsstring>(bool depth, bool stencil, int msaa, GlesVersion version)</argsstring>
+        <name>SetGraphicsConfig</name>
+        <qualifiedname>Dali::GlWindow::SetGraphicsConfig</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>stencil</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msaa</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1GlWindow_1a1b93cc4262731f7b750a96c8f30f771b" kindref="member">GlesVersion</ref></type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+<para>Sets graphics configuration for <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the flag of depth buffer. If true is set, 24bit depth buffer is enabled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stencil</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the flag of stencil. it true is set, 8bit stencil buffer is enabled. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">msaa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the bit of msaa. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the GLES version </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="180" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="116" bodyend="123"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a6713ac3767a0f7af8b59b1e05c41f098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::Raise</definition>
+        <argsstring>()</argsstring>
+        <name>Raise</name>
+        <qualifiedname>Dali::GlWindow::Raise</qualifiedname>
+        <briefdescription>
+<para>Raises <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> to the top of <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> stack. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="186" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="125" bodyend="132"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a906fc2b0c13e6ae385e349ce5502157a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::Lower</definition>
+        <argsstring>()</argsstring>
+        <name>Lower</name>
+        <qualifiedname>Dali::GlWindow::Lower</qualifiedname>
+        <briefdescription>
+<para>Lowers <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> to the bottom of <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> stack. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="192" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="134" bodyend="141"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a68bed425e8c019fe808ecb1e3fa9b6c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::Activate</definition>
+        <argsstring>()</argsstring>
+        <name>Activate</name>
+        <qualifiedname>Dali::GlWindow::Activate</qualifiedname>
+        <briefdescription>
+<para>Activates <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> to the top of <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> stack even it is iconified. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="198" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="143" bodyend="150"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a378bf198ba985c0bc7be64364c5459c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::Show</definition>
+        <argsstring>()</argsstring>
+        <name>Show</name>
+        <qualifiedname>Dali::GlWindow::Show</qualifiedname>
+        <briefdescription>
+<para>Shows the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> if it is hidden. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="204" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="152" bodyend="159"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a78e5b83efdf6917343dd11291946618f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::Hide</definition>
+        <argsstring>()</argsstring>
+        <name>Hide</name>
+        <qualifiedname>Dali::GlWindow::Hide</qualifiedname>
+        <briefdescription>
+<para>Hides the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> if it is showing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="210" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="161" bodyend="168"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a0d92368c4d989409b410a6fa940bbd7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetPositionSize</definition>
+        <argsstring>(PositionSize positionSize)</argsstring>
+        <name>SetPositionSize</name>
+        <qualifiedname>Dali::GlWindow::SetPositionSize</qualifiedname>
+        <param>
+          <type><ref refid="group__dali__adaptor__framework_1gaf7230637d9ef067424cef8f36354e3de" kindref="member">PositionSize</ref></type>
+          <declname>positionSize</declname>
+        </param>
+        <briefdescription>
+<para>Sets a position of the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">positionSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> position </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="217" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="236" bodyend="243"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a888410e0ef660c5b8bc49d20cb2acbc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__adaptor__framework_1gaf7230637d9ef067424cef8f36354e3de" kindref="member">PositionSize</ref></type>
+        <definition>PositionSize Dali::GlWindow::GetPositionSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPositionSize</name>
+        <qualifiedname>Dali::GlWindow::GetPositionSize</qualifiedname>
+        <briefdescription>
+<para>Gets a position of the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The position of the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="224" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="245" bodyend="249"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a2e4257ec4085226d565a8b00405492d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Dali::GlWindow::GetSupportedAuxiliaryHintCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSupportedAuxiliaryHintCount</name>
+        <qualifiedname>Dali::GlWindow::GetSupportedAuxiliaryHintCount</qualifiedname>
+        <briefdescription>
+<para>Gets the count of supported auxiliary hints of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of supported auxiliary hints.</para>
+</simplesect>
+<simplesect kind="note"><para>The window auxiliary hint is the value which is used to decide which actions should be made available to the user by the window manager. If you want to set specific hint to your window, then you should check whether it exists in the supported auxiliary hints. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="234" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="170" bodyend="174"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a78eb9541c855c8ebe55bd3784e8300b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::GlWindow::GetSupportedAuxiliaryHint</definition>
+        <argsstring>(unsigned int index) const</argsstring>
+        <name>GetSupportedAuxiliaryHint</name>
+        <qualifiedname>Dali::GlWindow::GetSupportedAuxiliaryHint</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the supported auxiliary hint string of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the supported auxiliary hint lists </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The auxiliary hint string of the index.</para>
+</simplesect>
+<simplesect kind="note"><para>The window auxiliary hint is the value which is used to decide which actions should be made available to the user by the window manager. If you want to set specific hint to your window, then you should check whether it exists in the supported auxiliary hints. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="245" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="176" bodyend="180"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a983198c2fedae10355621aedb25d52d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Dali::GlWindow::AddAuxiliaryHint</definition>
+        <argsstring>(const std::string &amp;hint, const std::string &amp;value)</argsstring>
+        <name>AddAuxiliaryHint</name>
+        <qualifiedname>Dali::GlWindow::AddAuxiliaryHint</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hint</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Creates an auxiliary hint of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">hint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The auxiliary hint string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The ID of created auxiliary hint, or <computeroutput>0</computeroutput> on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="254" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="182" bodyend="186"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a91548340e4da8c19c13ee6395d6ad009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::GlWindow::RemoveAuxiliaryHint</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>RemoveAuxiliaryHint</name>
+        <qualifiedname>Dali::GlWindow::RemoveAuxiliaryHint</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Removes an auxiliary hint of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the auxiliary hint. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if no error occurred, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="262" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="188" bodyend="192"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1ac20dac81ae03864e5f95f578c6319b9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::GlWindow::SetAuxiliaryHintValue</definition>
+        <argsstring>(unsigned int id, const std::string &amp;value)</argsstring>
+        <name>SetAuxiliaryHintValue</name>
+        <qualifiedname>Dali::GlWindow::SetAuxiliaryHintValue</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Changes a value of the auxiliary hint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The auxiliary hint ID. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value string to be set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if no error occurred, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="271" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="194" bodyend="198"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a18b73b7740ba437da2dea2a6c84f71be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::GlWindow::GetAuxiliaryHintValue</definition>
+        <argsstring>(unsigned int id) const</argsstring>
+        <name>GetAuxiliaryHintValue</name>
+        <qualifiedname>Dali::GlWindow::GetAuxiliaryHintValue</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Gets a value of the auxiliary hint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The auxiliary hint ID. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The string value of the auxiliary hint ID, or an empty string if none exists. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="279" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="200" bodyend="204"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1abe83fdf1f13972fd4f363f8bf6133169" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Dali::GlWindow::GetAuxiliaryHintId</definition>
+        <argsstring>(const std::string &amp;hint) const</argsstring>
+        <name>GetAuxiliaryHintId</name>
+        <qualifiedname>Dali::GlWindow::GetAuxiliaryHintId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hint</declname>
+        </param>
+        <briefdescription>
+<para>Gets a ID of the auxiliary hint string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">hint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The auxiliary hint string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The ID of the auxiliary hint string, or <computeroutput>0</computeroutput> if none exists. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="287" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="206" bodyend="210"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a1542e2a3369c8f4c92c164398b0312ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetInputRegion</definition>
+        <argsstring>(const Rect&lt; int &gt; &amp;inputRegion)</argsstring>
+        <name>SetInputRegion</name>
+        <qualifiedname>Dali::GlWindow::SetInputRegion</qualifiedname>
+        <param>
+          <type>const Rect&lt; int &gt; &amp;</type>
+          <declname>inputRegion</declname>
+        </param>
+        <briefdescription>
+<para>Sets a region to accept input events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">inputRegion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The region to accept input events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="294" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="212" bodyend="219"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a892fb0e6efecd972e32edfbdfc5c92ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetOpaqueState</definition>
+        <argsstring>(bool opaque)</argsstring>
+        <name>SetOpaqueState</name>
+        <qualifiedname>Dali::GlWindow::SetOpaqueState</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>opaque</declname>
+        </param>
+        <briefdescription>
+<para>Sets a transparent window&apos;s visual state to opaque. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a visual state of a transparent window is opaque, then the window manager could handle it as an opaque window when calculating visibility.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">opaque</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the window&apos;s visual state is opaque. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="remark"><para>This will have no effect on an opaque window. It doesn&apos;t change transparent window to opaque window but lets the window manager know the visual state of the window. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="305" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="221" bodyend="228"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a7bf9c56da20accdae89a18e4befd6fda" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::GlWindow::IsOpaqueState</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOpaqueState</name>
+        <qualifiedname>Dali::GlWindow::IsOpaqueState</qualifiedname>
+        <briefdescription>
+<para>Returns whether a transparent window&apos;s visual state is opaque or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the window&apos;s visual state is opaque, false otherwise. </para>
+</simplesect>
+<simplesect kind="remark"><para>The return value has no meaning on an opaque window. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="313" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="230" bodyend="234"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1ab0dab522d7559ba9211cac7b5c823b5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref></type>
+        <definition>WindowOrientation Dali::GlWindow::GetCurrentOrientation</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentOrientation</name>
+        <qualifiedname>Dali::GlWindow::GetCurrentOrientation</qualifiedname>
+        <briefdescription>
+<para>Gets current rotation angle of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> rotation angle if previously set, or none </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="320" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="251" bodyend="255"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+        <references refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6a7dbb530820039c270faf100d3f6ff027">Dali::PORTRAIT</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1af7a4f9f934dcce337da540ad646634d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetAvailableOrientations</definition>
+        <argsstring>(const Dali::Vector&lt; WindowOrientation &gt; &amp;orientations)</argsstring>
+        <name>SetAvailableOrientations</name>
+        <qualifiedname>Dali::GlWindow::SetAvailableOrientations</qualifiedname>
+        <param>
+          <type>const Dali::Vector&lt; <ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref> &gt; &amp;</type>
+          <declname>orientations</declname>
+        </param>
+        <briefdescription>
+<para>Sets available orientations of the window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This API is for setting several orientations one time.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">orientations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The available orientations list to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="329" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="257" bodyend="264"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a30d563087636ce42b3069389d4571dc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetPreferredOrientation</definition>
+        <argsstring>(WindowOrientation orientation)</argsstring>
+        <name>SetPreferredOrientation</name>
+        <qualifiedname>Dali::GlWindow::SetPreferredOrientation</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref></type>
+          <declname>orientation</declname>
+        </param>
+        <briefdescription>
+<para>Sets a preferred orientation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">orientation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preferred orientation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>angle is in the list of available orientation.</para>
+</simplesect>
+<simplesect kind="note"><para>To unset the preferred orientation, angle should be set NO_ORIENTATION_PREFERENCE. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="339" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="266" bodyend="273"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a4faae04198ac3692994072cdfa1b7849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::RegisterGlCallbacks</definition>
+        <argsstring>(CallbackBase *initCallback, CallbackBase *renderFrameCallback, CallbackBase *terminateCallback)</argsstring>
+        <name>RegisterGlCallbacks</name>
+        <qualifiedname>Dali::GlWindow::RegisterGlCallbacks</qualifiedname>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>initCallback</declname>
+        </param>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>renderFrameCallback</declname>
+        </param>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>terminateCallback</declname>
+        </param>
+        <briefdescription>
+<para>Registers a GL callback function for application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">initCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callback function for application initialize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">renderFrameCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callback function to render for the frame. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">terminateCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the callback function to clean-up application GL resource.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Function must be called on idle time</para>
+</simplesect>
+A initCallback of the following type should be used: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>intializeGL();</highlight></codeline>
+</programlisting> This callback will be called before renderFrame callback is called at once.</para>
+<para>A renderFrameCallback of the following type should be used: <programlisting><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>renderFrameGL();</highlight></codeline>
+</programlisting> This callback&apos;s return value is not 0, the eglSwapBuffers() will be called.</para>
+<para>A terminateCallback of the following type should be used: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>terminateGL();</highlight></codeline>
+</programlisting> This callback is called when <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> is deleted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="368" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="275" bodyend="282"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a32e2618c97a93757834e6a42e4935821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::RenderOnce</definition>
+        <argsstring>()</argsstring>
+        <name>RenderOnce</name>
+        <qualifiedname>Dali::GlWindow::RenderOnce</qualifiedname>
+        <briefdescription>
+<para>Renders once more even if GL render functions are not added to idler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Will not work if the window is hidden or GL render functions are added to idler </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="375" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="284" bodyend="291"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a3b6a99f3fc300dd60711724d2d0099db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::GlWindow::SetRenderingMode</definition>
+        <argsstring>(RenderingMode mode)</argsstring>
+        <name>SetRenderingMode</name>
+        <qualifiedname>Dali::GlWindow::SetRenderingMode</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670f" kindref="member">RenderingMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Sets rendering mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the rendering mode for <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The default Rendering mode is continuous. If OnDemand mode is set, it is rendered by <ref refid="classDali_1_1GlWindow_1a32e2618c97a93757834e6a42e4935821" kindref="member">RenderOnce()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="385" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="293" bodyend="300"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a7741e59a90474adbcc881f54bb706f2a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670f" kindref="member">RenderingMode</ref></type>
+        <definition>GlWindow::RenderingMode Dali::GlWindow::GetRenderingMode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRenderingMode</name>
+        <qualifiedname>Dali::GlWindow::GetRenderingMode</qualifiedname>
+        <briefdescription>
+<para>Gets rendering mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>current rendering mode in this <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref></para>
+</simplesect>
+<simplesect kind="note"><para>The default Rendering mode is continuous. If OnDemand mode is set, it is rendered by <ref refid="classDali_1_1GlWindow_1a32e2618c97a93757834e6a42e4935821" kindref="member">RenderOnce()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="395" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="302" bodyend="306"/>
+        <references refid="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670fab1fa9dd3af034b3ef4291579aa673c07">CONTINUOUS</references>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1abd0410c022aba6a02f939c11acce14a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow_1a36ca1faa389d2a50b32264b7101fc64d" kindref="member">FocusChangeSignalType</ref> &amp;</type>
+        <definition>GlWindow::FocusChangeSignalType &amp; Dali::GlWindow::FocusChangeSignal</definition>
+        <argsstring>()</argsstring>
+        <name>FocusChangeSignal</name>
+        <qualifiedname>Dali::GlWindow::FocusChangeSignal</qualifiedname>
+        <briefdescription>
+<para>The user should connect to this signal to get a timing when <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> gains focus or loses focus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1GlWindow_1aa430eb983a205771d848bfd347910a2d" kindref="member">GlWindow</ref><sp/><ref refid="classDali_1_1GlWindow_1aa430eb983a205771d848bfd347910a2d" kindref="member">GlWindow</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>focusIn<sp/>);</highlight></codeline>
+</programlisting> The parameter is true if <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> gains focus, otherwise false. and <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> means this signal was called from what <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref></para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="410" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="308" bodyend="316"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a7e4cf5576cc478e23fcf2887813520fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow_1afbd4c1ac6d0bda5ef1b289f791544f9c" kindref="member">ResizeSignalType</ref> &amp;</type>
+        <definition>GlWindow::ResizeSignalType &amp; Dali::GlWindow::ResizeSignal</definition>
+        <argsstring>()</argsstring>
+        <name>ResizeSignal</name>
+        <qualifiedname>Dali::GlWindow::ResizeSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when the <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> is resized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1GlWindow_1aa430eb983a205771d848bfd347910a2d" kindref="member">GlWindow</ref><sp/><ref refid="classDali_1_1GlWindow_1aa430eb983a205771d848bfd347910a2d" kindref="member">GlWindow</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height<sp/>);</highlight></codeline>
+</programlisting> The parameters are the resized width and height. and <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> means this signal was called from what <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref></para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="424" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="318" bodyend="326"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a3407fe72419fe14455a733e30a901074" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow_1ae2fbc5031fba41ee579249b039da1460" kindref="member">KeyEventSignalType</ref> &amp;</type>
+        <definition>GlWindow::KeyEventSignalType &amp; Dali::GlWindow::KeyEventSignal</definition>
+        <argsstring>()</argsstring>
+        <name>KeyEventSignal</name>
+        <qualifiedname>Dali::GlWindow::KeyEventSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when key event is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="436" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="328" bodyend="336"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1aba981c47535caa65667ca11fd0fd85dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow_1ac7d540b68016adf0e955713467bdafdf" kindref="member">TouchEventSignalType</ref> &amp;</type>
+        <definition>GlWindow::TouchEventSignalType &amp; Dali::GlWindow::TouchedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>TouchedSignal</name>
+        <qualifiedname>Dali::GlWindow::TouchedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when the screen is touched and when the touch ends (i.e. the down &amp; up touch events only). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If there are multiple touch points, then this will be emitted when the first touch occurs and then when the last finger is lifted. An interrupted event will also be emitted (if it occurs). A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TouchEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The touch signal to connect to</para>
+</simplesect>
+<simplesect kind="note"><para>Motion events are not emitted. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="454" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="338" bodyend="346"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1GlWindow_1a3104428c0d3e9b2d946c661916a541a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1GlWindow_1a7924c7f6b2500a0f478fa66303964212" kindref="member">VisibilityChangedSignalType</ref> &amp;</type>
+        <definition>GlWindow::VisibilityChangedSignalType &amp; Dali::GlWindow::VisibilityChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>VisibilityChangedSignal</name>
+        <qualifiedname>Dali::GlWindow::VisibilityChangedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when the window is shown or hidden. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/>Window<sp/>window,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visible<sp/>);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="466" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.cpp" bodystart="348" bodyend="356"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classDali_1_1GlWindow" kindref="compound">GlWindow</ref> class is to draw with native GLES. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is the special window. It is for native GLES application. So, some special funtions and type are supported. In addition, basic window&apos;s functions are supported, too. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::GlWindow</label>
+        <link refid="classDali_1_1GlWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::GlWindow</label>
+        <link refid="classDali_1_1GlWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" line="63" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/gl-window.h" bodystart="64" bodyend="476"/>
+    <listofallmembers>
+      <member refid="classDali_1_1GlWindow_1a68bed425e8c019fe808ecb1e3fa9b6c1" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>Activate</name></member>
+      <member refid="classDali_1_1GlWindow_1a983198c2fedae10355621aedb25d52d8" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>AddAuxiliaryHint</name></member>
+      <member refid="classDali_1_1GlWindow_1abd0410c022aba6a02f939c11acce14a1" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>FocusChangeSignal</name></member>
+      <member refid="classDali_1_1GlWindow_1a36ca1faa389d2a50b32264b7101fc64d" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>FocusChangeSignalType</name></member>
+      <member refid="classDali_1_1GlWindow_1abe83fdf1f13972fd4f363f8bf6133169" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetAuxiliaryHintId</name></member>
+      <member refid="classDali_1_1GlWindow_1a18b73b7740ba437da2dea2a6c84f71be" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetAuxiliaryHintValue</name></member>
+      <member refid="classDali_1_1GlWindow_1ab0dab522d7559ba9211cac7b5c823b5d" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetCurrentOrientation</name></member>
+      <member refid="classDali_1_1GlWindow_1a888410e0ef660c5b8bc49d20cb2acbc0" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetPositionSize</name></member>
+      <member refid="classDali_1_1GlWindow_1a7741e59a90474adbcc881f54bb706f2a" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetRenderingMode</name></member>
+      <member refid="classDali_1_1GlWindow_1a78eb9541c855c8ebe55bd3784e8300b1" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetSupportedAuxiliaryHint</name></member>
+      <member refid="classDali_1_1GlWindow_1a2e4257ec4085226d565a8b00405492d5" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GetSupportedAuxiliaryHintCount</name></member>
+      <member refid="classDali_1_1GlWindow_1a1b93cc4262731f7b750a96c8f30f771b" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GlesVersion</name></member>
+      <member refid="classDali_1_1GlWindow_1aa430eb983a205771d848bfd347910a2d" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GlWindow</name></member>
+      <member refid="classDali_1_1GlWindow_1ac16b0cc0a6e4069924b4cf1b9fdcaa6c" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GlWindow</name></member>
+      <member refid="classDali_1_1GlWindow_1a15f1ff78fcfe6811862d01896722b813" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>GlWindow</name></member>
+      <member refid="classDali_1_1GlWindow_1a78e5b83efdf6917343dd11291946618f" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>Hide</name></member>
+      <member refid="classDali_1_1GlWindow_1a7bf9c56da20accdae89a18e4befd6fda" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>IsOpaqueState</name></member>
+      <member refid="classDali_1_1GlWindow_1a3407fe72419fe14455a733e30a901074" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>KeyEventSignal</name></member>
+      <member refid="classDali_1_1GlWindow_1ae2fbc5031fba41ee579249b039da1460" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>KeyEventSignalType</name></member>
+      <member refid="classDali_1_1GlWindow_1a906fc2b0c13e6ae385e349ce5502157a" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>Lower</name></member>
+      <member refid="classDali_1_1GlWindow_1a3923d682b212746336250d3c8ef54156" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>New</name></member>
+      <member refid="classDali_1_1GlWindow_1a46fdfe1ec60d30c37cbc727a902d8aed" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>New</name></member>
+      <member refid="classDali_1_1GlWindow_1a96b89a0a54e56ff4c1367ce244dd1424" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>operator=</name></member>
+      <member refid="classDali_1_1GlWindow_1aeec26b04e6be5e8103861e3fac2153c7" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>operator=</name></member>
+      <member refid="classDali_1_1GlWindow_1a6713ac3767a0f7af8b59b1e05c41f098" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>Raise</name></member>
+      <member refid="classDali_1_1GlWindow_1a4faae04198ac3692994072cdfa1b7849" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>RegisterGlCallbacks</name></member>
+      <member refid="classDali_1_1GlWindow_1a91548340e4da8c19c13ee6395d6ad009" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>RemoveAuxiliaryHint</name></member>
+      <member refid="classDali_1_1GlWindow_1a5b100ed592138d082efb3340fa98670f" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>RenderingMode</name></member>
+      <member refid="classDali_1_1GlWindow_1a32e2618c97a93757834e6a42e4935821" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>RenderOnce</name></member>
+      <member refid="classDali_1_1GlWindow_1a7e4cf5576cc478e23fcf2887813520fd" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>ResizeSignal</name></member>
+      <member refid="classDali_1_1GlWindow_1afbd4c1ac6d0bda5ef1b289f791544f9c" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>ResizeSignalType</name></member>
+      <member refid="classDali_1_1GlWindow_1ac20dac81ae03864e5f95f578c6319b9f" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetAuxiliaryHintValue</name></member>
+      <member refid="classDali_1_1GlWindow_1af7a4f9f934dcce337da540ad646634d6" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetAvailableOrientations</name></member>
+      <member refid="classDali_1_1GlWindow_1a4d4388194edf3750ee8f5afccc702663" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetGraphicsConfig</name></member>
+      <member refid="classDali_1_1GlWindow_1a1542e2a3369c8f4c92c164398b0312ec" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetInputRegion</name></member>
+      <member refid="classDali_1_1GlWindow_1a892fb0e6efecd972e32edfbdfc5c92ab" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetOpaqueState</name></member>
+      <member refid="classDali_1_1GlWindow_1a0d92368c4d989409b410a6fa940bbd7e" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetPositionSize</name></member>
+      <member refid="classDali_1_1GlWindow_1a30d563087636ce42b3069389d4571dc8" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetPreferredOrientation</name></member>
+      <member refid="classDali_1_1GlWindow_1a3b6a99f3fc300dd60711724d2d0099db" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>SetRenderingMode</name></member>
+      <member refid="classDali_1_1GlWindow_1a378bf198ba985c0bc7be64364c5459c5" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>Show</name></member>
+      <member refid="classDali_1_1GlWindow_1aba981c47535caa65667ca11fd0fd85dd" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>TouchedSignal</name></member>
+      <member refid="classDali_1_1GlWindow_1ac7d540b68016adf0e955713467bdafdf" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>TouchEventSignalType</name></member>
+      <member refid="classDali_1_1GlWindow_1a3104428c0d3e9b2d946c661916a541a1" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>VisibilityChangedSignal</name></member>
+      <member refid="classDali_1_1GlWindow_1a7924c7f6b2500a0f478fa66303964212" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>VisibilityChangedSignalType</name></member>
+      <member refid="classDali_1_1GlWindow_1aac0b9145691a61316a8ff200b7721090" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>WindowSize</name></member>
+      <member refid="classDali_1_1GlWindow_1a2eef3a38aa83f8c4195f6f53a1763504" prot="public" virt="non-virtual"><scope>Dali::GlWindow</scope><name>~GlWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

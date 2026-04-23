@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1EventThreadCallback" kind="class" language="C++" prot="public">
+    <compoundname>Dali::EventThreadCallback</compoundname>
+    <includes refid="event-thread-callback_8h" local="no">event-thread-callback.h</includes>
+    <innerclass refid="structDali_1_1EventThreadCallback_1_1Impl" prot="public">Dali::EventThreadCallback::Impl</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1EventThreadCallback_1a6e4f410f276cad127b30a4c7ef88d7ee" prot="private" static="no" mutable="no">
+        <type><ref refid="structDali_1_1EventThreadCallback_1_1Impl" kindref="compound">Impl</ref> *</type>
+        <definition>Impl* Dali::EventThreadCallback::mImpl</definition>
+        <argsstring></argsstring>
+        <name>mImpl</name>
+        <qualifiedname>Dali::EventThreadCallback::mImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="75" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1EventThreadCallback_1a78c15ccc3ed3127cc740e75b8ae04ee4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::EventThreadCallback::EventThreadCallback</definition>
+        <argsstring>(CallbackBase *callback)</argsstring>
+        <name>EventThreadCallback</name>
+        <qualifiedname>Dali::EventThreadCallback::EventThreadCallback</qualifiedname>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. Create an object that will call the given callback in main event thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to call. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="45" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.cpp" bodystart="31" bodyend="36"/>
+        <references refid="classDali_1_1TriggerEventFactory_1a013aaac3f7123c92693da2e895105a77">Dali::TriggerEventFactory::CreateTriggerEvent</references>
+        <references refid="structDali_1_1EventThreadCallback_1_1Impl_1ab06cf914fc327d4ed7d23467dee2c812" compoundref="event-thread-callback_8cpp" startline="27">Dali::EventThreadCallback::Impl::eventTrigger</references>
+        <references refid="structDali_1_1EventThreadCallback_1_1Impl_1a2c99b565c4a549a2cfa3f1e0da4f5931" compoundref="event-thread-callback_8cpp" startline="28">Dali::EventThreadCallback::Impl::id</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EventThreadCallback_1a4937a9edd4863db1f5233b32febc628d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::EventThreadCallback::~EventThreadCallback</definition>
+        <argsstring>()</argsstring>
+        <name>~EventThreadCallback</name>
+        <qualifiedname>Dali::EventThreadCallback::~EventThreadCallback</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="50" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EventThreadCallback_1ab2e1aba16d95688a0664ec54bc8e322f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::EventThreadCallback::Trigger</definition>
+        <argsstring>()</argsstring>
+        <name>Trigger</name>
+        <qualifiedname>Dali::EventThreadCallback::Trigger</qualifiedname>
+        <briefdescription>
+<para>Trigger the calling of callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method can be used from worker threads to notify the main thread as main thread is running the event loop and thus cannot be blocked </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="57" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.cpp" bodystart="43" bodyend="49"/>
+        <references refid="structDali_1_1EventThreadCallback_1_1Impl_1ab06cf914fc327d4ed7d23467dee2c812" compoundref="event-thread-callback_8cpp" startline="27">Dali::EventThreadCallback::Impl::eventTrigger</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EventThreadCallback_1a832a3db6f6a6d70f591cbc03a093fc1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::EventThreadCallback::GetId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetId</name>
+        <qualifiedname>Dali::EventThreadCallback::GetId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the unique id of event thread callback.</para>
+<para><simplesect kind="return"><para>Id of this event thread callback. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="64" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.cpp" bodystart="51" bodyend="54"/>
+        <references refid="structDali_1_1EventThreadCallback_1_1Impl_1a2c99b565c4a549a2cfa3f1e0da4f5931" compoundref="event-thread-callback_8cpp" startline="28">Dali::EventThreadCallback::Impl::id</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1EventThreadCallback_1addc8d92ce13e8c472f1f43169248e8bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::EventThreadCallback::EventThreadCallback</definition>
+        <argsstring>(const EventThreadCallback &amp;)</argsstring>
+        <name>EventThreadCallback</name>
+        <qualifiedname>Dali::EventThreadCallback::EventThreadCallback</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1EventThreadCallback" kindref="compound">EventThreadCallback</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="68" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EventThreadCallback_1acb0c17db839c8f8bbd2fe8ccda5dfca0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1EventThreadCallback" kindref="compound">EventThreadCallback</ref> &amp;</type>
+        <definition>EventThreadCallback &amp; Dali::EventThreadCallback::operator=</definition>
+        <argsstring>(const EventThreadCallback &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::EventThreadCallback::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1EventThreadCallback" kindref="compound">EventThreadCallback</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="71" column="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classDali_1_1EventThreadCallback" kindref="compound">EventThreadCallback</ref> class provides a mechanism for the worker thread to trigger the execution of a given callback in main event thread . </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>The <ref refid="classDali_1_1EventThreadCallback" kindref="compound">EventThreadCallback</ref> object should only be created in the main thread. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" line="37" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/event-thread-callback.h" bodystart="38" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classDali_1_1EventThreadCallback_1a78c15ccc3ed3127cc740e75b8ae04ee4" prot="public" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>EventThreadCallback</name></member>
+      <member refid="classDali_1_1EventThreadCallback_1addc8d92ce13e8c472f1f43169248e8bf" prot="private" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>EventThreadCallback</name></member>
+      <member refid="classDali_1_1EventThreadCallback_1a832a3db6f6a6d70f591cbc03a093fc1b" prot="public" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>GetId</name></member>
+      <member refid="classDali_1_1EventThreadCallback_1a6e4f410f276cad127b30a4c7ef88d7ee" prot="private" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>mImpl</name></member>
+      <member refid="classDali_1_1EventThreadCallback_1acb0c17db839c8f8bbd2fe8ccda5dfca0" prot="private" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>operator=</name></member>
+      <member refid="classDali_1_1EventThreadCallback_1ab2e1aba16d95688a0664ec54bc8e322f" prot="public" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>Trigger</name></member>
+      <member refid="classDali_1_1EventThreadCallback_1a4937a9edd4863db1f5233b32febc628d" prot="public" virt="non-virtual"><scope>Dali::EventThreadCallback</scope><name>~EventThreadCallback</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

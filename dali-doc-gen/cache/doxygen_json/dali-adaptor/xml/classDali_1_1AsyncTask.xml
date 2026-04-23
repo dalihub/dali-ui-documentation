@@ -1,0 +1,403 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1AsyncTask" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::AsyncTask</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">RefObject</basecompoundref>
+    <includes refid="async-task-manager_8h" local="no">async-task-manager.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ThreadType</name>
+        <qualifiedname>Dali::AsyncTask::ThreadType</qualifiedname>
+        <enumvalue id="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343a937fcb1ba84f894a103b7aa1e60eea72" prot="public">
+          <name>MAIN_THREAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343af23d8032f692800f9da91040a57ee6d9" prot="public">
+          <name>WORKER_THREAD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="51" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PriorityType</name>
+        <qualifiedname>Dali::AsyncTask::PriorityType</qualifiedname>
+        <enumvalue id="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803ab89de3b4b81c4facfac906edf29aec8c" prot="public">
+          <name>HIGH</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Highest priority to process task. @SINCE_2_2.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803a41bc94cbd8eebea13ce0491b2ac11b88" prot="public">
+          <name>LOW</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Lowest priority to process task. @SINCE_2_2.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803a9d971479ed512d92e800637eaeb1e754" prot="public">
+          <name>PRIORITY_COUNT</name>
+          <briefdescription>
+<para>The number of priority type. @SINCE_2_2.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803a5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= HIGH</initializer>
+          <briefdescription>
+<para>Default priority value if nothing defined. @SINCE_2_2.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The priority of this task what user think. To avoid long term tasks (like remote image download) block whole threads, Let user set the priority type of this task. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Low priority task means it doesn&apos;t need to process by FIFO logic. So we make that Low priority don&apos;t take whole threads.</para>
+<para>Task selection algorithm defined internally.</para>
+<para><simplesect kind="note"><para>Task cannot change the priority type after create.</para>
+</simplesect>
+@SINCE_2_2.17 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="71" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="72" bodyend="79"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1AsyncTask_1a6d202b71224d71f7ff7c1ab50b2ba991" prot="private" static="no" mutable="no">
+        <type>UniquePtr&lt; CallbackBase &gt;</type>
+        <definition>UniquePtr&lt;CallbackBase&gt; Dali::AsyncTask::mCompletedCallback</definition>
+        <argsstring></argsstring>
+        <name>mCompletedCallback</name>
+        <qualifiedname>Dali::AsyncTask::mCompletedCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="151" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1AsyncTask_1a77424f08e25285f9d2fc4293bd318702" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" kindref="member">PriorityType</ref></type>
+        <definition>const PriorityType Dali::AsyncTask::mPriorityType</definition>
+        <argsstring></argsstring>
+        <name>mPriorityType</name>
+        <qualifiedname>Dali::AsyncTask::mPriorityType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="152" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1AsyncTask_1a750b797c77ddafa10bf4f9d0a398077f" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" kindref="member">ThreadType</ref></type>
+        <definition>ThreadType Dali::AsyncTask::mThreadType</definition>
+        <argsstring></argsstring>
+        <name>mThreadType</name>
+        <qualifiedname>Dali::AsyncTask::mThreadType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="153" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a677c5242360b4d9c595f975b38854a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::AsyncTask::AsyncTask</definition>
+        <argsstring>(CallbackBase *callback, PriorityType priority=PriorityType::DEFAULT, ThreadType threadType=AsyncTask::ThreadType::MAIN_THREAD)</argsstring>
+        <name>AsyncTask</name>
+        <qualifiedname>Dali::AsyncTask::AsyncTask</qualifiedname>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" kindref="member">PriorityType</ref></type>
+          <declname>priority</declname>
+          <defval><ref refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">PriorityType::DEFAULT</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" kindref="member">ThreadType</ref></type>
+          <declname>threadType</declname>
+          <defval><ref refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343a937fcb1ba84f894a103b7aa1e60eea72" kindref="member">AsyncTask::ThreadType::MAIN_THREAD</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor @SINCE_2_2.3 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to invoke on task completion, either on the main thread on the worker thread. The ownership of callback is taken by this class. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proirity type of this task. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">threadType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread type of invocation callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="88" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="25" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a82a5f0752db1fc530a890a2c973cea69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CallbackBase *</type>
+        <definition>CallbackBase * Dali::AsyncTask::GetCompletedCallback</definition>
+        <argsstring>()</argsstring>
+        <name>GetCompletedCallback</name>
+        <qualifiedname>Dali::AsyncTask::GetCompletedCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the complated callback @SINCE_2_2.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="94" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a07cd2d25f9f79d9a60fe5902a2185302" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" kindref="member">ThreadType</ref></type>
+        <definition>AsyncTask::ThreadType Dali::AsyncTask::GetCallbackInvocationThread</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCallbackInvocationThread</name>
+        <qualifiedname>Dali::AsyncTask::GetCallbackInvocationThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the thread of the invocation callback @SINCE_2_2.9 <simplesect kind="return"><para>the type of invocation callback. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="101" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1aa6b468e0d6b8914d55cc9f10c3e49081" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" kindref="member">PriorityType</ref></type>
+        <definition>AsyncTask::PriorityType Dali::AsyncTask::GetPriorityType</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPriorityType</name>
+        <qualifiedname>Dali::AsyncTask::GetPriorityType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the priority of this task @SINCE_2_2.17 <simplesect kind="return"><para>the type of priority. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="108" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a64d868d38054cd69a7b4a3e2fecac4e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::AsyncTask::NotifyToReady</definition>
+        <argsstring>()</argsstring>
+        <name>NotifyToReady</name>
+        <qualifiedname>Dali::AsyncTask::NotifyToReady</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notify to task become ready. <simplesect kind="note"><para>IsReady always return true before and after this API. @SINCE_2_4.29 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="115" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a79a86e247e399c6a3c673e3f9254a999" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::AsyncTask::~AsyncTask</definition>
+        <argsstring>()=default</argsstring>
+        <name>~AsyncTask</name>
+        <qualifiedname>Dali::AsyncTask::~AsyncTask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. @SINCE_2_2.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="121" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a7994d9577128895b08380d7d269b78a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::AsyncTask::Process</definition>
+        <argsstring>()=0</argsstring>
+        <name>Process</name>
+        <qualifiedname>Dali::AsyncTask::Process</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Process the task @SINCE_2_2.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="127" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a0b5694b28444b6ffb5ff291a215b106c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::AsyncTask::IsReady</definition>
+        <argsstring>()</argsstring>
+        <name>IsReady</name>
+        <qualifiedname>Dali::AsyncTask::IsReady</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the task is ready to process. @SINCE_2_2.3 <simplesect kind="return"><para>True if the task is ready to process. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="134" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1aa00a567d881786b561c7e1b33f4eb7a4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>Dali::StringView</type>
+        <definition>virtual Dali::StringView Dali::AsyncTask::GetTaskName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTaskName</name>
+        <qualifiedname>Dali::AsyncTask::GetTaskName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the name of this task if we setup. @SINCE_2_3.4 <simplesect kind="return"><para>The name of this task. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="144" column="28" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="144" bodyend="148"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1abb62e68a39cd0dae96fa25213c787bba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::AsyncTask::AsyncTask</definition>
+        <argsstring>(const AsyncTask &amp;task)=delete</argsstring>
+        <name>AsyncTask</name>
+        <qualifiedname>Dali::AsyncTask::AsyncTask</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref> &amp;</type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="156" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTask_1a02fbfb26205cb38b60f0930577ce2fc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref> &amp;</type>
+        <definition>AsyncTask &amp; Dali::AsyncTask::operator=</definition>
+        <argsstring>(const AsyncTask &amp;task)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::AsyncTask::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref> &amp;</type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="159" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The async tasks to be processed in the worker thread. @SINCE_2_2.3 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::AsyncTask</label>
+        <link refid="classDali_1_1AsyncTask"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RefObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::AsyncTask</label>
+        <link refid="classDali_1_1AsyncTask"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RefObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="47" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="48" bodyend="160"/>
+    <listofallmembers>
+      <member refid="classDali_1_1AsyncTask_1a677c5242360b4d9c595f975b38854a86" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>AsyncTask</name></member>
+      <member refid="classDali_1_1AsyncTask_1abb62e68a39cd0dae96fa25213c787bba" prot="private" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>AsyncTask</name></member>
+      <member refid="classDali_1_1AsyncTask_1a07cd2d25f9f79d9a60fe5902a2185302" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>GetCallbackInvocationThread</name></member>
+      <member refid="classDali_1_1AsyncTask_1a82a5f0752db1fc530a890a2c973cea69" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>GetCompletedCallback</name></member>
+      <member refid="classDali_1_1AsyncTask_1aa6b468e0d6b8914d55cc9f10c3e49081" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>GetPriorityType</name></member>
+      <member refid="classDali_1_1AsyncTask_1aa00a567d881786b561c7e1b33f4eb7a4" prot="public" virt="virtual"><scope>Dali::AsyncTask</scope><name>GetTaskName</name></member>
+      <member refid="classDali_1_1AsyncTask_1a0b5694b28444b6ffb5ff291a215b106c" prot="public" virt="virtual"><scope>Dali::AsyncTask</scope><name>IsReady</name></member>
+      <member refid="classDali_1_1AsyncTask_1a6d202b71224d71f7ff7c1ab50b2ba991" prot="private" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>mCompletedCallback</name></member>
+      <member refid="classDali_1_1AsyncTask_1a77424f08e25285f9d2fc4293bd318702" prot="private" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>mPriorityType</name></member>
+      <member refid="classDali_1_1AsyncTask_1a750b797c77ddafa10bf4f9d0a398077f" prot="private" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>mThreadType</name></member>
+      <member refid="classDali_1_1AsyncTask_1a64d868d38054cd69a7b4a3e2fecac4e1" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>NotifyToReady</name></member>
+      <member refid="classDali_1_1AsyncTask_1a02fbfb26205cb38b60f0930577ce2fc8" prot="private" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>PriorityType</name></member>
+      <member refid="classDali_1_1AsyncTask_1a7994d9577128895b08380d7d269b78a3" prot="public" virt="pure-virtual"><scope>Dali::AsyncTask</scope><name>Process</name></member>
+      <member refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" prot="public" virt="non-virtual"><scope>Dali::AsyncTask</scope><name>ThreadType</name></member>
+      <member refid="classDali_1_1AsyncTask_1a79a86e247e399c6a3c673e3f9254a999" prot="public" virt="virtual"><scope>Dali::AsyncTask</scope><name>~AsyncTask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

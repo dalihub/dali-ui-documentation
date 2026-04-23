@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="native-image-devel_8h" kind="file" language="C++">
+    <compoundname>native-image-devel.h</compoundname>
+    <includes local="no">dali/public-api/math/rect.h</includes>
+    <includes local="no">string</includes>
+    <includes refid="event-thread-callback_8h" local="no">dali/devel-api/adaptor-framework/event-thread-callback.h</includes>
+    <includes refid="native-image_8h" local="no">dali/public-api/adaptor-framework/native-image.h</includes>
+    <includedby refid="native-image-devel_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>dali/devel-api/adaptor-framework/event-thread-callback.h</label>
+        <link refid="event-thread-callback_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h</label>
+        <link refid="native-image-devel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali/public-api/adaptor-framework/native-image.h</label>
+        <link refid="native-image_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="12">
+        <label>dali/public-api/images/native-image-interface.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/math/rect.h</label>
+      </node>
+      <node id="14">
+        <label>dali/public-api/object/any.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp</label>
+        <link refid="native-image-devel_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h</label>
+        <link refid="native-image-devel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1DevelNativeImage">Dali::DevelNativeImage</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_NATIVE_IMAGE_DEVEL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_NATIVE_IMAGE_DEVEL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/math/rect.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="event-thread-callback_8h" kindref="compound">dali/devel-api/adaptor-framework/event-thread-callback.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="native-image_8h" kindref="compound">dali/public-api/adaptor-framework/native-image.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">DevelNativeImage</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1DevelNativeImage_1a4cf56976dbb0a999ec71f2487b9b00c4" kindref="member">EncodeToFile</ref>(NativeImage&amp;<sp/>image,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>quality);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/>uint8_t*<sp/><ref refid="namespaceDali_1_1DevelNativeImage_1aabcd46b9651b2f5d970060cf050990ef" kindref="member">AcquireBuffer</ref>(NativeImage&amp;<sp/>image,<sp/>uint32_t&amp;<sp/>width,<sp/>uint32_t&amp;<sp/>height,<sp/>uint32_t&amp;<sp/>stride);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1DevelNativeImage_1a348cd0b2daa6be43e2f20b5ee3527bd9" kindref="member">ReleaseBuffer</ref>(NativeImage&amp;<sp/>image,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rect&lt;uint32_t&gt;&amp;<sp/>updatedArea);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1DevelNativeImage_1a63f913340a1330c0eaa6dc10a55b7ac8" kindref="member">SetPixels</ref>(NativeImage&amp;<sp/>image,<sp/>uint8_t*<sp/>pixbuf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Pixel::Format&amp;<sp/>pixelFormat);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1DevelNativeImage_1a4710d1ac39d47ed6ef4ff7943480280a" kindref="member">SetResourceDestructionCallback</ref>(NativeImage&amp;<sp/>image,<sp/>EventThreadCallback*<sp/>callback,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ownedCallback);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1DevelNativeImage_1a8fee65fc6012b368ca26a01ec37723e2" kindref="member">EnableBackBuffer</ref>(NativeImage&amp;<sp/>image,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>DevelNativeImage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_NATIVE_IMAGE_DEVEL_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h"/>
+  </compounddef>
+</doxygen>

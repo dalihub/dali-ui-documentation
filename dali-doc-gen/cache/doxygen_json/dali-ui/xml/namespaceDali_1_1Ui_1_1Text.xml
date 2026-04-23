@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Ui_1_1Text" kind="namespace" language="C++">
+    <compoundname>Dali::Ui::Text</compoundname>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1Bevel" prot="public">Dali::Ui::Text::Bevel</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1FitCandidate" prot="public">Dali::Ui::Text::FitCandidate</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1FitRange" prot="public">Dali::Ui::Text::FitRange</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1FontVariation" prot="public">Dali::Ui::Text::FontVariation</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1FontVariationAxis" prot="public">Dali::Ui::Text::FontVariationAxis</innerclass>
+    <innerclass refid="structDali_1_1Ui_1_1Text_1_1InputFieldPropertyIndex" prot="public">Dali::Ui::Text::InputFieldPropertyIndex</innerclass>
+    <innerclass refid="structDali_1_1Ui_1_1Text_1_1LabelPropertyIndex" prot="public">Dali::Ui::Text::LabelPropertyIndex</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1LineThrough" prot="public">Dali::Ui::Text::LineThrough</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1Outline" prot="public">Dali::Ui::Text::Outline</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1Shadow" prot="public">Dali::Ui::Text::Shadow</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1Underline" prot="public">Dali::Ui::Text::Underline</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1a79f7b1f10c57177f26534996e7a46a6d" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>Alignment</name>
+        <qualifiedname>Dali::Ui::Text::Alignment</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a79f7b1f10c57177f26534996e7a46a6dab078ffd28db767c502ac367053f6e0ac" prot="public">
+          <name>START</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Ui_1_1Align" kindref="compound">Align</ref> to the start (left/top) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a79f7b1f10c57177f26534996e7a46a6dac397289ee45877be0cd49811fe245b4e" prot="public">
+          <name>CENTER</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Ui_1_1Align" kindref="compound">Align</ref> to the center. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a79f7b1f10c57177f26534996e7a46a6dab1a326c06d88bf042f73d70f50197905" prot="public">
+          <name>END</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Ui_1_1Align" kindref="compound">Align</ref> to the end (right/bottom) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for text alignment options. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="62" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="63" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1a7b7fd93187b6b359e2dd2a1d3ceb0efd" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>LineWrapMode</name>
+        <qualifiedname>Dali::Ui::Text::LineWrapMode</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a7b7fd93187b6b359e2dd2a1d3ceb0efdabdde29e3c0fe7b687d69a696bbaf71ac" prot="public">
+          <name>WORD</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Wraps at word boundaries. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a7b7fd93187b6b359e2dd2a1d3ceb0efda3c94fe830ac18aa182887ab6ac05b596" prot="public">
+          <name>CHARACTER</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Wraps at individual characters. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a7b7fd93187b6b359e2dd2a1d3ceb0efda21b3b298e6675ad099554d3ad9285a04" prot="public">
+          <name>HYPHENATION</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Wraps using hyphenation when possible. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a7b7fd93187b6b359e2dd2a1d3ceb0efda516a2342953891f249b58ff1c3943723" prot="public">
+          <name>MIXED</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Tries WORD wrapping first, then HYPHENATION, and falls back to CHARACTER. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for line wrapping strategies. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Specifies how text is wrapped when the available layout width is insufficient to display the entire text on a single line. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="84" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="85" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1ae7a5e817b9520447ef321039fed6ecfd" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>LayoutDirectionMode</name>
+        <qualifiedname>Dali::Ui::Text::LayoutDirectionMode</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1ae7a5e817b9520447ef321039fed6ecfda8b926ca329dfb31daa1211d0e158e05e" prot="public">
+          <name>CONTENTS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Determines the layout direction from the text content itself. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1ae7a5e817b9520447ef321039fed6ecfdace138ec8d8aadff7e1db3c13b62c3d16" prot="public">
+          <name>INHERIT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Inherits the layout direction from the parent. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1ae7a5e817b9520447ef321039fed6ecfda175d5afd5eed05a9553f94bbecd80a19" prot="public">
+          <name>LOCALE</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Determines the layout direction based on the system locale. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for determining how the text layout direction is resolved. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="107" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="108" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1a9b72ab5d5bf72bf35c4cecf8f99195c7" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>LineHeightMode</name>
+        <qualifiedname>Dali::Ui::Text::LineHeightMode</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a9b72ab5d5bf72bf35c4cecf8f99195c7ac3cb497d8ec3c88b9024774b775358e2" prot="public">
+          <name>RELATIVE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>The line height is calculated relative to the font size. The specified value is treated as a multiplier of the font pixel size. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a9b72ab5d5bf72bf35c4cecf8f99195c7a3a0bc063b6db8cae0361657958be836f" prot="public">
+          <name>ABSOLUTE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>The line height is specified as an absolute pixel value. The specified value is treated as the exact line height in pixels. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for determining how the line height is interpreted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="126" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="127" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1ab179339cb33e617da07a93d06a8a4d81" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>MarqueeTriggerPolicy</name>
+        <qualifiedname>Dali::Ui::Text::MarqueeTriggerPolicy</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1ab179339cb33e617da07a93d06a8a4d81aa60a6a471c0681e5a49c4f5d00f6bc5a" prot="public">
+          <name>MANUAL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Starts the marquee only when explicitly requested. The animation is triggered by calling StartMarquee(). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1ab179339cb33e617da07a93d06a8a4d81a8dc33d1b50cab58d26a938ea384e20b1" prot="public">
+          <name>ON_OVERFLOW</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Starts the marquee automatically when the text overflows. The animation is triggered during layout if the content exceeds the available space. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for defining when the marquee animation is triggered. Specifies the condition under which the marquee starts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="152" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="153" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1a804677ea16e8e2f28a714ce87ec066d1" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>MarqueeOrientation</name>
+        <qualifiedname>Dali::Ui::Text::MarqueeOrientation</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a804677ea16e8e2f28a714ce87ec066d1a86e5d0d8407ce71f7e2004ef3949894e" prot="public">
+          <name>HORIZONTAL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Scrolls horizontally. The effective scroll direction is determined by the layout direction and the text direction (e.g., left-to-right or right-to-left). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a804677ea16e8e2f28a714ce87ec066d1a3e1b74251c07310c5f1b968145bf00dc" prot="public">
+          <name>VERTICAL</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Scrolls vertically. The content scrolls from bottom to top. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for selecting the orientation of the marquee animation. Defines whether the marquee scrolls horizontally or vertically. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="171" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="172" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1aa4eb6f9d174945c30be2fa6b37a728d5" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>MarqueeStopMode</name>
+        <qualifiedname>Dali::Ui::Text::MarqueeStopMode</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1aa4eb6f9d174945c30be2fa6b37a728d5ae35884a2445bc4ae2df52f188763273c" prot="public">
+          <name>IMMEDIATE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Stops the marquee immediately. The current scrolling position is not preserved. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1aa4eb6f9d174945c30be2fa6b37a728d5aa8ca883479963bb760185de7ef95bd56" prot="public">
+          <name>FINISH_LOOP</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Stops the marquee after the current loop finishes. The marquee continues until the current cycle completes, then stops at the loop boundary. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for defining how the marquee stops. Specifies the behavior when a stop request is issued. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="190" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="191" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1Text_1a37d49bd4cf83364e441ab512ba46ad04" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>OverflowMode</name>
+        <qualifiedname>Dali::Ui::Text::OverflowMode</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a37d49bd4cf83364e441ab512ba46ad04a960f0b6c4711bd0a42965edec68192d8" prot="public">
+          <name>CLIP</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Clips the overflowing text. <ref refid="namespaceDali_1_1Ui_1_1Text" kindref="compound">Text</ref> outside the layout bounds is not rendered. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1Text_1a37d49bd4cf83364e441ab512ba46ad04a0beb0085c89b9b16bcc06821dd141c12" prot="public">
+          <name>ELLIPSIS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Truncates the text with an ellipsis. Displays &quot;...&quot; at the end of the visible text. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for text overflow handling. Specifies how text is rendered when it exceeds the available layout bounds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="209" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="210" bodyend="221"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1Ui_1_1Text_1aaae12572d316f3df4a19a6b42af4b823" prot="public" static="no">
+        <type>Dali::TextAbstraction::FontWeight::Type</type>
+        <definition>using Dali::Ui::Text::FontWeight = typedef Dali::TextAbstraction::FontWeight::Type</definition>
+        <argsstring></argsstring>
+        <name>FontWeight</name>
+        <qualifiedname>Dali::Ui::Text::FontWeight</qualifiedname>
+        <briefdescription>
+<para>Alias for font weight enumeration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides access to font weight values such as REGULAR, MEDIUM, BOLD, etc.</para>
+<para><simplesect kind="see"><para>Dali::TextAbstraction::FontWeight::Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="39" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Ui_1_1Text_1a150626d086716b4158bc04c7c0d42f73" prot="public" static="no">
+        <type>Dali::TextAbstraction::FontWidth::Type</type>
+        <definition>using Dali::Ui::Text::FontWidth = typedef Dali::TextAbstraction::FontWidth::Type</definition>
+        <argsstring></argsstring>
+        <name>FontWidth</name>
+        <qualifiedname>Dali::Ui::Text::FontWidth</qualifiedname>
+        <briefdescription>
+<para>Alias for font width enumeration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides access to font width values such as CONDENSED, NORMAL, EXPANDED, etc.</para>
+<para><simplesect kind="see"><para>Dali::TextAbstraction::FontWidth::Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="48" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Ui_1_1Text_1aefb192e825a4f93edc053522b8616009" prot="public" static="no">
+        <type>Dali::TextAbstraction::FontSlant::Type</type>
+        <definition>using Dali::Ui::Text::FontSlant = typedef Dali::TextAbstraction::FontSlant::Type</definition>
+        <argsstring></argsstring>
+        <name>FontSlant</name>
+        <qualifiedname>Dali::Ui::Text::FontSlant</qualifiedname>
+        <briefdescription>
+<para>Alias for font slant enumeration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides access to font slant values such as NORMAL, ITALIC, etc.</para>
+<para><simplesect kind="see"><para>Dali::TextAbstraction::FontSlant::Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="57" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceDali_1_1Ui_1_1Text_1aa00f942e685681357f7ca576f7f53cc8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr float</type>
+        <definition>constexpr float Dali::Ui::Text::LINE_HEIGHT_AUTO</definition>
+        <argsstring></argsstring>
+        <name>LINE_HEIGHT_AUTO</name>
+        <qualifiedname>Dali::Ui::Text::LINE_HEIGHT_AUTO</qualifiedname>
+        <initializer>= -1.0f</initializer>
+        <briefdescription>
+<para>Special value for automatic line height. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When used with SetLineHeight(), it uses the natural line height derived from font metrics. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" line="146" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/text-enumerations.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/fit/text-fit-candidate.cpp" line="32" column="1"/>
+  </compounddef>
+</doxygen>

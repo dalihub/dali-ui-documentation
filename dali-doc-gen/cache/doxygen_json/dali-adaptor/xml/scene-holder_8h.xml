@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="scene-holder_8h" kind="file" language="C++">
+    <compoundname>scene-holder.h</compoundname>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includes local="no">dali/public-api/math/vector4.h</includes>
+    <includes local="no">dali/public-api/object/base-handle.h</includes>
+    <includes local="no">dali/public-api/signals/dali-signal.h</includes>
+    <includedby refid="application-devel_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp</includedby>
+    <includedby refid="scene-holder-impl_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder-impl.h</includedby>
+    <includedby refid="scene-holder_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder.h</label>
+        <link refid="scene-holder_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/math/vector4.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp</label>
+        <link refid="application-devel_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder-impl.cpp</label>
+        <link refid="scene-holder-impl_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder-impl.h</label>
+        <link refid="scene-holder-impl_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder.cpp</label>
+        <link refid="scene-holder_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder.h</label>
+        <link refid="scene-holder_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Integration_1_1SceneHolder" prot="public">Dali::Integration::SceneHolder</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal_1_1Adaptor">Dali::Internal::Adaptor</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration">Dali::Integration</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_INTEGRATION_SCENEHOLDER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_INTEGRATION_SCENEHOLDER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/math/vector4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/base-handle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/signals/dali-signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Actor;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Layer;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Any;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TouchEvent;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">WheelEvent;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">TouchPoint;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KeyEvent;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">RenderTaskList;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal<sp/>DALI_INTERNAL</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Adaptor</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SceneHolder;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>Internal<sp/>DALI_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Integration</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53" refid="classDali_1_1Integration_1_1SceneHolder" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BaseHandle</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1Integration_1_1SceneHolder_1aebf5c29f0a7984a6137b52040e071577" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::KeyEvent&amp;)&gt;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1aebf5c29f0a7984a6137b52040e071577" kindref="member">KeyEventSignalType</ref>;<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classDali_1_1Integration_1_1SceneHolder_1a9ff6d782f005114e47af78b9fc67fd64" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;bool(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::KeyEvent&amp;)&gt;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a9ff6d782f005114e47af78b9fc67fd64" kindref="member">KeyEventGeneratedSignalType</ref>;<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1Integration_1_1SceneHolder_1ae839c7502c227bc89009429960befeb7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::TouchEvent&amp;)&gt;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1ae839c7502c227bc89009429960befeb7" kindref="member">TouchEventSignalType</ref>;<sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1Integration_1_1SceneHolder_1ad9ef01dfb877f8d881c1917248206fb5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::WheelEvent&amp;)&gt;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1ad9ef01dfb877f8d881c1917248206fb5" kindref="member">WheelEventSignalType</ref>;<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classDali_1_1Integration_1_1SceneHolder_1a9498d2543ff461c61094e40a1dfd4a96" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;bool(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::WheelEvent&amp;)&gt;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a9498d2543ff461c61094e40a1dfd4a96" kindref="member">WheelEventGeneratedSignalType</ref>;<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classDali_1_1Integration_1_1SceneHolder_1a2bc84e346b65939592e17befbe0c2646" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(<ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">Dali::Integration::SceneHolder</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)&gt;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a2bc84e346b65939592e17befbe0c2646" kindref="member">FocusChangedGeneratedSignalType</ref>;<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">~SceneHolder</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classDali_1_1Integration_1_1SceneHolder_1a741518064616eec417aa24be0137d763" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a741518064616eec417aa24be0137d763" kindref="member">SceneHolder</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>&amp;<sp/>handle);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classDali_1_1Integration_1_1SceneHolder_1a16e710d485fec4701646291263393a65" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a16e710d485fec4701646291263393a65" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>&amp;<sp/>rhs);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classDali_1_1Integration_1_1SceneHolder_1a5cddfdc3acd16a1cf591d205ddfabd7e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a5cddfdc3acd16a1cf591d205ddfabd7e" kindref="member">SceneHolder</ref>(<ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>&amp;&amp;<sp/>handle)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classDali_1_1Integration_1_1SceneHolder_1ae8cd85cfd6e90df77276328d1fa2e7bd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1ae8cd85cfd6e90df77276328d1fa2e7bd" kindref="member">operator=</ref>(<ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref><sp/>DownCast(BaseHandle<sp/>handle);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Add(Actor<sp/>actor);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Remove(Actor<sp/>actor);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>Layer<sp/>GetRootLayer()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBackgroundColor(Vector4<sp/>color);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>Vector4<sp/>GetBackgroundColor()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>Any<sp/>GetNativeHandle()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FeedTouchPoint(Dali::TouchPoint&amp;<sp/>point,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeStamp);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FeedWheelEvent(Dali::WheelEvent&amp;<sp/>wheelEvent);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FeedKeyEvent(Dali::KeyEvent&amp;<sp/>keyEvent);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FeedHoverEvent(Dali::TouchPoint&amp;<sp/>point);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGeometryHittestEnabled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsGeometryHittestEnabled();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>RenderTaskList<sp/>GetRenderTaskList();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>int32_t<sp/>GetNativeId()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref><sp/>Get(Actor<sp/>actor);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1aebf5c29f0a7984a6137b52040e071577" kindref="member">KeyEventSignalType</ref>&amp;<sp/>KeyEventSignal();</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a9ff6d782f005114e47af78b9fc67fd64" kindref="member">KeyEventGeneratedSignalType</ref>&amp;<sp/>KeyEventGeneratedSignal();</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a9ff6d782f005114e47af78b9fc67fd64" kindref="member">KeyEventGeneratedSignalType</ref>&amp;<sp/>InterceptKeyEventSignal();</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1aebf5c29f0a7984a6137b52040e071577" kindref="member">KeyEventSignalType</ref>&amp;<sp/>KeyEventMonitorSignal();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1ae839c7502c227bc89009429960befeb7" kindref="member">TouchEventSignalType</ref>&amp;<sp/>TouchedSignal();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1ad9ef01dfb877f8d881c1917248206fb5" kindref="member">WheelEventSignalType</ref>&amp;<sp/>WheelEventSignal();</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a9498d2543ff461c61094e40a1dfd4a96" kindref="member">WheelEventGeneratedSignalType</ref>&amp;<sp/>WheelEventGeneratedSignal();</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder_1a2bc84e346b65939592e17befbe0c2646" kindref="member">FocusChangedGeneratedSignalType</ref>&amp;<sp/>FocusChangedGeneratedSignal();</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>intended<sp/>for<sp/>application<sp/>developers</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">SceneHolder</ref>(<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder" kindref="compound">Internal::Adaptor::SceneHolder</ref>*<sp/>sceneHolder);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Integration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_INTEGRATION_SCENEHOLDER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/scene-holder.h"/>
+  </compounddef>
+</doxygen>

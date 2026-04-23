@@ -1,0 +1,2632 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Animation" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Animation</compoundname>
+    <basecompoundref refid="classDali_1_1BaseHandle" prot="public" virt="non-virtual">Dali::BaseHandle</basecompoundref>
+    <includes refid="animation_8h" local="no">animation.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00" prot="public" static="no" strong="no">
+        <type>uint8_t</type>
+        <name>EndAction</name>
+        <qualifiedname>Dali::Animation::EndAction</qualifiedname>
+        <enumvalue id="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00a42416b1dc76816f136c0416d0dd46f5b" prot="public">
+          <name>BAKE</name>
+          <briefdescription>
+<para>When the animation ends, the animated property values are saved. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00acd95075d48cb56c98a1348bca6b32b06" prot="public">
+          <name>DISCARD</name>
+          <briefdescription>
+<para>When the animation ends, the animated property values are forgotten. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00a155631fb3bfe0308a108ed5abe1c417c" prot="public">
+          <name>BAKE_FINAL</name>
+          <briefdescription>
+<para>If the animation is stopped, the animated property values are saved as if the animation had run to completion, otherwise behaves like Bake. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for what to do when the animation ends, is stopped, or is destroyed. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="134" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="135" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791" prot="public" static="no" strong="no">
+        <type>uint8_t</type>
+        <name>Interpolation</name>
+        <qualifiedname>Dali::Animation::Interpolation</qualifiedname>
+        <enumvalue id="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791a84344ede3e1ad1339efdf4aaf92065ce" prot="public">
+          <name>LINEAR</name>
+          <briefdescription>
+<para>Values in between key frames are interpolated using a linear polynomial. (Default) @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791a54f5ab4ce125dd12387eb0fa99bf1289" prot="public">
+          <name>CUBIC</name>
+          <briefdescription>
+<para>Values in between key frames are interpolated using a cubic polynomial. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for what interpolation method to use on key-frame animations. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="145" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362" prot="public" static="no" strong="no">
+        <type>uint8_t</type>
+        <name>State</name>
+        <qualifiedname>Dali::Animation::State</qualifiedname>
+        <enumvalue id="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362aa87ecb583b362bf2e0eea303c4211ed0" prot="public">
+          <name>STOPPED</name>
+          <briefdescription>
+<para><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> has stopped @SINCE_1_1.21. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362a81cf18c4bf23fa742d04a56f64f04c3d" prot="public">
+          <name>PLAYING</name>
+          <briefdescription>
+<para>The animation is playing @SINCE_1_1.21. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362a29e70d6ed3d6d82d57e6581231225850" prot="public">
+          <name>PAUSED</name>
+          <briefdescription>
+<para>The animation is paused @SINCE_1_1.21. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for what state the animation is in. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: Calling <ref refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" kindref="member">Reset()</ref> on this class will NOT reset the animation. It will call <ref refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" kindref="member">BaseHandle::Reset()</ref> which drops the object handle.</para>
+<para>@SINCE_1_1.21 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="158" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="159" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4" prot="public" static="no" strong="no">
+        <type>uint8_t</type>
+        <name>LoopingMode</name>
+        <qualifiedname>Dali::Animation::LoopingMode</qualifiedname>
+        <enumvalue id="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4a58587c37d420d72e731ad6519f213fe4" prot="public">
+          <name>RESTART</name>
+          <briefdescription>
+<para>When the animation arrives at the end in looping mode, the animation restarts from the beginning. @SINCE_1_2.60. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4a559c8626704307bb82d997a66482105c" prot="public">
+          <name>AUTO_REVERSE</name>
+          <briefdescription>
+<para>When the animation arrives at the end in looping mode, the animation reverses direction and runs backwards again. @SINCE_1_2.60. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for what looping mode is in. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="170" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Animation_1a95222c16777aa0eb6a9db96e2b12615b" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;)&gt;</type>
+        <definition>using Dali::Animation::AnimationSignalType =  Signal&lt;void(Animation&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>AnimationSignalType</name>
+        <qualifiedname>Dali::Animation::AnimationSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> finished signal type @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="126" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Animation_1ae394da76f3ef61982e0cda290a5241d8" prot="public" static="no">
+        <type><ref refid="classDali_1_1Any" kindref="compound">Any</ref></type>
+        <definition>using Dali::Animation::AnyFunction =  Any</definition>
+        <argsstring></argsstring>
+        <name>AnyFunction</name>
+        <qualifiedname>Dali::Animation::AnyFunction</qualifiedname>
+        <briefdescription>
+<para>Interpolation function @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="128" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Animation_1a3c50e96609536846a7ffa29b55d92051" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Animation::Animation</definition>
+        <argsstring>()</argsstring>
+        <name>Animation</name>
+        <qualifiedname>Dali::Animation::Animation</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref>; this can be initialized with <ref refid="classDali_1_1Animation_1ad3aae323ad42588c8f0a5b0bc7a856d4" kindref="member">Animation::New()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calling member functions with an uninitialized <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> handle is not allowed. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="182" column="3"/>
+        <references refid="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" compoundref="base-handle_8h" startline="274" endline="277">Dali::DownCast</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ad155f8fb075565ce62fd25d2c87f1aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Animation::~Animation</definition>
+        <argsstring>()</argsstring>
+        <name>~Animation</name>
+        <qualifiedname>Dali::Animation::~Animation</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="226" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a1e59d5e02182809c0b29f4fb95108e74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Animation::Animation</definition>
+        <argsstring>(const Animation &amp;handle)</argsstring>
+        <name>Animation</name>
+        <qualifiedname>Dali::Animation::Animation</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="234" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a9281df35d64964f39d4605fe770133c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;</type>
+        <definition>Animation &amp; Dali::Animation::operator=</definition>
+        <argsstring>(const Animation &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Animation::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="243" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a91e6d1e690c059b66824981e0c4ea34a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Animation::Animation</definition>
+        <argsstring>(Animation &amp;&amp;rhs) noexcept</argsstring>
+        <name>Animation</name>
+        <qualifiedname>Dali::Animation::Animation</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="251" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a4f53fb782acec5329bff030e15103d48" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;</type>
+        <definition>Animation &amp; Dali::Animation::operator=</definition>
+        <argsstring>(Animation &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Animation::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="260" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a01b93bfee1cfd2858aadc6f9a628b50d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetDuration</definition>
+        <argsstring>(float seconds)</argsstring>
+        <name>SetDuration</name>
+        <qualifiedname>Dali::Animation::SetDuration</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>seconds</declname>
+        </param>
+        <briefdescription>
+<para>Sets the duration of an animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The duration in seconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>DurationSeconds must be greater than zero. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="269" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="64" bodyend="67"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a09522c89edf23350718ff2d91b209a6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Animation::GetDuration</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDuration</name>
+        <qualifiedname>Dali::Animation::GetDuration</qualifiedname>
+        <briefdescription>
+<para>Retrieves the duration of an animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The duration in seconds </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="277" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="69" bodyend="72"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a2bac68d7d26e27ec8ca9c6c135be086b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetLooping</definition>
+        <argsstring>(bool looping)</argsstring>
+        <name>SetLooping</name>
+        <qualifiedname>Dali::Animation::SetLooping</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>looping</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the animation will loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function resets the loop count and should not be used with SetLoopCount(int). Setting this parameter does not cause the animation to <ref refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" kindref="member">Play()</ref>.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">looping</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the animation will loop </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="288" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="74" bodyend="77"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a175a378a20b4745002e2c3613f909a1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetLoopCount</definition>
+        <argsstring>(int32_t count)</argsstring>
+        <name>SetLoopCount</name>
+        <qualifiedname>Dali::Animation::SetLoopCount</qualifiedname>
+        <param>
+          <type>int32_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Enables looping for &apos;count&apos; repeats. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A zero is the same as SetLooping(true) i.e. repeat forever. This function resets the looping value and should not be used with <ref refid="classDali_1_1Animation_1a2bac68d7d26e27ec8ca9c6c135be086b" kindref="member">SetLooping(bool)</ref>. Setting this parameter does not cause the animation to <ref refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" kindref="member">Play()</ref>.</para>
+<para>@SINCE_1_1.20 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of times to loop </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="300" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="79" bodyend="82"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ad191571f9d6dc32e617a26bf7f355288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Dali::Animation::GetLoopCount</definition>
+        <argsstring>()</argsstring>
+        <name>GetLoopCount</name>
+        <qualifiedname>Dali::Animation::GetLoopCount</qualifiedname>
+        <briefdescription>
+<para>Gets the loop count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A zero is the same as SetLooping(true) ie repeat forever. The loop count is initially 1 for play once.</para>
+<para>@SINCE_1_1.20 <simplesect kind="return"><para>The number of times to loop </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="311" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="84" bodyend="87"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a5c96acc000741a5a084de2bbad63e325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Dali::Animation::GetCurrentLoop</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentLoop</name>
+        <qualifiedname>Dali::Animation::GetCurrentLoop</qualifiedname>
+        <briefdescription>
+<para>Gets the current loop count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A value 0 to <ref refid="classDali_1_1Animation_1ad191571f9d6dc32e617a26bf7f355288" kindref="member">GetLoopCount()</ref> indicating the current loop count when looping.</para>
+<para>@SINCE_1_1.20 <simplesect kind="return"><para>The current number of loops that have occured </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="321" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="89" bodyend="92"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a10449d148c13eb3c5c79e79cb85b1f0d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Animation::IsLooping</definition>
+        <argsstring>() const</argsstring>
+        <name>IsLooping</name>
+        <qualifiedname>Dali::Animation::IsLooping</qualifiedname>
+        <briefdescription>
+<para>Queries whether the animation will loop. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>True if the animation will loop </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="329" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="94" bodyend="97"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a1eb6e6f984eb896072d77d283b15a107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetEndAction</definition>
+        <argsstring>(EndAction action)</argsstring>
+        <name>SetEndAction</name>
+        <qualifiedname>Dali::Animation::SetEndAction</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00" kindref="member">EndAction</ref></type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+<para>Sets the end action of the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This action is performed when the animation ends or if it is stopped. Default end action is bake. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end action </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="339" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="99" bodyend="102"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1aad4bb02dcb4a1ad288e15477872bb67b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00" kindref="member">EndAction</ref></type>
+        <definition>Dali::Animation::EndAction Dali::Animation::GetEndAction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetEndAction</name>
+        <qualifiedname>Dali::Animation::GetEndAction</qualifiedname>
+        <briefdescription>
+<para>Returns the end action of the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The end action </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="347" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="104" bodyend="107"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a543a03b667ac3e56720e7c847b8816d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetDisconnectAction</definition>
+        <argsstring>(EndAction disconnectAction)</argsstring>
+        <name>SetDisconnectAction</name>
+        <qualifiedname>Dali::Animation::SetDisconnectAction</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00" kindref="member">EndAction</ref></type>
+          <declname>disconnectAction</declname>
+        </param>
+        <briefdescription>
+<para>Sets the disconnect action. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If any of the animated property owners are disconnected from the stage while the animation is being played, then this action is performed. Default action is to BakeFinal. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">disconnectAction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The disconnect action </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="357" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="109" bodyend="112"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1acbeee5859869f376b700b91b1251214b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00" kindref="member">EndAction</ref></type>
+        <definition>Animation::EndAction Dali::Animation::GetDisconnectAction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDisconnectAction</name>
+        <qualifiedname>Dali::Animation::GetDisconnectAction</qualifiedname>
+        <briefdescription>
+<para>Returns the disconnect action. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The disconnect action </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="365" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="114" bodyend="117"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a49060f130ff1a3b0d594e43f904c74f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetDefaultAlphaFunction</definition>
+        <argsstring>(AlphaFunction alpha)</argsstring>
+        <name>SetDefaultAlphaFunction</name>
+        <qualifiedname>Dali::Animation::SetDefaultAlphaFunction</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Sets the default alpha function for an animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is applied to individual property animations, if no further alpha functions are supplied. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default alpha function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="374" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="119" bodyend="122"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a3a49b7521f43d3741bab27ea067c8d87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+        <definition>AlphaFunction Dali::Animation::GetDefaultAlphaFunction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDefaultAlphaFunction</name>
+        <qualifiedname>Dali::Animation::GetDefaultAlphaFunction</qualifiedname>
+        <briefdescription>
+<para>Retrieves the default alpha function for an animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The default alpha function </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="382" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="124" bodyend="127"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1acccc65048ea080f13be49857f30d5066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetCurrentProgress</definition>
+        <argsstring>(float progress)</argsstring>
+        <name>SetCurrentProgress</name>
+        <qualifiedname>Dali::Animation::SetCurrentProgress</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>progress</declname>
+        </param>
+        <briefdescription>
+<para>Sets the progress of the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The animation will play (or continue playing) from this point. The progress must be in the 0-1 interval or in the play range interval if defined ( See <ref refid="classDali_1_1Animation_1a474faf015fab9afc4683668864946f59" kindref="member">Animation::SetPlayRange</ref> ), otherwise, it will be ignored.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">progress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new progress as a normalized value between [0,1] or between the play range if specified </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="395" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="296" bodyend="299"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a78408dd0189a90722d2bb99dc052b77e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Animation::GetCurrentProgress</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentProgress</name>
+        <qualifiedname>Dali::Animation::GetCurrentProgress</qualifiedname>
+        <briefdescription>
+<para>Retrieves the current progress of the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The current progress as a normalized value between [0,1] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="403" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="301" bodyend="304"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a2e3483a3e371832f5f3e71deffee7c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetSpeedFactor</definition>
+        <argsstring>(float factor)</argsstring>
+        <name>SetSpeedFactor</name>
+        <qualifiedname>Dali::Animation::SetSpeedFactor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+<para>Specifies a speed factor for the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The speed factor is a multiplier of the normal velocity of the animation. Values between [0,1] will slow down the animation and values above one will speed up the animation. It is also possible to specify a negative multiplier to play the animation in reverse.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value which will multiply the velocity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="415" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="306" bodyend="309"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ad9dfac65ec51c7141dd9ad9445e2db45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Animation::GetSpeedFactor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSpeedFactor</name>
+        <qualifiedname>Dali::Animation::GetSpeedFactor</qualifiedname>
+        <briefdescription>
+<para>Retrieves the speed factor of the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>Speed factor </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="423" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="311" bodyend="314"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a474faf015fab9afc4683668864946f59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetPlayRange</definition>
+        <argsstring>(const Vector2 &amp;range)</argsstring>
+        <name>SetPlayRange</name>
+        <qualifiedname>Dali::Animation::SetPlayRange</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+<para>Sets the playing range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> will play between the values specified. Both values ( range.x and range.y ) should be between 0-1, otherwise they will be ignored. If the range provided is not in proper order ( minimum,maximum ), it will be reordered.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Two values between [0,1] to specify minimum and maximum progress. The animation will play between those values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="435" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="316" bodyend="319"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a34a0822b58ff998ede0702d82e4439f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::Animation::GetPlayRange</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPlayRange</name>
+        <qualifiedname>Dali::Animation::GetPlayRange</qualifiedname>
+        <briefdescription>
+<para>Gets the playing range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The play range defined for the animation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="443" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="321" bodyend="324"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a6db4b0cc50690c194c52c8caa27f9b2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetBlendPoint</definition>
+        <argsstring>(float blendPoint)</argsstring>
+        <name>SetBlendPoint</name>
+        <qualifiedname>Dali::Animation::SetBlendPoint</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>blendPoint</declname>
+        </param>
+        <briefdescription>
+<para>Sets the blend point to interpolate animate property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.26 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blendPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value between [0,1], If the value of the keyframe whose progress is 0 is different from the current value, the property is animated as it smoothly blends until the progress reaches the blendPoint. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The blend point only affects animation registered with AnimateBetween. Other animations operate the same as when <ref refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" kindref="member">Play()</ref> is called. And the blend point needs to be set before this animation plays. If the blend point changes after playback, animation continuity cannot be guaranteed. </para>
+</simplesect>
+<simplesect kind="note"><para>In the case of a looping animation, the animation is blended only in the first loop. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="455" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="326" bodyend="329"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a3a3d5e538c50e75d25beebbe1fbccbdb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Animation::GetBlendPoint</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlendPoint</name>
+        <qualifiedname>Dali::Animation::GetBlendPoint</qualifiedname>
+        <briefdescription>
+<para>Gets the Blend Point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.26 <simplesect kind="return"><para>The blend point to interpolate animate property </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="463" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="331" bodyend="334"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Play</definition>
+        <argsstring>()</argsstring>
+        <name>Play</name>
+        <qualifiedname>Dali::Animation::Play</qualifiedname>
+        <briefdescription>
+<para>Play the animation. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="469" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="129" bodyend="132"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a742f313ef6316e338572fb3b547344ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::PlayFrom</definition>
+        <argsstring>(float progress)</argsstring>
+        <name>PlayFrom</name>
+        <qualifiedname>Dali::Animation::PlayFrom</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>progress</declname>
+        </param>
+        <briefdescription>
+<para>Plays the animation from a given point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The progress must be in the 0-1 interval or in the play range interval if defined ( See <ref refid="classDali_1_1Animation_1a474faf015fab9afc4683668864946f59" kindref="member">Animation::SetPlayRange</ref> ), otherwise, it will be ignored.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">progress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value between [0,1], or between the play range if specified, from where the animation should start playing </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="480" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="134" bodyend="137"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a418e960f664260d0a5660b38e59aa8aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::PlayAfter</definition>
+        <argsstring>(float delaySeconds)</argsstring>
+        <name>PlayAfter</name>
+        <qualifiedname>Dali::Animation::PlayAfter</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>delaySeconds</declname>
+        </param>
+        <briefdescription>
+<para>Play the animation after a given delay time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The delay time is not included in the looping time. When the delay time is negative value, it would treat as play immediately. @SINCE_1_2.60 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">delaySeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delay time </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="490" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="139" bodyend="142"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a3ebf687d7cdc48d8ae3f2ceba2cbe158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Pause</definition>
+        <argsstring>()</argsstring>
+        <name>Pause</name>
+        <qualifiedname>Dali::Animation::Pause</qualifiedname>
+        <briefdescription>
+<para>Pauses the animation. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="496" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="144" bodyend="147"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1aef7db0cea36c4ae303cdc64b59e9494f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362" kindref="member">State</ref></type>
+        <definition>Dali::Animation::State Dali::Animation::GetState</definition>
+        <argsstring>() const</argsstring>
+        <name>GetState</name>
+        <qualifiedname>Dali::Animation::GetState</qualifiedname>
+        <briefdescription>
+<para>Queries the state of the animation. @SINCE_1_1.21. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362" kindref="member">Animation::State</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="503" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="149" bodyend="152"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ad13cf87e47f8bbca001d058e870f17c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <qualifiedname>Dali::Animation::Stop</qualifiedname>
+        <briefdescription>
+<para>Stops the animation. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="509" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="154" bodyend="157"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1aefde6f5efc6975d49ed788aa3548ca85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>Dali::Animation::Clear</qualifiedname>
+        <briefdescription>
+<para>Clears the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This disconnects any objects that were being animated, effectively stopping the animation. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="517" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="159" bodyend="162"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a0ce2969f4028feafb5993e2eca733573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::SetLoopingMode</definition>
+        <argsstring>(LoopingMode loopingMode)</argsstring>
+        <name>SetLoopingMode</name>
+        <qualifiedname>Dali::Animation::SetLoopingMode</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4" kindref="member">LoopingMode</ref></type>
+          <declname>loopingMode</declname>
+        </param>
+        <briefdescription>
+<para>Sets the looping mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> plays forwards and then restarts from the beginning or runs backwards again. @SINCE_1_2.60 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">loopingMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The looping mode is one of RESTART and AUTO_REVERSE </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="526" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="164" bodyend="167"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1aef92e9e545dbbe996d51cb75b325ad7f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4" kindref="member">LoopingMode</ref></type>
+        <definition>Animation::LoopingMode Dali::Animation::GetLoopingMode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLoopingMode</name>
+        <qualifiedname>Dali::Animation::GetLoopingMode</qualifiedname>
+        <briefdescription>
+<para>Gets one of the current looping mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <simplesect kind="return"><para>The current looping mode </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="534" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="169" bodyend="172"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a94d80373dd23ddf536d5765e2c268654" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Animation::GetAnimationId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAnimationId</name>
+        <qualifiedname>Dali::Animation::GetAnimationId</qualifiedname>
+        <briefdescription>
+<para>Get the unique id of <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref>. It could be 0 given animation is invalid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.14 <simplesect kind="return"><para>The unique id of <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref>, or 0 if invalid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="542" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="174" bodyend="177"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1afa8139e47b80b388de84ff289710b16f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation_1a95222c16777aa0eb6a9db96e2b12615b" kindref="member">AnimationSignalType</ref> &amp;</type>
+        <definition>Animation::AnimationSignalType &amp; Dali::Animation::FinishedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>FinishedSignal</name>
+        <qualifiedname>Dali::Animation::FinishedSignal</qualifiedname>
+        <briefdescription>
+<para>Connects to this signal to be notified when an <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref>&apos;s animations have finished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>A signal object to connect with </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="550" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="179" bodyend="182"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a76ee942012f16e863d108c648f0f6ccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBy</definition>
+        <argsstring>(Property target, Property::Value relativeValue)</argsstring>
+        <name>AnimateBy</name>
+        <qualifiedname>Dali::Animation::AnimateBy</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>relativeValue</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property value by a relative amount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default alpha function will be used. The effect will start &amp; end when the animation begins &amp; ends. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">relativeValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value will change by this amount </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="561" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="184" bodyend="187"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a876fb908beac766378a484e948b29736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBy</definition>
+        <argsstring>(Property target, Property::Value relativeValue, AlphaFunction alpha)</argsstring>
+        <name>AnimateBy</name>
+        <qualifiedname>Dali::Animation::AnimateBy</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>relativeValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property value by a relative amount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The effect will start &amp; end when the animation begins &amp; ends. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">relativeValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value will change by this amount </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="572" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="189" bodyend="192"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a72061273aa9bc81195113a4e642e4aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBy</definition>
+        <argsstring>(Property target, Property::Value relativeValue, TimePeriod period)</argsstring>
+        <name>AnimateBy</name>
+        <qualifiedname>Dali::Animation::AnimateBy</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>relativeValue</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property value by a relative amount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default alpha function will be used. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">relativeValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value will increase/decrease by this amount </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="583" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="194" bodyend="197"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a9b139674095590ce48e71dce894e43c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBy</definition>
+        <argsstring>(Property target, Property::Value relativeValue, AlphaFunction alpha, TimePeriod period)</argsstring>
+        <name>AnimateBy</name>
+        <qualifiedname>Dali::Animation::AnimateBy</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>relativeValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property value by a relative amount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">relativeValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value will increase/decrease by this amount </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="594" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="199" bodyend="202"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a8feeae7c3d81100c45bfd29fefbd45b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateTo</definition>
+        <argsstring>(Property target, Property::Value destinationValue)</argsstring>
+        <name>AnimateTo</name>
+        <qualifiedname>Dali::Animation::AnimateTo</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>destinationValue</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property to a destination value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default alpha function will be used. The effect will start &amp; end when the animation begins &amp; ends. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destinationValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="605" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="204" bodyend="207"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="classDali_1_1AnimationData_1a29d2ebde5d8eb2e48dd064a131d5b17f" compoundref="animation-data_8cpp" startline="35" endline="56">Dali::AnimationData::CreateAnimation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a25095be9e3fc31892988cec9a2e24c0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateTo</definition>
+        <argsstring>(Property target, Property::Value destinationValue, AlphaFunction alpha)</argsstring>
+        <name>AnimateTo</name>
+        <qualifiedname>Dali::Animation::AnimateTo</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>destinationValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property to a destination value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The effect will start &amp; end when the animation begins &amp; ends. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destinationValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="616" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="209" bodyend="212"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1acaa5718764cc0606bbf8232969940f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateTo</definition>
+        <argsstring>(Property target, Property::Value destinationValue, TimePeriod period)</argsstring>
+        <name>AnimateTo</name>
+        <qualifiedname>Dali::Animation::AnimateTo</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>destinationValue</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property to a destination value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default alpha function will be used. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destinationValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="627" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="214" bodyend="217"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a43a3a72d7d8a69418f76eeec9211c6db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateTo</definition>
+        <argsstring>(Property target, Property::Value destinationValue, AlphaFunction alpha, TimePeriod period)</argsstring>
+        <name>AnimateTo</name>
+        <qualifiedname>Dali::Animation::AnimateTo</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>destinationValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property to a destination value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object/property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destinationValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="638" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="219" bodyend="222"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ad0abd1b6c2d446b09d0921fbaf9551a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="647" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="224" bodyend="227"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1adadddcd19f2bdc5d51dc92654773f9ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, Interpolation interpolation)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791" kindref="member">Interpolation</ref></type>
+          <declname>interpolation</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interpolation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The method used to interpolate between values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="657" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="229" bodyend="232"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a8d2b7eceb95460c6ac86b3c1c6f3d0fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, AlphaFunction alpha)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="667" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="244" bodyend="247"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a07e538714d5be1aa808ec22c873d7c95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, AlphaFunction alpha, Interpolation interpolation)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791" kindref="member">Interpolation</ref></type>
+          <declname>interpolation</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interpolation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The method used to interpolate between values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="678" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="249" bodyend="252"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a52707b6a81d016d66895095a00c65d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, TimePeriod period)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="688" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="234" bodyend="237"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ae14aac22de19d005cb297515703cbeab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, TimePeriod period, Interpolation interpolation)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791" kindref="member">Interpolation</ref></type>
+          <declname>interpolation</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interpolation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The method used to interpolate between values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="699" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="239" bodyend="242"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a23c6690a9710d7cfa1a700ccb6eb3bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, AlphaFunction alpha, TimePeriod period)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="710" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="254" bodyend="257"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a7a06b0b32982b409862e30a3411a6832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::AnimateBetween</definition>
+        <argsstring>(Property target, KeyFrames keyFrames, AlphaFunction alpha, TimePeriod period, Interpolation interpolation)</argsstring>
+        <name>AnimateBetween</name>
+        <qualifiedname>Dali::Animation::AnimateBetween</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property" kindref="compound">Property</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791" kindref="member">Interpolation</ref></type>
+          <declname>interpolation</declname>
+        </param>
+        <briefdescription>
+<para>Animates a property between keyframes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target object property to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The set of time/value pairs between which to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply to the overall progress </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">interpolation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The method used to interpolate between values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="722" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="259" bodyend="262"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ac01608d2df8e2e22ddbe8929b9b98b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Animate</definition>
+        <argsstring>(Actor actor, Path path, const Vector3 &amp;forward)</argsstring>
+        <name>Animate</name>
+        <qualifiedname>Dali::Animation::Animate</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Path" kindref="compound">Path</ref></type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>forward</declname>
+        </param>
+        <briefdescription>
+<para>Animates an actor&apos;s position and orientation through a predefined path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actor will rotate to orient the supplied forward vector with the path&apos;s tangent. If forward is the zero vector then no rotation will happen.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path. It defines position and orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">forward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector (in local space coordinate system) that will be oriented with the path&apos;s tangent direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="737" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="266" bodyend="269"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a2873bbe4209d63e9a5502d2284627633" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Animate</definition>
+        <argsstring>(Actor actor, Path path, const Vector3 &amp;forward, AlphaFunction alpha)</argsstring>
+        <name>Animate</name>
+        <qualifiedname>Dali::Animation::Animate</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Path" kindref="compound">Path</ref></type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>forward</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Animates an actor&apos;s position and orientation through a predefined path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actor will rotate to orient the supplied forward vector with the path&apos;s tangent. If forward is the zero vector then no rotation will happen.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path. It defines position and orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">forward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector (in local space coordinate system) that will be oriented with the path&apos;s tangent direction </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="751" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="271" bodyend="274"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a2fce62ac980be9ba8fc68fea5ebe53c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Animate</definition>
+        <argsstring>(Actor actor, Path path, const Vector3 &amp;forward, TimePeriod period)</argsstring>
+        <name>Animate</name>
+        <qualifiedname>Dali::Animation::Animate</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Path" kindref="compound">Path</ref></type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>forward</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates an actor&apos;s position and orientation through a predefined path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actor will rotate to orient the supplied forward vector with the path&apos;s tangent. If forward is the zero vector then no rotation will happen.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path. It defines position and orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">forward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector (in local space coordinate system) that will be oriented with the path&apos;s tangent direction </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="765" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="276" bodyend="279"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a0e44a7b7587382751b0a34200a2d4010" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Animate</definition>
+        <argsstring>(Actor actor, Path path, const Vector3 &amp;forward, AlphaFunction alpha, TimePeriod period)</argsstring>
+        <name>Animate</name>
+        <qualifiedname>Dali::Animation::Animate</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Path" kindref="compound">Path</ref></type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>forward</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref></type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+<para>Animates an actor&apos;s position and orientation through a predefined path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actor will rotate to orient the supplied forward vector with the path&apos;s tangent. If forward is the zero vector then no rotation will happen.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path. It defines position and orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">forward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector (in local space coordinate system) that will be oriented with the path&apos;s tangent direction </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha function to apply </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect will occur during this time period </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="780" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="281" bodyend="284"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1a55c3bc2d960c4ae897705b06a5ad7e3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Show</definition>
+        <argsstring>(Actor actor, float delaySeconds)</argsstring>
+        <name>Show</name>
+        <qualifiedname>Dali::Animation::Show</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>delaySeconds</declname>
+        </param>
+        <briefdescription>
+<para>Shows an actor during the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">delaySeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial delay from the start of the animation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="789" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="286" bodyend="289"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ac912838b6a91ef9ed3b8616439fd2b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Animation::Hide</definition>
+        <argsstring>(Actor actor, float delaySeconds)</argsstring>
+        <name>Hide</name>
+        <qualifiedname>Dali::Animation::Hide</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>delaySeconds</declname>
+        </param>
+        <briefdescription>
+<para>Hides an actor during the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to animate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">delaySeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial delay from the start of the animation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="798" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="291" bodyend="294"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Animation_1a9b8af6c95e324ad2fb61a146554e3b6b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref></type>
+        <definition>Animation Dali::Animation::New</definition>
+        <argsstring>(float durationSeconds)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Animation::New</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>durationSeconds</declname>
+        </param>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The animation will not loop. The default end action is &quot;Bake&quot;. The default alpha function is linear. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">durationSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The duration in seconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+<simplesect kind="note"><para>durationSeconds can not be negative. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="195" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="37" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1ad3aae323ad42588c8f0a5b0bc7a856d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref></type>
+        <definition>Animation Dali::Animation::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Animation::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The animation will not loop. The default end action is &quot;Bake&quot;. The default alpha function is linear. @SINCE_2_5.18 <simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="206" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="44" bodyend="47"/>
+        <referencedby refid="classDali_1_1AnimationData_1a29d2ebde5d8eb2e48dd064a131d5b17f" compoundref="animation-data_8cpp" startline="35" endline="56">Dali::AnimationData::CreateAnimation</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Animation_1afc07491f3dd14085c58314b18a82a363" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref></type>
+        <definition>Animation Dali::Animation::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::Animation::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts a handle to <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to an <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> object, the downcast produces valid handle. If not, the returned handle is left uninitialized.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to an object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to an <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> object or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="218" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp" bodystart="49" bodyend="52"/>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Animation" kindref="compound">Dali::Animation</ref> can be used to animate the properties of any number of objects, typically Actors. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An example animation setup is shown below:</para>
+<para><programlisting><codeline><highlight class="keyword">struct<sp/></highlight><highlight class="normal">MyProgram</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Actor<sp/>mActor;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>object<sp/>we<sp/>wish<sp/>to<sp/>animate</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Animation<sp/>mAnimation;<sp/></highlight><highlight class="comment">//<sp/>Keep<sp/>this<sp/>to<sp/>control<sp/>the<sp/>animation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>...To<sp/>play<sp/>the<sp/>animation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mAnimation<sp/>=<sp/><ref refid="classDali_1_1Animation_1ad3aae323ad42588c8f0a5b0bc7a856d4" kindref="member">Animation::New</ref>(3.0f);<sp/></highlight><highlight class="comment">//<sp/>duration<sp/>3<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mAnimation.AnimateTo(Property(mActor,<sp/><ref refid="structDali_1_1Actor_1_1Property_1aa00cf4d2c81c442d5bf5c544f96410c3a2a46843cf5c6eda012f5246ace045519" kindref="member">Actor::Property::POSITION</ref>),<sp/>Vector3(10.0f,<sp/>50.0f,<sp/>0.0f));</highlight></codeline>
+<codeline><highlight class="normal">mAnimation.Play();</highlight></codeline>
+</programlisting></para>
+<para><ref refid="classDali_1_1Animation" kindref="compound">Dali::Animation</ref> supports &quot;fire and forget&quot; behaviour i.e. an animation continues to play if the handle is discarded. Note that in the following example, the &quot;Finish&quot; signal will be emitted:</para>
+<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ExampleCallback(<sp/><ref refid="classDali_1_1Animation_1a3c50e96609536846a7ffa29b55d92051" kindref="member">Animation</ref>&amp;<sp/>source<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Animation<sp/>has<sp/>finished&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ExampleAnimation(<sp/>Actor<sp/>actor<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Animation_1a3c50e96609536846a7ffa29b55d92051" kindref="member">Animation</ref><sp/>animation<sp/>=<sp/><ref refid="classDali_1_1Animation_1ad3aae323ad42588c8f0a5b0bc7a856d4" kindref="member">Animation::New</ref>(2.0f);<sp/></highlight><highlight class="comment">//<sp/>duration<sp/>2<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>animation.AnimateTo(Property(actor,<sp/><ref refid="structDali_1_1Actor_1_1Property_1aa00cf4d2c81c442d5bf5c544f96410c3a2a46843cf5c6eda012f5246ace045519" kindref="member">Actor::Property::POSITION</ref>),<sp/>10.0f,<sp/>50.0f,<sp/>0.0f);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>animation.FinishedSignal().Connect(<sp/>ExampleCallback<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>animation.Play();</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>At<sp/>this<sp/>point<sp/>the<sp/>animation<sp/>handle<sp/>has<sp/>gone<sp/>out<sp/>of<sp/>scope</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Actor<sp/>actor<sp/>=<sp/><ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classDali_1_1Stage_1a6f31515b77fef236f01bb51a84a5f652" kindref="member">Stage::GetCurrent</ref>().<ref refid="classDali_1_1Stage_1aa1b235137a780325fe25645a976e472b" kindref="member">Add</ref>(<sp/>actor<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Fire<sp/>animation<sp/>and<sp/>forget<sp/>about<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ExampleAnimation(<sp/>actor<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>However<sp/>the<sp/>animation<sp/>will<sp/>continue,<sp/>and<sp/>&quot;Animation<sp/>has<sp/>finished&quot;<sp/>will<sp/>be<sp/>printed<sp/>after<sp/>2<sp/>seconds.</highlight></codeline>
+</programlisting></para>
+<para>If the &quot;Finish&quot; signal is connected to a member function of an object, it must be disconnected before the object is destroyed. This is typically done in the object destructor, and requires either the Dali::Connection object or <ref refid="classDali_1_1Animation" kindref="compound">Dali::Animation</ref> handle to be stored.</para>
+<para>The overall animation time is superseded by the values given in the <ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref> structure used when calling the <ref refid="classDali_1_1Animation_1a8feeae7c3d81100c45bfd29fefbd45b4" kindref="member">AnimateTo()</ref>, <ref refid="classDali_1_1Animation_1a76ee942012f16e863d108c648f0f6ccb" kindref="member">AnimateBy()</ref>, <ref refid="classDali_1_1Animation_1ad0abd1b6c2d446b09d0921fbaf9551a8" kindref="member">AnimateBetween()</ref> and <ref refid="classDali_1_1Animation_1ac01608d2df8e2e22ddbe8929b9b98b43" kindref="member">Animate()</ref> methods. If any of the individual calls to those functions exceeds the overall animation time, then the overall animation time is automatically extended.</para>
+<para>Using AnimateTo and AnimateBy for the same property of the same <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> will yield undefined behaviour especially if the <ref refid="structDali_1_1TimePeriod" kindref="compound">TimePeriod</ref> overlaps.</para>
+<para>After calling <ref refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" kindref="member">Animation::Play()</ref>, <ref refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" kindref="member">Handle::GetProperty</ref> will return the target value of the animated property.</para>
+<para>Signals <table rows="2" cols="2"><row>
+<entry thead="yes"><para>Signal Name   </para>
+</entry><entry thead="yes"><para>Method    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>finished   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Animation_1afa8139e47b80b388de84ff289710b16f" kindref="member">FinishedSignal()</ref>   </para>
+</entry></row>
+</table>
+</para>
+<para>Actions <table rows="4" cols="2"><row>
+<entry thead="yes"><para>Action Name   </para>
+</entry><entry thead="yes"><para>Animation method called    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>play   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" kindref="member">Play()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>stop   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Animation_1ad13cf87e47f8bbca001d058e870f17c9" kindref="member">Stop()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>pause   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Animation_1a3ebf687d7cdc48d8ae3f2ceba2cbe158" kindref="member">Pause()</ref>   </para>
+</entry></row>
+</table>
+@SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::Animation</label>
+        <link refid="classDali_1_1Animation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::Animation</label>
+        <link refid="classDali_1_1Animation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" line="123" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h" bodystart="124" bodyend="809"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Animation_1ac01608d2df8e2e22ddbe8929b9b98b43" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animate</name></member>
+      <member refid="classDali_1_1Animation_1a2873bbe4209d63e9a5502d2284627633" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animate</name></member>
+      <member refid="classDali_1_1Animation_1a2fce62ac980be9ba8fc68fea5ebe53c4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animate</name></member>
+      <member refid="classDali_1_1Animation_1a0e44a7b7587382751b0a34200a2d4010" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animate</name></member>
+      <member refid="classDali_1_1Animation_1ad0abd1b6c2d446b09d0921fbaf9551a8" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1adadddcd19f2bdc5d51dc92654773f9ac" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1a8d2b7eceb95460c6ac86b3c1c6f3d0fc" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1a07e538714d5be1aa808ec22c873d7c95" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1a52707b6a81d016d66895095a00c65d75" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1ae14aac22de19d005cb297515703cbeab" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1a23c6690a9710d7cfa1a700ccb6eb3bd7" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1a7a06b0b32982b409862e30a3411a6832" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBetween</name></member>
+      <member refid="classDali_1_1Animation_1a76ee942012f16e863d108c648f0f6ccb" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBy</name></member>
+      <member refid="classDali_1_1Animation_1a876fb908beac766378a484e948b29736" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBy</name></member>
+      <member refid="classDali_1_1Animation_1a72061273aa9bc81195113a4e642e4aa4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBy</name></member>
+      <member refid="classDali_1_1Animation_1a9b139674095590ce48e71dce894e43c6" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateBy</name></member>
+      <member refid="classDali_1_1Animation_1a8feeae7c3d81100c45bfd29fefbd45b4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateTo</name></member>
+      <member refid="classDali_1_1Animation_1a25095be9e3fc31892988cec9a2e24c0c" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateTo</name></member>
+      <member refid="classDali_1_1Animation_1acaa5718764cc0606bbf8232969940f36" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateTo</name></member>
+      <member refid="classDali_1_1Animation_1a43a3a72d7d8a69418f76eeec9211c6db" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimateTo</name></member>
+      <member refid="classDali_1_1Animation_1a3c50e96609536846a7ffa29b55d92051" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animation</name></member>
+      <member refid="classDali_1_1Animation_1a1e59d5e02182809c0b29f4fb95108e74" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animation</name></member>
+      <member refid="classDali_1_1Animation_1a91e6d1e690c059b66824981e0c4ea34a" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Animation</name></member>
+      <member refid="classDali_1_1Animation_1a95222c16777aa0eb6a9db96e2b12615b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnimationSignalType</name></member>
+      <member refid="classDali_1_1Animation_1ae394da76f3ef61982e0cda290a5241d8" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AnyFunction</name></member>
+      <member refid="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4a559c8626704307bb82d997a66482105c" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>AUTO_REVERSE</name></member>
+      <member refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00a42416b1dc76816f136c0416d0dd46f5b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>BAKE</name></member>
+      <member refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00a155631fb3bfe0308a108ed5abe1c417c" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>BAKE_FINAL</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1Animation_1aefde6f5efc6975d49ed788aa3548ca85" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Clear</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791a54f5ab4ce125dd12387eb0fa99bf1289" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>CUBIC</name></member>
+      <member refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00acd95075d48cb56c98a1348bca6b32b06" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>DISCARD</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Animation_1afc07491f3dd14085c58314b18a82a363" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Animation_1a29d7e7d348b3cf0e5f57839738b4eb00" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>EndAction</name></member>
+      <member refid="classDali_1_1Animation_1afa8139e47b80b388de84ff289710b16f" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>FinishedSignal</name></member>
+      <member refid="classDali_1_1Animation_1a94d80373dd23ddf536d5765e2c268654" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetAnimationId</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1Animation_1a3a3d5e538c50e75d25beebbe1fbccbdb" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetBlendPoint</name></member>
+      <member refid="classDali_1_1Animation_1a5c96acc000741a5a084de2bbad63e325" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetCurrentLoop</name></member>
+      <member refid="classDali_1_1Animation_1a78408dd0189a90722d2bb99dc052b77e" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetCurrentProgress</name></member>
+      <member refid="classDali_1_1Animation_1a3a49b7521f43d3741bab27ea067c8d87" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetDefaultAlphaFunction</name></member>
+      <member refid="classDali_1_1Animation_1acbeee5859869f376b700b91b1251214b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetDisconnectAction</name></member>
+      <member refid="classDali_1_1Animation_1a09522c89edf23350718ff2d91b209a6b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetDuration</name></member>
+      <member refid="classDali_1_1Animation_1aad4bb02dcb4a1ad288e15477872bb67b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetEndAction</name></member>
+      <member refid="classDali_1_1Animation_1ad191571f9d6dc32e617a26bf7f355288" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetLoopCount</name></member>
+      <member refid="classDali_1_1Animation_1aef92e9e545dbbe996d51cb75b325ad7f" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetLoopingMode</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1Animation_1a34a0822b58ff998ede0702d82e4439f7" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetPlayRange</name></member>
+      <member refid="classDali_1_1Animation_1ad9dfac65ec51c7141dd9ad9445e2db45" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetSpeedFactor</name></member>
+      <member refid="classDali_1_1Animation_1aef7db0cea36c4ae303cdc64b59e9494f" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetState</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1Animation_1ac912838b6a91ef9ed3b8616439fd2b80" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Hide</name></member>
+      <member refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Interpolation</name></member>
+      <member refid="classDali_1_1Animation_1a10449d148c13eb3c5c79e79cb85b1f0d" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>IsLooping</name></member>
+      <member refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791a84344ede3e1ad1339efdf4aaf92065ce" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>LINEAR</name></member>
+      <member refid="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>LoopingMode</name></member>
+      <member refid="classDali_1_1Animation_1a9b8af6c95e324ad2fb61a146554e3b6b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>New</name></member>
+      <member refid="classDali_1_1Animation_1ad3aae323ad42588c8f0a5b0bc7a856d4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>New</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1Animation_1a9281df35d64964f39d4605fe770133c2" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Animation_1a4f53fb782acec5329bff030e15103d48" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Animation</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Animation</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Animation_1a3ebf687d7cdc48d8ae3f2ceba2cbe158" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Pause</name></member>
+      <member refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362a29e70d6ed3d6d82d57e6581231225850" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>PAUSED</name></member>
+      <member refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Play</name></member>
+      <member refid="classDali_1_1Animation_1a418e960f664260d0a5660b38e59aa8aa" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>PlayAfter</name></member>
+      <member refid="classDali_1_1Animation_1a742f313ef6316e338572fb3b547344ad" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>PlayFrom</name></member>
+      <member refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362a81cf18c4bf23fa742d04a56f64f04c3d" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>PLAYING</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Animation_1a3e9ee3223d500bb0c4124b65ded2cae4a58587c37d420d72e731ad6519f213fe4" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>RESTART</name></member>
+      <member refid="classDali_1_1Animation_1a6db4b0cc50690c194c52c8caa27f9b2c" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetBlendPoint</name></member>
+      <member refid="classDali_1_1Animation_1acccc65048ea080f13be49857f30d5066" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetCurrentProgress</name></member>
+      <member refid="classDali_1_1Animation_1a49060f130ff1a3b0d594e43f904c74f8" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetDefaultAlphaFunction</name></member>
+      <member refid="classDali_1_1Animation_1a543a03b667ac3e56720e7c847b8816d7" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetDisconnectAction</name></member>
+      <member refid="classDali_1_1Animation_1a01b93bfee1cfd2858aadc6f9a628b50d" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetDuration</name></member>
+      <member refid="classDali_1_1Animation_1a1eb6e6f984eb896072d77d283b15a107" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetEndAction</name></member>
+      <member refid="classDali_1_1Animation_1a175a378a20b4745002e2c3613f909a1d" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetLoopCount</name></member>
+      <member refid="classDali_1_1Animation_1a2bac68d7d26e27ec8ca9c6c135be086b" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetLooping</name></member>
+      <member refid="classDali_1_1Animation_1a0ce2969f4028feafb5993e2eca733573" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetLoopingMode</name></member>
+      <member refid="classDali_1_1Animation_1a474faf015fab9afc4683668864946f59" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetPlayRange</name></member>
+      <member refid="classDali_1_1Animation_1a2e3483a3e371832f5f3e71deffee7c25" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>SetSpeedFactor</name></member>
+      <member refid="classDali_1_1Animation_1a55c3bc2d960c4ae897705b06a5ad7e3e" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Show</name></member>
+      <member refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>State</name></member>
+      <member refid="classDali_1_1Animation_1ad13cf87e47f8bbca001d058e870f17c9" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>Stop</name></member>
+      <member refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362aa87ecb583b362bf2e0eea303c4211ed0" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>STOPPED</name></member>
+      <member refid="classDali_1_1Animation_1ad155f8fb075565ce62fd25d2c87f1aa8" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>~Animation</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::Animation</scope><name>~BaseHandle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

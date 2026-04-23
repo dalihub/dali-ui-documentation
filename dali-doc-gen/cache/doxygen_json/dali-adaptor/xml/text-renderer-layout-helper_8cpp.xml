@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="text-renderer-layout-helper_8cpp" kind="file" language="C++">
+    <compoundname>text-renderer-layout-helper.cpp</compoundname>
+    <includes refid="text-renderer-layout-helper_8h" local="no">dali/devel-api/text-abstraction/text-renderer-layout-helper.h</includes>
+    <includes local="no">cmath</includes>
+    <includes refid="font-client_8h" local="no">dali/devel-api/text-abstraction/font-client.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>dali/devel-api/text-abstraction/font-client.h</label>
+        <link refid="font-client_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/devel-api/text-abstraction/font-list.h</label>
+        <link refid="font-list_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dali/devel-api/text-abstraction/glyph-buffer-data.h</label>
+        <link refid="glyph-buffer-data_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/devel-api/text-abstraction/text-abstraction-definitions.h</label>
+        <link refid="text-abstraction-definitions_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer-layout-helper.cpp</label>
+        <link refid="text-renderer-layout-helper_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/text-abstraction/text-renderer-layout-helper.h</label>
+        <link refid="text-renderer-layout-helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>cmath</label>
+      </node>
+      <node id="13">
+        <label>cstddef</label>
+      </node>
+      <node id="8">
+        <label>dali/devel-api/common/vector-wrapper.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="16">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="17">
+        <label>dali/public-api/images/pixel-data.h</label>
+      </node>
+      <node id="12">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="18">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="19">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+      <node id="20">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="15">
+        <label>stdint.h</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1TextAbstraction">Dali::TextAbstraction</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FILE<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="text-renderer-layout-helper_8h" kindref="compound">dali/devel-api/text-abstraction/text-renderer-layout-helper.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="font-client_8h" kindref="compound">dali/devel-api/text-abstraction/font-client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">TextAbstraction</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31" refid="namespaceDali_1_1TextAbstraction_1a40c8a9ac2ddb39e54d74a66d8fe4953f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a40c8a9ac2ddb39e54d74a66d8fe4953f" kindref="member">TransformToArc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters" kindref="compound">CircularTextParameters</ref>&amp;<sp/>parameters,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yP<sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Does<sp/>the<sp/>italic<sp/>synthesization<sp/>for<sp/>circular<sp/>layout.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a8708c5c640506b6f74b71a636b4b5e5b" kindref="member">synthesizeItalic</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xP<sp/>=<sp/>-yP<sp/>*<sp/>sin(<ref refid="classDali_1_1TextAbstraction_1_1FontClient_1a1ba31472b145519406897aade32c695e" kindref="member">TextAbstraction::FontClient::DEFAULT_ITALIC_ANGLE</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>yP<sp/>*=<sp/>cos(<ref refid="classDali_1_1TextAbstraction_1_1FontClient_1a1ba31472b145519406897aade32c695e" kindref="member">TextAbstraction::FontClient::DEFAULT_ITALIC_ANGLE</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>xP;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle<sp/><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>radius<sp/>=<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a6aab3bcb25b246efb4b341309034dcd4" kindref="member">radius</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Transform<sp/>to<sp/>a<sp/>circular<sp/>layout.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a8e937229016dcdaa4aeeeb0f97708ae0" kindref="member">isClockwise</ref>)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>angle<sp/>=<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a9b0e8b5d98a0209e9c2b958254b5e7a1" kindref="member">beginAngle</ref><sp/>-<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a02e65138b5834cddfb3115ad3bcc1577" kindref="member">invRadius</ref><sp/>*<sp/>x;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>radius<sp/>-=<sp/>yP;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>radius<sp/>*<sp/>cos(angle);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>-radius<sp/>*<sp/>sin(angle);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>angle<sp/>=<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a9b0e8b5d98a0209e9c2b958254b5e7a1" kindref="member">beginAngle</ref><sp/>+<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a02e65138b5834cddfb3115ad3bcc1577" kindref="member">invRadius</ref><sp/>*<sp/>x;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>radius<sp/>+=<sp/>yP;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>radius<sp/>*<sp/>cos(angle);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>radius<sp/>*<sp/>sin(-angle);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Transforms<sp/>to<sp/>the<sp/>text<sp/>area<sp/>coordinate<sp/>system.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>x<sp/>+=<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a5091c28f3e3c5a74140455eb6f623d2a" kindref="member">centerX</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>y<sp/>+=<sp/>parameters.<ref refid="structDali_1_1TextAbstraction_1_1CircularTextParameters_1a42685966ea18b0e52564c2013e7de358" kindref="member">centerY</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TextAbstraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer-layout-helper.cpp"/>
+  </compounddef>
+</doxygen>

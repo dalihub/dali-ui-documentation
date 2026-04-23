@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dali-string-impl_8h" kind="file" language="C++">
+    <compoundname>dali-string-impl.h</compoundname>
+    <includes local="no">string</includes>
+    <includes refid="dali-string_8h" local="no">dali/public-api/common/dali-string.h</includes>
+    <includedby refid="dali-string-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp</includedby>
+    <includedby refid="string-utils_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h</label>
+        <link refid="dali-string-impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-string.h</label>
+        <link refid="dali-string_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstddef</label>
+      </node>
+      <node id="5">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp</label>
+        <link refid="dali-string-impl_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h</label>
+        <link refid="dali-string-impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp</label>
+        <link refid="string-utils_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Internal_1_1StringImpl" prot="public">Dali::Internal::StringImpl</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-string_8h" kindref="compound">dali/public-api/common/dali-string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classDali_1_1Internal_1_1StringImpl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Internal_1_1StringImpl" kindref="compound">StringImpl</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Internal_1_1StringImpl" kindref="compound">StringImpl</ref>(<ref refid="classDali_1_1String" kindref="compound">String</ref>&amp;&amp;<sp/>daliString)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Internal_1_1StringImpl_1a2d995df5cc8673ec5ac74b27ea2372cf" kindref="member">~StringImpl</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classDali_1_1Internal_1_1StringImpl_1a334bd27506cdac2dc4ac2765e6755813" kindref="member">Extract</ref>()<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>std::string&amp;<sp/><ref refid="classDali_1_1Internal_1_1StringImpl_1a5adaae7f826d3490713f9e2cc5333477" kindref="member">GetString</ref>()<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classDali_1_1Internal_1_1StringImpl_1a5adaae7f826d3490713f9e2cc5333477" kindref="member">GetString</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1String" kindref="compound">String</ref><sp/><ref refid="classDali_1_1Internal_1_1StringImpl_1a2fa72e6661e7f70318b2a2a80d64fcb3" kindref="member">ToDaliString</ref>(std::string&amp;&amp;<sp/>stdString)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>StorageSize<sp/><sp/>=<sp/>32;<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>StorageAlign<sp/>=<sp/>8;<sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">alignas</highlight><highlight class="normal">(StorageAlign)<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>mStorage[StorageSize];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Internal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h"/>
+  </compounddef>
+</doxygen>

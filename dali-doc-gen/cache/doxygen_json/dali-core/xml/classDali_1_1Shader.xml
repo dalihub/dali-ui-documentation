@@ -1,0 +1,538 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Shader" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Shader</compoundname>
+    <basecompoundref refid="classDali_1_1Handle" prot="public" virt="non-virtual">Dali::Handle</basecompoundref>
+    <includes refid="shader_8h" local="no">shader.h</includes>
+    <innerclass refid="structDali_1_1Shader_1_1Hint" prot="public">Dali::Shader::Hint</innerclass>
+    <innerclass refid="structDali_1_1Shader_1_1Property" prot="public">Dali::Shader::Property</innerclass>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Shader_1aef0ee4f7c299ebe7ddde9083e1cc28c8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref></type>
+        <definition>Shader Dali::Shader::New</definition>
+        <argsstring>(Dali::StringView vertexShader, Dali::StringView fragmentShader, Hint::Value hints=Hint::NONE, Dali::StringView shaderName=&quot;&quot;)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Shader::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>vertexShader</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>fragmentShader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Shader_1_1Hint_1ab0bfa42ce7c44f151b3783d207295d4a" kindref="member">Hint::Value</ref></type>
+          <declname>hints</declname>
+          <defval><ref refid="structDali_1_1Shader_1_1Hint_1ab0bfa42ce7c44f151b3783d207295d4aaf9f15e7cc2a99ca154956ae35596c293" kindref="member">Hint::NONE</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>shaderName</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.43 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">vertexShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertex shader code for the effect. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fragmentShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fragment <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> code for the effect. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">hints</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hints to define the geometry of the rendered object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">shaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of this shader. (optional) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a shader effect </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="133" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="29" bodyend="36"/>
+        <references refid="classDali_1_1Shader_1a21b71b70767a3ab627041d10572a6840">Shader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a64f0c57b073a77df4582f8d93f9d2cc4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref></type>
+        <definition>Shader Dali::Shader::New</definition>
+        <argsstring>(Dali::Property::Value shaderMap)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Shader::New</qualifiedname>
+        <param>
+          <type>Dali::Property::Value</type>
+          <declname>shaderMap</declname>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.31 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">shaderMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Property::Map of shader data or Property::Array of Property::Map. Property::Map format is {&quot;renderPassTag&quot;:&quot;&quot;, &quot;vertex&quot;:&quot;&quot;, &quot;fragment&quot;:&quot;&quot;, &quot;hints&quot;:&quot;&quot;} shaderMap can be Property::Array of Property::Map for multi pass shading. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a shader effect </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="147" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="38" bodyend="42"/>
+        <references refid="classDali_1_1Shader_1a21b71b70767a3ab627041d10572a6840">Shader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a8f924ecb983f6309da69dcaf06ef2e83" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref></type>
+        <definition>Shader Dali::Shader::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::Shader::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts to a shader handle. If not, a shader the returned shader handle is left uninitialized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.43 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to an object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> handle or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="180" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="50" bodyend="53"/>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+        <references refid="classDali_1_1Shader_1a21b71b70767a3ab627041d10572a6840">Shader</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1abec7354b14ac29c3673cd1b46190e32e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Shader::GetShaderLanguageVersion</definition>
+        <argsstring>()</argsstring>
+        <name>GetShaderLanguageVersion</name>
+        <qualifiedname>Dali::Shader::GetShaderLanguageVersion</qualifiedname>
+        <briefdescription>
+<para>Get the number of shading language version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This can potentially block until GL has been initialized when the first time any DALi application is launched in the system. @SINCE_2_3.11 </para>
+</simplesect>
+<simplesect kind="return"><para>shader languange version as integer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="215" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a8883a7c9ad342736422159941da858e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+        <definition>Dali::String Dali::Shader::GetShaderVersionPrefix</definition>
+        <argsstring>()</argsstring>
+        <name>GetShaderVersionPrefix</name>
+        <qualifiedname>Dali::Shader::GetShaderVersionPrefix</qualifiedname>
+        <briefdescription>
+<para>Get shader preprocessor of shading language version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This can potentially block until GL has been initialized when the first time any DALi application is launched in the system. @SINCE_1_9.36 </para>
+</simplesect>
+<simplesect kind="return"><para>shader preprocessor string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="224" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a99196b050840c63d4dfbf78119803832" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+        <definition>Dali::String Dali::Shader::GetVertexShaderPrefix</definition>
+        <argsstring>()</argsstring>
+        <name>GetVertexShaderPrefix</name>
+        <qualifiedname>Dali::Shader::GetVertexShaderPrefix</qualifiedname>
+        <briefdescription>
+<para>Get vertex shader preprocessor that includes shading language version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This can potentially block until GL has been initialized when the first time any DALi application is launched in the system. @SINCE_1_9.36 </para>
+</simplesect>
+<simplesect kind="return"><para>Vertex shader preprocessor string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="233" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1af6337463128e760fb4671302616efdb5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+        <definition>Dali::String Dali::Shader::GetFragmentShaderPrefix</definition>
+        <argsstring>()</argsstring>
+        <name>GetFragmentShaderPrefix</name>
+        <qualifiedname>Dali::Shader::GetFragmentShaderPrefix</qualifiedname>
+        <briefdescription>
+<para>Get fragment shader preprocessor that includes shading language version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This can potentially block until GL has been initialized when the first time any DALi application is launched in the system. @SINCE_1_9.36 </para>
+</simplesect>
+<simplesect kind="return"><para>Fragment shader preprocessor string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="242" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="81" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Shader_1a21b71b70767a3ab627041d10572a6840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Shader::Shader</definition>
+        <argsstring>()</argsstring>
+        <name>Shader</name>
+        <qualifiedname>Dali::Shader::Shader</qualifiedname>
+        <briefdescription>
+<para>Default constructor, creates an empty handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.43 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="154" column="3"/>
+        <referencedby refid="classDali_1_1Shader_1a8f924ecb983f6309da69dcaf06ef2e83" compoundref="shader_8cpp" startline="50" endline="53">DownCast</referencedby>
+        <referencedby refid="classDali_1_1Shader_1a64f0c57b073a77df4582f8d93f9d2cc4" compoundref="shader_8cpp" startline="38" endline="42">New</referencedby>
+        <referencedby refid="classDali_1_1Shader_1aef0ee4f7c299ebe7ddde9083e1cc28c8" compoundref="shader_8cpp" startline="29" endline="36">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1ac5fe7599f886928c1c1f1c03f178301f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Shader::~Shader</definition>
+        <argsstring>()</argsstring>
+        <name>~Shader</name>
+        <qualifiedname>Dali::Shader::~Shader</qualifiedname>
+        <briefdescription>
+<para>Destructor. This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.43 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="162" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a49df360975c96cba089d7e0a6907ad05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Shader::Shader</definition>
+        <argsstring>(const Shader &amp;handle)</argsstring>
+        <name>Shader</name>
+        <qualifiedname>Dali::Shader::Shader</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.43 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to a <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="170" column="3"/>
+        <references refid="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" compoundref="base-handle_8h" startline="274" endline="277">Dali::DownCast</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a96040edcaffa0d2c24d3c45491ae66d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader &amp; Dali::Shader::operator=</definition>
+        <argsstring>(const Shader &amp;handle)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Shader::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator, changes this handle to point at the same object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.43 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to an object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the assigned object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="189" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a1327abf2fa40aa0fc8ac2765c9cd3757" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Shader::Shader</definition>
+        <argsstring>(Shader &amp;&amp;rhs) noexcept</argsstring>
+        <name>Shader</name>
+        <qualifiedname>Dali::Shader::Shader</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="197" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1ad2a668e7cf55738bf4d70c169e64a6f7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> &amp;</type>
+        <definition>Shader &amp; Dali::Shader::operator=</definition>
+        <argsstring>(Shader &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Shader::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="206" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Shader_1a3d23f8e3963f5078e847d536d524e9e1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Shader::Shader</definition>
+        <argsstring>(Internal::Shader *effect)</argsstring>
+        <name>Shader</name>
+        <qualifiedname>Dali::Shader::Shader</qualifiedname>
+        <param>
+          <type>Internal::Shader *</type>
+          <declname>effect</declname>
+        </param>
+        <briefdescription>
+<para>This constructor is used by <ref refid="namespaceDali" kindref="compound">Dali</ref> <ref refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" kindref="member">New()</ref> methods. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Not intended for application developers. @SINCE_1_1.43 </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">effect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="251" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Shaders allows custom vertex and color transformations in the GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>@SINCE_1_1.43 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="2">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Shader</label>
+        <link refid="classDali_1_1Shader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="2">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Shader</label>
+        <link refid="classDali_1_1Shader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" line="77" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h" bodystart="78" bodyend="252"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Handle_1a9e6e041bcd7f7bc6a9af6196346d6886" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1aaf59eab452181c2bd072716362b84e19" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9b" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Capability</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Handle_1abc9b975d5af192c527dce432a0258713" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>DoesCustomPropertyExist</name></member>
+      <member refid="classDali_1_1Shader_1a8f924ecb983f6309da69dcaf06ef2e83" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9ba5284559df1a09b2167bdfde50c8418f4" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>DYNAMIC_PROPERTIES</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1Handle_1aa8324c9784866e5fe757ad12794a9f13" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1Shader_1af6337463128e760fb4671302616efdb5" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetFragmentShaderPrefix</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1Handle_1a020bfa4dfb5213a5e782853d8fe84306" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetProperties</name></member>
+      <member refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a872eda34f826c5525392e91b6d28770f" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a3deffc1e9d3236c50140b37e2b6cf8db" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetPropertyCount</name></member>
+      <member refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetPropertyIndex</name></member>
+      <member refid="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetPropertyIndices</name></member>
+      <member refid="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetPropertyName</name></member>
+      <member refid="classDali_1_1Handle_1a775f97600cedf0798fea5c8cca5a0512" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetPropertyType</name></member>
+      <member refid="classDali_1_1Shader_1abec7354b14ac29c3673cd1b46190e32e" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetShaderLanguageVersion</name></member>
+      <member refid="classDali_1_1Shader_1a8883a7c9ad342736422159941da858e3" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetShaderVersionPrefix</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1Shader_1a99196b050840c63d4dfbf78119803832" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>GetVertexShaderPrefix</name></member>
+      <member refid="classDali_1_1Handle_1a78b34f83f7c54495d9f3d0d69df56e1d" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1ac2e8233e0958c65d5b70ed277223ada9" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a305afca954732fe963f55c7d1dd152a9" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a025ccafe4d792290ba52c2acfc60f853" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>IsPropertyAConstraintInput</name></member>
+      <member refid="classDali_1_1Handle_1ac72ed10ef62da831eca7085c956e77f4" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>IsPropertyAnimatable</name></member>
+      <member refid="classDali_1_1Handle_1a46074ae35e8390eaa75ad5fc94b7a103" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>IsPropertyWritable</name></member>
+      <member refid="classDali_1_1Shader_1aef0ee4f7c299ebe7ddde9083e1cc28c8" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>New</name></member>
+      <member refid="classDali_1_1Shader_1a64f0c57b073a77df4582f8d93f9d2cc4" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>New</name></member>
+      <member refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Shader</scope><name>New</name></member>
+      <member refid="classDali_1_1Handle_1a2d33ee5b5d4efdf0681c0094d7c3a3ff" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Shader</scope><name>New</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1Shader_1a96040edcaffa0d2c24d3c45491ae66d7" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Shader_1ad2a668e7cf55738bf4d70c169e64a6f7" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a5709270eb2cf5cdefc0de5979066922d" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Shader</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a6cba3d10b340f93975fabf2d5138caab" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Shader</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Shader</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Shader</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Handle_1aac3062e4424159de0392f27fbf6ec9c8" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aec4050cb13dc0b68853017a769eb51fd" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aa264a86e930a78db250bbb92511dbc9d" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>PropertySetSignal</name></member>
+      <member refid="classDali_1_1Handle_1acca920cad56d4b14b12d2f4c00c0e555" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>PropertySetSignalType</name></member>
+      <member refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1acf96c21cba52bbcdeb7342592ca3e2e5" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1afece056319aaa0d1507c8d777908dcea" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1aabccabf7e4551a684c7b97f39a973284" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1ad75eb7b366ebc913701058b1e5575581" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1aa5007b6000fcf922580a0895d5fc8755" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a13b771d88af488b89cd649ae1f161fb7" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a9acc036ef41721cc3779976afb26da4b" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RemovePropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1a9a2be7d760f27124d0bd992040748abd" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>RemovePropertyNotifications</name></member>
+      <member refid="classDali_1_1Handle_1a5a8165e0f22ebefd82742b95e21cce67" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>ReserveCustomProperties</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Handle_1a3c9f3a03e463cf3efec254b86ae9d1ad" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>SetProperties</name></member>
+      <member refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>SetProperty</name></member>
+      <member refid="classDali_1_1Shader_1a21b71b70767a3ab627041d10572a6840" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Shader</name></member>
+      <member refid="classDali_1_1Shader_1a49df360975c96cba089d7e0a6907ad05" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Shader</name></member>
+      <member refid="classDali_1_1Shader_1a1327abf2fa40aa0fc8ac2765c9cd3757" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Shader</name></member>
+      <member refid="classDali_1_1Shader_1a3d23f8e3963f5078e847d536d524e9e1" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Shader</name></member>
+      <member refid="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>Supports</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>~BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1abf54df186713c711c2db1a389f1ff700" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>~Handle</name></member>
+      <member refid="classDali_1_1Shader_1ac5fe7599f886928c1c1f1c03f178301f" prot="public" virt="non-virtual"><scope>Dali::Shader</scope><name>~Shader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

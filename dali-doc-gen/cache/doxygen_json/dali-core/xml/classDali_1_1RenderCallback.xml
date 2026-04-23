@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1RenderCallback" kind="class" language="C++" prot="public">
+    <compoundname>Dali::RenderCallback</compoundname>
+    <includes refid="render-callback_8h" local="no">render-callback.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ExecutionMode</name>
+        <qualifiedname>Dali::RenderCallback::ExecutionMode</qualifiedname>
+        <enumvalue id="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0a5c8781cb597c806ca9f578e950a4b49f" prot="public">
+          <name>ISOLATED</name>
+          <briefdescription>
+<para>Native rendering commands will be isolated from DALi graphics pipline state. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This mode is default and provides safest way of executing custom graphics API commands. @SINCE_2_3.12 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0a2c7b3a8b9acd296488c69fb8f57587cf" prot="public">
+          <name>UNSAFE</name>
+          <briefdescription>
+<para>Native rendering will be injected directly into DALi graphics pipeline. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This mode is considered unsafe as it&apos;s directly injected into DALi rendering pipeline. It inherits current graphics API state and may alter it. @SINCE_2_3.12 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0a5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= ISOLATED</initializer>
+          <briefdescription>
+<para>Default mode is ISOLATED @SINCE_2_3.12. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Mode of execution of custom rendering code into the pipeline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ISOLATED mode will try to isolate custom rendering so it will start with clean state of graphics API and won&apos;t affect DALi rendering pipeline. This mode is considered as safe.</para>
+<para>UNSAFE mode will inject custom rendering code into DALi rendering pipeline as is and won&apos;t isolate graphics native API state. This mode should be used with caution and is considered unsafe.</para>
+<para>The default mode is ISOLATED.</para>
+<para>@SINCE_2_3.12 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="90" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="91" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1RenderCallback_1a2169dc1a602d6d314b37a47b306e177c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>bool(T::*)(const <ref refid="structDali_1_1RenderCallbackInput" kindref="compound">Dali::RenderCallbackInput</ref> &amp;)</type>
+        <definition>using Dali::RenderCallback::FuncType =  bool (T::*)(const Dali::RenderCallbackInput&amp;)</definition>
+        <argsstring></argsstring>
+        <name>FuncType</name>
+        <qualifiedname>Dali::RenderCallback::FuncType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Templated member function type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="118" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1RenderCallback_1a314bff1ef80975bc2b82fc5868e363f7" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="classDali_1_1CallbackBase" kindref="compound">Dali::CallbackBase</ref> &gt;</type>
+        <definition>UniquePtr&lt;Dali::CallbackBase&gt; Dali::RenderCallback::mCallback</definition>
+        <argsstring></argsstring>
+        <name>mCallback</name>
+        <qualifiedname>Dali::RenderCallback::mCallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="241" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderCallback_1a64e2b7bdd8ed7d419d022c9d250fa0c1" prot="private" static="no" mutable="no">
+        <type><ref refid="structDali_1_1RenderCallbackInput" kindref="compound">Dali::RenderCallbackInput</ref></type>
+        <definition>Dali::RenderCallbackInput Dali::RenderCallback::mRenderCallbackInput</definition>
+        <argsstring></argsstring>
+        <name>mRenderCallbackInput</name>
+        <qualifiedname>Dali::RenderCallback::mRenderCallbackInput</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="242" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderCallback_1a3b1f30e6135bc6d6b8efd682deb3dfe1" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0" kindref="member">ExecutionMode</ref></type>
+        <definition>ExecutionMode Dali::RenderCallback::mExecutionMode</definition>
+        <argsstring></argsstring>
+        <name>mExecutionMode</name>
+        <qualifiedname>Dali::RenderCallback::mExecutionMode</qualifiedname>
+        <initializer>{<ref refid="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">ExecutionMode::DEFAULT</ref>}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="243" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="243" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderCallback_1a9ac7078a6d765bc70c10f84bc9d3536a" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Vector" kindref="compound">Dali::Vector</ref>&lt; <ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref> &gt;</type>
+        <definition>Dali::Vector&lt;Dali::Texture&gt; Dali::RenderCallback::mTextureResources</definition>
+        <argsstring></argsstring>
+        <name>mTextureResources</name>
+        <qualifiedname>Dali::RenderCallback::mTextureResources</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="244" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="244" bodyend="244"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a63bfc09f8e813f18e425ba39c55d8e73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Dali::RenderCallback::RenderCallback</definition>
+        <argsstring>(T *object, FuncType&lt; T &gt; func, ExecutionMode executionMode)</argsstring>
+        <name>RenderCallback</name>
+        <qualifiedname>Dali::RenderCallback::RenderCallback</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1RenderCallback_1a2169dc1a602d6d314b37a47b306e177c" kindref="member">FuncType</ref>&lt; T &gt;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0" kindref="member">ExecutionMode</ref></type>
+          <declname>executionMode</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object to invoke </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function to invoke </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">executionMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>execution mode of custom code</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+@SINCE_2_3.12 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="130" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="130" bodyend="134"/>
+        <references refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" compoundref="callback_8h" startline="1324" endline="1327">Dali::MakeCallback</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a5798a0960e9253182e67b5f744945a78" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RenderCallback::operator Dali::CallbackBase *</definition>
+        <argsstring>()</argsstring>
+        <name>operator Dali::CallbackBase *</name>
+        <qualifiedname>Dali::RenderCallback::CallbackBase *</qualifiedname>
+        <briefdescription>
+<para>Explicit cast operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.14 <simplesect kind="return"><para>casts <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref> to <ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="171" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1ad7fa867d1f0966745fb5a7f21576b9e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderCallback::BindTextureResources</definition>
+        <argsstring>(Dali::Vector&lt; Dali::Texture &gt; textures)</argsstring>
+        <name>BindTextureResources</name>
+        <qualifiedname>Dali::RenderCallback::BindTextureResources</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Vector" kindref="compound">Dali::Vector</ref>&lt; <ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref> &gt;</type>
+          <declname>textures</declname>
+        </param>
+        <briefdescription>
+<para>Binds DALi textures to the callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The textures that are bound to the callback will be passed upon callback execution providing native handles (like GL name) so they can be used alongside with custom GL code.</para>
+<para>Binding texture does not affect lifecycle and it&apos;s up to the client-side to make sure the resource is alive when used inside the callback.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">textures</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of DALi textures to be bound to the callback @SINCE_2_1.30 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="189" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a66764e1a9283e8869a1aa5b0e376c26c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classDali_1_1Vector" kindref="compound">Dali::Vector</ref>&lt; <ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref> &gt; &amp;</type>
+        <definition>const Dali::Vector&lt; Dali::Texture &gt; &amp; Dali::RenderCallback::GetTextureResources</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTextureResources</name>
+        <qualifiedname>Dali::RenderCallback::GetTextureResources</qualifiedname>
+        <briefdescription>
+<para>Returns list of DALi textures bound to the callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>list of textures </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="199" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a233470b858bb4a74bd1730f75cae8bba" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RenderCallback::operator Dali::CallbackBase &amp;</definition>
+        <argsstring>()</argsstring>
+        <name>operator Dali::CallbackBase &amp;</name>
+        <qualifiedname>Dali::RenderCallback::CallbackBase &amp;</qualifiedname>
+        <briefdescription>
+<para>Explicit cast operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.14 <simplesect kind="return"><para>casts <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref> to <ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="209" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1ae8e9d0503987c46c9f65f4988f8b8a60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structDali_1_1RenderCallbackInput" kindref="compound">Dali::RenderCallbackInput</ref> &amp;</type>
+        <definition>Dali::RenderCallbackInput &amp; Dali::RenderCallback::GetRenderCallbackInput</definition>
+        <argsstring>()</argsstring>
+        <name>GetRenderCallbackInput</name>
+        <qualifiedname>Dali::RenderCallback::GetRenderCallbackInput</qualifiedname>
+        <briefdescription>
+<para>Returns input data passed to the callback upon execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The input data will be filled by the DALi and <ref refid="namespaceDali_1_1Graphics" kindref="compound">Graphics</ref> backend providing DALi rendering related data (such as clipping box) as well as <ref refid="namespaceDali_1_1Graphics" kindref="compound">Graphics</ref> native API related data (like EGLContext for GL).</para>
+<para>@SINCE_2_1.30 <simplesect kind="return"><para>Valid <ref refid="structDali_1_1RenderCallbackInput" kindref="compound">RenderCallbackInput</ref> structure </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="224" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a9eb4ce2669341d994a27729098fd53f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0" kindref="member">ExecutionMode</ref></type>
+        <definition>ExecutionMode Dali::RenderCallback::GetExecutionMode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetExecutionMode</name>
+        <qualifiedname>Dali::RenderCallback::GetExecutionMode</qualifiedname>
+        <briefdescription>
+<para>Returns execution mode of the callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.12 <simplesect kind="return"><para>Valid execution mode </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="235" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="235" bodyend="238"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a48375394720bf7886c52d05382a8d396" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="classDali_1_1RenderCallback" kindref="compound">Dali::RenderCallback</ref> &gt;</type>
+        <definition>static UniquePtr&lt; Dali::RenderCallback &gt; Dali::RenderCallback::New</definition>
+        <argsstring>(T *object, FuncType&lt; T &gt; func)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::RenderCallback::New</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1RenderCallback_1a2169dc1a602d6d314b37a47b306e177c" kindref="member">FuncType</ref>&lt; T &gt;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Creates new instance of <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object to invoke </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function to invoke </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unique pointer to the <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref> instance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="145" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderCallback_1a47c7bb226586b2f03857ff074b74137c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; <ref refid="classDali_1_1RenderCallback" kindref="compound">Dali::RenderCallback</ref> &gt;</type>
+        <definition>static UniquePtr&lt; Dali::RenderCallback &gt; Dali::RenderCallback::New</definition>
+        <argsstring>(T *object, FuncType&lt; T &gt; func, ExecutionMode executionMode)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::RenderCallback::New</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1RenderCallback_1a2169dc1a602d6d314b37a47b306e177c" kindref="member">FuncType</ref>&lt; T &gt;</type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0" kindref="member">ExecutionMode</ref></type>
+          <declname>executionMode</declname>
+        </param>
+        <briefdescription>
+<para>Creates new instance of <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.12 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object to invoke </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function to invoke </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">executionMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution mode of custom code </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unique pointer to the <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref> instance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="160" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="160" bodyend="163"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref> is used by the direct rendering feature and allows injecting custom render code (using native API such as GL directly) into the DALi rendering stream. The <ref refid="classDali_1_1RenderCallback" kindref="compound">RenderCallback</ref> will be executed within own context (unless native API is context-less) to maintain state separation from DALi render state.</para>
+<para>The class wraps <ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> object ensuring its type-safe assignment</para>
+<para>@SINCE_2_1.14 </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" line="72" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/render-callback.h" bodystart="73" bodyend="245"/>
+    <listofallmembers>
+      <member refid="classDali_1_1RenderCallback_1ad7fa867d1f0966745fb5a7f21576b9e6" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>BindTextureResources</name></member>
+      <member refid="classDali_1_1RenderCallback_1a91057aa8f7366458e3507cbeeb285bd0" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>ExecutionMode</name></member>
+      <member refid="classDali_1_1RenderCallback_1a2169dc1a602d6d314b37a47b306e177c" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>FuncType</name></member>
+      <member refid="classDali_1_1RenderCallback_1a9eb4ce2669341d994a27729098fd53f3" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>GetExecutionMode</name></member>
+      <member refid="classDali_1_1RenderCallback_1ae8e9d0503987c46c9f65f4988f8b8a60" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>GetRenderCallbackInput</name></member>
+      <member refid="classDali_1_1RenderCallback_1a66764e1a9283e8869a1aa5b0e376c26c" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>GetTextureResources</name></member>
+      <member refid="classDali_1_1RenderCallback_1a314bff1ef80975bc2b82fc5868e363f7" prot="private" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>mCallback</name></member>
+      <member refid="classDali_1_1RenderCallback_1a3b1f30e6135bc6d6b8efd682deb3dfe1" prot="private" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>mExecutionMode</name></member>
+      <member refid="classDali_1_1RenderCallback_1a64e2b7bdd8ed7d419d022c9d250fa0c1" prot="private" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>mRenderCallbackInput</name></member>
+      <member refid="classDali_1_1RenderCallback_1a9ac7078a6d765bc70c10f84bc9d3536a" prot="private" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>mTextureResources</name></member>
+      <member refid="classDali_1_1RenderCallback_1a48375394720bf7886c52d05382a8d396" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>New</name></member>
+      <member refid="classDali_1_1RenderCallback_1a47c7bb226586b2f03857ff074b74137c" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>New</name></member>
+      <member refid="classDali_1_1RenderCallback_1a233470b858bb4a74bd1730f75cae8bba" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>operator Dali::CallbackBase &amp;</name></member>
+      <member refid="classDali_1_1RenderCallback_1a5798a0960e9253182e67b5f744945a78" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>operator Dali::CallbackBase *</name></member>
+      <member refid="classDali_1_1RenderCallback_1a63bfc09f8e813f18e425ba39c55d8e73" prot="public" virt="non-virtual"><scope>Dali::RenderCallback</scope><name>RenderCallback</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

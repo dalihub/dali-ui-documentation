@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="tts-player_8cpp" kind="file" language="C++">
+    <compoundname>tts-player.cpp</compoundname>
+    <includes refid="tts-player_8h" local="no">dali/devel-api/adaptor-framework/tts-player.h</includes>
+    <includes local="no">dali/integration-api/string-utils.h</includes>
+    <includes local="no">dali/internal/accessibility/common/tts-player-impl.h</includes>
+    <includes local="no">dali/internal/adaptor/common/adaptor-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp</label>
+        <link refid="tts-player_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/tts-player.h</label>
+        <link refid="tts-player_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/integration-api/string-utils.h</label>
+      </node>
+      <node id="9">
+        <label>dali/internal/accessibility/common/tts-player-impl.h</label>
+      </node>
+      <node id="10">
+        <label>dali/internal/adaptor/common/adaptor-impl.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="tts-player_8h" kindref="compound">dali/devel-api/adaptor-framework/tts-player.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/string-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/accessibility/common/tts-player-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/adaptor/common/adaptor-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToStdString;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" kindref="member">TtsPlayer::TtsPlayer</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classDali_1_1TtsPlayer_1a69ef34d86faf341c3c9dd857573b8b2d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref><sp/><ref refid="classDali_1_1TtsPlayer_1a69ef34d86faf341c3c9dd857573b8b2d" kindref="member">TtsPlayer::Get</ref>(<ref refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1f" kindref="member">Dali::TtsPlayer::Mode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref><sp/>ttsPlayer;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1Adaptor_1ad10ea884fef5da0d7b903c6de68737ad" kindref="member">Adaptor::IsAvailable</ref>())</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>ttsPlayer<sp/>=<sp/>Internal::Adaptor::Adaptor::GetImplementation(<ref refid="classDali_1_1Adaptor_1a9d291bc288f006898af6bc25dfa81704" kindref="member">Adaptor::Get</ref>()).GetTtsPlayer(mode);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ttsPlayer;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classDali_1_1TtsPlayer_1acfa62d2d515c465c4fd0f16df5547eed" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1acfa62d2d515c465c4fd0f16df5547eed" kindref="member">TtsPlayer::~TtsPlayer</ref>()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" kindref="member">TtsPlayer::TtsPlayer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref>&amp;<sp/>copy)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref>&amp;<sp/><ref refid="classDali_1_1TtsPlayer_1a4ae18ed612b0693b0ac06a5d5dd5092c" kindref="member">TtsPlayer::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref>&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" kindref="member">TtsPlayer::TtsPlayer</ref>(<ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref>&amp;<sp/><ref refid="classDali_1_1TtsPlayer_1a4ae18ed612b0693b0ac06a5d5dd5092c" kindref="member">TtsPlayer::operator=</ref>(<ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classDali_1_1TtsPlayer_1a1bfdea3d1e67b2595eecdf7d5bbef773" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TtsPlayer_1a1bfdea3d1e67b2595eecdf7d5bbef773" kindref="member">TtsPlayer::Play</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>text)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Play(ToStdString(text));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classDali_1_1TtsPlayer_1adca2ede4020896d5431432760325637d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TtsPlayer_1adca2ede4020896d5431432760325637d" kindref="member">TtsPlayer::Stop</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Stop();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classDali_1_1TtsPlayer_1a8427dd015389b980e2fb6bf31db65b56" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TtsPlayer_1a8427dd015389b980e2fb6bf31db65b56" kindref="member">TtsPlayer::Pause</ref>()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a39b4d31ca7b4092b2e4de2dab180823d" kindref="member">Pause</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classDali_1_1TtsPlayer_1a3940768ccef2921f7d561f016413ce7f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TtsPlayer_1a3940768ccef2921f7d561f016413ce7f" kindref="member">TtsPlayer::Resume</ref>()</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a8c573467e0a91b5e9b44c1ec2d75bed1" kindref="member">Resume</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1TtsPlayer_1a6eb8c58362bc79eee55f18c55f30bff1" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87" kindref="member">TtsPlayer::State</ref><sp/><ref refid="classDali_1_1TtsPlayer_1a6eb8c58362bc79eee55f18c55f30bff1" kindref="member">TtsPlayer::GetState</ref>()</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetState();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1TtsPlayer_1a4f24c0bbda3ce70addd3405717337260" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1aadd67b87eba0d9ef36ae9cf89a2f20a8" kindref="member">TtsPlayer::StateChangedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1TtsPlayer_1a4f24c0bbda3ce70addd3405717337260" kindref="member">TtsPlayer::StateChangedSignal</ref>()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).StateChangedSignal();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" kindref="member">TtsPlayer::TtsPlayer</ref>(Internal::Adaptor::TtsPlayer*<sp/>player)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">:<sp/>BaseHandle(player)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp"/>
+  </compounddef>
+</doxygen>

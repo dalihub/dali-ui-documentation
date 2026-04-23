@@ -1,0 +1,782 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1OrderedSet" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Integration::OrderedSet</compoundname>
+    <includes refid="ordered-set_8h" local="no">ordered-set.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>owned</declname>
+        <defname>owned</defname>
+        <defval>true</defval>
+      </param>
+      <param>
+        <type>class Hash</type>
+        <defval>std::hash&lt;const T*&gt;</defval>
+      </param>
+      <param>
+        <type>class KeyEqual</type>
+        <defval>std::equal_to&lt;const T*&gt;</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1OrderedSet_1abff61ce5e012e5bb46c169d7ecc3035e" prot="public" static="no">
+        <type>typename std::list&lt; T * &gt;</type>
+        <definition>using Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::ListContainer =  typename std::list&lt;T*&gt;</definition>
+        <argsstring></argsstring>
+        <name>ListContainer</name>
+        <qualifiedname>Dali::Integration::OrderedSet::ListContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="53" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" prot="public" static="no">
+        <type>typename ListContainer::iterator</type>
+        <definition>using Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Iterator =  typename ListContainer::iterator</definition>
+        <argsstring></argsstring>
+        <name>Iterator</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="54" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" prot="public" static="no">
+        <type>typename ListContainer::const_iterator</type>
+        <definition>using Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::ConstIterator =  typename ListContainer::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>ConstIterator</name>
+        <qualifiedname>Dali::Integration::OrderedSet::ConstIterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="55" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1OrderedSet_1ae30f817f6d666e05bde2cf96181868fe" prot="public" static="no">
+        <type>typename std::unordered_map&lt; const T *, <ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref>, Hash, KeyEqual &gt;</type>
+        <definition>using Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::MapContainer =  typename std::unordered_map&lt;const T*, Iterator, Hash, KeyEqual&gt;</definition>
+        <argsstring></argsstring>
+        <name>MapContainer</name>
+        <qualifiedname>Dali::Integration::OrderedSet::MapContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="58" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1OrderedSet_1acdf09ad20a135d0bcdd60d8f86d167ce" prot="public" static="no">
+        <type>std::size_t</type>
+        <definition>using Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::SizeType =  std::size_t</definition>
+        <argsstring></argsstring>
+        <name>SizeType</name>
+        <qualifiedname>Dali::Integration::OrderedSet::SizeType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="60" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1OrderedSet_1aa3c7d5b7795bfba8ae54e07636bf483e" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ae30f817f6d666e05bde2cf96181868fe" kindref="member">MapContainer</ref></type>
+        <definition>MapContainer Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::mMap</definition>
+        <argsstring></argsstring>
+        <name>mMap</name>
+        <qualifiedname>Dali::Integration::OrderedSet::mMap</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Helper cache map to find item fast. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="339" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="339" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1OrderedSet_1a3af5b436a8f8397739974573d74aa657" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1abff61ce5e012e5bb46c169d7ecc3035e" kindref="member">ListContainer</ref></type>
+        <definition>ListContainer Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::mList</definition>
+        <argsstring></argsstring>
+        <name>mList</name>
+        <qualifiedname>Dali::Integration::OrderedSet::mList</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Ordered by PushBack API called. Actual ownership will be stored here. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="340" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="340" bodyend="340"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a561ffc6b2ef154c3096e320b0a53e713" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::OrderedSet</definition>
+        <argsstring>()=default</argsstring>
+        <name>OrderedSet</name>
+        <qualifiedname>Dali::Integration::OrderedSet::OrderedSet</qualifiedname>
+        <briefdescription>
+<para>Construct a new <ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="65" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1adec3bb2d46cdda5c47db557f0feccec1" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::OrderedSet</definition>
+        <argsstring>(OrderedSet &amp;&amp;rhs) noexcept</argsstring>
+        <name>OrderedSet</name>
+        <qualifiedname>Dali::Integration::OrderedSet::OrderedSet</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move construct. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="70" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="70" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a8cf0a0e6d1a27d69a10458f94d0e7e0f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> &amp;</type>
+        <definition>OrderedSet &amp; Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::operator=</definition>
+        <argsstring>(OrderedSet &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Integration::OrderedSet::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assign. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="82" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="82" bodyend="91"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a89c8fed285049b78655a74b7de0e48ea" compoundref="ordered-set_8h" startline="306" endline="319">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Clear</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1ae7eb3bc22923cfe1465ff887544af282" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::~OrderedSet</definition>
+        <argsstring>()</argsstring>
+        <name>~OrderedSet</name>
+        <qualifiedname>Dali::Integration::OrderedSet::~OrderedSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="93" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="93" bodyend="96"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a89c8fed285049b78655a74b7de0e48ea" compoundref="ordered-set_8h" startline="306" endline="319">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Clear</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1ab373e8239007d70d025e2185a45fb58c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+        <definition>Iterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Begin</definition>
+        <argsstring>()</argsstring>
+        <name>Begin</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Begin</qualifiedname>
+        <briefdescription>
+<para>Iterator of begin &amp; end. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="101" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="101" bodyend="104"/>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1af280e39cbb9f575664c912c0ab4d3fd1" compoundref="ordered-set_8h" startline="119" endline="122">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::begin</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a621b043a2a466db4d94943b6d97d7936" compoundref="ordered-set_8h" startline="127" endline="130">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+        <definition>Iterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</definition>
+        <argsstring>()</argsstring>
+        <name>End</name>
+        <qualifiedname>Dali::Integration::OrderedSet::End</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="105" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="105" bodyend="108"/>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a7ea3cb09b2d619a320c497ce99510ed4" compoundref="ordered-set_8h" startline="123" endline="126">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::end</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1aa3a55eb74983e145239a64b691a507b9" compoundref="ordered-set_8h" startline="131" endline="134">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::end</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1af08229d46d86caa9b776a6d78e1ba750" compoundref="ordered-set_8h" startline="184" endline="192">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1acf74a9c60934ebb4d6276240eb2ae95a" compoundref="ordered-set_8h" startline="175" endline="183">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a2a445bfb373767999d2a35b254d4c055" compoundref="ordered-set_8h" startline="200" endline="205">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::PushBack</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a58aede712bace0d0cb5ed69b65eb9575" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+        <definition>ConstIterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Begin</definition>
+        <argsstring>() const</argsstring>
+        <name>Begin</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="109" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1ab26e214afaab9959c2a9df9cba89988f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+        <definition>ConstIterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</definition>
+        <argsstring>() const</argsstring>
+        <name>End</name>
+        <qualifiedname>Dali::Integration::OrderedSet::End</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="113" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1af280e39cbb9f575664c912c0ab4d3fd1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+        <definition>Iterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>Dali::Integration::OrderedSet::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="119" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="119" bodyend="122"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1ab373e8239007d70d025e2185a45fb58c" compoundref="ordered-set_8h" startline="101" endline="104">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Begin</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a7ea3cb09b2d619a320c497ce99510ed4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+        <definition>Iterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>Dali::Integration::OrderedSet::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="123" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="123" bodyend="126"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" compoundref="ordered-set_8h" startline="105" endline="108">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a621b043a2a466db4d94943b6d97d7936" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+        <definition>ConstIterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <qualifiedname>Dali::Integration::OrderedSet::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="127" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="127" bodyend="130"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1ab373e8239007d70d025e2185a45fb58c" compoundref="ordered-set_8h" startline="101" endline="104">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Begin</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1aa3a55eb74983e145239a64b691a507b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+        <definition>ConstIterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>Dali::Integration::OrderedSet::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="131" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="131" bodyend="134"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" compoundref="ordered-set_8h" startline="105" endline="108">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1aa3bcf41787b6fdff86647d7a8932fbb6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1acdf09ad20a135d0bcdd60d8f86d167ce" kindref="member">SizeType</ref></type>
+        <definition>SizeType Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Count</definition>
+        <argsstring>() const</argsstring>
+        <name>Count</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Count</qualifiedname>
+        <briefdescription>
+<para>Get the number of elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of elements that this container owned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="141" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="141" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a96c1cfb7cf1dea0b94c66b8b2ef31843" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::IsEmpty</definition>
+        <argsstring>() const</argsstring>
+        <name>IsEmpty</name>
+        <qualifiedname>Dali::Integration::OrderedSet::IsEmpty</qualifiedname>
+        <briefdescription>
+<para>Predicate to determine if the container is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the container is empty </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="151" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a61c97e3db55c7b025210061224952a22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Reserve</definition>
+        <argsstring>(SizeType count)</argsstring>
+        <name>Reserve</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Reserve</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1acdf09ad20a135d0bcdd60d8f86d167ce" kindref="member">SizeType</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Reserves space in the ordered set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Count of elements to reserve </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="161" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="161" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1acf74a9c60934ebb4d6276240eb2ae95a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+        <definition>Iterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</definition>
+        <argsstring>(T *object)</argsstring>
+        <name>Find</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Find</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Find and get iterator of object. If not exist, return <ref refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" kindref="member">End()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object pointer what we want to find. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Iterator of object, or <ref refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" kindref="member">End()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="175" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="175" bodyend="183"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" compoundref="ordered-set_8h" startline="105" endline="108">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</references>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a2f7e188d589df2fa6ce0d6d02583226d" compoundref="ordered-set_8h" startline="218" endline="223">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::EraseObject</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1ac8c5f680c45da1b0650e66a064f6f36b" compoundref="ordered-set_8h" startline="212" endline="217">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::EraseObject</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a2a445bfb373767999d2a35b254d4c055" compoundref="ordered-set_8h" startline="200" endline="205">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::PushBack</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1af08229d46d86caa9b776a6d78e1ba750" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+        <definition>ConstIterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</definition>
+        <argsstring>(const T *object) const</argsstring>
+        <name>Find</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Find</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="184" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="184" bodyend="192"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" compoundref="ordered-set_8h" startline="105" endline="108">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a2a445bfb373767999d2a35b254d4c055" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::PushBack</definition>
+        <argsstring>(T *object)</argsstring>
+        <name>PushBack</name>
+        <qualifiedname>Dali::Integration::OrderedSet::PushBack</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>PushBack and keep ownership of object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Iterator will keep order of PushBack API call.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object pointer what we want to insert. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="200" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="200" bodyend="205"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" compoundref="ordered-set_8h" startline="105" endline="108">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::End</references>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1acf74a9c60934ebb4d6276240eb2ae95a" compoundref="ordered-set_8h" startline="175" endline="183">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1ac8c5f680c45da1b0650e66a064f6f36b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::EraseObject</definition>
+        <argsstring>(T *object)</argsstring>
+        <name>EraseObject</name>
+        <qualifiedname>Dali::Integration::OrderedSet::EraseObject</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Erase and remove memory of object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object pointer what we want to erase. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="212" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="212" bodyend="217"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a8a7d4f8c4d1fd03b7c06686f7cd54454" compoundref="ordered-set_8h" startline="230" endline="248">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Erase</references>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1acf74a9c60934ebb4d6276240eb2ae95a" compoundref="ordered-set_8h" startline="175" endline="183">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a2f7e188d589df2fa6ce0d6d02583226d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::EraseObject</definition>
+        <argsstring>(const T *object)</argsstring>
+        <name>EraseObject</name>
+        <qualifiedname>Dali::Integration::OrderedSet::EraseObject</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="218" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="218" bodyend="223"/>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1a8a7d4f8c4d1fd03b7c06686f7cd54454" compoundref="ordered-set_8h" startline="230" endline="248">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Erase</references>
+        <references refid="classDali_1_1Integration_1_1OrderedSet_1acf74a9c60934ebb4d6276240eb2ae95a" compoundref="ordered-set_8h" startline="175" endline="183">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Find</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a8a7d4f8c4d1fd03b7c06686f7cd54454" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+        <definition>Iterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Erase</definition>
+        <argsstring>(Iterator iter)</argsstring>
+        <name>Erase</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Erase</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Erase and remove memory of object by iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator what we want to erase. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="230" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="230" bodyend="248"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a2f7e188d589df2fa6ce0d6d02583226d" compoundref="ordered-set_8h" startline="218" endline="223">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::EraseObject</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1ac8c5f680c45da1b0650e66a064f6f36b" compoundref="ordered-set_8h" startline="212" endline="217">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::EraseObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a6e84a1002300a0332518f6797e79d3bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+        <definition>ConstIterator Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Erase</definition>
+        <argsstring>(ConstIterator iter)</argsstring>
+        <name>Erase</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Erase</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="249" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="249" bodyend="267"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1aa7167fbef1815be50a8309c9278a9505" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Release</definition>
+        <argsstring>(Iterator iter)</argsstring>
+        <name>Release</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Release</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" kindref="member">Iterator</ref></type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+<para>Release and move ownership of object. This API do not remove memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="post"><para>iterators are invalidated by this method. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator what we want to release. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="276" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="276" bodyend="288"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a35a812271426c547e08cb88f56acc700" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Release</definition>
+        <argsstring>(ConstIterator iter)</argsstring>
+        <name>Release</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Release</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" kindref="member">ConstIterator</ref></type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="289" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="289" bodyend="301"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a89c8fed285049b78655a74b7de0e48ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>Dali::Integration::OrderedSet::Clear</qualifiedname>
+        <briefdescription>
+<para>Remove all data and release memory if we owned data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="306" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="306" bodyend="319"/>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1a8cf0a0e6d1a27d69a10458f94d0e7e0f" compoundref="ordered-set_8h" startline="82" endline="91">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::operator=</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1OrderedSet_1ae7eb3bc22923cfe1465ff887544af282" compoundref="ordered-set_8h" startline="93" endline="96">Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::~OrderedSet</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a5061af7674e0495bdc8ca52aa6f66bdd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::ReorderCacheMap</definition>
+        <argsstring>()</argsstring>
+        <name>ReorderCacheMap</name>
+        <qualifiedname>Dali::Integration::OrderedSet::ReorderCacheMap</qualifiedname>
+        <briefdescription>
+<para>Reorder cache map. It should be called after the value of mList changed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="324" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="324" bodyend="331"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a5aefd5cb73b7b412304f5d921bf3e685" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::OrderedSet</definition>
+        <argsstring>(const OrderedSet &amp;)=delete</argsstring>
+        <name>OrderedSet</name>
+        <qualifiedname>Dali::Integration::OrderedSet::OrderedSet</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="335" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1OrderedSet_1a83b3a4f4934bfbf3cbe96d5ef3549fb8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> &amp;</type>
+        <definition>OrderedSet &amp; Dali::Integration::OrderedSet&lt; T, owned, Hash, KeyEqual &gt;::operator=</definition>
+        <argsstring>(const OrderedSet &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Integration::OrderedSet::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1OrderedSet" kindref="compound">OrderedSet</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="336" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Container of data which has strong point to Find &amp; Erase. It will be useful when we need to iterate the order of data insertion. and need to check whether some object is exist or not very fast. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>Since the data&apos;s memory is not continuos, iteration is slower than normal vector contianer. </para>
+</simplesect>
+<simplesect kind="note"><para>Currently, we only support to hold pointer type data.</para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of class </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>owned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if data is owned, So we will automatcally release the memory False if data is not owned by this set. Default as true. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Hash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Custom hash function of const T* type for MapContainer. Note that if two const T* return true at KeyEqual, Hash should return same value. Default as std::hash&lt;const T*&gt; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>KeyEqual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Custom equal function of const T* type for MapContainer. Return true if two const T* type is equal. Default as std::equal_to&lt;const T*&gt; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" line="49" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/ordered-set.h" bodystart="50" bodyend="341"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1af280e39cbb9f575664c912c0ab4d3fd1" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>begin</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a621b043a2a466db4d94943b6d97d7936" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>begin</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1ab373e8239007d70d025e2185a45fb58c" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Begin</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a58aede712bace0d0cb5ed69b65eb9575" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Begin</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a89c8fed285049b78655a74b7de0e48ea" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Clear</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a7a0f052e3cf5e4d52d514571db4beadd" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>ConstIterator</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1aa3bcf41787b6fdff86647d7a8932fbb6" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Count</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a7ea3cb09b2d619a320c497ce99510ed4" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>end</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1aa3a55eb74983e145239a64b691a507b9" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>end</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a1f16995b6cc0cc3927695c786a701693" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>End</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1ab26e214afaab9959c2a9df9cba89988f" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>End</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a8a7d4f8c4d1fd03b7c06686f7cd54454" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Erase</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a6e84a1002300a0332518f6797e79d3bf" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Erase</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1ac8c5f680c45da1b0650e66a064f6f36b" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>EraseObject</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a2f7e188d589df2fa6ce0d6d02583226d" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>EraseObject</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1acf74a9c60934ebb4d6276240eb2ae95a" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Find</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1af08229d46d86caa9b776a6d78e1ba750" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Find</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a96c1cfb7cf1dea0b94c66b8b2ef31843" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>IsEmpty</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1ace3b62d6cabc910d269eab27e2cca0e8" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Iterator</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1abff61ce5e012e5bb46c169d7ecc3035e" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>ListContainer</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1ae30f817f6d666e05bde2cf96181868fe" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>MapContainer</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a3af5b436a8f8397739974573d74aa657" prot="private" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>mList</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1aa3c7d5b7795bfba8ae54e07636bf483e" prot="private" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>mMap</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a8cf0a0e6d1a27d69a10458f94d0e7e0f" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a83b3a4f4934bfbf3cbe96d5ef3549fb8" prot="private" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a561ffc6b2ef154c3096e320b0a53e713" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>OrderedSet</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1adec3bb2d46cdda5c47db557f0feccec1" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>OrderedSet</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a5aefd5cb73b7b412304f5d921bf3e685" prot="private" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>OrderedSet</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a2a445bfb373767999d2a35b254d4c055" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>PushBack</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1aa7167fbef1815be50a8309c9278a9505" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Release</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a35a812271426c547e08cb88f56acc700" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Release</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a5061af7674e0495bdc8ca52aa6f66bdd" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>ReorderCacheMap</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1a61c97e3db55c7b025210061224952a22" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>Reserve</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1acdf09ad20a135d0bcdd60d8f86d167ce" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>SizeType</name></member>
+      <member refid="classDali_1_1Integration_1_1OrderedSet_1ae7eb3bc22923cfe1465ff887544af282" prot="public" virt="non-virtual"><scope>Dali::Integration::OrderedSet</scope><name>~OrderedSet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="web-engine-hit-test_8h" kind="file" language="C++">
+    <compoundname>web-engine-hit-test.h</compoundname>
+    <includes local="no">dali/devel-api/common/bitwise-enum.h</includes>
+    <includes local="no">dali/public-api/images/pixel-data.h</includes>
+    <includes local="no">dali/public-api/object/property-map.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="web-engine-plugin_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-plugin.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-hit-test.h</label>
+        <link refid="web-engine-hit-test_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/common/bitwise-enum.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/images/pixel-data.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/property-map.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h</label>
+        <link refid="web-engine-context_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-hit-test.h</label>
+        <link refid="web-engine-hit-test_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-plugin.h</label>
+        <link refid="web-engine-plugin_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-request-interceptor.h</label>
+        <link refid="web-engine-request-interceptor_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine.cpp</label>
+        <link refid="web-engine_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine.h</label>
+        <link refid="web-engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1WebEngineHitTest" prot="public">Dali::WebEngineHitTest</innerclass>
+    <innerclass refid="structDali_1_1EnableBitMaskOperators_3_01WebEngineHitTest_1_1HitTestMode_01_4" prot="public">Dali::EnableBitMaskOperators&lt; WebEngineHitTest::HitTestMode &gt;</innerclass>
+    <innerclass refid="structDali_1_1EnableBitMaskOperators_3_01WebEngineHitTest_1_1ResultContext_01_4" prot="public">Dali::EnableBitMaskOperators&lt; WebEngineHitTest::ResultContext &gt;</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_WEB_ENGINE_HIT_TEST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_WEB_ENGINE_HIT_TEST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2022<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/devel-api/common/bitwise-enum.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/images/pixel-data.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/property-map.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32" refid="classDali_1_1WebEngineHitTest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1WebEngineHitTest" kindref="compound">WebEngineHitTest</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6" kindref="member">HitTestMode</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">DEFAULT</ref><sp/><sp/><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6acf0ff9d73e92947f01a919988c62f1a5" kindref="member">NODE_DATA</ref><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6adc0a5d4243f38ec51f61fd0f90fbc42d" kindref="member">IMAGE_DATA</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6a5fb1f955b45e38e31789286a1790398d" kindref="member">ALL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">DEFAULT</ref><sp/>|<sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6acf0ff9d73e92947f01a919988c62f1a5" kindref="member">NODE_DATA</ref><sp/>|<sp/><ref refid="classDali_1_1WebEngineHitTest_1a77658698854f5eea7859fbbfef1dcee6adc0a5d4243f38ec51f61fd0f90fbc42d" kindref="member">IMAGE_DATA</ref>,<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaa" kindref="member">ResultContext</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaac231fa48df3ee393c92dccac4dba5e7d" kindref="member">DOCUMENT</ref><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaa58c0a0e97e6d2f615bc264c2775fda44" kindref="member">LINK</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaa23a12f67f614b5518c7f1c2465bf95e3" kindref="member">IMAGE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaa977806a0d7f179f6a006aebba13a8eac" kindref="member">MEDIA</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>4,<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaa0a2dba942c08df9fd12a10acc7f19a78" kindref="member">SELECTION</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>5,<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaa04b2e050ef362244ef798e7d855c74eb" kindref="member">EDITABLE</ref><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>6,<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaaa61a96ffcb251bb9bf0abf8fec19d0ea8" kindref="member">TEXT</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>7,<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classDali_1_1WebEngineHitTest_1a07ca3a9284fb12056e1da9262419cd80" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1WebEngineHitTest_1a07ca3a9284fb12056e1da9262419cd80" kindref="member">WebEngineHitTest</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classDali_1_1WebEngineHitTest_1a2d061165e9c6ad7828790a07fccee5c0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineHitTest_1a2d061165e9c6ad7828790a07fccee5c0" kindref="member">~WebEngineHitTest</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDali_1_1WebEngineHitTest_1aea9b703ed632b71b67a64d04b263edc0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b1735e6862b30b81a6a1891e448ddaa" kindref="member">ResultContext</ref><sp/><ref refid="classDali_1_1WebEngineHitTest_1aea9b703ed632b71b67a64d04b263edc0" kindref="member">GetResultContext</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classDali_1_1WebEngineHitTest_1a3ceb725ec76c8d3719eaf022b92d1a38" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1a3ceb725ec76c8d3719eaf022b92d1a38" kindref="member">GetLinkUri</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classDali_1_1WebEngineHitTest_1a067aa13aa33e29fc0f859a69e51773e2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1a067aa13aa33e29fc0f859a69e51773e2" kindref="member">GetLinkTitle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classDali_1_1WebEngineHitTest_1ade25dd1f885dfa4676f242ff8a18d605" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1ade25dd1f885dfa4676f242ff8a18d605" kindref="member">GetLinkLabel</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classDali_1_1WebEngineHitTest_1ac243226f2649a16b2c15baf98a8d0ba1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1ac243226f2649a16b2c15baf98a8d0ba1" kindref="member">GetImageUri</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classDali_1_1WebEngineHitTest_1a06e25bd8ecc23dc1e4a6d01cc03f08c0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1a06e25bd8ecc23dc1e4a6d01cc03f08c0" kindref="member">GetMediaUri</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classDali_1_1WebEngineHitTest_1a0378921ecbe177b8bef9393e2c5237da" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1a0378921ecbe177b8bef9393e2c5237da" kindref="member">GetTagName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="classDali_1_1WebEngineHitTest_1a4a5bf751109d888b1894c1cf1c5ff673" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1a4a5bf751109d888b1894c1cf1c5ff673" kindref="member">GetNodeValue</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classDali_1_1WebEngineHitTest_1a0b6b702fbb7e1e565f64783257c5377a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Dali::Property::Map<sp/><ref refid="classDali_1_1WebEngineHitTest_1a0b6b702fbb7e1e565f64783257c5377a" kindref="member">GetAttributes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classDali_1_1WebEngineHitTest_1aee519bd5f20708f7591f9e4a15e77dbd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classDali_1_1WebEngineHitTest_1aee519bd5f20708f7591f9e4a15e77dbd" kindref="member">GetImageFileNameExtension</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classDali_1_1WebEngineHitTest_1a6d330c0954c6e7fcfb0b5be59d80b39c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Dali::PixelData<sp/><ref refid="classDali_1_1WebEngineHitTest_1a6d330c0954c6e7fcfb0b5be59d80b39c" kindref="member">GetImageBuffer</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">//<sp/>specialization<sp/>has<sp/>to<sp/>be<sp/>done<sp/>in<sp/>the<sp/>same<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="150" refid="structDali_1_1EnableBitMaskOperators_3_01WebEngineHitTest_1_1HitTestMode_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">EnableBitMaskOperators&lt;<ref refid="classDali_1_1WebEngineHitTest" kindref="compound">WebEngineHitTest</ref>::HitTestMode&gt;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152" refid="structDali_1_1EnableBitMaskOperators_3_01WebEngineHitTest_1_1HitTestMode_01_4_1a7ab5b9d19427d6cb8c3f90545c288b2a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ENABLE<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="156" refid="structDali_1_1EnableBitMaskOperators_3_01WebEngineHitTest_1_1ResultContext_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">EnableBitMaskOperators&lt;<ref refid="classDali_1_1WebEngineHitTest" kindref="compound">WebEngineHitTest</ref>::ResultContext&gt;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158" refid="structDali_1_1EnableBitMaskOperators_3_01WebEngineHitTest_1_1ResultContext_01_4_1a84e85193da8b54d8137d9212eabbfe8e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ENABLE<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_WEB_ENGINE_HIT_TEST_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-hit-test.h"/>
+  </compounddef>
+</doxygen>

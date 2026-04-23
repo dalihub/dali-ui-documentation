@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Signal" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Signal</compoundname>
+    <includes refid="dali-signal_8h" local="no">dali-signal.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename _Signature</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Base Template class to provide signals. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>To create a signal for this class, you first have to define a typedef within your handle&apos;s scope: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyHandle<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Handle</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Typedefs</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;<sp/>void<sp/>()&gt;<sp/>VoidSignalType;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;<sp/>bool<sp/>()&gt;<sp/>BoolSignalType;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;<sp/>void<sp/>(<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>)&gt;<sp/>ParamSignalType;<sp/></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Signals</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>VoidSignalType&amp;<sp/><sp/>VoidSignal();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>BoolSignalType&amp;<sp/><sp/>BoolSignal();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ParamSignalType&amp;<sp/>ParamSignal();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> The methods are required in the handle class so that the application writer can retrieve the <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> in order to connect/disconnect.</para>
+<para>In the implementation class, the members should be defined and the methods should be provided to retrieve the signal itself. These will be called by the equivalent methods in the MyHandle class. <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyObject<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>MyHandle::VoidSignalType&amp;<sp/><sp/>VoidSignal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mVoidSignal;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>MyHandle::BoolSignalType&amp;<sp/><sp/>BoolSignal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mBoolSignal;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>MyHandle::ParamSignalType&amp;<sp/>ParamSignal()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mParamSignal;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Signals</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>MyHandle::VoidSignalType<sp/><sp/><sp/>mVoidSignal;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>MyHandle::BoolSignalType<sp/><sp/><sp/>mBoolSignal;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>MyHandle::ParamSignalType<sp/><sp/>mParamSignal;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> @SINCE_1_0.0 </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/dali-signal.h" line="140" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/dali-signal.h" bodystart="141" bodyend="142"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

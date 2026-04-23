@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Graphics" kind="namespace" language="C++">
+    <compoundname>Dali::Graphics</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Backend</name>
+        <qualifiedname>Dali::Graphics::Backend</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8a7e384ec7ebbb4403911770ab90cd91a1" prot="public">
+          <name>GLES</name>
+          <briefdescription>
+<para>The graphics backend uses GLES. @SINCE_2_3.53. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8ac60cacb57b9e78f018a9d973bee2f801" prot="public">
+          <name>VULKAN</name>
+          <briefdescription>
+<para>The graphics backend uses VULKAN. @SINCE_2_3.53. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8a5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= GLES</initializer>
+          <briefdescription>
+<para>The default graphics backend. @SINCE_2_3.53. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.h" line="37" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.h" bodystart="38" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Graphics_1aed95f07baa198f8cc4f3aa4339e0bd26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8" kindref="member">Backend</ref></type>
+        <definition>DALI_ADAPTOR_API Backend Dali::Graphics::GetCurrentGraphicsBackend</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentGraphicsBackend</name>
+        <qualifiedname>Dali::Graphics::GetCurrentGraphicsBackend</qualifiedname>
+        <briefdescription>
+<para>Returns the graphics backend currently in use. @SINCE_2_3.53. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The graphics backend currently in use. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" line="32" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" bodystart="32" bodyend="35" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.h" declline="50" declcolumn="26"/>
+        <referencedby refid="classDali_1_1GlWindow_1a46fdfe1ec60d30c37cbc727a902d8aed" compoundref="gl-window_8cpp" startline="90" endline="102">Dali::GlWindow::New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Graphics_1a09d3bbeaeda6560848147e4fb842e919" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_ADAPTOR_API void Dali::Graphics::SetGraphicsBackend</definition>
+        <argsstring>(Backend backend)</argsstring>
+        <name>SetGraphicsBackend</name>
+        <qualifiedname>Dali::Graphics::SetGraphicsBackend</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Graphics_1a571178cb6c20384356f1ce0cc1cf0fb8" kindref="member">Backend</ref></type>
+          <declname>backend</declname>
+        </param>
+        <briefdescription>
+<para>Sets the graphics backend. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Generally, calling this is not required and can be set using the environment variable (DALI_GRAPHICS_BACKEND) instead. If called before the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> class is created, then the environment variable is ignored. @SINCE_2_3.53 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">backend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics backend to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This can only be called once and only before the graphics backend has been created (i.e. before the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> Class is started). If called again or after the graphics backend has started, then the call will not change anything. </para>
+</simplesect>
+<simplesect kind="note"><para>Currently has no effect as the <ref refid="namespaceDali_1_1Graphics" kindref="compound">Graphics</ref> backend is chosen at compile time </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" line="37" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" bodystart="37" bodyend="40" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.h" declline="62" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Graphics_1a1314a7caf34ae949f9b805924fb19e51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::StringView</type>
+        <definition>DALI_ADAPTOR_API Dali::StringView Dali::Graphics::GetBackendInformation</definition>
+        <argsstring>()</argsstring>
+        <name>GetBackendInformation</name>
+        <qualifiedname>Dali::Graphics::GetBackendInformation</qualifiedname>
+        <briefdescription>
+<para>Returns a text string with information about the graphics backend. @SINCE_2_4.27. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A text string with information about the graphics backend. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" line="42" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" bodystart="42" bodyend="45" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.h" declline="69" declcolumn="35"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/graphics-backend.cpp" line="30" column="1"/>
+  </compounddef>
+</doxygen>

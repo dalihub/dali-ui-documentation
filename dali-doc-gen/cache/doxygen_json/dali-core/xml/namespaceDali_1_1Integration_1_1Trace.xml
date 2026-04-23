@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Integration_1_1Trace" kind="namespace" language="C++">
+    <compoundname>Dali::Integration::Trace</compoundname>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1Integration_1_1Trace_1a8172a8248804dafc2ff28a2ea258bb1f" prot="public" static="no">
+        <type>void(*)(bool, const char *, const char *)</type>
+        <definition>using Dali::Integration::Trace::LogContextFunction = typedef void (*)(bool, const char*, const char*)</definition>
+        <argsstring></argsstring>
+        <name>LogContextFunction</name>
+        <qualifiedname>Dali::Integration::Trace::LogContextFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>typedef for the LogContextFunction function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.h" line="44" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceDali_1_1Integration_1_1Trace_1ad048a0af9af3903f315359cd95ed8c4d" prot="public" static="no" mutable="no">
+        <type>thread_local <ref refid="namespaceDali_1_1Integration_1_1Trace_1a8172a8248804dafc2ff28a2ea258bb1f" kindref="member">LogContextFunction</ref></type>
+        <definition>thread_local LogContextFunction Dali::Integration::Trace::gThreadLocalLogContextFunction</definition>
+        <argsstring></argsstring>
+        <name>gThreadLocalLogContextFunction</name>
+        <qualifiedname>Dali::Integration::Trace::gThreadLocalLogContextFunction</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" line="32" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="namespaceDali_1_1Integration_1_1Trace_1a3c0a21fee372be6604f9e248e7bc9f4d" compoundref="trace_8cpp" startline="34" endline="37">InstallLogContextFunction</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1_1Trace_1ac79d0607b9eece5949ddbc4f0ab55e83" compoundref="trace_8cpp" startline="39" endline="46">LogContext</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1_1Trace_1a3c0a21fee372be6604f9e248e7bc9f4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::Trace::InstallLogContextFunction</definition>
+        <argsstring>(const LogContextFunction &amp;logContextFunction)</argsstring>
+        <name>InstallLogContextFunction</name>
+        <qualifiedname>Dali::Integration::Trace::InstallLogContextFunction</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceDali_1_1Integration_1_1Trace_1a8172a8248804dafc2ff28a2ea258bb1f" kindref="member">LogContextFunction</ref> &amp;</type>
+          <declname>logContextFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A LogContextFunction function has to be installed for every thread that wants to use tracing. This should be done by the adaptor. The LogContextFunction function can be different for each thread. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>LogContextFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="namespaceDali_1_1Integration_1_1Log" kindref="compound">Log</ref> Context function to install </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" line="34" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" bodystart="34" bodyend="37" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.h" declline="52" declcolumn="20"/>
+        <references refid="namespaceDali_1_1Integration_1_1Trace_1ad048a0af9af3903f315359cd95ed8c4d" compoundref="trace_8cpp" startline="32">gThreadLocalLogContextFunction</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1_1Trace_1ac79d0607b9eece5949ddbc4f0ab55e83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::Trace::LogContext</definition>
+        <argsstring>(bool start, const char *tag, const char *message)</argsstring>
+        <name>LogContext</name>
+        <qualifiedname>Dali::Integration::Trace::LogContext</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Used by tracing macros to log a context message <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a bool to indicate start (true) or end (false) of the tracing / logging </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a unique event tag name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an additional message for this trace. Ignore if it is nullptr </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" line="39" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" bodystart="39" bodyend="46" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.h" declline="39" declcolumn="20"/>
+        <references refid="namespaceDali_1_1Integration_1_1Trace_1ad048a0af9af3903f315359cd95ed8c4d" compoundref="trace_8cpp" startline="32">gThreadLocalLogContextFunction</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/trace.cpp" line="30" column="1"/>
+  </compounddef>
+</doxygen>

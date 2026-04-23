@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1SamplingMode" kind="namespace" language="C++">
+    <compoundname>Dali::SamplingMode</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Type</name>
+        <qualifiedname>Dali::SamplingMode::Type</qualifiedname>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34a906a3e44372ae5721b2a7db3e41ef6c3" prot="public">
+          <name>BOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Iteratively box filter to generate an image of 1/2, 1/4, 1/8, etc width and height and approximately the desired size. This is the default. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34afe34c788ba158af55c94ccc3ad4f474e" prot="public">
+          <name>NEAREST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>For each output pixel, read one input pixel. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34ac101d0c0b318bb199662c5b05cd2ddb8" prot="public">
+          <name>LINEAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>For each output pixel, read a quad of four input pixels and write a weighted average of them. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34abffcb2b417173685c67c2b91358ce74c" prot="public">
+          <name>BOX_THEN_NEAREST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Iteratively box filter to generate an image of 1/2, 1/4, 1/8 etc width and height and approximately the desired size, then for each output pixel, read one pixel from the last level of box filtering. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" prot="public">
+          <name>BOX_THEN_LINEAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Iteratively box filter to almost the right size, then for each output pixel, read four pixels from the last level of box filtering and write their weighted average. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34addfa64f8ba3ef43b9e641483e8930408" prot="public">
+          <name>NO_FILTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No filtering is performed. If the SCALE_TO_FILL scaling mode is enabled, the borders of the image may be trimmed to match the aspect ratio of the desired dimensions. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34ad91364d1369d98be8629fa0ef7db11ea" prot="public">
+          <name>DONT_CARE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>For caching algorithms where a client strongly prefers a cache-hit to reuse a cached image. @SINCE_2_5.14 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34ae3132c7fa4f85179b329037d8d0310dc" prot="public">
+          <name>LANCZOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use filter with Lanczos resample algorithm. @SINCE_2_3.43 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34a0d128bd19037632184b2ad87a91bd507" prot="public">
+          <name>BOX_THEN_LANCZOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Iteratively box filter to generate an image of 1/2, 1/4, 1/8 etc width and height and approximately the desired size, then apply Lanczos resample algorithm. @SINCE_2_3.43 </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for <ref refid="namespaceDali_1_1SamplingMode" kindref="compound">SamplingMode</ref> type. @SINCE_2_5.14. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/image-options.h" line="96" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/image-options.h" bodystart="97" bodyend="129"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceDali_1_1SamplingMode_1a42c709a00f318ab651b2a3eef0f9298a" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">Type</ref></type>
+        <definition>const Type Dali::SamplingMode::DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT</name>
+        <qualifiedname>Dali::SamplingMode::DEFAULT</qualifiedname>
+        <initializer>= <ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34a906a3e44372ae5721b2a7db3e41ef6c3" kindref="member">BOX</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/image-options.h" line="130" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/image-options.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Filtering options, used when resizing images to sample original pixels. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="namespaceDali_1_1SamplingMode" kindref="compound">SamplingMode</ref> controls how pixels in an input image are sampled and combined to generate each pixel of a destination image during a scaling.</para>
+<para>NoFilter and Box modes do not guarantee that the output pixel array exactly matches the rectangle specified by the desired dimensions and <ref refid="namespaceDali_1_1FittingMode" kindref="compound">FittingMode</ref>, but all other filter modes do if the desired dimensions are <computeroutput>&lt;=</computeroutput> the raw dimensions of the input image file. @SINCE_2_5.14 </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/image-options.h" line="90" column="1"/>
+  </compounddef>
+</doxygen>

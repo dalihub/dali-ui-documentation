@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="grid-layout-params_8cpp" kind="file" language="C++">
+    <compoundname>grid-layout-params.cpp</compoundname>
+    <includes refid="grid-layout-params_8h" local="no">dali-ui-foundation/public-api/layouts/grid-layout-params.h</includes>
+    <includes local="no">dali/public-api/object/ref-object.h</includes>
+    <includes local="no">dali-ui-foundation/internal/layouts/grid-layout-params-impl.h</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>dali-ui-foundation/public-api/callback.h</label>
+        <link refid="callback_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/grid-layout-params.cpp</label>
+        <link refid="grid-layout-params_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/public-api/layouts/grid-layout-params.h</label>
+        <link refid="grid-layout-params_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali-ui-foundation/public-api/layouts/layout-params.h</label>
+        <link refid="layout-params_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali-ui-foundation/public-api/layouts/layout-types.h</label>
+        <link refid="layout-types_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali-ui-foundation/public-api/trait.h</label>
+        <link refid="trait_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="16">
+        <label>dali-ui-foundation/internal/layouts/grid-layout-params-impl.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/common/extents.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/common/unique-ptr.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="15">
+        <label>dali/public-api/object/ref-object.h</label>
+      </node>
+      <node id="14">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="grid-layout-params_8h" kindref="compound">dali-ui-foundation/public-api/layouts/grid-layout-params.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/ref-object.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/layouts/grid-layout-params-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" kindref="member">GridLayoutParams::GridLayoutParams</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1Ui_1_1GridLayoutParams_1a6b232b5d8b6cd060ee90801eb74c7545" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a6b232b5d8b6cd060ee90801eb74c7545" kindref="member">GridLayoutParams::New</ref>()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>IntrusivePtr&lt;Internal::GridLayoutParamsImpl&gt;<sp/>impl(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::GridLayoutParamsImpl());</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" kindref="member">GridLayoutParams</ref>(impl.Get());</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classDali_1_1Ui_1_1GridLayoutParams_1a9e90aca1ea8be9a5e6669b710484fb0d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a6b232b5d8b6cd060ee90801eb74c7545" kindref="member">GridLayoutParams::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>IntrusivePtr&lt;Internal::GridLayoutParamsImpl&gt;<sp/>impl(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::GridLayoutParamsImpl(<ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(other)));</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" kindref="member">GridLayoutParams</ref>(impl.Get());</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classDali_1_1Ui_1_1GridLayoutParams_1ae282fc030b434a53710abf1bed20903c" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" kindref="member">GridLayoutParams::GridLayoutParams</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/>handle)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">:<sp/><ref refid="classDali_1_1Ui_1_1LayoutParams" kindref="compound">LayoutParams</ref>(handle)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classDali_1_1Ui_1_1GridLayoutParams_1acbcc44a079b480ef33a2544c4ad55838" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1acbcc44a079b480ef33a2544c4ad55838" kindref="member">GridLayoutParams::~GridLayoutParams</ref>()</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" kindref="member">GridLayoutParams::GridLayoutParams</ref>(Internal::GridLayoutParamsImpl*<sp/>implementation)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">:<sp/><ref refid="classDali_1_1Ui_1_1LayoutParams" kindref="compound">LayoutParams</ref>(implementation)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1Ui_1_1GridLayoutParams_1a1f434c7f0fcb2a5e4d5593f7c6212cd3" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a1f434c7f0fcb2a5e4d5593f7c6212cd3" kindref="member">GridLayoutParams::DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a0e79134a21aaaa3dee7fd5370a3a466f" kindref="member">GridLayoutParams</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Internal::GridLayoutParamsImpl*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.GetObjectPtr()));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classDali_1_1Ui_1_1GridLayoutParams_1af15a46c18a6413d30337b5f75dcb016d" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1_1Ui_1a3cd32735897c3de65ac5c850fb272194" kindref="member">LayoutParamsType</ref><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1af15a46c18a6413d30337b5f75dcb016d" kindref="member">GridLayoutParams::GetLayoutParamsType</ref>()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a3cd32735897c3de65ac5c850fb272194abc899ea5d6a94a8e4e60c16244919ba0" kindref="member">LayoutParamsType::GRID</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classDali_1_1Ui_1_1GridLayoutParams_1a3b7291df08b8ed7e2faf03b8f65121ed" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a3b7291df08b8ed7e2faf03b8f65121ed" kindref="member">GridLayoutParams::SetRow</ref>(uint32_t<sp/>row)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetRow(row);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1Ui_1_1GridLayoutParams_1a94f9775d727b4dae73a5098559982f33" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a94f9775d727b4dae73a5098559982f33" kindref="member">GridLayoutParams::GetRow</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="79"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetRow();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1Ui_1_1GridLayoutParams_1a40e8b5d8067e9fbb2391d287296c472f" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a40e8b5d8067e9fbb2391d287296c472f" kindref="member">GridLayoutParams::SetColumn</ref>(uint32_t<sp/>column)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetColumn(column);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classDali_1_1Ui_1_1GridLayoutParams_1a29c302f9a26a7257467aea06aee94b11" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a29c302f9a26a7257467aea06aee94b11" kindref="member">GridLayoutParams::GetColumn</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="90"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetColumn();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classDali_1_1Ui_1_1GridLayoutParams_1a8ece13b8e587cc1a9780e06cb73acca4" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a8ece13b8e587cc1a9780e06cb73acca4" kindref="member">GridLayoutParams::SetRowSpan</ref>(uint32_t<sp/>span)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetRowSpan(span);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classDali_1_1Ui_1_1GridLayoutParams_1a7a5b9955a331daa3ca15d00b23edf691" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a7a5b9955a331daa3ca15d00b23edf691" kindref="member">GridLayoutParams::GetRowSpan</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="101"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetRowSpan();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classDali_1_1Ui_1_1GridLayoutParams_1a77571bc34798758b88dfcae92c43e816" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a77571bc34798758b88dfcae92c43e816" kindref="member">GridLayoutParams::SetColumnSpan</ref>(uint32_t<sp/>span)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetColumnSpan(span);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classDali_1_1Ui_1_1GridLayoutParams_1a364b110cd63ae1b685c36d9945a062b9" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1a364b110cd63ae1b685c36d9945a062b9" kindref="member">GridLayoutParams::GetColumnSpan</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="112"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetColumnSpan();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classDali_1_1Ui_1_1GridLayoutParams_1adb0da2d6505bedc6b028bd5326c4f39a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1adb0da2d6505bedc6b028bd5326c4f39a" kindref="member">GridLayoutParams::SetHorizontalAlignment</ref>(<ref refid="namespaceDali_1_1Ui_1ab66318772930397280e5854b06a3eaf1" kindref="member">LayoutAlignment</ref><sp/>alignment)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetHorizontalAlignment(alignment);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classDali_1_1Ui_1_1GridLayoutParams_1acb08a9aefe7d4e3274856bef2d4e5ef6" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1_1Ui_1ab66318772930397280e5854b06a3eaf1" kindref="member">LayoutAlignment</ref><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1acb08a9aefe7d4e3274856bef2d4e5ef6" kindref="member">GridLayoutParams::GetHorizontalAlignment</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="123"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetHorizontalAlignment();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classDali_1_1Ui_1_1GridLayoutParams_1af24afff11e2e794b69d9b1e1f269a5ce" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GridLayoutParams" kindref="compound">GridLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1af24afff11e2e794b69d9b1e1f269a5ce" kindref="member">GridLayoutParams::SetVerticalAlignment</ref>(<ref refid="namespaceDali_1_1Ui_1ab66318772930397280e5854b06a3eaf1" kindref="member">LayoutAlignment</ref><sp/>alignment)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetVerticalAlignment(alignment);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classDali_1_1Ui_1_1GridLayoutParams_1ab9be0c75e77b5b4419bfef02b2929b44" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1_1Ui_1ab66318772930397280e5854b06a3eaf1" kindref="member">LayoutAlignment</ref><sp/><ref refid="classDali_1_1Ui_1_1GridLayoutParams_1ab9be0c75e77b5b4419bfef02b2929b44" kindref="member">GridLayoutParams::GetVerticalAlignment</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="134"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetVerticalAlignment();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/grid-layout-params.cpp"/>
+  </compounddef>
+</doxygen>

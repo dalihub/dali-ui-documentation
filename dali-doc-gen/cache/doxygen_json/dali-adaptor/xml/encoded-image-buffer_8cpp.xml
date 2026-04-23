@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="encoded-image-buffer_8cpp" kind="file" language="C++">
+    <compoundname>encoded-image-buffer.cpp</compoundname>
+    <includes refid="encoded-image-buffer_8h" local="no">dali/public-api/adaptor-framework/encoded-image-buffer.h</includes>
+    <includes local="no">dali/internal/imaging/common/encoded-image-buffer-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/encoded-image-buffer.cpp</label>
+        <link refid="encoded-image-buffer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/adaptor-framework/encoded-image-buffer.h</label>
+        <link refid="encoded-image-buffer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/internal/imaging/common/encoded-image-buffer-impl.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2023<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="encoded-image-buffer_8h" kindref="compound">dali/public-api/adaptor-framework/encoded-image-buffer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/imaging/common/encoded-image-buffer-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" kindref="member">EncodedImageBuffer::EncodedImageBuffer</ref>()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classDali_1_1EncodedImageBuffer_1a427a1d9da6fd274456c0cd8af6095f14" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer_1a427a1d9da6fd274456c0cd8af6095f14" kindref="member">EncodedImageBuffer::~EncodedImageBuffer</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classDali_1_1EncodedImageBuffer_1a2d4de68b950d3a2bc9afdce6788e1320" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" kindref="member">EncodedImageBuffer::EncodedImageBuffer</ref>(Internal::EncodedImageBuffer*<sp/>internal)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">:<sp/>BaseHandle(internal)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" kindref="member">EncodedImageBuffer::EncodedImageBuffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref>&amp;<sp/>handle)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref>&amp;<sp/><ref refid="classDali_1_1EncodedImageBuffer_1ac8b10dc9ef0a9bd6a79c9726f841f8ed" kindref="member">EncodedImageBuffer::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref>&amp;<sp/>handle)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" kindref="member">EncodedImageBuffer::EncodedImageBuffer</ref>(<ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref>&amp;&amp;<sp/>handle)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref>&amp;<sp/><ref refid="classDali_1_1EncodedImageBuffer_1ac8b10dc9ef0a9bd6a79c9726f841f8ed" kindref="member">EncodedImageBuffer::operator=</ref>(<ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref>&amp;&amp;<sp/>handle)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classDali_1_1EncodedImageBuffer_1af2c04a2b8cb59c12e4e4ed920ad3251c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1abc8fcd018ef272a8ed99a77a61db28af" kindref="member">EncodedImageBuffer::RawBufferType</ref>&amp;<sp/><ref refid="classDali_1_1EncodedImageBuffer_1af2c04a2b8cb59c12e4e4ed920ad3251c" kindref="member">EncodedImageBuffer::GetRawBuffer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="48"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetRawBuffer();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classDali_1_1EncodedImageBuffer_1ab2d3c59e2e968025403860ac40833d99" refkind="member"><highlight class="normal">std::size_t<sp/><ref refid="classDali_1_1EncodedImageBuffer_1ab2d3c59e2e968025403860ac40833d99" kindref="member">EncodedImageBuffer::GetHash</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="53"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetHash();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classDali_1_1EncodedImageBuffer_1ae402cbbfc4e6cd908c9f1394fdfb26ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1ae402cbbfc4e6cd908c9f1394fdfb26ba" kindref="member">EncodedImageBuffer::SetImageType</ref>(<ref refid="classDali_1_1EncodedImageBuffer_1a528a3ff3a5c19658e18ae1f8c3c77928" kindref="member">ImageType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetImageType(type);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1EncodedImageBuffer_1a2f16943704c47d7df89f8379a98c4bba" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer_1a528a3ff3a5c19658e18ae1f8c3c77928" kindref="member">EncodedImageBuffer::ImageType</ref><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a2f16943704c47d7df89f8379a98c4bba" kindref="member">EncodedImageBuffer::GetImageType</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="63"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetImageType();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" kindref="member">EncodedImageBuffer::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1abc8fcd018ef272a8ed99a77a61db28af" kindref="member">RawBufferType</ref>&amp;<sp/>buffer)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" kindref="member">EncodedImageBuffer::New</ref>(buffer,<sp/><ref refid="classDali_1_1EncodedImageBuffer_1a528a3ff3a5c19658e18ae1f8c3c77928a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">ImageType::DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classDali_1_1EncodedImageBuffer_1a5c88c5e2b9a0b4e9707dde32df1867b7" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" kindref="member">EncodedImageBuffer::New</ref>(<ref refid="classDali_1_1EncodedImageBuffer_1abc8fcd018ef272a8ed99a77a61db28af" kindref="member">RawBufferType</ref>&amp;&amp;<sp/>buffer)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" kindref="member">EncodedImageBuffer::New</ref>(std::move(buffer),<sp/><ref refid="classDali_1_1EncodedImageBuffer_1a528a3ff3a5c19658e18ae1f8c3c77928a5b39c8b553c821e7cddc6da64b5bd2ee" kindref="member">ImageType::DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classDali_1_1EncodedImageBuffer_1ac61a0a127278219dccba95e872acc319" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" kindref="member">EncodedImageBuffer::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1abc8fcd018ef272a8ed99a77a61db28af" kindref="member">RawBufferType</ref>&amp;<sp/>buffer,<sp/><ref refid="classDali_1_1EncodedImageBuffer_1a528a3ff3a5c19658e18ae1f8c3c77928" kindref="member">ImageType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>IntrusivePtr&lt;Internal::EncodedImageBuffer&gt;<sp/>internal<sp/>=<sp/>Internal::EncodedImageBuffer::New(buffer,<sp/>type);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" kindref="member">EncodedImageBuffer</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1EncodedImageBuffer_1acf45190eb253c08d6bb258cd5d67ce3e" refkind="member"><highlight class="normal"><ref refid="classDali_1_1EncodedImageBuffer" kindref="compound">EncodedImageBuffer</ref><sp/><ref refid="classDali_1_1EncodedImageBuffer_1a77ea584f29b315acb5ab6c9ece8ca104" kindref="member">EncodedImageBuffer::New</ref>(<ref refid="classDali_1_1EncodedImageBuffer_1abc8fcd018ef272a8ed99a77a61db28af" kindref="member">RawBufferType</ref>&amp;&amp;<sp/>buffer,<sp/><ref refid="classDali_1_1EncodedImageBuffer_1a528a3ff3a5c19658e18ae1f8c3c77928" kindref="member">ImageType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>IntrusivePtr&lt;Internal::EncodedImageBuffer&gt;<sp/>internal<sp/>=<sp/>Internal::EncodedImageBuffer::New(std::move(buffer),<sp/>type);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1EncodedImageBuffer_1aa4080a545dc60c2557a7a0352e0d7dfe" kindref="member">EncodedImageBuffer</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/encoded-image-buffer.cpp"/>
+  </compounddef>
+</doxygen>

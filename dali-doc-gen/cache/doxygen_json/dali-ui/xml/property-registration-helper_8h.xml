@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="property-registration-helper_8h" kind="file" language="C++">
+    <compoundname>property-registration-helper.h</compoundname>
+    <includes local="no">dali/devel-api/object/property-helper-devel.h</includes>
+    <includedby refid="animated-image-view-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/animated-image-view-impl.cpp</includedby>
+    <includedby refid="image-view-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/image-view-impl.cpp</includedby>
+    <includedby refid="input-field-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-impl.cpp</includedby>
+    <includedby refid="label-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-impl.cpp</includedby>
+    <includedby refid="lottie-animation-view-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/lottie-animation-view-impl.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h</label>
+        <link refid="property-registration-helper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/object/property-helper-devel.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/animated-image-view-impl.cpp</label>
+        <link refid="animated-image-view-impl_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/image-view-impl.cpp</label>
+        <link refid="image-view-impl_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-impl.cpp</label>
+        <link refid="input-field-impl_8cpp"/>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-impl.cpp</label>
+        <link refid="label-impl_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/lottie-animation-view-impl.cpp</label>
+        <link refid="lottie-animation-view-impl_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h</label>
+        <link refid="property-registration-helper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="property-registration-helper_8h_1ae3624ac2e1d349b9fa24925e80a14ad9" prot="public" static="no">
+        <name>DALI_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL</name>
+        <param><defname>count</defname></param>
+        <param><defname>typeRegistrationObject</defname></param>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>valueType</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <initializer>  Dali::PropertyRegistration DALI_TOKEN_PASTE(property, count)(typeRegistrationObject, text, indexNamespace::indexType::enumIndex, Dali::Property::valueType, &amp;objectNamespace::objectType::SetProperty, &amp;objectType::GetProperty); \
+  static_assert((static_cast&lt;int&gt;(indexNamespace::indexType::enumIndex) - static_cast&lt;int&gt;(indexNamespace::indexType::PROPERTY_START_INDEX)) == count, &quot;External property index must match registration order.&quot;);</initializer>
+        <briefdescription>
+<para>Helper macros for property registration using an external property index type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These helpers allow implementation classes to register properties by reusing an externally defined property index enum, such as a public property index, instead of defining a local Property enum in the implementation class.</para>
+<para>The helper macros are intended to be used inside a type registration block where a local variable named <computeroutput>typeRegistration</computeroutput> is available, for example:</para>
+<para><programlisting><codeline><highlight class="normal">DALI_TYPE_REGISTRATION_BEGIN(LabelImpl,<sp/>ViewImpl,<sp/>Create)</highlight></codeline>
+<codeline><highlight class="normal">DALI_PROPERTY_REGISTRATION_EXTERNAL(Ui::Text,<sp/>LabelPropertyIndex,<sp/>Ui::Integration,<sp/>LabelImpl,<sp/>&quot;text&quot;,<sp/>STRING,<sp/>TEXT)</highlight></codeline>
+<codeline><highlight class="normal">DALI_TYPE_REGISTRATION_END()</highlight></codeline>
+</programlisting></para>
+<para>Registers a property using an external property index definition. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="43" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1a61f2c4f44bb2e45bd108eae4da1523a1" prot="public" static="no">
+        <name>DALI_ANIMATABLE_PROPERTY_REGISTRATION_WITH_DEFAULT_EXTERNAL_INTERNAL</name>
+        <param><defname>count</defname></param>
+        <param><defname>typeRegistrationObject</defname></param>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>value</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <initializer>  Dali::AnimatablePropertyRegistration DALI_TOKEN_PASTE(property, count)(typeRegistrationObject, text, indexNamespace::indexType::enumIndex, value, &amp;objectNamespace::objectType::SetProperty, &amp;objectType::GetProperty);</initializer>
+        <briefdescription>
+<para>Registers an animatable property with a default value using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="50" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="50" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1a60cb885bc6ed2afcb1a18b16a399c338" prot="public" static="no">
+        <name>DALI_ANIMATABLE_PROPERTY_COMPONENT_REGISTRATION_EXTERNAL_INTERNAL</name>
+        <param><defname>count</defname></param>
+        <param><defname>typeRegistrationObject</defname></param>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <param><defname>baseEnumIndex</defname></param>
+        <param><defname>componentIndex</defname></param>
+        <initializer>  Dali::AnimatablePropertyComponentRegistration DALI_TOKEN_PASTE(property, count)(typeRegistrationObject, text, indexNamespace::indexType::enumIndex, indexNamespace::indexType::baseEnumIndex, componentIndex);</initializer>
+        <briefdescription>
+<para>Registers an animatable property component using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="56" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="56" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1a6e0af02d64820523aedcbd5b4442c289" prot="public" static="no">
+        <name>DALI_ANIMATABLE_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL</name>
+        <param><defname>count</defname></param>
+        <param><defname>typeRegistrationObject</defname></param>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>valueType</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <initializer>  Dali::AnimatablePropertyRegistration DALI_TOKEN_PASTE(property, count)(typeRegistrationObject, text, indexNamespace::indexType::enumIndex, Dali::Property::valueType, &amp;objectNamespace::objectType::SetProperty, &amp;objectType::GetProperty);</initializer>
+        <briefdescription>
+<para>Registers an animatable property using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="62" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="62" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1a8f6d8712e6e304783d9b3e4dfd32b465" prot="public" static="no">
+        <name>DALI_PROPERTY_REGISTRATION_EXTERNAL</name>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>valueType</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <initializer>  <ref refid="property-registration-helper_8h_1ae3624ac2e1d349b9fa24925e80a14ad9" kindref="member">DALI_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL</ref>(__COUNTER__, typeRegistration, indexNamespace, indexType, objectNamespace, objectType, text, valueType, enumIndex)</initializer>
+        <briefdescription>
+<para>Registers a property using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro expects a local variable named <computeroutput>typeRegistration</computeroutput> to be available in the current scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="71" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="71" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1adb5ddd2e0ac0f885bce8562e07c53fa0" prot="public" static="no">
+        <name>DALI_ANIMATABLE_PROPERTY_REGISTRATION_WITH_DEFAULT_EXTERNAL</name>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>value</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <initializer>  <ref refid="property-registration-helper_8h_1a61f2c4f44bb2e45bd108eae4da1523a1" kindref="member">DALI_ANIMATABLE_PROPERTY_REGISTRATION_WITH_DEFAULT_EXTERNAL_INTERNAL</ref>(__COUNTER__, typeRegistration, indexNamespace, indexType, objectNamespace, objectType, text, value, enumIndex)</initializer>
+        <briefdescription>
+<para>Registers an animatable property with a default value using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro expects a local variable named <computeroutput>typeRegistration</computeroutput> to be available in the current scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="80" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="80" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1a9e9df87090df510e0d76b0648d75880c" prot="public" static="no">
+        <name>DALI_ANIMATABLE_PROPERTY_COMPONENT_REGISTRATION_EXTERNAL</name>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <param><defname>baseEnumIndex</defname></param>
+        <param><defname>componentIndex</defname></param>
+        <initializer>  <ref refid="property-registration-helper_8h_1a60cb885bc6ed2afcb1a18b16a399c338" kindref="member">DALI_ANIMATABLE_PROPERTY_COMPONENT_REGISTRATION_EXTERNAL_INTERNAL</ref>(__COUNTER__, typeRegistration, indexNamespace, indexType, objectNamespace, objectType, text, enumIndex, baseEnumIndex, componentIndex)</initializer>
+        <briefdescription>
+<para>Registers an animatable property component using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro expects a local variable named <computeroutput>typeRegistration</computeroutput> to be available in the current scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="89" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="89" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="define" id="property-registration-helper_8h_1ae28d6a2fcbee64434e4f7a3900c0c1b7" prot="public" static="no">
+        <name>DALI_ANIMATABLE_PROPERTY_REGISTRATION_EXTERNAL</name>
+        <param><defname>indexNamespace</defname></param>
+        <param><defname>indexType</defname></param>
+        <param><defname>objectNamespace</defname></param>
+        <param><defname>objectType</defname></param>
+        <param><defname>text</defname></param>
+        <param><defname>valueType</defname></param>
+        <param><defname>enumIndex</defname></param>
+        <initializer>  <ref refid="property-registration-helper_8h_1a6e0af02d64820523aedcbd5b4442c289" kindref="member">DALI_ANIMATABLE_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL</ref>(__COUNTER__, typeRegistration, indexNamespace, indexType, objectNamespace, objectType, text, valueType, enumIndex)</initializer>
+        <briefdescription>
+<para>Registers an animatable property using an external property index definition. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro expects a local variable named <computeroutput>typeRegistration</computeroutput> to be available in the current scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" line="98" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h" bodystart="98" bodyend="99"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/devel-api/object/property-helper-devel.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="property-registration-helper_8h_1ae3624ac2e1d349b9fa24925e80a14ad9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL(count,<sp/>typeRegistrationObject,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>valueType,<sp/>enumIndex)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/>Dali::PropertyRegistration<sp/>DALI_TOKEN_PASTE(property,<sp/>count)(typeRegistrationObject,<sp/>text,<sp/>indexNamespace::indexType::enumIndex,<sp/>Dali::Property::valueType,<sp/>&amp;objectNamespace::objectType::SetProperty,<sp/>&amp;objectType::GetProperty);<sp/>\</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/>static_assert((static_cast&lt;int&gt;(indexNamespace::indexType::enumIndex)<sp/>-<sp/>static_cast&lt;int&gt;(indexNamespace::indexType::PROPERTY_START_INDEX))<sp/>==<sp/>count,<sp/>&quot;External<sp/>property<sp/>index<sp/>must<sp/>match<sp/>registration<sp/>order.&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="property-registration-helper_8h_1a61f2c4f44bb2e45bd108eae4da1523a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ANIMATABLE_PROPERTY_REGISTRATION_WITH_DEFAULT_EXTERNAL_INTERNAL(count,<sp/>typeRegistrationObject,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>value,<sp/>enumIndex)<sp/>\</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"><sp/><sp/>Dali::AnimatablePropertyRegistration<sp/>DALI_TOKEN_PASTE(property,<sp/>count)(typeRegistrationObject,<sp/>text,<sp/>indexNamespace::indexType::enumIndex,<sp/>value,<sp/>&amp;objectNamespace::objectType::SetProperty,<sp/>&amp;objectType::GetProperty);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="property-registration-helper_8h_1a60cb885bc6ed2afcb1a18b16a399c338" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ANIMATABLE_PROPERTY_COMPONENT_REGISTRATION_EXTERNAL_INTERNAL(count,<sp/>typeRegistrationObject,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>enumIndex,<sp/>baseEnumIndex,<sp/>componentIndex)<sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/>Dali::AnimatablePropertyComponentRegistration<sp/>DALI_TOKEN_PASTE(property,<sp/>count)(typeRegistrationObject,<sp/>text,<sp/>indexNamespace::indexType::enumIndex,<sp/>indexNamespace::indexType::baseEnumIndex,<sp/>componentIndex);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="property-registration-helper_8h_1a6e0af02d64820523aedcbd5b4442c289" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ANIMATABLE_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL(count,<sp/>typeRegistrationObject,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>valueType,<sp/>enumIndex)<sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/>Dali::AnimatablePropertyRegistration<sp/>DALI_TOKEN_PASTE(property,<sp/>count)(typeRegistrationObject,<sp/>text,<sp/>indexNamespace::indexType::enumIndex,<sp/>Dali::Property::valueType,<sp/>&amp;objectNamespace::objectType::SetProperty,<sp/>&amp;objectType::GetProperty);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="property-registration-helper_8h_1a8f6d8712e6e304783d9b3e4dfd32b465" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_PROPERTY_REGISTRATION_EXTERNAL(indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>valueType,<sp/>enumIndex)<sp/>\</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"><sp/><sp/>DALI_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL(__COUNTER__,<sp/>typeRegistration,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>valueType,<sp/>enumIndex)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="property-registration-helper_8h_1adb5ddd2e0ac0f885bce8562e07c53fa0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ANIMATABLE_PROPERTY_REGISTRATION_WITH_DEFAULT_EXTERNAL(indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>value,<sp/>enumIndex)<sp/>\</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"><sp/><sp/>DALI_ANIMATABLE_PROPERTY_REGISTRATION_WITH_DEFAULT_EXTERNAL_INTERNAL(__COUNTER__,<sp/>typeRegistration,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>value,<sp/>enumIndex)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="property-registration-helper_8h_1a9e9df87090df510e0d76b0648d75880c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ANIMATABLE_PROPERTY_COMPONENT_REGISTRATION_EXTERNAL(indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>enumIndex,<sp/>baseEnumIndex,<sp/>componentIndex)<sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/>DALI_ANIMATABLE_PROPERTY_COMPONENT_REGISTRATION_EXTERNAL_INTERNAL(__COUNTER__,<sp/>typeRegistration,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>enumIndex,<sp/>baseEnumIndex,<sp/>componentIndex)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="property-registration-helper_8h_1ae28d6a2fcbee64434e4f7a3900c0c1b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ANIMATABLE_PROPERTY_REGISTRATION_EXTERNAL(indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>valueType,<sp/>enumIndex)<sp/>\</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/>DALI_ANIMATABLE_PROPERTY_REGISTRATION_EXTERNAL_INTERNAL(__COUNTER__,<sp/>typeRegistration,<sp/>indexNamespace,<sp/>indexType,<sp/>objectNamespace,<sp/>objectType,<sp/>text,<sp/>valueType,<sp/>enumIndex)</highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/property-registration-helper.h"/>
+  </compounddef>
+</doxygen>

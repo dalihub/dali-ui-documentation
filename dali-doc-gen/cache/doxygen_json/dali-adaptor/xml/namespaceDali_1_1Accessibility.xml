@@ -1,0 +1,2953 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Accessibility" kind="namespace" language="C++">
+    <compoundname>Dali::Accessibility</compoundname>
+    <innerclass refid="classDali_1_1Accessibility_1_1Accessible" prot="public">Dali::Accessibility::Accessible</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Action" prot="public">Dali::Accessibility::Action</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1ActionInfo" prot="public">Dali::Accessibility::ActionInfo</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1ActorAccessible" prot="public">Dali::Accessibility::ActorAccessible</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Address" prot="public">Dali::Accessibility::Address</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Application" prot="public">Dali::Accessibility::Application</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1BitSet" prot="public">Dali::Accessibility::BitSet</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1Bridge" prot="public">Dali::Accessibility::Bridge</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Collection" prot="public">Dali::Accessibility::Collection</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Component" prot="public">Dali::Accessibility::Component</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1EditableText" prot="public">Dali::Accessibility::EditableText</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1EnumBitSet" prot="public">Dali::Accessibility::EnumBitSet</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1GestureInfo" prot="public">Dali::Accessibility::GestureInfo</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Hyperlink" prot="public">Dali::Accessibility::Hyperlink</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Hypertext" prot="public">Dali::Accessibility::Hypertext</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1IAccessibilityFeature" prot="public">Dali::Accessibility::IAccessibilityFeature</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1Point" prot="public">Dali::Accessibility::Point</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1ProxyAccessible" prot="public">Dali::Accessibility::ProxyAccessible</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1Range" prot="public">Dali::Accessibility::Range</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1Relation" prot="public">Dali::Accessibility::Relation</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Selection" prot="public">Dali::Accessibility::Selection</innerclass>
+    <innerclass refid="structDali_1_1Accessibility_1_1Size" prot="public">Dali::Accessibility::Size</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Socket" prot="public">Dali::Accessibility::Socket</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Text" prot="public">Dali::Accessibility::Text</innerclass>
+    <innerclass refid="classDali_1_1Accessibility_1_1Value" prot="public">Dali::Accessibility::Value</innerclass>
+    <innernamespace refid="namespaceDali_1_1Accessibility_1_1Internal">Dali::Accessibility::Internal</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a463337cbc8cc463216ae36034dff0cf0" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ScreenRelativeMoveType</name>
+        <qualifiedname>Dali::Accessibility::ScreenRelativeMoveType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a463337cbc8cc463216ae36034dff0cf0a93da25bafef6761717afc6b25c17ea16" prot="public">
+          <name>OUTSIDE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Object moves outside of the screen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a463337cbc8cc463216ae36034dff0cf0a2c3c3f38fab257c344d07ae59855a2a0" prot="public">
+          <name>OUTGOING_TOP_LEFT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Object moves out through the top(or left) side of the screen. Maps to: ATSPI_MOVE_OUTED_TOP_LEFT. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a463337cbc8cc463216ae36034dff0cf0a0a256f140f5938f6c1a63df2e651696c" prot="public">
+          <name>OUTGOING_BOTTOM_RIGHT</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Object moves out through the bottom(or right) side of the screen. Maps to: ATSPI_MOVE_OUTED_BOTTOM_RIGHT. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a463337cbc8cc463216ae36034dff0cf0a554a7418c4c0dafd902ebd377b87c80c" prot="public">
+          <name>INSIDE</name>
+          <briefdescription>
+<para>Object moves into the screen or moves inside the screen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing type of object move relative to the screen. Only outgoing moves are signalled to AT-clients. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="40" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ff" prot="public" static="no" strong="yes">
+        <type>uint32_t</type>
+        <name>RelationType</name>
+        <qualifiedname>Dali::Accessibility::RelationType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffac597be5dfb4f26b376a1cd1fe01f0546" prot="public">
+          <name>NULL_OF</name>
+          <briefdescription>
+<para>Null <ref refid="structDali_1_1Accessibility_1_1Relation" kindref="compound">Relation</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa6f4f83de72aaf1bb34d24a6b8d49cce1" prot="public">
+          <name>LABEL_FOR</name>
+          <briefdescription>
+<para>Label For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffaaffb20f59d70a9c04cf01be0d8cab781" prot="public">
+          <name>LABELLED_BY</name>
+          <briefdescription>
+<para>Labelled By. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffaa9f5bb76c6040607e2b4d343b5304f7a" prot="public">
+          <name>CONTROLLER_FOR</name>
+          <briefdescription>
+<para>Controller For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffaf1fa407a87f2e031bc32caed6ba7cf52" prot="public">
+          <name>CONTROLLED_BY</name>
+          <briefdescription>
+<para>Controlled By. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffada76dca0ffe75c9c504fa3674e5fb5c1" prot="public">
+          <name>MEMBER_OF</name>
+          <briefdescription>
+<para>Member Of. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffaa02fd8736f421bdd74dbd1334c974110" prot="public">
+          <name>TOOLTIP_FOR</name>
+          <briefdescription>
+<para>ToolTip For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa4a4c6c4609fcbe04c1bcd2ba3f69d86b" prot="public">
+          <name>NODE_CHILD_OF</name>
+          <briefdescription>
+<para>Node Child Of. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffab6a5b8f5c661032311af91f8de090f78" prot="public">
+          <name>NODE_PARENT_OF</name>
+          <briefdescription>
+<para>Node Parent Of. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa137134e62b2c971eba88c77734c14658" prot="public">
+          <name>EXTENDED</name>
+          <briefdescription>
+<para>Extended. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa7f127b16d6b427f2d7ae170600c5f903" prot="public">
+          <name>FLOWS_TO</name>
+          <briefdescription>
+<para>Flows To. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa1cf27c41249db180f1f52d07ec9843da" prot="public">
+          <name>FLOWS_FROM</name>
+          <briefdescription>
+<para>Flows From. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffac4b888c9193655d6957aa52069a75c16" prot="public">
+          <name>SUBWINDOW_OF</name>
+          <briefdescription>
+<para>Sub <ref refid="classDali_1_1Window" kindref="compound">Window</ref> Of. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffac93c96c350ecfa5a456187875925903f" prot="public">
+          <name>EMBEDS</name>
+          <briefdescription>
+<para>Embeds. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffac05262fca3404a9a6a5ec2fd7175e296" prot="public">
+          <name>EMBEDDED_BY</name>
+          <briefdescription>
+<para>Embedded By. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa7d3584c4959afa5ecf8e7296fc95aed1" prot="public">
+          <name>POPUP_FOR</name>
+          <briefdescription>
+<para>Popup For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffaf36f9fffb37de7db39952d49866491a7" prot="public">
+          <name>PARENT_WINDOW_OF</name>
+          <briefdescription>
+<para>Parent <ref refid="classDali_1_1Window" kindref="compound">Window</ref> Of. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffabb1f96253b3802b5e5abfa88c38f19f9" prot="public">
+          <name>DESCRIPTION_FOR</name>
+          <briefdescription>
+<para>Description For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffacf8b36dbf69214b1f920322631315b24" prot="public">
+          <name>DESCRIBED_BY</name>
+          <briefdescription>
+<para>Described By. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa3120001274fa32a921770c1b41e6dc0a" prot="public">
+          <name>DETAILS</name>
+          <briefdescription>
+<para>Details. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa601e4e97563032379074d345d390f5b0" prot="public">
+          <name>DETAILS_FOR</name>
+          <briefdescription>
+<para>Details For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa736d9fa7654d470e073a4be93dc65241" prot="public">
+          <name>ERROR_MESSAGE</name>
+          <briefdescription>
+<para>Error Message. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffa65b2a1d23f513a908d52752061d0e5cd" prot="public">
+          <name>ERROR_FOR</name>
+          <briefdescription>
+<para>Error For. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1f920321b6483940510404b4a2d795ffafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing a relation between accessible objects 1 to 0..N relation model is supported. By default relation is not symmetrical. Symmetry must be explicitly maintained. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="53" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="54" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CoordinateType</name>
+        <qualifiedname>Dali::Accessibility::CoordinateType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3bab8640f4f990ba83d8d8bef816def1b80" prot="public">
+          <name>SCREEN</name>
+          <briefdescription>
+<para>Screen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3ba70e2a9fa5d5ec49dc67453eab551251d" prot="public">
+          <name>WINDOW</name>
+          <briefdescription>
+<para><ref refid="classDali_1_1Window" kindref="compound">Window</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing if coordinates are relative to screen or window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Component_1af1680911115cbff6d0fc414c5a04d12c" kindref="member">Accessibility::Component::GetExtents</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Component_1a44650fc98717dff8003c7e55e077941d" kindref="member">Accessibility::Component::IsAccessibleContainingPoint</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="86" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ComponentLayer</name>
+        <qualifiedname>Dali::Accessibility::ComponentLayer</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9accc0377a8afbf50e7094f5c23a8af223" prot="public">
+          <name>INVALID</name>
+          <briefdescription>
+<para>Invalid. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a87ed58ce5596142e11cb65deb049bb4b" prot="public">
+          <name>BACKGROUND</name>
+          <briefdescription>
+<para>Background. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a0f4bf5b6d48fde226da8f85aa6b29b91" prot="public">
+          <name>CANVAS</name>
+          <briefdescription>
+<para>Canvas. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a14dc79e11f9bdd15c996c5755c7cef4b" prot="public">
+          <name>WIDGET</name>
+          <briefdescription>
+<para><ref refid="classDali_1_1Widget" kindref="compound">Widget</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a9114e1d5c830dda6ccd6f921c474bf3e" prot="public">
+          <name>MDI</name>
+          <briefdescription>
+<para>MDI. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a4072d5d90bd0bd7c507cf89554b8eb8c" prot="public">
+          <name>POPUP</name>
+          <briefdescription>
+<para>Popup. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a0395ef37aaf2724781e56e74c9cca583" prot="public">
+          <name>OVERLAY</name>
+          <briefdescription>
+<para>Overlay. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a70e2a9fa5d5ec49dc67453eab551251d" prot="public">
+          <name>WINDOW</name>
+          <briefdescription>
+<para><ref refid="classDali_1_1Window" kindref="compound">Window</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9afd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration indicating relative stacking order ComponentLayer allows to describe visibility of all parts of UI basing on the concrete stacking order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Component_1a57da62cc2b9ba6dcd8877426bb658599" kindref="member">Accessibility::Component::GetLayer</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>currently only ComponentLayer::Window is supported </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="99" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="100" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39b" prot="public" static="no" strong="yes">
+        <type>uint32_t</type>
+        <name>Role</name>
+        <qualifiedname>Dali::Accessibility::Role</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baccc0377a8afbf50e7094f5c23a8af223" prot="public">
+          <name>INVALID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39babf1e6cb1a680f5c76ad8b4453571e8b7" prot="public">
+          <name>ACCELERATOR_LABEL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba320f86f60f25459ba5550e000b2c3929" prot="public">
+          <name>ALERT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba28ff0af6199e0baf97bb71b4b4422057" prot="public">
+          <name>ANIMATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baca2dc0c55b6e8d70bafcb4d84f5a9544" prot="public">
+          <name>ARROW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39babcacee7ad79abe4e25b877c5b6480a8c" prot="public">
+          <name>CALENDAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0f4bf5b6d48fde226da8f85aa6b29b91" prot="public">
+          <name>CANVAS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba4b84979d579f18fcc9faa150c801e0b9" prot="public">
+          <name>CHECK_BOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba32b70b1c4e564a472a3874de71657d88" prot="public">
+          <name>CHECK_MENU_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba5d6d802ffaed04b22628b069a29cf0cd" prot="public">
+          <name>COLOR_CHOOSER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bac01b0c29636651b53025a16986a09a1a" prot="public">
+          <name>COLUMN_HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39babdd67efa63416cd121f92526917dc4df" prot="public">
+          <name>COMBO_BOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae5e606a266c0c1fcc5af96984ebe9096" prot="public">
+          <name>DATE_EDITOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bad590b3631ea941fa517b90682643a872" prot="public">
+          <name>DESKTOP_ICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba10f55672e5e0c0ed8a40da4781b7550a" prot="public">
+          <name>DESKTOP_FRAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39badd12eb8dd36cf1c256ed992c6a387224" prot="public">
+          <name>DIAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba51a2fc9427485236e89ca31fc55d66e5" prot="public">
+          <name>DIALOG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba3150ce383168c07e6bb6f846f8aa21bb" prot="public">
+          <name>DIRECTORY_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba9493f97e995a6147547fca331947e4b7" prot="public">
+          <name>DRAWING_AREA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae56f763a70229a09f273a954850f497f" prot="public">
+          <name>FILE_CHOOSER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bad33b5ba1e0535e066ea116ebf26dc4e5" prot="public">
+          <name>FILLER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba1567b6a9011df593ab09f08f2d17719a" prot="public">
+          <name>FOCUS_TRAVERSABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba400c6388d11c068f3ffecc489dbb3ea7" prot="public">
+          <name>FONT_CHOOSER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bac57e921596445b99ab85558984966184" prot="public">
+          <name>FRAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0886ccc0604a81032a69531179394b2d" prot="public">
+          <name>GLASS_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bab54862611877afa0025c485b141b764c" prot="public">
+          <name>HTML_CONTAINER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39badd912956b69fb3e570820021206968a3" prot="public">
+          <name>ICON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba23a12f67f614b5518c7f1c2465bf95e3" prot="public">
+          <name>IMAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba389279fa18f66f2792f5902795fa54cf" prot="public">
+          <name>INTERNAL_FRAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba6f434c508ad901b8667ed22f713e52bb" prot="public">
+          <name>LABEL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba5ff8b0ebf8f8d21980a7d3c1999e4d15" prot="public">
+          <name>LAYERED_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba298cb25408234de02baf2085803a464a" prot="public">
+          <name>LIST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba383ec3822ff1c025e1509afae8fe4d98" prot="public">
+          <name>LIST_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba3ed53fbeb1eab0443561b68ca0c0b5cf" prot="public">
+          <name>MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba5077b97d66f96b05615971ccb62797b7" prot="public">
+          <name>MENU_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baf7fb892d03bec2a0e9b44f040ab76266" prot="public">
+          <name>MENU_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae5045ffbcbf16230f809eaa93b7881e6" prot="public">
+          <name>OPTION_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baf929d3281803f79a242b23c89909c8c9" prot="public">
+          <name>PAGE_TAB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba1e213ebd231f950530ba0e211a2e7dbc" prot="public">
+          <name>PAGE_TAB_LIST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39babb9975cf612c5c8db99b518052cc0909" prot="public">
+          <name>PANEL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baa0ccfdff9cf49ec258b7873c454b0643" prot="public">
+          <name>PASSWORD_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba490b2942af26b4660761128a181fdc0d" prot="public">
+          <name>POPUP_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0d32e02396c223148b9aadf9894521d8" prot="public">
+          <name>PROGRESS_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba54b1a36e390fb3f9ee7bce9b6e20362e" prot="public">
+          <name>PUSH_BUTTON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bac0fc16500fc5eab447def904e5d389ff" prot="public">
+          <name>RADIO_BUTTON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba95c7a2635d69c81e73bece4b063606e0" prot="public">
+          <name>RADIO_MENU_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba2349009ca80f711f8768691660c27a2c" prot="public">
+          <name>ROOT_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0cae80a0cf92a708becd8a6d52a53be0" prot="public">
+          <name>ROW_HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bad575116740a511ed18d695ff362a78ad" prot="public">
+          <name>SCROLL_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba2954f34c4ac8ac5d67ef773e32cb3983" prot="public">
+          <name>SCROLL_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba70bb8dc90aa233a66b91ae2e9dc1a850" prot="public">
+          <name>SEPARATOR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba3c93f85078b290625b7c4db299979c4f" prot="public">
+          <name>SLIDER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba5214661864b506ebf144ee02e5946e82" prot="public">
+          <name>SPIN_BUTTON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0c59a60239d2ecaea200db232197d69d" prot="public">
+          <name>SPLIT_PANE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bade88d7c3d5f9361c232988374dc54691" prot="public">
+          <name>STATUS_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba34bbae0aee41ddd6a73697584a20afc6" prot="public">
+          <name>TABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bab95e7e7a804dfe6d67a1fab7517c43b8" prot="public">
+          <name>TABLE_CELL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bab19b26ec51aeb895e086688ba86ac1cf" prot="public">
+          <name>TABLE_COLUMN_HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bad6aa145d61d6aab9107d6ad8c84f652d" prot="public">
+          <name>TABLE_ROW_HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba4adea97d206abfcbffd55c3c9b1928b7" prot="public">
+          <name>TEAROFF_MENU_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba6c7748bd0ad3fbdff996e81581ad64d6" prot="public">
+          <name>TERMINAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba61a96ffcb251bb9bf0abf8fec19d0ea8" prot="public">
+          <name>TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baf904c5cfcf8d4da911c88aaceaf04095" prot="public">
+          <name>TOGGLE_BUTTON</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba7f11b68f3ba20b8c66be89369d3654c7" prot="public">
+          <name>TOOL_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba7da6f39f8b8951338f86ce830004043e" prot="public">
+          <name>TOOL_TIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bac0f8e24cf041639c4fc457ebec9490eb" prot="public">
+          <name>TREE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba9b7de738208e5f4496dac9cf1ad49d95" prot="public">
+          <name>TREE_TABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba696b031073e74bf2cb98e5ef201d4aa3" prot="public">
+          <name>UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba7e3322f8eda2bd931d22ddb4ef14aeca" prot="public">
+          <name>VIEWPORT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba70e2a9fa5d5ec49dc67453eab551251d" prot="public">
+          <name>WINDOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba137134e62b2c971eba88c77734c14658" prot="public">
+          <name>EXTENDED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba7ad4905b4543ab4a1637dd23c50e36ce" prot="public">
+          <name>HEADER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba126ad83a6c76b6a5f45c0dd3ee780082" prot="public">
+          <name>FOOTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba2043613b40978710bda1c46662af3f3c" prot="public">
+          <name>PARAGRAPH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba22204cf0da20e4483dbf4ec3b40ab69e" prot="public">
+          <name>RULER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0ec0a3f8aade8993f11fedcbaa0d8db6" prot="public">
+          <name>APPLICATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba2c7a0318c82cfff19c1802f918e98390" prot="public">
+          <name>AUTOCOMPLETE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baf438c17ec1cb251f5d653f3c555fb7a1" prot="public">
+          <name>EDITBAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba1ad5f5623ef21cd490ee26898a1af9f3" prot="public">
+          <name>EMBEDDED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba5d5fa847ba846e56023955fb50c7f803" prot="public">
+          <name>ENTRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba901e55a61b4fcbe505f59dfa5e4dd608" prot="public">
+          <name>CHART</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba4e817727ebb5d8566c54ee5ba9a1e2dd" prot="public">
+          <name>CAPTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae674a337ac579610b5d0d3fbde0f7c06" prot="public">
+          <name>DOCUMENT_FRAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bacc65dd7b535ac7fc2363aeb572cc2a8e" prot="public">
+          <name>HEADING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba22311203d44b308bd2d607cdc2dcb72c" prot="public">
+          <name>PAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba3d0d6f3b89d94934de83ca41b85e6ce4" prot="public">
+          <name>SECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba3305d85c007144ca6f22edc64cdc66b5" prot="public">
+          <name>REDUNDANT_OBJECT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba03c37111e264eee423ada395dd6474aa" prot="public">
+          <name>FORM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba58c0a0e97e6d2f615bc264c2775fda44" prot="public">
+          <name>LINK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba7a8f5069f6bb47542688eded9f4b1c64" prot="public">
+          <name>INPUT_METHOD_WINDOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba12a7ef966036af1949ebb7b41b65441f" prot="public">
+          <name>TABLE_ROW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baa5f85922b5538d224e9ba3d1177fbeab" prot="public">
+          <name>TREE_ITEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae729a0a77ef91dda0fc55edfa10844d0" prot="public">
+          <name>DOCUMENT_SPREADSHEET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae1901fdc87addfc987fcb0c023e18660" prot="public">
+          <name>DOCUMENT_PRESENTATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae8d52bc5eeaf082ed3c991750395c8d9" prot="public">
+          <name>DOCUMENT_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bad14686f9cfee4a8739e1efc84c3faeaf" prot="public">
+          <name>DOCUMENT_WEB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba0f0a273cb4cc1d00c5f520313e163414" prot="public">
+          <name>DOCUMENT_EMAIL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baf2cd320b55767434dd48d81b165ea956" prot="public">
+          <name>COMMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba93acd75af8be088fceba3c5a613f7645" prot="public">
+          <name>LIST_BOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba87bd15bae0d64d98c8aaaf3d9ebfe07e" prot="public">
+          <name>GROUPING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba3590b04d5a73f91972c13c34689df225" prot="public">
+          <name>IMAGE_MAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba9814d942b7e24870084a3dce24867ab3" prot="public">
+          <name>NOTIFICATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba014ecbf36cf7f05c8b4a8e5927c96995" prot="public">
+          <name>INFO_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba68b54fe7b8c8713e1b86b41599a3421c" prot="public">
+          <name>LEVEL_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baa1b40f0567e7e730cfe7c38dfef6253a" prot="public">
+          <name>TITLE_BAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba250791bec95501ec1dca25419ddf5422" prot="public">
+          <name>BLOCK_QUOTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae423b8bde9bfbfd7e9409b23b23aed91" prot="public">
+          <name>AUDIO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bae60ae31f67ab883c746bb71c7a145c18" prot="public">
+          <name>VIDEO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba52f90e03a4ea208d52475028ad0250ef" prot="public">
+          <name>DEFINITION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bac6b68a6e4d8e63cbbc821ef1e59e796c" prot="public">
+          <name>ARTICLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bada0100dab39349825d3307f72050b72d" prot="public">
+          <name>LANDMARK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba4b5ffcdaf38ce4d463171f5c977c5ab3" prot="public">
+          <name>LOG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba5077fb50cee3bea4422edef805343fd2" prot="public">
+          <name>MARQUEE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba65571aa0536447fb1cf47a2b5a98954b" prot="public">
+          <name>MATH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baf1f602f1c8b4d2f1ca0283a1456d8c7e" prot="public">
+          <name>RATING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bab127d163c55a6603f3a37ce3a642c36d" prot="public">
+          <name>TIMER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bafe6f99ef1ec99efbdc19a9786cf1facc" prot="public">
+          <name>STATIC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba8ec05a163d401fef77cab1c425ae5b1a" prot="public">
+          <name>MATH_FRACTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba409890805095f61bfde0415ee057bef2" prot="public">
+          <name>MATH_ROOT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39baacc4ea7681c2acbf273071a100b23005" prot="public">
+          <name>SUBSCRIPT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39ba1148811483385f8fc712a395f1de6cb1" prot="public">
+          <name>SUPERSCRIPT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ae6afad04b55846890a6e551f06c6a39bafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing role of the <ref refid="namespaceDali_1_1Accessibility" kindref="compound">Accessibility</ref> object Object can be described by only one role. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Accessible_1aeab65a3a28fdc86710baf74b27aa2759" kindref="member">Accessibility::Accessible::GetRole</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="117" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="118" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" prot="public" static="no" strong="yes">
+        <type>uint32_t</type>
+        <name>State</name>
+        <qualifiedname>Dali::Accessibility::State</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caccc0377a8afbf50e7094f5c23a8af223" prot="public">
+          <name>INVALID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca18ff74f43da410c5529f7d6fca84f115" prot="public">
+          <name>ACTIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caf40e2850f4c07c01444b5f2393f6eb4c" prot="public">
+          <name>ARMED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca802706a9238e2928077f97736854bad4" prot="public">
+          <name>BUSY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca758f9c8c8110e53f8c8e0c790f855560" prot="public">
+          <name>CHECKED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca24fd9b03d400bcecf5f716749a34661b" prot="public">
+          <name>COLLAPSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca0d344e0f9f7a84946d693b23d74489ac" prot="public">
+          <name>DEFUNCT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca04b2e050ef362244ef798e7d855c74eb" prot="public">
+          <name>EDITABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac8cf6eea8f096ed51160b484d97c5bbd" prot="public">
+          <name>ENABLED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cada38e4ae9f0772a8d992d805e07c3cd9" prot="public">
+          <name>EXPANDABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca59fd6ceac734b3855e74b57d00a1db1f" prot="public">
+          <name>EXPANDED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca40b026cd6549c1da991648f71239fe33" prot="public">
+          <name>FOCUSABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca3bccbab2a35cb78388a0f4a8e2003b07" prot="public">
+          <name>FOCUSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca4fa44fff55e34e3eded656a0b241bd24" prot="public">
+          <name>HAS_TOOLTIP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca86e5d0d8407ce71f7e2004ef3949894e" prot="public">
+          <name>HORIZONTAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca5ba10f8206d811d08a8536f77bd58156" prot="public">
+          <name>ICONIFIED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac0c047e39e77804b75bbfcb81cb58867" prot="public">
+          <name>MODAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca8e729acc1d7af6eb333dd399b48a132c" prot="public">
+          <name>MULTI_LINE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca8c4054b8081405cb7943107b55e339c1" prot="public">
+          <name>MULTI_SELECTABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caf05b252996befbe2cb461cc80c9ccbed" prot="public">
+          <name>OPAQUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca5381dc876ab002103a027265bc14ae52" prot="public">
+          <name>PRESSED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cab0bfed7de0b6fb6eca38af446129de56" prot="public">
+          <name>RESIZEABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caee5626c435f1837aa4353f36db8b64fe" prot="public">
+          <name>SELECTABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac841881b7f65d9e69aa9c932ca4427c8" prot="public">
+          <name>SELECTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac732aa70da7309fb7b492504a47da337" prot="public">
+          <name>SENSITIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca4b25e44af4806563b1b0587ae3d4e8b8" prot="public">
+          <name>SHOWING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac3bc8d25d44abb84f8d226c46566b639" prot="public">
+          <name>SINGLE_LINE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca4d855a061b3066dc14a3b12ed26b5456" prot="public">
+          <name>STALE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca18a0316e7c30cc56acf083d96de6c386" prot="public">
+          <name>TRANSIENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca3e1b74251c07310c5f1b968145bf00dc" prot="public">
+          <name>VERTICAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca510222cdd4bc0b765486ba35b2775e54" prot="public">
+          <name>VISIBLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca648450b2630bd5758b78b242352fb0e6" prot="public">
+          <name>MANAGES_DESCENDANTS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca717bb676b27571e4f5392a911194842a" prot="public">
+          <name>INDETERMINATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caebdf9721be38d1fc1cd6db8c737d1be0" prot="public">
+          <name>REQUIRED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac7ba492dac2b841be722a016d670052d" prot="public">
+          <name>TRUNCATED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cae847b61170745e6c934ae4413ed512d3" prot="public">
+          <name>ANIMATED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cadd0d2526690e60570c73d111dc86b5ef" prot="public">
+          <name>INVALID_ENTRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cadadfd4791cbd29aa9c690521c552e1d8" prot="public">
+          <name>SUPPORTS_AUTOCOMPLETION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caf67f98098b2c68eb426fee5739af967b" prot="public">
+          <name>SELECTABLE_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cafa8601705553d427da8e3d379c11c472" prot="public">
+          <name>IS_DEFAULT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3caa6ec08e871b6a4151dc143082d826cd2" prot="public">
+          <name>VISITED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca366717a45349cfa51bc90bc177cdadee" prot="public">
+          <name>CHECKABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca5713d2c112d751695983bb852f7c9cef" prot="public">
+          <name>HAS_POPUP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca47c7e7cb36a953a8c47e02000036bb44" prot="public">
+          <name>READ_ONLY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca1f6517402830b4b0db683ae125d3b5e2" prot="public">
+          <name>HIGHLIGHTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cafb9d5da21cd17f542b4e9900ae035f06" prot="public">
+          <name>HIGHLIGHTABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing states of the <ref refid="namespaceDali_1_1Accessibility" kindref="compound">Accessibility</ref> object Object can be in many states at the same time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Accessible_1aa099f95c6648ff33d22b9b63a212d0b6" kindref="member">Accessibility::Accessible::GetStates</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="248" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="249" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a9aed09db88df697938e84a686a86aff3" prot="public" static="no" strong="yes">
+        <type>uint32_t</type>
+        <name>TextChangedState</name>
+        <qualifiedname>Dali::Accessibility::TextChangedState</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a9aed09db88df697938e84a686a86aff3a0ea50aa50cbb4fd7263a23285732a68d" prot="public">
+          <name>INSERTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a9aed09db88df697938e84a686a86aff3a63c2867fdcae0e8e8413d7ac21b69b59" prot="public">
+          <name>DELETED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a9aed09db88df697938e84a686a86aff3afd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing change of text object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="302" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="303" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ObjectPropertyChangeEvent</name>
+        <qualifiedname>Dali::Accessibility::ObjectPropertyChangeEvent</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64aad32e604e17467fc435538334fbddf3e" prot="public">
+          <name>NAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64a35ba4a2677442e210c23a00a5601aba3" prot="public">
+          <name>DESCRIPTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64aecc2e9c313faddb07e7da223c1dc5c3f" prot="public">
+          <name>VALUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64a612f9988ac7994ee666d3a59dad71b28" prot="public">
+          <name>ROLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64a654549fd15738332e933b52baf3cbc65" prot="public">
+          <name>PARENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing change of object property. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="312" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="313" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WindowEvent</name>
+        <qualifiedname>Dali::Accessibility::WindowEvent</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53ab58f7b332c18e326f939c99d0001356b" prot="public">
+          <name>PROPERTY_CHANGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a704bfa6c1ed5e479c8cfb5bdfc8cccda" prot="public">
+          <name>MINIMIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a7af98b3d657f545ebf5476f68cb5ce6f" prot="public">
+          <name>MAXIMIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53ac95fa04340c629ddfa2d38e285e59245" prot="public">
+          <name>RESTORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a7286293c9125ac7d7bace94c190bc16d" prot="public">
+          <name>CLOSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a294ce20cdefa29be3be0735cb62e715d" prot="public">
+          <name>CREATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a5a3b2638dca4e58cacf0bfbf126def01" prot="public">
+          <name>REPARENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a9b55cc654e854a9e827f96ca83fcd20a" prot="public">
+          <name>DESKTOP_CREATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53ad5a69d6973c16933e55555223ab8a769" prot="public">
+          <name>DESKTOP_DESTROY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53ac39aa6dbe619bb8ef8187b00b686df6a" prot="public">
+          <name>DESTROY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53aa9409daa2beb494ef861efb51d5cd6bb" prot="public">
+          <name>ACTIVATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a5810e63771fb03117a3e2bcf98d5b9f0" prot="public">
+          <name>DEACTIVATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a22b61bc49292970095594840b2de557d" prot="public">
+          <name>RAISE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53aa7c48ba367e019d004bfb0239b85f2b3" prot="public">
+          <name>LOWER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53af7f93635f8e193a924ae4a691bb66b8f" prot="public">
+          <name>MOVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a1acac8984c2139895dee3e8aa928de57" prot="public">
+          <name>RESIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53af0d77bb70bebeda4645c85b516335162" prot="public">
+          <name>SHADE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53aa9869079e782345bb7d4ace619d3783c" prot="public">
+          <name>UU_SHADE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53ac318df10109bbcfbfa822ee814d4bf65" prot="public">
+          <name>RESTYLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53a44c83f96fdd7c77feba6cdfc0ddc085e" prot="public">
+          <name>POST_RENDER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing change of window object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para>Accessibility::Accessible::Emit </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="325" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="326" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a8613323e19c572aa0c87b1d052bbeac9" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WindowRestoreType</name>
+        <qualifiedname>Dali::Accessibility::WindowRestoreType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a8613323e19c572aa0c87b1d052bbeac9ab38633ba5c316d230c75151d778a2f3c" prot="public">
+          <name>RESTORE_FROM_ICONIFY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a8613323e19c572aa0c87b1d052bbeac9aba4765a502df3b8d74662dd5fd446235" prot="public">
+          <name>RESTORE_FROM_MAXIMIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Restored window state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para>Accessibility::Accessible::Emit </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="353" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="354" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7a" prot="public" static="no" strong="yes">
+        <type>uint32_t</type>
+        <name>TextBoundary</name>
+        <qualifiedname>Dali::Accessibility::TextBoundary</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7aa3c94fe830ac18aa182887ab6ac05b596" prot="public">
+          <name>CHARACTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7aabdde29e3c0fe7b687d69a696bbaf71ac" prot="public">
+          <name>WORD</name>
+          <briefdescription>
+<para><blockquote><para><zwj/>Only one character is acquired. </para>
+</blockquote></para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7aaf56a96b136a3f11ae800fb81e4d554ef" prot="public">
+          <name>SENTENCE</name>
+          <briefdescription>
+<para><blockquote><para><zwj/>Not supported. </para>
+</blockquote></para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7aa17b8ef2c330f1430e00c9de5469fc7e7" prot="public">
+          <name>LINE</name>
+          <briefdescription>
+<para><blockquote><para><zwj/>Not supported. </para>
+</blockquote></para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7aa2043613b40978710bda1c46662af3f3c" prot="public">
+          <name>PARAGRAPH</name>
+          <briefdescription>
+<para><blockquote><para><zwj/>Not supported. </para>
+</blockquote></para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7aafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+<para><blockquote><para><zwj/>Not supported. </para>
+</blockquote></para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration used to acquire bounded text from accessible object having textual content. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Text_1a78e1079b9e8de6d96dc11b3a1771755a" kindref="member">Accessibility::Text::GetTextAtOffset</ref> </para>
+</simplesect>
+<simplesect kind="note"><para>Currently only TextBoundary::Character is supported </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="364" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="365" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9d" prot="public" static="no" strong="yes">
+        <type>int32_t</type>
+        <name>Gesture</name>
+        <qualifiedname>Dali::Accessibility::Gesture</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dac5c129ea4133db5e72444433fb99a87e" prot="public">
+          <name>ONE_FINGER_HOVER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da584916339d40badd5f1f08165dbd41d8" prot="public">
+          <name>TWO_FINGER_HOVER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da526555f7f2b91fb6b53f44ff4e492149" prot="public">
+          <name>THREE_FINGER_HOVER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da331ac3f1a77e7d5a3a37a8e4c3e3c807" prot="public">
+          <name>ONE_FINGER_FLICK_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da2117f4a50c492edd8de2be6da59e6ddf" prot="public">
+          <name>ONE_FINGER_FLICK_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da1bc50f230236b883e33df96d8a5f044a" prot="public">
+          <name>ONE_FINGER_FLICK_UP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dac8bb8567fc2fef239f66facbc7582303" prot="public">
+          <name>ONE_FINGER_FLICK_DOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da47d25ec5945d5260dc34d771adf8833c" prot="public">
+          <name>TWO_FINGERS_FLICK_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dac78732eaf11a60cdd4b0bd9b1ab68a32" prot="public">
+          <name>TWO_FINGERS_FLICK_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da6acc2d885aa02eed3352de2b431bd671" prot="public">
+          <name>TWO_FINGERS_FLICK_UP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da898b9b0642cc971cc92c9ad973c2d041" prot="public">
+          <name>TWO_FINGERS_FLICK_DOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da5a4b9d972d27d1b03a946a83b90a4e34" prot="public">
+          <name>THREE_FINGERS_FLICK_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da23a5f2ab42f3f7c306c56040e3be55c0" prot="public">
+          <name>THREE_FINGERS_FLICK_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dac9e75928b76e41d37dbaab6d16261f55" prot="public">
+          <name>THREE_FINGERS_FLICK_UP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da60ca38ed0cfb874db1b43aaa79576960" prot="public">
+          <name>THREE_FINGERS_FLICK_DOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da61b8cf74f3790067d13ef9546d9baca5" prot="public">
+          <name>ONE_FINGER_SINGLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da2e97601a7f5160f04fddbfcd59fa0c65" prot="public">
+          <name>ONE_FINGER_DOUBLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9daafafb26153f2ea87d296739286ab9630" prot="public">
+          <name>ONE_FINGER_TRIPLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da49de2b2cd4fa343e2b3db2538313f37d" prot="public">
+          <name>TWO_FINGERS_SINGLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da2d2544c90ba29d1722dc51d39caca2ae" prot="public">
+          <name>TWO_FINGERS_DOUBLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9daffaf837d29bd00fe47a81947c2810a35" prot="public">
+          <name>TWO_FINGERS_TRIPLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9daf6b97558c256e968da4a83ec29c82082" prot="public">
+          <name>THREE_FINGERS_SINGLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9daf84dd34959f41aabd043618075c7dbe9" prot="public">
+          <name>THREE_FINGERS_DOUBLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da39fd1aa28385708f9fd6fa0c3f3db35e" prot="public">
+          <name>THREE_FINGERS_TRIPLE_TAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da70f1182563b13b424453c6fc753dc967" prot="public">
+          <name>ONE_FINGER_FLICK_LEFT_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dab6e332e7311c057c69511bbf6fa254f1" prot="public">
+          <name>ONE_FINGER_FLICK_RIGHT_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dad367c721f59fd7cc5ad3eb6172523218" prot="public">
+          <name>ONE_FINGER_FLICK_UP_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da1339fad6ab05c7cbf7bf5efd8077c58b" prot="public">
+          <name>ONE_FINGER_FLICK_DOWN_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dac46ed80674349b8b3d98a93016e7b736" prot="public">
+          <name>TWO_FINGERS_FLICK_LEFT_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da7844dbcfde1f218cabf116c35850eefd" prot="public">
+          <name>TWO_FINGERS_FLICK_RIGHT_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dae3673ad32375d736a9e610e33cebb5b0" prot="public">
+          <name>TWO_FINGERS_FLICK_UP_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dac09998efda5b886ae9fea80bfb5aca62" prot="public">
+          <name>TWO_FINGERS_FLICK_DOWN_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da7b0cd4fe8fb6e16678482580aee28c7e" prot="public">
+          <name>THREE_FINGERS_FLICK_LEFT_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da661d98b265d4acc1715221d66ce4bc40" prot="public">
+          <name>THREE_FINGERS_FLICK_RIGHT_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9daf2334e5dc450becb856f3272ea77fe1e" prot="public">
+          <name>THREE_FINGERS_FLICK_UP_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dad8acf1989fc6df3ae6e9c45491afa0f9" prot="public">
+          <name>THREE_FINGERS_FLICK_DOWN_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da95ca530cdd4a57f606cad97d0ad43ae0" prot="public">
+          <name>ONE_FINGER_DOUBLE_TAP_N_HOLD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da3eb084a85dd0c66d2da3903462363d75" prot="public">
+          <name>TWO_FINGERS_DOUBLE_TAP_N_HOLD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9da6eaf66f35854bd65f6cf8e71843349ff" prot="public">
+          <name>THREE_FINGERS_DOUBLE_TAP_N_HOLD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1aa1d94a48fae4368a574f770ce5147c9dafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration describing type of gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Accessible_1a48360a6af596cbae5f351c58585fcdda" kindref="member">Accessibility::Accessible::DoGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="378" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="379" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1ad61a83499bc7f736d3a43cc69f964af3" prot="public" static="no" strong="yes">
+        <type>int32_t</type>
+        <name>GestureState</name>
+        <qualifiedname>Dali::Accessibility::GestureState</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad61a83499bc7f736d3a43cc69f964af3a19aad9f2fe3ce0023298ab83f7e75775" prot="public">
+          <name>BEGIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad61a83499bc7f736d3a43cc69f964af3acff9d04a8a29792d319be9177afb8ba3" prot="public">
+          <name>ONGOING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad61a83499bc7f736d3a43cc69f964af3a3032bcfd5e671852750a0304cd2b024a" prot="public">
+          <name>ENDED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad61a83499bc7f736d3a43cc69f964af3a4e6c860e5da10e31c5fd9cb76ddc2025" prot="public">
+          <name>ABORTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration indicating current state of gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structDali_1_1Accessibility_1_1GestureInfo" kindref="compound">Dali::Accessibility::GestureInfo</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="426" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="427" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aad" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ReadingInfoType</name>
+        <qualifiedname>Dali::Accessibility::ReadingInfoType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aadaad32e604e17467fc435538334fbddf3e" prot="public">
+          <name>NAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aada612f9988ac7994ee666d3a59dad71b28" prot="public">
+          <name>ROLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aada35ba4a2677442e210c23a00a5601aba3" prot="public">
+          <name>DESCRIPTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aada2b848a8cc886d253d21a77c43cd50aae" prot="public">
+          <name>STATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aadafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of ReadingInfoType. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="437" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="438" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AtspiInterface</name>
+        <qualifiedname>Dali::Accessibility::AtspiInterface</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a4b1641f12c2e2b6731ddf15cbef84aa3" prot="public">
+          <name>ACCESSIBLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4ae58a1b00942e66d8b4abc960da7877ab" prot="public">
+          <name>ACTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a0ec0a3f8aade8993f11fedcbaa0d8db6" prot="public">
+          <name>APPLICATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a08e1be4b785493d9fc2ae52c5ba9ab2e" prot="public">
+          <name>CACHE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a872de0fe16584b2236bbd28a09cdc87c" prot="public">
+          <name>COLLECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a7fc67f9f99bcdc7656908ef20801d05b" prot="public">
+          <name>COMPONENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a0cc62323b84406a04ede835c1da25f0f" prot="public">
+          <name>DEVICE_EVENT_CONTROLLER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4aed99aec0b21f125b2d99ed37e5899c55" prot="public">
+          <name>DEVICE_EVENT_LISTENER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4ac231fa48df3ee393c92dccac4dba5e7d" prot="public">
+          <name>DOCUMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4aad9c6fc671877590966561c89634c4ff" prot="public">
+          <name>EDITABLE_TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a59e2952cd6113cba094d0437eb3a9c43" prot="public">
+          <name>EVENT_DOCUMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a64b485c9d1f45c1c7508cdb6faa922aa" prot="public">
+          <name>EVENT_FOCUS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a5a5b4c575843fbe850008bd3cd54c4de" prot="public">
+          <name>EVENT_KEYBOARD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4aa55a5d9e13cfb4c5c567ec2ce08851a3" prot="public">
+          <name>EVENT_MOUSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a20507d5a6c0c498f39ee7dad9ef0f64f" prot="public">
+          <name>EVENT_OBJECT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a1c0e184649dfc89a12f7ce6e59ebb289" prot="public">
+          <name>EVENT_TERMINAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4aebbe68ba086cfce9f2bc4e6eeefde39e" prot="public">
+          <name>EVENT_WINDOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4ab23d93611a4e736acc9b91dd7d54b8a6" prot="public">
+          <name>HYPERLINK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a6c19472c527d2619f4f9c748b96be5ad" prot="public">
+          <name>HYPERTEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a23a12f67f614b5518c7f1c2465bf95e3" prot="public">
+          <name>IMAGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a21603a8a6ab3e4acb48ed34bfe45afe3" prot="public">
+          <name>REGISTRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a0a2dba942c08df9fd12a10acc7f19a78" prot="public">
+          <name>SELECTION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a75fbea08c09e684e6b3f3961761354fa" prot="public">
+          <name>SOCKET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a34bbae0aee41ddd6a73697584a20afc6" prot="public">
+          <name>TABLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4ab95e7e7a804dfe6d67a1fab7517c43b8" prot="public">
+          <name>TABLE_CELL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4a61a96ffcb251bb9bf0abf8fec19d0ea8" prot="public">
+          <name>TEXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4aecc2e9c313faddb07e7da223c1dc5c3f" prot="public">
+          <name>VALUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4afd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of all AT-SPI interfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Accessible_1a58e3c62656f4e37ae268b1ca28b99814" kindref="member">Dali::Accessibility::Accessible::GetInterfaceName()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Accessibility_1a52d7e1b64b03cb1087582c68f24c92ff" kindref="member">Dali::Accessibility::AtspiInterfaceType</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="452" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="453" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecb" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AtspiEvent</name>
+        <qualifiedname>Dali::Accessibility::AtspiEvent</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba573dca5f9dfa4074664d6d7eb92bb343" prot="public">
+          <name>PROPERTY_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaac235f2ff88c7248be58dc7c125764e2" prot="public">
+          <name>BOUNDS_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbad7e39bb0c1ef8c0e82dcdb659967de8c" prot="public">
+          <name>LINK_SELECTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbad20139b302c5229b353275e78827dbc5" prot="public">
+          <name>STATE_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba59bcc2041cd610315c3b95cfa95b2c41" prot="public">
+          <name>CHILDREN_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba392b8cebbdf7c2bcf79c7f3c0e4c38ba" prot="public">
+          <name>VISIBLE_DATA_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbac48f037280215158d48e15ce5e88aada" prot="public">
+          <name>SELECTION_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaa775326218104daeb18505eb10077574" prot="public">
+          <name>MODEL_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaf8ab95880ba51947ca96f0c8c7bf9502" prot="public">
+          <name>ACTIVE_DESCENDANT_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba2f21b42ea2b409fa22fdee9174b6ea66" prot="public">
+          <name>ROW_INSERTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbabfd14e96d062369d995ea5b98f7855a1" prot="public">
+          <name>ROW_REORDERED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaf4d379b851596c060c7f76ad821b4044" prot="public">
+          <name>ROW_DELETED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba05b40b32bd0c786caf7d8072fa21cc28" prot="public">
+          <name>COLUMN_INSERTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba0ec20881d5d8c6a17419e601d5faba40" prot="public">
+          <name>COLUMN_REORDERED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaa4a5a25a834f55046a9e68ff992bab29" prot="public">
+          <name>COLUMN_DELETED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbae29949b81d015648bd883989986dcb1f" prot="public">
+          <name>TEXT_BOUNDS_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaaea046a95be310a32d3adbcb2096bd83" prot="public">
+          <name>TEXT_SELECTION_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbaf8c98489cba83255d9339db8e823efe4" prot="public">
+          <name>TEXT_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba43d7b0bfc489c4f5c15a2c1daafa997a" prot="public">
+          <name>TEXT_ATTRIBUTES_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbad552ce6499edff1adee04de9ef06abac" prot="public">
+          <name>TEXT_CARET_MOVED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba910ad5ff66c7f128fd5d7c71b28c47be" prot="public">
+          <name>ATTRIBUTES_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba1593832d07c8f24faa1ac07d35a0e963" prot="public">
+          <name>MOVED_OUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba88f90179fe39af60fafa68f096c71599" prot="public">
+          <name>WINDOW_CHANGED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecba4f50ea46d89e97059ec1c48d8bbe8bb6" prot="public">
+          <name>SCROLL_STARTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbad205f88266b713d1987c2a983a4af5f2" prot="public">
+          <name>SCROLL_FINISHED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbafd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of all AT-SPI events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="487" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="488" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ActionType</name>
+        <qualifiedname>Dali::Accessibility::ActionType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028aa9409daa2beb494ef861efb51d5cd6bb" prot="public">
+          <name>ACTIVATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028adaaedac409335b869929ea43fa44be5d" prot="public">
+          <name>ESCAPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028a90cf1f5206b348a822cc1a453a587534" prot="public">
+          <name>INCREMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028ac0ffa6e46086551bc5113d1238faf106" prot="public">
+          <name>DECREMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028a06d79671316c2f254d57f384d3fe9842" prot="public">
+          <name>SCROLL_TO_CHILD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Accessibility_1ada09d59bcf670ef36d5749a82c527028afd4487453885e6013ddea8e02030afb0" prot="public">
+          <name>MAX_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="517" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="518" bodyend="525"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1Accessibility_1a008e1408cfc7cb04f05fd068f54431fe" prot="public" static="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1EnumBitSet" kindref="compound">EnumBitSet</ref>&lt; <ref refid="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4" kindref="member">AtspiInterface</ref>, <ref refid="namespaceDali_1_1Accessibility_1a1e0c5b39d31066e942ec175b65fd7fa4afd4487453885e6013ddea8e02030afb0" kindref="member">AtspiInterface::MAX_COUNT</ref> &gt;</type>
+        <definition>using Dali::Accessibility::AtspiInterfaces = typedef EnumBitSet&lt;AtspiInterface, AtspiInterface::MAX_COUNT&gt;</definition>
+        <argsstring></argsstring>
+        <name>AtspiInterfaces</name>
+        <qualifiedname>Dali::Accessibility::AtspiInterfaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="527" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="527" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Accessibility_1a93c37ff1a6121c93b42c7a401ab79742" prot="public" static="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1EnumBitSet" kindref="compound">EnumBitSet</ref>&lt; <ref refid="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecb" kindref="member">AtspiEvent</ref>, <ref refid="namespaceDali_1_1Accessibility_1ab675d418603c749555ba87a2ff95fecbafd4487453885e6013ddea8e02030afb0" kindref="member">AtspiEvent::MAX_COUNT</ref> &gt;</type>
+        <definition>using Dali::Accessibility::AtspiEvents = typedef EnumBitSet&lt;AtspiEvent, AtspiEvent::MAX_COUNT&gt;</definition>
+        <argsstring></argsstring>
+        <name>AtspiEvents</name>
+        <qualifiedname>Dali::Accessibility::AtspiEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="528" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="528" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Accessibility_1a7b7cbaeb908784f9f5a9b9c7924a28bb" prot="public" static="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1EnumBitSet" kindref="compound">EnumBitSet</ref>&lt; <ref refid="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aad" kindref="member">ReadingInfoType</ref>, <ref refid="namespaceDali_1_1Accessibility_1ad1e2b62da6f8ec6cadf0ea31f9d40aadafd4487453885e6013ddea8e02030afb0" kindref="member">ReadingInfoType::MAX_COUNT</ref> &gt;</type>
+        <definition>using Dali::Accessibility::ReadingInfoTypes = typedef EnumBitSet&lt;ReadingInfoType, ReadingInfoType::MAX_COUNT&gt;</definition>
+        <argsstring></argsstring>
+        <name>ReadingInfoTypes</name>
+        <qualifiedname>Dali::Accessibility::ReadingInfoTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="529" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="529" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Accessibility_1afb2bba7142a5a70fbda969eed071a435" prot="public" static="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1EnumBitSet" kindref="compound">EnumBitSet</ref>&lt; <ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" kindref="member">State</ref>, <ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cafd4487453885e6013ddea8e02030afb0" kindref="member">State::MAX_COUNT</ref> &gt;</type>
+        <definition>using Dali::Accessibility::States = typedef EnumBitSet&lt;State, State::MAX_COUNT&gt;</definition>
+        <argsstring></argsstring>
+        <name>States</name>
+        <qualifiedname>Dali::Accessibility::States</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="530" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="530" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Accessibility_1af02416d8905844d2ccc40b90c6aa5284" prot="public" static="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>using Dali::Accessibility::Attributes = typedef std::unordered_map&lt;std::string, std::string&gt;</definition>
+        <argsstring></argsstring>
+        <name>Attributes</name>
+        <qualifiedname>Dali::Accessibility::Attributes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="531" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="531" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Accessibility_1a52d7e1b64b03cb1087582c68f24c92ff" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>AtspiInterface</type>
+            <declname>I</declname>
+            <defname>I</defname>
+          </param>
+        </templateparamlist>
+        <type>typename <ref refid="structDali_1_1Accessibility_1_1Internal_1_1AtspiInterfaceTypeHelper" kindref="compound">Internal::AtspiInterfaceTypeHelper</ref>&lt; I &gt;::Type</type>
+        <definition>using Dali::Accessibility::AtspiInterfaceType = typedef typename Internal::AtspiInterfaceTypeHelper&lt;I&gt;::Type</definition>
+        <argsstring></argsstring>
+        <name>AtspiInterfaceType</name>
+        <qualifiedname>Dali::Accessibility::AtspiInterfaceType</qualifiedname>
+        <briefdescription>
+<para>Resolves to the native C++ type that represents the given AT-SPI interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example, <programlisting><codeline><highlight class="normal"><ref refid="namespaceDali_1_1Accessibility_1a52d7e1b64b03cb1087582c68f24c92ff" kindref="member">AtspiInterfaceType&lt;AtspiInterface::ACCESSIBLE&gt;</ref><sp/></highlight></codeline>
+</programlisting> is the same as <programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Dali::Accessibility::Accessible</ref><sp/></highlight></codeline>
+</programlisting>. Not all AT-SPI interfaces have native C++ representations (in which case, such an expression will not compile).</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enumeration value indicating the requested AT-SPI interface. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" line="559" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.h" bodystart="559" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Accessibility_1ad6042713d68563c30ae6b67a7436548b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Accessibility::IsUp</definition>
+        <argsstring>()</argsstring>
+        <name>IsUp</name>
+        <qualifiedname>Dali::Accessibility::IsUp</qualifiedname>
+        <briefdescription>
+<para>Checks if ATSPI is activated or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if ATSPI is activated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility-bridge.h" line="646" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility-bridge.h" bodystart="646" bodyend="664"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0db9226a8eaf37ae9ff5c124a39c8e4f" compoundref="accessibility-bridge_8h" startline="600" endline="603">Dali::Accessibility::Bridge::IsTerminated</references>
+        <referencedby refid="classDali_1_1Accessibility_1_1Accessible_1aee394f5c2936ea554dbdc000a466a03d" compoundref="accessibility_8cpp" startline="296" endline="299">Dali::Accessibility::Accessible::GetCurrentlyHighlightedActor</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1Accessible_1a808aaed5200138aecc77e236aa1f4447" compoundref="accessibility_8cpp" startline="316" endline="319">Dali::Accessibility::Accessible::GetHighlightActor</referencedby>
+        <referencedby refid="namespaceDali_1_1AtspiAccessibility_1a5b89c6dc6ec27864f9b7f4c4543088cf" compoundref="atspi-accessibility_8cpp" startline="64" endline="67">Dali::AtspiAccessibility::IsEnabled</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a1fb8920beadf310df6ce4306373a13d9" compoundref="actor-accessible_8cpp" startline="517" endline="543">Dali::Accessibility::ActorAccessible::NotifyAccessibilityStateChange</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1Accessible_1a3f8195ba65e40f33389ed23f8592ac62" compoundref="accessibility_8cpp" startline="301" endline="307">Dali::Accessibility::Accessible::SetCurrentlyHighlightedActor</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1Accessible_1a46703145d645ad1b26ad706dd7c823f9" compoundref="accessibility_8cpp" startline="321" endline="327">Dali::Accessibility::Accessible::SetHighlightActor</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility-bitset.h" line="30" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,2910 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1CanvasRenderer" kind="class" language="C++" prot="public">
+    <compoundname>Dali::CanvasRenderer</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">DrawableGroup public CanvasRenderer::Drawable</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Drawable public BaseHandle</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Gradient public BaseHandle</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">LinearGradient public CanvasRenderer::Gradient</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Picture public CanvasRenderer::Drawable</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">RadialGradient public CanvasRenderer::Gradient</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">Shape public CanvasRenderer::Drawable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">BaseHandle</basecompoundref>
+    <includes refid="canvas-renderer-drawable-group_8h" local="no">canvas-renderer-drawable-group.h</includes>
+    <innerclass refid="structDali_1_1CanvasRenderer_1_1ColorStop" prot="public">Dali::CanvasRenderer::ColorStop</innerclass>
+    <innerclass refid="structDali_1_1CanvasRenderer_1_1PathCommands" prot="public">Dali::CanvasRenderer::PathCommands</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1CanvasRenderer_1a536aa99e87909b2eca40df21b221408c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>MaskType</name>
+        <qualifiedname>Dali::CanvasRenderer::MaskType</qualifiedname>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a536aa99e87909b2eca40df21b221408ca002101f8725e5c78d9f30d87f3fa4c87" prot="public">
+          <name>ALPHA</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>The pixels of the own drawable and the mask drawable are alpha blended. As a result, only the part of the own drawable, which intersects with the mask drawable is visible. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a536aa99e87909b2eca40df21b221408ca19a42f4f0f1fb40046886247455fe1a7" prot="public">
+          <name>ALPHA_INVERSE</name>
+          <briefdescription>
+<para>The pixels of the own drawable and the complement to the mask drawable&apos;s pixels are alpha blended. As a result, only the part of the own which is not covered by the mask is visible. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration indicating the type used in the masking of two objects - the mask drawable and the own drawable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="72" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Spread</name>
+        <qualifiedname>Dali::CanvasRenderer::Spread</qualifiedname>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851ca9a91e423233cb015d469d42c56b20baa" prot="public">
+          <name>PAD</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>The remaining area is filled with the closest stop color. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851cae4f6a05f82ed398f984f4bc1a55838df" prot="public">
+          <name>REFLECT</name>
+          <briefdescription>
+<para>The gradient pattern is reflected outside the gradient area until the expected region is filled. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851ca5be68175be14dfaa080165456c2e9555" prot="public">
+          <name>REPEAT</name>
+          <briefdescription>
+<para>The gradient pattern is repeated continuously beyond the gradient area until the expected region is filled. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration specifying how to fill the area outside the gradient bounds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="77" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76f" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>StrokeCap</name>
+        <qualifiedname>Dali::CanvasRenderer::StrokeCap</qualifiedname>
+        <enumvalue id="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76fa12dec4e1f7ec620651b2b95c440ffac0" prot="public">
+          <name>SQUARE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>The end of lines is rendered as a square around the last point. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76fa2ea77cf582892014b30e6fa7e558350d" prot="public">
+          <name>ROUND</name>
+          <briefdescription>
+<para>The end of lines is rendered as a half-circle around the last point. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76fabfe2745ea51c5d35e6bf1f528c1e131f" prot="public">
+          <name>BUTT</name>
+          <briefdescription>
+<para>The end of lines is rendered as a full stop on the last point itself. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for The cap style to be used for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="82" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>StrokeJoin</name>
+        <qualifiedname>Dali::CanvasRenderer::StrokeJoin</qualifiedname>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8dafd0bc23077caf1976908d63a226fd9e1" prot="public">
+          <name>BEVEL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Used to render beveled line joins. The outer corner of the joined lines is filled by enclosing the triangular region of the corner with a straight line between the outer corners of each stroke. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8da2ea77cf582892014b30e6fa7e558350d" prot="public">
+          <name>ROUND</name>
+          <briefdescription>
+<para>Used to render rounded line joins. Circular arcs are used to join two lines smoothly. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8da5e171a5cac9f81480a33b2fab2b48fa1" prot="public">
+          <name>MITER</name>
+          <briefdescription>
+<para>Used to render mitered line joins. The intersection of the strokes is clipped at a line perpendicular to the bisector of the angle between the strokes, at the distance from the intersection of the segments equal to the product of the miter limit value and the border radius. This prevents long spikes being created. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for The join style to be used for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="92" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1CanvasRenderer_1a0ddf673a79efdef2aa26e057290e599d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>FillRule</name>
+        <qualifiedname>Dali::CanvasRenderer::FillRule</qualifiedname>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a0ddf673a79efdef2aa26e057290e599da3b54234bd51af46ab675da223185cace" prot="public">
+          <name>WINDING</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Draw a horizontal line from the point to a location outside the shape. Determine whether the direction of the line at each intersection point is up or down. The winding number is determined by summing the direction of each intersection. If the number is non zero, the point is inside the shape. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a0ddf673a79efdef2aa26e057290e599da968f5fd14f8bc88d647ee628639cc33f" prot="public">
+          <name>EVEN_ODD</name>
+          <briefdescription>
+<para>Draw a horizontal line from the point to a location outside the shape, and count the number of intersections. If the number of intersections is an odd number, the point is inside the shape. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for The fill rule of shape. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="102" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PathCommandType</name>
+        <qualifiedname>Dali::CanvasRenderer::PathCommandType</qualifiedname>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664a7286293c9125ac7d7bace94c190bc16d" prot="public">
+          <name>CLOSE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Ends the current sub-path and connects it with its initial point. This command doesn&apos;t expect any points. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664a08491dbec8edcd811f90044448f46c70" prot="public">
+          <name>MOVE_TO</name>
+          <briefdescription>
+<para>Sets a new initial point of the sub-path and a new current point. This command expects 1 point: the starting position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664a968d1951cdadef8af7975ef564ab77c0" prot="public">
+          <name>LINE_TO</name>
+          <briefdescription>
+<para>Draws a line from the current point to the given point and sets a new value of the current point. This command expects 1 point: the end-position of the line. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664a7185822493b9523275428765cc8a1d02" prot="public">
+          <name>CUBIC_TO</name>
+          <briefdescription>
+<para>Draws a cubic Bezier curve from the current point to the given point using two given control points and sets a new value of the current point. This command expects 3 points: the 1st control-point, the 2nd control-point, the end-point of the curve. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration specifying the values of the path commands. Not to be confused with the path commands from the svg path element (like M, L, Q, H and many others). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="112" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1CanvasRenderer_1a57da077612a89173604f775bbcb67a87" prot="public" static="no">
+        <type>Dali::Vector&lt; <ref refid="structDali_1_1CanvasRenderer_1_1ColorStop" kindref="compound">ColorStop</ref> &gt;</type>
+        <definition>using Dali::CanvasRenderer::ColorStops =  Dali::Vector&lt;ColorStop&gt;</definition>
+        <argsstring></argsstring>
+        <name>ColorStops</name>
+        <qualifiedname>Dali::CanvasRenderer::ColorStops</qualifiedname>
+        <briefdescription>
+<para>List of Colorstop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="94" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ac4d6081870f23bac7bc218b76d6f9b7a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a27aff5efbc3f47ebb52085d6cd0d19ad" kindref="member">DrawableGroup</ref></type>
+        <definition>static DrawableGroup Dali::CanvasRenderer::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::CanvasRenderer::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1CanvasRenderer_1a27aff5efbc3f47ebb52085d6cd0d19ad" kindref="member">CanvasRenderer::DrawableGroup</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated DrawableGroup </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="55" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abd34413a4b86e0636d8bc3491c4f424f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref></type>
+        <definition>static Drawable Dali::CanvasRenderer::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::CanvasRenderer::DownCast</qualifiedname>
+        <param>
+          <type>BaseHandle</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcast a handle to Drawable handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to an <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> the downcast produces valid handle. If not the returned handle is left uninitialized.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle to an object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Handle to an Drawable or an uninitialized handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="151" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a7aec32686b524ff4ec1493db8f4fffe6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" kindref="member">Gradient</ref></type>
+        <definition>static Gradient Dali::CanvasRenderer::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::CanvasRenderer::DownCast</qualifiedname>
+        <param>
+          <type>BaseHandle</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcast a handle to Gradient handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to an <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> the downcast produces valid handle. If not the returned handle is left uninitialized.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle to an object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Handle to an Gradient or an uninitialized handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="132" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a9328ffcf0d55f13647d871c23620a768" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a3645811093b9ae13af8d2522c126f9b2" kindref="member">LinearGradient</ref></type>
+        <definition>static LinearGradient Dali::CanvasRenderer::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::CanvasRenderer::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1CanvasRenderer_1a3645811093b9ae13af8d2522c126f9b2" kindref="member">CanvasRenderer::LinearGradient</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated LinearGradient </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h" line="58" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aab575dfb3b00f95222d29e0d79a195e9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1ab1bd2acd4d1ecd6fe2ad3718ce28e0aa" kindref="member">Picture</ref></type>
+        <definition>static Picture Dali::CanvasRenderer::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::CanvasRenderer::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1CanvasRenderer_1ab1bd2acd4d1ecd6fe2ad3718ce28e0aa" kindref="member">CanvasRenderer::Picture</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated Picture </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="58" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a3f03e7952690c7cba5117ab48d4bc7ac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1affb1f3ecdaf889e3e55f20c8b60b210a" kindref="member">RadialGradient</ref></type>
+        <definition>static RadialGradient Dali::CanvasRenderer::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::CanvasRenderer::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1CanvasRenderer_1affb1f3ecdaf889e3e55f20c8b60b210a" kindref="member">CanvasRenderer::RadialGradient</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated RadialGradient </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h" line="55" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aa6f18c9a54d909a37e87800a8962b0da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a1b09bf544deaab88c2f1de8160b97664" kindref="member">Shape</ref></type>
+        <definition>static Shape Dali::CanvasRenderer::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::CanvasRenderer::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1CanvasRenderer_1a1b09bf544deaab88c2f1de8160b97664" kindref="member">CanvasRenderer::Shape</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated Shape </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="57" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a0e1d76b0c5fbfab2f63430c5a713530a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref></type>
+        <definition>CanvasRenderer Dali::CanvasRenderer::New</definition>
+        <argsstring>(const Vector2 &amp;viewBox)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::CanvasRenderer::New</qualifiedname>
+        <param>
+          <type>const Vector2 &amp;</type>
+          <declname>viewBox</declname>
+        </param>
+        <briefdescription>
+<para>Creates an initialized handle to a new <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">viewBox</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewBox of canvas. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="54" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="28" bodyend="32"/>
+        <references refid="classDali_1_1CanvasRenderer_1accaa8bca7ced1a8fae9a25ec5bd4a86a" compoundref="canvas-renderer_8cpp" startline="34" endline="36">CanvasRenderer</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a27aff5efbc3f47ebb52085d6cd0d19ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::DrawableGroup</definition>
+        <argsstring>()</argsstring>
+        <name>DrawableGroup</name>
+        <qualifiedname>Dali::CanvasRenderer::DrawableGroup</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use CanvasRenderer::DrawableGroup::New() to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="61" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ad28c2418ae0c369d76e2ec95b62e5cef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~DrawableGroup</definition>
+        <argsstring>()</argsstring>
+        <name>~DrawableGroup</name>
+        <qualifiedname>Dali::CanvasRenderer::~DrawableGroup</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="66" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a560d8bd46ad67fd4e785c7d3ffeb2172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::DrawableGroup</definition>
+        <argsstring>(const DrawableGroup &amp;handle)=default</argsstring>
+        <name>DrawableGroup</name>
+        <qualifiedname>Dali::CanvasRenderer::DrawableGroup</qualifiedname>
+        <param>
+          <type>const DrawableGroup &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="73" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a38e5481136674cf4eb1f70fdbf8844c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddDrawable</definition>
+        <argsstring>(Drawable &amp;drawable)</argsstring>
+        <name>AddDrawable</name>
+        <qualifiedname>Dali::CanvasRenderer::AddDrawable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref> &amp;</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+<para>Add drawable object to the DrawableGroup. This method is similar to registration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drawable object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="81" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="57" bodyend="60"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aef1de80932b2e142f66b7a4fbb82005a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::RemoveDrawable</definition>
+        <argsstring>(Drawable drawable)</argsstring>
+        <name>RemoveDrawable</name>
+        <qualifiedname>Dali::CanvasRenderer::RemoveDrawable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref></type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+<para>Remove drawable object to the DrawableGroup. This method is similar to deregistration. Freeing memory is not concerned for drawables being removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the drawable object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="89" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5a54a2dd70e4198205eb1b429014b9ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::RemoveAllDrawables</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveAllDrawables</name>
+        <qualifiedname>Dali::CanvasRenderer::RemoveAllDrawables</qualifiedname>
+        <briefdescription>
+<para>Remove all drawable objects added to the DrawableGroup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="95" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="77" bodyend="80"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Drawable</definition>
+        <argsstring>()</argsstring>
+        <name>Drawable</name>
+        <qualifiedname>Dali::CanvasRenderer::Drawable</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="54" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a049a6b24169442dd0834a801e6a3a96e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~Drawable</definition>
+        <argsstring>()</argsstring>
+        <name>~Drawable</name>
+        <qualifiedname>Dali::CanvasRenderer::~Drawable</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="59" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a72c20ba8b2ee0e8be3e5ac4960828f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Drawable</definition>
+        <argsstring>(const Drawable &amp;handle)=default</argsstring>
+        <name>Drawable</name>
+        <qualifiedname>Dali::CanvasRenderer::Drawable</qualifiedname>
+        <param>
+          <type>const Drawable &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="66" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abeed2ca051746fa8d9816c293051292d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetOpacity</definition>
+        <argsstring>(float opacity)</argsstring>
+        <name>SetOpacity</name>
+        <qualifiedname>Dali::CanvasRenderer::SetOpacity</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>opacity</declname>
+        </param>
+        <briefdescription>
+<para>Set the transparency value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">opacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The transparency level [0 ~ 1.0], 0 means totally transparent, while 1 means opaque. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="84" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a650fb3639f6cbb4a615793abd83a9c49" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::CanvasRenderer::GetOpacity</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOpacity</name>
+        <qualifiedname>Dali::CanvasRenderer::GetOpacity</qualifiedname>
+        <briefdescription>
+<para>Get the transparency value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the transparency level </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="90" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a677c23a4eb2d893ae684bff3977ae8ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Rotate</definition>
+        <argsstring>(Degree degree)</argsstring>
+        <name>Rotate</name>
+        <qualifiedname>Dali::CanvasRenderer::Rotate</qualifiedname>
+        <param>
+          <type>Degree</type>
+          <declname>degree</declname>
+        </param>
+        <briefdescription>
+<para>Set the angle of rotation transformation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">degree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The degree value of angle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="97" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a0de75f7451e59875a7a77865bd1c59c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Scale</definition>
+        <argsstring>(float factor)</argsstring>
+        <name>Scale</name>
+        <qualifiedname>Dali::CanvasRenderer::Scale</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+<para>Set the scale value of scale transformation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale factor value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="104" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5d75053ef1bd5aa3f63bfc4408faab46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Translate</definition>
+        <argsstring>(Vector2 translate)</argsstring>
+        <name>Translate</name>
+        <qualifiedname>Dali::CanvasRenderer::Translate</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>translate</declname>
+        </param>
+        <briefdescription>
+<para>Set the x, y movement value of translate transformation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">translate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x and y-axis movement value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="111" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab66073d4f4317c07a5e89e67a88a0c67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Transform</definition>
+        <argsstring>(const Dali::Matrix3 &amp;matrix)</argsstring>
+        <name>Transform</name>
+        <qualifiedname>Dali::CanvasRenderer::Transform</qualifiedname>
+        <param>
+          <type>const Dali::Matrix3 &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+<para>Set the matrix value for affine transform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 3x3 matrix value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="118" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a0a906b697048eaed503cdafb890da67e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Rect&lt; float &gt;</type>
+        <definition>Rect&lt; float &gt; Dali::CanvasRenderer::GetBoundingBox</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBoundingBox</name>
+        <qualifiedname>Dali::CanvasRenderer::GetBoundingBox</qualifiedname>
+        <briefdescription>
+<para>Gets the bounding box of the drawable object before any transformation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The bounding box doesn&apos;t indicate the rendering region in the result but primitive region of the object. </para>
+</simplesect>
+<simplesect kind="return"><para>Returns the bounding box information. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="125" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a25629fb0f93e54e9388d7d59fa8d2814" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetClipPath</definition>
+        <argsstring>(Drawable &amp;clip)</argsstring>
+        <name>SetClipPath</name>
+        <qualifiedname>Dali::CanvasRenderer::SetClipPath</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref> &amp;</type>
+          <declname>clip</declname>
+        </param>
+        <briefdescription>
+<para>The intersection with clip drawable is determined and only the resulting pixels from own drawable are rendered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">clip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The clip drawable object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="132" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abe1213b9db0c2935824f6b688f6dc8cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetMask</definition>
+        <argsstring>(Drawable &amp;mask, MaskType type)</argsstring>
+        <name>SetMask</name>
+        <qualifiedname>Dali::CanvasRenderer::SetMask</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref> &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a536aa99e87909b2eca40df21b221408c" kindref="member">MaskType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>The pixels of mask drawable and own drawable are blended according to MaskType. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mask drawable object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The masking type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h" line="140" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Gradient</definition>
+        <argsstring>()</argsstring>
+        <name>Gradient</name>
+        <qualifiedname>Dali::CanvasRenderer::Gradient</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="59" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a089b3bb0d317c6c5f33673a93ac7a84e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~Gradient</definition>
+        <argsstring>()</argsstring>
+        <name>~Gradient</name>
+        <qualifiedname>Dali::CanvasRenderer::~Gradient</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="64" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8f7d0a7e5f4cfed5df840f799466f790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Gradient</definition>
+        <argsstring>(const Gradient &amp;handle)=default</argsstring>
+        <name>Gradient</name>
+        <qualifiedname>Dali::CanvasRenderer::Gradient</qualifiedname>
+        <param>
+          <type>const Gradient &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="71" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a423afd972c24697f10a95e404380c2af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetColorStops</definition>
+        <argsstring>(ColorStops &amp;colorStops)</argsstring>
+        <name>SetColorStops</name>
+        <qualifiedname>Dali::CanvasRenderer::SetColorStops</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a57da077612a89173604f775bbcb67a87" kindref="member">ColorStops</ref> &amp;</type>
+          <declname>colorStops</declname>
+        </param>
+        <briefdescription>
+<para>Sets the parameters of the colors of the gradient and their position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">colorStops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of <ref refid="structDali_1_1CanvasRenderer_1_1ColorStop" kindref="compound">ColorStop</ref> data structure. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result::Success when succeed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="102" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a1ebd42d72b7002fed71fd9c8e775d158" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a57da077612a89173604f775bbcb67a87" kindref="member">ColorStops</ref></type>
+        <definition>ColorStops Dali::CanvasRenderer::GetColorStops</definition>
+        <argsstring>() const</argsstring>
+        <name>GetColorStops</name>
+        <qualifiedname>Dali::CanvasRenderer::GetColorStops</qualifiedname>
+        <briefdescription>
+<para>Gets the parameters of the colors of the gradient, their position and number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the colorstops list. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="108" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1acc842d10f350603c006414c0be8c40ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetSpread</definition>
+        <argsstring>(Spread spread)</argsstring>
+        <name>SetSpread</name>
+        <qualifiedname>Dali::CanvasRenderer::SetSpread</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851c" kindref="member">Spread</ref></type>
+          <declname>spread</declname>
+        </param>
+        <briefdescription>
+<para>Set the spread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">spread</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current spraed type of the shape. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="115" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a4096216d550af08cfccd8f743bcab499" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851c" kindref="member">Spread</ref></type>
+        <definition>Spread Dali::CanvasRenderer::GetSpread</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSpread</name>
+        <qualifiedname>Dali::CanvasRenderer::GetSpread</qualifiedname>
+        <briefdescription>
+<para>Get the spread type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the current spread type of the shape. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-gradient.h" line="121" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a3645811093b9ae13af8d2522c126f9b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::LinearGradient</definition>
+        <argsstring>()</argsstring>
+        <name>LinearGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::LinearGradient</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use CanvasRenderer::LinearGradient::New() to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h" line="64" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1acf9e60be70388ef611000d1299f14f19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~LinearGradient</definition>
+        <argsstring>()</argsstring>
+        <name>~LinearGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::~LinearGradient</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h" line="69" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a964eed1a5016ee80b324d45bbb3ad882" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::LinearGradient</definition>
+        <argsstring>(const LinearGradient &amp;handle)=default</argsstring>
+        <name>LinearGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::LinearGradient</qualifiedname>
+        <param>
+          <type>const LinearGradient &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h" line="76" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ac62117454733fa25df0406cc62c45a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetBounds</definition>
+        <argsstring>(Vector2 firstPoint, Vector2 secondPoint)</argsstring>
+        <name>SetBounds</name>
+        <qualifiedname>Dali::CanvasRenderer::SetBounds</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>firstPoint</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>secondPoint</declname>
+        </param>
+        <briefdescription>
+<para>Sets the linear gradient bounds. The bounds of the linear gradient are defined as a surface constrained by two parallel lines crossing the given points (<computeroutput>x1</computeroutput>, <computeroutput>y1</computeroutput>) and (<computeroutput>x2</computeroutput>, <computeroutput>y2</computeroutput>), respectively. Both lines are perpendicular to the line linking (<computeroutput>x1</computeroutput>, <computeroutput>y1</computeroutput>) and (<computeroutput>x2</computeroutput>, <computeroutput>y2</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">firstPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first point used to determine the gradient bounds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">secondPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second point used to determine the gradient bounds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h" line="88" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8f7e08015e458b3b200c66bbda405737" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::GetBounds</definition>
+        <argsstring>(Vector2 &amp;firstPoint, Vector2 &amp;secondPoint) const</argsstring>
+        <name>GetBounds</name>
+        <qualifiedname>Dali::CanvasRenderer::GetBounds</qualifiedname>
+        <param>
+          <type>Vector2 &amp;</type>
+          <declname>firstPoint</declname>
+        </param>
+        <param>
+          <type>Vector2 &amp;</type>
+          <declname>secondPoint</declname>
+        </param>
+        <briefdescription>
+<para>Gets the linear gradient bounds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">firstPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first point used to determine the gradient bounds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">secondPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second point used to determine the gradient bounds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-linear-gradient.h" line="96" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab1bd2acd4d1ecd6fe2ad3718ce28e0aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Picture</definition>
+        <argsstring>()</argsstring>
+        <name>Picture</name>
+        <qualifiedname>Dali::CanvasRenderer::Picture</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use CanvasRenderer::Picture::New() to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="65" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a6efb0caffed72be0e9e4d389cd8f89ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~Picture</definition>
+        <argsstring>()</argsstring>
+        <name>~Picture</name>
+        <qualifiedname>Dali::CanvasRenderer::~Picture</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="70" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a17830b79405499c9b3ba6e54c124b48f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Picture</definition>
+        <argsstring>(const Picture &amp;handle)=default</argsstring>
+        <name>Picture</name>
+        <qualifiedname>Dali::CanvasRenderer::Picture</qualifiedname>
+        <param>
+          <type>const Picture &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="77" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5426bb03c7c72ba0ba1de985b5a9685b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Load</definition>
+        <argsstring>(const std::string &amp;url)</argsstring>
+        <name>Load</name>
+        <qualifiedname>Dali::CanvasRenderer::Load</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+<para>Loads a picture data directly from a file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A path to the picture file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="85" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abec6745e3352e98f48af23b4c8071ed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetSize</definition>
+        <argsstring>(Vector2 size)</argsstring>
+        <name>SetSize</name>
+        <qualifiedname>Dali::CanvasRenderer::SetSize</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Resize the picture content with the given size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Resize the picture content while keeping the default size aspect ratio. The scaling factor is established for each of dimensions and the smaller value is applied to both of them. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A new size of the image in pixels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="95" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="82" bodyend="85"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8714e2323e3c4048bfa80fb6e13eecf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector2</type>
+        <definition>Vector2 Dali::CanvasRenderer::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <qualifiedname>Dali::CanvasRenderer::GetSize</qualifiedname>
+        <briefdescription>
+<para>Gets the size of the image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns The size of the image in pixels. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-picture.h" line="101" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="87" bodyend="90"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1affb1f3ecdaf889e3e55f20c8b60b210a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::RadialGradient</definition>
+        <argsstring>()</argsstring>
+        <name>RadialGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::RadialGradient</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use CanvasRenderer::RadialGradient::New() to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h" line="61" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a4543bb5562dcf9d6d7f49bbb6e63486c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~RadialGradient</definition>
+        <argsstring>()</argsstring>
+        <name>~RadialGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::~RadialGradient</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h" line="66" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8e1bdad1cc0521ff08c7764aed864f5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::RadialGradient</definition>
+        <argsstring>(const RadialGradient &amp;handle)=default</argsstring>
+        <name>RadialGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::RadialGradient</qualifiedname>
+        <param>
+          <type>const RadialGradient &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h" line="73" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a862afdca30116ab806555d846983b695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetBounds</definition>
+        <argsstring>(Vector2 centerPoint, float radius)</argsstring>
+        <name>SetBounds</name>
+        <qualifiedname>Dali::CanvasRenderer::SetBounds</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>centerPoint</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+<para>Sets the radial gradient bounds. The radial gradient bounds are defined as a circle centered in a given point of a given radius. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">centerPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point of the center of the bounding circle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of the bounding circle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h" line="83" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a557772e72f8adc2893f997fc8e2928b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::GetBounds</definition>
+        <argsstring>(Vector2 &amp;centerPoint, float &amp;radius) const</argsstring>
+        <name>GetBounds</name>
+        <qualifiedname>Dali::CanvasRenderer::GetBounds</qualifiedname>
+        <param>
+          <type>Vector2 &amp;</type>
+          <declname>centerPoint</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+<para>Gets the radial gradient bounds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">centerPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point used to determine the gradient bounds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of the bounding circle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-radial-gradient.h" line="91" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a1b09bf544deaab88c2f1de8160b97664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Shape</definition>
+        <argsstring>()</argsstring>
+        <name>Shape</name>
+        <qualifiedname>Dali::CanvasRenderer::Shape</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use CanvasRenderer::Shape::New() to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="64" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a0bbacaa8a7e966104ab96444a4bd43de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~Shape</definition>
+        <argsstring>()</argsstring>
+        <name>~Shape</name>
+        <qualifiedname>Dali::CanvasRenderer::~Shape</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="69" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8aa307496ede3bccbba2f4ea974338df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::Shape</definition>
+        <argsstring>(const Shape &amp;handle)=default</argsstring>
+        <name>Shape</name>
+        <qualifiedname>Dali::CanvasRenderer::Shape</qualifiedname>
+        <param>
+          <type>const Shape &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="76" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab31ac70e36d00c62c7b4a82dd92b0f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddRect</definition>
+        <argsstring>(Rect&lt; float &gt; rect, Vector2 roundedCorner)</argsstring>
+        <name>AddRect</name>
+        <qualifiedname>Dali::CanvasRenderer::AddRect</qualifiedname>
+        <param>
+          <type>Rect&lt; float &gt;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>roundedCorner</declname>
+        </param>
+        <briefdescription>
+<para>Append the given rectangle with rounded corner to the path. The roundedCorner arguments specify the radii of the ellipses defining the corners of the rounded rectangle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>roundedCorner are specified in terms of width and height respectively.</para>
+<para>If roundedCorner&apos;s values are 0, then it will draw a rectangle without rounded corner.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of the rectangle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">roundedCorner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of the rounded corner and should be in range [ 0 to w/2 ] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="146" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ad83076bb8ab13774b270d8c938a4cd5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddCircle</definition>
+        <argsstring>(Vector2 center, Vector2 radius)</argsstring>
+        <name>AddCircle</name>
+        <qualifiedname>Dali::CanvasRenderer::AddCircle</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+<para>Append a circle with given center and x,y-axis radius. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">center</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of the center of the circle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of radius of the circle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="154" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab47bcd513f0e0376d989e1eb1ffb0884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddArc</definition>
+        <argsstring>(Vector2 center, float radius, float startAngle, float sweep, bool pie)</argsstring>
+        <name>AddArc</name>
+        <qualifiedname>Dali::CanvasRenderer::AddArc</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>startAngle</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>sweep</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pie</declname>
+        </param>
+        <briefdescription>
+<para>Append the arcs . </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">center</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of the center of the arc. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radius of the arc. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">startAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start angle (in degrees) where the arc begins. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sweep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Angle measures how long the arc will be drawn. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If True, the area is created by connecting start angle point and sweep angle point of the drawn arc. If false, it doesn&apos;t. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="165" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab8472ff0920427816f2f545db05a5f71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddMoveTo</definition>
+        <argsstring>(Vector2 point)</argsstring>
+        <name>AddMoveTo</name>
+        <qualifiedname>Dali::CanvasRenderer::AddMoveTo</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Add a point that sets the given point as the current point, implicitly starting a new subpath and closing the previous one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of the current point. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="173" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a84af8e05ba2146a2a20bfabf833aeb72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddLineTo</definition>
+        <argsstring>(Vector2 line)</argsstring>
+        <name>AddLineTo</name>
+        <qualifiedname>Dali::CanvasRenderer::AddLineTo</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Adds a straight line from the current position to the given end point. After the line is drawn, the current position is updated to be at the end point of the line. If no current position present, it draws a line to itself, basically * a point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of end point of the line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="183" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a9b5fcb137df1023295fbb877e307c2d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddCubicTo</definition>
+        <argsstring>(Vector2 controlPoint1, Vector2 controlPoint2, Vector2 endPoint)</argsstring>
+        <name>AddCubicTo</name>
+        <qualifiedname>Dali::CanvasRenderer::AddCubicTo</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>controlPoint1</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>controlPoint2</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>endPoint</declname>
+        </param>
+        <briefdescription>
+<para>Adds a cubic Bezier curve between the current position and the given end point (lineEndPoint) using the control points specified by (controlPoint1), and (controlPoint2). After the path is drawn, the current position is updated to be at the end point of the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">controlPoint1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of 1st control point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">controlPoint2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of 2nd control point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">endPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X and Y co-ordinate of end point of the line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="195" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5ca05fe4899a4063c8be0ee397496a55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddPath</definition>
+        <argsstring>(PathCommands &amp;pathCommand)</argsstring>
+        <name>AddPath</name>
+        <qualifiedname>Dali::CanvasRenderer::AddPath</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1CanvasRenderer_1_1PathCommands" kindref="compound">PathCommands</ref> &amp;</type>
+          <declname>pathCommand</declname>
+        </param>
+        <briefdescription>
+<para>Appends a given sub-path to the path. The current point value is set to the last point from the sub-path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pathCommand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command object that contain sub-path information. (This command information is copied internally.) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+<simplesect kind="note"><para>The interface is designed for optimal path setting if the caller has a completed path commands already. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="205" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a2d9d4dd6a495101d1840a68b43ce3c2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <qualifiedname>Dali::CanvasRenderer::Close</qualifiedname>
+        <briefdescription>
+<para>Closes the current subpath by drawing a line to the beginning of the subpath, automatically starting a new path. The current point of the new path is (0, 0). If the subpath does not contain any points, this function does nothing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="214" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5105e70bbe8d0b30fe834c5f7794372e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::ResetPath</definition>
+        <argsstring>()</argsstring>
+        <name>ResetPath</name>
+        <qualifiedname>Dali::CanvasRenderer::ResetPath</qualifiedname>
+        <briefdescription>
+<para>Reset the added path(rect, circle, path, etc...) information. Color and Stroke information are keeped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="221" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aea9ae67170ef2cae39ba91c73f4d1c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetFillColor</definition>
+        <argsstring>(Vector4 color)</argsstring>
+        <name>SetFillColor</name>
+        <qualifiedname>Dali::CanvasRenderer::SetFillColor</qualifiedname>
+        <param>
+          <type>Vector4</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Set the color to use for filling the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="228" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aff710cdf1ba93dd275fc42e648e5d375" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector4</type>
+        <definition>Vector4 Dali::CanvasRenderer::GetFillColor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFillColor</name>
+        <qualifiedname>Dali::CanvasRenderer::GetFillColor</qualifiedname>
+        <briefdescription>
+<para>Get the color to use for filling the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns The color value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="234" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a17676afe3a530a2d32c65a7b543e8561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetFillGradient</definition>
+        <argsstring>(CanvasRenderer::Gradient &amp;gradient)</argsstring>
+        <name>SetFillGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::SetFillGradient</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" kindref="member">CanvasRenderer::Gradient</ref> &amp;</type>
+          <declname>gradient</declname>
+        </param>
+        <briefdescription>
+<para>Set the gradient to use for filling the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gradient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The gradient object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="241" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a7a014f04283037ec45cba673d7b2d85a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" kindref="member">CanvasRenderer::Gradient</ref></type>
+        <definition>CanvasRenderer::Gradient Dali::CanvasRenderer::GetFillGradient</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFillGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::GetFillGradient</qualifiedname>
+        <briefdescription>
+<para>Get the gradient to use for filling the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns The gradient object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="247" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a594e53899977a7e477ac1c97f78bfd69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetFillRule</definition>
+        <argsstring>(CanvasRenderer::Shape::FillRule rule)</argsstring>
+        <name>SetFillRule</name>
+        <qualifiedname>Dali::CanvasRenderer::SetFillRule</qualifiedname>
+        <param>
+          <type>CanvasRenderer::Shape::FillRule</type>
+          <declname>rule</declname>
+        </param>
+        <briefdescription>
+<para>Set the fill rule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current fill rule of the shape. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="254" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a4ec2feec8d15845b9a0eb3c89748d3a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>CanvasRenderer::Shape::FillRule</type>
+        <definition>CanvasRenderer::Shape::FillRule Dali::CanvasRenderer::GetFillRule</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFillRule</name>
+        <qualifiedname>Dali::CanvasRenderer::GetFillRule</qualifiedname>
+        <briefdescription>
+<para>Get the fill rule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the current fill rule of the shape. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="260" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab415996face84f53c4cb08d5cb69b39b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetStrokeWidth</definition>
+        <argsstring>(float width)</argsstring>
+        <name>SetStrokeWidth</name>
+        <qualifiedname>Dali::CanvasRenderer::SetStrokeWidth</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+<para>Set the stroke width to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stroke width to be used. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="267" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a974f2dbc16da2cc6ca07ce80d950c515" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::CanvasRenderer::GetStrokeWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrokeWidth</name>
+        <qualifiedname>Dali::CanvasRenderer::GetStrokeWidth</qualifiedname>
+        <briefdescription>
+<para>Get the stroke width to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns stroke width to be used. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="273" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abda7c163ba2e67bd8ffc69e6e4b90dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetStrokeColor</definition>
+        <argsstring>(Vector4 color)</argsstring>
+        <name>SetStrokeColor</name>
+        <qualifiedname>Dali::CanvasRenderer::SetStrokeColor</qualifiedname>
+        <param>
+          <type>Vector4</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Set the color to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stroking color. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="280" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aaa18fade0755f62b54b45b1828b6fd11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector4</type>
+        <definition>Vector4 Dali::CanvasRenderer::GetStrokeColor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrokeColor</name>
+        <qualifiedname>Dali::CanvasRenderer::GetStrokeColor</qualifiedname>
+        <briefdescription>
+<para>Get the color to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the stroking color. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="286" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ad0597465f3500579f4d9e2b0d6ad37d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetStrokeGradient</definition>
+        <argsstring>(CanvasRenderer::Gradient &amp;gradient)</argsstring>
+        <name>SetStrokeGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::SetStrokeGradient</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" kindref="member">CanvasRenderer::Gradient</ref> &amp;</type>
+          <declname>gradient</declname>
+        </param>
+        <briefdescription>
+<para>Set the gradient to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">gradient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The gradient object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="293" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a28452239e4d0d40b43eae79bd520c341" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" kindref="member">CanvasRenderer::Gradient</ref></type>
+        <definition>CanvasRenderer::Gradient Dali::CanvasRenderer::GetStrokeGradient</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrokeGradient</name>
+        <qualifiedname>Dali::CanvasRenderer::GetStrokeGradient</qualifiedname>
+        <briefdescription>
+<para>Get the gradient to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns The gradient object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="299" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a7d0d2f51ebc7df956248865855dd6a52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetStrokeDash</definition>
+        <argsstring>(const Dali::Vector&lt; float &gt; &amp;dashPattern)</argsstring>
+        <name>SetStrokeDash</name>
+        <qualifiedname>Dali::CanvasRenderer::SetStrokeDash</qualifiedname>
+        <param>
+          <type>const Dali::Vector&lt; float &gt; &amp;</type>
+          <declname>dashPattern</declname>
+        </param>
+        <briefdescription>
+<para>Sets the stroke dash pattern. The dash pattern is specified dash pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dashPattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lenght and a gap list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="306" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a000bdcb2598843440816729a9ba76d6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::Vector&lt; float &gt;</type>
+        <definition>Dali::Vector&lt; float &gt; Dali::CanvasRenderer::GetStrokeDash</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrokeDash</name>
+        <qualifiedname>Dali::CanvasRenderer::GetStrokeDash</qualifiedname>
+        <briefdescription>
+<para>Gets the stroke dash pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the stroke dash pattern. The dash pattern is specified dash pattern. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="312" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ab6bd9108838544fd164db1a0dbf177a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetStrokeCap</definition>
+        <argsstring>(CanvasRenderer::Shape::StrokeCap cap)</argsstring>
+        <name>SetStrokeCap</name>
+        <qualifiedname>Dali::CanvasRenderer::SetStrokeCap</qualifiedname>
+        <param>
+          <type>CanvasRenderer::Shape::StrokeCap</type>
+          <declname>cap</declname>
+        </param>
+        <briefdescription>
+<para>Set the cap style to use for stroking the path. The cap will be used for capping the end point of a open subpath. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cap style to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="319" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a842e44217f8e6da124c3468264e6950e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>CanvasRenderer::Shape::StrokeCap</type>
+        <definition>CanvasRenderer::Shape::StrokeCap Dali::CanvasRenderer::GetStrokeCap</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrokeCap</name>
+        <qualifiedname>Dali::CanvasRenderer::GetStrokeCap</qualifiedname>
+        <briefdescription>
+<para>Get the cap style to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the cap style. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="325" column="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abe5a0ef364bbc219d26c07b827ec0c4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetStrokeJoin</definition>
+        <argsstring>(CanvasRenderer::Shape::StrokeJoin join)</argsstring>
+        <name>SetStrokeJoin</name>
+        <qualifiedname>Dali::CanvasRenderer::SetStrokeJoin</qualifiedname>
+        <param>
+          <type>CanvasRenderer::Shape::StrokeJoin</type>
+          <declname>join</declname>
+        </param>
+        <briefdescription>
+<para>Set the join style to use for stroking the path. The join style will be used for joining the two line segment while stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">join</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Join style to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="333" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ae2ff0cd667e4ad9eaab375409b00fa2e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>CanvasRenderer::Shape::StrokeJoin</type>
+        <definition>CanvasRenderer::Shape::StrokeJoin Dali::CanvasRenderer::GetStrokeJoin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrokeJoin</name>
+        <qualifiedname>Dali::CanvasRenderer::GetStrokeJoin</qualifiedname>
+        <briefdescription>
+<para>Get the join style to use for stroking the path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns join style to use. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h" line="339" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1accaa8bca7ced1a8fae9a25ec5bd4a86a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::CanvasRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>CanvasRenderer</name>
+        <qualifiedname>Dali::CanvasRenderer::CanvasRenderer</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use <ref refid="classDali_1_1CanvasRenderer_1ac4d6081870f23bac7bc218b76d6f9b7a" kindref="member">CanvasRenderer::New()</ref> to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="61" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="34" bodyend="36"/>
+        <referencedby refid="classDali_1_1CanvasRenderer_1a0e1d76b0c5fbfab2f63430c5a713530a" compoundref="canvas-renderer_8cpp" startline="28" endline="32">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5656094c95dd2fad2955aed4844d1418" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::~CanvasRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>~CanvasRenderer</name>
+        <qualifiedname>Dali::CanvasRenderer::~CanvasRenderer</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="66" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1ad9d4bb44d985c4ccda29153a9fd048a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CanvasRenderer::CanvasRenderer</definition>
+        <argsstring>(const CanvasRenderer &amp;handle)=default</argsstring>
+        <name>CanvasRenderer</name>
+        <qualifiedname>Dali::CanvasRenderer::CanvasRenderer</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="74" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8bd3df10ea913fb8593510e19c1933b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref> &amp;</type>
+        <definition>CanvasRenderer &amp; Dali::CanvasRenderer::operator=</definition>
+        <argsstring>(const CanvasRenderer &amp;rhs)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::CanvasRenderer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="82" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aaaa30d4a75bd9d6fd1024c8f4b7663f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Commit</definition>
+        <argsstring>()</argsstring>
+        <name>Commit</name>
+        <qualifiedname>Dali::CanvasRenderer::Commit</qualifiedname>
+        <briefdescription>
+<para>Prepare for drawing drawables added to <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref> on inner canvas. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="99" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="47" bodyend="50"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a38e5481136674cf4eb1f70fdbf8844c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::AddDrawable</definition>
+        <argsstring>(Drawable &amp;drawable)</argsstring>
+        <name>AddDrawable</name>
+        <qualifiedname>Dali::CanvasRenderer::AddDrawable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref> &amp;</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+<para>Add drawable object to the Canvas. This method is similar to registration. The added drawable object(shape) is drawn on the inner canvas using <ref refid="classDali_1_1CanvasRenderer_1aaaa30d4a75bd9d6fd1024c8f4b7663f3" kindref="member">Commit()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drawable object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="107" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a136ace18790de6ab708540820f780605" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::RemoveDrawable</definition>
+        <argsstring>(Drawable &amp;drawable)</argsstring>
+        <name>RemoveDrawable</name>
+        <qualifiedname>Dali::CanvasRenderer::RemoveDrawable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">Drawable</ref> &amp;</type>
+          <declname>drawable</declname>
+        </param>
+        <briefdescription>
+<para>Remove drawable object to the CanvasView. This method is similar to deregistration. Freeing memory is not concerned for drawables being removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">drawable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the drawable object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="115" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="72" bodyend="75"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a5a54a2dd70e4198205eb1b429014b9ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::RemoveAllDrawables</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveAllDrawables</name>
+        <qualifiedname>Dali::CanvasRenderer::RemoveAllDrawables</qualifiedname>
+        <briefdescription>
+<para>Remove all drawable objects added to the <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="121" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1aee23c729be3dd97d3ac1a3960e664c2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::Texture</type>
+        <definition>Dali::Texture Dali::CanvasRenderer::GetRasterizedTexture</definition>
+        <argsstring>()</argsstring>
+        <name>GetRasterizedTexture</name>
+        <qualifiedname>Dali::CanvasRenderer::GetRasterizedTexture</qualifiedname>
+        <briefdescription>
+<para>Returns the rasterized texture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the texture. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="128" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="52" bodyend="55"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a915eb202e2a31d90c423f5e024d44926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::Rasterize</definition>
+        <argsstring>()</argsstring>
+        <name>Rasterize</name>
+        <qualifiedname>Dali::CanvasRenderer::Rasterize</qualifiedname>
+        <briefdescription>
+<para>Draw drawables added to <ref refid="classDali_1_1CanvasRenderer" kindref="compound">CanvasRenderer</ref> to inner buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="134" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="67" bodyend="70"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a98d4842370da4429e91e47501adcaeee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::IsCanvasChanged</definition>
+        <argsstring>() const</argsstring>
+        <name>IsCanvasChanged</name>
+        <qualifiedname>Dali::CanvasRenderer::IsCanvasChanged</qualifiedname>
+        <briefdescription>
+<para>Returns whether the drawables added to the Canvas are changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns True when drawables added to the Canvas are changed, False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="140" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="62" bodyend="65"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1abec6745e3352e98f48af23b4c8071ed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetSize</definition>
+        <argsstring>(Vector2 size)</argsstring>
+        <name>SetSize</name>
+        <qualifiedname>Dali::CanvasRenderer::SetSize</qualifiedname>
+        <param>
+          <type>Vector2</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>This is the size of the buffer in the Canvas. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of canvas buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="147" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a8714e2323e3c4048bfa80fb6e13eecf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector2</type>
+        <definition>Vector2 Dali::CanvasRenderer::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <qualifiedname>Dali::CanvasRenderer::GetSize</qualifiedname>
+        <briefdescription>
+<para>This is the size of the Buffer in the Canvas. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns The size of canvas buffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="153" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a6e52138ac5f9aeb84b3171eeecc21518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CanvasRenderer::SetViewBox</definition>
+        <argsstring>(const Vector2 &amp;viewBox)</argsstring>
+        <name>SetViewBox</name>
+        <qualifiedname>Dali::CanvasRenderer::SetViewBox</qualifiedname>
+        <param>
+          <type>const Vector2 &amp;</type>
+          <declname>viewBox</declname>
+        </param>
+        <briefdescription>
+<para>This is the viewbox of the Canvas. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">viewBox</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of viewbox. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns True when it&apos;s successful. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="160" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="92" bodyend="95"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CanvasRenderer_1a04f176e68654de1db2524a580387db6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const Vector2 &amp;</type>
+        <definition>const Vector2 &amp; Dali::CanvasRenderer::GetViewBox</definition>
+        <argsstring>()</argsstring>
+        <name>GetViewBox</name>
+        <qualifiedname>Dali::CanvasRenderer::GetViewBox</qualifiedname>
+        <briefdescription>
+<para>This is the viewbox of the Canvas. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns The size of viewbox. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h" line="166" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.cpp" bodystart="97" bodyend="100"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A class that holds many Drawable object. As a whole they can be transformed, their transparency can be changed. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used for rendering a vector primitives.</para>
+<para>Shape is a command list for drawing one shape groups It has own path data &amp; properties for sync/asynchronous drawing.</para>
+<para>A class representing the radial gradient fill of the Shape object.</para>
+<para>A class representing an image read in one of the supported formats: raw, svg, png and etc. Besides the methods inherited from the Drawable, it provides methods to load &amp; draw images on the canvas.</para>
+<para>A class representing the linear gradient fill of the Shape object.</para>
+<para>An abstract class representing the gradient fill of the Shape object.</para>
+<para>Drawable is a object class for drawing a vector primitive.</para>
+<para>It contains the information about the gradient colors and their arrangement inside the gradient bounds. The gradients bounds are defined in the LinearGradient or RadialGradient class, depending on the type of the gradient to be used. It specifies the gradient behavior in case the area defined by the gradient bounds is smaller than the area to be filled.</para>
+<para>Besides the class inherited from the Gradient class, it enables setting and getting the linear gradient bounds. The behavior outside the gradient bounds depends on the value specified in the spread API. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::CanvasRenderer</label>
+        <link refid="classDali_1_1CanvasRenderer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="7" relation="private-inheritance">
+        </childnode>
+        <childnode refid="8" relation="private-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Drawable public BaseHandle</label>
+      </node>
+      <node id="2">
+        <label>DrawableGroup public CanvasRenderer::Drawable</label>
+      </node>
+      <node id="4">
+        <label>Gradient public BaseHandle</label>
+      </node>
+      <node id="5">
+        <label>LinearGradient public CanvasRenderer::Gradient</label>
+      </node>
+      <node id="6">
+        <label>Picture public CanvasRenderer::Drawable</label>
+      </node>
+      <node id="7">
+        <label>RadialGradient public CanvasRenderer::Gradient</label>
+      </node>
+      <node id="8">
+        <label>Shape public CanvasRenderer::Drawable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::CanvasRenderer</label>
+        <link refid="classDali_1_1CanvasRenderer"/>
+        <childnode refid="2" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3" relation="private-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+        <childnode refid="5" relation="private-inheritance">
+        </childnode>
+        <childnode refid="6" relation="private-inheritance">
+        </childnode>
+        <childnode refid="7" relation="private-inheritance">
+        </childnode>
+        <childnode refid="8" relation="private-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Drawable public BaseHandle</label>
+      </node>
+      <node id="2">
+        <label>DrawableGroup public CanvasRenderer::Drawable</label>
+      </node>
+      <node id="4">
+        <label>Gradient public BaseHandle</label>
+      </node>
+      <node id="5">
+        <label>LinearGradient public CanvasRenderer::Gradient</label>
+      </node>
+      <node id="6">
+        <label>Picture public CanvasRenderer::Drawable</label>
+      </node>
+      <node id="7">
+        <label>RadialGradient public CanvasRenderer::Gradient</label>
+      </node>
+      <node id="8">
+        <label>Shape public CanvasRenderer::Drawable</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" line="48" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable-group.h" bodystart="49" bodyend="107"/>
+    <listofallmembers>
+      <member refid="classDali_1_1CanvasRenderer_1ab47bcd513f0e0376d989e1eb1ffb0884" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddArc</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ad83076bb8ab13774b270d8c938a4cd5f" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddCircle</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a9b5fcb137df1023295fbb877e307c2d4" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddCubicTo</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a38e5481136674cf4eb1f70fdbf8844c0" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddDrawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a38e5481136674cf4eb1f70fdbf8844c0" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddDrawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a84af8e05ba2146a2a20bfabf833aeb72" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddLineTo</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ab8472ff0920427816f2f545db05a5f71" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddMoveTo</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5ca05fe4899a4063c8be0ee397496a55" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddPath</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ab31ac70e36d00c62c7b4a82dd92b0f79" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>AddRect</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1accaa8bca7ced1a8fae9a25ec5bd4a86a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>CanvasRenderer</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ad9d4bb44d985c4ccda29153a9fd048a9" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>CanvasRenderer</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a2d9d4dd6a495101d1840a68b43ce3c2b" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Close</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a57da077612a89173604f775bbcb67a87" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>ColorStops</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aaaa30d4a75bd9d6fd1024c8f4b7663f3" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Commit</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abd34413a4b86e0636d8bc3491c4f424f" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a7aec32686b524ff4ec1493db8f4fffe6" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Drawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a72c20ba8b2ee0e8be3e5ac4960828f3e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Drawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a27aff5efbc3f47ebb52085d6cd0d19ad" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>DrawableGroup</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a560d8bd46ad67fd4e785c7d3ffeb2172" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>DrawableGroup</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a0ddf673a79efdef2aa26e057290e599d" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>FillRule</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a0a906b697048eaed503cdafb890da67e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetBoundingBox</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8f7e08015e458b3b200c66bbda405737" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetBounds</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a557772e72f8adc2893f997fc8e2928b4" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetBounds</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a1ebd42d72b7002fed71fd9c8e775d158" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetColorStops</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aff710cdf1ba93dd275fc42e648e5d375" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetFillColor</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a7a014f04283037ec45cba673d7b2d85a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetFillGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a4ec2feec8d15845b9a0eb3c89748d3a8" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetFillRule</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a650fb3639f6cbb4a615793abd83a9c49" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetOpacity</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aee23c729be3dd97d3ac1a3960e664c2a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetRasterizedTexture</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8714e2323e3c4048bfa80fb6e13eecf5" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetSize</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8714e2323e3c4048bfa80fb6e13eecf5" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetSize</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a4096216d550af08cfccd8f743bcab499" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetSpread</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a842e44217f8e6da124c3468264e6950e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetStrokeCap</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aaa18fade0755f62b54b45b1828b6fd11" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetStrokeColor</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a000bdcb2598843440816729a9ba76d6d" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetStrokeDash</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a28452239e4d0d40b43eae79bd520c341" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetStrokeGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ae2ff0cd667e4ad9eaab375409b00fa2e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetStrokeJoin</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a974f2dbc16da2cc6ca07ce80d950c515" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetStrokeWidth</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a04f176e68654de1db2524a580387db6d" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>GetViewBox</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a49054fe4393cd2799a91eb110bc2fddf" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Gradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8f7d0a7e5f4cfed5df840f799466f790" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Gradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a98d4842370da4429e91e47501adcaeee" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>IsCanvasChanged</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a3645811093b9ae13af8d2522c126f9b2" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>LinearGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a964eed1a5016ee80b324d45bbb3ad882" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>LinearGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5426bb03c7c72ba0ba1de985b5a9685b" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Load</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a536aa99e87909b2eca40df21b221408c" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>MaskType</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ac4d6081870f23bac7bc218b76d6f9b7a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>New</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a9328ffcf0d55f13647d871c23620a768" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>New</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aab575dfb3b00f95222d29e0d79a195e9" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>New</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a3f03e7952690c7cba5117ab48d4bc7ac" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>New</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aa6f18c9a54d909a37e87800a8962b0da" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>New</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a0e1d76b0c5fbfab2f63430c5a713530a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>New</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8bd3df10ea913fb8593510e19c1933b6" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>operator=</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>PathCommandType</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ab1bd2acd4d1ecd6fe2ad3718ce28e0aa" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Picture</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a17830b79405499c9b3ba6e54c124b48f" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Picture</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1affb1f3ecdaf889e3e55f20c8b60b210a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>RadialGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8e1bdad1cc0521ff08c7764aed864f5b" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>RadialGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a915eb202e2a31d90c423f5e024d44926" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Rasterize</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5a54a2dd70e4198205eb1b429014b9ef" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>RemoveAllDrawables</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5a54a2dd70e4198205eb1b429014b9ef" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>RemoveAllDrawables</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aef1de80932b2e142f66b7a4fbb82005a" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>RemoveDrawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a136ace18790de6ab708540820f780605" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>RemoveDrawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5105e70bbe8d0b30fe834c5f7794372e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>ResetPath</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a677c23a4eb2d893ae684bff3977ae8ff" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Rotate</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a0de75f7451e59875a7a77865bd1c59c6" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Scale</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ac62117454733fa25df0406cc62c45a16" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetBounds</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a862afdca30116ab806555d846983b695" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetBounds</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a25629fb0f93e54e9388d7d59fa8d2814" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetClipPath</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a423afd972c24697f10a95e404380c2af" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetColorStops</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1aea9ae67170ef2cae39ba91c73f4d1c2f" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetFillColor</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a17676afe3a530a2d32c65a7b543e8561" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetFillGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a594e53899977a7e477ac1c97f78bfd69" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetFillRule</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abe1213b9db0c2935824f6b688f6dc8cd" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetMask</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abeed2ca051746fa8d9816c293051292d" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetOpacity</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abec6745e3352e98f48af23b4c8071ed6" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetSize</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abec6745e3352e98f48af23b4c8071ed6" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetSize</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1acc842d10f350603c006414c0be8c40ab" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetSpread</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ab6bd9108838544fd164db1a0dbf177a3" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetStrokeCap</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abda7c163ba2e67bd8ffc69e6e4b90dfb" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetStrokeColor</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a7d0d2f51ebc7df956248865855dd6a52" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetStrokeDash</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ad0597465f3500579f4d9e2b0d6ad37d9" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetStrokeGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1abe5a0ef364bbc219d26c07b827ec0c4c" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetStrokeJoin</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ab415996face84f53c4cb08d5cb69b39b" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetStrokeWidth</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a6e52138ac5f9aeb84b3171eeecc21518" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>SetViewBox</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a1b09bf544deaab88c2f1de8160b97664" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Shape</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a8aa307496ede3bccbba2f4ea974338df" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Shape</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a9f96c16cdc295f44866f9b82e6cb851c" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Spread</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76f" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>StrokeCap</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8d" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>StrokeJoin</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ab66073d4f4317c07a5e89e67a88a0c67" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Transform</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5d75053ef1bd5aa3f63bfc4408faab46" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>Translate</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a5656094c95dd2fad2955aed4844d1418" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~CanvasRenderer</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a049a6b24169442dd0834a801e6a3a96e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~Drawable</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1ad28c2418ae0c369d76e2ec95b62e5cef" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~DrawableGroup</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a089b3bb0d317c6c5f33673a93ac7a84e" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~Gradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1acf9e60be70388ef611000d1299f14f19" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~LinearGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a6efb0caffed72be0e9e4d389cd8f89ec" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~Picture</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a4543bb5562dcf9d6d7f49bbb6e63486c" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~RadialGradient</name></member>
+      <member refid="classDali_1_1CanvasRenderer_1a0bbacaa8a7e966104ab96444a4bd43de" prot="public" virt="non-virtual"><scope>Dali::CanvasRenderer</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1DevelApplication" kind="namespace" language="C++">
+    <compoundname>Dali::DevelApplication</compoundname>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1DevelApplication_1a0cf2631924316c1d32b16d94ab909476" prot="public" static="no">
+        <type>Signal&lt; void(const std::string &amp;)&gt;</type>
+        <definition>using Dali::DevelApplication::CustomCommandReceivedSignalType = typedef Signal&lt;void(const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>CustomCommandReceivedSignalType</name>
+        <qualifiedname>Dali::DevelApplication::CustomCommandReceivedSignalType</qualifiedname>
+        <briefdescription>
+<para>Signal signature for CustomCommandReceivedSignal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" line="34" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1ad21cbee8136ae5dcb9bfd18f974d56d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_ADAPTOR_API bool Dali::DevelApplication::AddIdleWithReturnValue</definition>
+        <argsstring>(Application application, CallbackBase *callback)</argsstring>
+        <name>AddIdleWithReturnValue</name>
+        <qualifiedname>Dali::DevelApplication::AddIdleWithReturnValue</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Ensures that the function passed in is called from the main loop when it is idle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to call </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if added successfully, <computeroutput>false</computeroutput> otherwise</para>
+</simplesect>
+<simplesect kind="note"><para>Function must be called from main event thread only</para>
+</simplesect>
+A callback of the following type should be used: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>MyFunction();</highlight></codeline>
+</programlisting> This callback will be called repeatedly as long as it returns true. A return of 0 deletes this callback.</para>
+<para><simplesect kind="note"><para>Ownership of the callback is passed onto this class. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="30" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="30" bodyend="33" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="52" declcolumn="23"/>
+        <references refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" compoundref="widget-impl_8cpp" startline="146" endline="153">Dali::Internal::Adaptor::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1a34114ac716a80b7566650ff27d810461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>DALI_ADAPTOR_API std::string Dali::DevelApplication::GetDataPath</definition>
+        <argsstring>()</argsstring>
+        <name>GetDataPath</name>
+        <qualifiedname>Dali::DevelApplication::GetDataPath</qualifiedname>
+        <briefdescription>
+<para>Gets the absolute path to the application&apos;s data directory which is used to store private data of the application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The absolute path to the application&apos;s data directory </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="35" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="35" bodyend="38" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="58" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1a0a9fe0df1577f2b413d4dbbda2903222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+        <definition>DALI_ADAPTOR_API Application Dali::DevelApplication::DownCast</definition>
+        <argsstring>(Dali::RefObject *refObject)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::DevelApplication::DownCast</qualifiedname>
+        <param>
+          <type>Dali::RefObject *</type>
+          <declname>refObject</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts a ref object to <ref refid="classDali_1_1Application" kindref="compound">Application</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to an <ref refid="classDali_1_1Application" kindref="compound">Application</ref> object, the downcast produces valid base handle If not, the returned base handle is left uninitialized</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">refObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to an <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>handle to an <ref refid="classDali_1_1Application" kindref="compound">Application</ref> object or an uninitialized base handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="40" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="40" bodyend="43" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="69" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1ade03c7d64b341cd75b35ab2e1663cbb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1DevelApplication_1a0cf2631924316c1d32b16d94ab909476" kindref="member">CustomCommandReceivedSignalType</ref> &amp;</type>
+        <definition>DALI_ADAPTOR_API CustomCommandReceivedSignalType &amp; Dali::DevelApplication::CustomCommandReceivedSignal</definition>
+        <argsstring>(Application application)</argsstring>
+        <name>CustomCommandReceivedSignal</name>
+        <qualifiedname>Dali::DevelApplication::CustomCommandReceivedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <briefdescription>
+<para>This signal will be triggered when a custom command is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For this signal to be triggered, the adaptor must be built with -DENABLE_NETWORK_LOGGING=ON and when running, DALI_NETWORK_CONTROL=1 must also be set.</para>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The signal when a custom command is received </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="45" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="45" bodyend="54" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="85" declcolumn="50"/>
+        <references refid="classDali_1_1Adaptor_1ad10ea884fef5da0d7b903c6de68737ad">Dali::Adaptor::IsAvailable</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1ad8e7c8f99b2d5aab773b15092a4269ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>DALI_ADAPTOR_API int32_t Dali::DevelApplication::GetRenderThreadId</definition>
+        <argsstring>(Application application)</argsstring>
+        <name>GetRenderThreadId</name>
+        <qualifiedname>Dali::DevelApplication::GetRenderThreadId</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <briefdescription>
+<para>Gets the render thread ID of DALi. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The render thread ID.</para>
+</simplesect>
+<simplesect kind="note"><para>Returns a valid thread ID only if the render thread has started and the system supports thread ID retrieval. Otherwise, returns 0. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="56" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="56" bodyend="59" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="96" declcolumn="26"/>
+        <references refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" compoundref="widget-impl_8cpp" startline="146" endline="153">Dali::Internal::Adaptor::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1a1322b76ec9df46da7f15af5d20dfcb2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>DALI_ADAPTOR_API int32_t Dali::DevelApplication::GetUiThreadId</definition>
+        <argsstring>(Application application)</argsstring>
+        <name>GetUiThreadId</name>
+        <qualifiedname>Dali::DevelApplication::GetUiThreadId</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <briefdescription>
+<para>Gets the UI thread ID of DALi. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The UI thread ID.</para>
+</simplesect>
+<simplesect kind="note"><para>Returns a valid thread ID only if the adaptor has been initialized and the system supports thread ID retrieval. Otherwise, returns 0. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="61" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="61" bodyend="64" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="107" declcolumn="26"/>
+        <references refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" compoundref="widget-impl_8cpp" startline="146" endline="153">Dali::Internal::Adaptor::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1a229bcc480a5373fcf8eac557d02b700e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>DALI_ADAPTOR_API int32_t Dali::DevelApplication::GetMainThreadId</definition>
+        <argsstring>(Application application)</argsstring>
+        <name>GetMainThreadId</name>
+        <qualifiedname>Dali::DevelApplication::GetMainThreadId</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <briefdescription>
+<para>Gets the main thread ID of DALi. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The main thread ID.</para>
+</simplesect>
+<simplesect kind="note"><para>Returns a valid thread ID only if the system supports thread ID retrieval. Otherwise, returns 0. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="66" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="66" bodyend="69" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="118" declcolumn="26"/>
+        <references refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" compoundref="widget-impl_8cpp" startline="146" endline="153">Dali::Internal::Adaptor::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1a6e8bfee041e2e58f57909cd71d17ef7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_ADAPTOR_API void Dali::DevelApplication::FlushUpdateMessages</definition>
+        <argsstring>(Application application)</argsstring>
+        <name>FlushUpdateMessages</name>
+        <qualifiedname>Dali::DevelApplication::FlushUpdateMessages</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <briefdescription>
+<para>Relayout the application and ensure all pending operations are flushed to the update thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="71" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="71" bodyend="74" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="124" declcolumn="23"/>
+        <references refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" compoundref="widget-impl_8cpp" startline="146" endline="153">Dali::Internal::Adaptor::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1ae21a66d1e71399396d202aedc3b0f9eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_ADAPTOR_API void Dali::DevelApplication::SetApplicationLocale</definition>
+        <argsstring>(Application application, const std::string &amp;locale)</argsstring>
+        <name>SetApplicationLocale</name>
+        <qualifiedname>Dali::DevelApplication::SetApplicationLocale</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Application" kindref="compound">Application</ref></type>
+          <declname>application</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>locale</declname>
+        </param>
+        <briefdescription>
+<para>Set the application&apos;s language independently of the system language. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>application</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the <ref refid="classDali_1_1Application" kindref="compound">Application</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">locale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the application&apos;s language and region in BCP 47 format (e.g., &quot;en_US&quot;, &quot;ko_KR&quot;). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="76" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="76" bodyend="79" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="131" declcolumn="23"/>
+        <references refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" compoundref="widget-impl_8cpp" startline="146" endline="153">Dali::Internal::Adaptor::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelApplication_1a0b536c2250d481fd77a48cdbe6d9543e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Window" kindref="compound">Dali::Window</ref></type>
+        <definition>DALI_ADAPTOR_API Dali::Window Dali::DevelApplication::GetPreInitializedWindow</definition>
+        <argsstring>()</argsstring>
+        <name>GetPreInitializedWindow</name>
+        <qualifiedname>Dali::DevelApplication::GetPreInitializedWindow</qualifiedname>
+        <briefdescription>
+<para>Get window from pre-initialized application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Only available pre-initialized application case. If application already created, it will return empty handle. </para>
+</simplesect>
+<simplesect kind="return"><para>Pre initialized window, or empty handle if no pre-initialized application exist. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="81" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" bodystart="81" bodyend="91" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.h" declline="138" declcolumn="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/application-devel.cpp" line="28" column="1"/>
+  </compounddef>
+</doxygen>

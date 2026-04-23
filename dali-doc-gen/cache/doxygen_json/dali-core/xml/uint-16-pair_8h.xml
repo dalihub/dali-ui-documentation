@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="uint-16-pair_8h" kind="file" language="C++">
+    <compoundname>uint-16-pair.h</compoundname>
+    <includes refid="int-pair_8h" local="no">dali/public-api/math/int-pair.h</includes>
+    <includedby refid="dali-core_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/dali-core.h</includedby>
+    <includedby refid="vector2_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/vector2.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="2">
+        <label>dali/public-api/math/int-pair.h</label>
+        <link refid="int-pair_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/uint-16-pair.h</label>
+        <link refid="uint-16-pair_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="4">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/dali-core.h</label>
+        <link refid="dali-core_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/uint-16-pair.h</label>
+        <link refid="uint-16-pair_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/vector2.cpp</label>
+        <link refid="vector2_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Uint16Pair" prot="public">Dali::Uint16Pair</innerclass>
+    <innerclass refid="structDali_1_1TypeTraits_3_01Uint16Pair_01_4" prot="public">Dali::TypeTraits&lt; Uint16Pair &gt;</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_UINT_16_PAIR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_UINT_16_PAIR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="int-pair_8h" kindref="compound">dali/public-api/math/int-pair.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41" refid="classDali_1_1Uint16Pair" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1IntPair" kindref="compound">IntPair</ref>&lt;uint16_t,<sp/>uint16_t,<sp/>uint32_t&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48" refid="classDali_1_1Uint16Pair_1a0f9cb955e219dc107d8e4c17dbcd85ac" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair_1a0f9cb955e219dc107d8e4c17dbcd85ac" kindref="member">Uint16Pair</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1Uint16Pair_1af43adf9d3084ca9175362325d9a87781" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair_1af43adf9d3084ca9175362325d9a87781" kindref="member">Uint16Pair</ref>(uint32_t<sp/>width,<sp/>uint32_t<sp/>height)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="classDali_1_1IntPair" kindref="compound">IntPair</ref>(static_cast&lt;uint16_t&gt;(width),<sp/>static_cast&lt;uint16_t&gt;(height))</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" kindref="member">DALI_ASSERT_DEBUG</ref>(width<sp/>&lt;<sp/>(1u<sp/>&lt;&lt;<sp/>16)<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Width<sp/>parameter<sp/>not<sp/>representable.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" kindref="member">DALI_ASSERT_DEBUG</ref>(height<sp/>&lt;<sp/>(1u<sp/>&lt;&lt;<sp/>16)<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Height<sp/>parameter<sp/>not<sp/>representable.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FLOAT_VECTOR_N_TYPE&gt;</highlight></codeline>
+<codeline lineno="74" refid="classDali_1_1Uint16Pair_1aa13a1b3dbffd17d4f6686ab254fe502b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref><sp/><ref refid="classDali_1_1Uint16Pair_1aa13a1b3dbffd17d4f6686ab254fe502b" kindref="member">FromFloatVec2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FLOAT_VECTOR_N_TYPE&amp;<sp/>from)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" kindref="member">DALI_ASSERT_DEBUG</ref>(from.x<sp/>+<sp/>0.5f<sp/>&lt;<sp/>65536.0f);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" kindref="member">DALI_ASSERT_DEBUG</ref>(from.y<sp/>+<sp/>0.5f<sp/>&lt;<sp/>65536.0f);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair_1a0f9cb955e219dc107d8e4c17dbcd85ac" kindref="member">Uint16Pair</ref>(from.x<sp/>+<sp/>0.5f,<sp/>from.y<sp/>+<sp/>0.5f);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>FLOAT_ARRAY&gt;</highlight></codeline>
+<codeline lineno="92" refid="classDali_1_1Uint16Pair_1aac1d3ec5fa51dbb8a54c988e1b29b16d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref><sp/><ref refid="classDali_1_1Uint16Pair_1aac1d3ec5fa51dbb8a54c988e1b29b16d" kindref="member">FromFloatArray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FLOAT_ARRAY&amp;<sp/>from)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" kindref="member">DALI_ASSERT_DEBUG</ref>(from[0]<sp/>+<sp/>0.5f<sp/>&lt;<sp/>65536.0f);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" kindref="member">DALI_ASSERT_DEBUG</ref>(from[1]<sp/>+<sp/>0.5f<sp/>&lt;<sp/>65536.0f);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair_1a0f9cb955e219dc107d8e4c17dbcd85ac" kindref="member">Uint16Pair</ref>(from[0]<sp/>+<sp/>0.5f,<sp/>from[1]<sp/>+<sp/>0.5f);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100" refid="classDali_1_1Uint16Pair_1a0fd1cd7f37ece53aa21054fa0bd05339" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Uint16Pair_1a0fd1cd7f37ece53aa21054fa0bd05339" kindref="member">Uint16Pair</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&amp;)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="101" refid="classDali_1_1Uint16Pair_1ad3eeb176a0e6c776ba3d2c279b3b3a63" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Uint16Pair_1ad3eeb176a0e6c776ba3d2c279b3b3a63" kindref="member">Uint16Pair</ref>(<ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&amp;&amp;)<sp/>noexcept<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="102" refid="classDali_1_1Uint16Pair_1a76fdbd322935d23b9bb1cd6c7d14e4e3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&amp;<sp/>operator=(const<sp/><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&amp;)<sp/><sp/><sp/><sp/><sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="103" refid="classDali_1_1Uint16Pair_1a132645499d1b826ed29c9c9c4b9721c7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&amp;<sp/>operator=(<ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Allow<sp/>Uint16Pair<sp/>to<sp/>be<sp/>treated<sp/>as<sp/>a<sp/>POD<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">template&lt;&gt;</highlight></codeline>
+<codeline lineno="108" refid="structDali_1_1TypeTraits_3_01Uint16Pair_01_4" refkind="compound"><highlight class="normal">struct<sp/><ref refid="structDali_1_1TypeTraits" kindref="compound">TypeTraits</ref>&lt;<ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&gt;<sp/>:<sp/>public<sp/><ref refid="structDali_1_1BasicTypes" kindref="compound">BasicTypes</ref>&lt;<ref refid="classDali_1_1Uint16Pair" kindref="compound">Uint16Pair</ref>&gt;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>IS_TRIVIAL_TYPE<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="structDali_1_1TypeTraits_3_01Uint16Pair_01_4_1a88e3be12fab3d97a64ddf99f2a6c8548a58306caa5784c558e4091d155408576d" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_UINT_16_PAIR_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/uint-16-pair.h"/>
+  </compounddef>
+</doxygen>

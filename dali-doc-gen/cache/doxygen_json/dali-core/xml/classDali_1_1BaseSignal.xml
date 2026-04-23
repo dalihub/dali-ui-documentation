@@ -1,0 +1,838 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1BaseSignal" kind="class" language="C++" prot="public">
+    <compoundname>Dali::BaseSignal</compoundname>
+    <basecompoundref refid="classDali_1_1SlotObserver" prot="public" virt="non-virtual">Dali::SlotObserver</basecompoundref>
+    <includes refid="base-signal_8h" local="no">base-signal.h</includes>
+    <innerclass refid="structDali_1_1BaseSignal_1_1EmitGuard" prot="public">Dali::BaseSignal::EmitGuard</innerclass>
+    <innerclass refid="structDali_1_1BaseSignal_1_1Impl" prot="public">Dali::BaseSignal::Impl</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1abae7b98ef5d56a57b73bc8a78e0ac0d1" prot="private" static="no" mutable="no">
+        <type><ref refid="structDali_1_1BaseSignal_1_1Impl" kindref="compound">Impl</ref> *</type>
+        <definition>Impl* Dali::BaseSignal::mCacheImpl</definition>
+        <argsstring></argsstring>
+        <name>mCacheImpl</name>
+        <qualifiedname>Dali::BaseSignal::mCacheImpl</qualifiedname>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+<para>Lazy cache for large signals (N &gt;= threshold). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="404" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="404" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1a5a90418eaed55095e668bf7e89a29d42" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1SignalConnectionPool" kindref="compound">SignalConnectionPool</ref></type>
+        <definition>SignalConnectionPool Dali::BaseSignal::mPool</definition>
+        <argsstring></argsstring>
+        <name>mPool</name>
+        <qualifiedname>Dali::BaseSignal::mPool</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Chained-block pool for connection nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="407" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="407" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1ac018bd2a5554c1769b68d2e493cf03be" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::BaseSignal::mEmitHead</definition>
+        <argsstring></argsstring>
+        <name>mEmitHead</name>
+        <qualifiedname>Dali::BaseSignal::mEmitHead</qualifiedname>
+        <initializer>{<ref refid="structDali_1_1SignalConnectionNode_1a288a69d660736c1abbcd6549facd2fb8" kindref="member">SignalConnectionNode::INVALID_INDEX</ref>}</initializer>
+        <briefdescription>
+<para>Head of emission-order doubly-linked list (index) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="408" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="408" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1a3520dda797b165deecf23729aa00503a" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::BaseSignal::mEmitTail</definition>
+        <argsstring></argsstring>
+        <name>mEmitTail</name>
+        <qualifiedname>Dali::BaseSignal::mEmitTail</qualifiedname>
+        <initializer>{<ref refid="structDali_1_1SignalConnectionNode_1a288a69d660736c1abbcd6549facd2fb8" kindref="member">SignalConnectionNode::INVALID_INDEX</ref>}</initializer>
+        <briefdescription>
+<para>Tail of emission-order doubly-linked list (index) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="409" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="409" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1ae56329404d168aa25c8ca3e841018b2f" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::BaseSignal::mActiveCount</definition>
+        <argsstring></argsstring>
+        <name>mActiveCount</name>
+        <qualifiedname>Dali::BaseSignal::mActiveCount</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Number of active connections. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="410" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="410" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1a2c25c5f92e8c3fa222a9152942fd3e4f" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::BaseSignal::mNullCount</definition>
+        <argsstring></argsstring>
+        <name>mNullCount</name>
+        <qualifiedname>Dali::BaseSignal::mNullCount</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Slots nulled during emit, pending cleanup. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="411" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="411" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1aad44774c4e78930d8677e2ce7864e319" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Dali::BaseSignal::mEmittingFlag</definition>
+        <argsstring></argsstring>
+        <name>mEmittingFlag</name>
+        <qualifiedname>Dali::BaseSignal::mEmittingFlag</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Used to guard against nested <ref refid="classDali_1_1BaseSignal_1a0c1d7c5cebeb926efa030ce9d442af86" kindref="member">Emit()</ref> calls. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="412" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="412" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1BaseSignal_1a12cfe465ecd6fc499a56c6df40067f15" prot="private" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* Dali::BaseSignal::mSignalDeleted</definition>
+        <argsstring></argsstring>
+        <name>mSignalDeleted</name>
+        <qualifiedname>Dali::BaseSignal::mSignalDeleted</qualifiedname>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+<para>Used to guard against deletion during <ref refid="classDali_1_1BaseSignal_1a0c1d7c5cebeb926efa030ce9d442af86" kindref="member">Emit()</ref> calls. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="413" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="413" bodyend="413"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1aa0e0858babc1e0a3711c17a9aaf029ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseSignal::BaseSignal</definition>
+        <argsstring>()</argsstring>
+        <name>BaseSignal</name>
+        <qualifiedname>Dali::BaseSignal::BaseSignal</qualifiedname>
+        <briefdescription>
+<para>Constructor. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="89" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1ad9d5a4517c86bcfb66a127e5c9eb51c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseSignal::~BaseSignal</definition>
+        <argsstring>() override</argsstring>
+        <name>~BaseSignal</name>
+        <qualifiedname>Dali::BaseSignal::~BaseSignal</qualifiedname>
+        <briefdescription>
+<para>Virtual destructor. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="95" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="83" bodyend="117"/>
+        <references refid="structDali_1_1SignalConnectionNode_1aa0f736808b30c0edd45f645fb888e342" compoundref="signal-connection-pool_8h" startline="70">Dali::SignalConnectionNode::connection</references>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="classDali_1_1SignalConnection_1a9e91230a711c2bfaaa699bb39f1c79ab" compoundref="signal-slot-connections_8cpp" startline="36" endline="48">Dali::SignalConnection::Disconnect</references>
+        <references refid="classDali_1_1SignalConnectionPool_1af5737ae7962fa3866ffcb2348da50666" compoundref="signal-connection-pool_8h" startline="181" endline="184">Dali::SignalConnectionPool::GetFirstBlock</references>
+        <references refid="structDali_1_1SignalConnectionBlock_1a3e0a03e61e3506f2894891c910f29aa3" compoundref="signal-connection-pool_8h" startline="96" endline="99">Dali::SignalConnectionBlock::Slots</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1afdf65ca76a5e9a5f8c183338a036375d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::BaseSignal::Empty</definition>
+        <argsstring>() const</argsstring>
+        <name>Empty</name>
+        <qualifiedname>Dali::BaseSignal::Empty</qualifiedname>
+        <briefdescription>
+<para>Queries whether there are any connected slots. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>True if there are any slots connected to the signal. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="103" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="103" bodyend="106"/>
+        <referencedby refid="classDali_1_1SignalMixin_1ac1d247b2dbfa763086ede0f90d1e5753" compoundref="dali-signal_8h" startline="153" endline="156">Dali::SignalMixin::Empty</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a3b789126fe89e0181cee068c1589cd7b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::BaseSignal::GetConnectionCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetConnectionCount</name>
+        <qualifiedname>Dali::BaseSignal::GetConnectionCount</qualifiedname>
+        <briefdescription>
+<para>Queries the number of slots. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The number of slots connected to this signal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="114" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="114" bodyend="117"/>
+        <referencedby refid="classDali_1_1SignalMixin_1af732f37a8b4e4b78b0cd740c6a5f456e" compoundref="dali-signal_8h" startline="164" endline="167">Dali::SignalMixin::GetConnectionCount</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a0abfbcd1106c36fb8a158b375f9481e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Ret</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret Dali::BaseSignal::EmitReturn</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>EmitReturn</name>
+        <qualifiedname>Dali::BaseSignal::EmitReturn</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Emits a signal with parameter pack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.33 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter pack </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value returned by the last callback </para>
+</simplesect>
+<simplesect kind="pre"><para>Cannot be called from inside the same <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&apos;s Emit methods. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="162" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="162" bodyend="209"/>
+        <references refid="dali-common_8h_1a8307c745bd7563f824823fb05d2501af" compoundref="dali-common_8h" startline="91">DALI_UNLIKELY</references>
+        <references refid="structDali_1_1BaseSignal_1_1EmitGuard_1a1134de075ee109d5c3eda73a935b0e21" compoundref="base-signal_8cpp" startline="419" endline="423">Dali::BaseSignal::EmitGuard::ErrorOccurred</references>
+        <references refid="structDali_1_1BaseSignal_1_1EmitGuard_1a5e1760c0068df30b339e1a9ace85dcea" compoundref="base-signal_8h" startline="150">Dali::BaseSignal::EmitGuard::mFlag</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a071df9f7ace26e6e54a8fba8d27cb91a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Ret</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>Ret</type>
+        <definition>Ret Dali::BaseSignal::EmitReturnOr</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>EmitReturnOr</name>
+        <qualifiedname>Dali::BaseSignal::EmitReturnOr</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="212" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="212" bodyend="257"/>
+        <references refid="dali-common_8h_1a8307c745bd7563f824823fb05d2501af" compoundref="dali-common_8h" startline="91">DALI_UNLIKELY</references>
+        <references refid="structDali_1_1BaseSignal_1_1EmitGuard_1a1134de075ee109d5c3eda73a935b0e21" compoundref="base-signal_8cpp" startline="419" endline="423">Dali::BaseSignal::EmitGuard::ErrorOccurred</references>
+        <references refid="structDali_1_1BaseSignal_1_1EmitGuard_1a5e1760c0068df30b339e1a9ace85dcea" compoundref="base-signal_8h" startline="150">Dali::BaseSignal::EmitGuard::mFlag</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a0c1d7c5cebeb926efa030ce9d442af86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Dali::BaseSignal::Emit</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>Emit</name>
+        <qualifiedname>Dali::BaseSignal::Emit</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Emits a signal with parameter pack. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.33 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parameter pack </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Cannot be called from inside the same <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&apos;s Emit methods. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="267" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="267" bodyend="308"/>
+        <references refid="dali-common_8h_1a8307c745bd7563f824823fb05d2501af" compoundref="dali-common_8h" startline="91">DALI_UNLIKELY</references>
+        <references refid="structDali_1_1BaseSignal_1_1EmitGuard_1a1134de075ee109d5c3eda73a935b0e21" compoundref="base-signal_8cpp" startline="419" endline="423">Dali::BaseSignal::EmitGuard::ErrorOccurred</references>
+        <references refid="structDali_1_1BaseSignal_1_1EmitGuard_1a5e1760c0068df30b339e1a9ace85dcea" compoundref="base-signal_8h" startline="150">Dali::BaseSignal::EmitGuard::mFlag</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1aa90222aa00a85d7aa0c9e64cc0abc129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::OnConnect</definition>
+        <argsstring>(CallbackBase *callback)</argsstring>
+        <name>OnConnect</name>
+        <qualifiedname>Dali::BaseSignal::OnConnect</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Called by <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> implementations, when the user calls Signal.Connect( ... ). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A newly allocated callback object (takes ownership) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="318" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="119" bodyend="146"/>
+        <references refid="classDali_1_1SignalConnectionPool_1abb2d2f0388356724ea6b688c4358d5d3" compoundref="signal-connection-pool_8cpp" startline="139" endline="142">Dali::SignalConnectionPool::Allocate</references>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="classDali_1_1SignalConnectionPool_1a53ebfe2683e06201715ef27138c8b2bc" compoundref="signal-connection-pool_8h" startline="191" endline="194">Dali::SignalConnectionPool::GetBlockCount</references>
+        <references refid="structDali_1_1BaseSignal_1_1Impl_1a205aa4dd89ca0d56e21892182db0e300" compoundref="base-signal_8cpp" startline="78">Dali::BaseSignal::Impl::mCache</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a0d5955b36a343537d33b9e6809a2e9fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::OnDisconnect</definition>
+        <argsstring>(CallbackBase *callback)</argsstring>
+        <name>OnDisconnect</name>
+        <qualifiedname>Dali::BaseSignal::OnDisconnect</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Called by <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> implementations, when the user calls Signal.Disconnect( ... ). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A newly allocated callback object (takes ownership) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="326" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="148" bodyend="161"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a56196ce22c1162d4cbd3fc76d421bb5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::OnConnect</definition>
+        <argsstring>(ConnectionTrackerInterface *tracker, CallbackBase *callback)</argsstring>
+        <name>OnConnect</name>
+        <qualifiedname>Dali::BaseSignal::OnConnect</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref> *</type>
+          <declname>tracker</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Called by <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> implementations, when the user calls Signal.Connect( ... ). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tracker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The connection tracker </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A newly allocated callback object (takes ownership) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="335" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="163" bodyend="194"/>
+        <references refid="classDali_1_1SignalConnectionPool_1abb2d2f0388356724ea6b688c4358d5d3" compoundref="signal-connection-pool_8cpp" startline="139" endline="142">Dali::SignalConnectionPool::Allocate</references>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="classDali_1_1SignalConnectionPool_1a53ebfe2683e06201715ef27138c8b2bc" compoundref="signal-connection-pool_8h" startline="191" endline="194">Dali::SignalConnectionPool::GetBlockCount</references>
+        <references refid="structDali_1_1BaseSignal_1_1Impl_1a205aa4dd89ca0d56e21892182db0e300" compoundref="base-signal_8cpp" startline="78">Dali::BaseSignal::Impl::mCache</references>
+        <references refid="classDali_1_1ConnectionTrackerInterface_1aa9957b8de5cce75bbe3a88b8be073c18">Dali::ConnectionTrackerInterface::SignalConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a8e4b53432b7cf152cd2849724423ef31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::OnDisconnect</definition>
+        <argsstring>(ConnectionTrackerInterface *tracker, CallbackBase *callback)</argsstring>
+        <name>OnDisconnect</name>
+        <qualifiedname>Dali::BaseSignal::OnDisconnect</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref> *</type>
+          <declname>tracker</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Called by <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> implementations, when the user calls Signal.Disconnect( ... ). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tracker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The connection tracker </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A newly allocated callback object (takes ownership) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="344" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="196" bodyend="217"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="classDali_1_1SignalObserver_1ac2c1d6dadce870e454f92f0f22c21c73">Dali::SignalObserver::SignalDisconnected</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a2237fd2fb12c2644900bbb3048c4d49c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::SlotDisconnected</definition>
+        <argsstring>(CallbackBase *callback) override</argsstring>
+        <name>SlotDisconnected</name>
+        <qualifiedname>Dali::BaseSignal::SlotDisconnected</qualifiedname>
+        <reimplements refid="classDali_1_1SlotObserver_1aa33ad911bc35b720694495f02586ee3f">SlotDisconnected</reimplements>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>This method is called when the slot is disconnecting.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback attached to the signal disconnected   </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="350" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="220" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1acc8a2466c3342df1bf5f16d9bbf941a6" prot="private" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structDali_1_1SignalConnectionNode" kindref="compound">SignalConnectionNode</ref> *</type>
+        <definition>SignalConnectionNode * Dali::BaseSignal::FindCallback</definition>
+        <argsstring>(CallbackBase *callback) noexcept</argsstring>
+        <name>FindCallback</name>
+        <qualifiedname>Dali::BaseSignal::FindCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Helper to find whether a callback is connected. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.17 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The call back object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the <ref refid="structDali_1_1SignalConnectionNode" kindref="compound">SignalConnectionNode</ref>, or nullptr if not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="360" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="234" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1aa6fe1425ff27db4f7d320b0184473044" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::DeleteConnection</definition>
+        <argsstring>(SignalConnectionNode *node)</argsstring>
+        <name>DeleteConnection</name>
+        <qualifiedname>Dali::BaseSignal::DeleteConnection</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1SignalConnectionNode" kindref="compound">SignalConnectionNode</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Deletes a connection by node pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.17 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="structDali_1_1SignalConnectionNode" kindref="compound">SignalConnectionNode</ref> to delete </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="368" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="264" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1aabb936f998f01f10af54c55feb6034f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::CleanupConnections</definition>
+        <argsstring>()</argsstring>
+        <name>CleanupConnections</name>
+        <qualifiedname>Dali::BaseSignal::CleanupConnections</qualifiedname>
+        <briefdescription>
+<para>Helper to remove NULL items from pool, which is only safe at the end of <ref refid="classDali_1_1BaseSignal_1a0c1d7c5cebeb926efa030ce9d442af86" kindref="member">Emit()</ref> i.e. not from methods which can be called during a signal <ref refid="classDali_1_1BaseSignal_1a0c1d7c5cebeb926efa030ce9d442af86" kindref="member">Emit()</ref>, such as Disconnect(). @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="375" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="295" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a2b977ed81bc0dcc69200b27e1b63c1c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::EnsureCache</definition>
+        <argsstring>()</argsstring>
+        <name>EnsureCache</name>
+        <qualifiedname>Dali::BaseSignal::EnsureCache</qualifiedname>
+        <briefdescription>
+<para>Ensure the hash map cache exists and is populated (for large signals). @SINCE_2_5.17. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="381" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="371" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a2fd88b5202071c5177c4cb6ae9d39c54" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::AppendToEmitList</definition>
+        <argsstring>(SignalConnectionNode *node)</argsstring>
+        <name>AppendToEmitList</name>
+        <qualifiedname>Dali::BaseSignal::AppendToEmitList</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1SignalConnectionNode" kindref="compound">SignalConnectionNode</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Append a node to the tail of the emission-order linked list. @SINCE_2_5.17. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to append </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="388" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="323" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a0126968a0705ecb519028e12f88b3e4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseSignal::UnlinkFromEmitList</definition>
+        <argsstring>(SignalConnectionNode *node)</argsstring>
+        <name>UnlinkFromEmitList</name>
+        <qualifiedname>Dali::BaseSignal::UnlinkFromEmitList</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1SignalConnectionNode" kindref="compound">SignalConnectionNode</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Unlink a node from the emission-order linked list. @SINCE_2_5.17. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to unlink </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="395" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.cpp" bodystart="342" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a7c5453c0859759306bc6ff2855c2f14e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseSignal::BaseSignal</definition>
+        <argsstring>(const BaseSignal &amp;)=delete</argsstring>
+        <name>BaseSignal</name>
+        <qualifiedname>Dali::BaseSignal::BaseSignal</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor, signals don&apos;t support copying. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="397" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1ac52d5b35618405137be30b1547a950f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseSignal::BaseSignal</definition>
+        <argsstring>(BaseSignal &amp;&amp;)=delete</argsstring>
+        <name>BaseSignal</name>
+        <qualifiedname>Dali::BaseSignal::BaseSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor, signals don&apos;t support moving. @SINCE_1_9.25. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="398" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a6bc3c0353118cc1994594d484f66608a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref> &amp;</type>
+        <definition>BaseSignal &amp; Dali::BaseSignal::operator=</definition>
+        <argsstring>(const BaseSignal &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::BaseSignal::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="399" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseSignal_1a28d1c0835025c021d0322eab7d0c1504" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref> &amp;</type>
+        <definition>BaseSignal &amp; Dali::BaseSignal::operator=</definition>
+        <argsstring>(BaseSignal &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::BaseSignal::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator. @SINCE_1_9.25. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="400" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implementation class for <ref refid="classDali_1_1Signal" kindref="compound">Dali::Signal</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A slot can be connected to many signals A signal can be connected to many slots</para>
+<para>To provide automatic disconnection when either a signal or the object owning the slot dies, observers are used.</para>
+<para>A signal is an object with state. It holds a list of <ref refid="classDali_1_1SignalConnection" kindref="compound">SignalConnection</ref>s.</para>
+<para>E.g. <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> OnTouch. mSignalConnections contains <table rows="3" cols="2"><row>
+<entry thead="no"><para>Callback 0 </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> Observer 0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Callback 1 </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> Observer 1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Callback 2 </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> Observer 2  </para>
+</entry></row>
+</table>
+</para>
+<para>OnTouch.Emit() will run callbacks 0, 1 and 2.</para>
+<para>When the signal is destroyed. SignalDisconnected() is called on each <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> Observer.</para>
+<para>Slots are just static or member functions, so have no state. E.g. they can&apos;t keep track of how many signals they are connected to. If the object owning a slot dies, it must automatically be disconnected from all signals. If it doesn&apos;t disconnect and the signal is emitted, there will be a crash.</para>
+<para>To keep track of connections between slots and signals, a Connection tracker is used. It holds a list of SlotConnections.</para>
+<para><table rows="3" cols="2"><row>
+<entry thead="no"><para>Callback 0 </para>
+</entry><entry thead="no"><para>Slot Observer 0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Callback 1 </para>
+</entry><entry thead="no"><para>Slot Observer 1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Callback 2 </para>
+</entry><entry thead="no"><para>Slot Observer 2  </para>
+</entry></row>
+</table>
+</para>
+<para>When the connection tracker is destroyed, SlotDisconnected() is called on every slot observer ( signal ). Signals implement the Slot Observer interface, to be told when a slot has disconnected. Connection tracker implements the <ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> Observer interface, to be told when a signal has disconnected (died).</para>
+<para>@SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::BaseSignal</label>
+        <link refid="classDali_1_1BaseSignal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::SlotObserver</label>
+        <link refid="classDali_1_1SlotObserver"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::BaseSignal</label>
+        <link refid="classDali_1_1BaseSignal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::SlotObserver</label>
+        <link refid="classDali_1_1SlotObserver"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" line="82" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/base-signal.h" bodystart="83" bodyend="414"/>
+    <listofallmembers>
+      <member refid="classDali_1_1BaseSignal_1a2fd88b5202071c5177c4cb6ae9d39c54" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>AppendToEmitList</name></member>
+      <member refid="classDali_1_1BaseSignal_1aa0e0858babc1e0a3711c17a9aaf029ef" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>BaseSignal</name></member>
+      <member refid="classDali_1_1BaseSignal_1a7c5453c0859759306bc6ff2855c2f14e" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>BaseSignal</name></member>
+      <member refid="classDali_1_1BaseSignal_1ac52d5b35618405137be30b1547a950f7" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>BaseSignal</name></member>
+      <member refid="classDali_1_1BaseSignal_1aabb936f998f01f10af54c55feb6034f4" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>CleanupConnections</name></member>
+      <member refid="classDali_1_1BaseSignal_1aa6fe1425ff27db4f7d320b0184473044" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>DeleteConnection</name></member>
+      <member refid="classDali_1_1BaseSignal_1a0c1d7c5cebeb926efa030ce9d442af86" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>Emit</name></member>
+      <member refid="classDali_1_1BaseSignal_1a0abfbcd1106c36fb8a158b375f9481e6" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>EmitReturn</name></member>
+      <member refid="classDali_1_1BaseSignal_1a071df9f7ace26e6e54a8fba8d27cb91a" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>EmitReturnOr</name></member>
+      <member refid="classDali_1_1BaseSignal_1afdf65ca76a5e9a5f8c183338a036375d" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>Empty</name></member>
+      <member refid="classDali_1_1BaseSignal_1a2b977ed81bc0dcc69200b27e1b63c1c5" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>EnsureCache</name></member>
+      <member refid="classDali_1_1BaseSignal_1acc8a2466c3342df1bf5f16d9bbf941a6" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>FindCallback</name></member>
+      <member refid="classDali_1_1BaseSignal_1a3b789126fe89e0181cee068c1589cd7b" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>GetConnectionCount</name></member>
+      <member refid="classDali_1_1BaseSignal_1ae56329404d168aa25c8ca3e841018b2f" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mActiveCount</name></member>
+      <member refid="classDali_1_1BaseSignal_1abae7b98ef5d56a57b73bc8a78e0ac0d1" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mCacheImpl</name></member>
+      <member refid="classDali_1_1BaseSignal_1ac018bd2a5554c1769b68d2e493cf03be" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mEmitHead</name></member>
+      <member refid="classDali_1_1BaseSignal_1a3520dda797b165deecf23729aa00503a" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mEmitTail</name></member>
+      <member refid="classDali_1_1BaseSignal_1aad44774c4e78930d8677e2ce7864e319" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mEmittingFlag</name></member>
+      <member refid="classDali_1_1BaseSignal_1a2c25c5f92e8c3fa222a9152942fd3e4f" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mNullCount</name></member>
+      <member refid="classDali_1_1BaseSignal_1a5a90418eaed55095e668bf7e89a29d42" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mPool</name></member>
+      <member refid="classDali_1_1BaseSignal_1a12cfe465ecd6fc499a56c6df40067f15" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>mSignalDeleted</name></member>
+      <member refid="classDali_1_1BaseSignal_1aa90222aa00a85d7aa0c9e64cc0abc129" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>OnConnect</name></member>
+      <member refid="classDali_1_1BaseSignal_1a56196ce22c1162d4cbd3fc76d421bb5c" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>OnConnect</name></member>
+      <member refid="classDali_1_1BaseSignal_1a0d5955b36a343537d33b9e6809a2e9fc" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>OnDisconnect</name></member>
+      <member refid="classDali_1_1BaseSignal_1a8e4b53432b7cf152cd2849724423ef31" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>OnDisconnect</name></member>
+      <member refid="classDali_1_1BaseSignal_1a6bc3c0353118cc1994594d484f66608a" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseSignal_1a28d1c0835025c021d0322eab7d0c1504" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseSignal_1a2237fd2fb12c2644900bbb3048c4d49c" prot="private" virt="virtual"><scope>Dali::BaseSignal</scope><name>SlotDisconnected</name></member>
+      <member refid="classDali_1_1SlotObserver_1a2a7ff7b86bfb94cefb9a18f2e9e9cccd" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>SlotObserver</name></member>
+      <member refid="classDali_1_1BaseSignal_1a0126968a0705ecb519028e12f88b3e4d" prot="private" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>UnlinkFromEmitList</name></member>
+      <member refid="classDali_1_1BaseSignal_1ad9d5a4517c86bcfb66a127e5c9eb51c4" prot="public" virt="non-virtual"><scope>Dali::BaseSignal</scope><name>~BaseSignal</name></member>
+      <member refid="classDali_1_1SlotObserver_1a6e820b303556677191aa69eb2feddf85" prot="public" virt="virtual"><scope>Dali::BaseSignal</scope><name>~SlotObserver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

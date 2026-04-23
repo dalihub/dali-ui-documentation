@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="precompile-shader-option_8cpp" kind="file" language="C++">
+    <compoundname>precompile-shader-option.cpp</compoundname>
+    <includes refid="precompile-shader-option_8h" local="no">dali-ui-foundation/devel-api/visual-factory/precompile-shader-option.h</includes>
+    <includes local="no">dali/devel-api/scripting/enum-helper.h</includes>
+    <includes local="no">dali/integration-api/debug.h</includes>
+    <includes local="no">dali/integration-api/string-utils.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/visual-factory/precompile-shader-option.cpp</label>
+        <link refid="precompile-shader-option_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/devel-api/visual-factory/precompile-shader-option.h</label>
+        <link refid="precompile-shader-option_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/devel-api/common/vector-wrapper.h</label>
+      </node>
+      <node id="10">
+        <label>dali/devel-api/scripting/enum-helper.h</label>
+      </node>
+      <node id="11">
+        <label>dali/integration-api/debug.h</label>
+      </node>
+      <node id="12">
+        <label>dali/integration-api/string-utils.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/property-map.h</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>string_view</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="precompile-shader-option_8h" kindref="compound">dali-ui-foundation/devel-api/visual-factory/precompile-shader-option.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/devel-api/scripting/enum-helper.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/debug.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/string-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::GetStdString;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToPropertyValue;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TYPE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE(</highlight><highlight class="stringliteral">&quot;shaderType&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE_IMAGE(</highlight><highlight class="stringliteral">&quot;image&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE_TEXT(</highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE_COLOR(</highlight><highlight class="stringliteral">&quot;color&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE_MODEL_3D(</highlight><highlight class="stringliteral">&quot;3d&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE_NPATCH(</highlight><highlight class="stringliteral">&quot;npatch&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_TYPE_CUSTOM(</highlight><highlight class="stringliteral">&quot;custom&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OPTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION(</highlight><highlight class="stringliteral">&quot;shaderOption&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_ROUNDED_CORNER(</highlight><highlight class="stringliteral">&quot;ROUNDED_CORNER&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_SQUIRCLE_CORNER(</highlight><highlight class="stringliteral">&quot;SQUIRCLE_CORNER&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_BORDERLINE(</highlight><highlight class="stringliteral">&quot;BORDERLINE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_BLUR_EDGE(</highlight><highlight class="stringliteral">&quot;BLUR_EDGE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_CUTOUT(</highlight><highlight class="stringliteral">&quot;CUTOUT&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_MASKING(</highlight><highlight class="stringliteral">&quot;MASKING&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_YUV_TO_RGB(</highlight><highlight class="stringliteral">&quot;YUV_TO_RGB&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_YUV_AND_RGB(</highlight><highlight class="stringliteral">&quot;YUV_AND_RGB&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_MULTI_COLOR(</highlight><highlight class="stringliteral">&quot;MULTI_COLOR&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_STYLES(</highlight><highlight class="stringliteral">&quot;STYLES&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_OVERLAY(</highlight><highlight class="stringliteral">&quot;OVERLAY&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_EMOJI(</highlight><highlight class="stringliteral">&quot;EMOJI&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_EMBOSS(</highlight><highlight class="stringliteral">&quot;EMBOSS&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_STRETCH_X(</highlight><highlight class="stringliteral">&quot;xStretchCount&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_OPTION_STRETCH_Y(</highlight><highlight class="stringliteral">&quot;yStretchCount&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CUSTOM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_CUSTOM_VERTEX(</highlight><highlight class="stringliteral">&quot;vertexShader&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_CUSTOM_FRAMENT(</highlight><highlight class="stringliteral">&quot;fragmentShader&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>TOKEN_CUSTOM_NAME(</highlight><highlight class="stringliteral">&quot;shaderName&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/>String<sp/>to<sp/>enum<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">DALI_ENUM_TO_STRING_TABLE_BEGIN(SHADER_TYPE)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>{TOKEN_TYPE_IMAGE,<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a23a12f67f614b5518c7f1c2465bf95e3" kindref="member">Dali::Ui::PrecompileShaderOption::ShaderType::IMAGE</ref>)},</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>{TOKEN_TYPE_TEXT,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a61a96ffcb251bb9bf0abf8fec19d0ea8" kindref="member">Dali::Ui::PrecompileShaderOption::ShaderType::TEXT</ref>)},</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>{TOKEN_TYPE_COLOR,<sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a04bd834032febb3fda8c6936ee140949" kindref="member">Dali::Ui::PrecompileShaderOption::ShaderType::COLOR</ref>)},</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>{TOKEN_TYPE_MODEL_3D,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a8a5de90fcda535d5ed16f5925e71571f" kindref="member">Dali::Ui::PrecompileShaderOption::ShaderType::MODEL_3D</ref>)},</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>{TOKEN_TYPE_NPATCH,<sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a745e32dd46b7b7fa6075e0010fff9733" kindref="member">Dali::Ui::PrecompileShaderOption::ShaderType::NPATCH</ref>)},</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>{TOKEN_TYPE_CUSTOM,<sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a72baef04098f035e8a320b03ad197818" kindref="member">Dali::Ui::PrecompileShaderOption::ShaderType::CUSTOM</ref>)},</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">DALI_ENUM_TO_STRING_TABLE_END(SHADER_TYPE);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">DALI_ENUM_TO_STRING_TABLE_BEGIN(SHADER_OPTION_FLAG)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_ROUNDED_CORNER,<sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a149e252d1049802b8133d5ce3eaef66c" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::ROUNDED_CORNER</ref>)},</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_SQUIRCLE_CORNER,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a45d10a65fcf1cfd42179d7071ecb1e87" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::SQUIRCLE_CORNER</ref>)},</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_BORDERLINE,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a261e11aaa6cfb87e1dbb087628019bd6" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::BORDERLINE</ref>)},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_BLUR_EDGE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a983319a27d667b681c56c3f40a13e064" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::BLUR_EDGE</ref>)},</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_CUTOUT,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a68a58e6f616a803e0fb6dcbb29d83673" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::CUTOUT</ref>)},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_MASKING,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a05d5605927ab58b2988831b77509966a" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::MASKING</ref>)},</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_YUV_TO_RGB,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a343c5ccafc35c777af478653db9f9f34" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::YUV_TO_RGB</ref>)},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_YUV_AND_RGB,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a4cde4e7e69891164776c30c03d34e6cc" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::YUV_AND_RGB</ref>)},</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_MULTI_COLOR,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a40dac89fa1cfd34bcef131fdde717322" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::MULTI_COLOR</ref>)},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_STYLES,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4acccf23c84c66078e81759742c8785ae4" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::STYLES</ref>)},</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_OVERLAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a0395ef37aaf2724781e56e74c9cca583" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::OVERLAY</ref>)},</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_EMOJI,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a3d5a8e602b2db6ec81688075668247f5" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::EMOJI</ref>)},</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>{TOKEN_OPTION_EMBOSS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">int32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a08842de59172665df4c091c759d0539d" kindref="member">Dali::Ui::PrecompileShaderOption::Flag::EMBOSS</ref>)},</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">DALI_ENUM_TO_STRING_TABLE_END(SHADER_OPTION_FLAG);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1aa1027904aed7dadee0bc0053a4bd5fe2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1aa1027904aed7dadee0bc0053a4bd5fe2" kindref="member">PrecompileShaderOption::PrecompileShaderOption</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>shaderOption)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">:<sp/>mShaderType(<ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132" kindref="member">ShaderType</ref>::<ref refid="namespaceDali_1_1Ui_1a537f70f46ca52cf3b1a09c31975e5527a0c1b809ede9ec31322332f168bf75bd4" kindref="member">UNKNOWN</ref>),</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>mShaderOptions(),</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>mShaderName(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>mVertexShader(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>mFragmentShader(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>mNpatchXStretchCount(0),</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>mNpatchYStretchCount(0)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1ab103a0cc3ab4188d3b59f06c29107dd7" kindref="member">ConvertShaderMap</ref>(shaderOption);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1ab103a0cc3ab4188d3b59f06c29107dd7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1ab103a0cc3ab4188d3b59f06c29107dd7" kindref="member">PrecompileShaderOption::ConvertShaderMap</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>shaderOption)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>shaderIdx<sp/>=<sp/>0;<sp/>shaderIdx<sp/>&lt;<sp/>shaderOption.Count();<sp/>++shaderIdx)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyValuePair<sp/>pair(shaderOption.GetKeyValue(shaderIdx));</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pair.first.type<sp/>==<sp/>Property::Key::INDEX)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>We<sp/>don&apos;t<sp/>consider<sp/>index<sp/>keys.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/><sp/><sp/><sp/>key(pair.first.stringKey);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Value&amp;<sp/>value(pair.second);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_TYPE)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!GetEnumerationProperty(value,<sp/>SHADER_TYPE_TABLE,<sp/>SHADER_TYPE_TABLE_COUNT,<sp/>mShaderType)<sp/>||</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mShaderType<sp/>==<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">ShaderType::UNKNOWN</ref>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>find<sp/>proper<sp/>type[%s]\n&quot;</highlight><highlight class="normal">,<sp/>value.Get&lt;Dali::String&gt;().CStr());</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_OPTION)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Property::Map<sp/>optionMap<sp/>=<sp/>value.Get&lt;Property::Map&gt;();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>optionMapIdx<sp/>=<sp/>0;<sp/>optionMapIdx<sp/>&lt;<sp/>optionMap.Count();<sp/>++optionMapIdx)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyValuePair<sp/>optionPair(optionMap.GetKeyValue(optionMapIdx));</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(optionPair.first.type<sp/>==<sp/>Property::Key::INDEX)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>We<sp/>don&apos;t<sp/>consider<sp/>index<sp/>keys.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4" kindref="member">Flag</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flag<sp/>=<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">Flag::UNKNOWN</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>optionKey(optionPair.first.stringKey);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(GetEnumeration(optionKey.CStr(),<sp/>SHADER_OPTION_FLAG_TABLE,<sp/>SHADER_OPTION_FLAG_TABLE_COUNT,<sp/>flag)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flag<sp/>!=<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3200c8fd479fec09b4cdaf77945a1fa4a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">Flag::UNKNOWN</ref>)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(optionPair.second.Get&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;())</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mShaderOptions.push_back(flag);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>find<sp/>this<sp/>flag[%s]\n&quot;</highlight><highlight class="normal">,<sp/>optionKey.CStr());</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_CUSTOM_VERTEX)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value.GetType()<sp/>==<sp/>Property::STRING)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStdString(value,<sp/>mVertexShader);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_CUSTOM_FRAMENT)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value.GetType()<sp/>==<sp/>Property::STRING)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStdString(value,<sp/>mFragmentShader);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_CUSTOM_NAME)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value.GetType()<sp/>==<sp/>Property::STRING)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetStdString(value,<sp/>mShaderName);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_OPTION_STRETCH_X)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value.GetType()<sp/>==<sp/>Property::INTEGER)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mNpatchXStretchCount<sp/>=<sp/>value.Get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/>TOKEN_OPTION_STRETCH_Y)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value.GetType()<sp/>==<sp/>Property::INTEGER)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mNpatchYStretchCount<sp/>=<sp/>value.Get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3a3a431187eee81e7011b41ddb1639f5" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a8b50b6c587fc4026d9873614713d7132" kindref="member">PrecompileShaderOption::ShaderType</ref><sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a3a3a431187eee81e7011b41ddb1639f5" kindref="member">PrecompileShaderOption::GetShaderType</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="198"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mShaderType;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1aeff3f8870de3f5704c7fc631d89d9236" refkind="member"><highlight class="normal">std::vector&lt;PrecompileShaderOption::Flag&gt;<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1aeff3f8870de3f5704c7fc631d89d9236" kindref="member">PrecompileShaderOption::GetShaderOptions</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="203"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mShaderOptions;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1aaa5a85c8a81e7d51a9c86a5288306567" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1aaa5a85c8a81e7d51a9c86a5288306567" kindref="member">PrecompileShaderOption::GetShaderName</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="208"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mShaderName;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a2c0cbb4e66ceab62ff499c3d8fac2b44" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a2c0cbb4e66ceab62ff499c3d8fac2b44" kindref="member">PrecompileShaderOption::GetVertexShader</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="213"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mVertexShader;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1ae8e22e7391de36904190d6efbeb986f6" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1ae8e22e7391de36904190d6efbeb986f6" kindref="member">PrecompileShaderOption::GetFragmentShader</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="218"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mFragmentShader;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a1639dabf700a57a01bc5796ba10d82df" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a1639dabf700a57a01bc5796ba10d82df" kindref="member">PrecompileShaderOption::GetNpatchXStretchCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="223"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mNpatchXStretchCount;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a02d584d4d9f844ce588c2b49e262db93" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Ui_1_1PrecompileShaderOption_1a02d584d4d9f844ce588c2b49e262db93" kindref="member">PrecompileShaderOption::GetNpatchYStretchCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="228"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mNpatchYStretchCount;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/visual-factory/precompile-shader-option.cpp"/>
+  </compounddef>
+</doxygen>

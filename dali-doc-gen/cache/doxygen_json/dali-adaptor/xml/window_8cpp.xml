@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="window_8cpp" kind="file" language="C++">
+    <compoundname>window.cpp</compoundname>
+    <includes refid="window_8h" local="no">dali/public-api/adaptor-framework/window.h</includes>
+    <includes local="no">dali/integration-api/debug.h</includes>
+    <includes local="no">dali/integration-api/string-utils.h</includes>
+    <includes local="no">dali/public-api/render-tasks/render-task-list.h</includes>
+    <includes local="no">dali/internal/window-system/common/orientation-impl.h</includes>
+    <includes local="no">dali/internal/window-system/common/window-impl.h</includes>
+    <includes local="no">dali/public-api/actors/actor.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>dali/public-api/adaptor-framework/window-data.h</label>
+        <link refid="window-data_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/adaptor-framework/window-enumerations.h</label>
+        <link refid="window-enumerations_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/window.cpp</label>
+        <link refid="window_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/adaptor-framework/window.h</label>
+        <link refid="window_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>dali/integration-api/debug.h</label>
+      </node>
+      <node id="19">
+        <label>dali/integration-api/string-utils.h</label>
+      </node>
+      <node id="21">
+        <label>dali/internal/window-system/common/orientation-impl.h</label>
+      </node>
+      <node id="22">
+        <label>dali/internal/window-system/common/window-impl.h</label>
+      </node>
+      <node id="23">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/common/unique-ptr.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/math/int-pair.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/math/rect.h</label>
+      </node>
+      <node id="12">
+        <label>dali/public-api/math/uint-16-pair.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="14">
+        <label>dali/public-api/math/vector4.h</label>
+      </node>
+      <node id="15">
+        <label>dali/public-api/object/any.h</label>
+      </node>
+      <node id="16">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="20">
+        <label>dali/public-api/render-tasks/render-task-list.h</label>
+      </node>
+      <node id="17">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+      <node id="7">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="window_8h" kindref="compound">dali/public-api/adaptor-framework/window.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/debug.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/string-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/render-tasks/render-task-list.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/window-system/common/orientation-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/window-system/common/window-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/actors/actor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToDaliString;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToStdString;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1Window_1a926f6576af47284585b4018704c67345" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window" kindref="compound">Window</ref><sp/><ref refid="classDali_1_1Window_1a926f6576af47284585b4018704c67345" kindref="member">Window::New</ref>(<ref refid="group__dali__adaptor__framework_1gaf7230637d9ef067424cef8f36354e3de" kindref="member">PositionSize</ref><sp/>posSize,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isTransparent)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1WindowData" kindref="compound">WindowData</ref><sp/>windowData;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>windowData.<ref refid="classDali_1_1WindowData_1afd981160fc3a3600442d671eb09cf7b4" kindref="member">SetPositionSize</ref>(posSize);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>windowData.<ref refid="classDali_1_1WindowData_1a03c1c7187a2e6dc88576c145187efd62" kindref="member">SetTransparency</ref>(isTransparent);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>windowData.<ref refid="classDali_1_1WindowData_1ae54e80791bf9ef19835cad0476cdd18b" kindref="member">SetWindowType</ref>(<ref refid="namespaceDali_1a04a00400170ec99f7a768a350496b0bca1e23852820b9154316c7c06e2b7ba051" kindref="member">WindowType::NORMAL</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a926f6576af47284585b4018704c67345" kindref="member">Dali::Window::New</ref>(name,<sp/>String(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">),<sp/>windowData);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classDali_1_1Window_1a3e6720cfa9843fb179ea5187af77d14b" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window" kindref="compound">Window</ref><sp/><ref refid="classDali_1_1Window_1a926f6576af47284585b4018704c67345" kindref="member">Window::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>className,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WindowData" kindref="compound">WindowData</ref>&amp;<sp/>windowData)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Window" kindref="compound">Window</ref><sp/>newWindow;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAdaptorAvailable<sp/>=<sp/><ref refid="classDali_1_1Adaptor_1ad10ea884fef5da0d7b903c6de68737ad" kindref="member">Dali::Adaptor::IsAvailable</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isNewWindowAllowed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isAdaptorAvailable)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Adaptor" kindref="compound">Dali::Adaptor</ref>&amp;<sp/>adaptor<sp/>=<sp/>Internal::Adaptor::Adaptor::Get();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>isNewWindowAllowed<sp/><sp/><sp/><sp/><sp/>=<sp/>Internal::Adaptor::Adaptor::GetImplementation(adaptor).IsMultipleWindowSupported();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isNewWindowAllowed)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Any<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>surface;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Internal::Adaptor::Window*<sp/>window<sp/>=<sp/>Internal::Adaptor::Window::New(surface,<sp/>ToStdString(name),<sp/>ToStdString(className),<sp/>windowData,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">Integration::SceneHolder</ref><sp/>sceneHolder<sp/>=<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">Integration::SceneHolder</ref>(window);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isAdaptorAvailable)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Adaptor" kindref="compound">Dali::Adaptor</ref>&amp;<sp/>adaptor<sp/>=<sp/>Internal::Adaptor::Adaptor::Get();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Internal::Adaptor::Adaptor::GetImplementation(adaptor).AddWindow(sceneHolder);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>newWindow<sp/>=<sp/><ref refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" kindref="member">Window</ref>(window);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;This<sp/>device<sp/>can&apos;t<sp/>support<sp/>multiple<sp/>windows.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newWindow;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" kindref="member">Window::Window</ref>()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classDali_1_1Window_1a826f4899e4671e9d28e4d29dd605ea7d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1a826f4899e4671e9d28e4d29dd605ea7d" kindref="member">Window::~Window</ref>()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" kindref="member">Window::Window</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window" kindref="compound">Window</ref>&amp;<sp/>copy)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="classDali_1_1Window" kindref="compound">Window</ref>&amp;<sp/><ref refid="classDali_1_1Window_1acddb9056370e83c5454ee6db99c5d4cb" kindref="member">Window::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window" kindref="compound">Window</ref>&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" kindref="member">Window::Window</ref>(<ref refid="classDali_1_1Window" kindref="compound">Window</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="classDali_1_1Window" kindref="compound">Window</ref>&amp;<sp/><ref refid="classDali_1_1Window_1acddb9056370e83c5454ee6db99c5d4cb" kindref="member">Window::operator=</ref>(<ref refid="classDali_1_1Window" kindref="compound">Window</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classDali_1_1Window_1ac5465bb9a25a0cd84ad6cfd3e68ab58d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window" kindref="compound">Window</ref><sp/><ref refid="classDali_1_1Window_1ac5465bb9a25a0cd84ad6cfd3e68ab58d" kindref="member">Window::DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" kindref="member">Window</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Dali::Internal::Adaptor::Window*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.GetObjectPtr()));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classDali_1_1Window_1ae4ae1b7ecc7fc14c6982201a9b69378d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1ae4ae1b7ecc7fc14c6982201a9b69378d" kindref="member">Window::Add</ref>(Dali::Actor<sp/>actor)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1afd41400e9abbaf8e2bc09deb28ff4369" kindref="member">Add</ref>(actor);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classDali_1_1Window_1a15cf196745aef8f8d96dba6e5a1f9779" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a15cf196745aef8f8d96dba6e5a1f9779" kindref="member">Window::Remove</ref>(Dali::Actor<sp/>actor)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1aa48575ab0e3e811de5f9862915bbab06" kindref="member">Remove</ref>(actor);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classDali_1_1Window_1af71584ba48c5153230ffbc9416400131" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1af71584ba48c5153230ffbc9416400131" kindref="member">Window::SetBackgroundColor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>color)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a451db802674fe433b11bac0e67f877b9" kindref="member">SetBackgroundColor</ref>(color);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classDali_1_1Window_1ae5e170e1372127269e00f2a5e0ca0902" refkind="member"><highlight class="normal">Vector4<sp/><ref refid="classDali_1_1Window_1ae5e170e1372127269e00f2a5e0ca0902" kindref="member">Window::GetBackgroundColor</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="117"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a7499217749dfd32ddd00db84368a17ae" kindref="member">GetBackgroundColor</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classDali_1_1Window_1ae7f77550cfcf5f9fd1b2aa6f309afad3" refkind="member"><highlight class="normal">Layer<sp/><ref refid="classDali_1_1Window_1ae7f77550cfcf5f9fd1b2aa6f309afad3" kindref="member">Window::GetRootLayer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="122"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a82ad5739f8597bc10f209e80e82d9b98" kindref="member">GetRootLayer</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classDali_1_1Window_1a8305148e9362b714dfbebe01fc5e8d99" refkind="member"><highlight class="normal">Layer<sp/><ref refid="classDali_1_1Window_1a8305148e9362b714dfbebe01fc5e8d99" kindref="member">Window::GetOverlayLayer</ref>()</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a5b085dea0d876fd8e7bfa248b5e24aeb" kindref="member">GetOverlayLayer</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classDali_1_1Window_1a2ed339d177f94821db823377a17dc02b" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Window_1a2ed339d177f94821db823377a17dc02b" kindref="member">Window::GetLayerCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="132"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetLayerCount();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classDali_1_1Window_1a515afa332dba71335edf2a95df9213d3" refkind="member"><highlight class="normal">Layer<sp/><ref refid="classDali_1_1Window_1a515afa332dba71335edf2a95df9213d3" kindref="member">Window::GetLayer</ref>(uint32_t<sp/>depth)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="137"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetLayer(depth);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classDali_1_1Window_1a406a72942620a831cbe9837c22f27adb" refkind="member"><highlight class="normal">Uint16Pair<sp/><ref refid="classDali_1_1Window_1a406a72942620a831cbe9837c22f27adb" kindref="member">Window::GetDpi</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="142"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a4e1c8be8078857e335d96c7d0adbc03c" kindref="member">GetDpi</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classDali_1_1Window_1aeef4ff32d4445b34dbd0adf74f02cdbb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1aeef4ff32d4445b34dbd0adf74f02cdbb" kindref="member">Window::SetClass</ref>(Dali::String<sp/>name,<sp/>Dali::String<sp/>klass)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetClass(ToStdString(name),<sp/>ToStdString(klass));</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="classDali_1_1Window_1ac567352094ad0b11b52f050cd4d793aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1ac567352094ad0b11b52f050cd4d793aa" kindref="member">Window::Raise</ref>()</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Raise();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classDali_1_1Window_1aec16151247a247af0560f42b41646d71" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1aec16151247a247af0560f42b41646d71" kindref="member">Window::Lower</ref>()</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Lower();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="classDali_1_1Window_1adac09064e039d714a6e077ec840ce33e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1adac09064e039d714a6e077ec840ce33e" kindref="member">Window::Activate</ref>()</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Activate();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classDali_1_1Window_1aa4405199d18803049631d65198f4bd37" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1aa4405199d18803049631d65198f4bd37" kindref="member">Window::AddAvailableOrientation</ref>(<ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref><sp/>orientation)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).AddAvailableOrientation(orientation);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classDali_1_1Window_1aecb995ae01196f8a72218154dc82c07a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1aecb995ae01196f8a72218154dc82c07a" kindref="member">Window::RemoveAvailableOrientation</ref>(<ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref><sp/>orientation)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).RemoveAvailableOrientation(orientation);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="classDali_1_1Window_1abd4f9e716a6b207aa9011ae724049fe5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1abd4f9e716a6b207aa9011ae724049fe5" kindref="member">Window::SetPreferredOrientation</ref>(<ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref><sp/>orientation)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetPreferredOrientation(orientation);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="classDali_1_1Window_1a7f0b3201342736a14bb3a0f34d0f8ddf" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a025b4da60818101c236d3afc2c0dfbe6" kindref="member">WindowOrientation</ref><sp/><ref refid="classDali_1_1Window_1a7f0b3201342736a14bb3a0f34d0f8ddf" kindref="member">Window::GetPreferredOrientation</ref>()</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetPreferredOrientation();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="classDali_1_1Window_1ad13b8ed6d760bf6ee760d46712b373b2" refkind="member"><highlight class="normal">Any<sp/><ref refid="classDali_1_1Window_1ad13b8ed6d760bf6ee760d46712b373b2" kindref="member">Window::GetNativeHandle</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="187"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1ae8712f2f9c1b7b493b9c2c1ec8b0c47e" kindref="member">GetNativeHandle</ref>();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="classDali_1_1Window_1a75e0dddcff94792c6cba815885d3425a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1a7187fd5b12736855ba9b8efbc806a5f9" kindref="member">Window::FocusChangeSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Window_1a75e0dddcff94792c6cba815885d3425a" kindref="member">Window::FocusChangeSignal</ref>()</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).FocusChangeSignal();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="classDali_1_1Window_1a96fbc7323c74370f94279474abcd7d68" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a96fbc7323c74370f94279474abcd7d68" kindref="member">Window::SetAcceptFocus</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>accept)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetAcceptFocus(accept);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="classDali_1_1Window_1a6311909feecb3c47cb62575f68fdcab4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a6311909feecb3c47cb62575f68fdcab4" kindref="member">Window::IsFocusAcceptable</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="202"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).IsFocusAcceptable();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="classDali_1_1Window_1a0a60dfe0586317b5bf176d12ffa53550" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a0a60dfe0586317b5bf176d12ffa53550" kindref="member">Window::Show</ref>()</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Show();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="classDali_1_1Window_1af4862f533470c59283c5d6baa0a2d036" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1af4862f533470c59283c5d6baa0a2d036" kindref="member">Window::Hide</ref>()</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Hide();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="classDali_1_1Window_1afd50ff1981f3d16f906f0e12c2a1586d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1afd50ff1981f3d16f906f0e12c2a1586d" kindref="member">Window::IsVisible</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="217"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1af79206fa6c85657b4bac3b498d90ffe6" kindref="member">IsVisible</ref>();</highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="classDali_1_1Window_1afaf1b19dcce62e694340ff4f9caf4a50" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1afaf1b19dcce62e694340ff4f9caf4a50" kindref="member">Window::GetSupportedAuxiliaryHintCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="222"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetSupportedAuxiliaryHintCount();</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="classDali_1_1Window_1aa7cac59691b8b765c4d34b3a6feed1c9" refkind="member"><highlight class="normal">Dali::String<sp/><ref refid="classDali_1_1Window_1aa7cac59691b8b765c4d34b3a6feed1c9" kindref="member">Window::GetSupportedAuxiliaryHint</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="227"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ToDaliString(<ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetSupportedAuxiliaryHint(index));</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="classDali_1_1Window_1a5c189f01c548fa7ca9aec4d4a487081b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a5c189f01c548fa7ca9aec4d4a487081b" kindref="member">Window::AddAuxiliaryHint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>hint,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).AddAuxiliaryHint(ToStdString(hint),<sp/>ToStdString(value));</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="classDali_1_1Window_1a6c474ee5597ea4caee260970a15a94f3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a6c474ee5597ea4caee260970a15a94f3" kindref="member">Window::RemoveAuxiliaryHint</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).RemoveAuxiliaryHint(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241" refid="classDali_1_1Window_1af035c7b065a0f57bedfb511a394194cf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1af035c7b065a0f57bedfb511a394194cf" kindref="member">Window::SetAuxiliaryHintValue</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetAuxiliaryHintValue(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>ToStdString(value));</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="classDali_1_1Window_1a0062031e09d39126fd77622185128b39" refkind="member"><highlight class="normal">Dali::String<sp/><ref refid="classDali_1_1Window_1a0062031e09d39126fd77622185128b39" kindref="member">Window::GetAuxiliaryHintValue</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="247"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ToDaliString(<ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetAuxiliaryHintValue(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="classDali_1_1Window_1ad99d9175db3fda05dfdd1e7da8a08ddd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1ad99d9175db3fda05dfdd1e7da8a08ddd" kindref="member">Window::GetAuxiliaryHintId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>hint)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="252"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetAuxiliaryHintId(ToStdString(hint));</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="classDali_1_1Window_1a6ccea3e3cbfb66dea77e9f94f2de885f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a6ccea3e3cbfb66dea77e9f94f2de885f" kindref="member">Window::SetInputRegion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rect&lt;int&gt;&amp;<sp/>inputRegion)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetInputRegion(inputRegion);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="classDali_1_1Window_1a34c8f39353e47fc19acde6cb0c36e422" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a34c8f39353e47fc19acde6cb0c36e422" kindref="member">Window::SetType</ref>(<ref refid="namespaceDali_1a04a00400170ec99f7a768a350496b0bc" kindref="member">WindowType</ref><sp/>type)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetType(type);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="classDali_1_1Window_1a267c476c2a83b89df8b70dc256dea7b1" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a04a00400170ec99f7a768a350496b0bc" kindref="member">WindowType</ref><sp/><ref refid="classDali_1_1Window_1a267c476c2a83b89df8b70dc256dea7b1" kindref="member">Window::GetType</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="267"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetType();</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="classDali_1_1Window_1a3fd9cffe81fd7cf62f5db86e5422ab5c" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a64bb94e97617456b86112633fd8125db" kindref="member">WindowOperationResult</ref><sp/><ref refid="classDali_1_1Window_1a3fd9cffe81fd7cf62f5db86e5422ab5c" kindref="member">Window::SetNotificationLevel</ref>(<ref refid="namespaceDali_1a4038c9221b976455bd8e78c4800d26f0" kindref="member">WindowNotificationLevel</ref><sp/>level)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetNotificationLevel(level);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="classDali_1_1Window_1ad16ef1af81b973e92b7f869052863be3" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a4038c9221b976455bd8e78c4800d26f0" kindref="member">WindowNotificationLevel</ref><sp/><ref refid="classDali_1_1Window_1ad16ef1af81b973e92b7f869052863be3" kindref="member">Window::GetNotificationLevel</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="277"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetNotificationLevel();</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="classDali_1_1Window_1a2d5dd935b49b06b5262140b162eba7be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a2d5dd935b49b06b5262140b162eba7be" kindref="member">Window::SetOpaqueState</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>opaque)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetOpaqueState(opaque);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286" refid="classDali_1_1Window_1afb7888e8a04193be728906790d30b2fb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1afb7888e8a04193be728906790d30b2fb" kindref="member">Window::IsOpaqueState</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="287"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).IsOpaqueState();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291" refid="classDali_1_1Window_1a0b9cc7c489b1ae44d504ce2b3fa5718c" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a64bb94e97617456b86112633fd8125db" kindref="member">WindowOperationResult</ref><sp/><ref refid="classDali_1_1Window_1a0b9cc7c489b1ae44d504ce2b3fa5718c" kindref="member">Window::SetScreenOffMode</ref>(<ref refid="namespaceDali_1a88fed66cae17af1d4b35d9404596a7f9" kindref="member">WindowScreenOffMode</ref><sp/>screenMode)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetScreenOffMode(screenMode);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="classDali_1_1Window_1a30dd09d021ae5cbf2b7eda5179ced53f" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a88fed66cae17af1d4b35d9404596a7f9" kindref="member">WindowScreenOffMode</ref><sp/><ref refid="classDali_1_1Window_1a30dd09d021ae5cbf2b7eda5179ced53f" kindref="member">Window::GetScreenOffMode</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="297"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetScreenOffMode();</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301" refid="classDali_1_1Window_1a52d3efbbb3d8a49f04d5ac146db99ff1" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a64bb94e97617456b86112633fd8125db" kindref="member">WindowOperationResult</ref><sp/><ref refid="classDali_1_1Window_1a52d3efbbb3d8a49f04d5ac146db99ff1" kindref="member">Window::SetBrightness</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>brightness)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetBrightness(brightness);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="classDali_1_1Window_1af9fdf7321bc0d797a4eeb8eecb70d0b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1af9fdf7321bc0d797a4eeb8eecb70d0b2" kindref="member">Window::GetBrightness</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="307"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetBrightness();</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311" refid="classDali_1_1Window_1a5d38801a9e77a4cabcc3a79d79586364" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1ab8f19826a902a252df49194700743a3b" kindref="member">Window::ResizeSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Window_1a5d38801a9e77a4cabcc3a79d79586364" kindref="member">Window::ResizeSignal</ref>()</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).ResizeSignal();</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316" refid="classDali_1_1Window_1a708b58d35ed98b83e1e918e24f8c6127" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a708b58d35ed98b83e1e918e24f8c6127" kindref="member">Window::SetSize</ref>(<ref refid="classDali_1_1Window_1a697af22f386098e565adb097b166beac" kindref="member">Window::WindowSize</ref><sp/>size)</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetSize(size);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321" refid="classDali_1_1Window_1a34982fe214039bd4842cb856b1dd4f83" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1a697af22f386098e565adb097b166beac" kindref="member">Window::WindowSize</ref><sp/><ref refid="classDali_1_1Window_1a34982fe214039bd4842cb856b1dd4f83" kindref="member">Window::GetSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="322"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetSize();</highlight></codeline>
+<codeline lineno="324"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326" refid="classDali_1_1Window_1a39b88cf7086db6ff00000e55db547836" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a39b88cf7086db6ff00000e55db547836" kindref="member">Window::SetPosition</ref>(<ref refid="classDali_1_1Window_1a2c8c930aef5e95037d1b51f8022c1056" kindref="member">Dali::Window::WindowPosition</ref><sp/>position)</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetPosition(position);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331" refid="classDali_1_1Window_1af01878b287deaed32103e2e0ec609be2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1a2c8c930aef5e95037d1b51f8022c1056" kindref="member">Dali::Window::WindowPosition</ref><sp/><ref refid="classDali_1_1Window_1af01878b287deaed32103e2e0ec609be2" kindref="member">Window::GetPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="332"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetPosition();</highlight></codeline>
+<codeline lineno="334"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336" refid="classDali_1_1Window_1a20f6cd802a1549e5de1b16f0ec2419f9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a20f6cd802a1549e5de1b16f0ec2419f9" kindref="member">Window::SetLayout</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCols,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numRows,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>column,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>colSpan,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowSpan)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetLayout(numCols,<sp/>numRows,<sp/>column,<sp/>row,<sp/>colSpan,<sp/>rowSpan);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="classDali_1_1Window_1ae4d3e079468904f756cd10b8ac14a67d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1ae4d3e079468904f756cd10b8ac14a67d" kindref="member">Window::SetTransparency</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>transparent)</highlight></codeline>
+<codeline lineno="342"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetTransparency(transparent);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346" refid="classDali_1_1Window_1a39b92cc13724e598db0d972f17a9d035" refkind="member"><highlight class="normal">Dali::RenderTaskList<sp/><ref refid="classDali_1_1Window_1a39b92cc13724e598db0d972f17a9d035" kindref="member">Window::GetRenderTaskList</ref>()</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1ad5e669f9b0ca61eda6403692d906a063" kindref="member">GetRenderTaskList</ref>();</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351" refid="classDali_1_1Window_1a4acd0f0164fa94d2c8958025750449ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a4acd0f0164fa94d2c8958025750449ef" kindref="member">Window::KeepRendering</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>durationSeconds)</highlight></codeline>
+<codeline lineno="352"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).KeepRendering(durationSeconds);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356" refid="classDali_1_1Window_1a2cf2a330453dcf16a1645648ce9f8af2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a2cf2a330453dcf16a1645648ce9f8af2" kindref="member">Window::SetPartialUpdateEnabled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="357"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetPartialUpdateEnabled(enabled);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361" refid="classDali_1_1Window_1a039601b383651a711d9410c400e10337" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Window_1a039601b383651a711d9410c400e10337" kindref="member">Window::IsPartialUpdateEnabled</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="362"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).IsPartialUpdateEnabled();</highlight></codeline>
+<codeline lineno="364"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="classDali_1_1Window_1aba89b4c336eb7f97ca04389d7bcf8db6" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1a295d161371051a3a5c131dbc524b33ca" kindref="member">Window::KeyEventSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Window_1aba89b4c336eb7f97ca04389d7bcf8db6" kindref="member">Window::KeyEventSignal</ref>()</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a0d1f71a00a89a2bf3eef5f721cd56ab1" kindref="member">KeyEventSignal</ref>();</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371" refid="classDali_1_1Window_1a7b679448c02537dbde4136c06a4ed415" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window_1a118dd4975de5c5b165e5cc0780504008" kindref="member">Window::TouchEventSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Window_1a7b679448c02537dbde4136c06a4ed415" kindref="member">Window::TouchedSignal</ref>()</highlight></codeline>
+<codeline lineno="372"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).<ref refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a5ff922484f824137860809f12c2d439f" kindref="member">TouchedSignal</ref>();</highlight></codeline>
+<codeline lineno="374"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><ref refid="classDali_1_1Window_1ab2c5409fe4daae4757f93d81a0937b63" kindref="member">Window::Window</ref>(Internal::Adaptor::Window*<sp/>window)</highlight></codeline>
+<codeline lineno="377"><highlight class="normal">:<sp/>BaseHandle(window)</highlight></codeline>
+<codeline lineno="378"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/window.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="canvas-renderer-shape_8h" kind="file" language="C++">
+    <compoundname>canvas-renderer-shape.h</compoundname>
+    <includes local="no">dali/public-api/object/base-handle.h</includes>
+    <includes refid="canvas-renderer-drawable_8h" local="no">dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h</includes>
+    <includes refid="canvas-renderer_8h" local="no">dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h</includes>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="canvas-renderer-shape_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h</label>
+        <link refid="canvas-renderer-drawable_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h</label>
+        <link refid="canvas-renderer-shape_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h</label>
+        <link refid="canvas-renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/rendering/texture.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.cpp</label>
+        <link refid="canvas-renderer-shape_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h</label>
+        <link refid="canvas-renderer-shape_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1CanvasRenderer" prot="public">Dali::CanvasRenderer</innerclass>
+    <innerclass refid="structDali_1_1CanvasRenderer_1_1PathCommands" prot="public">Dali::CanvasRenderer::PathCommands</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal_1_1Adaptor">Dali::Internal::Adaptor</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_CANVAS_RENDERER_SHAPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_CANVAS_RENDERER_SHAPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/base-handle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="canvas-renderer-drawable_8h" kindref="compound">dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-drawable.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="canvas-renderer_8h" kindref="compound">dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal<sp/>DALI_INTERNAL</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Adaptor</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CanvasRenderer;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Shape;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Adaptor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>Internal<sp/>DALI_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/>CanvasRenderer::Shape<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a7f8132c5ee3c5d75d802f65686b5730e" kindref="member">CanvasRenderer::Drawable</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57" refid="classDali_1_1CanvasRenderer_1aa6f18c9a54d909a37e87800a8962b0da" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Shape<sp/><ref refid="classDali_1_1CanvasRenderer_1aa6f18c9a54d909a37e87800a8962b0da" kindref="member">New</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64" refid="classDali_1_1CanvasRenderer_1a1b09bf544deaab88c2f1de8160b97664" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1CanvasRenderer_1a1b09bf544deaab88c2f1de8160b97664" kindref="member">Shape</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classDali_1_1CanvasRenderer_1a0bbacaa8a7e966104ab96444a4bd43de" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1CanvasRenderer_1a0bbacaa8a7e966104ab96444a4bd43de" kindref="member">~Shape</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classDali_1_1CanvasRenderer_1a8aa307496ede3bccbba2f4ea974338df" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1CanvasRenderer_1a8aa307496ede3bccbba2f4ea974338df" kindref="member">Shape</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Shape&amp;<sp/>handle)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82" refid="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1af87d61965df1f3863f4ee22217e6e76f" kindref="member">StrokeCap</ref></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>SQUARE<sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>ROUND,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>BUTT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a47f44cb7337752feb775b6179e122f8d" kindref="member">StrokeJoin</ref></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>BEVEL<sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>ROUND,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>MITER<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classDali_1_1CanvasRenderer_1a0ddf673a79efdef2aa26e057290e599d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a0ddf673a79efdef2aa26e057290e599d" kindref="member">FillRule</ref></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>WINDING<sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>EVEN_ODD<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664" kindref="member">PathCommandType</ref></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>CLOSE<sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>MOVE_TO,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>LINE_TO,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>CUBIC_TO<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="structDali_1_1CanvasRenderer_1_1PathCommands" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDali_1_1CanvasRenderer_1_1PathCommands" kindref="compound">PathCommands</ref></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126" refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a866797d65beb92aca7a05f7a36f798cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1CanvasRenderer_1a01603ad02bad20664b7b18b495d26664" kindref="member">PathCommandType</ref>*<sp/><ref refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a866797d65beb92aca7a05f7a36f798cb" kindref="member">mCommands</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127" refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a9e7b5c674ca000647891b91a08a22f2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a9e7b5c674ca000647891b91a08a22f2e" kindref="member">mCommandCount</ref>;<sp/></highlight></codeline>
+<codeline lineno="128" refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a5620aac006617764b159fba78be49521" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a5620aac006617764b159fba78be49521" kindref="member">mPoints</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129" refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a8652665e980c1676361df2ac9d77f5da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1CanvasRenderer_1_1PathCommands_1a8652665e980c1676361df2ac9d77f5da" kindref="member">mPointCount</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="146" refid="classDali_1_1CanvasRenderer_1ab31ac70e36d00c62c7b4a82dd92b0f79" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ab31ac70e36d00c62c7b4a82dd92b0f79" kindref="member">AddRect</ref>(Rect&lt;float&gt;<sp/>rect,<sp/>Vector2<sp/>roundedCorner);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="classDali_1_1CanvasRenderer_1ad83076bb8ab13774b270d8c938a4cd5f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ad83076bb8ab13774b270d8c938a4cd5f" kindref="member">AddCircle</ref>(Vector2<sp/>center,<sp/>Vector2<sp/>radius);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="classDali_1_1CanvasRenderer_1ab47bcd513f0e0376d989e1eb1ffb0884" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ab47bcd513f0e0376d989e1eb1ffb0884" kindref="member">AddArc</ref>(Vector2<sp/>center,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radius,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>startAngle,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sweep,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pie);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="classDali_1_1CanvasRenderer_1ab8472ff0920427816f2f545db05a5f71" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ab8472ff0920427816f2f545db05a5f71" kindref="member">AddMoveTo</ref>(Vector2<sp/>point);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classDali_1_1CanvasRenderer_1a84af8e05ba2146a2a20bfabf833aeb72" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a84af8e05ba2146a2a20bfabf833aeb72" kindref="member">AddLineTo</ref>(Vector2<sp/>line);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="classDali_1_1CanvasRenderer_1a9b5fcb137df1023295fbb877e307c2d4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a9b5fcb137df1023295fbb877e307c2d4" kindref="member">AddCubicTo</ref>(Vector2<sp/>controlPoint1,<sp/>Vector2<sp/>controlPoint2,<sp/>Vector2<sp/>endPoint);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="classDali_1_1CanvasRenderer_1a5ca05fe4899a4063c8be0ee397496a55" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a5ca05fe4899a4063c8be0ee397496a55" kindref="member">AddPath</ref>(<ref refid="structDali_1_1CanvasRenderer_1_1PathCommands" kindref="compound">PathCommands</ref>&amp;<sp/>pathCommand);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="classDali_1_1CanvasRenderer_1a2d9d4dd6a495101d1840a68b43ce3c2b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a2d9d4dd6a495101d1840a68b43ce3c2b" kindref="member">Close</ref>();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="classDali_1_1CanvasRenderer_1a5105e70bbe8d0b30fe834c5f7794372e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a5105e70bbe8d0b30fe834c5f7794372e" kindref="member">ResetPath</ref>();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="classDali_1_1CanvasRenderer_1aea9ae67170ef2cae39ba91c73f4d1c2f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1aea9ae67170ef2cae39ba91c73f4d1c2f" kindref="member">SetFillColor</ref>(Vector4<sp/>color);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="classDali_1_1CanvasRenderer_1aff710cdf1ba93dd275fc42e648e5d375" refkind="member"><highlight class="normal"><sp/><sp/>Vector4<sp/><ref refid="classDali_1_1CanvasRenderer_1aff710cdf1ba93dd275fc42e648e5d375" kindref="member">GetFillColor</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241" refid="classDali_1_1CanvasRenderer_1a17676afe3a530a2d32c65a7b543e8561" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a17676afe3a530a2d32c65a7b543e8561" kindref="member">SetFillGradient</ref>(CanvasRenderer::Gradient&amp;<sp/>gradient);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247" refid="classDali_1_1CanvasRenderer_1a7a014f04283037ec45cba673d7b2d85a" refkind="member"><highlight class="normal"><sp/><sp/>CanvasRenderer::Gradient<sp/><ref refid="classDali_1_1CanvasRenderer_1a7a014f04283037ec45cba673d7b2d85a" kindref="member">GetFillGradient</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="classDali_1_1CanvasRenderer_1a594e53899977a7e477ac1c97f78bfd69" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a594e53899977a7e477ac1c97f78bfd69" kindref="member">SetFillRule</ref>(CanvasRenderer::Shape::FillRule<sp/>rule);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260" refid="classDali_1_1CanvasRenderer_1a4ec2feec8d15845b9a0eb3c89748d3a8" refkind="member"><highlight class="normal"><sp/><sp/>CanvasRenderer::Shape::FillRule<sp/><ref refid="classDali_1_1CanvasRenderer_1a4ec2feec8d15845b9a0eb3c89748d3a8" kindref="member">GetFillRule</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267" refid="classDali_1_1CanvasRenderer_1ab415996face84f53c4cb08d5cb69b39b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ab415996face84f53c4cb08d5cb69b39b" kindref="member">SetStrokeWidth</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273" refid="classDali_1_1CanvasRenderer_1a974f2dbc16da2cc6ca07ce80d950c515" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a974f2dbc16da2cc6ca07ce80d950c515" kindref="member">GetStrokeWidth</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="classDali_1_1CanvasRenderer_1abda7c163ba2e67bd8ffc69e6e4b90dfb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1abda7c163ba2e67bd8ffc69e6e4b90dfb" kindref="member">SetStrokeColor</ref>(Vector4<sp/>color);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286" refid="classDali_1_1CanvasRenderer_1aaa18fade0755f62b54b45b1828b6fd11" refkind="member"><highlight class="normal"><sp/><sp/>Vector4<sp/><ref refid="classDali_1_1CanvasRenderer_1aaa18fade0755f62b54b45b1828b6fd11" kindref="member">GetStrokeColor</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="classDali_1_1CanvasRenderer_1ad0597465f3500579f4d9e2b0d6ad37d9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ad0597465f3500579f4d9e2b0d6ad37d9" kindref="member">SetStrokeGradient</ref>(CanvasRenderer::Gradient&amp;<sp/>gradient);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299" refid="classDali_1_1CanvasRenderer_1a28452239e4d0d40b43eae79bd520c341" refkind="member"><highlight class="normal"><sp/><sp/>CanvasRenderer::Gradient<sp/><ref refid="classDali_1_1CanvasRenderer_1a28452239e4d0d40b43eae79bd520c341" kindref="member">GetStrokeGradient</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="classDali_1_1CanvasRenderer_1a7d0d2f51ebc7df956248865855dd6a52" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1a7d0d2f51ebc7df956248865855dd6a52" kindref="member">SetStrokeDash</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::Vector&lt;float&gt;&amp;<sp/>dashPattern);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312" refid="classDali_1_1CanvasRenderer_1a000bdcb2598843440816729a9ba76d6d" refkind="member"><highlight class="normal"><sp/><sp/>Dali::Vector&lt;float&gt;<sp/><ref refid="classDali_1_1CanvasRenderer_1a000bdcb2598843440816729a9ba76d6d" kindref="member">GetStrokeDash</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319" refid="classDali_1_1CanvasRenderer_1ab6bd9108838544fd164db1a0dbf177a3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1ab6bd9108838544fd164db1a0dbf177a3" kindref="member">SetStrokeCap</ref>(CanvasRenderer::Shape::StrokeCap<sp/>cap);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325" refid="classDali_1_1CanvasRenderer_1a842e44217f8e6da124c3468264e6950e" refkind="member"><highlight class="normal"><sp/><sp/>CanvasRenderer::Shape::StrokeCap<sp/><ref refid="classDali_1_1CanvasRenderer_1a842e44217f8e6da124c3468264e6950e" kindref="member">GetStrokeCap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333" refid="classDali_1_1CanvasRenderer_1abe5a0ef364bbc219d26c07b827ec0c4c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CanvasRenderer_1abe5a0ef364bbc219d26c07b827ec0c4c" kindref="member">SetStrokeJoin</ref>(CanvasRenderer::Shape::StrokeJoin<sp/>join);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339" refid="classDali_1_1CanvasRenderer_1ae2ff0cd667e4ad9eaab375409b00fa2e" refkind="member"><highlight class="normal"><sp/><sp/>CanvasRenderer::Shape::StrokeJoin<sp/><ref refid="classDali_1_1CanvasRenderer_1ae2ff0cd667e4ad9eaab375409b00fa2e" kindref="member">GetStrokeJoin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>intended<sp/>for<sp/>application<sp/>developers</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>DALI_INTERNAL<sp/>Shape(Internal::Adaptor::Shape*<sp/>impl);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_CANVAS_RENDERER_SHAPE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/canvas-renderer/canvas-renderer-shape.h"/>
+  </compounddef>
+</doxygen>

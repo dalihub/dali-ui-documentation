@@ -1,0 +1,1114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Constraint" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Constraint</compoundname>
+    <basecompoundref refid="classDali_1_1BaseHandle" prot="public" virt="non-virtual">Dali::BaseHandle</basecompoundref>
+    <includes refid="constraint_8h" local="no">constraint.h</includes>
+    <innerclass refid="classDali_1_1Constraint_1_1Function" prot="public">Dali::Constraint::Function</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RemoveAction</name>
+        <qualifiedname>Dali::Constraint::RemoveAction</qualifiedname>
+        <enumvalue id="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a1c1d2523db1e7854b5c1283c6188451e" prot="public">
+          <name>BAKE</name>
+          <briefdescription>
+<para>When the constraint is fully-applied, the constrained value is saved. @SINCE_1_9.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a80bab24f9e1cf82744b96a1d07addfac" prot="public">
+          <name>DISCARD</name>
+          <briefdescription>
+<para>When the constraint is removed, the constrained value is discarded. @SINCE_1_9.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the action that will happen when the constraint is removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The final value may be &quot;baked&quot; i.e. saved permanently. Alternatively the constrained value may be discarded when the constraint is removed. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="275" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1Constraint_1a0254869c32f3a91c4f7fea67f8cdfa03" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ApplyRate</name>
+        <qualifiedname>Dali::Constraint::ApplyRate</qualifiedname>
+        <enumvalue id="classDali_1_1Constraint_1a0254869c32f3a91c4f7fea67f8cdfa03a60698f829bb2cba927b651b24984818c" prot="public">
+          <name>APPLY_ONCE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Apply constraint once only e.g. bake a property and keep. @SINCE_2_4.37. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1a0254869c32f3a91c4f7fea67f8cdfa03a0d716609c141e4fcbadf70a2f75a4e58" prot="public">
+          <name>APPLY_ALWAYS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Apply constraint every frame. @SINCE_2_4.37. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the apply-rate of the constraint. @SINCE_2_4.37. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="285" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="286" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>State</name>
+        <qualifiedname>Dali::Constraint::State</qualifiedname>
+        <enumvalue id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509baa94ed3d134d7f3344e6d93d3ada99e1a" prot="public">
+          <name>INITIALIZED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Initial state, or removed. @SINCE_2_5.7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509bad298b6ddd804b1cefffb0f3e5a2bffde" prot="public">
+          <name>APPLIED</name>
+          <initializer>= 100</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" kindref="member">Apply()</ref> called. @SINCE_2_5.7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509bad7c83a96a02847c64337533b9e31266d" prot="public">
+          <name>POST_APPLIED</name>
+          <initializer>= 101</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Constraint_1a4ce11bc208efbe41ff99ea6ffa8cd4bd" kindref="member">ApplyPost()</ref> called. @SINCE_2_5.7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509ba6d3a1f98fbbb2e8caa89200e6e0b7111" prot="public">
+          <name>APPLIED_OBJECT_OFF_SCENE</name>
+          <initializer>= 200</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" kindref="member">Apply()</ref> called, but some object scene offed. Will be applied if all scene on again @SINCE_2_5.7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509ba1735c8fa8ffad1be19842b437e4d7887" prot="public">
+          <name>POST_APPLIED_OBJECT_OFF_SCENE</name>
+          <initializer>= 201</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Constraint_1a4ce11bc208efbe41ff99ea6ffa8cd4bd" kindref="member">ApplyPost()</ref> called, but some object scene offed. Will be post-applied if all scene on again @SINCE_2_5.7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509ba92c37081789784f358f76c908f9dd126" prot="public">
+          <name>OBJECT_DESTROYED</name>
+          <initializer>= 300</initializer>
+          <briefdescription>
+<para>Object destroyed. Could never be applied again. @SINCE_2_5.7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the state of the constraint. @SINCE_2_5.7. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="295" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="296" bodyend="309"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classDali_1_1Constraint_1a6c441f8d7e49bfd9844fbf35482d948f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423" kindref="member">RemoveAction</ref></type>
+        <definition>const Constraint::RemoveAction Dali::Constraint::DEFAULT_REMOVE_ACTION</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_REMOVE_ACTION</name>
+        <qualifiedname>Dali::Constraint::DEFAULT_REMOVE_ACTION</qualifiedname>
+        <initializer>= <ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a1c1d2523db1e7854b5c1283c6188451e" kindref="member">Constraint::BAKE</ref></initializer>
+        <briefdescription>
+<para>BAKE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="311" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="311" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Constraint::Constraint</definition>
+        <argsstring>()</argsstring>
+        <name>Constraint</name>
+        <qualifiedname>Dali::Constraint::Constraint</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref>; this can be initialized with <ref refid="classDali_1_1Constraint_1aee06c5e1853774518d6aecdbc9afa75f" kindref="member">Constraint::New()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calling member functions with an uninitialized <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> handle is not allowed. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="319" column="3"/>
+        <referencedby refid="classDali_1_1Constraint_1a8784a8fad92fe63f7b234459e9359c95" compoundref="constraint_8cpp" startline="43" endline="46">Clone</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a26bad0d22d3a03dba39d822c215aa2dd" compoundref="constraint_8cpp" startline="58" endline="61">DownCast</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a8784a8fad92fe63f7b234459e9359c95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref></type>
+        <definition>Constraint Dali::Constraint::Clone</definition>
+        <argsstring>(Handle handle)</argsstring>
+        <name>Clone</name>
+        <qualifiedname>Dali::Constraint::Clone</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Creates a clone of this constraint for another object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle to the property-owning object this constraint is to be cloned for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new constraint </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="424" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="43" bodyend="46"/>
+        <references refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9">Constraint</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a6f2596bc03499803fa876f8d95aadcd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Constraint::~Constraint</definition>
+        <argsstring>()</argsstring>
+        <name>~Constraint</name>
+        <qualifiedname>Dali::Constraint::~Constraint</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="432" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a8a36746d9d11d022d2b950c00be82318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Constraint::Constraint</definition>
+        <argsstring>(const Constraint &amp;constraint)</argsstring>
+        <name>Constraint</name>
+        <qualifiedname>Dali::Constraint::Constraint</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;</type>
+          <declname>constraint</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">constraint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="440" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a336d6db9510e5fde133e444bfc5a2847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;</type>
+        <definition>Constraint &amp; Dali::Constraint::operator=</definition>
+        <argsstring>(const Constraint &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Constraint::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="449" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a9fadf95244bba31513516b8255be3c73" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Constraint::Constraint</definition>
+        <argsstring>(Constraint &amp;&amp;rhs) noexcept</argsstring>
+        <name>Constraint</name>
+        <qualifiedname>Dali::Constraint::Constraint</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="457" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a58ec4ceab88af801e02a2a460bee3c4a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;</type>
+        <definition>Constraint &amp; Dali::Constraint::operator=</definition>
+        <argsstring>(Constraint &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Constraint::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="466" column="14"/>
+        <references refid="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" compoundref="base-handle_8h" startline="274" endline="277">Dali::DownCast</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a8229723a5a2f26afdf4b92ed600c90a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::AddSource</definition>
+        <argsstring>(ConstraintSource source)</argsstring>
+        <name>AddSource</name>
+        <qualifiedname>Dali::Constraint::AddSource</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1ConstraintSource" kindref="compound">ConstraintSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Adds a constraint source to the constraint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The constraint source input to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="485" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="63" bodyend="66"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::Apply</definition>
+        <argsstring>()</argsstring>
+        <name>Apply</name>
+        <qualifiedname>Dali::Constraint::Apply</qualifiedname>
+        <briefdescription>
+<para>Applies this constraint to be computed before transform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="pre"><para>The constraint must be initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The target object must still be alive. </para>
+</simplesect>
+<simplesect kind="pre"><para>The source inputs should not have been destroyed.</para>
+</simplesect>
+<simplesect kind="note"><para>This method cannot be called with ApplyPost at the same time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="497" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="68" bodyend="71"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a4ce11bc208efbe41ff99ea6ffa8cd4bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::ApplyPost</definition>
+        <argsstring>()</argsstring>
+        <name>ApplyPost</name>
+        <qualifiedname>Dali::Constraint::ApplyPost</qualifiedname>
+        <briefdescription>
+<para>Applies this constraint to be computed after transform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.23 <simplesect kind="pre"><para>The constraint must be initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The target object must still be alive. </para>
+</simplesect>
+<simplesect kind="pre"><para>The source inputs should not have been destroyed.</para>
+</simplesect>
+<simplesect kind="note"><para>This method cannot be called with Apply at the same time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="509" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="73" bodyend="76"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1af824534d18c6cc3a536f0a6e87114751" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::Remove</definition>
+        <argsstring>()</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Dali::Constraint::Remove</qualifiedname>
+        <briefdescription>
+<para>Removes this constraint. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="515" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="78" bodyend="81"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1adcd2e3b1bc0c19dfe71cd3c56ab49671" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+        <definition>Handle Dali::Constraint::GetTargetObject</definition>
+        <argsstring>()</argsstring>
+        <name>GetTargetObject</name>
+        <qualifiedname>Dali::Constraint::GetTargetObject</qualifiedname>
+        <briefdescription>
+<para>Retrieves the object which this constraint is targeting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The target object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="523" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="83" bodyend="86"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a480b329b3f6da79258e099c882846791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Dali::Property::Index</ref></type>
+        <definition>Property::Index Dali::Constraint::GetTargetProperty</definition>
+        <argsstring>()</argsstring>
+        <name>GetTargetProperty</name>
+        <qualifiedname>Dali::Constraint::GetTargetProperty</qualifiedname>
+        <briefdescription>
+<para>Retrieves the property which this constraint is targeting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The target property </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="531" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="88" bodyend="91"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a18fed1e4c329504340d116c1b47c83c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::SetRemoveAction</definition>
+        <argsstring>(RemoveAction action)</argsstring>
+        <name>SetRemoveAction</name>
+        <qualifiedname>Dali::Constraint::SetRemoveAction</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423" kindref="member">RemoveAction</ref></type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+<para>Sets the remove action. <ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a1c1d2523db1e7854b5c1283c6188451e" kindref="member">Constraint::BAKE</ref> will &quot;bake&quot; a value when fully-applied. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In case of <ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a80bab24f9e1cf82744b96a1d07addfac" kindref="member">Constraint::DISCARD</ref>, the constrained value will be discarded, when the constraint is removed. The default value is <ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a1c1d2523db1e7854b5c1283c6188451e" kindref="member">Constraint::BAKE</ref>. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remove-action </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="541" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="93" bodyend="96"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1adbba4de30ac0cdfe9377b8dfc265b61c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423" kindref="member">RemoveAction</ref></type>
+        <definition>Constraint::RemoveAction Dali::Constraint::GetRemoveAction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRemoveAction</name>
+        <qualifiedname>Dali::Constraint::GetRemoveAction</qualifiedname>
+        <briefdescription>
+<para>Retrieves the remove action that will happen when the constraint is removed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The remove-action </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="549" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="98" bodyend="101"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a9f36b3e2eaac046d0e428075f26bd4af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::SetApplyRate</definition>
+        <argsstring>(uint32_t applyRate)</argsstring>
+        <name>SetApplyRate</name>
+        <qualifiedname>Dali::Constraint::SetApplyRate</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>applyRate</declname>
+        </param>
+        <briefdescription>
+<para>Sets the apply-rate of the <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default is APPLY_ALWAYS (1), meaning that the <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> will be processed every frame if the scene graph is changing. It may be desirable to process less frequently. For example, SetApplyRate(3) will process once every 3 frames if the scene graph is changing. If the scene graph is not changing, then the constraint task will not be processed, regardless of this value.</para>
+<para>The APPLY_ONCE (0) value means that the <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> will be processed once only, to bake a property and keep it. Repeatedly calling SetApplyRate(APPLY_ONCE) will cause more bake to be taken.</para>
+<para>We can change apply-rate even if already <ref refid="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" kindref="member">Apply()</ref> called.</para>
+<para><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> will be processed at first frame of this API called. After then,<itemizedlist>
+<listitem><para>if APPLY_ONCE, Constarint will be skipped.</para>
+</listitem><listitem><para>if not, <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> will be skipped (applyRate - 1) frames, and then applied, and so on.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>Unlike SetProperty, APPLY_ONCE is useful if we want to set the property with the same function of constraint, and want to ignore other animation or set property changeness ensurely.</para>
+</simplesect>
+<simplesect kind="warning"><para>If you are using some input-sensitive constraints (like <ref refid="structDali_1_1EqualToConstraint" kindref="compound">EqualToConstraint</ref>), be careful to use it. If applyRate is not APPLY_ALWAYS, some frames will be skipped. @SINCE_2_4.37 </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">applyRate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new apply rate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="584" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="103" bodyend="106"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1ad6df9dac5e55dae187a6738c7d9677bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Constraint::GetApplyRate</definition>
+        <argsstring>() const</argsstring>
+        <name>GetApplyRate</name>
+        <qualifiedname>Dali::Constraint::GetApplyRate</qualifiedname>
+        <briefdescription>
+<para>Queries the apply-rate of the <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref>. @SINCE_2_4.37. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The apply-rate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="591" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="108" bodyend="111"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a6fbe3d569429df202ce13c9c2d835e18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Constraint::SetTag</definition>
+        <argsstring>(const uint32_t tag)</argsstring>
+        <name>SetTag</name>
+        <qualifiedname>Dali::Constraint::SetTag</qualifiedname>
+        <param>
+          <type>const uint32_t</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+<para>Sets a tag for the constraint so it can be identified later. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>We can only set tag between [<ref refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88aed823409abbdbd044f6148dc5987c37f" kindref="member">ConstraintTagRanges::CUSTOM_CONSTRAINT_TAG_START</ref> ConstraintTagRanges::CUSTOM_CONSTRAINT_TAG_END] or <ref refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a860d55870911a2deedb8eecca43b33cd" kindref="member">ConstraintTagRanges::DEFAULT_TAG</ref></para>
+</simplesect>
+@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integer to identify the constraint </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="601" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="113" bodyend="117"/>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a5421df6e623b25b4c489c610ab70b65b" compoundref="constraint-tag-ranges_8h" startline="44">Dali::CUSTOM_CONSTRAINT_TAG_MAX</references>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a360086e6e6ce6463107443374d983c1d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Constraint::GetTag</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTag</name>
+        <qualifiedname>Dali::Constraint::GetTag</qualifiedname>
+        <briefdescription>
+<para>Gets the tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The tag </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="609" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="119" bodyend="122"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1aaa2ebcbfb767364799665c2ea76b53a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509b" kindref="member">Constraint::State</ref></type>
+        <definition>Constraint::State Dali::Constraint::GetState</definition>
+        <argsstring>() const</argsstring>
+        <name>GetState</name>
+        <qualifiedname>Dali::Constraint::GetState</qualifiedname>
+        <briefdescription>
+<para>Gets the state of constraint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.7 <simplesect kind="return"><para>The state of current constraint. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="617" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="124" bodyend="127"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1ac53b1b2dba02881dc6abae57c3a24ee8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Constraint::GetSourceCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSourceCount</name>
+        <qualifiedname>Dali::Constraint::GetSourceCount</qualifiedname>
+        <briefdescription>
+<para>Gets the number of constraint sources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.7 <simplesect kind="return"><para>The number of constraint sources </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="625" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="129" bodyend="132"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a86d4151d76ec40e9c8fc81d744e2aaf2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1ConstraintSource" kindref="compound">ConstraintSource</ref></type>
+        <definition>ConstraintSource Dali::Constraint::GetSourceAt</definition>
+        <argsstring>(uint32_t index) const</argsstring>
+        <name>GetSourceAt</name>
+        <qualifiedname>Dali::Constraint::GetSourceAt</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the constraint source at the specified index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.7 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the constraint source to retrieve </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The constraint source at the specified index </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="634" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="134" bodyend="137"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Constraint_1aee06c5e1853774518d6aecdbc9afa75f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class P</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref></type>
+        <definition>static Constraint Dali::Constraint::New</definition>
+        <argsstring>(Handle handle, Property::Index targetIndex, void(*function)(P &amp;, const PropertyInputContainer &amp;))</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Constraint::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>targetIndex</declname>
+        </param>
+        <param>
+          <type>void(*)(P &amp;, const <ref refid="group__dali__core__animation_1ga1c94a23de25e69f6ac033e72af7847ac" kindref="member">PropertyInputContainer</ref> &amp;)</type>
+          <declname>function</declname>
+        </param>
+        <briefdescription>
+<para>Creates a constraint which targets a property using a function or a static class member. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected signature, for a <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> type for example, of the function is: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFunction(<sp/>Vector3&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__animation_1ga1c94a23de25e69f6ac033e72af7847ac" kindref="member">PropertyInputContainer</ref>&amp;<sp/>);</highlight></codeline>
+</programlisting></para>
+<para>Create the constraint with this function as follows:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9" kindref="member">Constraint</ref><sp/>constraint<sp/>=<sp/>Constraint::New&lt;<sp/>Vector3<sp/>&gt;(<sp/>handle,<sp/>CONSTRAINING_PROPERTY_INDEX,<sp/>&amp;MyFunction<sp/>);</highlight></codeline>
+</programlisting></para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle to the property-owning object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">targetIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property to constrain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">function</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to call to set the constrained property value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the property to constrain </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new constraint </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="344" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="344" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1ab639be1a314e01500cb81821c8e45163" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class P</type>
+          </param>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref></type>
+        <definition>static Constraint Dali::Constraint::New</definition>
+        <argsstring>(Handle handle, Property::Index targetIndex, const T &amp;object)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Constraint::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>targetIndex</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+<para>Creates a constraint which targets a property using a functor object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected structure, for a <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> type for example, of the functor object is: <programlisting><codeline><highlight class="keyword">struct<sp/></highlight><highlight class="normal">MyObject</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()<sp/>(<sp/>Vector3&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PropertyInputContainer&amp;<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para>
+<para>Create the constraint with this object as follows:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9" kindref="member">Constraint</ref><sp/>constraint<sp/>=<sp/>Constraint::New&lt;<sp/>Vector3<sp/>&gt;(<sp/>handle,<sp/>CONSTRAINING_PROPERTY_INDEX,<sp/>MyObject()<sp/>);</highlight></codeline>
+</programlisting></para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle to the property-owning object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">targetIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property to constraint </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The functor object whose functor is called to set the constrained property value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the property to constrain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new constraint </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="377" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="377" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1aec76d8feb7b7b449a310d0953f701c44" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class P</type>
+          </param>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref></type>
+        <definition>static Constraint Dali::Constraint::New</definition>
+        <argsstring>(Handle handle, Property::Index targetIndex, const T &amp;object, void(T::*memberFunction)(P &amp;, const PropertyInputContainer &amp;))</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Constraint::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>targetIndex</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>void(T::*)(P &amp;, const <ref refid="group__dali__core__animation_1ga1c94a23de25e69f6ac033e72af7847ac" kindref="member">PropertyInputContainer</ref> &amp;)</type>
+          <declname>memberFunction</declname>
+        </param>
+        <briefdescription>
+<para>Creates a constraint which targets a property using an object method. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The expected structure, for a <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> type for example, of the object is: <programlisting><codeline><highlight class="keyword">struct<sp/></highlight><highlight class="normal">MyObject</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyMethod(<sp/>Vector3&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PropertyInputContainer&amp;<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para>
+<para>Create the constraint with this object as follows:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9" kindref="member">Constraint</ref><sp/>constraint<sp/>=<sp/>Constraint::New&lt;<sp/>Vector3<sp/>&gt;(<sp/>handle,<sp/>CONSTRAINING_PROPERTY_INDEX,<sp/>MyObject(),<sp/>&amp;MyObject::MyMethod<sp/>);</highlight></codeline>
+</programlisting></para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle to the property-owning object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">targetIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property to constraint </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object whose member function is called to set the constrained property value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">memberFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The member function to call to set the constrained property value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new constraint</para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the property to constrain </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="411" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="411" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Constraint_1a26bad0d22d3a03dba39d822c215aa2dd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref></type>
+        <definition>Constraint Dali::Constraint::DownCast</definition>
+        <argsstring>(BaseHandle baseHandle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::Constraint::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>baseHandle</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts a handle to <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to a <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> object, the downcast produces valid handle. If not, the returned handle is left uninitialized. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">baseHandle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref> to an object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to a <ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> object or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="477" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp" bodystart="58" bodyend="61"/>
+        <references refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9">Constraint</references>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>An abstract base class for Constraints. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This can be used to constrain a property of an object, after animations have been applied. Constraints are applied in the following order:<itemizedlist>
+<listitem><para>Constraints are applied to on-stage actors in a depth-first traversal.</para>
+</listitem><listitem><para>For each actor, the constraints are applied in the same order as the calls to <ref refid="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" kindref="member">Apply()</ref>.</para>
+</listitem><listitem><para>Constraints are not applied to off-stage actors.</para>
+</listitem></itemizedlist>
+</para>
+<para>Create a constraint using one of the New methods depending on the type of callback function used. Try to use a C function unless some data needs to be stored, otherwise functors and class methods are also supported.</para>
+<para>A constraint can be applied to an object in the following manner:</para>
+<para><programlisting><codeline><highlight class="normal">Handle<sp/>handle<sp/>=<sp/>CreateMyObject();</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9" kindref="member">Constraint</ref><sp/>constraint<sp/>=<sp/>Constraint::New&lt;<sp/>Vector3<sp/>&gt;(<sp/>handle,<sp/>CONSTRAINING_PROPERTY_INDEX,<sp/>&amp;MyFunction<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">constraint.AddSource(<sp/>LocalSource(<sp/>INPUT_PROPERTY_INDEX<sp/>)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">constraint.Apply();</highlight></codeline>
+</programlisting> @SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="1">
+        <label>Dali::Constraint</label>
+        <link refid="classDali_1_1Constraint"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="1">
+        <label>Dali::Constraint</label>
+        <link refid="classDali_1_1Constraint"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="72" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="73" bodyend="660"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Constraint_1a8229723a5a2f26afdf4b92ed600c90a8" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>AddSource</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509bad298b6ddd804b1cefffb0f3e5a2bffde" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>APPLIED</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509ba6d3a1f98fbbb2e8caa89200e6e0b7111" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>APPLIED_OBJECT_OFF_SCENE</name></member>
+      <member refid="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Apply</name></member>
+      <member refid="classDali_1_1Constraint_1a0254869c32f3a91c4f7fea67f8cdfa03a0d716609c141e4fcbadf70a2f75a4e58" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>APPLY_ALWAYS</name></member>
+      <member refid="classDali_1_1Constraint_1a0254869c32f3a91c4f7fea67f8cdfa03a60698f829bb2cba927b651b24984818c" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>APPLY_ONCE</name></member>
+      <member refid="classDali_1_1Constraint_1a4ce11bc208efbe41ff99ea6ffa8cd4bd" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>ApplyPost</name></member>
+      <member refid="classDali_1_1Constraint_1a0254869c32f3a91c4f7fea67f8cdfa03" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>ApplyRate</name></member>
+      <member refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a1c1d2523db1e7854b5c1283c6188451e" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>BAKE</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1Constraint_1a8784a8fad92fe63f7b234459e9359c95" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Clone</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1Constraint_1a158bc127fb98b4c2d947210d195659d9" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Constraint</name></member>
+      <member refid="classDali_1_1Constraint_1a8a36746d9d11d022d2b950c00be82318" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Constraint</name></member>
+      <member refid="classDali_1_1Constraint_1a9fadf95244bba31513516b8255be3c73" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Constraint</name></member>
+      <member refid="classDali_1_1Constraint_1a6c441f8d7e49bfd9844fbf35482d948f" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>DEFAULT_REMOVE_ACTION</name></member>
+      <member refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423a80bab24f9e1cf82744b96a1d07addfac" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>DISCARD</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Constraint_1a26bad0d22d3a03dba39d822c215aa2dd" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Constraint_1ad6df9dac5e55dae187a6738c7d9677bd" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetApplyRate</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1Constraint_1adbba4de30ac0cdfe9377b8dfc265b61c" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetRemoveAction</name></member>
+      <member refid="classDali_1_1Constraint_1a86d4151d76ec40e9c8fc81d744e2aaf2" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetSourceAt</name></member>
+      <member refid="classDali_1_1Constraint_1ac53b1b2dba02881dc6abae57c3a24ee8" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetSourceCount</name></member>
+      <member refid="classDali_1_1Constraint_1aaa2ebcbfb767364799665c2ea76b53a9" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetState</name></member>
+      <member refid="classDali_1_1Constraint_1a360086e6e6ce6463107443374d983c1d" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetTag</name></member>
+      <member refid="classDali_1_1Constraint_1adcd2e3b1bc0c19dfe71cd3c56ab49671" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetTargetObject</name></member>
+      <member refid="classDali_1_1Constraint_1a480b329b3f6da79258e099c882846791" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetTargetProperty</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509baa94ed3d134d7f3344e6d93d3ada99e1a" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>INITIALIZED</name></member>
+      <member refid="classDali_1_1Constraint_1aee06c5e1853774518d6aecdbc9afa75f" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>New</name></member>
+      <member refid="classDali_1_1Constraint_1ab639be1a314e01500cb81821c8e45163" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>New</name></member>
+      <member refid="classDali_1_1Constraint_1aec76d8feb7b7b449a310d0953f701c44" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>New</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509ba92c37081789784f358f76c908f9dd126" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>OBJECT_DESTROYED</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1Constraint_1a336d6db9510e5fde133e444bfc5a2847" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Constraint_1a58ec4ceab88af801e02a2a460bee3c4a" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Constraint</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Constraint</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509bad7c83a96a02847c64337533b9e31266d" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>POST_APPLIED</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509ba1735c8fa8ffad1be19842b437e4d7887" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>POST_APPLIED_OBJECT_OFF_SCENE</name></member>
+      <member refid="classDali_1_1Constraint_1af824534d18c6cc3a536f0a6e87114751" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Remove</name></member>
+      <member refid="classDali_1_1Constraint_1acb8575c6f512a4e8020672e46f756423" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>RemoveAction</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Constraint_1a9f36b3e2eaac046d0e428075f26bd4af" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>SetApplyRate</name></member>
+      <member refid="classDali_1_1Constraint_1a18fed1e4c329504340d116c1b47c83c9" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>SetRemoveAction</name></member>
+      <member refid="classDali_1_1Constraint_1a6fbe3d569429df202ce13c9c2d835e18" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>SetTag</name></member>
+      <member refid="classDali_1_1Constraint_1aad1f0ac746886aca00cde2e2935d509b" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>State</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>~BaseHandle</name></member>
+      <member refid="classDali_1_1Constraint_1a6f2596bc03499803fa876f8d95aadcd0" prot="public" virt="non-virtual"><scope>Dali::Constraint</scope><name>~Constraint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

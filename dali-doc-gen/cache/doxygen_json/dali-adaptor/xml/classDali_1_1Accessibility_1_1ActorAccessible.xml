@@ -1,0 +1,1620 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1ActorAccessible" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Accessibility::ActorAccessible</compoundname>
+    <basecompoundref refid="classDali_1_1Accessibility_1_1Accessible" prot="public" virt="non-virtual">Dali::Accessibility::Accessible</basecompoundref>
+    <basecompoundref refid="classDali_1_1Accessibility_1_1Collection" prot="public" virt="non-virtual">Dali::Accessibility::Collection</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Dali::ConnectionTracker</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Dali::BaseObjectObserver</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">std::enable_shared_from_this&lt; ActorAccessible &gt;</basecompoundref>
+    <includes refid="actor-accessible_8h" local="no">actor-accessible.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1a932efe5e24a99f9ef30068f2b897536c" prot="private" static="no" mutable="no">
+        <type>Dali::WeakHandle&lt; Dali::Actor &gt;</type>
+        <definition>Dali::WeakHandle&lt;Dali::Actor&gt; Dali::Accessibility::ActorAccessible::mSelf</definition>
+        <argsstring></argsstring>
+        <name>mSelf</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mSelf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="325" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1a9f06ea433dd97eb66dc6a0de63954c78" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt;</type>
+        <definition>std::vector&lt;Accessible*&gt; Dali::Accessibility::ActorAccessible::mChildren</definition>
+        <argsstring></argsstring>
+        <name>mChildren</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mChildren</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="326" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1a9a39d779a8b5a403795287331f7c269c" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+        <definition>bool Dali::Accessibility::ActorAccessible::mChildrenDirty</definition>
+        <argsstring></argsstring>
+        <name>mChildrenDirty</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mChildrenDirty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="327" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1afbf7e0d93491cd69acf4633cfc2630d3" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+        <definition>bool Dali::Accessibility::ActorAccessible::mIsBeingDestroyed</definition>
+        <argsstring></argsstring>
+        <name>mIsBeingDestroyed</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mIsBeingDestroyed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="328" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1a7d7cb7bf56440e86c8bd242059a343c7" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">const</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">uint32_t</ref></type>
+        <definition>const uint32_t Dali::Accessibility::ActorAccessible::mActorId</definition>
+        <argsstring></argsstring>
+        <name>mActorId</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mActorId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="329" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1ace3e0cdb0911f39c1179dd5519f53c67" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" kindref="member">State</ref>, <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref> &gt;</type>
+        <definition>std::map&lt;State, int&gt; Dali::Accessibility::ActorAccessible::mLastEmittedState</definition>
+        <argsstring></argsstring>
+        <name>mLastEmittedState</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mLastEmittedState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="330" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Accessibility_1_1ActorAccessible_1a0b13d5e3350ab7931f401e27eb66bed1" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classDali_1_1Accessibility_1_1Collection" kindref="compound">Collection</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Collection&gt; Dali::Accessibility::ActorAccessible::mCollection</definition>
+        <argsstring></argsstring>
+        <name>mCollection</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::mCollection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="331" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a07d83cfa9d9e950105eda1b6e2fcb466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Accessibility::ActorAccessible::ActorAccessible</definition>
+        <argsstring>()=delete</argsstring>
+        <name>ActorAccessible</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::ActorAccessible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="38" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a6f175fd9ccf55af31411483e7877d9cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Accessibility::ActorAccessible::ActorAccessible</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>ActorAccessible</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::ActorAccessible</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="40" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="87" bodyend="101"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1abe12dd7262a7bb3ea30fc0c246df9c38" compoundref="actor-accessible_8cpp" startline="249" endline="252">OnChildrenChanged</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aa1247959c64e024d2a0ed7f5adbb6c8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::ObjectDestroyed</definition>
+        <argsstring>() override</argsstring>
+        <name>ObjectDestroyed</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::ObjectDestroyed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="43" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="103" bodyend="110"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a37a6620a6f175b1f7a061c9ecdd15859" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref></type>
+        <definition>Address Dali::Accessibility::ActorAccessible::GetAddress</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetAddress</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetAddress</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1a95bd4d7cbc4ccb508e2b400442e825c9">GetAddress</reimplements>
+        <briefdescription>
+<para>Gets unique address on accessibility bus.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref> class containing address</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Dali::Accessibility::Address</ref>   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="48" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="112" bodyend="115"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1af561f88598418f5a7cb77dd0aa3f8d33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Accessibility::ActorAccessible::GetName</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetName</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1ab9fc5129f872d5d8d44d7ce3b00109a2">GetName</reimplements>
+        <briefdescription>
+<para>Gets accessibility name.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The string with name   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="53" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="117" bodyend="120"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" compoundref="actor-accessible_8h" startline="287" endline="295">Self</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ae56c221915c65073ab7993c773ba48fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Accessibility::ActorAccessible::GetDescription</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetDescription</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetDescription</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1aaaa6b234364f2fa43d9919d89d46a593">GetDescription</reimplements>
+        <briefdescription>
+<para>Gets accessibility description.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The string with description   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="58" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1af29f0d5d1aab322cbed8e9c7ac2a8530" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Accessibility::ActorAccessible::GetValue</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetValue</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetValue</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1a680102c958b240db379d37a6a62d47db">GetValue</reimplements>
+        <briefdescription>
+<para>Gets accessibility value.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value text   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="63" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="127" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ab49ef12c972b37d468b4def4a155802e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> *</type>
+        <definition>Accessible * Dali::Accessibility::ActorAccessible::GetParent</definition>
+        <argsstring>() final</argsstring>
+        <name>GetParent</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetParent</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1a9946b2c7c532addc6968ceb4b76a988f">GetParent</reimplements>
+        <briefdescription>
+<para>Gets parent.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The handler to accessibility object   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="68" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="132" bodyend="143"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a11b53a8a2f89c1f8ec44340a3af4449d" compoundref="accessibility_8cpp" startline="621" endline="625">Dali::Accessibility::Accessible::Get</references>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ab49ef12c972b37d468b4def4a155802e" compoundref="actor-accessible_8cpp" startline="132" endline="143">GetParent</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a7e687fbd00e3f9401af531382d561785" compoundref="accessible_8h" startline="262" endline="265">Dali::Accessibility::Accessible::IsOnRootLevel</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" compoundref="actor-accessible_8h" startline="287" endline="295">Self</references>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a21924d700d110ea83f8d60d3463e0609" compoundref="actor-accessible_8cpp" startline="172" endline="192">GetIndexInParent</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1ab49ef12c972b37d468b4def4a155802e" compoundref="actor-accessible_8cpp" startline="132" endline="143">GetParent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a7bb5a9ee43c5bccd1f4d353cbaf102a9" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t Dali::Accessibility::ActorAccessible::GetChildCount</definition>
+        <argsstring>() const final</argsstring>
+        <name>GetChildCount</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetChildCount</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1ac6fc583639a4890a2a4d2703e5857079">GetChildCount</reimplements>
+        <briefdescription>
+<para>Gets the number of children.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of children   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="73" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="145" bodyend="152"/>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a04ae20a1b2cd90236ed5c662ad203561" compoundref="actor-accessible_8cpp" startline="161" endline="170">GetChildAtIndex</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a61572de2657e5e55a5cda09b55032529" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt;</type>
+        <definition>std::vector&lt; Accessible * &gt; Dali::Accessibility::ActorAccessible::GetChildren</definition>
+        <argsstring>() final</argsstring>
+        <name>GetChildren</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetChildren</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1a645ff159b77c9df87a9b3b4b90dd6b31">GetChildren</reimplements>
+        <briefdescription>
+<para>Gets collection with all children.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The collection of accessibility objects   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="78" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="154" bodyend="159"/>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a1fb8920beadf310df6ce4306373a13d9" compoundref="actor-accessible_8cpp" startline="517" endline="543">NotifyAccessibilityStateChange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a04ae20a1b2cd90236ed5c662ad203561" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> *</type>
+        <definition>Accessible * Dali::Accessibility::ActorAccessible::GetChildAtIndex</definition>
+        <argsstring>(std::size_t index) final</argsstring>
+        <name>GetChildAtIndex</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetChildAtIndex</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1a75b515479fe1e669b6d8d4ce923e0ef2">GetChildAtIndex</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets child of the index.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The child object   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="83" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="161" bodyend="170"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1a7bb5a9ee43c5bccd1f4d353cbaf102a9" compoundref="actor-accessible_8cpp" startline="145" endline="152">GetChildCount</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a21924d700d110ea83f8d60d3463e0609" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t Dali::Accessibility::ActorAccessible::GetIndexInParent</definition>
+        <argsstring>() final</argsstring>
+        <name>GetIndexInParent</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetIndexInParent</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1a9bb5560985bd68cff7b5cc4031a1e926">GetIndexInParent</reimplements>
+        <briefdescription>
+<para>Gets index that current object has in its parent&apos;s children collection.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The index of the current object   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="88" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="172" bodyend="192"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ab49ef12c972b37d468b4def4a155802e" compoundref="actor-accessible_8cpp" startline="132" endline="143">GetParent</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1af8d597b1dc4a7c57d41bb0f4cf48ed5e" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>Dali::Actor</type>
+        <definition>Dali::Actor Dali::Accessibility::ActorAccessible::GetInternalActor</definition>
+        <argsstring>() const final</argsstring>
+        <name>GetInternalActor</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetInternalActor</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1aa66a98b610fd1d4ba765965b012e0b56">GetInternalActor</reimplements>
+        <briefdescription>
+<para>Gets the Actor associated with this <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> (if there is one).   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The internal Actor   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="93" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="194" bodyend="197"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" compoundref="actor-accessible_8h" startline="287" endline="295">Self</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a79220f35a1dd45f282b0333c062451a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Accessibility::ActorAccessible::GetStringProperty</definition>
+        <argsstring>(std::string propertyName) const override</argsstring>
+        <name>GetStringProperty</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetStringProperty</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1aa43c8ac416427276cae2a711e31df0a4">GetStringProperty</reimplements>
+        <param>
+          <type>std::string</type>
+          <declname>propertyName</declname>
+        </param>
+        <briefdescription>
+<para>Gets the stirng property.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property name.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The string property value. Empty string if property does not exist.   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="98" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a561bea8a02b8158b4b1964ea16db8a33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9" kindref="member">ComponentLayer</ref></type>
+        <definition>ComponentLayer Dali::Accessibility::ActorAccessible::GetLayer</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetLayer</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetLayer</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Component_1a57da62cc2b9ba6dcd8877426bb658599">GetLayer</reimplements>
+        <briefdescription>
+<para>Gets layer current object is localized on.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The enumeration pointing layer</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9" kindref="member">Dali::Accessibility::ComponentLayer</ref>   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="103" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="204" bodyend="207"/>
+        <references refid="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9a70e2a9fa5d5ec49dc67453eab551251d">Dali::Accessibility::WINDOW</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a3398bf402e749e7fe3d54a473bec0e69" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::int16_t</type>
+        <definition>std::int16_t Dali::Accessibility::ActorAccessible::GetMdiZOrder</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetMdiZOrder</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetMdiZOrder</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Component_1a3bb356b27a8aac72f0070d6accaa0530">GetMdiZOrder</reimplements>
+        <briefdescription>
+<para>Gets value of z-order.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of z-order </para>
+</simplesect>
+<simplesect kind="remark"><para>MDI means &quot;Multi Document Interface&quot; (<ulink url="https://en.wikipedia.org/wiki/Multiple-document_interface">https://en.wikipedia.org/wiki/Multiple-document_interface</ulink>) which in short means that many stacked windows can be displayed within a single application. In such model, the concept of z-order of UI element became important to deal with element overlapping.   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="108" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ad12ae8878b56514ce0297389b5af5df8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">double</ref></type>
+        <definition>double Dali::Accessibility::ActorAccessible::GetAlpha</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetAlpha</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetAlpha</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Component_1aebcaf350ede82ffe1d5695891839532f">GetAlpha</reimplements>
+        <briefdescription>
+<para>Gets value of alpha channel.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The alpha channel value in range [0.0, 1.0]   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="113" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aee502586efa695e7909e507b79cf4a91" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+        <definition>bool Dali::Accessibility::ActorAccessible::IsScrollable</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsScrollable</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::IsScrollable</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Component_1acc904b188de8a2afa806e2228abff435">IsScrollable</reimplements>
+        <briefdescription>
+<para>Checks whether object can be scrolled.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if object is scrollable, false otherwise</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">Dali:Accessibility:</ref>:<ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" kindref="member">State</ref>   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="118" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="219" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a6c8039c21941856203584a0192845cb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>Dali::Rect&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">float</ref> &gt;</type>
+        <definition>Dali::Rect&lt; float &gt; Dali::Accessibility::ActorAccessible::GetExtents</definition>
+        <argsstring>(CoordinateType type) const override</argsstring>
+        <name>GetExtents</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetExtents</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Component_1af1680911115cbff6d0fc414c5a04d12c">GetExtents</reimplements>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3b" kindref="member">CoordinateType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Gets rectangle describing size.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration with type of coordinate systems</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rect&lt;float&gt; object</para>
+</simplesect>
+<simplesect kind="see"><para>Dali::Rect&lt;float&gt;   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="123" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="224" bodyend="247"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1aea72b49acaf295c877fd1bd8bb3e0783" compoundref="actor-accessible_8cpp" startline="550" endline="554">CanAcceptZeroSize</references>
+        <references refid="namespaceDali_1_1DevelWindow_1a4c657c52ba84b78ee2a1cfe2f413427c" compoundref="window-devel_8cpp" startline="40" endline="43">Dali::DevelWindow::Get</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" compoundref="actor-accessible_8h" startline="287" endline="295">Self</references>
+        <references refid="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3ba70e2a9fa5d5ec49dc67453eab551251d">Dali::Accessibility::WINDOW</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a5c6ae278209d67be890552ac9661f0be" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt;</type>
+        <definition>std::vector&lt; Accessible * &gt; Dali::Accessibility::ActorAccessible::GetMatches</definition>
+        <argsstring>(MatchRule rule, uint32_t sortBy, size_t maxCount) override</argsstring>
+        <name>GetMatches</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetMatches</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Collection_1a3a8605188fb5e10f33386c190ead2da0">GetMatches</reimplements>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">MatchRule</ref></type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">uint32_t</ref></type>
+          <declname>sortBy</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">size_t</ref></type>
+          <declname>maxCount</declname>
+        </param>
+        <briefdescription>
+<para>Gets the matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects with MatchRule.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">Collection::MatchRule</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sortBy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SortOrder::CANONICAL or SortOrder::REVERSE_CANONICAL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maxCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of objects; returns all matches if 0 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="128" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="556" bodyend="564"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1adc3e74eea4b10b89ac085850199725f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt;</type>
+        <definition>std::vector&lt; Accessible * &gt; Dali::Accessibility::ActorAccessible::GetMatchesInMatches</definition>
+        <argsstring>(MatchRule firstRule, MatchRule secondRule, uint32_t sortBy, int32_t firstCount, int32_t secondCount) override</argsstring>
+        <name>GetMatchesInMatches</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::GetMatchesInMatches</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Collection_1aa2df792aa988fcec63ae9a426dc6c85c">GetMatchesInMatches</reimplements>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">MatchRule</ref></type>
+          <declname>firstRule</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">MatchRule</ref></type>
+          <declname>secondRule</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">uint32_t</ref></type>
+          <declname>sortBy</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int32_t</ref></type>
+          <declname>firstCount</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int32_t</ref></type>
+          <declname>secondCount</declname>
+        </param>
+        <briefdescription>
+<para>Gets the matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects with two MatchRules.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">firstRule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial <ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">Collection::MatchRule</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">secondRule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An secondary <ref refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" kindref="member">Collection::MatchRule</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sortBy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SortOrder::CANONICAL or SortOrder::REVERSE_CANONICAL </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">firstCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of objects to return for the initial match.; returns all matches if 0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">secondCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of objects to return for the secondary match.; returns all matches if 0 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The matching <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> objects   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="133" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="566" bodyend="574"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1abe12dd7262a7bb3ea30fc0c246df9c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::OnChildrenChanged</definition>
+        <argsstring>()</argsstring>
+        <name>OnChildrenChanged</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::OnChildrenChanged</qualifiedname>
+        <briefdescription>
+<para>Notifies this object that its children have changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is useful if you maintain a custom collection of children that are not derived from <ref refid="classDali_1_1Accessibility_1_1ActorAccessible" kindref="compound">ActorAccessible</ref> and the contents or order of elements in that collection change.</para>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1aa201689e9376ef8f6a8cb69bde772bb7" kindref="member">DoGetChildren()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="143" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="249" bodyend="252"/>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6f175fd9ccf55af31411483e7877d9cf" compoundref="actor-accessible_8cpp" startline="87" endline="101">ActorAccessible</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1acbf8ef696aa6cd99deba960ae2f5cde9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitActiveDescendantChanged</definition>
+        <argsstring>(Accessible *child)</argsstring>
+        <name>EmitActiveDescendantChanged</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitActiveDescendantChanged</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for emiting active-descendant-changed event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child of the object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="150" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="305" bodyend="316"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitStateChanged</definition>
+        <argsstring>(State state, int newValue, int reserved=0)</argsstring>
+        <name>EmitStateChanged</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitStateChanged</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" kindref="member">State</ref></type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>newValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>reserved</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Helper function for emiting state-changed event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The accessibility state (SHOWING, HIGHLIGHTED, etc) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">newValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the state value is changed to new value or not. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">reserved</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reserved. (TODO : Currently, this argument is not implemented in dali)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The second argument determines which value is depending on State. For instance, if the state is PRESSED, newValue means isPressed or isSelected. If the state is SHOWING, newValue means isShowing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="163" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="318" bodyend="366"/>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca758f9c8c8110e53f8c8e0c790f855560">Dali::Accessibility::CHECKED</references>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cac841881b7f65d9e69aa9c932ca4427c8">Dali::Accessibility::SELECTED</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca4b25e44af4806563b1b0587ae3d4e8b8">Dali::Accessibility::SHOWING</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca510222cdd4bc0b765486ba35b2775e54">Dali::Accessibility::VISIBLE</references>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1aeb42241005186287982003079a82f4d9" compoundref="actor-accessible_8cpp" startline="383" endline="386">EmitFocused</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a433e3b6bf0505a1a4f65306e000f35c2" compoundref="actor-accessible_8cpp" startline="378" endline="381">EmitHighlighted</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a0be8d22511ad00df34833829dc23b8c3" compoundref="actor-accessible_8cpp" startline="368" endline="371">EmitShowing</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6d795a37dabbc686b63a43057f580ddd" compoundref="actor-accessible_8cpp" startline="373" endline="376">EmitVisible</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a1fb8920beadf310df6ce4306373a13d9" compoundref="actor-accessible_8cpp" startline="517" endline="543">NotifyAccessibilityStateChange</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aed8305d7fbab743b23de20b29ab2a9f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitBoundsChanged</definition>
+        <argsstring>(Rect&lt; int &gt; rect)</argsstring>
+        <name>EmitBoundsChanged</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitBoundsChanged</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">Rect</ref>&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref> &gt;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+<para>Helper function for emiting bounds-changed event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rectangle for changed bounds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="170" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="497" bodyend="515"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a0be8d22511ad00df34833829dc23b8c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitShowing</definition>
+        <argsstring>(bool isShowing)</argsstring>
+        <name>EmitShowing</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitShowing</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+          <declname>isShowing</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;showing&quot; event. The method informs accessibility clients about &quot;showing&quot; state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">isShowing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag pointing if object is showing </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="178" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="368" bodyend="371"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" compoundref="actor-accessible_8cpp" startline="318" endline="366">EmitStateChanged</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca4b25e44af4806563b1b0587ae3d4e8b8">Dali::Accessibility::SHOWING</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a6d795a37dabbc686b63a43057f580ddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitVisible</definition>
+        <argsstring>(bool isVisible)</argsstring>
+        <name>EmitVisible</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitVisible</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+          <declname>isVisible</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;visible&quot; event. The method informs accessibility clients about &quot;visible&quot; state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">isVisible</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag pointing if object is visible </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="186" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="373" bodyend="376"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" compoundref="actor-accessible_8cpp" startline="318" endline="366">EmitStateChanged</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca510222cdd4bc0b765486ba35b2775e54">Dali::Accessibility::VISIBLE</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a433e3b6bf0505a1a4f65306e000f35c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitHighlighted</definition>
+        <argsstring>(bool isHighlighted)</argsstring>
+        <name>EmitHighlighted</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitHighlighted</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+          <declname>isHighlighted</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;highlighted&quot; event. The method informs accessibility clients about &quot;highlighted&quot; state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">isHighlighted</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag pointing if object is highlighted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="194" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="378" bodyend="381"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" compoundref="actor-accessible_8cpp" startline="318" endline="366">EmitStateChanged</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca1f6517402830b4b0db683ae125d3b5e2">Dali::Accessibility::HIGHLIGHTED</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aeb42241005186287982003079a82f4d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitFocused</definition>
+        <argsstring>(bool isFocused)</argsstring>
+        <name>EmitFocused</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitFocused</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+          <declname>isFocused</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;focused&quot; event. The method informs accessibility clients about &quot;focused&quot; state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">isFocused</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag pointing if object is focused </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="202" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="383" bodyend="386"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" compoundref="actor-accessible_8cpp" startline="318" endline="366">EmitStateChanged</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3ca3bccbab2a35cb78388a0f4a8e2003b07">Dali::Accessibility::FOCUSED</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a422dbbd4280366f0e7b1487529b8143b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitTextInserted</definition>
+        <argsstring>(unsigned int position, unsigned int length, const std::string &amp;content)</argsstring>
+        <name>EmitTextInserted</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitTextInserted</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">unsigned</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">unsigned</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">const</ref> std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;text inserted&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cursor position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inserted text </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="211" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="388" bodyend="399"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="namespaceDali_1_1Accessibility_1a9aed09db88df697938e84a686a86aff3a0ea50aa50cbb4fd7263a23285732a68d">Dali::Accessibility::INSERTED</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a7b86d6a54ac5b24114fe8b4905388727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitTextDeleted</definition>
+        <argsstring>(unsigned int position, unsigned int length, const std::string &amp;content)</argsstring>
+        <name>EmitTextDeleted</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitTextDeleted</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">unsigned</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">unsigned</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">const</ref> std::string &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;text deleted&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cursor position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deleted text </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="220" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="400" bodyend="411"/>
+        <references refid="namespaceDali_1_1Accessibility_1a9aed09db88df697938e84a686a86aff3a63c2867fdcae0e8e8413d7ac21b69b59">Dali::Accessibility::DELETED</references>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ae0bb4c7e0c4942cb3202504978d3c503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitTextCursorMoved</definition>
+        <argsstring>(unsigned int cursorPosition)</argsstring>
+        <name>EmitTextCursorMoved</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitTextCursorMoved</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">unsigned</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>cursorPosition</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;cursor moved&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cursorPosition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new cursor position </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="227" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="412" bodyend="423"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ac766fc442356f7129dcbf5166ffea7d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitMovedOutOfScreen</definition>
+        <argsstring>(ScreenRelativeMoveType type)</argsstring>
+        <name>EmitMovedOutOfScreen</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitMovedOutOfScreen</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1a463337cbc8cc463216ae36034dff0cf0" kindref="member">ScreenRelativeMoveType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Emits &quot;MoveOuted&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>moved out of screen type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="234" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="425" bodyend="436"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1af1b83964b4baadede264beb754443485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitScrollStarted</definition>
+        <argsstring>()</argsstring>
+        <name>EmitScrollStarted</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitScrollStarted</qualifiedname>
+        <briefdescription>
+<para>Emits &quot;ScrollStarted&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="240" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="438" bodyend="449"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a3ef9dd0877aa6d03d5c66406d10d349c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::EmitScrollFinished</definition>
+        <argsstring>()</argsstring>
+        <name>EmitScrollFinished</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::EmitScrollFinished</qualifiedname>
+        <briefdescription>
+<para>Emits &quot;ScrollFinished&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="246" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="451" bodyend="462"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a44cee6f55b000dc02eda904129c1b95c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::Emit</definition>
+        <argsstring>(WindowEvent event, unsigned int detail=0)</argsstring>
+        <name>Emit</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::Emit</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1a38c6c43e91dc9a889ba295eb8db4aa53" kindref="member">WindowEvent</ref></type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">unsigned</ref> <ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">int</ref></type>
+          <declname>detail</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Emits &quot;highlighted&quot; event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumerated window event </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">detail</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The additional parameter which interpretation depends on chosen event </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="254" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="464" bodyend="475"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a6f9b86a7c20d621cb0c4cd2dffefd8e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::Emit</definition>
+        <argsstring>(ObjectPropertyChangeEvent event)</argsstring>
+        <name>Emit</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::Emit</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1a0bc1b660b1c44b1ef62023f871083d64" kindref="member">ObjectPropertyChangeEvent</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Emits property-changed event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Property changed event </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="261" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="477" bodyend="495"/>
+        <references refid="structDali_1_1Accessibility_1_1Bridge_1a0ffbef300a0329f92c187d0c41ab2107">Dali::Accessibility::Bridge::GetCurrentBridge</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a1fb8920beadf310df6ce4306373a13d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::NotifyAccessibilityStateChange</definition>
+        <argsstring>(Dali::Accessibility::States states, bool isRecursive)</argsstring>
+        <name>NotifyAccessibilityStateChange</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::NotifyAccessibilityStateChange</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1afb2bba7142a5a70fbda969eed071a435" kindref="member">Dali::Accessibility::States</ref></type>
+          <declname>states</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+          <declname>isRecursive</declname>
+        </param>
+        <briefdescription>
+<para>Re-emits selected states of an <ref refid="namespaceDali_1_1Accessibility" kindref="compound">Accessibility</ref> Object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">states</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The chosen states to re-emit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">isRecursive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, all children of the <ref refid="namespaceDali_1_1Accessibility" kindref="compound">Accessibility</ref> object will also re-emit the states </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="269" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="517" bodyend="543"/>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" compoundref="actor-accessible_8cpp" startline="318" endline="366">EmitStateChanged</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1a61572de2657e5e55a5cda09b55032529" compoundref="actor-accessible_8cpp" startline="154" endline="159">GetChildren</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1aa099f95c6648ff33d22b9b63a212d0b6">Dali::Accessibility::Accessible::GetStates</references>
+        <references refid="namespaceDali_1_1Accessibility_1ad6042713d68563c30ae6b67a7436548b" compoundref="accessibility-bridge_8h" startline="646" endline="664">Dali::Accessibility::IsUp</references>
+        <references refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3cafd4487453885e6013ddea8e02030afb0">Dali::Accessibility::MAX_COUNT</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a532fbda1a24816acd7be752fde8cf348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::ClearCache</definition>
+        <argsstring>()</argsstring>
+        <name>ClearCache</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::ClearCache</qualifiedname>
+        <briefdescription>
+<para>Clears internal cache data on bridge down. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="274" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="545" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aea72b49acaf295c877fd1bd8bb3e0783" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">bool</ref></type>
+        <definition>bool Dali::Accessibility::ActorAccessible::CanAcceptZeroSize</definition>
+        <argsstring>() const</argsstring>
+        <name>CanAcceptZeroSize</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::CanAcceptZeroSize</qualifiedname>
+        <briefdescription>
+<para>Checks if the accessible object can be accepted even with zero size. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="279" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="550" bodyend="554"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" compoundref="actor-accessible_8h" startline="287" endline="295">Self</references>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6c8039c21941856203584a0192845cb1" compoundref="actor-accessible_8cpp" startline="224" endline="247">GetExtents</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ae81eb11a1b7150462c62e83b3e4d037f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::InitDefaultFeatures</definition>
+        <argsstring>() override</argsstring>
+        <name>InitDefaultFeatures</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::InitDefaultFeatures</qualifiedname>
+        <reimplements refid="classDali_1_1Accessibility_1_1Accessible_1abf11135e02c81072352709f5e6cf4725">InitDefaultFeatures</reimplements>
+        <briefdescription>
+<para>Initializes default accessibility features.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This pure virtual function must be implemented by derived classes to initialize the default set of accessibility features for the specific accessible object type.</para>
+<para><simplesect kind="note"><para>This function is called during the initialization of the accessible object to set up the basic accessibility features that are always available.   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="284" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="259" bodyend="263"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Dali::Actor</type>
+        <definition>Dali::Actor Dali::Accessibility::ActorAccessible::Self</definition>
+        <argsstring>() const</argsstring>
+        <name>Self</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::Self</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="287" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="287" bodyend="295"/>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1aea72b49acaf295c877fd1bd8bb3e0783" compoundref="actor-accessible_8cpp" startline="550" endline="554">CanAcceptZeroSize</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1aa201689e9376ef8f6a8cb69bde772bb7" compoundref="actor-accessible_8cpp" startline="265" endline="276">DoGetChildren</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6c8039c21941856203584a0192845cb1" compoundref="actor-accessible_8cpp" startline="224" endline="247">GetExtents</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1af8d597b1dc4a7c57d41bb0f4cf48ed5e" compoundref="actor-accessible_8cpp" startline="194" endline="197">GetInternalActor</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1af561f88598418f5a7cb77dd0aa3f8d33" compoundref="actor-accessible_8cpp" startline="117" endline="120">GetName</referencedby>
+        <referencedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1ab49ef12c972b37d468b4def4a155802e" compoundref="actor-accessible_8cpp" startline="132" endline="143">GetParent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aa201689e9376ef8f6a8cb69bde772bb7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::DoGetChildren</definition>
+        <argsstring>(std::vector&lt; Accessible * &gt; &amp;children)</argsstring>
+        <name>DoGetChildren</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::DoGetChildren</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> * &gt; &amp;</type>
+          <declname>children</declname>
+        </param>
+        <briefdescription>
+<para>Populates the collection of children of this <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default implementation retrieves the children from the Actor hierarchy. Override this if you want to report other objects as children, either instead of, or together with the dependent Actor-derived Accessibles. Remember to call <ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1abe12dd7262a7bb3ea30fc0c246df9c38" kindref="member">OnChildrenChanged()</ref> if you want your implementation of <ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1aa201689e9376ef8f6a8cb69bde772bb7" kindref="member">DoGetChildren()</ref> to be called again (in case your custom collection of children changes).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">children</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initially empty vector to insert children into</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">GetChildCound()</ref>, <ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1a61572de2657e5e55a5cda09b55032529" kindref="member">GetChildren()</ref> and <ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1a04ae20a1b2cd90236ed5c662ad203561" kindref="member">GetChildAtIndex()</ref> are not available for overriding, but they respect the children collection reported by this method.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1abe12dd7262a7bb3ea30fc0c246df9c38" kindref="member">OnChildrenChanged()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1a7bb5a9ee43c5bccd1f4d353cbaf102a9" kindref="member">GetChildCount()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1a61572de2657e5e55a5cda09b55032529" kindref="member">GetChildren()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1ActorAccessible_1a04ae20a1b2cd90236ed5c662ad203561" kindref="member">GetChildAtIndex()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="316" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="265" bodyend="276"/>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a11b53a8a2f89c1f8ec44340a3af4449d" compoundref="accessibility_8cpp" startline="621" endline="625">Dali::Accessibility::Accessible::Get</references>
+        <references refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" compoundref="accessible_8h" startline="428" endline="439">Dali::Accessibility::Accessible::GetFeature</references>
+        <references refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" compoundref="actor-accessible_8h" startline="287" endline="295">Self</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1aec3997da22be09292c03259dc934d670" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::OnChildrenChanged</definition>
+        <argsstring>(Dali::Actor)</argsstring>
+        <name>OnChildrenChanged</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::OnChildrenChanged</qualifiedname>
+        <param>
+          <type>Dali::Actor</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="320" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="254" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1ActorAccessible_1a7333bb793eed64e4d1407164c4e85018" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" kindref="member">void</ref></type>
+        <definition>void Dali::Accessibility::ActorAccessible::UpdateChildren</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateChildren</name>
+        <qualifiedname>Dali::Accessibility::ActorAccessible::UpdateChildren</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="323" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp" bodystart="278" bodyend="303"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Accessibility::Accessible</label>
+        <link refid="classDali_1_1Accessibility_1_1Accessible"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::ActorAccessible</label>
+        <link refid="classDali_1_1Accessibility_1_1ActorAccessible"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Dali::Accessibility::Collection</label>
+        <link refid="classDali_1_1Accessibility_1_1Collection"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dali::Accessibility::Component</label>
+        <link refid="classDali_1_1Accessibility_1_1Component"/>
+      </node>
+      <node id="5">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="7">
+        <label>Dali::BaseObjectObserver</label>
+      </node>
+      <node id="6">
+        <label>Dali::ConnectionTracker</label>
+      </node>
+      <node id="8">
+        <label>std::enable_shared_from_this&lt; ActorAccessible &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::Accessibility::Accessible</label>
+        <link refid="classDali_1_1Accessibility_1_1Accessible"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::ActorAccessible</label>
+        <link refid="classDali_1_1Accessibility_1_1ActorAccessible"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Dali::Accessibility::Collection</label>
+        <link refid="classDali_1_1Accessibility_1_1Collection"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dali::Accessibility::Component</label>
+        <link refid="classDali_1_1Accessibility_1_1Component"/>
+      </node>
+      <node id="5">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="7">
+        <label>Dali::BaseObjectObserver</label>
+      </node>
+      <node id="6">
+        <label>Dali::ConnectionTracker</label>
+      </node>
+      <node id="8">
+        <label>std::enable_shared_from_this&lt; ActorAccessible &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" line="31" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.h" bodystart="36" bodyend="332"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a5053aa95b5e34f8f83e2e4c7d0cd9c79" prot="protected" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Accessible</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a9bcea02062ec0473a418cc85e114b1be" prot="protected" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Accessible</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1af1acdd35e9151926d042e8b92c75728d" prot="protected" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Accessible</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a07d83cfa9d9e950105eda1b6e2fcb466" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>ActorAccessible</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6f175fd9ccf55af31411483e7877d9cf" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>ActorAccessible</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a5fbf9422d7eaf92cd187549626cd3d11" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>AddFeature</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aea72b49acaf295c877fd1bd8bb3e0783" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>CanAcceptZeroSize</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a532fbda1a24816acd7be752fde8cf348" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>ClearCache</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1ad2df2cb938ddd361a935068c0b2ed108" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>ClearHighlight</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a48360a6af596cbae5f351c58585fcdda" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>DoGesture</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aa201689e9376ef8f6a8cb69bde772bb7" prot="protected" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>DoGetChildren</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a8cbe4c6991760dd2ba671c310d90bfaf" prot="protected" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>DoGetInterfaces</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a944236f855f90eb47fa0dbdfbab02f2c" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>DumpDetailLevel</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a3369b0019973572d4926ba34798661ce" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>DumpTree</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a44cee6f55b000dc02eda904129c1b95c" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Emit</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6f9b86a7c20d621cb0c4cd2dffefd8e1" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Emit</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1acbf8ef696aa6cd99deba960ae2f5cde9" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitActiveDescendantChanged</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aed8305d7fbab743b23de20b29ab2a9f9" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitBoundsChanged</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aeb42241005186287982003079a82f4d9" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitFocused</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a433e3b6bf0505a1a4f65306e000f35c2" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitHighlighted</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac766fc442356f7129dcbf5166ffea7d4" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitMovedOutOfScreen</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a3ef9dd0877aa6d03d5c66406d10d349c" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitScrollFinished</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1af1b83964b4baadede264beb754443485" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitScrollStarted</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a0be8d22511ad00df34833829dc23b8c3" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitShowing</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ac1b0e867542f3bc6bb5838b8bf240185" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitStateChanged</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ae0bb4c7e0c4942cb3202504978d3c503" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitTextCursorMoved</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a7b86d6a54ac5b24114fe8b4905388727" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitTextDeleted</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a422dbbd4280366f0e7b1487529b8143b" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitTextInserted</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6d795a37dabbc686b63a43057f580ddd" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>EmitVisible</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a11b53a8a2f89c1f8ec44340a3af4449d" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Get</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a98266e6ab454ea6e1259b954281193b6" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetAccessibleAtPoint</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a37a6620a6f175b1f7a061c9ecdd15859" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetAddress</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ad12ae8878b56514ce0297389b5af5df8" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetAlpha</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a1dddbf831e7736762da4a8db7fc04f20" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetAttributes</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a04ae20a1b2cd90236ed5c662ad203561" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetChildAtIndex</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a7bb5a9ee43c5bccd1f4d353cbaf102a9" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetChildCount</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a61572de2657e5e55a5cda09b55032529" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetChildren</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1aee394f5c2936ea554dbdc000a466a03d" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetCurrentlyHighlightedActor</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ae56c221915c65073ab7993c773ba48fa" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetDescription</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6c8039c21941856203584a0192845cb1" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetExtents</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a9004edf1a9a37b7305d4c63745713e69" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetFeature</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a808aaed5200138aecc77e236aa1f4447" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetHighlightActor</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a21924d700d110ea83f8d60d3463e0609" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetIndexInParent</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a58e3c62656f4e37ae268b1ca28b99814" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetInterfaceName</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a8e14190c39cdf9f259fb4e3d4971dc9f" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetInterfaces</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a0bbb69e3d6682fb8fe5b9166686cf06a" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetInterfacesAsStrings</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1af8d597b1dc4a7c57d41bb0f4cf48ed5e" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetInternalActor</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a561bea8a02b8158b4b1964ea16db8a33" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetLayer</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a414997d299a64b725fe90f3559590734" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetLocalizedRoleName</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a5c6ae278209d67be890552ac9661f0be" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetMatches</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1adc3e74eea4b10b89ac085850199725f7" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetMatchesInMatches</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a3398bf402e749e7fe3d54a473bec0e69" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetMdiZOrder</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1af561f88598418f5a7cb77dd0aa3f8d33" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetName</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1af8739c994ded298260315dfc55eaa144" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetOwningPtr</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ab49ef12c972b37d468b4def4a155802e" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetParent</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1ad15ab96a006a6fb29173b6ec5d6efc82" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetRelationSet</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1aeab65a3a28fdc86710baf74b27aa2759" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetRole</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1af7cc71fd51eee81d9a67cae30d694880" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetRoleName</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1aa099f95c6648ff33d22b9b63a212d0b6" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetStates</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a79220f35a1dd45f282b0333c062451a8" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetStringProperty</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1ad522bd9aa936392b5b9e321264c1febe" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetSuppressedEvents</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1abc916a40aa04ee1600084f743555a47c" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetSuppressedEvents</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1af29f0d5d1aab322cbed8e9c7ac2a8530" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GetValue</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1adf11344bc47bff0fd4943c3c6e99702c" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GrabFocus</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1ad9688f239993c75a72dd7bf7e5876977" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>GrabHighlight</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ae81eb11a1b7150462c62e83b3e4d037f" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>InitDefaultFeatures</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a6c8ab542d2ca653c1be5e2a0299cc74f" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>IsAccessibleContainingPoint</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a5d01eff26fc9978bcc30f6400202bfe8" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>IsHidden</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a8a15adb12ddc89320d5d157674818966" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>IsHighlighted</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a7e687fbd00e3f9401af531382d561785" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>IsOnRootLevel</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a151d501049a9daa9a929b3f9b12e8cec" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>IsProxy</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aee502586efa695e7909e507b79cf4a91" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>IsScrollable</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a7d7cb7bf56440e86c8bd242059a343c7" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mActorId</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Collection_1a653bcc1f4e0923b44af9798d1fa89426" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>MatchRule</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a9f06ea433dd97eb66dc6a0de63954c78" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mChildren</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a9a39d779a8b5a403795287331f7c269c" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mChildrenDirty</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a0b13d5e3350ab7931f401e27eb66bed1" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mCollection</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1afbf7e0d93491cd69acf4633cfc2630d3" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mIsBeingDestroyed</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace3e0cdb0911f39c1179dd5519f53c67" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mLastEmittedState</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a932efe5e24a99f9ef30068f2b897536c" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>mSelf</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a1fb8920beadf310df6ce4306373a13d9" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>NotifyAccessibilityStateChange</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aa1247959c64e024d2a0ed7f5adbb6c8a" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>ObjectDestroyed</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1abe12dd7262a7bb3ea30fc0c246df9c38" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>OnChildrenChanged</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1aec3997da22be09292c03259dc934d670" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>OnChildrenChanged</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a37e650e6fd2073a15294dd4a42be7233" prot="protected" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a72c34b988ef6da5e05ec69be6b411745" prot="protected" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a4528cce18bc451f11407ff2fd3534de8" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>RegisterExternalAccessibleGetter</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1ace7f1d87cac28065049d5ed05736949f" prot="protected" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>Self</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a3f8195ba65e40f33389ed23f8592ac62" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>SetCurrentlyHighlightedActor</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a46703145d645ad1b26ad706dd7c823f9" prot="public" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>SetHighlightActor</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1a023d9cf293e4c8a0f1c1bd3d9f0bc584" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>SetListenPostRender</name></member>
+      <member refid="classDali_1_1Accessibility_1_1ActorAccessible_1a7333bb793eed64e4d1407164c4e85018" prot="private" virt="non-virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>UpdateChildren</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Accessible_1aa8cf852adbc09c67b74235d72d95f193" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>~Accessible</name></member>
+      <member refid="structDali_1_1Accessibility_1_1IAccessibilityFeature_1a6e182386d889c026bb3337b7863104d7" prot="public" virt="virtual"><scope>Dali::Accessibility::ActorAccessible</scope><name>~IAccessibilityFeature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

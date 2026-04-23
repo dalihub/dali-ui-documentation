@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Semaphore" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Semaphore</compoundname>
+    <includes refid="semaphore_8h" local="no">semaphore.h</includes>
+    <templateparamlist>
+      <param>
+        <type>std::ptrdiff_t</type>
+        <declname>LeastMaxValue</declname>
+        <defname>LeastMaxValue</defname>
+        <defval>std::numeric_limits&lt;std::ptrdiff_t&gt;::max()</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Semaphore_1a37ce764e7406bb25ad398d29284accce" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable Dali::Semaphore&lt; LeastMaxValue &gt;::mCondVar</definition>
+        <argsstring></argsstring>
+        <name>mCondVar</name>
+        <qualifiedname>Dali::Semaphore::mCondVar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="176" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Semaphore_1ab1c438d5dded681f6aabc74d09c7f752" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Dali::Semaphore&lt; LeastMaxValue &gt;::mLock</definition>
+        <argsstring></argsstring>
+        <name>mLock</name>
+        <qualifiedname>Dali::Semaphore::mLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="177" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Semaphore_1ac44762f70b9fa3304b6913a36443b993" prot="private" static="no" mutable="no">
+        <type>std::ptrdiff_t</type>
+        <definition>std::ptrdiff_t Dali::Semaphore&lt; LeastMaxValue &gt;::mCount</definition>
+        <argsstring></argsstring>
+        <name>mCount</name>
+        <qualifiedname>Dali::Semaphore::mCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="178" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Semaphore_1aceddbcbdcd548e43f21a98307e5b224b" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr std::ptrdiff_t</type>
+        <definition>static constexpr std::ptrdiff_t Dali::Semaphore&lt; LeastMaxValue &gt;::Max</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>Max</name>
+        <qualifiedname>Dali::Semaphore::Max</qualifiedname>
+        <briefdescription>
+<para>Returns the internal counter&apos;s maximum possible value, which is greater than or equal to LeastMaxValue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the maximum value of the semaphore </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="45" column="35" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="45" bodyend="48"/>
+        <referencedby refid="classDali_1_1Semaphore_1accf86632bde6aa73158f6b5f27dcdb39" compoundref="semaphore_8h" startline="72" endline="85">Dali::Semaphore&lt; LeastMaxValue &gt;::Release</referencedby>
+        <referencedby refid="classDali_1_1Semaphore_1a5f8f5b96f9d6898b072dd58cbc7c3324" compoundref="semaphore_8h" startline="55" endline="62">Dali::Semaphore&lt; LeastMaxValue &gt;::Semaphore</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Semaphore_1a5f8f5b96f9d6898b072dd58cbc7c3324" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Semaphore&lt; LeastMaxValue &gt;::Semaphore</definition>
+        <argsstring>(std::ptrdiff_t desired)</argsstring>
+        <name>Semaphore</name>
+        <qualifiedname>Dali::Semaphore::Semaphore</qualifiedname>
+        <param>
+          <type>std::ptrdiff_t</type>
+          <declname>desired</declname>
+        </param>
+        <briefdescription>
+<para>class constructor </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">desired</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the desired initial value of the semaphore </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="55" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="55" bodyend="62"/>
+        <references refid="classDali_1_1Semaphore_1aceddbcbdcd548e43f21a98307e5b224b" compoundref="semaphore_8h" startline="45" endline="48">Dali::Semaphore&lt; LeastMaxValue &gt;::Max</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Semaphore_1accf86632bde6aa73158f6b5f27dcdb39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Semaphore&lt; LeastMaxValue &gt;::Release</definition>
+        <argsstring>(std::ptrdiff_t update=1)</argsstring>
+        <name>Release</name>
+        <qualifiedname>Dali::Semaphore::Release</qualifiedname>
+        <param>
+          <type>std::ptrdiff_t</type>
+          <declname>update</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Atomically increments the internal counter by the value of update. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Any" kindref="compound">Any</ref> thread waiting for the counter to be greater than 0 will subsequently be unlocked.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">update</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to increment the semaphore </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="72" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="72" bodyend="85"/>
+        <references refid="classDali_1_1Semaphore_1aceddbcbdcd548e43f21a98307e5b224b" compoundref="semaphore_8h" startline="45" endline="48">Dali::Semaphore&lt; LeastMaxValue &gt;::Max</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Semaphore_1af34e42dc925f2219ccad5c0171437998" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Semaphore&lt; LeastMaxValue &gt;::Acquire</definition>
+        <argsstring>()</argsstring>
+        <name>Acquire</name>
+        <qualifiedname>Dali::Semaphore::Acquire</qualifiedname>
+        <briefdescription>
+<para>Atomically decrements the internal counter by one if it is greater than zero; otherwise blocks until it is greater than zero and can successfully decrement the internal counter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="92" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="92" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Semaphore_1a36bf260495fdd3acb9fc28d29582d3bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Semaphore&lt; LeastMaxValue &gt;::TryAcquire</definition>
+        <argsstring>()</argsstring>
+        <name>TryAcquire</name>
+        <qualifiedname>Dali::Semaphore::TryAcquire</qualifiedname>
+        <briefdescription>
+<para>Tries to atomically decrement the internal counter by one if it is greater than zero; no blocking occurs regardless. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if it decremented the counter, otherwise false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="108" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="108" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Semaphore_1a52975fb5b963f0f8b74d91106bbb28a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Rep</type>
+          </param>
+          <param>
+            <type>typename Period</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::Semaphore&lt; LeastMaxValue &gt;::TryAcquireFor</definition>
+        <argsstring>(const std::chrono::duration&lt; Rep, Period &gt; &amp;relTime)</argsstring>
+        <name>TryAcquireFor</name>
+        <qualifiedname>Dali::Semaphore::TryAcquireFor</qualifiedname>
+        <param>
+          <type>const std::chrono::duration&lt; Rep, Period &gt; &amp;</type>
+          <declname>relTime</declname>
+        </param>
+        <briefdescription>
+<para>Tries to atomically decrement the internal counter by one if it is greater than zero; otherwise blocks until it is greater than zero can successfully decrement the internal counter, or the relTime duration has been exceeded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">relTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum duration the function must wait for to fail</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it decremented the internal counter, otherwise false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="130" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="130" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Semaphore_1af709d699ab883202383158bf246570ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Clock</type>
+          </param>
+          <param>
+            <type>typename Duration</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::Semaphore&lt; LeastMaxValue &gt;::TryAcquireUntil</definition>
+        <argsstring>(const std::chrono::time_point&lt; Clock, Duration &gt; &amp;absTime)</argsstring>
+        <name>TryAcquireUntil</name>
+        <qualifiedname>Dali::Semaphore::TryAcquireUntil</qualifiedname>
+        <param>
+          <type>const std::chrono::time_point&lt; Clock, Duration &gt; &amp;</type>
+          <declname>absTime</declname>
+        </param>
+        <briefdescription>
+<para>Tries to atomically decrement the internal counter by one if it is greater than zero; otherwise blocks until it is greater than zero can successfully decrement the internal counter, or the absTime duration point has been passed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">absTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the earliest time the function must wait until in order to fail</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if it decremented the internal counter, otherwise false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="154" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="154" bodyend="166"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Semaphore_1ad481fd1bbd16b3fd17ee318cacc30939" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Semaphore&lt; LeastMaxValue &gt;::ThrowInvalidParamException</definition>
+        <argsstring>(std::ptrdiff_t param) const</argsstring>
+        <name>ThrowInvalidParamException</name>
+        <qualifiedname>Dali::Semaphore::ThrowInvalidParamException</qualifiedname>
+        <param>
+          <type>std::ptrdiff_t</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="169" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="169" bodyend="174"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class that implements a C++20 counting_semaphore like interface. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" line="36" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/semaphore.h" bodystart="37" bodyend="179"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Semaphore_1af34e42dc925f2219ccad5c0171437998" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>Acquire</name></member>
+      <member refid="classDali_1_1Semaphore_1aceddbcbdcd548e43f21a98307e5b224b" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>Max</name></member>
+      <member refid="classDali_1_1Semaphore_1a37ce764e7406bb25ad398d29284accce" prot="private" virt="non-virtual"><scope>Dali::Semaphore</scope><name>mCondVar</name></member>
+      <member refid="classDali_1_1Semaphore_1ac44762f70b9fa3304b6913a36443b993" prot="private" virt="non-virtual"><scope>Dali::Semaphore</scope><name>mCount</name></member>
+      <member refid="classDali_1_1Semaphore_1ab1c438d5dded681f6aabc74d09c7f752" prot="private" virt="non-virtual"><scope>Dali::Semaphore</scope><name>mLock</name></member>
+      <member refid="classDali_1_1Semaphore_1accf86632bde6aa73158f6b5f27dcdb39" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>Release</name></member>
+      <member refid="classDali_1_1Semaphore_1a5f8f5b96f9d6898b072dd58cbc7c3324" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>Semaphore</name></member>
+      <member refid="classDali_1_1Semaphore_1ad481fd1bbd16b3fd17ee318cacc30939" prot="private" virt="non-virtual"><scope>Dali::Semaphore</scope><name>ThrowInvalidParamException</name></member>
+      <member refid="classDali_1_1Semaphore_1a36bf260495fdd3acb9fc28d29582d3bc" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>TryAcquire</name></member>
+      <member refid="classDali_1_1Semaphore_1a52975fb5b963f0f8b74d91106bbb28a9" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>TryAcquireFor</name></member>
+      <member refid="classDali_1_1Semaphore_1af709d699ab883202383158bf246570ac" prot="public" virt="non-virtual"><scope>Dali::Semaphore</scope><name>TryAcquireUntil</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

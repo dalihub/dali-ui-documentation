@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1PlatformAbstraction" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Integration::PlatformAbstraction</compoundname>
+    <includes refid="platform-abstraction_8h" local="no">platform-abstraction.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1PlatformAbstraction_1a72d7b7d2c446e8a780c6d29257418aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t Dali::Integration::PlatformAbstraction::StartTimer</definition>
+        <argsstring>(uint32_t milliseconds, CallbackBase *callback)=0</argsstring>
+        <name>StartTimer</name>
+        <qualifiedname>Dali::Integration::PlatformAbstraction::StartTimer</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>milliseconds</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets a callback to occur in the future <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">milliseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of milliseconds to wait until executing the callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function to call when the timer expires </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a timer reference ID, to be used for cancelling the timer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/platform-abstraction.h" line="44" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1PlatformAbstraction_1a90c36ed13dd43047233b6f5bef519dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Integration::PlatformAbstraction::CancelTimer</definition>
+        <argsstring>(uint32_t timerId)=0</argsstring>
+        <name>CancelTimer</name>
+        <qualifiedname>Dali::Integration::PlatformAbstraction::CancelTimer</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>timerId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cancels a running timer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timerId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the ID reference returned when the timer was started </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/platform-abstraction.h" line="50" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1PlatformAbstraction_1a127c9bd11f8584512d887b85a2b44cd7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::Integration::PlatformAbstraction::~PlatformAbstraction</definition>
+        <argsstring>()=default</argsstring>
+        <name>~PlatformAbstraction</name>
+        <qualifiedname>Dali::Integration::PlatformAbstraction::~PlatformAbstraction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual destructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/platform-abstraction.h" line="56" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1Integration_1_1PlatformAbstraction" kindref="compound">PlatformAbstraction</ref> is an abstract interface, used by <ref refid="namespaceDali" kindref="compound">Dali</ref> to access platform specific services. A concrete implementation must be created for each platform, and provided when creating the <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Dali::Integration::Core</ref> object. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/platform-abstraction.h" line="35" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/platform-abstraction.h" bodystart="36" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1PlatformAbstraction_1a90c36ed13dd43047233b6f5bef519dac" prot="public" virt="pure-virtual"><scope>Dali::Integration::PlatformAbstraction</scope><name>CancelTimer</name></member>
+      <member refid="classDali_1_1Integration_1_1PlatformAbstraction_1a72d7b7d2c446e8a780c6d29257418aed" prot="public" virt="pure-virtual"><scope>Dali::Integration::PlatformAbstraction</scope><name>StartTimer</name></member>
+      <member refid="classDali_1_1Integration_1_1PlatformAbstraction_1a127c9bd11f8584512d887b85a2b44cd7" prot="protected" virt="virtual"><scope>Dali::Integration::PlatformAbstraction</scope><name>~PlatformAbstraction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

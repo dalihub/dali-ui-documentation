@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1FileStream" kind="class" language="C++" prot="public">
+    <compoundname>Dali::FileStream</compoundname>
+    <includes refid="file-stream_8h" local="no">file-stream.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FileMode</name>
+        <qualifiedname>Dali::FileStream::FileMode</qualifiedname>
+        <enumvalue id="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8affc7bd976ae5b1682803619a4d1a2742" prot="public">
+          <name>BINARY</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>File stream will be opened as a binary. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8aa82ed5fbc3396576ccf24e815ba28adf" prot="public">
+          <name>TEXT</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>File stream will be opened as text. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a732f7c57becf2239ed5a4b140b7412f4" prot="public">
+          <name>READ</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>File stream will be opened for reading. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a6f0b0554131b6307acb76f0511a14084" prot="public">
+          <name>WRITE</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>File stream will be opened for writing. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8aa2744a99352a43a8abaf75328e939edf" prot="public">
+          <name>APPEND</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+<para>File stream will be opened for appending. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>File type formats The default format is binary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; FileType format </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="41" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" bodystart="42" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1FileStream_1aea10251e6bc648a18ffea4991478cb2b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Impl &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; Dali::FileStream::mImpl</definition>
+        <argsstring></argsstring>
+        <name>mImpl</name>
+        <qualifiedname>Dali::FileStream::mImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="115" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1FileStream_1adb2dc893e8d043ff79731161c6883c64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FileStream::FileStream</definition>
+        <argsstring>(const std::string &amp;filename, uint8_t mode=BINARY|READ)</argsstring>
+        <name>FileStream</name>
+        <qualifiedname>Dali::FileStream::FileStream</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+          <defval><ref refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8affc7bd976ae5b1682803619a4d1a2742" kindref="member">BINARY</ref>|<ref refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a732f7c57becf2239ed5a4b140b7412f4" kindref="member">READ</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to open the stream for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to open the stream. Binary or Text, Read or Write. Binary &amp; Read default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="55" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1a24843927d16eda84ecff95c0a330a685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FileStream::FileStream</definition>
+        <argsstring>(uint8_t *buffer, size_t dataSize, uint8_t mode=BINARY|READ)</argsstring>
+        <name>FileStream</name>
+        <qualifiedname>Dali::FileStream::FileStream</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>dataSize</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+          <defval><ref refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8affc7bd976ae5b1682803619a4d1a2742" kindref="member">BINARY</ref>|<ref refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a732f7c57becf2239ed5a4b140b7412f4" kindref="member">READ</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to open the stream for. The buffer is not owned by <ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> and must be valid for entire lifetime of <ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum size of the data in the buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to open the stream. Binary or Text, Read or Write. Binary &amp; Read default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="64" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1a6823677de86e171b02d89f9b88829c85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FileStream::FileStream</definition>
+        <argsstring>(Dali::Vector&lt; uint8_t &gt; &amp;buffer, size_t dataSize, uint8_t mode=BINARY|READ)</argsstring>
+        <name>FileStream</name>
+        <qualifiedname>Dali::FileStream::FileStream</qualifiedname>
+        <param>
+          <type>Dali::Vector&lt; uint8_t &gt; &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>dataSize</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+          <defval><ref refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8affc7bd976ae5b1682803619a4d1a2742" kindref="member">BINARY</ref>|<ref refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a732f7c57becf2239ed5a4b140b7412f4" kindref="member">READ</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to open the stream for. The buffer is not owned by <ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> and must be valid for entire lifetime of <ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum size of the data in the buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to open the stream. Binary or Text, Read or Write. Binary &amp; Read default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="73" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1ace0c3d560c5f93825fadba99878cbe6a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FileStream::FileStream</definition>
+        <argsstring>(FileStream &amp;&amp;) noexcept</argsstring>
+        <name>FileStream</name>
+        <qualifiedname>Dali::FileStream::FileStream</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default move constructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="78" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1aefa1c74218b8ab16c62f99f2fef8bab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FileStream::FileStream</definition>
+        <argsstring>(const FileStream &amp;)=delete</argsstring>
+        <name>FileStream</name>
+        <qualifiedname>Dali::FileStream::FileStream</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Non copyable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="83" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1a29da01673541b66bee1d0d43559e28c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> &amp;</type>
+        <definition>FileStream &amp; Dali::FileStream::operator=</definition>
+        <argsstring>(const FileStream &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::FileStream::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Non assignable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="88" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1a60e0a75aae8f5dfba31922d250124255" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> &amp;</type>
+        <definition>FileStream &amp; Dali::FileStream::operator=</definition>
+        <argsstring>(FileStream &amp;&amp;) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::FileStream::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1FileStream" kindref="compound">FileStream</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Move assignable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="93" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1ab39ebb187f1a9b334c4d5eb73ca65ec7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FileStream::~FileStream</definition>
+        <argsstring>()</argsstring>
+        <name>~FileStream</name>
+        <qualifiedname>Dali::FileStream::~FileStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="98" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1a5971ead0695b4c1331dcbb5483a12724" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::iostream &amp;</type>
+        <definition>std::iostream &amp; Dali::FileStream::GetStream</definition>
+        <argsstring>()</argsstring>
+        <name>GetStream</name>
+        <qualifiedname>Dali::FileStream::GetStream</qualifiedname>
+        <briefdescription>
+<para>Returns the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::iostream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="104" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.cpp" bodystart="48" bodyend="51"/>
+        <references refid="classDali_1_1FileStream_1a5971ead0695b4c1331dcbb5483a12724" compoundref="file-stream_8cpp" startline="48" endline="51">GetStream</references>
+        <referencedby refid="classDali_1_1FileStream_1a5971ead0695b4c1331dcbb5483a12724" compoundref="file-stream_8cpp" startline="48" endline="51">GetStream</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FileStream_1afa0fc7d474fb89b054126a3cb945f6cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FILE *</type>
+        <definition>FILE * Dali::FileStream::GetFile</definition>
+        <argsstring>()</argsstring>
+        <name>GetFile</name>
+        <qualifiedname>Dali::FileStream::GetFile</qualifiedname>
+        <briefdescription>
+<para>Returns the file stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>FILE. </para>
+</simplesect>
+<simplesect kind="note"><para>This class is responsible for closing the file so the caller SHOULD NOT call fclose() on the returned pointer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="111" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" line="34" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-stream.h" bodystart="35" bodyend="116"/>
+    <listofallmembers>
+      <member refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8aa2744a99352a43a8abaf75328e939edf" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>APPEND</name></member>
+      <member refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8affc7bd976ae5b1682803619a4d1a2742" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>BINARY</name></member>
+      <member refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>FileMode</name></member>
+      <member refid="classDali_1_1FileStream_1adb2dc893e8d043ff79731161c6883c64" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>FileStream</name></member>
+      <member refid="classDali_1_1FileStream_1a24843927d16eda84ecff95c0a330a685" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>FileStream</name></member>
+      <member refid="classDali_1_1FileStream_1a6823677de86e171b02d89f9b88829c85" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>FileStream</name></member>
+      <member refid="classDali_1_1FileStream_1ace0c3d560c5f93825fadba99878cbe6a" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>FileStream</name></member>
+      <member refid="classDali_1_1FileStream_1aefa1c74218b8ab16c62f99f2fef8bab6" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>FileStream</name></member>
+      <member refid="classDali_1_1FileStream_1afa0fc7d474fb89b054126a3cb945f6cb" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>GetFile</name></member>
+      <member refid="classDali_1_1FileStream_1a5971ead0695b4c1331dcbb5483a12724" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>GetStream</name></member>
+      <member refid="classDali_1_1FileStream_1aea10251e6bc648a18ffea4991478cb2b" prot="private" virt="non-virtual"><scope>Dali::FileStream</scope><name>mImpl</name></member>
+      <member refid="classDali_1_1FileStream_1a29da01673541b66bee1d0d43559e28c5" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>operator=</name></member>
+      <member refid="classDali_1_1FileStream_1a60e0a75aae8f5dfba31922d250124255" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>operator=</name></member>
+      <member refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a732f7c57becf2239ed5a4b140b7412f4" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>READ</name></member>
+      <member refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8aa82ed5fbc3396576ccf24e815ba28adf" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>TEXT</name></member>
+      <member refid="classDali_1_1FileStream_1a529c8abb220cca762cf6ae12609c65f8a6f0b0554131b6307acb76f0511a14084" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>WRITE</name></member>
+      <member refid="classDali_1_1FileStream_1ab39ebb187f1a9b334c4d5eb73ca65ec7" prot="public" virt="non-virtual"><scope>Dali::FileStream</scope><name>~FileStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

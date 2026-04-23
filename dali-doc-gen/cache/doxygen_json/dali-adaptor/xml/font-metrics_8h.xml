@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="font-metrics_8h" kind="file" language="C++">
+    <compoundname>font-metrics.h</compoundname>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="font-metrics_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/font-metrics.cpp</includedby>
+    <includedby refid="text-abstraction_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-abstraction.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/font-metrics.h</label>
+        <link refid="font-metrics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/font-metrics.cpp</label>
+        <link refid="font-metrics_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/font-metrics.h</label>
+        <link refid="font-metrics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-abstraction.h</label>
+        <link refid="text-abstraction_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDali_1_1TextAbstraction_1_1FontMetrics" prot="public">Dali::TextAbstraction::FontMetrics</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1TextAbstraction">Dali::TextAbstraction</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_TEXT_ABSTRACTION_FONT_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_TEXT_ABSTRACTION_FONT_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">TextAbstraction</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31" refid="structDali_1_1TextAbstraction_1_1FontMetrics" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics" kindref="compound">FontMetrics</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics" kindref="compound">FontMetrics</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics" kindref="compound">FontMetrics</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ascenderPixels,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>descenderPixels,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>heightPixels,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>underlinePositionPixels,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>underlineThicknessPixels);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ApplyDesignLineHeightCompat();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structDali_1_1TextAbstraction_1_1FontMetrics_1af0321093341adcbd3a82293d9f0c0c7e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics_1af0321093341adcbd3a82293d9f0c0c7e" kindref="member">ascender</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67" refid="structDali_1_1TextAbstraction_1_1FontMetrics_1ae3e5e45c51f883c0162f08ea1fa92a44" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics_1ae3e5e45c51f883c0162f08ea1fa92a44" kindref="member">descender</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="structDali_1_1TextAbstraction_1_1FontMetrics_1a3e5ad958e665560d788df00ef42efcb9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics_1a3e5ad958e665560d788df00ef42efcb9" kindref="member">height</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69" refid="structDali_1_1TextAbstraction_1_1FontMetrics_1a80483adb0fe11891db0f4cab24b7623b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics_1a80483adb0fe11891db0f4cab24b7623b" kindref="member">underlinePosition</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="structDali_1_1TextAbstraction_1_1FontMetrics_1ab89eab263a8b004cb3587cd7ecc87c2b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1FontMetrics_1ab89eab263a8b004cb3587cd7ecc87c2b" kindref="member">underlineThickness</ref>;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TextAbstraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//DALI_TEXT_ABSTRACTION_FONT_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/font-metrics.h"/>
+  </compounddef>
+</doxygen>

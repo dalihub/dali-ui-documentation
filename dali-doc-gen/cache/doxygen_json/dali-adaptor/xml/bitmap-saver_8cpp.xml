@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="bitmap-saver_8cpp" kind="file" language="C++">
+    <compoundname>bitmap-saver.cpp</compoundname>
+    <includes refid="bitmap-saver_8h" local="no">dali/devel-api/adaptor-framework/bitmap-saver.h</includes>
+    <includes local="no">dali/integration-api/debug.h</includes>
+    <includes local="no">dali/public-api/common/dali-vector.h</includes>
+    <includes local="no">dali/internal/imaging/common/loader-jpeg.h</includes>
+    <includes local="no">dali/internal/imaging/common/loader-png.h</includes>
+    <includes local="no">dali/internal/legacy/common/tizen-platform-abstraction.h</includes>
+    <includes local="no">dali/internal/legacy/tizen/image-encoder.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/bitmap-saver.cpp</label>
+        <link refid="bitmap-saver_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/bitmap-saver.h</label>
+        <link refid="bitmap-saver_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/integration-api/debug.h</label>
+      </node>
+      <node id="9">
+        <label>dali/internal/imaging/common/loader-jpeg.h</label>
+      </node>
+      <node id="10">
+        <label>dali/internal/imaging/common/loader-png.h</label>
+      </node>
+      <node id="11">
+        <label>dali/internal/legacy/common/tizen-platform-abstraction.h</label>
+      </node>
+      <node id="12">
+        <label>dali/internal/legacy/tizen/image-encoder.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="bitmap-saver_8h" kindref="compound">dali/devel-api/adaptor-framework/bitmap-saver.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/debug.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/dali-vector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/imaging/common/loader-jpeg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/imaging/common/loader-png.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/legacy/common/tizen-platform-abstraction.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/legacy/tizen/image-encoder.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Pieces<sp/>needed<sp/>to<sp/>save<sp/>compressed<sp/>images<sp/>(temporary<sp/>location<sp/>while<sp/>plumbing):</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">FileFormat<sp/>GetFormatFromFileName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(filename.length()<sp/>&lt;<sp/>5)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>(short)<sp/>filename.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>FileFormat<sp/>format(INVALID_FORMAT);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>filenameSize<sp/>=<sp/>filename.length();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(filenameSize<sp/>&gt;=<sp/>4)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>{<sp/></highlight><highlight class="comment">//<sp/>Avoid<sp/>throwing<sp/>out_of_range<sp/>or<sp/>failing<sp/>silently<sp/>if<sp/>exceptions<sp/>are<sp/>turned-off<sp/>on<sp/>the<sp/>compare().<sp/>(http://www.cplusplus.com/reference/string/string/compare/)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.jpg&quot;</highlight><highlight class="normal">)<sp/>||<sp/>!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.JPG&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>JPG_FORMAT;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">)<sp/>||<sp/>!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.PNG&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>PNG_FORMAT;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.bmp&quot;</highlight><highlight class="normal">)<sp/>||<sp/>!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.BMP&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>BMP_FORMAT;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.gif&quot;</highlight><highlight class="normal">)<sp/>||<sp/>!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.GIF&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>GIF_FORMAT;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.ico&quot;</highlight><highlight class="normal">)<sp/>||<sp/>!filename.compare(filenameSize<sp/>-<sp/>4,<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;.ICO&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>ICO_FORMAT;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(filenameSize<sp/>&gt;=<sp/>5)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!filename.compare(filenameSize<sp/>-<sp/>5,<sp/>5,<sp/></highlight><highlight class="stringliteral">&quot;.jpeg&quot;</highlight><highlight class="normal">)<sp/>||<sp/>!filename.compare(filenameSize<sp/>-<sp/>5,<sp/>5,<sp/></highlight><highlight class="stringliteral">&quot;.JPEG&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>JPG_FORMAT;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>format;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>EncodeToFormat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/>pixelBuffer,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;unsigned<sp/>char&gt;&amp;<sp/>encodedPixels,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FileFormat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>formatEncoding,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pixel::Format<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pixelFormat,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quality)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(formatEncoding)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>JPG_FORMAT:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TizenPlatform::EncodeToJpeg(pixelBuffer,<sp/>encodedPixels,<sp/>width,<sp/>height,<sp/>pixelFormat,<sp/>quality);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>PNG_FORMAT:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TizenPlatform::EncodeToPng(pixelBuffer,<sp/>encodedPixels,<sp/>width,<sp/>height,<sp/>pixelFormat);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;Format<sp/>not<sp/>supported<sp/>for<sp/>image<sp/>encoding<sp/>(supported<sp/>formats<sp/>are<sp/>PNG<sp/>and<sp/>JPEG)\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>anonymous<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="namespaceDali_1a33d70b93984f5441cb1d5530a6d276a8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a33d70b93984f5441cb1d5530a6d276a8" kindref="member">EncodeToFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pixelBuffer,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Pixel::Format<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pixelFormat,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a33d70b93984f5441cb1d5530a6d276a8" kindref="member">EncodeToFile</ref>(pixelBuffer,<sp/>filename,<sp/>pixelFormat,<sp/>width,<sp/>height,<sp/><ref refid="namespaceDali_1aaf104199620b4550b244659bb09ef6d4" kindref="member">DEFAULT_JPG_QUALITY</ref>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="namespaceDali_1a13623d52ce4856c9b9bea62fcef2a79d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a33d70b93984f5441cb1d5530a6d276a8" kindref="member">EncodeToFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pixelBuffer,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Pixel::Format<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pixelFormat,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>quality)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>DALI_ASSERT_DEBUG(pixelBuffer<sp/>!=<sp/>0<sp/>&amp;&amp;<sp/>filename.size()<sp/>&gt;<sp/>4<sp/>&amp;&amp;<sp/>width<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>height<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>Vector&lt;unsigned<sp/>char&gt;<sp/>pixbufEncoded;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FileFormat<sp/><sp/><sp/><sp/><sp/><sp/>format<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>GetFormatFromFileName(filename);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>encodeResult<sp/>=<sp/>EncodeToFormat(pixelBuffer,<sp/>pixbufEncoded,<sp/>format,<sp/>width,<sp/>height,<sp/>pixelFormat,<sp/>quality);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!encodeResult)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;Encoding<sp/>pixels<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TizenPlatform::SaveFile(filename,<sp/>pixbufEncoded.Begin(),<sp/>pixbufEncoded.Count());</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/bitmap-saver.cpp"/>
+  </compounddef>
+</doxygen>

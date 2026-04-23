@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1Text" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Accessibility::Text</compoundname>
+    <basecompoundref refid="structDali_1_1Accessibility_1_1IAccessibilityFeature" prot="public" virt="non-virtual">Dali::Accessibility::IAccessibilityFeature</basecompoundref>
+    <includes refid="text_8h" local="no">text.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a09d133ab4fb3607be59aeb4815486f98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Dali::Accessibility::Text::GetText</definition>
+        <argsstring>(std::size_t startOffset, std::size_t endOffset) const =0</argsstring>
+        <name>GetText</name>
+        <qualifiedname>Dali::Accessibility::Text::GetText</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>startOffset</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>endOffset</declname>
+        </param>
+        <briefdescription>
+<para>Gets stored text in given range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">startOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">endOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first character after the last one expected</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The substring of stored text </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="46" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a432cc2089591525acd6cb906b10705ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::size_t</type>
+        <definition>virtual std::size_t Dali::Accessibility::Text::GetCharacterCount</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCharacterCount</name>
+        <qualifiedname>Dali::Accessibility::Text::GetCharacterCount</qualifiedname>
+        <briefdescription>
+<para>Gets number of all stored characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of characters </para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>CharacterCount</computeroutput> in DBus method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="54" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a822efb6a16882096a9a2e8ab061ac951" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::size_t</type>
+        <definition>virtual std::size_t Dali::Accessibility::Text::GetCursorOffset</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCursorOffset</name>
+        <qualifiedname>Dali::Accessibility::Text::GetCursorOffset</qualifiedname>
+        <briefdescription>
+<para>Gets the cursor offset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classDali_1_1Accessibility_1_1Value" kindref="compound">Value</ref> of cursor offset </para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>CaretOffset</computeroutput> in DBus method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="62" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1ae0a04d19f205dc57e98671b7112a0217" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Text::SetCursorOffset</definition>
+        <argsstring>(std::size_t offset)=0</argsstring>
+        <name>SetCursorOffset</name>
+        <qualifiedname>Dali::Accessibility::Text::SetCursorOffset</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para>Sets the cursor offset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cursor offset</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if successful </para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>SetCaretOffset</computeroutput> in DBus method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="72" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a78e1079b9e8de6d96dc11b3a1771755a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structDali_1_1Accessibility_1_1Range" kindref="compound">Range</ref></type>
+        <definition>virtual Range Dali::Accessibility::Text::GetTextAtOffset</definition>
+        <argsstring>(std::size_t offset, TextBoundary boundary) const =0</argsstring>
+        <name>GetTextAtOffset</name>
+        <qualifiedname>Dali::Accessibility::Text::GetTextAtOffset</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1a896b8733503f9873a60aa2610d49bc7a" kindref="member">TextBoundary</ref></type>
+          <declname>boundary</declname>
+        </param>
+        <briefdescription>
+<para>Gets substring of stored text truncated in concrete gradation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position in stored text </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">boundary</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration describing text gradation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structDali_1_1Accessibility_1_1Range" kindref="compound">Range</ref> structure containing acquired text and offsets in original string</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structDali_1_1Accessibility_1_1Range" kindref="compound">Dali::Accessibility::Range</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="84" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a36dc2cdf55af2e15457dbd74a6b4bd3e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structDali_1_1Accessibility_1_1Range" kindref="compound">Range</ref></type>
+        <definition>virtual Range Dali::Accessibility::Text::GetRangeOfSelection</definition>
+        <argsstring>(std::size_t selectionIndex) const =0</argsstring>
+        <name>GetRangeOfSelection</name>
+        <qualifiedname>Dali::Accessibility::Text::GetRangeOfSelection</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>selectionIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets selected text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">selectionIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selection index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Currently only one selection (i.e. with index = 0) is supported</para>
+</simplesect>
+<simplesect kind="return"><para><ref refid="structDali_1_1Accessibility_1_1Range" kindref="compound">Range</ref> structure containing acquired text and offsets in original string</para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>GetSelection</computeroutput> in DBus method. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structDali_1_1Accessibility_1_1Range" kindref="compound">Dali::Accessibility::Range</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="97" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a21aa007474f5a878d3b0caaccc72922a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Text::RemoveSelection</definition>
+        <argsstring>(std::size_t selectionIndex)=0</argsstring>
+        <name>RemoveSelection</name>
+        <qualifiedname>Dali::Accessibility::Text::RemoveSelection</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>selectionIndex</declname>
+        </param>
+        <briefdescription>
+<para>Removes the whole selection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">selectionIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selection index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Currently only one selection (i.e. with index = 0) is supported</para>
+</simplesect>
+<simplesect kind="return"><para>bool on success, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="107" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a818d364899cb62783ee08894d68a7677" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Text::SetRangeOfSelection</definition>
+        <argsstring>(std::size_t selectionIndex, std::size_t startOffset, std::size_t endOffset)=0</argsstring>
+        <name>SetRangeOfSelection</name>
+        <qualifiedname>Dali::Accessibility::Text::SetRangeOfSelection</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>selectionIndex</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>startOffset</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>endOffset</declname>
+        </param>
+        <briefdescription>
+<para>Sets selected text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">selectionIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selection index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">startOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">endOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first character after the last one expected</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Currently only one selection (i.e. with index = 0) is supported</para>
+</simplesect>
+<simplesect kind="return"><para>true on success, false otherwise </para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>SetSelection</computeroutput> in DBus method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="121" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Text_1a78357809c6e55b175a5cac3ad8280f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Rect&lt; float &gt;</type>
+        <definition>virtual Rect&lt; float &gt; Dali::Accessibility::Text::GetRangeExtents</definition>
+        <argsstring>(std::size_t startOffset, std::size_t endOffset, CoordinateType type)=0</argsstring>
+        <name>GetRangeExtents</name>
+        <qualifiedname>Dali::Accessibility::Text::GetRangeExtents</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>startOffset</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>endOffset</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3b" kindref="member">CoordinateType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Gets the bounding box for text within a range in text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">startOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first character </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">endOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of first character after the last one expected </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration with type of coordinate system</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rect&lt;float&gt; giving the position and size of the specified range of text </para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>GetRangeExtents</computeroutput> in DBus method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="133" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface representing objects which can store immutable texts. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1EditableText" kindref="compound">Dali::Accessibility::EditableText</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Text</label>
+        <link refid="classDali_1_1Accessibility_1_1Text"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Text</label>
+        <link refid="classDali_1_1Accessibility_1_1Text"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" line="35" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/text.h" bodystart="36" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a432cc2089591525acd6cb906b10705ee" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>GetCharacterCount</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a822efb6a16882096a9a2e8ab061ac951" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>GetCursorOffset</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a78357809c6e55b175a5cac3ad8280f79" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>GetRangeExtents</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a36dc2cdf55af2e15457dbd74a6b4bd3e" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>GetRangeOfSelection</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a09d133ab4fb3607be59aeb4815486f98" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>GetText</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a78e1079b9e8de6d96dc11b3a1771755a" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>GetTextAtOffset</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a21aa007474f5a878d3b0caaccc72922a" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>RemoveSelection</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1ae0a04d19f205dc57e98671b7112a0217" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>SetCursorOffset</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Text_1a818d364899cb62783ee08894d68a7677" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Text</scope><name>SetRangeOfSelection</name></member>
+      <member refid="structDali_1_1Accessibility_1_1IAccessibilityFeature_1a6e182386d889c026bb3337b7863104d7" prot="public" virt="virtual"><scope>Dali::Accessibility::Text</scope><name>~IAccessibilityFeature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

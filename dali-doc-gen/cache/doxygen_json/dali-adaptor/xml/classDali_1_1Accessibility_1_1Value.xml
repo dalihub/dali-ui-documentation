@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1Value" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Accessibility::Value</compoundname>
+    <basecompoundref refid="structDali_1_1Accessibility_1_1IAccessibilityFeature" prot="public" virt="non-virtual">Dali::Accessibility::IAccessibilityFeature</basecompoundref>
+    <includes refid="value_8h" local="no">value.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Value_1a8534bbd4ac913308de9d661abeff55b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Dali::Accessibility::Value::GetMinimum</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetMinimum</name>
+        <qualifiedname>Dali::Accessibility::Value::GetMinimum</qualifiedname>
+        <briefdescription>
+<para>Gets the lowest possible value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The minimum value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="37" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Dali::Accessibility::Value::GetCurrent</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCurrent</name>
+        <qualifiedname>Dali::Accessibility::Value::GetCurrent</qualifiedname>
+        <briefdescription>
+<para>Gets the current value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The application may set the &quot;value_format&quot; attribute to one of the following values in order to customize what is read by the Screen Reader:<orderedlist>
+<listitem><para>&quot;percent&quot; (the default) - <ref refid="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" kindref="member">GetCurrent()</ref> normalized as a percentage of the range [<ref refid="classDali_1_1Accessibility_1_1Value_1a8534bbd4ac913308de9d661abeff55b5" kindref="member">GetMinimum()</ref>, <ref refid="classDali_1_1Accessibility_1_1Value_1a27ec97fe68abd31349574b3d477fbc49" kindref="member">GetMaximum()</ref>],</para>
+</listitem><listitem><para>&quot;number&quot; - <ref refid="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" kindref="member">GetCurrent()</ref> verbatim</para>
+</listitem><listitem><para>&quot;text&quot; - <ref refid="classDali_1_1Accessibility_1_1Value_1aeeae089553513f4d36e6f09d2adb0b14" kindref="member">GetValueText()</ref> is used instead of <ref refid="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" kindref="member">GetCurrent()</ref></para>
+</listitem></orderedlist>
+</para>
+<para><simplesect kind="return"><para>The current value</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Value_1a8534bbd4ac913308de9d661abeff55b5" kindref="member">Value::GetMinimum()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Value_1a27ec97fe68abd31349574b3d477fbc49" kindref="member">Value::GetMaximum()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Value_1aeeae089553513f4d36e6f09d2adb0b14" kindref="member">Value::GetValueText()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>Dali::Toolkit::DevelControl::AppendAccessibilityAttribute() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="56" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Value_1aeeae089553513f4d36e6f09d2adb0b14" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Dali::Accessibility::Value::GetValueText</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetValueText</name>
+        <qualifiedname>Dali::Accessibility::Value::GetValueText</qualifiedname>
+        <briefdescription>
+<para>Gets the formatted current value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This does not have to be <ref refid="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" kindref="member">GetCurrent()</ref> formatted in any particular way, i.e. it may be an arbitrary string, e.g. &quot;small font size&quot; for the numeric value 10.0.</para>
+<para><simplesect kind="return"><para>The current value as text</para>
+</simplesect>
+<simplesect kind="note"><para>Only used if the &quot;value_format&quot; attribute is &quot;text&quot; </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" kindref="member">Value::GetCurrent()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="70" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Value_1a27ec97fe68abd31349574b3d477fbc49" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Dali::Accessibility::Value::GetMaximum</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetMaximum</name>
+        <qualifiedname>Dali::Accessibility::Value::GetMaximum</qualifiedname>
+        <briefdescription>
+<para>Gets the highest possible value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The highest value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="77" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Value_1a4dafc747cf5301e7971dada19fa90b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Value::SetCurrent</definition>
+        <argsstring>(double value)=0</argsstring>
+        <name>SetCurrent</name>
+        <qualifiedname>Dali::Accessibility::Value::SetCurrent</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the current value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current value to set</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if value could have been assigned, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="86" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Value_1ad2b1884e57d8447b4b52ea9ac2aaaa95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Dali::Accessibility::Value::GetMinimumIncrement</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetMinimumIncrement</name>
+        <qualifiedname>Dali::Accessibility::Value::GetMinimumIncrement</qualifiedname>
+        <briefdescription>
+<para>Gets the lowest increment that can be distinguished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The lowest increment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="93" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface representing objects which can store numeric value. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Value</label>
+        <link refid="classDali_1_1Accessibility_1_1Value"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Value</label>
+        <link refid="classDali_1_1Accessibility_1_1Value"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" line="29" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/value.h" bodystart="30" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Value_1a109a7f78096cc4b4e1222a792db94c33" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Value</scope><name>GetCurrent</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Value_1a27ec97fe68abd31349574b3d477fbc49" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Value</scope><name>GetMaximum</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Value_1a8534bbd4ac913308de9d661abeff55b5" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Value</scope><name>GetMinimum</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Value_1ad2b1884e57d8447b4b52ea9ac2aaaa95" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Value</scope><name>GetMinimumIncrement</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Value_1aeeae089553513f4d36e6f09d2adb0b14" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Value</scope><name>GetValueText</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Value_1a4dafc747cf5301e7971dada19fa90b3d" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Value</scope><name>SetCurrent</name></member>
+      <member refid="structDali_1_1Accessibility_1_1IAccessibilityFeature_1a6e182386d889c026bb3337b7863104d7" prot="public" virt="virtual"><scope>Dali::Accessibility::Value</scope><name>~IAccessibilityFeature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

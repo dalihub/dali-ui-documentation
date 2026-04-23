@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1AsyncTaskManager" kind="class" language="C++" prot="public">
+    <compoundname>Dali::AsyncTaskManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseHandle</basecompoundref>
+    <includes refid="async-task-manager_8h" local="no">async-task-manager.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>CompletedCallbackTraceMask</name>
+        <qualifiedname>Dali::AsyncTaskManager::CompletedCallbackTraceMask</qualifiedname>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba28373dcc321af5c8443d35d05f492e6b" prot="public">
+          <name>THREAD_MASK_MAIN</name>
+          <initializer>= 1u &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>Trace only main thread tasks. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaf685fb9a72e218a12090ec58c07c1f6e" prot="public">
+          <name>THREAD_MASK_WORKER</name>
+          <initializer>= 1u &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>Trace only worker thread tasks. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba151fe0fb49b634a66966353fd63cb973" prot="public">
+          <name>PRIORITY_MASK_HIGH</name>
+          <initializer>= 1u &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Trace only high priority tasks. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbae30148e643f45b6a6cb228479ce0e424" prot="public">
+          <name>PRIORITY_MASK_LOW</name>
+          <initializer>= 1u &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>Trace only low priority tasks. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba695d62278f3586b3aa7f89efe92ad725" prot="public">
+          <name>THREAD_MASK_ALL</name>
+          <initializer>= THREAD_MASK_MAIN | THREAD_MASK_WORKER</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba19ce690b55f104b43e9dc8628c50f058" prot="public">
+          <name>PRIORITY_MASK_ALL</name>
+          <initializer>= PRIORITY_MASK_HIGH | PRIORITY_MASK_LOW</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaa2004107ddc56b12a61e3a7841eec5b1" prot="public">
+          <name>MAIN_THREAD_TASKS</name>
+          <initializer>= THREAD_MASK_MAIN | PRIORITY_MASK_ALL</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba3307c4155a607cdc1a2958069840237c" prot="public">
+          <name>WORKER_THREAD_TASKS</name>
+          <initializer>= THREAD_MASK_WORKER | PRIORITY_MASK_ALL</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbabb1e6a35067633b7f4373ce49f47f236" prot="public">
+          <name>HIGH_PRIORITY_TASKS</name>
+          <initializer>= THREAD_MASK_ALL | PRIORITY_MASK_HIGH</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba72f937c0c600f46611f7c81d84e2ac0b" prot="public">
+          <name>LOW_PRIORITY_TASKS</name>
+          <initializer>= THREAD_MASK_ALL | PRIORITY_MASK_LOW</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaa87e35f832644d926db128368ea25155" prot="public">
+          <name>MAIN_THREAD_HIGH_PRIORITY_TASKS</name>
+          <initializer>= THREAD_MASK_MAIN | PRIORITY_MASK_HIGH</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaf32be9b040534b5354d2801cf8a49008" prot="public">
+          <name>MAIN_THREAD_LOW_PRIORITY_TASKS</name>
+          <initializer>= THREAD_MASK_MAIN | PRIORITY_MASK_LOW</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba2004dad712a98427e8af61bbf21922e1" prot="public">
+          <name>ALL_TASKS</name>
+          <initializer>= THREAD_MASK_ALL | PRIORITY_MASK_ALL</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba7a89efc59ef4732c907c04eee04458f0" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= ALL_TASKS</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="216" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="217" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1AsyncTaskManager_1a590d6d09c97d17ac5f3809c6d7ff4603" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>using Dali::AsyncTaskManager::TasksCompletedId =  uint32_t</definition>
+        <argsstring></argsstring>
+        <name>TasksCompletedId</name>
+        <qualifiedname>Dali::AsyncTaskManager::TasksCompletedId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="214" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1a41f12a755a2c8246600948d49c32ed1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::AsyncTaskManager::AsyncTaskManager</definition>
+        <argsstring>()</argsstring>
+        <name>AsyncTaskManager</name>
+        <qualifiedname>Dali::AsyncTaskManager::AsyncTaskManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. @SINCE_2_2.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="173" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1ab888ca330817e379e11d50e990720b12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::AsyncTaskManager::~AsyncTaskManager</definition>
+        <argsstring>()</argsstring>
+        <name>~AsyncTaskManager</name>
+        <qualifiedname>Dali::AsyncTaskManager::~AsyncTaskManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. @SINCE_2_2.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="179" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1aaab5e178dc1b1f2c7097d2160b24632e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::AsyncTaskManager::AddTask</definition>
+        <argsstring>(AsyncTaskPtr task)</argsstring>
+        <name>AddTask</name>
+        <qualifiedname>Dali::AsyncTaskManager::AddTask</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref></type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+<para>Add the async task into the waiting queue, called by main thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.3 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The task added to the queue. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="195" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="61" bodyend="64"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1ab81721e6ceadd294ce7649593593361e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::AsyncTaskManager::RemoveTask</definition>
+        <argsstring>(AsyncTaskPtr task)</argsstring>
+        <name>RemoveTask</name>
+        <qualifiedname>Dali::AsyncTaskManager::RemoveTask</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref></type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+<para>Remove the task from the waiting queue, called by main thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.3 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The task pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="203" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="66" bodyend="69"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1aadf13ca2fd66541d92d6580649eefd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::AsyncTaskManager::NotifyToTaskReady</definition>
+        <argsstring>(AsyncTaskPtr task)</argsstring>
+        <name>NotifyToTaskReady</name>
+        <qualifiedname>Dali::AsyncTaskManager::NotifyToTaskReady</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref></type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+<para>Notify to task was ready, called by any thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.29 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The task pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="211" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="71" bodyend="74"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1a56735076d4c87f7cc0b8b00be15f0e16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1AsyncTaskManager_1a590d6d09c97d17ac5f3809c6d7ff4603" kindref="member">TasksCompletedId</ref></type>
+        <definition>AsyncTaskManager::TasksCompletedId Dali::AsyncTaskManager::SetCompletedCallback</definition>
+        <argsstring>(CallbackBase *callback, CompletedCallbackTraceMask mask=CompletedCallbackTraceMask::DEFAULT)</argsstring>
+        <name>SetCompletedCallback</name>
+        <qualifiedname>Dali::AsyncTaskManager::SetCompletedCallback</qualifiedname>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bb" kindref="member">CompletedCallbackTraceMask</ref></type>
+          <declname>mask</declname>
+          <defval><ref refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba7a89efc59ef4732c907c04eee04458f0" kindref="member">CompletedCallbackTraceMask::DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Set the async tasks completed callback. Inputed callback will be emitted after all tasks what user added are completed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usage example:</para>
+<para>void OnTasksCompleted(TasksCompletedId id); auto id0 = <ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.SetCompletedCallback(MakeCallback(OnTasksCompleted), CompletedCallbackTraceMask::MASK_ALL); // OnTasksCompleted(id0); called at next Idler.</para>
+<para><ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.AddTask(task1); auto id1 = <ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.SetCompletedCallback(MakeCallback(OnTasksCompleted), CompletedCallbackTraceMask::MASK_ALL); // OnTasksCompleted(id1); called after task1 completed.</para>
+<para><ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.AddTask(task2WhichIsLowPriority); <ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.AddTask(task3WhichIsWorkerThread); <ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.AddTask(task4); auto id2 = <ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.SetCompletedCallback(MakeCallback(OnTasksCompleted), static_cast&lt;CompletedCallbackTraceMask&gt;(<ref refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba28373dcc321af5c8443d35d05f492e6b" kindref="member">CompletedCallbackTraceMask::THREAD_MASK_MAIN</ref> | <ref refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba151fe0fb49b634a66966353fd63cb973" kindref="member">CompletedCallbackTraceMask::PRIORITY_MASK_HIGH</ref>)); // OnTasksCompleted(id2); called after task1 and task4 completed.</para>
+<para><ref refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" kindref="member">AsyncTaskManager::Get()</ref>.RemoveCompletedCallback(id1); // OnTasksCompleted(id1); will not be called.</para>
+<para><simplesect kind="note"><para>The ownership of callback will be hold <ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref> itself. </para>
+</simplesect>
+<simplesect kind="note"><para>The callback will be emmited at Process() timming.</para>
+</simplesect>
+@SINCE_2_2.52 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback base when all AsyncTasks completed. This callback will be void return, and single input argument ; TasksCompletedId. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mask info s.t. what kind of async task we want to detact. For example, if we set this value as MASK_ALL &amp; ~PRIORITY_MASK_LOW, we will ignore low priority tasks. Default is MASK_ALL. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The unique id for callback. It can be used when we want to remove callback. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="276" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="76" bodyend="79"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1a838e6c47a49226e780e3e8922d64fdaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::AsyncTaskManager::RemoveCompletedCallback</definition>
+        <argsstring>(TasksCompletedId tasksCompletedId)</argsstring>
+        <name>RemoveCompletedCallback</name>
+        <qualifiedname>Dali::AsyncTaskManager::RemoveCompletedCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1AsyncTaskManager_1a590d6d09c97d17ac5f3809c6d7ff4603" kindref="member">TasksCompletedId</ref></type>
+          <declname>tasksCompletedId</declname>
+        </param>
+        <briefdescription>
+<para>Remove the async tasks completed callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>It will not execute setted callback.</para>
+</simplesect>
+@SINCE_2_2.52 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tasksCompletedId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The id for callback that want to remove. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if we success to removed. False if it already removed, or callback already emitted. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="286" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="81" bodyend="84"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref></type>
+        <definition>AsyncTaskManager Dali::AsyncTaskManager::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::AsyncTaskManager::Get</qualifiedname>
+        <briefdescription>
+<para>Gets the singleton of <ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.3 <simplesect kind="return"><para>A handle to the <ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="187" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The manager for async task @SINCE_2_2.3 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::AsyncTaskManager</label>
+        <link refid="classDali_1_1AsyncTaskManager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::AsyncTaskManager</label>
+        <link refid="classDali_1_1AsyncTaskManager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" line="166" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h" bodystart="167" bodyend="299"/>
+    <listofallmembers>
+      <member refid="classDali_1_1AsyncTaskManager_1aaab5e178dc1b1f2c7097d2160b24632e" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>AddTask</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba2004dad712a98427e8af61bbf21922e1" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>ALL_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a41f12a755a2c8246600948d49c32ed1d" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>AsyncTaskManager</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bb" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>CompletedCallbackTraceMask</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba7a89efc59ef4732c907c04eee04458f0" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>DEFAULT</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a236499d2297ce61138607b8900e823da" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>Get</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbabb1e6a35067633b7f4373ce49f47f236" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>HIGH_PRIORITY_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba72f937c0c600f46611f7c81d84e2ac0b" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>LOW_PRIORITY_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaa87e35f832644d926db128368ea25155" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>MAIN_THREAD_HIGH_PRIORITY_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaf32be9b040534b5354d2801cf8a49008" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>MAIN_THREAD_LOW_PRIORITY_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaa2004107ddc56b12a61e3a7841eec5b1" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>MAIN_THREAD_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1aadf13ca2fd66541d92d6580649eefd4c" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>NotifyToTaskReady</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba19ce690b55f104b43e9dc8628c50f058" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>PRIORITY_MASK_ALL</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba151fe0fb49b634a66966353fd63cb973" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>PRIORITY_MASK_HIGH</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbae30148e643f45b6a6cb228479ce0e424" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>PRIORITY_MASK_LOW</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a838e6c47a49226e780e3e8922d64fdaf" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>RemoveCompletedCallback</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1ab81721e6ceadd294ce7649593593361e" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>RemoveTask</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a56735076d4c87f7cc0b8b00be15f0e16" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>SetCompletedCallback</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a590d6d09c97d17ac5f3809c6d7ff4603" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>TasksCompletedId</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba695d62278f3586b3aa7f89efe92ad725" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>THREAD_MASK_ALL</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba28373dcc321af5c8443d35d05f492e6b" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>THREAD_MASK_MAIN</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaf685fb9a72e218a12090ec58c07c1f6e" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>THREAD_MASK_WORKER</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba3307c4155a607cdc1a2958069840237c" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>WORKER_THREAD_TASKS</name></member>
+      <member refid="classDali_1_1AsyncTaskManager_1ab888ca330817e379e11d50e990720b12" prot="public" virt="non-virtual"><scope>Dali::AsyncTaskManager</scope><name>~AsyncTaskManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

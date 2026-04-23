@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader" kind="namespace" language="C++">
+    <compoundname>Dali::Ui::DevelAsyncImageLoader</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a41df14005678af5dce40219947416de4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PreMultiplyOnLoad</name>
+        <qualifiedname>Dali::Ui::DevelAsyncImageLoader::PreMultiplyOnLoad</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a41df14005678af5dce40219947416de4a88559a0cfd8250c9d65970cc145c92d4" prot="public">
+          <name>OFF</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Don&apos;t modify the image. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a41df14005678af5dce40219947416de4a90651ebea9a35ec4e018c8157492e17c" prot="public">
+          <name>ON</name>
+          <briefdescription>
+<para>Multiply alpha into color channels on load. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Whether to multiply alpha into color channels on load. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" line="39" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" bodystart="40" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a9a4768afdaaa365d50ed17eb9cbc4d6e" prot="public" static="no">
+        <type>Signal&lt; void(uint32_t, std::vector&lt; Devel::PixelBuffer &gt; &amp;)&gt;</type>
+        <definition>typedef Signal&lt;void(uint32_t, std::vector&lt;Devel::PixelBuffer&gt;&amp;)&gt; Dali::Ui::DevelAsyncImageLoader::PixelBufferLoadedSignalType</definition>
+        <argsstring></argsstring>
+        <name>PixelBufferLoadedSignalType</name>
+        <qualifiedname>Dali::Ui::DevelAsyncImageLoader::PixelBufferLoadedSignalType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" line="34" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a9453dd463414f2ad39a7d2976ac54fe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>DALI_UI_API uint32_t Dali::Ui::DevelAsyncImageLoader::LoadAnimatedImage</definition>
+        <argsstring>(AsyncImageLoader asyncImageLoader, Dali::AnimatedImageLoading animatedImageLoading, uint32_t frameIndex, DevelAsyncImageLoader::PreMultiplyOnLoad preMultiplyOnLoad)</argsstring>
+        <name>LoadAnimatedImage</name>
+        <qualifiedname>Dali::Ui::DevelAsyncImageLoader::LoadAnimatedImage</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1AsyncImageLoader" kindref="compound">AsyncImageLoader</ref></type>
+          <declname>asyncImageLoader</declname>
+        </param>
+        <param>
+          <type>Dali::AnimatedImageLoading</type>
+          <declname>animatedImageLoading</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>frameIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a41df14005678af5dce40219947416de4" kindref="member">DevelAsyncImageLoader::PreMultiplyOnLoad</ref></type>
+          <declname>preMultiplyOnLoad</declname>
+        </param>
+        <briefdescription>
+<para>Starts an animated image loading task. @REMARK_INTERNET @REMARK_STORAGE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">asyncImageLoader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ayncImageLoader </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">animatedImageLoading</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The AnimatedImageLoading to load animated image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">frameIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The frame index of a frame to be loaded frame </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">preMultiplyOnLoad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ON if the image color should be multiplied by it&apos;s alpha. Set to OFF if there is no alpha or if the image need to be applied alpha mask. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The loading task id </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" line="26" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" bodystart="26" bodyend="30" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" declline="56" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1ab4452e199fcf70fc60c26790102f6a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>DALI_UI_API uint32_t Dali::Ui::DevelAsyncImageLoader::Load</definition>
+        <argsstring>(AsyncImageLoader asyncImageLoader, const std::string &amp;url, ImageDimensions dimensions, Dali::FittingMode::Type fittingMode, SamplingMode::Type samplingMode, bool orientationCorrection, DevelAsyncImageLoader::PreMultiplyOnLoad preMultiplyOnLoad)</argsstring>
+        <name>Load</name>
+        <qualifiedname>Dali::Ui::DevelAsyncImageLoader::Load</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1AsyncImageLoader" kindref="compound">AsyncImageLoader</ref></type>
+          <declname>asyncImageLoader</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>ImageDimensions</type>
+          <declname>dimensions</declname>
+        </param>
+        <param>
+          <type>Dali::FittingMode::Type</type>
+          <declname>fittingMode</declname>
+        </param>
+        <param>
+          <type>SamplingMode::Type</type>
+          <declname>samplingMode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>orientationCorrection</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a41df14005678af5dce40219947416de4" kindref="member">DevelAsyncImageLoader::PreMultiplyOnLoad</ref></type>
+          <declname>preMultiplyOnLoad</declname>
+        </param>
+        <briefdescription>
+<para>Starts an image loading task. @REMARK_INTERNET @REMARK_STORAGE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">asyncImageLoader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ayncImageLoader </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The URL of the image file to load </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimensions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width and height to fit the loaded image to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fittingMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The method used to fit the shape of the image before loading to the shape defined by the size parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">samplingMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filtering method used when sampling pixels from the input image while fitting it to desired size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">orientationCorrection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reorient the image to respect any orientation metadata in its header </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">preMultiplyOnLoad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ON if the image color should be multiplied by it&apos;s alpha. Set to OFF if there is no alpha or if the image need to be applied alpha mask. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The loading task id </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" line="32" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" bodystart="32" bodyend="39" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" declline="76" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1aa6608b185c7d1ce44d9ce2654cc3314a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>DALI_UI_API uint32_t Dali::Ui::DevelAsyncImageLoader::ApplyMask</definition>
+        <argsstring>(AsyncImageLoader asyncImageLoader, Devel::PixelBuffer pixelBuffer, Devel::PixelBuffer maskPixelBuffer, float contentScale, bool cropToMask, DevelAsyncImageLoader::PreMultiplyOnLoad preMultiplyOnLoad)</argsstring>
+        <name>ApplyMask</name>
+        <qualifiedname>Dali::Ui::DevelAsyncImageLoader::ApplyMask</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1AsyncImageLoader" kindref="compound">AsyncImageLoader</ref></type>
+          <declname>asyncImageLoader</declname>
+        </param>
+        <param>
+          <type>Devel::PixelBuffer</type>
+          <declname>pixelBuffer</declname>
+        </param>
+        <param>
+          <type>Devel::PixelBuffer</type>
+          <declname>maskPixelBuffer</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>contentScale</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cropToMask</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a41df14005678af5dce40219947416de4" kindref="member">DevelAsyncImageLoader::PreMultiplyOnLoad</ref></type>
+          <declname>preMultiplyOnLoad</declname>
+        </param>
+        <briefdescription>
+<para>Starts an mask applying task. @REMARK_INTERNET @REMARK_STORAGE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">asyncImageLoader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ayncImageLoader </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to raw pixel data to be masked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maskPixelBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to raw masking data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">contentScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The factor to scale the content </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cropToMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to crop the content to the mask size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">preMultiplyOnLoad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ON if the image color should be multiplied by it&apos;s alpha. Set to OFF if there is no alpha. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The masking task id </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" line="41" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" bodystart="41" bodyend="47" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" declline="93" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1ad6a0ce332ec4d0b78e0610e5e0587a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1Ui_1_1DevelAsyncImageLoader_1a9a4768afdaaa365d50ed17eb9cbc4d6e" kindref="member">PixelBufferLoadedSignalType</ref> &amp;</type>
+        <definition>DALI_UI_API PixelBufferLoadedSignalType &amp; Dali::Ui::DevelAsyncImageLoader::PixelBufferLoadedSignal</definition>
+        <argsstring>(AsyncImageLoader asyncImageLoader)</argsstring>
+        <name>PixelBufferLoadedSignal</name>
+        <qualifiedname>Dali::Ui::DevelAsyncImageLoader::PixelBufferLoadedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1AsyncImageLoader" kindref="compound">AsyncImageLoader</ref></type>
+          <declname>asyncImageLoader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connect to this signal if you want to load a PixelBuffer instead of a PixelData. <simplesect kind="note"><para>Connecting to this signal prevents the emission of the ImageLoadedSignal. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" line="49" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" bodystart="49" bodyend="52" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.h" declline="101" declcolumn="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/image-loader/async-image-loader-devel.cpp" line="24" column="1"/>
+  </compounddef>
+</doxygen>

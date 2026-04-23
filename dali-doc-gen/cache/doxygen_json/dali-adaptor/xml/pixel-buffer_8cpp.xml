@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="pixel-buffer_8cpp" kind="file" language="C++">
+    <compoundname>pixel-buffer.cpp</compoundname>
+    <includes refid="pixel-buffer_8h" local="no">dali/devel-api/adaptor-framework/pixel-buffer.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">dali/internal/imaging/common/pixel-buffer-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp</label>
+        <link refid="pixel-buffer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/pixel-buffer.h</label>
+        <link refid="pixel-buffer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali/internal/imaging/common/pixel-buffer-impl.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/images/pixel-data.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="8">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Devel">Dali::Devel</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="pixel-buffer_8h" kindref="compound">dali/devel-api/adaptor-framework/pixel-buffer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INLCUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/imaging/common/pixel-buffer-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29" refid="namespaceDali_1_1Devel" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Devel</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31" refid="classDali_1_1Devel_1_1PixelBuffer_1ae8a2352ff170012070870c48978615e3" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1ae8a2352ff170012070870c48978615e3" kindref="member">PixelBuffer::New</ref>(uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>width,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dali::Pixel::Format<sp/>pixelFormat)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>Internal::Adaptor::PixelBufferPtr<sp/>internal<sp/>=</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Internal::Adaptor::PixelBuffer::New(width,<sp/>height,<sp/>pixelFormat);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">Devel::PixelBuffer</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" refkind="member"><highlight class="normal">Dali::PixelData<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" kindref="member">PixelBuffer::Convert</ref>(<ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;<sp/>pixelBuffer)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" kindref="member">Convert</ref>(pixelBuffer,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classDali_1_1Devel_1_1PixelBuffer_1a9f80db20ac810add3aa96f375ace0c30" refkind="member"><highlight class="normal">Dali::PixelData<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" kindref="member">PixelBuffer::Convert</ref>(<ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;<sp/>pixelBuffer,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>releaseAfterUpload)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>Dali::PixelData<sp/>pixelData<sp/>=<sp/>Internal::Adaptor::PixelBuffer::Convert(<ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(pixelBuffer),<sp/>releaseAfterUpload);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>pixelBuffer.Reset();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pixelData;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classDali_1_1Devel_1_1PixelBuffer_1ad19af6c5198694f03486d83cdef95ea9" refkind="member"><highlight class="normal">Dali::PixelData<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1ad19af6c5198694f03486d83cdef95ea9" kindref="member">PixelBuffer::CreatePixelData</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="53"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).CreatePixelData();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" kindref="member">PixelBuffer::PixelBuffer</ref>()</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classDali_1_1Devel_1_1PixelBuffer_1a34470be345320831acd2f66b929bf221" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a34470be345320831acd2f66b929bf221" kindref="member">PixelBuffer::~PixelBuffer</ref>()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classDali_1_1Devel_1_1PixelBuffer_1a0c95b1a95b73124e8f9472d6e16437a2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" kindref="member">PixelBuffer::PixelBuffer</ref>(Internal::Adaptor::PixelBuffer*<sp/>internal)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">:<sp/>BaseHandle(internal)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" kindref="member">PixelBuffer::PixelBuffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;<sp/>handle)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1aebca1aba0b7c0a1eb3447081040cedd5" kindref="member">PixelBuffer::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" kindref="member">PixelBuffer::PixelBuffer</ref>(<ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;&amp;<sp/>handle)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1aebca1aba0b7c0a1eb3447081040cedd5" kindref="member">PixelBuffer::operator=</ref>(<ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1Devel_1_1PixelBuffer_1a4ea781032d91a1b4038d2ed115469ce7" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a4ea781032d91a1b4038d2ed115469ce7" kindref="member">PixelBuffer::GetWidth</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="79"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetWidth();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1Devel_1_1PixelBuffer_1a181938e30e9761f4a6beada168cb4293" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a181938e30e9761f4a6beada168cb4293" kindref="member">PixelBuffer::GetHeight</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="84"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetHeight();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classDali_1_1Devel_1_1PixelBuffer_1ad40dee567c6d03e5fcf64a4f87dbfe58" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1ad40dee567c6d03e5fcf64a4f87dbfe58" kindref="member">PixelBuffer::GetStride</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="89"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetStride();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classDali_1_1Devel_1_1PixelBuffer_1a41b19beab812f4ac1b30c48574390f54" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a41b19beab812f4ac1b30c48574390f54" kindref="member">PixelBuffer::GetStrideBytes</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="94"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetStrideBytes();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classDali_1_1Devel_1_1PixelBuffer_1a1b48ae046989a07e4b06fdd0899eec4e" refkind="member"><highlight class="normal">Pixel::Format<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a1b48ae046989a07e4b06fdd0899eec4e" kindref="member">PixelBuffer::GetPixelFormat</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="99"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetPixelFormat();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classDali_1_1Devel_1_1PixelBuffer_1a2211c123343fa12d2e46d1437065c297" refkind="member"><highlight class="normal">uint8_t*<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a2211c123343fa12d2e46d1437065c297" kindref="member">PixelBuffer::GetBuffer</ref>()</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetBuffer();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classDali_1_1Devel_1_1PixelBuffer_1a9ca9feba3517f56fae95f03aed927754" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a2211c123343fa12d2e46d1437065c297" kindref="member">PixelBuffer::GetBuffer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="109"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetConstBuffer();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classDali_1_1Devel_1_1PixelBuffer_1a4b3c63901c49e88ba38eb3f523d7a44d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a4b3c63901c49e88ba38eb3f523d7a44d" kindref="member">PixelBuffer::ApplyMask</ref>(<ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref><sp/>mask,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>contentScale,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cropToMask)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).ApplyMask(<ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(mask),<sp/>contentScale,<sp/>cropToMask);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classDali_1_1Devel_1_1PixelBuffer_1ad42e6cab409c9e105e5aaea60f5477a7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1ad42e6cab409c9e105e5aaea60f5477a7" kindref="member">PixelBuffer::ApplyGaussianBlur</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>blurRadius)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).ApplyGaussianBlur(blurRadius);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classDali_1_1Devel_1_1PixelBuffer_1a7ff6f20a0dd330b9b7e56e178731bcce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a7ff6f20a0dd330b9b7e56e178731bcce" kindref="member">PixelBuffer::Crop</ref>(uint16_t<sp/>x,<sp/>uint16_t<sp/>y,<sp/>uint16_t<sp/>width,<sp/>uint16_t<sp/>height)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Crop(x,<sp/>y,<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(width,<sp/>height));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="classDali_1_1Devel_1_1PixelBuffer_1abd69580afe2b0c9fa170a2237b810544" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1abd69580afe2b0c9fa170a2237b810544" kindref="member">PixelBuffer::Resize</ref>(uint16_t<sp/>width,<sp/>uint16_t<sp/>height)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Resize(<ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(width,<sp/>height));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classDali_1_1Devel_1_1PixelBuffer_1aad0427178d461088c4bfa6630d913049" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1aad0427178d461088c4bfa6630d913049" kindref="member">PixelBuffer::MultiplyColorByAlpha</ref>()</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).MultiplyColorByAlpha();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classDali_1_1Devel_1_1PixelBuffer_1aeb2b0de54ccc609406238a248c7ec5b8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1aeb2b0de54ccc609406238a248c7ec5b8" kindref="member">PixelBuffer::GetMetadata</ref>(Property::Map&amp;<sp/>metadata)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="139"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetMetadata(metadata);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="classDali_1_1Devel_1_1PixelBuffer_1adf68f34f1b1c58d501438149ddfe184a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1adf68f34f1b1c58d501438149ddfe184a" kindref="member">PixelBuffer::Rotate</ref>(Degree<sp/>angle)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Rotate(angle);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classDali_1_1Devel_1_1PixelBuffer_1a100f90baf40b8d47ed001f39814c6cae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a100f90baf40b8d47ed001f39814c6cae" kindref="member">PixelBuffer::IsAlphaPreMultiplied</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="149"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).IsAlphaPreMultiplied();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="classDali_1_1Devel_1_1PixelBuffer_1a38bc2b100eb6be9114bc9879fa9c88a6" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer_1a38bc2b100eb6be9114bc9879fa9c88a6" kindref="member">PixelBuffer::GetBrightness</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="154"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetBrightness();</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Devel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp"/>
+  </compounddef>
+</doxygen>

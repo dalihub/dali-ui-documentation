@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1LocklessBuffer" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Integration::LocklessBuffer</compoundname>
+    <includes refid="lockless-buffer_8h" local="no">lockless-buffer.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8" prot="private" static="no" strong="no">
+        <type></type>
+        <name>BufferState</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::BufferState</qualifiedname>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a75dc12b86b76fe9026b6f29b64b9c953" prot="private">
+          <name>R0W1</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Read from buffer 0 write to buffer 1. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a1d4c6adb4a6101323dde9114ffa20598" prot="private">
+          <name>R1W0</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Read from buffer 1 write to buffer 0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a34c10d983edeb39ebf6d62994433e3b5" prot="private">
+          <name>WRITING</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Currently writing to buffer. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a0c74daab88be8ff1a27a6d3253183a66" prot="private">
+          <name>UPDATED</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Swapping buffer required; there is new data available. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a927c420c08a6e557d4beb0b07927a8fb" prot="private">
+          <name>WRITE_BUFFER_MASK</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>indicates which buffer to write to </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a452ea989a5ab1d1cebbb252dbde3634e" prot="private">
+          <name>WRITING_MASK</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>indicates whether currently writing </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a9e468824bae974703cb548511b9076fe" prot="private">
+          <name>UPDATED_MASK</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>indicates whether new data is available </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically set state. We&apos;re always writing to one buffer and reading from the other. <ref refid="classDali_1_1Integration_1_1LocklessBuffer_1a61bd9d0a1955b1f3e283f43c02ebe596" kindref="member">Write()</ref> sets WRITING bit when started and unsets it when finished. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="85" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" bodystart="86" bodyend="94"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1LocklessBuffer_1a22a2706009f39a6f0b40c79d9ef1c363" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* Dali::Integration::LocklessBuffer::mBuffer[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>mBuffer</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::mBuffer</qualifiedname>
+        <briefdescription>
+<para>bitmap buffers </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="102" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1LocklessBuffer_1a5ca25846ff14b88388cd6d277fab63c4" prot="private" static="no" mutable="no">
+        <type>BufferState volatile</type>
+        <definition>BufferState volatile Dali::Integration::LocklessBuffer::mState</definition>
+        <argsstring></argsstring>
+        <name>mState</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::mState</qualifiedname>
+        <briefdescription>
+<para>readbuffer number and whether we&apos;re currently writing into writebuffer or not </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="103" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Integration_1_1LocklessBuffer_1aa705cd157c1b87fe364189b1b3ffb498" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Integration::LocklessBuffer::mSize</definition>
+        <argsstring></argsstring>
+        <name>mSize</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::mSize</qualifiedname>
+        <briefdescription>
+<para>size of buffers </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="104" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1a2fdbfe146a0557a44743e3b010960460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::LocklessBuffer::LocklessBuffer</definition>
+        <argsstring>(uint32_t size)</argsstring>
+        <name>LocklessBuffer</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::LocklessBuffer</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of buffers in bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="53" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.cpp" bodystart="28" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1af72376699418d462eda930dca016e861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::LocklessBuffer::~LocklessBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~LocklessBuffer</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::~LocklessBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="58" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.cpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1a61bd9d0a1955b1f3e283f43c02ebe596" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::LocklessBuffer::Write</definition>
+        <argsstring>(const uint8_t *src, uint32_t size)</argsstring>
+        <name>Write</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::Write</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write data to buffer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data source </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of data in bytes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="65" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.cpp" bodystart="46" bodyend="65"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1a07429c3c9854e05c73a082400ffb5c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t * Dali::Integration::LocklessBuffer::Read</definition>
+        <argsstring>()</argsstring>
+        <name>Read</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::Read</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try to swap buffers and read data. <simplesect kind="note"><para>returned value only valid until <ref refid="classDali_1_1Integration_1_1LocklessBuffer_1a07429c3c9854e05c73a082400ffb5c45" kindref="member">Read()</ref> is called again or object is destroyed </para>
+</simplesect>
+<simplesect kind="return"><para>current read buffer contents </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="72" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.cpp" bodystart="67" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1af585e6447404323448b543b95d95757f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Integration::LocklessBuffer::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::GetSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the buffer size in bytes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="77" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.cpp" bodystart="91" bodyend="94"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1a98c32415ec7692af40ae169c792b3c1d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::LocklessBuffer::LocklessBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>LocklessBuffer</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::LocklessBuffer</qualifiedname>
+        <briefdescription>
+<para>undefined default constructor, need to give size on construction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="97" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1aacc1b4ecb1dcc866b0a5eb9f3852baa0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::LocklessBuffer::LocklessBuffer</definition>
+        <argsstring>(const LocklessBuffer &amp;)</argsstring>
+        <name>LocklessBuffer</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::LocklessBuffer</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1LocklessBuffer" kindref="compound">LocklessBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>undefined copy constructor </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="98" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1LocklessBuffer_1a8efed2714363475001565a7bf8ff3c87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1LocklessBuffer" kindref="compound">LocklessBuffer</ref> &amp;</type>
+        <definition>LocklessBuffer &amp; Dali::Integration::LocklessBuffer::operator=</definition>
+        <argsstring>(const LocklessBuffer &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Integration::LocklessBuffer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1LocklessBuffer" kindref="compound">LocklessBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>undefined assignment operator </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="99" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classDali_1_1Integration_1_1LocklessBuffer" kindref="compound">LocklessBuffer</ref> class implements double buffering eligible for multi-(two) threaded use, where it&apos;s possible to read from one thread and write from another without requiring a mutex lock to avoid performance hit. It&apos;s intended to be used for reading bitmap data in render thread while still possible to write data in another thread.</para>
+<para>Ideally <ref refid="classDali_1_1Integration_1_1LocklessBuffer_1a61bd9d0a1955b1f3e283f43c02ebe596" kindref="member">Write()</ref> and <ref refid="classDali_1_1Integration_1_1LocklessBuffer_1a07429c3c9854e05c73a082400ffb5c45" kindref="member">Read()</ref> calls should be alternating, otherwise written data might be thrown away.</para>
+<para>The buffers are swapped in the reading thread, just before reading begins. In case the other thread is writing at that moment, buffers are not swapped and previously available data is read. Similarly if <ref refid="classDali_1_1Integration_1_1LocklessBuffer_1a61bd9d0a1955b1f3e283f43c02ebe596" kindref="member">Write()</ref> is called before a <ref refid="classDali_1_1Integration_1_1LocklessBuffer_1a07429c3c9854e05c73a082400ffb5c45" kindref="member">Read()</ref> has finished the previous write buffer is overwritten. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" line="46" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/lockless-buffer.h" bodystart="47" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>BufferState</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af585e6447404323448b543b95d95757f" prot="public" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>GetSize</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a2fdbfe146a0557a44743e3b010960460" prot="public" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>LocklessBuffer</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a98c32415ec7692af40ae169c792b3c1d" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>LocklessBuffer</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1aacc1b4ecb1dcc866b0a5eb9f3852baa0" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>LocklessBuffer</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a22a2706009f39a6f0b40c79d9ef1c363" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>mBuffer</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1aa705cd157c1b87fe364189b1b3ffb498" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>mSize</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a5ca25846ff14b88388cd6d277fab63c4" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>mState</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a8efed2714363475001565a7bf8ff3c87" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a75dc12b86b76fe9026b6f29b64b9c953" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>R0W1</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a1d4c6adb4a6101323dde9114ffa20598" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>R1W0</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a07429c3c9854e05c73a082400ffb5c45" prot="public" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>Read</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a0c74daab88be8ff1a27a6d3253183a66" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>UPDATED</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a9e468824bae974703cb548511b9076fe" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>UPDATED_MASK</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1a61bd9d0a1955b1f3e283f43c02ebe596" prot="public" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>Write</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a927c420c08a6e557d4beb0b07927a8fb" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>WRITE_BUFFER_MASK</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a34c10d983edeb39ebf6d62994433e3b5" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>WRITING</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af9b887d4d6bee0a10d382f5f4fc728e8a452ea989a5ab1d1cebbb252dbde3634e" prot="private" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>WRITING_MASK</name></member>
+      <member refid="classDali_1_1Integration_1_1LocklessBuffer_1af72376699418d462eda930dca016e861" prot="public" virt="non-virtual"><scope>Dali::Integration::LocklessBuffer</scope><name>~LocklessBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

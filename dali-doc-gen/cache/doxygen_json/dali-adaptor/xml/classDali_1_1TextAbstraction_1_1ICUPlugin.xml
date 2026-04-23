@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1TextAbstraction_1_1ICUPlugin" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::TextAbstraction::ICUPlugin</compoundname>
+    <includes refid="icu-plugin_8h" local="no">icu-plugin.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1TextAbstraction_1_1ICUPlugin_1ae2bef9ed136cd05e0a8d2c5d3a5263b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::TextAbstraction::ICUPlugin::ICUPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>ICUPlugin</name>
+        <qualifiedname>Dali::TextAbstraction::ICUPlugin::ICUPlugin</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" line="42" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TextAbstraction_1_1ICUPlugin_1abf652563312ca12f566738345729c975" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::TextAbstraction::ICUPlugin::~ICUPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>~ICUPlugin</name>
+        <qualifiedname>Dali::TextAbstraction::ICUPlugin::~ICUPlugin</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" line="49" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TextAbstraction_1_1ICUPlugin_1a9ea30fda9036d53250e875904e9cbc5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::TextAbstraction::ICUPlugin::UpdateLineBreakInfoByLocale</definition>
+        <argsstring>(const std::string &amp;text, Length numberOfCharacters, const char *locale, LineBreakInfo *breakInfo)=0</argsstring>
+        <name>UpdateLineBreakInfoByLocale</name>
+        <qualifiedname>Dali::TextAbstraction::ICUPlugin::UpdateLineBreakInfoByLocale</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1TextAbstraction_1ac3940128a70937da869f51378b6c8192" kindref="member">Length</ref></type>
+          <declname>numberOfCharacters</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>locale</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1TextAbstraction_1a52fab5112fc4fa23aa6df678e21f0382" kindref="member">LineBreakInfo</ref> *</type>
+          <declname>breakInfo</declname>
+        </param>
+        <briefdescription>
+<para>Update line break information by <ref refid="classDali_1_1TextAbstraction_1_1ICU" kindref="compound">ICU</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>Updates given line break information with <ref refid="classDali_1_1TextAbstraction_1_1ICU" kindref="compound">ICU</ref> dictionary-based word wrap information that unibreak does not support. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string of UTF-8 characters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">numberOfCharacters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of characters. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">locale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The locale code. (en, ko, en_US, ko_KR.utf8, etc. <ref refid="classDali_1_1TextAbstraction_1_1ICU" kindref="compound">ICU</ref> accepts most formats of locale code), The usual expected form is language_locale (ko_KR). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">breakInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unibreak line break information buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" line="61" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1TextAbstraction_1_1ICUPlugin" kindref="compound">ICUPlugin</ref> is an abstract interface, used by dali-adaptor to access icu plugin. A concrete implementation must be created for each platform and provided as dynamic library. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" line="36" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/icu-plugin.h" bodystart="37" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classDali_1_1TextAbstraction_1_1ICUPlugin_1ae2bef9ed136cd05e0a8d2c5d3a5263b4" prot="public" virt="non-virtual"><scope>Dali::TextAbstraction::ICUPlugin</scope><name>ICUPlugin</name></member>
+      <member refid="classDali_1_1TextAbstraction_1_1ICUPlugin_1a9ea30fda9036d53250e875904e9cbc5e" prot="public" virt="pure-virtual"><scope>Dali::TextAbstraction::ICUPlugin</scope><name>UpdateLineBreakInfoByLocale</name></member>
+      <member refid="classDali_1_1TextAbstraction_1_1ICUPlugin_1abf652563312ca12f566738345729c975" prot="public" virt="virtual"><scope>Dali::TextAbstraction::ICUPlugin</scope><name>~ICUPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

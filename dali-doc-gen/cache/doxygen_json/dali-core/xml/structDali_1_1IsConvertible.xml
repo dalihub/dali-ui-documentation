@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structDali_1_1IsConvertible" kind="struct" language="C++" prot="public">
+    <compoundname>Dali::IsConvertible</compoundname>
+    <basecompoundref refid="structDali_1_1Detail_1_1IsConvertibleImpl" prot="public" virt="non-virtual">Dali::Detail::IsConvertibleImpl&lt; From, To &gt;</basecompoundref>
+    <includes refid="type-traits_8h" local="no">type-traits.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename From</type>
+      </param>
+      <param>
+        <type>typename To</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Type trait to check if one type is implicitly convertible to another. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Determines whether an imaginary rvalue of type From can be used to initialize an object or reference of type To.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>From</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source type to convert from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>To</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target type to convert to</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+@SINCE_2_5.11</para>
+<para>Example usage: <programlisting><codeline><highlight class="normal"><ref refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" kindref="member">IsConvertible&lt;int, float&gt;::value</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>true<sp/>-<sp/>int<sp/>converts<sp/>to<sp/>float</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" kindref="member">IsConvertible&lt;Base*, Derived*&gt;::value</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>false<sp/>-<sp/>cannot<sp/>convert<sp/>derived<sp/>to<sp/>base<sp/>pointer</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" kindref="member">IsConvertible&lt;Derived*, Base*&gt;::value</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>true<sp/>-<sp/>derived<sp/>pointer<sp/>converts<sp/>to<sp/>base<sp/>pointer</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" kindref="member">IsConvertible&lt;int*, float*&gt;::value</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>false<sp/>-<sp/>pointer<sp/>types<sp/>are<sp/>unrelated</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Detail::IsConvertibleImpl&lt; From, To &gt;</label>
+        <link refid="structDali_1_1Detail_1_1IsConvertibleImpl"/>
+      </node>
+      <node id="1">
+        <label>Dali::IsConvertible&lt; From, To &gt;</label>
+        <link refid="structDali_1_1IsConvertible"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::Detail::IsConvertibleImpl&lt; From, To &gt;</label>
+        <link refid="structDali_1_1Detail_1_1IsConvertibleImpl"/>
+      </node>
+      <node id="1">
+        <label>Dali::IsConvertible&lt; From, To &gt;</label>
+        <link refid="structDali_1_1IsConvertible"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="263" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="264" bodyend="265"/>
+    <listofallmembers>
+      <member refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a24686da2a7d4217d1e6179d6c59f611a" prot="public" virt="non-virtual"><scope>Dali::IsConvertible</scope><name>Create</name></member>
+      <member refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" prot="public" virt="non-virtual"><scope>Dali::IsConvertible</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="property-bridge_8cpp" kind="file" language="C++">
+    <compoundname>property-bridge.cpp</compoundname>
+    <includes refid="property-bridge_8h" local="yes">property-bridge.h</includes>
+    <includes local="no">dali-ui-foundation/internal/property-bridge/property-bridge-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/property-bridge/property-bridge.cpp</label>
+        <link refid="property-bridge_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>property-bridge.h</label>
+        <link refid="property-bridge_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali-ui-foundation/internal/property-bridge/property-bridge-impl.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="property-bridge_8h" kindref="compound">property-bridge.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/property-bridge/property-bridge-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="classDali_1_1Ui_1_1PropertyBridge_1ae2e0ec6d062e05a9328f7969f8b04040" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1PropertyBridge_1ae2e0ec6d062e05a9328f7969f8b04040" kindref="member">PropertyBridge::PropertyBridge</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classDali_1_1Ui_1_1PropertyBridge_1a1c821417810eb8663eb0e01090b32a88" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1PropertyBridge_1a1c821417810eb8663eb0e01090b32a88" kindref="member">PropertyBridge::~PropertyBridge</ref>()</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classDali_1_1Ui_1_1PropertyBridge_1a8645cbe682cf16aff00342ef9d233c80" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1PropertyBridge" kindref="compound">PropertyBridge</ref><sp/><ref refid="classDali_1_1Ui_1_1PropertyBridge_1a8645cbe682cf16aff00342ef9d233c80" kindref="member">PropertyBridge::Get</ref>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Internal::PropertyBridge::Get();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classDali_1_1Ui_1_1PropertyBridge_1af45b0c817d517187645f50285c789855" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1PropertyBridge_1ae2e0ec6d062e05a9328f7969f8b04040" kindref="member">PropertyBridge::PropertyBridge</ref>(Internal::PropertyBridge*<sp/>impl)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">:<sp/>BaseHandle(impl)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classDali_1_1Ui_1_1PropertyBridge_1acd2039e53052f41c6b59e858a880236a" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classDali_1_1Ui_1_1PropertyBridge_1acd2039e53052f41c6b59e858a880236a" kindref="member">PropertyBridge::GetStringProperty</ref>(Actor<sp/>actor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>propertyName)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).GetStringProperty(actor,<sp/>propertyName);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="namespaceDali_1_1Ui_1a1296e945dd0efd758033ea4f7cee8a8e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a1296e945dd0efd758033ea4f7cee8a8e" kindref="member">PropertyBridgeRegisterStringGetter</ref>(<ref refid="namespaceDali_1_1Ui_1ae8146434998d087658f0ce6aa9fc9657" kindref="member">StringGetterDelegate</ref><sp/>getter)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>Internal::PropertyBridge::RegisterStringGetter(getter);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/property-bridge/property-bridge.cpp"/>
+  </compounddef>
+</doxygen>

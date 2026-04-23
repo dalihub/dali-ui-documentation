@@ -1,0 +1,793 @@
+[
+  {
+    "feature": "animation",
+    "packages": [
+      "dali-ui",
+      "dali-core"
+    ],
+    "api_tiers": [
+      "public-api",
+      "devel-api"
+    ],
+    "apis": [
+      "Dali::AlphaFunction",
+      "Dali::Animation",
+      "Dali::Constraint",
+      "Dali::ConstraintSource",
+      "Dali::EqualToConstraint",
+      "Dali::Constraint::Function",
+      "Dali::AlphaFunction::Impl",
+      "Dali::SpringData::Impl",
+      "Dali::KeyFrames",
+      "Dali::LinearConstrainer",
+      "Dali::LocalSource",
+      "Dali::Constraint::Function::ObjectCopyConstructorDispatcher",
+      "Dali::ParentSource",
+      "Dali::Path",
+      "Dali::RelativeToConstraint",
+      "Dali::RelativeToConstraintFloat",
+      "Dali::Source",
+      "Dali::SpringData",
+      "Dali::TimePeriod",
+      "Dali",
+      "Dali::Ui::Duration",
+      "Dali::Ui::LabelAnimationBridge",
+      "Dali::Ui::LabelAnimationSpec",
+      "Dali::Ui::ViewAnimationBridge",
+      "Dali::Ui::ViewAnimationSpec",
+      "Dali::LinearConstrainer::Property",
+      "Dali::GetOriginalImageSize",
+      "Dali::Ui::LabelAnimationBridge::SizeWidth",
+      "Dali::Ui::LabelAnimationBridge::PositionYBy",
+      "Dali::Ui::LabelAnimationBridge::TextColorBy",
+      "Dali::Ui::LabelAnimationSpec::OpacityBy",
+      "Dali::Ui::LabelAnimationSpec::BorderlineOffset",
+      "Dali::Ui::ViewAnimationBridge::ScaleY",
+      "Dali::Ui::ViewAnimationBridge::BorderlineWidth",
+      "Dali::Ui::ViewAnimationSpec::SizeWidth",
+      "Dali::Ui::ViewAnimationSpec::PositionYBy",
+      "Dali::Ui::ViewAnimationSpec::New",
+      "Dali::AlphaFunction::GetMode",
+      "Dali::Animation::GetEndAction",
+      "Dali::Animation::Play",
+      "Dali::Animation::AnimateBy",
+      "Dali::Animation::AnimateBetween",
+      "Dali::Constraint::Constraint",
+      "Dali::Constraint::SetTag",
+      "Dali::Constraint::Function::Function",
+      "Dali::KeyFrames::New",
+      "Dali::LinearConstrainer::Apply",
+      "Dali::Path::GenerateControlPoints",
+      "Dali::SpringData::SetStiffness",
+      "Dali::CalculateHash"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "The animation module provides a powerful framework for creating fluid, time-based visual transitions and property modifications within Dali::Ui::View components to enhance application interactivity."
+      },
+      {
+        "section_title": "Declarative View Animations",
+        "description": "Learn how to use ViewAnimationBridge and ViewAnimationSpec to define and apply high-level property transitions directly on UI views."
+      },
+      {
+        "section_title": "Keyframe and Path-Based Motion",
+        "description": "Control complex movement patterns by defining custom KeyFrames and utilizing Path objects to animate views along sophisticated geometric trajectories."
+      },
+      {
+        "section_title": "Timing and Easing Control",
+        "description": "Configure the feel of your animations using AlphaFunction presets, custom timing periods, and physical-based spring dynamics to achieve natural motion."
+      },
+      {
+        "section_title": "Constraint-Based Dynamic Behavior",
+        "description": "Implement reactive UI logic where view properties are automatically updated in response to other view states or parent attributes using the Constraint system."
+      },
+      {
+        "section_title": "Advanced Property Constraining",
+        "description": "Leverage LinearConstrainers to synchronize multiple view properties efficiently, ensuring consistent visual updates across complex UI hierarchies."
+      },
+      {
+        "section_title": "Lifecycle and Playback Management",
+        "description": "Master the Animation playback API to start, pause, and control the lifecycle of animations, including handling end-of-animation states and actions."
+      }
+    ]
+  },
+  {
+    "feature": "math",
+    "packages": [
+      "dali-core"
+    ],
+    "api_tiers": [
+      "public-api"
+    ],
+    "apis": [
+      "Dali::AngleAxis",
+      "Dali::Degree",
+      "Dali::Int32Pair",
+      "Dali::IntPair",
+      "Dali::Matrix",
+      "Dali::Matrix3",
+      "Dali::Quaternion",
+      "Dali::Radian",
+      "Dali::Rect",
+      "Dali::Uint16Pair",
+      "Dali::Vector2",
+      "Dali::Vector3",
+      "Dali::Vector4",
+      "Dali::Random",
+      "Dali::Epsilon",
+      "Dali::Log< 1, base >",
+      "Dali::TypeTraits< Matrix3 >",
+      "Dali::AngleAxis::AngleAxis",
+      "Dali::Degree::Degree",
+      "Dali::Int32Pair::Int32Pair",
+      "Dali::IntPair::SetHeight",
+      "Dali::IntPair::IntPair",
+      "Dali::Matrix::Matrix",
+      "Dali::Matrix::Invert",
+      "Dali::Matrix::SetYAxis",
+      "Dali::Matrix::GetScaleXY",
+      "Dali::Matrix::SetTransformComponents",
+      "Dali::Matrix3::Matrix3",
+      "Dali::Matrix3::AsFloat",
+      "Dali::Matrix3::Magnitude",
+      "Dali::Quaternion::Quaternion",
+      "Dali::Quaternion::ToAxisAngle",
+      "Dali::Quaternion::Normalize",
+      "Dali::Quaternion::Exp",
+      "Dali::Quaternion::Lerp",
+      "Dali::Radian::Radian",
+      "Dali::Rect::Rect",
+      "Dali::Rect::IsValid",
+      "Dali::Rect::Intersects",
+      "Dali::Uint16Pair::Uint16Pair",
+      "Dali::Uint16Pair::FromFloatArray",
+      "Dali::Vector2::Vector2",
+      "Dali::Vector2::AsFloat",
+      "Dali::Vector3::Vector3",
+      "Dali::Vector3::LengthSquared",
+      "Dali::Vector3::GetVectorXY",
+      "Dali::Vector4::Vector4",
+      "Dali::Vector4::Dot",
+      "Dali::Vector4::Length3",
+      "Dali::Vector4::AsFloat"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "The DALi math module provides a comprehensive suite of geometric and linear algebra utilities designed to handle coordinate transformations, spatial calculations, and viewport management within the UI framework."
+      },
+      {
+        "section_title": "Defining Spatial Coordinates and Dimensions",
+        "description": "Learn how to utilize Vector and Pair types to define positions, sizes, and pixel dimensions for UI elements."
+      },
+      {
+        "section_title": "Managing Visual Transformations",
+        "description": "Manipulate object orientation, scaling, and translation using Matrix and Quaternion operations to build complex 3D visual effects."
+      },
+      {
+        "section_title": "Handling Rotations and Angles",
+        "description": "Convert and manage angular data using Radian, Degree, and AngleAxis classes to ensure consistent rotation logic."
+      },
+      {
+        "section_title": "Rectangular Region Logic",
+        "description": "Use the Rect class to perform intersection tests, boundary checks, and collision detection for layout and input handling."
+      },
+      {
+        "section_title": "Performing Advanced Geometric Calculations",
+        "description": "Apply vector math, matrix inversion, and normalization techniques to solve common layout and animation challenges."
+      },
+      {
+        "section_title": "Utility and Randomization Tools",
+        "description": "Access robust random number generation and floating-point epsilon comparison helpers to maintain precision in your application logic."
+      }
+    ]
+  },
+  {
+    "feature": "layouts",
+    "packages": [
+      "dali-ui"
+    ],
+    "api_tiers": [
+      "public-api",
+      "integration-api"
+    ],
+    "apis": [
+      "Dali::Ui::AbsoluteLayout",
+      "Dali::Ui::AbsoluteLayoutParams",
+      "Dali::Ui::FlexLayout",
+      "Dali::Ui::FlexLayoutParams",
+      "Dali::Ui::GridLayout",
+      "Dali::Ui::GridLayoutParams",
+      "Dali::Ui::GridLength",
+      "Dali::Ui::Layout",
+      "Dali::Ui::LayoutController",
+      "Dali::Ui::Integration::LayoutControllerImpl",
+      "Dali::Ui::LayoutParams",
+      "Dali::Ui::LayoutRect",
+      "Dali::Ui::MeasuredSize",
+      "Dali::Ui::StackLayout",
+      "Dali::Ui::StackLayoutParams",
+      "Dali::Ui",
+      "Dali::Ui::Integration::LayoutControllerImpl::LayoutRootEntry",
+      "Dali::Ui::FlexJustify",
+      "Dali::Ui::AbsoluteLayout::AbsoluteLayout",
+      "Dali::Ui::AbsoluteLayoutParams::GetBounds",
+      "Dali::Ui::AbsoluteLayoutParams::GetWidth",
+      "Dali::Ui::AbsoluteLayoutParams::DownCast",
+      "Dali::Ui::FlexLayout::GetDirection",
+      "Dali::Ui::FlexLayout::SetAlignContent",
+      "Dali::Ui::FlexLayoutParams::SetFlexGrow",
+      "Dali::Ui::FlexLayoutParams::SetAlignSelf",
+      "Dali::Ui::GridLayout::GridLayout",
+      "Dali::Ui::GridLayout::GetRowDefinitions",
+      "Dali::Ui::GridLayout::GetRowSpacing",
+      "Dali::Ui::GridLayoutParams::GridLayoutParams",
+      "Dali::Ui::GridLayoutParams::SetColumnSpan",
+      "Dali::Ui::GridLayoutParams::New",
+      "Dali::Ui::GridLength::Absolute",
+      "Dali::Ui::Layout::New",
+      "Dali::Ui::LayoutController::UnregisterView",
+      "Dali::Ui::Integration::LayoutControllerImpl::ReplaceCurrentWindow",
+      "Dali::Ui::LayoutParams::LayoutParams",
+      "Dali::Ui::LayoutRect::GetY",
+      "Dali::Ui::LayoutRect::GetPosition",
+      "Dali::Ui::MeasuredSize::SetHeight",
+      "Dali::Ui::StackLayout::GetOrientation",
+      "Dali::Ui::StackLayoutParams::SetWeight",
+      "Dali::Ui::StackLayoutParams::DownCast",
+      "Dali::Ui::GetImpl",
+      "Dali::Ui::GetImpl",
+      "Dali::Ui::CreateDissolveEffect",
+      "Dali::Ui::GetImpl",
+      "Dali::Ui::GetImpl",
+      "Dali::Ui::GetImpl",
+      "Dali::Ui::GetImpl"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "The DALi layout system provides a declarative mechanism to automate UI component positioning and sizing within Dali::Ui::View hierarchies, ensuring responsive interfaces across varying screen dimensions."
+      },
+      {
+        "section_title": "Getting Started with View Layouts",
+        "description": "Learn the fundamental pattern of assigning layout engines to views using SetLayoutParams to establish parent-child positioning rules."
+      },
+      {
+        "section_title": "Flexbox-based Positioning",
+        "description": "Utilize FlexLayout and FlexLayoutParams to create flexible, responsive UI designs that automatically adjust to screen space and content flow."
+      },
+      {
+        "section_title": "Grid-based Arrangements",
+        "description": "Organize UI elements into structured rows and columns using GridLayout and GridLayoutParams for precise, tabular component placement."
+      },
+      {
+        "section_title": "Stack and Absolute Positioning",
+        "description": "Implement simple sequential stacking or coordinate-based absolute positioning using StackLayout and AbsoluteLayout for specialized view arrangements."
+      },
+      {
+        "section_title": "Configuring Layout Geometry",
+        "description": "Manage dimensions and coordinate alignment by interacting with LayoutRect and MeasuredSize to influence how views occupy their allocated space."
+      },
+      {
+        "section_title": "Managing Layout Lifecycle",
+        "description": "Understand how the LayoutController tracks registered views and manages the lifecycle of layout updates to maintain UI synchronization."
+      }
+    ]
+  },
+  {
+    "feature": "animated-image-view",
+    "packages": [
+      "dali-ui"
+    ],
+    "api_tiers": [
+      "public-api"
+    ],
+    "apis": [
+      "Dali::Ui::AnimatedImageView",
+      "Dali::Ui::AnimatedImageView::Property",
+      "Dali::Ui::AnimatedImageView::AnimatedImageView",
+      "Dali::Ui::AnimatedImageView::AnimatedImageView",
+      "Dali::Ui::AnimatedImageView::AnimatedImageView",
+      "Dali::Ui::AnimatedImageView::GetResourceUrl",
+      "Dali::Ui::AnimatedImageView::SetResourceUrls",
+      "Dali::Ui::AnimatedImageView::GetResourceUrls",
+      "Dali::Ui::AnimatedImageView::IsImageLoadWithViewSizeEnabled",
+      "Dali::Ui::AnimatedImageView::Play",
+      "Dali::Ui::AnimatedImageView::Pause",
+      "Dali::Ui::AnimatedImageView::Stop",
+      "Dali::Ui::AnimatedImageView::GetLoopCount",
+      "Dali::Ui::AnimatedImageView::JumpToFrame",
+      "Dali::Ui::AnimatedImageView::SetStopBehavior",
+      "Dali::Ui::AnimatedImageView::SetFrameSpeedFactor",
+      "Dali::Ui::AnimatedImageView::GetFrameSpeedFactor",
+      "Dali::Ui::AnimatedImageView::SetBatchSize",
+      "Dali::Ui::AnimatedImageView::GetBatchSize",
+      "Dali::Ui::AnimatedImageView::GetCacheSize",
+      "Dali::Ui::AnimatedImageView::SetFrameDelay",
+      "Dali::Ui::AnimatedImageView::GetFrameDelay",
+      "Dali::Ui::AnimatedImageView::GetCurrentFrame",
+      "Dali::Ui::AnimatedImageView::GetTotalFrame",
+      "Dali::Ui::AnimatedImageView::SetImageColor",
+      "Dali::Ui::AnimatedImageView::GetImageColor",
+      "Dali::Ui::AnimatedImageView::GetFittingMode",
+      "Dali::Ui::AnimatedImageView::SetSamplingMode",
+      "Dali::Ui::AnimatedImageView::GetSamplingMode",
+      "Dali::Ui::AnimatedImageView::IsPreMultipliedAlpha",
+      "Dali::Ui::AnimatedImageView::SetDepthIndex",
+      "Dali::Ui::AnimatedImageView::SetDesiredWidth",
+      "Dali::Ui::AnimatedImageView::GetDesiredWidth",
+      "Dali::Ui::AnimatedImageView::GetDesiredHeight",
+      "Dali::Ui::AnimatedImageView::SetLoadPolicy",
+      "Dali::Ui::AnimatedImageView::GetLoadPolicy",
+      "Dali::Ui::AnimatedImageView::GetReleasePolicy",
+      "Dali::Ui::AnimatedImageView::SetSynchronousLoading",
+      "Dali::Ui::AnimatedImageView::IsSynchronousLoading",
+      "Dali::Ui::AnimatedImageView::SetAlphaMaskUrl",
+      "Dali::Ui::AnimatedImageView::SetCropToMask",
+      "Dali::Ui::AnimatedImageView::IsCropToMask",
+      "Dali::Ui::AnimatedImageView::SetMaskingMode",
+      "Dali::Ui::AnimatedImageView::SetPlaceholderUrl",
+      "Dali::Ui::AnimatedImageView::GetPlaceholderUrl",
+      "Dali::Ui::AnimatedImageView::SetPixelArea",
+      "Dali::Ui::AnimatedImageView::GetPixelArea",
+      "Dali::Ui::AnimatedImageView::ResourceReadySignal",
+      "Dali::Ui::AnimatedImageView::AnimationFinishedSignal",
+      "Dali::Ui::AnimatedImageView::New"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "AnimatedImageView is a specialized UI component designed for rendering and controlling animated GIF and WEBP media files within your application layout."
+      },
+      {
+        "section_title": "Getting Started",
+        "description": "Learn how to instantiate an AnimatedImageView using the Factory pattern and integrate it into your Dali UI View hierarchy."
+      },
+      {
+        "section_title": "Loading and Resource Management",
+        "description": "Configure image source URLs, manage load/release policies, and define placeholder assets to ensure smooth UI transitions."
+      },
+      {
+        "section_title": "Playback Control and State",
+        "description": "Manage animation flow with commands like Play, Pause, and Stop, and track playback progress using frame indices and speed factors."
+      },
+      {
+        "section_title": "Visual Configuration and Styling",
+        "description": "Adjust image appearance through color modulation, alpha masking, pixel area cropping, and scaling modes to match your design requirements."
+      },
+      {
+        "section_title": "Memory and Performance Optimization",
+        "description": "Optimize resource usage by tuning batch sizes, cache limits, and synchronous loading flags to maintain a high frame rate."
+      },
+      {
+        "section_title": "Event Handling",
+        "description": "Respond to lifecycle events and animation milestones using signal handlers to synchronize your app logic with image playback states."
+      },
+      {
+        "section_title": "Related Sub-Components",
+        "description": "Explore supplemental modules: 'animated-image-view-impl' for internal implementation details, 'animated-image-view-types' for supporting enumerations, and 'animated-image-view-properties' for property-based configuration."
+      }
+    ]
+  },
+  {
+    "feature": "image-view",
+    "packages": [
+      "dali-ui"
+    ],
+    "api_tiers": [
+      "public-api"
+    ],
+    "apis": [
+      "Dali::Ui::ImageView",
+      "Dali::Ui::ImageView::Property",
+      "Dali::Ui::ImageView::ImageView",
+      "Dali::Ui::ImageView::ImageView",
+      "Dali::Ui::ImageView::ImageView",
+      "Dali::Ui::ImageView::SetResourceUrl",
+      "Dali::Ui::ImageView::GetResourceUrl",
+      "Dali::Ui::ImageView::Reload",
+      "Dali::Ui::ImageView::SetPlaceholderUrl",
+      "Dali::Ui::ImageView::GetPlaceholderUrl",
+      "Dali::Ui::ImageView::SetImageColor",
+      "Dali::Ui::ImageView::GetImageColor",
+      "Dali::Ui::ImageView::SetPixelArea",
+      "Dali::Ui::ImageView::GetPixelArea",
+      "Dali::Ui::ImageView::SetSamplingMode",
+      "Dali::Ui::ImageView::GetSamplingMode",
+      "Dali::Ui::ImageView::SetFittingMode",
+      "Dali::Ui::ImageView::GetFittingMode",
+      "Dali::Ui::ImageView::SetDesiredWidth",
+      "Dali::Ui::ImageView::GetDesiredWidth",
+      "Dali::Ui::ImageView::SetDesiredHeight",
+      "Dali::Ui::ImageView::GetDesiredHeight",
+      "Dali::Ui::ImageView::SetImageLoadWithViewSize",
+      "Dali::Ui::ImageView::IsImageLoadWithViewSizeEnabled",
+      "Dali::Ui::ImageView::SetPreMultipliedAlpha",
+      "Dali::Ui::ImageView::IsPreMultipliedAlpha",
+      "Dali::Ui::ImageView::GetAlphaMaskUrl",
+      "Dali::Ui::ImageView::SetCropToMask",
+      "Dali::Ui::ImageView::IsCropToMask",
+      "Dali::Ui::ImageView::SetMaskingMode",
+      "Dali::Ui::ImageView::GetMaskingMode",
+      "Dali::Ui::ImageView::SetLoadPolicy",
+      "Dali::Ui::ImageView::GetLoadPolicy",
+      "Dali::Ui::ImageView::SetReleasePolicy",
+      "Dali::Ui::ImageView::GetReleasePolicy",
+      "Dali::Ui::ImageView::SetSynchronousLoading",
+      "Dali::Ui::ImageView::IsSynchronousLoading",
+      "Dali::Ui::ImageView::SetFastTrackUpload",
+      "Dali::Ui::ImageView::IsFastTrackUploadEnabled",
+      "Dali::Ui::ImageView::SetOrientationCorrection",
+      "Dali::Ui::ImageView::IsOrientationCorrectionEnabled",
+      "Dali::Ui::ImageView::SetNPatchBorder",
+      "Dali::Ui::ImageView::GetNPatchBorder",
+      "Dali::Ui::ImageView::SetNPatchBorderOnly",
+      "Dali::Ui::ImageView::IsNPatchBorderOnly",
+      "Dali::Ui::ImageView::SetDepthIndex",
+      "Dali::Ui::ImageView::GetLoadingStatus",
+      "Dali::Ui::ImageView::ResourceReadySignal",
+      "Dali::Ui::ImageView::New",
+      "Dali::Ui::ImageView::New"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "ImageView is a UI component used to display static image resources like PNG, JPEG, and SVG files within a DALi application layout."
+      },
+      {
+        "section_title": "Creating and Configuring Images",
+        "description": "Learn how to instantiate an ImageView and define its visual content using primary resource URLs and placeholder fallbacks."
+      },
+      {
+        "section_title": "Layout and Sizing Control",
+        "description": "Adjust the display dimensions, sampling modes, and aspect ratio handling to ensure your images render perfectly within the view hierarchy."
+      },
+      {
+        "section_title": "Advanced Visual Effects",
+        "description": "Apply image-specific visual enhancements such as alpha masking, tinting, pixel area cropping, and NPatch borders for flexible UI scaling."
+      },
+      {
+        "section_title": "Resource Loading and Lifecycle Management",
+        "description": "Manage image memory and performance by configuring load/release policies, synchronous loading, and fast-track upload optimizations."
+      },
+      {
+        "section_title": "Handling State and Signals",
+        "description": "Monitor the loading status of your resources and react to readiness signals to coordinate your application UI updates effectively."
+      },
+      {
+        "section_title": "Related Sub-Components",
+        "description": "Explore specialized helper components including image-view-impl for internal implementation details and image-view-properties for managing declarative attribute configurations."
+      }
+    ]
+  },
+  {
+    "feature": "input-field",
+    "packages": [
+      "dali-ui"
+    ],
+    "api_tiers": [
+      "public-api"
+    ],
+    "apis": [
+      "Dali::Ui::InputField",
+      "Dali::Ui::InputField::Property",
+      "Dali::Ui::InputField::InputField",
+      "Dali::Ui::InputField::InputField",
+      "Dali::Ui::InputField::SetText",
+      "Dali::Ui::InputField::SetFontFamily",
+      "Dali::Ui::InputField::GetFontFamily",
+      "Dali::Ui::InputField::GetFontSize",
+      "Dali::Ui::InputField::SetTextColor",
+      "Dali::Ui::InputField::SetHorizontalTextAlignment",
+      "Dali::Ui::InputField::GetHorizontalTextAlignment",
+      "Dali::Ui::InputField::GetVerticalTextAlignment",
+      "Dali::Ui::InputField::SetOverflowMode",
+      "Dali::Ui::InputField::SetPlaceholder",
+      "Dali::Ui::InputField::GetPlaceholder",
+      "Dali::Ui::InputField::GetPlaceholderColor",
+      "Dali::Ui::InputField::SetShowPlaceholderOnFocus",
+      "Dali::Ui::InputField::SetCursorWidth",
+      "Dali::Ui::InputField::SetCursorColor",
+      "Dali::Ui::InputField::GetCursorColor",
+      "Dali::Ui::InputField::IsCursorBlinkEnabled",
+      "Dali::Ui::InputField::SetCursorBlinkInterval",
+      "Dali::Ui::InputField::SetCursorPosition",
+      "Dali::Ui::InputField::GetCursorPosition",
+      "Dali::Ui::InputField::GetSelectionColor",
+      "Dali::Ui::InputField::SetMaximumLength",
+      "Dali::Ui::InputField::SetLayoutDirectionMode",
+      "Dali::Ui::InputField::GetLayoutDirectionMode",
+      "Dali::Ui::InputField::GetFontWeight",
+      "Dali::Ui::InputField::SetFontWidth",
+      "Dali::Ui::InputField::SetFontSlant",
+      "Dali::Ui::InputField::GetFontSlant",
+      "Dali::Ui::InputField::GetTextBackgroundColor",
+      "Dali::Ui::InputField::ClearTextBackgroundColor",
+      "Dali::Ui::InputField::ClearUnderline",
+      "Dali::Ui::InputField::ClearShadow",
+      "Dali::Ui::InputField::SetOutline",
+      "Dali::Ui::InputField::SetLineThrough",
+      "Dali::Ui::InputField::ClearLineThrough",
+      "Dali::Ui::InputField::GetFontSizeScale",
+      "Dali::Ui::InputField::SetMinimumFontSizeScale",
+      "Dali::Ui::InputField::SetMaximumFontSizeScale",
+      "Dali::Ui::InputField::GetMaximumFontSizeScale",
+      "Dali::Ui::InputField::IsSystemFontSizeScaleEnabled",
+      "Dali::Ui::InputField::SetFontVariation",
+      "Dali::Ui::InputField::GetFontVariation",
+      "Dali::Ui::InputField::ClearFontVariation",
+      "Dali::Ui::InputField::TextChangedSignal",
+      "Dali::Ui::InputField::MaximumLengthReachedSignal",
+      "Dali::Ui::InputField::New"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "The InputField component provides a high-level, customizable text entry interface designed for capturing user input in mobile and wearable applications."
+      },
+      {
+        "section_title": "Getting Started",
+        "description": "Learn how to instantiate an InputField and integrate it into your scene graph."
+      },
+      {
+        "section_title": "Visual Configuration & Typography",
+        "description": "Customize the appearance of your input field by configuring fonts, colors, text alignment, and advanced text styles like shadows, outlines, and underlines."
+      },
+      {
+        "section_title": "Placeholder Management",
+        "description": "Configure instructional text prompts and control their visibility to guide users before they begin typing."
+      },
+      {
+        "section_title": "Cursor & Selection Control",
+        "description": "Manage the user's focus area by customizing cursor behavior, appearance, blink rates, and the visual feedback for text selections."
+      },
+      {
+        "section_title": "Layout & Scaling",
+        "description": "Handle text sizing, layout direction modes, and font scaling settings to ensure your input field remains readable across different device screen configurations."
+      },
+      {
+        "section_title": "Input Handling & Signals",
+        "description": "Respond to user interactions and state changes by monitoring text modification signals and enforcing character length constraints."
+      },
+      {
+        "section_title": "Related Sub-Components",
+        "description": "Explore specialized components: InputFieldImpl provides internal state management logic, while InputFieldPropertyHandler simplifies the management of dynamic UI property updates."
+      }
+    ]
+  },
+  {
+    "feature": "label",
+    "packages": [
+      "dali-ui"
+    ],
+    "api_tiers": [
+      "public-api"
+    ],
+    "apis": [
+      "Dali::Ui::Label",
+      "Dali::Ui::Label::Property",
+      "Dali::Ui::Label::Label",
+      "Dali::Ui::Label::SetText",
+      "Dali::Ui::Label::SetFontFamily",
+      "Dali::Ui::Label::SetFontSize",
+      "Dali::Ui::Label::IsMultiLine",
+      "Dali::Ui::Label::GetLineWrapMode",
+      "Dali::Ui::Label::GetTextColor",
+      "Dali::Ui::Label::GetHorizontalTextAlignment",
+      "Dali::Ui::Label::GetVerticalTextAlignment",
+      "Dali::Ui::Label::SetLineHeight",
+      "Dali::Ui::Label::SetLineHeightMode",
+      "Dali::Ui::Label::SetLayoutDirectionMode",
+      "Dali::Ui::Label::SetMarkupEnabled",
+      "Dali::Ui::Label::SetAnchorColor",
+      "Dali::Ui::Label::GetAnchorClickedColor",
+      "Dali::Ui::Label::GetMarqueeTriggerPolicy",
+      "Dali::Ui::Label::GetMarqueeSpeed",
+      "Dali::Ui::Label::GetMarqueeLoopCount",
+      "Dali::Ui::Label::GetMarqueeLoopDelay",
+      "Dali::Ui::Label::SetMarqueeOrientation",
+      "Dali::Ui::Label::SetMarqueeStopMode",
+      "Dali::Ui::Label::SetFontWeight",
+      "Dali::Ui::Label::SetFontWidth",
+      "Dali::Ui::Label::SetFontSlant",
+      "Dali::Ui::Label::GetTextBackgroundColor",
+      "Dali::Ui::Label::SetUnderline",
+      "Dali::Ui::Label::SetShadow",
+      "Dali::Ui::Label::SetOutline",
+      "Dali::Ui::Label::SetLineThrough",
+      "Dali::Ui::Label::ClearBevel",
+      "Dali::Ui::Label::SetTextFit",
+      "Dali::Ui::Label::SetFontSizeScale",
+      "Dali::Ui::Label::SetMinimumFontSizeScale",
+      "Dali::Ui::Label::SetMaximumFontSizeScale",
+      "Dali::Ui::Label::IsSystemFontSizeScaleEnabled",
+      "Dali::Ui::Label::SetFontVariation",
+      "Dali::Ui::Label::ClearFontVariation",
+      "Dali::Ui::Label::IsCutoutEnabled",
+      "Dali::Ui::Label::ClearMaskEffect",
+      "Dali::Ui::Label::SetRenderScale",
+      "Dali::Ui::Label::GetLineCount",
+      "Dali::Ui::Label::GetAsyncLineCount",
+      "Dali::Ui::Label::GetAdjustedFontSizeScale",
+      "Dali::Ui::Label::StopMarquee",
+      "Dali::Ui::Label::AnchorClickedSignal",
+      "Dali::Ui::Label::AsyncNaturalSizeComputedSignal",
+      "Dali::Ui::Label::Animate",
+      "Dali::Ui::Label::New"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "The Label component provides a high-performance text rendering solution in DALi, designed for displaying static or dynamic strings with advanced typography and visual styling capabilities."
+      },
+      {
+        "section_title": "Creating and Initializing Labels",
+        "description": "Learn how to instantiate the Label component and perform basic configuration of text content and primary font attributes."
+      },
+      {
+        "section_title": "Text Styling and Typography",
+        "description": "Configure advanced font properties including weight, width, slant, variation settings, and support for rich text via markup."
+      },
+      {
+        "section_title": "Layout and Sizing",
+        "description": "Manage how text occupies space by controlling alignment, line-height, text fitting behavior, and automatic font scaling relative to system preferences."
+      },
+      {
+        "section_title": "Visual Effects and Decoration",
+        "description": "Enhance text readability and aesthetics by applying outlines, shadows, underlines, strikethroughs, and specialized background or mask effects."
+      },
+      {
+        "section_title": "Dynamic Content and Animation",
+        "description": "Implement marquee scrolling behavior for long text strings and utilize the animation interface to dynamically update label properties."
+      },
+      {
+        "section_title": "Event Handling and Signals",
+        "description": "Respond to user interactions like anchor clicks and monitor text layout states through asynchronous signals."
+      },
+      {
+        "section_title": "Related Sub-Components",
+        "description": "Explores the internal helper modules 'label-impl' for engine-level behavioral overrides and 'label-property-handler' for managing complex property updates."
+      }
+    ]
+  },
+  {
+    "feature": "view",
+    "packages": [
+      "dali-ui"
+    ],
+    "api_tiers": [
+      "public-api"
+    ],
+    "apis": [
+      "Dali::Ui::View",
+      "Dali::Ui::InteractiveTrait",
+      "Dali::Ui::SelectableTrait",
+      "Dali::Ui::Trait",
+      "Dali::Ui::View::Property",
+      "Dali::Ui::InteractiveTrait::InteractiveTrait",
+      "Dali::Ui::InteractiveTrait::LongPressedSignal",
+      "Dali::Ui::InteractiveTrait::SetPseudoDisabled",
+      "Dali::Ui::InteractiveTrait::SetKeyClickPolicy",
+      "Dali::Ui::InteractiveTrait::ConnectLongPressedSignal",
+      "Dali::Ui::SelectableTrait::SelectableTrait",
+      "Dali::Ui::SelectableTrait::IsSelected",
+      "Dali::Ui::SelectableTrait::SelectableTrait",
+      "Dali::Ui::Trait::Trait",
+      "Dali::Ui::Trait::Trait",
+      "Dali::Ui::View::View",
+      "Dali::Ui::View::InvalidateArrange",
+      "Dali::Ui::View::SetArrangeCallback",
+      "Dali::Ui::View::SetScaleY",
+      "Dali::Ui::View::SetVisibility",
+      "Dali::Ui::View::SetPositionX",
+      "Dali::Ui::View::GetPositionY",
+      "Dali::Ui::View::GetPivot",
+      "Dali::Ui::View::SetRequestedHeight",
+      "Dali::Ui::View::SetMinimumHeight",
+      "Dali::Ui::View::GetMaximumWidth",
+      "Dali::Ui::View::GetMargin",
+      "Dali::Ui::View::SetLayoutMode",
+      "Dali::Ui::View::IsTouchFocusable",
+      "Dali::Ui::View::SetRightFocusableView",
+      "Dali::Ui::View::SetCounterClockwiseFocusableView",
+      "Dali::Ui::View::IsEnabled",
+      "Dali::Ui::View::SetCornerRadius",
+      "Dali::Ui::View::SetCornerRadiusPolicy",
+      "Dali::Ui::View::SetCornerSquareness",
+      "Dali::Ui::View::GetBorderlineWidth",
+      "Dali::Ui::View::GetBorderlineOffset",
+      "Dali::Ui::View::SetName",
+      "Dali::Ui::View::AsInteractive",
+      "Dali::Ui::View::As",
+      "Dali::Ui::View::Insert",
+      "Dali::Ui::View::GetChildAt",
+      "Dali::Ui::View::RaiseToTop",
+      "Dali::Ui::View::LowerBelow",
+      "Dali::Ui::View::EnsureInteractiveTrait",
+      "Dali::Ui::View::IsSelectable",
+      "Dali::Ui::View::GetRenderEffect",
+      "Dali::Ui::View::IsOnScene",
+      "Dali::Ui::View::FocusChangedSignal",
+      "Dali::Ui::View::New"
+    ],
+    "cross_package_links": [],
+    "ambiguous": false,
+    "display_name": "View (Base UI Object)",
+    "description": "The primary UI object for DALi application developers. View inherits from Actor but provides a higher-level API designed for app development.",
+    "base_class": "Dali::Ui::View",
+    "force_tree_review": true,
+    "allowed_tiers": [
+      "public-api"
+    ],
+    "outline": [
+      {
+        "section_title": "Overview",
+        "description": "Dali::Ui::View is the fundamental building block for constructing modern, performant user interfaces that utilize a declarative, fluent API design."
+      },
+      {
+        "section_title": "The Fluent Builder Pattern",
+        "description": "Learn how to construct clean, readable UI hierarchies using method chaining and declarative syntax to initialize view properties efficiently."
+      },
+      {
+        "section_title": "Declarative UI Composition",
+        "description": "Master the use of Children, With, and As wrappers to build complex, nested view trees without verbose imperative code."
+      },
+      {
+        "section_title": "Layout and Sizing Mechanics",
+        "description": "Configure the spatial footprint of your components by managing margins, requested dimensions, and automated layout modes."
+      },
+      {
+        "section_title": "Visual Styling and Effects",
+        "description": "Customize the appearance of your views using corner radii, borderline configurations, and specialized render effects."
+      },
+      {
+        "section_title": "Interactivity and Selection Traits",
+        "description": "Enable user interaction and selection state for your components using the InteractiveTrait and SelectableTrait functional overlays."
+      },
+      {
+        "section_title": "Event Handling and Focus Management",
+        "description": "Define custom interaction flows by managing touch-focus policies, handling focus change signals, and navigating through view-based focus chains."
+      },
+      {
+        "section_title": "Hierarchy and Z-Order Management",
+        "description": "Manipulate your UI tree dynamically by inserting children, controlling depth, and adjusting the rendering order of overlapping elements."
+      }
+    ]
+  }
+]

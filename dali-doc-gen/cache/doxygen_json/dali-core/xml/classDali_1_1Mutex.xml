@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Mutex" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Mutex</compoundname>
+    <includes refid="mutex_8h" local="no">mutex.h</includes>
+    <innerclass refid="structDali_1_1Mutex_1_1MutexImpl" prot="public">Dali::Mutex::MutexImpl</innerclass>
+    <innerclass refid="classDali_1_1Mutex_1_1ScopedLock" prot="public">Dali::Mutex::ScopedLock</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Mutex_1ad647a4c81e725b4a0f6244025571c30f" prot="private" static="no" mutable="no">
+        <type><ref refid="structDali_1_1Mutex_1_1MutexImpl" kindref="compound">MutexImpl</ref> *</type>
+        <definition>MutexImpl* Dali::Mutex::mImpl</definition>
+        <argsstring></argsstring>
+        <name>mImpl</name>
+        <qualifiedname>Dali::Mutex::mImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="91" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Mutex_1ad4d381a95a1f8dbedb8e37046ccb7ec4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Mutex::Mutex</definition>
+        <argsstring>()</argsstring>
+        <name>Mutex</name>
+        <qualifiedname>Dali::Mutex::Mutex</qualifiedname>
+        <briefdescription>
+<para>Constructor, acquires the mutex from the underlying OS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="38" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.cpp" bodystart="36" bodyend="40"/>
+        <references refid="structDali_1_1Mutex_1_1MutexImpl_1a76ddd9dbf2eed5bbe427d88d7ebe32c7" compoundref="mutex_8cpp" startline="33">Dali::Mutex::MutexImpl::locked</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Mutex_1a6dad9ab99374a3a462ec429a5f2e14e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Mutex::~Mutex</definition>
+        <argsstring>()</argsstring>
+        <name>~Mutex</name>
+        <qualifiedname>Dali::Mutex::~Mutex</qualifiedname>
+        <briefdescription>
+<para>Destructor, non virtual as this is not meant as a base class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="43" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.cpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Mutex_1a59050e8e803f711f63a51bb14332ae2c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Mutex::Mutex</definition>
+        <argsstring>(Mutex &amp;&amp;rhs) noexcept</argsstring>
+        <name>Mutex</name>
+        <qualifiedname>Dali::Mutex::Mutex</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="48" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.cpp" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Mutex_1ab6f36a5135468461bfca5f2b63caa6c1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        <definition>Mutex &amp; Dali::Mutex::operator=</definition>
+        <argsstring>(Mutex &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Mutex::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="53" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.cpp" bodystart="55" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Mutex_1a2f0e9daeabafa3dd41c1467f45df48af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Mutex::IsLocked</definition>
+        <argsstring>()</argsstring>
+        <name>IsLocked</name>
+        <qualifiedname>Dali::Mutex::IsLocked</qualifiedname>
+        <briefdescription>
+<para>Check if the mutex is locked. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the mutex is locked </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="59" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.cpp" bodystart="67" bodyend="70"/>
+        <references refid="structDali_1_1Mutex_1_1MutexImpl_1a76ddd9dbf2eed5bbe427d88d7ebe32c7" compoundref="mutex_8cpp" startline="33">Dali::Mutex::MutexImpl::locked</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Mutex_1ae170dabb3d3f2f2aeb98f5ca2196b377" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Mutex::Mutex</definition>
+        <argsstring>(const Mutex &amp;)</argsstring>
+        <name>Mutex</name>
+        <qualifiedname>Dali::Mutex::Mutex</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Not implemented as <ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> is not copyable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="87" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Mutex_1a88eb9d5e7d34ffd69f2f6a41f89c1328" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        <definition>const Mutex &amp; Dali::Mutex::operator=</definition>
+        <argsstring>(const Mutex &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Mutex::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="88" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Class to synchronize access to critical resources from multiple threads </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/mutex.h" bodystart="33" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Mutex_1a2f0e9daeabafa3dd41c1467f45df48af" prot="public" virt="non-virtual"><scope>Dali::Mutex</scope><name>IsLocked</name></member>
+      <member refid="classDali_1_1Mutex_1ad647a4c81e725b4a0f6244025571c30f" prot="private" virt="non-virtual"><scope>Dali::Mutex</scope><name>mImpl</name></member>
+      <member refid="classDali_1_1Mutex_1ad4d381a95a1f8dbedb8e37046ccb7ec4" prot="public" virt="non-virtual"><scope>Dali::Mutex</scope><name>Mutex</name></member>
+      <member refid="classDali_1_1Mutex_1a59050e8e803f711f63a51bb14332ae2c" prot="public" virt="non-virtual"><scope>Dali::Mutex</scope><name>Mutex</name></member>
+      <member refid="classDali_1_1Mutex_1ae170dabb3d3f2f2aeb98f5ca2196b377" prot="private" virt="non-virtual"><scope>Dali::Mutex</scope><name>Mutex</name></member>
+      <member refid="classDali_1_1Mutex_1ab6f36a5135468461bfca5f2b63caa6c1" prot="public" virt="non-virtual"><scope>Dali::Mutex</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Mutex_1a88eb9d5e7d34ffd69f2f6a41f89c1328" prot="private" virt="non-virtual"><scope>Dali::Mutex</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Mutex_1a6dad9ab99374a3a462ec429a5f2e14e9" prot="public" virt="non-virtual"><scope>Dali::Mutex</scope><name>~Mutex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

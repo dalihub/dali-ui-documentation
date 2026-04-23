@@ -1,0 +1,1793 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="group__dali__core__object" kind="group">
+    <compoundname>dali_core_object</compoundname>
+    <title>Dali_core_object</title>
+    <innerclass refid="classDali_1_1Any" prot="public">Dali::Any</innerclass>
+    <innerclass refid="classDali_1_1BaseHandle" prot="public">Dali::BaseHandle</innerclass>
+    <innerclass refid="classDali_1_1BaseObject" prot="public">Dali::BaseObject</innerclass>
+    <innerclass refid="classDali_1_1Handle" prot="public">Dali::Handle</innerclass>
+    <innerclass refid="classDali_1_1IndirectValue" prot="public">Dali::IndirectValue</innerclass>
+    <innerclass refid="classDali_1_1ObjectRegistry" prot="public">Dali::ObjectRegistry</innerclass>
+    <innerclass refid="classDali_1_1Property" prot="public">Dali::Property</innerclass>
+    <innerclass refid="classDali_1_1PropertyCondition" prot="public">Dali::PropertyCondition</innerclass>
+    <innerclass refid="classDali_1_1PropertyInput" prot="public">Dali::PropertyInput</innerclass>
+    <innerclass refid="classDali_1_1PropertyNotification" prot="public">Dali::PropertyNotification</innerclass>
+    <innerclass refid="classDali_1_1RefObject" prot="public">Dali::RefObject</innerclass>
+    <innerclass refid="classDali_1_1WeakHandleBase" prot="public">Dali::WeakHandleBase</innerclass>
+    <innerclass refid="classDali_1_1WeakHandle" prot="public">Dali::WeakHandle</innerclass>
+    <innerclass refid="classDali_1_1TypeInfo" prot="public">Dali::TypeInfo</innerclass>
+    <innerclass refid="classDali_1_1TypeRegistry" prot="public">Dali::TypeRegistry</innerclass>
+    <innerclass refid="classDali_1_1TypeRegistration" prot="public">Dali::TypeRegistration</innerclass>
+    <innerclass refid="classDali_1_1SignalConnectorType" prot="public">Dali::SignalConnectorType</innerclass>
+    <innerclass refid="classDali_1_1TypeAction" prot="public">Dali::TypeAction</innerclass>
+    <innerclass refid="classDali_1_1PropertyRegistration" prot="public">Dali::PropertyRegistration</innerclass>
+    <innerclass refid="classDali_1_1AnimatablePropertyRegistration" prot="public">Dali::AnimatablePropertyRegistration</innerclass>
+    <innerclass refid="classDali_1_1AnimatablePropertyComponentRegistration" prot="public">Dali::AnimatablePropertyComponentRegistration</innerclass>
+    <innerclass refid="classDali_1_1ChildPropertyRegistration" prot="public">Dali::ChildPropertyRegistration</innerclass>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <innernamespace refid="namespaceDali_1_1WeightObject">Dali::WeightObject</innernamespace>
+    <innernamespace refid="namespaceDali_1_1PropertyTypes">Dali::PropertyTypes</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__dali__core__object_1gae1870db92315eef0d9599c013d951869" prot="public" static="no" strong="no">
+        <type></type>
+        <name>PropertyRanges</name>
+        <qualifiedname>Dali::PropertyRanges</qualifiedname>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869aaea6f51a49f89291cae0da49ee02aef5" prot="public">
+          <name>DEFAULT_OBJECT_PROPERTY_START_INDEX</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>For all objects deriving from <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> (including Actors). @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869ac623598eb721aaf49bedd8ffc04f432e" prot="public">
+          <name>DEFAULT_ACTOR_PROPERTY_START_INDEX</name>
+          <initializer>= DEFAULT_OBJECT_PROPERTY_START_INDEX</initializer>
+          <briefdescription>
+<para>Start index for <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a0aa115267af2a05a23727008e2a14485" prot="public">
+          <name>DEFAULT_ACTOR_PROPERTY_MAX_COUNT</name>
+          <initializer>= 10000</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> range: 0 to 9999 @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a6c7216fc387d48d81ec5e1f16dd0bdc4" prot="public">
+          <name>DEFAULT_DERIVED_ACTOR_PROPERTY_START_INDEX</name>
+          <initializer>= DEFAULT_ACTOR_PROPERTY_START_INDEX + DEFAULT_ACTOR_PROPERTY_MAX_COUNT</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Property" kindref="compound">Property</ref> start index for classes deriving directly from <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a1a880b70d6f1de7518d91cd85b6fb6ba" prot="public">
+          <name>DEFAULT_PROPERTY_MAX_COUNT_PER_DERIVATION</name>
+          <initializer>= 10000</initializer>
+          <briefdescription>
+<para>Second-level and onwards derived objects should increment their start index by this. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869ace9c8eb57ee33bdb807c5414c323ac27" prot="public">
+          <name>DEFAULT_GESTURE_DETECTOR_PROPERTY_START_INDEX</name>
+          <initializer>= DEFAULT_DERIVED_ACTOR_PROPERTY_START_INDEX</initializer>
+          <briefdescription>
+<para>Used by <ref refid="classDali_1_1PanGestureDetector" kindref="compound">PanGestureDetector</ref>. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869ac7a71fc200a5e1f074506f2ae478f3cb" prot="public">
+          <name>DEFAULT_RENDERER_PROPERTY_START_INDEX</name>
+          <initializer>= 9000000</initializer>
+          <briefdescription>
+<para>Start index for <ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref>. @SINCE_1_1.44. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a78e95720a35cce2a3176bc51600c9f37" prot="public">
+          <name>DEFAULT_RENDERER_PROPERTY_MAX_INDEX</name>
+          <initializer>= DEFAULT_RENDERER_PROPERTY_START_INDEX + DEFAULT_PROPERTY_MAX_COUNT_PER_DERIVATION-1</initializer>
+          <briefdescription>
+<para><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> range: 9,000,000 to 9,009,999 @SINCE_2_1.13. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a680b51575d73dc8a6613390ef248207a" prot="public">
+          <name>PROPERTY_REGISTRATION_START_INDEX</name>
+          <initializer>= 10000000</initializer>
+          <briefdescription>
+<para>The index when registering a property should start from this number. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869aa3515bbc9b2198523b87b354265e46b5" prot="public">
+          <name>DEFAULT_PROPERTY_MAX_COUNT</name>
+          <initializer>= PROPERTY_REGISTRATION_START_INDEX</initializer>
+          <briefdescription>
+<para>Default <ref refid="classDali_1_1Property" kindref="compound">Property</ref> Range: 0 to 9999999 @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a558d3e8261f61fa62f055052015963b8" prot="public">
+          <name>PROPERTY_REGISTRATION_MAX_INDEX</name>
+          <initializer>= 19999999</initializer>
+          <briefdescription>
+<para>The maximum index supported when registering a property @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a93bf56e7a49b167f479e1f7cc7e64636" prot="public">
+          <name>ANIMATABLE_PROPERTY_REGISTRATION_START_INDEX</name>
+          <initializer>= 20000000</initializer>
+          <briefdescription>
+<para>The index when registering an animatable property should start from this number. (SceneGraph properties per type) @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869ad2643ac3fa89ff48eb59cb06839717fc" prot="public">
+          <name>ANIMATABLE_PROPERTY_WITHOUT_UNIFORM_REGISTRATION_START_INDEX</name>
+          <initializer>= 25000000</initializer>
+          <briefdescription>
+<para>The index when registering an animatable property without uniform mapping should start from this number. (SceneGraph properties per type) @SINCE_2_4.15. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a6a46c47570631b720d53b779eb1263b7" prot="public">
+          <name>ANIMATABLE_PROPERTY_WITHOUT_UNIFORM_REGISTRATION_MAX_INDEX</name>
+          <initializer>= 25999999</initializer>
+          <briefdescription>
+<para>The maximum index supported when registering an animatable property without uniform mapping @SINCE_2_4.15. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a0d0039f88743fefe5ea8d5b3e6529672" prot="public">
+          <name>ANIMATABLE_PROPERTY_REGISTRATION_MAX_INDEX</name>
+          <initializer>= 29999999</initializer>
+          <briefdescription>
+<para>The maximum index supported when registering an animatable property @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a2cb6c1b41eb13d84a763e14fdc751a72" prot="public">
+          <name>CHILD_PROPERTY_REGISTRATION_START_INDEX</name>
+          <initializer>= 45000000</initializer>
+          <briefdescription>
+<para>The index when registering a child property should start from this number. (Event side properties per instance) @SINCE_1_1.35. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a82ccfdcec01d89283f33e886a4e77de5" prot="public">
+          <name>CHILD_PROPERTY_REGISTRATION_MAX_INDEX</name>
+          <initializer>= 49999999</initializer>
+          <briefdescription>
+<para>The maximum index supported when registering a child property @SINCE_1_1.35. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869ae4f058a49589dde628d65bbe886a4cda" prot="public">
+          <name>PROPERTY_CUSTOM_START_INDEX</name>
+          <initializer>= 50000000</initializer>
+          <briefdescription>
+<para>The index at which custom properties start (SceneGraph and Event side properties per instance) @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a254afdfdb61f5344e735868490427a83" prot="public">
+          <name>PROPERTY_CUSTOM_MAX_INDEX</name>
+          <initializer>= 59999999</initializer>
+          <briefdescription>
+<para>The maximum index supported for custom properties @SINCE_1_1.45. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a0d3395ee9ab395deae4dd56e7227a467" prot="public">
+          <name>CORE_PROPERTY_MAX_INDEX</name>
+          <initializer>= PROPERTY_CUSTOM_MAX_INDEX</initializer>
+          <briefdescription>
+<para>The maximum index that Core properties can go up to @SINCE_1_1.45. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the property index ranges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumerations are being used here rather than static constants so that switch statements can be used to compare property indices. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-index-ranges.h" line="39" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-index-ranges.h" bodystart="40" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__dali__core__object_1ga1791c37c66c5bc254126c6ba53661f94" prot="public" static="no">
+        <type>Pair&lt; Property::Key, Property::Value &gt;</type>
+        <definition>typedef Pair&lt; Property::Key, Property::Value &gt; Dali::KeyValuePair</definition>
+        <argsstring></argsstring>
+        <name>KeyValuePair</name>
+        <qualifiedname>Dali::KeyValuePair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-map.h" line="40" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-map.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__dali__core__object_1ga5b571392f81718d9515e91a990ca3902" prot="public" static="no">
+        <type>Pair&lt; <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>, Property::Value &gt;</type>
+        <definition>using Dali::StringValuePair = typedef Pair&lt;Dali::String, Property::Value&gt;</definition>
+        <argsstring></argsstring>
+        <name>StringValuePair</name>
+        <qualifiedname>Dali::StringValuePair</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-map.h" line="41" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-map.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__dali__core__object_1gabde54a5852c9cdcfbf545ad60a026b8a" prot="public" static="no">
+        <type>Signal&lt; void(PropertyNotification &amp;)&gt;</type>
+        <definition>using Dali::PropertyNotifySignalType = typedef Signal&lt;void(PropertyNotification&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PropertyNotifySignalType</name>
+        <qualifiedname>Dali::PropertyNotifySignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> type for <ref refid="classDali_1_1PropertyNotification_1a7d31991e87fe0aece84227800b4ee844" kindref="member">Dali::PropertyNotification::NotifySignal()</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-notification-declarations.h" line="37" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-notification-declarations.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__dali__core__object_1ga39043b9c211beba1c23bf072c9f35cbe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type>Type *</type>
+        <definition>Type * Dali::AnyCast</definition>
+        <argsstring>(Any *any)</argsstring>
+        <name>AnyCast</name>
+        <qualifiedname>Dali::AnyCast</qualifiedname>
+        <param>
+          <type>Any *</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a pointer to the held type of an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object from a pointer to that <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object (NULL if empty). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>AnyCast helper functions </para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the Type held </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" line="438" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" bodystart="438" bodyend="441"/>
+        <references refid="classDali_1_1Any_1a5afed5f350d5fba8d84ffbc8f1f55958" compoundref="any_8h" startline="217" endline="229">Dali::Any::GetPointer</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga5f85f9ab4825494a48a15c995b6a86ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type>const Type *</type>
+        <definition>const Type * Dali::AnyCast</definition>
+        <argsstring>(const Any *any)</argsstring>
+        <name>AnyCast</name>
+        <qualifiedname>Dali::AnyCast</qualifiedname>
+        <param>
+          <type>const Any *</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a const pointer to the held type of an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object from a pointer to that <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object (NULL if empty). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>const Pointer to an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>const Pointer to the Type held </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" line="452" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" bodystart="452" bodyend="455"/>
+        <references refid="classDali_1_1Any_1a5afed5f350d5fba8d84ffbc8f1f55958" compoundref="any_8h" startline="217" endline="229">Dali::Any::GetPointer</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga4a49efed41d6dd24b227610129440125" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type>Type</type>
+        <definition>Type Dali::AnyCast</definition>
+        <argsstring>(Any &amp;any)</argsstring>
+        <name>AnyCast</name>
+        <qualifiedname>Dali::AnyCast</qualifiedname>
+        <param>
+          <type>Any &amp;</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a held value of type Type from an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object from a reference to that <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference to an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Type value of type Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" line="466" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" bodystart="466" bodyend="469"/>
+        <references refid="classDali_1_1Any_1a85f5ba4de4a9439f1e70e162430613a7" compoundref="any_8h" startline="176" endline="179">Dali::Any::Get</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga13fecbd2d3e8c069cf5b7aac662c7cee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type>Type</type>
+        <definition>Type Dali::AnyCast</definition>
+        <argsstring>(const Any &amp;any)</argsstring>
+        <name>AnyCast</name>
+        <qualifiedname>Dali::AnyCast</qualifiedname>
+        <param>
+          <type>const Any &amp;</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a held value of type Type from an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object from a const reference to that <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference to an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Type value of type Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" line="480" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" bodystart="480" bodyend="483"/>
+        <references refid="classDali_1_1Any_1a85f5ba4de4a9439f1e70e162430613a7" compoundref="any_8h" startline="176" endline="179">Dali::Any::Get</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gaeb3a63d4bcfccf36659c8923c3a0c5b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type>Type &amp;</type>
+        <definition>Type &amp; Dali::AnyCastReference</definition>
+        <argsstring>(Any &amp;any)</argsstring>
+        <name>AnyCastReference</name>
+        <qualifiedname>Dali::AnyCastReference</qualifiedname>
+        <param>
+          <type>Any &amp;</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a reference to the held value of type Type from an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object from a reference to that <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference to an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the Type value of type Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" line="494" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" bodystart="494" bodyend="497"/>
+        <references refid="classDali_1_1Any_1a85f5ba4de4a9439f1e70e162430613a7" compoundref="any_8h" startline="176" endline="179">Dali::Any::Get</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga8d6e4243c5c38d77312ddc03f172596f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type>const Type &amp;</type>
+        <definition>const Type &amp; Dali::AnyCastReference</definition>
+        <argsstring>(const Any &amp;any)</argsstring>
+        <name>AnyCastReference</name>
+        <qualifiedname>Dali::AnyCastReference</qualifiedname>
+        <param>
+          <type>const Any &amp;</type>
+          <declname>any</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a const reference to the held value of type Type from an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object from a const reference to that <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference to an <ref refid="classDali_1_1Any" kindref="compound">Any</ref> object</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A const reference to the Type value of type Type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" line="508" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/any.h" bodystart="508" bodyend="511"/>
+        <references refid="classDali_1_1Any_1a85f5ba4de4a9439f1e70e162430613a7" compoundref="any_8h" startline="176" endline="179">Dali::Any::Get</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T Dali::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::DownCast</qualifiedname>
+        <param>
+          <type>BaseHandle</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Template wrapper to downcast a base object handle to derived class handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to a base object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> pointer to either a valid deriving handle or an uninitialized handle </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" line="274" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" bodystart="274" bodyend="277"/>
+        <referencedby refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Dali::Actor::Actor</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a3c50e96609536846a7ffa29b55d92051">Dali::Animation::Animation</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1ad89d6caec52cdc764be44a046e73fafe">Dali::CameraActor::CameraActor</referencedby>
+        <referencedby refid="classDali_1_1CustomActor_1a444efc13a6564cc1a9b3e10e41a7803b">Dali::CustomActor::CustomActor</referencedby>
+        <referencedby refid="classDali_1_1DecoratedVisualRenderer_1a6323f3a3442c3da952a3bd7dad0823e9">Dali::DecoratedVisualRenderer::DecoratedVisualRenderer</referencedby>
+        <referencedby refid="classDali_1_1FrameBuffer_1a0bb866c9c992fed499c8372d620576ec">Dali::FrameBuffer::FrameBuffer</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1ac03128d627d53438692dfc05528094c5">Dali::Geometry::Geometry</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1a3c7d202136012ee833a16255ebc0fafb">Dali::GestureDetector::GestureDetector</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a5ce0fbb33320d853b8f6132c0607eb02">Dali::Layer::Layer</referencedby>
+        <referencedby refid="classDali_1_1LongPressGestureDetector_1a9d4bca2f860a0887ac1c8e446b41d3b5">Dali::LongPressGestureDetector::LongPressGestureDetector</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a58ec4ceab88af801e02a2a460bee3c4a">Dali::Constraint::operator=</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a6cba3d10b340f93975fabf2d5138caab">Dali::Handle::operator=</referencedby>
+        <referencedby refid="classDali_1_1UniformBlock_1afee518b9b7ceea7ae8ceee8c9064052a">Dali::UniformBlock::operator=</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1ac9aa7f251a463ff41b6d40d527dce99b">Dali::PanGestureDetector::PanGestureDetector</referencedby>
+        <referencedby refid="classDali_1_1PinchGestureDetector_1acfcea82ebc6d5e09045c6cc299313062">Dali::PinchGestureDetector::PinchGestureDetector</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a9832e6e5dced8db55f96dbe2ef8ceb66">Dali::PropertyNotification::PropertyNotification</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a192db5029f322b254d1cb525133fac79">Dali::Renderer::Renderer</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a7c7076cf01fbc5542b64a89ced4fd74b">Dali::RenderTask::RenderTask</referencedby>
+        <referencedby refid="classDali_1_1RenderTaskList_1aa279a3d8494436112e976c24d37e9133">Dali::RenderTaskList::RenderTaskList</referencedby>
+        <referencedby refid="classDali_1_1RotationGestureDetector_1a29a8e724abcd684636a91ea7d221daf6">Dali::RotationGestureDetector::RotationGestureDetector</referencedby>
+        <referencedby refid="classDali_1_1Sampler_1aa8c54ee8926f497d76e6df06d17ee735">Dali::Sampler::Sampler</referencedby>
+        <referencedby refid="classDali_1_1Shader_1a49df360975c96cba089d7e0a6907ad05">Dali::Shader::Shader</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1adca0dd2f8a66bf3181597b45c4d18da2">Dali::TapGestureDetector::TapGestureDetector</referencedby>
+        <referencedby refid="classDali_1_1Texture_1ad92382bb5a7971638d5b969cb2d6fec1">Dali::Texture::Texture</referencedby>
+        <referencedby refid="classDali_1_1TextureSet_1a602d3d0d0e2019327d2e2427710209dd">Dali::TextureSet::TextureSet</referencedby>
+        <referencedby refid="classDali_1_1VertexBuffer_1a867860b31c672cbb7258e62146a3d378">Dali::VertexBuffer::VertexBuffer</referencedby>
+        <referencedby refid="classDali_1_1VisualRenderer_1a9f516a36b56ba20e1e8f121429c63006">Dali::VisualRenderer::VisualRenderer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga38331011a7268950023d37239932c3a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::operator==</definition>
+        <argsstring>(const BaseHandle &amp;lhs, const T &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>Dali::operator==</qualifiedname>
+        <param>
+          <type>const BaseHandle &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Equality operator. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to compare </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to compare to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the handle handles point to the same <ref refid="namespaceDali" kindref="compound">Dali</ref> resource, or if both are NULL </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" line="287" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" bodystart="287" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga1518c9e3a31efd4cf104640f9dc256dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::operator!=</definition>
+        <argsstring>(const BaseHandle &amp;lhs, const T &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>Dali::operator!=</qualifiedname>
+        <param>
+          <type>const BaseHandle &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Equality operator. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to compare </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to compare to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the handle handles point to the different <ref refid="namespaceDali" kindref="compound">Dali</ref> resources </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" line="300" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" bodystart="300" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga3652cb55a1069812839b20b3d272c5fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::operator&lt;</definition>
+        <argsstring>(const BaseHandle &amp;lhs, const BaseHandle &amp;rhs)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>Dali::operator&lt;</qualifiedname>
+        <param>
+          <type>const BaseHandle &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const BaseHandle &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Less than operator. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to compare </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to compare to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if lhs less than rhs </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" line="312" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-handle.h" bodystart="312" bodyend="315"/>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>BaseObject &amp;</type>
+        <definition>BaseObject &amp; Dali::GetImplementation</definition>
+        <argsstring>(Dali::BaseHandle &amp;handle)</argsstring>
+        <name>GetImplementation</name>
+        <qualifiedname>Dali::GetImplementation</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">Dali::BaseHandle</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Gets the implementation of a handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the object the handle points at </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="145" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" bodystart="145" bodyend="150"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" compoundref="base-handle_8cpp" startline="64" endline="67">Dali::BaseHandle::GetBaseObject</references>
+        <referencedby refid="classDali_1_1Stage_1aa1b235137a780325fe25645a976e472b" compoundref="stage_8cpp" startline="73" endline="76">Dali::Stage::Add</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a56eef5d1c770f5e37b75f396cc6ea44f" compoundref="scene_8cpp" startline="61" endline="64">Dali::Integration::Scene::Add</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a944e778fa4fc130da3d71ecd0848476a" compoundref="actor_8cpp" startline="69" endline="72">Dali::Actor::Add</referencedby>
+        <referencedby refid="classDali_1_1KeyFrames_1ad1e6676f0fec88623c9df8063c98dcc5" compoundref="key-frames_8cpp" startline="57" endline="60">Dali::KeyFrames::Add</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a6bf2941407cdbf05bc6d3b540994b2ec" compoundref="pan-gesture-detector_8cpp" startline="93" endline="96">Dali::PanGestureDetector::AddAngle</referencedby>
+        <referencedby refid="classDali_1_1Actor_1adf17a3f13db2568925c6e1bfdf65b1c8" compoundref="actor_8cpp" startline="265" endline="268">Dali::Actor::AddCacheRenderer</referencedby>
+        <referencedby refid="classDali_1_1Path_1a732a98d5b6224b55e56c13eefee727a1" compoundref="path_8cpp" startline="59" endline="62">Dali::Path::AddControlPoint</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1abebe9375efcc87e6a899d00af73302db" compoundref="pan-gesture-detector_8cpp" startline="98" endline="101">Dali::PanGestureDetector::AddDirection</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelRenderer_1a61c5d45a1fecbebdc8cc337f3e470843" compoundref="renderer-devel_8cpp" startline="31" endline="35">Dali::DevelRenderer::AddDrawCommand</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelStage_1ae2548a00c3a4468681ea71ae96481165" compoundref="stage-devel_8cpp" startline="41" endline="51">Dali::DevelStage::AddFrameCallback</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a3f7de49f55dfa78d8db6924062f00ae4" compoundref="scene_8cpp" startline="191" endline="194">Dali::Integration::Scene::AddFramePresentedCallback</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a3ecdc109ac39f63f518b810ee292c66f" compoundref="scene_8cpp" startline="186" endline="189">Dali::Integration::Scene::AddFrameRenderedCallback</referencedby>
+        <referencedby refid="classDali_1_1Path_1ae3d89a801647783fc02add2b7ae615e7" compoundref="path_8cpp" startline="54" endline="57">Dali::Path::AddPoint</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a9e6e041bcd7f7bc6a9af6196346d6886" compoundref="handle_8cpp" startline="167" endline="171">Dali::Handle::AddPropertyNotification</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aaf59eab452181c2bd072716362b84e19" compoundref="handle_8cpp" startline="173" endline="178">Dali::Handle::AddPropertyNotification</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a0cf638856c8a20238839fc910d16e21c" compoundref="actor_8cpp" startline="239" endline="242">Dali::Actor::AddRenderer</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a8229723a5a2f26afdf4b92ed600c90a8" compoundref="constraint_8cpp" startline="63" endline="66">Dali::Constraint::AddSource</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1acdddae6c5cb4fc777954da1b3ae89e34" compoundref="geometry_8cpp" startline="49" endline="53">Dali::Geometry::AddVertexBuffer</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ac01608d2df8e2e22ddbe8929b9b98b43" compoundref="animation_8cpp" startline="266" endline="269">Dali::Animation::Animate</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a2873bbe4209d63e9a5502d2284627633" compoundref="animation_8cpp" startline="271" endline="274">Dali::Animation::Animate</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a0e44a7b7587382751b0a34200a2d4010" compoundref="animation_8cpp" startline="281" endline="284">Dali::Animation::Animate</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a2fce62ac980be9ba8fc68fea5ebe53c4" compoundref="animation_8cpp" startline="276" endline="279">Dali::Animation::Animate</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ad0abd1b6c2d446b09d0921fbaf9551a8" compoundref="animation_8cpp" startline="224" endline="227">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a8d2b7eceb95460c6ac86b3c1c6f3d0fc" compoundref="animation_8cpp" startline="244" endline="247">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a07e538714d5be1aa808ec22c873d7c95" compoundref="animation_8cpp" startline="249" endline="252">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a23c6690a9710d7cfa1a700ccb6eb3bd7" compoundref="animation_8cpp" startline="254" endline="257">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a7a06b0b32982b409862e30a3411a6832" compoundref="animation_8cpp" startline="259" endline="262">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1adadddcd19f2bdc5d51dc92654773f9ac" compoundref="animation_8cpp" startline="229" endline="232">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a52707b6a81d016d66895095a00c65d75" compoundref="animation_8cpp" startline="234" endline="237">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ae14aac22de19d005cb297515703cbeab" compoundref="animation_8cpp" startline="239" endline="242">Dali::Animation::AnimateBetween</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a76ee942012f16e863d108c648f0f6ccb" compoundref="animation_8cpp" startline="184" endline="187">Dali::Animation::AnimateBy</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a876fb908beac766378a484e948b29736" compoundref="animation_8cpp" startline="189" endline="192">Dali::Animation::AnimateBy</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a9b139674095590ce48e71dce894e43c6" compoundref="animation_8cpp" startline="199" endline="202">Dali::Animation::AnimateBy</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a72061273aa9bc81195113a4e642e4aa4" compoundref="animation_8cpp" startline="194" endline="197">Dali::Animation::AnimateBy</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a8feeae7c3d81100c45bfd29fefbd45b4" compoundref="animation_8cpp" startline="204" endline="207">Dali::Animation::AnimateTo</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a25095be9e3fc31892988cec9a2e24c0c" compoundref="animation_8cpp" startline="209" endline="212">Dali::Animation::AnimateTo</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a43a3a72d7d8a69418f76eeec9211c6db" compoundref="animation_8cpp" startline="219" endline="222">Dali::Animation::AnimateTo</referencedby>
+        <referencedby refid="classDali_1_1Animation_1acaa5718764cc0606bbf8232969940f36" compoundref="animation_8cpp" startline="214" endline="217">Dali::Animation::AnimateTo</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a6dbe910bf0f6c92520f5c4d378aa4843" compoundref="constraint_8cpp" startline="68" endline="71">Dali::Constraint::Apply</referencedby>
+        <referencedby refid="classDali_1_1PathConstrainer_1a7c23f010b6e1429ffa9d7417fe4f7da2" compoundref="path-constrainer_8cpp" startline="55" endline="58">Dali::PathConstrainer::Apply</referencedby>
+        <referencedby refid="classDali_1_1LinearConstrainer_1ac630b4c5de8524a39b991bdc44e263e6" compoundref="linear-constrainer_8cpp" startline="54" endline="57">Dali::LinearConstrainer::Apply</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelTexture_1ad558af49f44caf122fea480ba3917bd5" compoundref="texture-devel_8cpp" startline="30" endline="34">Dali::DevelTexture::ApplyNativeFragmentShader</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a4ce11bc208efbe41ff99ea6ffa8cd4bd" compoundref="constraint_8cpp" startline="73" endline="76">Dali::Constraint::ApplyPost</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1a278d388658af5d0d179bf7dcc8d2bee4" compoundref="gesture-detector_8cpp" startline="48" endline="51">Dali::GestureDetector::Attach</referencedby>
+        <referencedby refid="classDali_1_1FrameBuffer_1aa92b5fbd6de6e8dc6b9aecf5767e7d23" compoundref="frame-buffer_8cpp" startline="86" endline="93">Dali::FrameBuffer::AttachColorTexture</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1ad8bc96a2310115151cdedbb950cd4d7a" compoundref="frame-buffer-devel_8cpp" startline="47" endline="54">Dali::DevelFrameBuffer::AttachDepthStencilTexture</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a7ffdbc9a99a8d1cd6f4de1ff675782e2" compoundref="frame-buffer-devel_8cpp" startline="33" endline="40">Dali::DevelFrameBuffer::AttachDepthTexture</referencedby>
+        <referencedby refid="namespaceDali_1_1HitTestAlgorithm_1ae3ce3f854ac2714c49fb03f1213fc287" compoundref="hit-test-algorithm_8cpp" startline="38" endline="70">Dali::HitTestAlgorithm::BuildPickingRay</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a41e901821495f55c788a50e5cca70ebb" compoundref="actor-devel_8cpp" startline="37" endline="40">Dali::DevelActor::CalculateCurrentScreenExtents</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a33d2783694b4a6f2e854fc30091340bb" compoundref="actor-devel_8cpp" startline="32" endline="35">Dali::DevelActor::CalculateScreenExtents</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a3d959076b74c46e15dc0c7310fb8bb76" compoundref="actor-devel_8cpp" startline="27" endline="30">Dali::DevelActor::CalculateScreenPosition</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1a910c7d178571ab83fb665492f3b62530" compoundref="gesture-detector_8cpp" startline="78" endline="81">Dali::GestureDetector::CancelAllOtherGestureDetectors</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1add88e5c2970994c13a7d703eae1edb90" compoundref="actor-devel_8cpp" startline="52" endline="55">Dali::DevelActor::ChildAddedSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a25f3dc98cb08c845f6f47586d4489628" compoundref="actor-devel_8cpp" startline="62" endline="65">Dali::DevelActor::ChildOrderChangedSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a038d78e4e4711c84a2a2814945834a8d" compoundref="actor-devel_8cpp" startline="57" endline="60">Dali::DevelActor::ChildRemovedSignal</referencedby>
+        <referencedby refid="classDali_1_1Animation_1aefde6f5efc6975d49ed788aa3548ca85" compoundref="animation_8cpp" startline="159" endline="162">Dali::Animation::Clear</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1ac61e517f26ed40edc5cc17484a7b3609" compoundref="pan-gesture-detector_8cpp" startline="113" endline="116">Dali::PanGestureDetector::ClearAngles</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a42162aee569bf1e91bf192c40a8f7655" compoundref="render-task_8cpp" startline="341" endline="344">Dali::RenderTask::ClearRenderResult</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelVertexBuffer_1a8f6465dbc0b24ebb24786b2a8c786d72" compoundref="vertex-buffer-devel_8cpp" startline="29" endline="32">Dali::DevelVertexBuffer::ClearVertexBufferUpdateCallback</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a8784a8fad92fe63f7b234459e9359c95" compoundref="constraint_8cpp" startline="43" endline="46">Dali::Constraint::Clone</referencedby>
+        <referencedby refid="classDali_1_1UniformBlock_1ae320e442c3ec8bb9a9bbf8cd5e9434ae" compoundref="uniform-block_8cpp" startline="58" endline="65">Dali::UniformBlock::ConnectToShader</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1af39691d02fbeeafab2918e5c1d0779c3" compoundref="constraint-integ_8cpp" startline="27" endline="31">Dali::Integration::ConstraintSetInternalTag</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a5015b3a9dc5b29ea5356db15781bf07b" compoundref="stage_8cpp" startline="162" endline="165">Dali::Stage::ContextLostSignal</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a1879672b06bb986148578c3c041521bf" compoundref="stage_8cpp" startline="167" endline="170">Dali::Stage::ContextRegainedSignal</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a21f6809c69124b344d1815ce00851f1d" compoundref="type-info_8cpp" startline="55" endline="58">Dali::TypeInfo::CreateInstance</referencedby>
+        <referencedby refid="classDali_1_1RenderTaskList_1acdb35778312d2c8a635f8f83a806f94a" compoundref="render-task-list_8cpp" startline="43" endline="46">Dali::RenderTaskList::CreateTask</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1_1RenderTaskList_1ac21810f3077dcea43cd5791c2c3ad337" compoundref="render-task-list-integ_8cpp" startline="38" endline="41">Dali::Integration::RenderTaskList::CreateTask</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1ab9b2d1525efd2be0b686925534b8a181" compoundref="gesture-detector_8cpp" startline="53" endline="56">Dali::GestureDetector::Detach</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1a0572c285f22bfabe4f3e55a9a6d9f4ca" compoundref="gesture-detector_8cpp" startline="58" endline="61">Dali::GestureDetector::DetachAll</referencedby>
+        <referencedby refid="classDali_1_1LongPressGestureDetector_1ad29ee19375ab309c93cd4bad4a74a8b7" compoundref="long-press-gesture-detector_8cpp" startline="89" endline="92">Dali::LongPressGestureDetector::DetectedSignal</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a0904ea5e29cc1158a9ebdfd7fb0a01a0" compoundref="pan-gesture-detector_8cpp" startline="128" endline="131">Dali::PanGestureDetector::DetectedSignal</referencedby>
+        <referencedby refid="classDali_1_1PinchGestureDetector_1a4ad0c0f48c600de21bee63b4112f659f" compoundref="pinch-gesture-detector_8cpp" startline="55" endline="58">Dali::PinchGestureDetector::DetectedSignal</referencedby>
+        <referencedby refid="classDali_1_1RotationGestureDetector_1a8a083aa8dfbd46a9402dd851402f5efe" compoundref="rotation-gesture-detector_8cpp" startline="55" endline="58">Dali::RotationGestureDetector::DetectedSignal</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1a311b5f0e6beeebbebcf0ca9a4031f31f" compoundref="tap-gesture-detector_8cpp" startline="87" endline="90">Dali::TapGestureDetector::DetectedSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a3e8f229698ad11142983e039f9a6f862" compoundref="scene_8cpp" startline="161" endline="164">Dali::Integration::Scene::Discard</referencedby>
+        <referencedby refid="classDali_1_1UniformBlock_1ab76ff194e5be9cb43564480e86d613a7" compoundref="uniform-block_8cpp" startline="67" endline="73">Dali::UniformBlock::DisconnectFromShader</referencedby>
+        <referencedby refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" compoundref="base-handle_8cpp" startline="49" endline="52">Dali::BaseHandle::DoAction</referencedby>
+        <referencedby refid="classDali_1_1Handle_1abc9b975d5af192c527dce432a0258713" compoundref="handle_8cpp" startline="162" endline="165">Dali::Handle::DoesCustomPropertyExist</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a1145433c41e1dd2836d71b946820cd12" compoundref="stage_8cpp" startline="147" endline="150">Dali::Stage::EventProcessingFinishedSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1aceb3ea379d18f3e55153b73d6a9d5fd8" compoundref="scene_8cpp" startline="286" endline="289">Dali::Integration::Scene::EventProcessingFinishedSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1acd8364a4f028b36a036f13ecc2e14070" compoundref="actor_8cpp" startline="101" endline="105">Dali::Actor::FindChildById</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a7ef6fe1ef0187d3e6f1bf77098e43575" compoundref="actor_8cpp" startline="95" endline="99">Dali::Actor::FindChildByName</referencedby>
+        <referencedby refid="classDali_1_1Animation_1afa8139e47b80b388de84ff289710b16f" compoundref="animation_8cpp" startline="179" endline="182">Dali::Animation::FinishedSignal</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aa42af8e4e031b0d53ae7e978a8f3a7ed" compoundref="render-task_8cpp" startline="261" endline="264">Dali::RenderTask::FinishedSignal</referencedby>
+        <referencedby refid="classDali_1_1Path_1aa7f3d66affa08e10e266722b43409705" compoundref="path_8cpp" startline="64" endline="67">Dali::Path::GenerateControlPoints</referencedby>
+        <referencedby refid="classDali_1_1Texture_1a5629b310dec848ed40a9797512acd88b" compoundref="texture_8cpp" startline="80" endline="83">Dali::Texture::GenerateMipmaps</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a725572aa620859e2d025778d05f1c3ae" compoundref="scene_8cpp" startline="171" endline="174">Dali::Integration::Scene::Get</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a4f41f546a7296e336e61d56014a0cc67" compoundref="type-info_8cpp" startline="65" endline="68">Dali::TypeInfo::GetActionCount</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a0a9c08d660c5b196adf1cd3395afacf2" compoundref="type-info_8cpp" startline="70" endline="73">Dali::TypeInfo::GetActionName</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a1cbe9aaf0a9137c50d3e7c031c53d0be" compoundref="pan-gesture-detector_8cpp" startline="108" endline="111">Dali::PanGestureDetector::GetAngle</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a2d9e7dd4da7abdd98f16c21105ee240f" compoundref="touch-event_8cpp" startline="91" endline="94">Dali::TouchEvent::GetAngle</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a30033049b9a9b2ad0ca3700b7a200a79" compoundref="pan-gesture-detector_8cpp" startline="103" endline="106">Dali::PanGestureDetector::GetAngleCount</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a94d80373dd23ddf536d5765e2c268654" compoundref="animation_8cpp" startline="174" endline="177">Dali::Animation::GetAnimationId</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1ad6df9dac5e55dae187a6738c7d9677bd" compoundref="constraint_8cpp" startline="108" endline="111">Dali::Constraint::GetApplyRate</referencedby>
+        <referencedby refid="classDali_1_1PropertyCondition_1af10237bc3e685ffb83a6531a4c7e957c" compoundref="property-conditions_8cpp" startline="47" endline="50">Dali::PropertyCondition::GetArgument</referencedby>
+        <referencedby refid="classDali_1_1PropertyCondition_1aaab14abe0473d4904159e13bbca9df51" compoundref="property-conditions_8cpp" startline="42" endline="45">Dali::PropertyCondition::GetArgumentCount</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a7fc9a2371ee3454cee7f5f7407b59865" compoundref="camera-actor_8cpp" startline="104" endline="107">Dali::CameraActor::GetAspectRatio</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1ac88ee88db5b4f18f2833e144368e7d25" compoundref="gesture-detector_8cpp" startline="68" endline="71">Dali::GestureDetector::GetAttachedActor</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1adce6a00c0278644e67ae7c3e598f4d63" compoundref="gesture-detector_8cpp" startline="63" endline="66">Dali::GestureDetector::GetAttachedActorCount</referencedby>
+        <referencedby refid="classDali_1_1Stage_1ab9c96677a5320232a3f205876b73ec9b" compoundref="stage_8cpp" startline="113" endline="116">Dali::Stage::GetBackgroundColor</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a78bf456d307607ca5b20c0f79df302c5" compoundref="scene_8cpp" startline="116" endline="119">Dali::Integration::Scene::GetBackgroundColor</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a54b472f18def0a09db0cb01ca5502089" compoundref="type-info_8cpp" startline="50" endline="53">Dali::TypeInfo::GetBaseName</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a3a3d5e538c50e75d25beebbe1fbccbdb" compoundref="animation_8cpp" startline="331" endline="334">Dali::Animation::GetBlendPoint</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a4c6fdf601ea476f3e5116f16f7c21786" compoundref="actor_8cpp" startline="270" endline="273">Dali::Actor::GetCacheRendererCount</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a127b94ce4156b559e643d82bfac5e21d" compoundref="render-task_8cpp" startline="115" endline="118">Dali::RenderTask::GetCameraActor</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a72b882eb1a11f6e3119b0991858c85c9" compoundref="actor_8cpp" startline="89" endline="93">Dali::Actor::GetChildAt</referencedby>
+        <referencedby refid="classDali_1_1Actor_1af6a451eaf0669156f587d92b9fd5003d" compoundref="actor_8cpp" startline="84" endline="87">Dali::Actor::GetChildCount</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1aa7963c18e4008bf58465e268ae6d62c7" compoundref="type-info_8cpp" startline="101" endline="104">Dali::TypeInfo::GetChildPropertyIndex</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a6d68c4345b339a736f8332f6e31966ef" compoundref="type-info_8cpp" startline="116" endline="120">Dali::TypeInfo::GetChildPropertyIndices</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a5443c99b5365bf6a696b617bdc58092a" compoundref="type-info_8cpp" startline="106" endline="109">Dali::TypeInfo::GetChildPropertyName</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a60225322623e5e174a25dd1f1405e2da" compoundref="type-info_8cpp" startline="111" endline="114">Dali::TypeInfo::GetChildPropertyType</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1adf1fc116c6a8fa5e4503097224ea1fc5" compoundref="render-task_8cpp" startline="226" endline="229">Dali::RenderTask::GetClearColor</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a596a01cb02c40769765685152d9c9712" compoundref="render-task_8cpp" startline="236" endline="239">Dali::RenderTask::GetClearEnabled</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a85212fbed74594e8d3d190780fff1ac3" compoundref="frame-buffer-devel_8cpp" startline="83" endline="86">Dali::DevelFrameBuffer::GetColorAttachmentCount</referencedby>
+        <referencedby refid="classDali_1_1FrameBuffer_1a494f86c275cd1b7e7410024c48b7d2df" compoundref="frame-buffer_8cpp" startline="95" endline="99">Dali::FrameBuffer::GetColorTexture</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a60c11082da54d71e32d89614f03de29a" compoundref="frame-buffer-devel_8cpp" startline="65" endline="69">Dali::DevelFrameBuffer::GetColorTexture</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a842a6a568d23abfa182f2de394f68d0a" compoundref="key-event_8cpp" startline="61" endline="64">Dali::KeyEvent::GetCompose</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a1c2a9c66a736f4e4b7423b83b241d1ab" compoundref="property-notification_8cpp" startline="54" endline="57">Dali::PropertyNotification::GetCondition</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a83f5ee63957930c1204e291b18e8ef64" compoundref="property-notification_8cpp" startline="59" endline="62">Dali::PropertyNotification::GetCondition</referencedby>
+        <referencedby refid="classDali_1_1Path_1ad10d76d7f8fe61a7e8be3f5514f790bb" compoundref="path_8cpp" startline="79" endline="82">Dali::Path::GetControlPoint</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a6e0fdbcdc3c151458d50bff29fc110ec" compoundref="type-info_8cpp" startline="60" endline="63">Dali::TypeInfo::GetCreator</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aefcfaa8ab0d587fa9d0965447d937900" compoundref="render-task_8cpp" startline="246" endline="249">Dali::RenderTask::GetCullMode</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a5c96acc000741a5a084de2bbad63e325" compoundref="animation_8cpp" startline="89" endline="92">Dali::Animation::GetCurrentLoop</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a78408dd0189a90722d2bb99dc052b77e" compoundref="animation_8cpp" startline="301" endline="304">Dali::Animation::GetCurrentProgress</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" compoundref="handle_8cpp" startline="142" endline="145">Dali::Handle::GetCurrentProperty</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ab9a90b9c03de00ffe421416a26ff32cc" compoundref="scene_8cpp" startline="216" endline="219">Dali::Integration::Scene::GetCurrentScreenOrientation</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ab8132a13527cfbc6ea11db2d9a2382ed" compoundref="scene_8cpp" startline="211" endline="214">Dali::Integration::Scene::GetCurrentSurfaceOrientation</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a8f0bf5e7129bf0f9fa8a0f62cb7d66a8" compoundref="scene_8cpp" startline="221" endline="224">Dali::Integration::Scene::GetCurrentSurfaceRect</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a3452a2adcbf530c73e28f1d8e1be7953" compoundref="render-task_8cpp" startline="194" endline="197">Dali::RenderTask::GetCurrentViewportPosition</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a8170a09564deebc9b9eb90c8f9ddd437" compoundref="render-task_8cpp" startline="204" endline="207">Dali::RenderTask::GetCurrentViewportSize</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a3a49b7521f43d3741bab27ea067c8d87" compoundref="animation_8cpp" startline="124" endline="127">Dali::Animation::GetDefaultAlphaFunction</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a88c0b2116a3fb0a1b7eea9f73b21fad2" compoundref="wheel-event_8cpp" startline="76" endline="79">Dali::WheelEvent::GetDelta</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1acb52b1e82852053be75a222bcf2381a6" compoundref="frame-buffer-devel_8cpp" startline="77" endline="81">Dali::DevelFrameBuffer::GetDepthStencilTexture</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1ab08a20958837fcec78fb5c0c29395d6c" compoundref="frame-buffer-devel_8cpp" startline="71" endline="75">Dali::DevelFrameBuffer::GetDepthTexture</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1ae615f098ec9d240b2fcc7c13823421ba" compoundref="key-event_8cpp" startline="71" endline="74">Dali::KeyEvent::GetDeviceClass</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1aeb69f20533b89b8b867ecb1be83c1f56" compoundref="hover-event_8cpp" startline="77" endline="80">Dali::HoverEvent::GetDeviceClass</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a3783515904a1c03a21bae37606f07138" compoundref="touch-event_8cpp" startline="96" endline="99">Dali::TouchEvent::GetDeviceClass</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1ae3c1da3a0e48b251d43fac3ca204b8cf" compoundref="hover-event_8cpp" startline="52" endline="55">Dali::HoverEvent::GetDeviceId</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a7f8017961d94e7a07f2d43809108f353" compoundref="touch-event_8cpp" startline="51" endline="54">Dali::TouchEvent::GetDeviceId</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a36be6d3c283b4b8b4ebd5cbc18cc09b5" compoundref="key-event_8cpp" startline="66" endline="69">Dali::KeyEvent::GetDeviceName</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1a208a12a8bb1070f6734b08685c6f9432" compoundref="hover-event_8cpp" startline="87" endline="90">Dali::HoverEvent::GetDeviceName</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a450a312123f87b172094af92d7021fb1" compoundref="touch-event_8cpp" startline="116" endline="119">Dali::TouchEvent::GetDeviceName</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a16554be1fccdc15825dcfed63159e199" compoundref="key-event_8cpp" startline="76" endline="79">Dali::KeyEvent::GetDeviceSubclass</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1ab3708a9808ff53a89b12934373412c7c" compoundref="hover-event_8cpp" startline="82" endline="85">Dali::HoverEvent::GetDeviceSubclass</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1ac745546df3257f3ae384cf9ac7607f90" compoundref="touch-event_8cpp" startline="101" endline="104">Dali::TouchEvent::GetDeviceSubclass</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a9228b03394f9b518e81682cf54e77837" compoundref="wheel-event_8cpp" startline="61" endline="64">Dali::WheelEvent::GetDirection</referencedby>
+        <referencedby refid="classDali_1_1Animation_1acbeee5859869f376b700b91b1251214b" compoundref="animation_8cpp" startline="114" endline="117">Dali::Animation::GetDisconnectAction</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a5e2c22b4451e35816357af767873dbae" compoundref="pan-gesture_8cpp" startline="49" endline="52">Dali::PanGesture::GetDisplacement</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a9e2dd951863bbe7dac04f4d982dd0416" compoundref="pan-gesture_8cpp" startline="84" endline="87">Dali::PanGesture::GetDistance</referencedby>
+        <referencedby refid="classDali_1_1VertexBuffer_1a00e7b15913f0ce657a637d66f4ba2f95" compoundref="vertex-buffer_8cpp" startline="105" endline="108">Dali::VertexBuffer::GetDivisor</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a9166ce5227caa1d2daf62b2397300135" compoundref="stage_8cpp" startline="118" endline="121">Dali::Stage::GetDpi</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1af9f9e9d69c9b1fd2f726fffc33afd311" compoundref="scene_8cpp" startline="106" endline="109">Dali::Integration::Scene::GetDpi</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a09522c89edf23350718ff2d91b209a6b" compoundref="animation_8cpp" startline="69" endline="72">Dali::Animation::GetDuration</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a4ab90a50e174e725e39c7cbe55a2b33e" compoundref="touch-event_8cpp" startline="81" endline="84">Dali::TouchEvent::GetEllipseRadius</referencedby>
+        <referencedby refid="classDali_1_1Animation_1aad4bb02dcb4a1ad288e15477872bb67b" compoundref="animation_8cpp" startline="104" endline="107">Dali::Animation::GetEndAction</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1acbd62c6fdf133413365839d56b3e8311" compoundref="camera-actor_8cpp" startline="124" endline="127">Dali::CameraActor::GetFarClippingPlane</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a6c7ef857ac5ebef0f429b354cd8fb4e1" compoundref="camera-actor_8cpp" startline="94" endline="97">Dali::CameraActor::GetFieldOfView</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1ad875992e04e8a2f923a7575295599a7a" compoundref="render-task_8cpp" startline="131" endline="135">Dali::RenderTask::GetFrameBuffer</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a5c96ef8a2a47f53ed28931193be35f60" compoundref="scene_8cpp" startline="201" endline="204">Dali::Integration::Scene::GetFramePresentedCallback</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1aba5314555d810829cd813a3cf3fbfed8" compoundref="scene_8cpp" startline="196" endline="199">Dali::Integration::Scene::GetFrameRenderedCallback</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a3c95359d51833c2c28f655d6ed146163" compoundref="renderer_8cpp" startline="70" endline="73">Dali::Renderer::GetGeometry</referencedby>
+        <referencedby refid="classDali_1_1PixelData_1ac3c5c5c04b89e595b906c021c6e1cc6e" compoundref="pixel-data_8cpp" startline="71" endline="74">Dali::PixelData::GetHeight</referencedby>
+        <referencedby refid="classDali_1_1Texture_1a690325cdaa55683a345744100ec6aff2" compoundref="texture_8cpp" startline="90" endline="93">Dali::Texture::GetHeight</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a8916dc02c0b61e82ef6fec81c325f4b4" compoundref="actor_8cpp" startline="189" endline="192">Dali::Actor::GetHeightForWidth</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1add0dae5faee096060666335a5d0ce4af" compoundref="hover-event_8cpp" startline="62" endline="65">Dali::HoverEvent::GetHitActor</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1af20019a4904e358542d332c2e8022a03" compoundref="touch-event_8cpp" startline="61" endline="64">Dali::TouchEvent::GetHitActor</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1afbdad68dc3a706dfbc9e6e89e71baf12" compoundref="render-task_8cpp" startline="271" endline="274">Dali::RenderTask::GetInputEnabled</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a9bf616fa718c337bf2ad805a7edd2f18" compoundref="camera-actor_8cpp" startline="144" endline="147">Dali::CameraActor::GetInvertYAxis</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1aa1d76ae9a2a72d9c479fdf8fc157716f" compoundref="key-event_8cpp" startline="96" endline="99">Dali::KeyEvent::GetKeyCode</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyFrames_1a8eb731f8b1836220359afa60fe4db1bc" compoundref="key-frames-devel_8cpp" startline="31" endline="34">Dali::DevelKeyFrames::GetKeyFrame</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyFrames_1af255c7272978e868dc7829efe4a66bcc" compoundref="key-frames-devel_8cpp" startline="26" endline="29">Dali::DevelKeyFrames::GetKeyFrameCount</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a163284b3dc5b0ad942fb3e8c3e044d06" compoundref="key-event_8cpp" startline="101" endline="104">Dali::KeyEvent::GetKeyModifier</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1ae55a5e568c483fbdb8a5344b4ff0c797" compoundref="key-event_8cpp" startline="81" endline="84">Dali::KeyEvent::GetKeyName</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a26823571bdc48eb370eb53f7956370a6" compoundref="key-event_8cpp" startline="86" endline="89">Dali::KeyEvent::GetKeyString</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a7ce8fa5a875b0528c3d9e3e27f48ef03" compoundref="scene_8cpp" startline="281" endline="284">Dali::Integration::Scene::GetLastPanGestureState</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a5388e2a695a271d2af005ff4afcd4df5" compoundref="actor_8cpp" startline="64" endline="67">Dali::Actor::GetLayer</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a04dcf554875cf98167add7e49b21acbe" compoundref="stage_8cpp" startline="98" endline="101">Dali::Stage::GetLayer</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1af89306a10441a5d644edbf43922d2f44" compoundref="scene_8cpp" startline="141" endline="144">Dali::Integration::Scene::GetLayer</referencedby>
+        <referencedby refid="classDali_1_1Stage_1abfd63f86357fd7aa64d586878fe08630" compoundref="stage_8cpp" startline="93" endline="96">Dali::Stage::GetLayerCount</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1af9deb4168e421ff5153defd4da1f2da6" compoundref="scene_8cpp" startline="136" endline="139">Dali::Integration::Scene::GetLayerCount</referencedby>
+        <referencedby refid="classDali_1_1PinchGesture_1adfbce77c52ea374b81bd0cba6a13107f" compoundref="pinch-gesture_8cpp" startline="59" endline="62">Dali::PinchGesture::GetLocalCenterPoint</referencedby>
+        <referencedby refid="classDali_1_1RotationGesture_1abc433ee672d87ebfb4d6e8f27e17b231" compoundref="rotation-gesture_8cpp" startline="54" endline="57">Dali::RotationGesture::GetLocalCenterPoint</referencedby>
+        <referencedby refid="classDali_1_1LongPressGesture_1a8d4ab1a216427416fcde80c200566c49" compoundref="long-press-gesture_8cpp" startline="53" endline="56">Dali::LongPressGesture::GetLocalPoint</referencedby>
+        <referencedby refid="classDali_1_1TapGesture_1aba8fdde64c01ef8b98a1c744a48e2a4e" compoundref="tap-gesture_8cpp" startline="59" endline="62">Dali::TapGesture::GetLocalPoint</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1a3c0f397abed097af62f7fd197cad7986" compoundref="hover-event_8cpp" startline="67" endline="70">Dali::HoverEvent::GetLocalPosition</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1aa9d0e87b649902042604ad9faccb5204" compoundref="touch-event_8cpp" startline="66" endline="69">Dali::TouchEvent::GetLocalPosition</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1af72be8cb65c4d1c24180e657a862eab0" compoundref="key-event_8cpp" startline="91" endline="94">Dali::KeyEvent::GetLogicalKey</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ad191571f9d6dc32e617a26bf7f355288" compoundref="animation_8cpp" startline="84" endline="87">Dali::Animation::GetLoopCount</referencedby>
+        <referencedby refid="classDali_1_1Animation_1aef92e9e545dbbe996d51cb75b325ad7f" compoundref="animation_8cpp" startline="169" endline="172">Dali::Animation::GetLoopingMode</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a27903abc81dd85f2cd83691c1c65676a" compoundref="frame-buffer-devel_8cpp" startline="93" endline="96">Dali::DevelFrameBuffer::GetMask</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a0073d51ea5e90732aa7a065183c27332" compoundref="pan-gesture-detector_8cpp" startline="88" endline="91">Dali::PanGestureDetector::GetMaximumMotionEventAge</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1aa4b7f60de38c788cad600df869b76046" compoundref="tap-gesture-detector_8cpp" startline="77" endline="80">Dali::TapGestureDetector::GetMaximumTapsRequired</referencedby>
+        <referencedby refid="classDali_1_1LongPressGestureDetector_1a06419dc8f786408eedf45f5ea0c4d589" compoundref="long-press-gesture-detector_8cpp" startline="84" endline="87">Dali::LongPressGestureDetector::GetMaximumTouchesRequired</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a401104a362bf3a421bc1bbefd962da1b" compoundref="pan-gesture-detector_8cpp" startline="83" endline="86">Dali::PanGestureDetector::GetMaximumTouchesRequired</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelLongPressGestureDetector_1ab61d3dd9650c2e911ef55c7089c513ec" compoundref="long-press-gesture-detector-devel_8cpp" startline="31" endline="34">Dali::DevelLongPressGestureDetector::GetMinimumHoldingTime</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1ab1f21b484f757bd84a71639b2237b652" compoundref="tap-gesture-detector_8cpp" startline="72" endline="75">Dali::TapGestureDetector::GetMinimumTapsRequired</referencedby>
+        <referencedby refid="classDali_1_1LongPressGestureDetector_1a16b92d1bbdef68a69b541efa3a0c3edd" compoundref="long-press-gesture-detector_8cpp" startline="79" endline="82">Dali::LongPressGestureDetector::GetMinimumTouchesRequired</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1acdbb4b520b42822f98615a3cdec397db" compoundref="pan-gesture-detector_8cpp" startline="78" endline="81">Dali::PanGestureDetector::GetMinimumTouchesRequired</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a95d9250dd6b8cf9315ca0bc010d33d86" compoundref="wheel-event_8cpp" startline="66" endline="69">Dali::WheelEvent::GetModifiers</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1ae5b23954d21665c07edaa85561e17d6c" compoundref="touch-event_8cpp" startline="106" endline="109">Dali::TouchEvent::GetMouseButton</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a3a178ee6e335f17c851ec266586379fc" compoundref="frame-buffer-devel_8cpp" startline="60" endline="63">Dali::DevelFrameBuffer::GetMultiSamplingLevel</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a040c492a01369e4980304b37aa5d2ecf" compoundref="type-info_8cpp" startline="45" endline="48">Dali::TypeInfo::GetName</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a0c77f732ffcb69b32b378eb727f2ea64" compoundref="scene_8cpp" startline="276" endline="279">Dali::Integration::Scene::GetNativeId</referencedby>
+        <referencedby refid="classDali_1_1Actor_1ae376720357f05d128969bbb6076284e3" compoundref="actor_8cpp" startline="119" endline="122">Dali::Actor::GetNaturalSize</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a2db748bca481fc8258fda981c95e37a0" compoundref="camera-actor_8cpp" startline="114" endline="117">Dali::CameraActor::GetNearClippingPlane</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a9b35748e64543570c8ceded04ad95fee" compoundref="property-notification_8cpp" startline="79" endline="82">Dali::PropertyNotification::GetNotifyMode</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a6d23a429c8f7d6db5d1606f771d29872" compoundref="property-notification_8cpp" startline="84" endline="87">Dali::PropertyNotification::GetNotifyResult</referencedby>
+        <referencedby refid="classDali_1_1TapGesture_1a2c55110dd2e0bc294474ac1be5625da4" compoundref="tap-gesture_8cpp" startline="44" endline="47">Dali::TapGesture::GetNumberOfTaps</referencedby>
+        <referencedby refid="classDali_1_1LongPressGesture_1a0932e5c363691239d6c82c6a120b0af1" compoundref="long-press-gesture_8cpp" startline="43" endline="46">Dali::LongPressGesture::GetNumberOfTouches</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a3ecaa33d3053c2b2d3724bfdc3c18563" compoundref="pan-gesture_8cpp" startline="74" endline="77">Dali::PanGesture::GetNumberOfTouches</referencedby>
+        <referencedby refid="classDali_1_1TapGesture_1a4944f2d070919c99e5552487fe5dca8c" compoundref="tap-gesture_8cpp" startline="49" endline="52">Dali::TapGesture::GetNumberOfTouches</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1a26dcc535b4f37d634d0ce9e027fd71cb" compoundref="geometry_8cpp" startline="55" endline="58">Dali::Geometry::GetNumberOfVertexBuffers</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a2c7c140a881e83eeefd56fb3a271e467" compoundref="render-task_8cpp" startline="315" endline="318">Dali::RenderTask::GetOrderIndex</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ac28e9b6d9a66ef629d58671f2eabf8e6" compoundref="scene_8cpp" startline="131" endline="134">Dali::Integration::Scene::GetOverlayLayer</referencedby>
+        <referencedby refid="classDali_1_1RenderTaskList_1a3bc807b1f463dd3b25b0f87d868e4f17" compoundref="render-task-list_8cpp" startline="66" endline="69">Dali::RenderTaskList::GetOverlayTask</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aed35f4d804823936a6125519c553d691" compoundref="actor_8cpp" startline="107" endline="112">Dali::Actor::GetParent</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a1bbacee881eb3061b9f135eda4aaf25b" compoundref="pixel-data-integ_8cpp" startline="32" endline="37">Dali::Integration::GetPixelDataBuffer</referencedby>
+        <referencedby refid="classDali_1_1PixelData_1a18007d4bd7b38d77f42584e8eedcc7c1" compoundref="pixel-data_8cpp" startline="76" endline="79">Dali::PixelData::GetPixelFormat</referencedby>
+        <referencedby refid="classDali_1_1Texture_1aa14f0b314691d4e4ee6905c47dfcc8a5" compoundref="texture_8cpp" startline="95" endline="98">Dali::Texture::GetPixelFormat</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a34a0822b58ff998ede0702d82e4439f7" compoundref="animation_8cpp" startline="321" endline="324">Dali::Animation::GetPlayRange</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a92921c141818baa5b0c993b99dcba3f0" compoundref="wheel-event_8cpp" startline="71" endline="74">Dali::WheelEvent::GetPoint</referencedby>
+        <referencedby refid="classDali_1_1Path_1a3d1b9ccc8b29d2051f9b41027fb78c32" compoundref="path_8cpp" startline="74" endline="77">Dali::Path::GetPoint</referencedby>
+        <referencedby refid="classDali_1_1Path_1ae3a2b00d277a4ca37f74aae38a1fcbdc" compoundref="path_8cpp" startline="84" endline="87">Dali::Path::GetPointCount</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1a1b38e649480daa92ff76e6f3ccfd3efd" compoundref="hover-event_8cpp" startline="47" endline="50">Dali::HoverEvent::GetPointCount</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1ad97c7ec7055a94980135d03d837e0527" compoundref="touch-event_8cpp" startline="46" endline="49">Dali::TouchEvent::GetPointCount</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a07af7b84338d2c1d7026c7d8ab495a5f" compoundref="pan-gesture_8cpp" startline="54" endline="57">Dali::PanGesture::GetPosition</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a2330d2fef44cb381112207cb39fc260c" compoundref="touch-event_8cpp" startline="86" endline="89">Dali::TouchEvent::GetPressure</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelAnimation_1a682cbf8373577aa155651e7a0ce695de" compoundref="animation-devel_8cpp" startline="33" endline="36">Dali::DevelAnimation::GetProgressNotification</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1adc64dc04f3ec9a46b25d7d84650e9914" compoundref="camera-actor_8cpp" startline="84" endline="87">Dali::CameraActor::GetProjectionMode</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a020bfa4dfb5213a5e782853d8fe84306" compoundref="handle_8cpp" startline="152" endline="155">Dali::Handle::GetProperties</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" compoundref="handle_8cpp" startline="137" endline="140">Dali::Handle::GetProperty</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a38c9519963667543734886c5b37caa8c" compoundref="type-info_8cpp" startline="85" endline="88">Dali::TypeInfo::GetPropertyCount</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a3deffc1e9d3236c50140b37e2b6cf8db" compoundref="handle_8cpp" startline="67" endline="70">Dali::Handle::GetPropertyCount</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" compoundref="handle_8cpp" startline="77" endline="80">Dali::Handle::GetPropertyIndex</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a10034de98d71c4186f56ab82632a94ba" compoundref="type-info_8cpp" startline="90" endline="94">Dali::TypeInfo::GetPropertyIndices</referencedby>
+        <referencedby refid="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" compoundref="handle_8cpp" startline="157" endline="160">Dali::Handle::GetPropertyIndices</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1ae4c7851597523fa25b67c59e81b7f55b" compoundref="type-info_8cpp" startline="96" endline="99">Dali::TypeInfo::GetPropertyName</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" compoundref="handle_8cpp" startline="72" endline="75">Dali::Handle::GetPropertyName</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a775f97600cedf0798fea5c8cca5a0512" compoundref="handle_8cpp" startline="97" endline="100">Dali::Handle::GetPropertyType</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a62838a6a33c2236a51ea20ac3bd7e36c" compoundref="touch-event_8cpp" startline="76" endline="79">Dali::TouchEvent::GetRadius</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a59d4c4996b55d9fce9031e914b8f0e3b" compoundref="key-event_8cpp" startline="126" endline="129">Dali::KeyEvent::GetReceiveTime</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a029a66430b756018d30cf83b160a98ba" compoundref="render-task_8cpp" startline="256" endline="259">Dali::RenderTask::GetRefreshRate</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a13bf7ff6e54b2accb83de3cb0935db5b" compoundref="actor_8cpp" startline="199" endline="202">Dali::Actor::GetRelayoutSize</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1adbba4de30ac0cdfe9377b8dfc265b61c" compoundref="constraint_8cpp" startline="98" endline="101">Dali::Constraint::GetRemoveAction</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1ad37618a7843cdf0ea57c43338eb06953" compoundref="render-task_8cpp" startline="184" endline="187">Dali::RenderTask::GetRenderedScaleFactor</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a409da6877a0073a557bb27697932141b" compoundref="actor_8cpp" startline="249" endline="253">Dali::Actor::GetRendererAt</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a324a0927da543dd0731d0d068fb9181a" compoundref="actor_8cpp" startline="244" endline="247">Dali::Actor::GetRendererCount</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelStage_1a7a24c5644d674279a6480eeb24a7a9ef" compoundref="stage-devel_8cpp" startline="36" endline="39">Dali::DevelStage::GetRenderingBehavior</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a9f2f46b4eabf3d2e689c901c440e1384" compoundref="render-task_8cpp" startline="299" endline="302">Dali::RenderTask::GetRenderPassTag</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a7468b4ebda4f6207e75ca40983cd4420" compoundref="render-task_8cpp" startline="346" endline="349">Dali::RenderTask::GetRenderResult</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1ab40eb5045b1759c32c17a25d726e097d" compoundref="touch-event_8cpp" startline="111" endline="114">Dali::TouchEvent::GetRenderTask</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a6168e4af9117c84d2502ab7d3e84cf64" compoundref="render-task_8cpp" startline="320" endline="323">Dali::RenderTask::GetRenderTaskId</referencedby>
+        <referencedby refid="classDali_1_1Stage_1aa10dd60488770ca7726adf7b4a710049" compoundref="stage_8cpp" startline="83" endline="86">Dali::Stage::GetRenderTaskList</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a8377729b4a94254e4edeefbaf215a056" compoundref="scene_8cpp" startline="121" endline="124">Dali::Integration::Scene::GetRenderTaskList</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a895c4e4dbb2993272da1e41ae4af1e93" compoundref="actor_8cpp" startline="184" endline="187">Dali::Actor::GetResizePolicy</referencedby>
+        <referencedby refid="classDali_1_1Stage_1ae7bfb2ceafab34d85baf93d8375cddee" compoundref="stage_8cpp" startline="103" endline="106">Dali::Stage::GetRootLayer</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a4919d56bf71020ca76aba87454eed31a" compoundref="scene_8cpp" startline="126" endline="129">Dali::Integration::Scene::GetRootLayer</referencedby>
+        <referencedby refid="classDali_1_1RotationGesture_1a239e8f8cc4dfbb54603440a876211b82" compoundref="rotation-gesture_8cpp" startline="44" endline="47">Dali::RotationGesture::GetRotation</referencedby>
+        <referencedby refid="classDali_1_1TextureSet_1acf2fe8c1b05b78b10c7cb215524d043f" compoundref="texture-set_8cpp" startline="83" endline="87">Dali::TextureSet::GetSampler</referencedby>
+        <referencedby refid="classDali_1_1PinchGesture_1a95c4008cfd355bbab4ee64c3249fa670" compoundref="pinch-gesture_8cpp" startline="44" endline="47">Dali::PinchGesture::GetScale</referencedby>
+        <referencedby refid="classDali_1_1PinchGesture_1a1ed90e47e4db1ff2adea552642297a4f" compoundref="pinch-gesture_8cpp" startline="54" endline="57">Dali::PinchGesture::GetScreenCenterPoint</referencedby>
+        <referencedby refid="classDali_1_1RotationGesture_1a3215648cf9609bdb18ba4999a71785d3" compoundref="rotation-gesture_8cpp" startline="49" endline="52">Dali::RotationGesture::GetScreenCenterPoint</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a46027f9134abcf2eed50b7fbda2278ea" compoundref="pan-gesture_8cpp" startline="64" endline="67">Dali::PanGesture::GetScreenDisplacement</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1aa4ba381ab1832fc0b0dfbb41ef5f863e" compoundref="pan-gesture_8cpp" startline="94" endline="97">Dali::PanGesture::GetScreenDistance</referencedby>
+        <referencedby refid="classDali_1_1LongPressGesture_1a7667a35f24f0684aa2ddce72bc3e7497" compoundref="long-press-gesture_8cpp" startline="48" endline="51">Dali::LongPressGesture::GetScreenPoint</referencedby>
+        <referencedby refid="classDali_1_1TapGesture_1a8df4bd4f53c90793a1a21377bcb7afcb" compoundref="tap-gesture_8cpp" startline="54" endline="57">Dali::TapGesture::GetScreenPoint</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a8827f15247c10bc53f741f7af2572845" compoundref="pan-gesture_8cpp" startline="69" endline="72">Dali::PanGesture::GetScreenPosition</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1a8a9dc945f550e45c7de3cd0e1c048315" compoundref="hover-event_8cpp" startline="72" endline="75">Dali::HoverEvent::GetScreenPosition</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1ab0d27cd8dd35c1caa2fb07bc0e454a52" compoundref="touch-event_8cpp" startline="71" endline="74">Dali::TouchEvent::GetScreenPosition</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1ad559e84494d0f6d65dd0f3d1dc892fd2" compoundref="pan-gesture_8cpp" startline="89" endline="92">Dali::PanGesture::GetScreenSpeed</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1abbe5ad0329c7e9e5d48cd6c1756a1b3e" compoundref="render-task_8cpp" startline="142" endline="145">Dali::RenderTask::GetScreenToFrameBufferFunction</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a27333ac3122e55681e11e5da74c16b53" compoundref="render-task_8cpp" startline="152" endline="155">Dali::RenderTask::GetScreenToFrameBufferMappingActor</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1ae0d23ead668c9abd8c95782c6fb603bf" compoundref="pan-gesture_8cpp" startline="59" endline="62">Dali::PanGesture::GetScreenVelocity</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a468bf8a3477979ef4958be75cf5ee851" compoundref="renderer_8cpp" startline="102" endline="105">Dali::Renderer::GetShader</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1a2a6327f4b2536936b81e1fefebe660b3" compoundref="type-info_8cpp" startline="75" endline="78">Dali::TypeInfo::GetSignalCount</referencedby>
+        <referencedby refid="classDali_1_1TypeInfo_1ae929811053b4f8499a7937bbc182c2f6" compoundref="type-info_8cpp" startline="80" endline="83">Dali::TypeInfo::GetSignalName</referencedby>
+        <referencedby refid="classDali_1_1SingletonService_1ab87312b45e71a7b676b47a0f7b57f9ed" compoundref="singleton-service_8cpp" startline="45" endline="48">Dali::SingletonService::GetSingleton</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a0ea95d9cc2dbeb6ed70e62b74ed73b4d" compoundref="stage_8cpp" startline="88" endline="91">Dali::Stage::GetSize</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a118e40207b6720c5c42f4487787f4d51" compoundref="scene_8cpp" startline="96" endline="99">Dali::Integration::Scene::GetSize</referencedby>
+        <referencedby refid="classDali_1_1VertexBuffer_1a3a717adf17d3a2bca0b125e74902f450" compoundref="vertex-buffer_8cpp" startline="95" endline="98">Dali::VertexBuffer::GetSize</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a432160a0cd6e16acd0d344280b09be6a" compoundref="frame-buffer-devel_8cpp" startline="88" endline="91">Dali::DevelFrameBuffer::GetSize</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1abf36b174ab339d6f017770fea959899c" compoundref="render-task_8cpp" startline="83" endline="86">Dali::RenderTask::GetSourceActor</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a86d4151d76ec40e9c8fc81d744e2aaf2" compoundref="constraint_8cpp" startline="134" endline="137">Dali::Constraint::GetSourceAt</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1ac53b1b2dba02881dc6abae57c3a24ee8" compoundref="constraint_8cpp" startline="129" endline="132">Dali::Constraint::GetSourceCount</referencedby>
+        <referencedby refid="classDali_1_1Gesture_1ad312111dfc012e6297cc0cc9399b9672" compoundref="gesture_8cpp" startline="63" endline="66">Dali::Gesture::GetSourceData</referencedby>
+        <referencedby refid="classDali_1_1Gesture_1a27806ea0fcdfc6697f921acea8a93d3b" compoundref="gesture_8cpp" startline="58" endline="61">Dali::Gesture::GetSourceType</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1ae1a3669e58f12eb4a7ce2feecaf1b311" compoundref="pan-gesture_8cpp" startline="79" endline="82">Dali::PanGesture::GetSpeed</referencedby>
+        <referencedby refid="classDali_1_1PinchGesture_1a940664b1ca869553d126a55c2921e414" compoundref="pinch-gesture_8cpp" startline="49" endline="52">Dali::PinchGesture::GetSpeed</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ad9dfac65ec51c7141dd9ad9445e2db45" compoundref="animation_8cpp" startline="311" endline="314">Dali::Animation::GetSpeedFactor</referencedby>
+        <referencedby refid="classDali_1_1Animation_1aef7db0cea36c4ae303cdc64b59e9494f" compoundref="animation_8cpp" startline="149" endline="152">Dali::Animation::GetState</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1aaa2ebcbfb767364799665c2ea76b53a9" compoundref="constraint_8cpp" startline="124" endline="127">Dali::Constraint::GetState</referencedby>
+        <referencedby refid="classDali_1_1Gesture_1a4792fc1adeb2506b038cc9eba3154e40" compoundref="gesture_8cpp" startline="48" endline="51">Dali::Gesture::GetState</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1ad8b5adcb3e455f650199146a20f677a1" compoundref="key-event_8cpp" startline="111" endline="114">Dali::KeyEvent::GetState</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1a47b675a23ff38c7c12a9b51d9ed887f8" compoundref="hover-event_8cpp" startline="57" endline="60">Dali::HoverEvent::GetState</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1a47c9bfc5c040c8b1ab90c332dde0ea45" compoundref="touch-event_8cpp" startline="56" endline="59">Dali::TouchEvent::GetState</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a1acd4108fd7925605c2adb4f182ed7de" compoundref="render-task_8cpp" startline="88" endline="91">Dali::RenderTask::GetStopperActor</referencedby>
+        <referencedby refid="classDali_1_1PixelData_1ac9ec9d8f1afb9f59a4005b27f3be7f7a" compoundref="pixel-data_8cpp" startline="81" endline="84">Dali::PixelData::GetStride</referencedby>
+        <referencedby refid="classDali_1_1PixelData_1a3f85e653744999356002a19f9ebae2f3" compoundref="pixel-data_8cpp" startline="86" endline="89">Dali::PixelData::GetStrideBytes</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1aae8e18e75b838aa76c7651474bfd8d41" compoundref="scene_8cpp" startline="226" endline="229">Dali::Integration::Scene::GetSurfaceRectChangedCount</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a360086e6e6ce6463107443374d983c1d" compoundref="constraint_8cpp" startline="119" endline="122">Dali::Constraint::GetTag</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a422ec0dcc16873b5cf6cf94bc875fee5" compoundref="property-notification_8cpp" startline="64" endline="67">Dali::PropertyNotification::GetTarget</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1adcd2e3b1bc0c19dfe71cd3c56ab49671" compoundref="constraint_8cpp" startline="83" endline="86">Dali::Constraint::GetTargetObject</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1ad8862606dcc9e0ddab26575a958f64a9" compoundref="camera-actor_8cpp" startline="134" endline="137">Dali::CameraActor::GetTargetPosition</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a480b329b3f6da79258e099c882846791" compoundref="constraint_8cpp" startline="88" endline="91">Dali::Constraint::GetTargetProperty</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a3cb1dab85c012807ec984594f412e164" compoundref="property-notification_8cpp" startline="69" endline="72">Dali::PropertyNotification::GetTargetProperty</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a2fd83eafcdce7283f77774e719f52abb" compoundref="actor_8cpp" startline="114" endline="117">Dali::Actor::GetTargetSize</referencedby>
+        <referencedby refid="classDali_1_1RenderTaskList_1a1b729b7cec92b5e3214833f8fdd86d6b" compoundref="render-task-list_8cpp" startline="61" endline="64">Dali::RenderTaskList::GetTask</referencedby>
+        <referencedby refid="classDali_1_1RenderTaskList_1a95449dd72255f59339b5aa7f3d55db18" compoundref="render-task-list_8cpp" startline="56" endline="59">Dali::RenderTaskList::GetTaskCount</referencedby>
+        <referencedby refid="classDali_1_1TextureSet_1aad8900608ab4fed18d253604946f431c" compoundref="texture-set_8cpp" startline="64" endline="68">Dali::TextureSet::GetTexture</referencedby>
+        <referencedby refid="classDali_1_1TextureSet_1a6fa731b91cd2ac0d3156fefc71ff1dc2" compoundref="texture-set_8cpp" startline="89" endline="92">Dali::TextureSet::GetTextureCount</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a5deb38e57fcf49f69edb7558d768b131" compoundref="texture-integ_8cpp" startline="33" endline="36">Dali::Integration::GetTextureResourceId</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a5d49f1c60e24c698ed129c16a2c59a90" compoundref="renderer_8cpp" startline="86" endline="89">Dali::Renderer::GetTextures</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1aaef97ce9266c1f26f39b7f42e71a3201" compoundref="texture-integ_8cpp" startline="38" endline="41">Dali::Integration::GetTextureType</referencedby>
+        <referencedby refid="classDali_1_1Gesture_1ac70eeacbf15c5af6a5168809bcecaf83" compoundref="gesture_8cpp" startline="53" endline="56">Dali::Gesture::GetTime</referencedby>
+        <referencedby refid="classDali_1_1HoverEvent_1a98f7e485d3ce32eaee0ac5e689bfcf31" compoundref="hover-event_8cpp" startline="42" endline="45">Dali::HoverEvent::GetTime</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1ade434dcc7024d5ac70d19e33524a0494" compoundref="key-event_8cpp" startline="106" endline="109">Dali::KeyEvent::GetTime</referencedby>
+        <referencedby refid="classDali_1_1TouchEvent_1ae1fc1e898b53386f59fb4ed5f2d5fc3f" compoundref="touch-event_8cpp" startline="41" endline="44">Dali::TouchEvent::GetTime</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1acbbf1c7eba808a10bf52de86ba6cfa7e" compoundref="wheel-event_8cpp" startline="81" endline="84">Dali::WheelEvent::GetTime</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ada1f2059cca2aee588e71a55a011c050" compoundref="scene_8cpp" startline="266" endline="269">Dali::Integration::Scene::GetTouchPropagationType</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1ac363b9f41608c134b4f5f80333be5124" compoundref="actor-devel_8cpp" startline="118" endline="121">Dali::DevelActor::GetTouchRequired</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a21a4d23346a79ecb9754ca276e2d2484" compoundref="camera-actor_8cpp" startline="74" endline="77">Dali::CameraActor::GetType</referencedby>
+        <referencedby refid="classDali_1_1KeyFrames_1a544b830bfa5cfee10f032aa7625c11ae" compoundref="key-frames_8cpp" startline="52" endline="55">Dali::KeyFrames::GetType</referencedby>
+        <referencedby refid="classDali_1_1Gesture_1a2727f65710f5c2a2fb2372e3a1773f0b" compoundref="gesture_8cpp" startline="43" endline="46">Dali::Gesture::GetType</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a68c8b51d2bccc4732325af5346f0936c" compoundref="wheel-event_8cpp" startline="56" endline="59">Dali::WheelEvent::GetType</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1a625e10c92de61936b957d83b44a90ac3" compoundref="geometry_8cpp" startline="80" endline="83">Dali::Geometry::GetType</referencedby>
+        <referencedby refid="classDali_1_1TypeRegistry_1ac80afb8ce304e2099ff51c97df86492c" compoundref="type-registry_8cpp" startline="51" endline="54">Dali::TypeRegistry::GetTypeInfo</referencedby>
+        <referencedby refid="classDali_1_1TypeRegistry_1a88195e3c0411785b41aa708655427bd4" compoundref="type-registry_8cpp" startline="56" endline="59">Dali::TypeRegistry::GetTypeInfo</referencedby>
+        <referencedby refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" compoundref="base-handle_8cpp" startline="59" endline="62">Dali::BaseHandle::GetTypeInfo</referencedby>
+        <referencedby refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" compoundref="base-handle_8cpp" startline="54" endline="57">Dali::BaseHandle::GetTypeName</referencedby>
+        <referencedby refid="classDali_1_1TypeRegistry_1a94c9fc5262b997038268b43778657dc7" compoundref="type-registry_8cpp" startline="66" endline="69">Dali::TypeRegistry::GetTypeName</referencedby>
+        <referencedby refid="classDali_1_1TypeRegistry_1ad401953ba87dea4cfbcbebdb3270132a" compoundref="type-registry_8cpp" startline="61" endline="64">Dali::TypeRegistry::GetTypeNameCount</referencedby>
+        <referencedby refid="classDali_1_1UniformBlock_1ade01f8c2b5ae6f8240c068373213a72a" compoundref="uniform-block_8cpp" startline="53" endline="56">Dali::UniformBlock::GetUniformBlockName</referencedby>
+        <referencedby refid="classDali_1_1PanGesture_1a5f6e8315abb2cc1e35b05c77288f1157" compoundref="pan-gesture_8cpp" startline="44" endline="47">Dali::PanGesture::GetVelocity</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a4e93f92646902daeb4e131bc4e91af8a" compoundref="render-task_8cpp" startline="214" endline="219">Dali::RenderTask::GetViewport</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a4bbd02b9afe4e8badc7da951f89a33af" compoundref="render-task_8cpp" startline="169" endline="172">Dali::RenderTask::GetViewportGuideActor</referencedby>
+        <referencedby refid="classDali_1_1PixelData_1ae9a913ce22ce2e003a88c2acf0292169" compoundref="pixel-data_8cpp" startline="66" endline="69">Dali::PixelData::GetWidth</referencedby>
+        <referencedby refid="classDali_1_1Texture_1a95d0cc17342cf83512aa7242bcddb347" compoundref="texture_8cpp" startline="85" endline="88">Dali::Texture::GetWidth</referencedby>
+        <referencedby refid="classDali_1_1Actor_1af1c55b64b4bf4b43d9a3af48eb1354c6" compoundref="actor_8cpp" startline="194" endline="197">Dali::Actor::GetWidthForHeight</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a7d2d898ffe5130844cf091b5eedcc80c" compoundref="key-event_8cpp" startline="121" endline="124">Dali::KeyEvent::GetWindowId</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1af2dabd4dbb3990b5e58493fd5674e1ec" compoundref="actor-devel_8cpp" startline="97" endline="100">Dali::DevelActor::GetWorldColor</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a4ed92cf65aa0b9f1a721a6fef7fa4ab6" compoundref="actor-devel_8cpp" startline="92" endline="95">Dali::DevelActor::GetWorldTransform</referencedby>
+        <referencedby refid="group__dali__core__object_1ga04aea5bf576292349831f3c0fc698644" compoundref="property-conditions_8cpp" startline="62" endline="70">Dali::GreaterThanCondition</referencedby>
+        <referencedby refid="classDali_1_1GestureDetector_1a44e4aed8f98a204935aa9d54d52af4f0" compoundref="gesture-detector_8cpp" startline="73" endline="76">Dali::GestureDetector::HandleEvent</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a6327e8fa39bef6fc0b54e2bcf0a01de7" compoundref="constraint-integ_8cpp" startline="33" endline="36">Dali::Integration::HandleRemoveAllConstraints</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a27d2493a69e1d08ac7228abf55152971" compoundref="constraint-integ_8cpp" startline="38" endline="42">Dali::Integration::HandleRemoveConstraints</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ae51dc0e6c25fb5b9e4eb4e206b172096" compoundref="constraint-integ_8cpp" startline="44" endline="48">Dali::Integration::HandleRemoveConstraints</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1add118f346bfa9a7c02ed48bc63f21c13" compoundref="scene_8cpp" startline="76" endline="79">Dali::Integration::Scene::Hide</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ac912838b6a91ef9ed3b8616439fd2b80" compoundref="animation_8cpp" startline="291" endline="294">Dali::Animation::Hide</referencedby>
+        <referencedby refid="namespaceDali_1_1HitTestAlgorithm_1a6bc732bc0892052d8fa8632271881604" compoundref="hit-test-algorithm_8cpp" startline="32" endline="36">Dali::HitTestAlgorithm::HitTest</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a28f8fb882ec74bfeb4e9cbc33617ceac" compoundref="actor-devel_8cpp" startline="87" endline="90">Dali::DevelActor::HitTestResultSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aedbb509e546778a7f37e2ced79b59a0e" compoundref="actor_8cpp" startline="219" endline="222">Dali::Actor::HoveredSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1add2fe682e69d697c18b2ced77635b6aa" compoundref="actor_8cpp" startline="290" endline="293">Dali::Actor::InheritedVisibilityChangedSignal</referencedby>
+        <referencedby refid="group__dali__core__object_1ga4f653611f8037b637c5fc9b5b87af89f" compoundref="property-conditions_8cpp" startline="72" endline="81">Dali::InsideCondition</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a336548acce09c1e45450c42e68bd3783" compoundref="scene_8cpp" startline="301" endline="304">Dali::Integration::Scene::InterceptKeyEventSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a980e5dc2279020c40278729a46e83a8a" compoundref="actor-devel_8cpp" startline="67" endline="70">Dali::DevelActor::InterceptTouchedSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1ac7290f7ef27644ccbda75354d3b22d6b" compoundref="actor-devel_8cpp" startline="72" endline="75">Dali::DevelActor::InterceptWheelSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelRenderer_1adb578b7517d17714ddd4dfe72292c9a6" compoundref="renderer-devel_8cpp" startline="26" endline="29">Dali::DevelRenderer::IsAdvancedBlendEquationApplied</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a8efb4092cd73106c0af36499878f7bd1" compoundref="key-event_8cpp" startline="51" endline="54">Dali::KeyEvent::IsAltModifier</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1abf3cbe884a779b0275c9894542ecb2f4" compoundref="wheel-event_8cpp" startline="51" endline="54">Dali::WheelEvent::IsAltModifier</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a6acc25ff84bcf2017f8e54d3f6665b96" compoundref="key-event_8cpp" startline="46" endline="49">Dali::KeyEvent::IsCtrlModifier</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a7ad42a923c8ff4817db342aad68a9ccd" compoundref="wheel-event_8cpp" startline="46" endline="49">Dali::WheelEvent::IsCtrlModifier</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1ad0a3df4a15b704c0b5f6d77ebe1e1d41" compoundref="actor-devel_8cpp" startline="102" endline="105">Dali::DevelActor::IsEffectivelyVisible</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aee0e54efa7b645674ae5fe18cfa12fe7" compoundref="render-task_8cpp" startline="98" endline="101">Dali::RenderTask::IsExclusive</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1aed99764baf7a7f47df4c45bbf28c2f5f" compoundref="scene_8cpp" startline="261" endline="264">Dali::Integration::Scene::IsGeometryHittestEnabled</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a37fc993e2b9aa428cccca390a36bc9e7" compoundref="actor-devel_8cpp" startline="113" endline="116">Dali::DevelActor::IsHittable</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a79f00abc4ce3ca00a6ad1b9a3063a802" compoundref="actor_8cpp" startline="209" endline="212">Dali::Actor::IsIgnored</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a10449d148c13eb3c5c79e79cb85b1f0d" compoundref="animation_8cpp" startline="94" endline="97">Dali::Animation::IsLooping</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelTexture_1ac8f44146060f72662a56c1e7614c91f6" compoundref="texture-devel_8cpp" startline="24" endline="28">Dali::DevelTexture::IsNative</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1af511ebc083b2247e7a1ef90cb43edecd" compoundref="key-event_8cpp" startline="56" endline="59">Dali::KeyEvent::IsNoInterceptModifier</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a96b45918527cb7c6c2782a9ffd8c7120" compoundref="scene_8cpp" startline="251" endline="254">Dali::Integration::Scene::IsPartialUpdateEnabled</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ab57c8c03858a4a1b7830ebd3f62e13db" compoundref="pixel-data-integ_8cpp" startline="51" endline="55">Dali::Integration::IsPixelDataReleaseAfterUpload</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a025ccafe4d792290ba52c2acfc60f853" compoundref="handle_8cpp" startline="92" endline="95">Dali::Handle::IsPropertyAConstraintInput</referencedby>
+        <referencedby refid="classDali_1_1Handle_1ac72ed10ef62da831eca7085c956e77f4" compoundref="handle_8cpp" startline="87" endline="90">Dali::Handle::IsPropertyAnimatable</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a46074ae35e8390eaa75ad5fc94b7a103" compoundref="handle_8cpp" startline="82" endline="85">Dali::Handle::IsPropertyWritable</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a04ff54650dabbb134fe48f7125d93f09" compoundref="key-event_8cpp" startline="116" endline="119">Dali::KeyEvent::IsRepeat</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a753bef9318726a6774a65fdff1bc46bd" compoundref="scene_8cpp" startline="236" endline="239">Dali::Integration::Scene::IsRotationCompletedAcknowledgementSet</referencedby>
+        <referencedby refid="classDali_1_1KeyEvent_1a33e67ca8039613b2823af3bfa6e726e3" compoundref="key-event_8cpp" startline="41" endline="44">Dali::KeyEvent::IsShiftModifier</referencedby>
+        <referencedby refid="classDali_1_1WheelEvent_1a3eeb53a55e20fdcf8b8c4cc806576f9b" compoundref="wheel-event_8cpp" startline="41" endline="44">Dali::WheelEvent::IsShiftModifier</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a7a228fda3ad0844dbdeef451c2bdc67a" compoundref="scene_8cpp" startline="81" endline="84">Dali::Integration::Scene::IsVisible</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a8489681c7c32b7a5e6f5bff10793b8e8" compoundref="stage_8cpp" startline="132" endline="135">Dali::Stage::KeepRendering</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a5b1b3c60962ec89d3dda156683ca6aa4" compoundref="scene_8cpp" startline="241" endline="244">Dali::Integration::Scene::KeepRendering</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a10d898f780f5f5b41d698c5cd64424fa" compoundref="render-task_8cpp" startline="336" endline="339">Dali::RenderTask::KeepRenderResult</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a6182cc25936d3337fadf6e0b33f4ad2e" compoundref="scene_8cpp" startline="296" endline="299">Dali::Integration::Scene::KeyEventGeneratedSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelStage_1a4f516d11eedf0c47cf9be49641fd7e61" compoundref="stage-devel_8cpp" startline="26" endline="29">Dali::DevelStage::KeyEventGeneratedSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a1999d7dd1e7f3e73d35d380aa0a068e2" compoundref="scene_8cpp" startline="306" endline="309">Dali::Integration::Scene::KeyEventMonitorSignal</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a3e8b5f44c96d466a0f14b9a4c93ecec6" compoundref="stage_8cpp" startline="142" endline="145">Dali::Stage::KeyEventSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a0cc263e021f2bd37b659c4e950e19158" compoundref="scene_8cpp" startline="291" endline="294">Dali::Integration::Scene::KeyEventSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a6f127598c250e0d390e58ba5d35fb6c8" compoundref="actor_8cpp" startline="285" endline="288">Dali::Actor::LayoutDirectionChangedSignal</referencedby>
+        <referencedby refid="group__dali__core__object_1gaa8c5ca0aafcf53e16f1d8abdc241830e" compoundref="property-conditions_8cpp" startline="52" endline="60">Dali::LessThanCondition</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a7c70c060ff3d8c9d39d7ff0549f44d27" compoundref="actor-devel_8cpp" startline="107" endline="111">Dali::DevelActor::LookAt</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a1b093bf1abd877052f5423e80928de45" compoundref="actor_8cpp" startline="154" endline="157">Dali::Actor::Lower</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a12d967a7440a08a8acc18f42851ea3a6" compoundref="layer_8cpp" startline="55" endline="58">Dali::Layer::Lower</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a2a746d2b4453ab51b58b8c8e96bb8a83" compoundref="actor_8cpp" startline="174" endline="177">Dali::Actor::LowerBelow</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a29eee2eeae2294e10a1bf3052f8fe843" compoundref="layer_8cpp" startline="65" endline="68">Dali::Layer::LowerBelow</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a30509858cc2143439abe94cc645c1ff6" compoundref="actor_8cpp" startline="164" endline="167">Dali::Actor::LowerToBottom</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a560107304e79b5490d83b5c31caa63eb" compoundref="layer_8cpp" startline="75" endline="78">Dali::Layer::LowerToBottom</referencedby>
+        <referencedby refid="classDali_1_1Layer_1ac17bfaa12a4a2b2522aec1b4a4588e8f" compoundref="layer_8cpp" startline="80" endline="83">Dali::Layer::MoveAbove</referencedby>
+        <referencedby refid="classDali_1_1Layer_1ab0672413be5e589b233c670515112b80" compoundref="layer_8cpp" startline="85" endline="88">Dali::Layer::MoveBelow</referencedby>
+        <referencedby refid="classDali_1_1DecoratedVisualRenderer_1af53096ab74447e92152575405404aa49" compoundref="decorated-visual-renderer_8cpp" startline="26" endline="32">Dali::DecoratedVisualRenderer::New</referencedby>
+        <referencedby refid="classDali_1_1VisualRenderer_1a30df26b060d480541065ede3c514b32c" compoundref="visual-renderer_8cpp" startline="26" endline="32">Dali::VisualRenderer::New</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a8fb81faa78404c90464945102cd3d032" compoundref="renderer_8cpp" startline="26" endline="32">Dali::Renderer::New</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelStage_1ae2c57967f2a83d18a69d20784136604f" compoundref="stage-devel_8cpp" startline="58" endline="61">Dali::DevelStage::NotifyFrameCallback</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a7d31991e87fe0aece84227800b4ee844" compoundref="property-notification_8cpp" startline="89" endline="92">Dali::PropertyNotification::NotifySignal</referencedby>
+        <referencedby refid="classDali_1_1ObjectRegistry_1a7461a7d118b0d3590810a987217939c8" compoundref="object-registry_8cpp" startline="38" endline="41">Dali::ObjectRegistry::ObjectCreatedSignal</referencedby>
+        <referencedby refid="classDali_1_1ObjectRegistry_1adab7afa9b135f59a3a4410a4f613ca80" compoundref="object-registry_8cpp" startline="43" endline="46">Dali::ObjectRegistry::ObjectDestroyedSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a698c7f1bcd07beb937ac2775eba082b5" compoundref="actor_8cpp" startline="234" endline="237">Dali::Actor::OffSceneSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aa03e20e4eb454e701afff631f325484c" compoundref="actor_8cpp" startline="280" endline="283">Dali::Actor::OnRelayoutSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1ac8637f9abf16beb5d586df86334a9fef" compoundref="actor_8cpp" startline="229" endline="232">Dali::Actor::OnSceneSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyFrames_1a51a15092949fe42805dfabac1f2b59f5" compoundref="key-frames-devel_8cpp" startline="41" endline="44">Dali::DevelKeyFrames::OptimizeKeyFramesLinear</referencedby>
+        <referencedby refid="group__dali__core__object_1gaef68e4f57993c9339bc54782ab238037" compoundref="property-conditions_8cpp" startline="83" endline="92">Dali::OutsideCondition</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a3ebf687d7cdc48d8ae3f2ceba2cbe158" compoundref="animation_8cpp" startline="144" endline="147">Dali::Animation::Pause</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a2f87714e163dc749e8d497071fd05a3a" compoundref="animation_8cpp" startline="129" endline="132">Dali::Animation::Play</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a418e960f664260d0a5660b38e59aa8aa" compoundref="animation_8cpp" startline="139" endline="142">Dali::Animation::PlayAfter</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a742f313ef6316e338572fb3b547344ad" compoundref="animation_8cpp" startline="134" endline="137">Dali::Animation::PlayFrom</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a3a08f31250c31f92da813dcb086bbea1" compoundref="scene_8cpp" startline="181" endline="184">Dali::Integration::Scene::ProcessEvents</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelAnimation_1a8a6c41d9bd68032be504ccb648909ea7" compoundref="animation-devel_8cpp" startline="38" endline="41">Dali::DevelAnimation::ProgressReachedSignal</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aa264a86e930a78db250bbb92511dbc9d" compoundref="handle_8cpp" startline="219" endline="222">Dali::Handle::PropertySetSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1aef530d0afa35c5149e1e5078a934530e" compoundref="scene_8cpp" startline="176" endline="179">Dali::Integration::Scene::QueueEvent</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a2e2335e2b8ea4bf6c6bc0e1199fcf135" compoundref="actor_8cpp" startline="149" endline="152">Dali::Actor::Raise</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a838136262ec9f6e031a1a4fdd646cc65" compoundref="layer_8cpp" startline="50" endline="53">Dali::Layer::Raise</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a8bc4298901f1085c972075a62c373d53" compoundref="actor_8cpp" startline="169" endline="172">Dali::Actor::RaiseAbove</referencedby>
+        <referencedby refid="classDali_1_1Layer_1ac5683e2789ebe1154616f3851a3c5f87" compoundref="layer_8cpp" startline="60" endline="63">Dali::Layer::RaiseAbove</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a69f2371d740b78a427be8bf94055ca7f" compoundref="actor_8cpp" startline="159" endline="162">Dali::Actor::RaiseToTop</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a8a5d3ca42ff151fb77f36613c13b9c87" compoundref="layer_8cpp" startline="70" endline="73">Dali::Layer::RaiseToTop</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1a875a9b83c1989f7306a4b9ef7e320785" compoundref="tap-gesture-detector_8cpp" startline="82" endline="85">Dali::TapGestureDetector::ReceiveAllTapEvents</referencedby>
+        <referencedby refid="classDali_1_1SingletonService_1a611ae027432b637fb50c5bea72f79228" compoundref="singleton-service_8cpp" startline="35" endline="38">Dali::SingletonService::Register</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" compoundref="handle_8cpp" startline="112" endline="115">Dali::Handle::RegisterProperty</referencedby>
+        <referencedby refid="classDali_1_1Handle_1afece056319aaa0d1507c8d777908dcea" compoundref="handle_8cpp" startline="122" endline="125">Dali::Handle::RegisterProperty</referencedby>
+        <referencedby refid="classDali_1_1Handle_1acf96c21cba52bbcdeb7342592ca3e2e5" compoundref="handle_8cpp" startline="117" endline="120">Dali::Handle::RegisterProperty</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aabccabf7e4551a684c7b97f39a973284" compoundref="handle_8cpp" startline="127" endline="130">Dali::Handle::RegisterUniqueProperty</referencedby>
+        <referencedby refid="classDali_1_1Handle_1ad75eb7b366ebc913701058b1e5575581" compoundref="handle_8cpp" startline="132" endline="135">Dali::Handle::RegisterUniqueProperty</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1abebfa652b725faaab3f23d9d18d7dc7e" compoundref="pixel-data-integ_8cpp" startline="26" endline="30">Dali::Integration::ReleasePixelDataBuffer</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1af824534d18c6cc3a536f0a6e87114751" compoundref="constraint_8cpp" startline="78" endline="81">Dali::Constraint::Remove</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a0c014678b9e46ae4e71d69ff4f9b9656" compoundref="stage_8cpp" startline="78" endline="81">Dali::Stage::Remove</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ac3f4a9ba66aef3b4642334e6a053ead1" compoundref="scene_8cpp" startline="66" endline="69">Dali::Integration::Scene::Remove</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a3e923ce03758e30ca3f50e1f70402636" compoundref="actor_8cpp" startline="74" endline="77">Dali::Actor::Remove</referencedby>
+        <referencedby refid="classDali_1_1PathConstrainer_1ad17c1e2ccb8c8b14783d219310b5a59d" compoundref="path-constrainer_8cpp" startline="60" endline="63">Dali::PathConstrainer::Remove</referencedby>
+        <referencedby refid="classDali_1_1LinearConstrainer_1a810b2279a11fb60f4774059adce388ef" compoundref="linear-constrainer_8cpp" startline="59" endline="62">Dali::LinearConstrainer::Remove</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1abf89c23adebfc55786e7d374b5e3efc0" compoundref="pan-gesture-detector_8cpp" startline="118" endline="121">Dali::PanGestureDetector::RemoveAngle</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a479a20d903ccc08d970ccb4fbe029010" compoundref="actor_8cpp" startline="275" endline="278">Dali::Actor::RemoveCacheRenderer</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aa5007b6000fcf922580a0895d5fc8755" compoundref="handle_8cpp" startline="195" endline="199">Dali::Handle::RemoveConstraints</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a13b771d88af488b89cd649ae1f161fb7" compoundref="handle_8cpp" startline="201" endline="205">Dali::Handle::RemoveConstraints</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a14469a8332d8c0bb09ca9a54e6888b31" compoundref="pan-gesture-detector_8cpp" startline="123" endline="126">Dali::PanGestureDetector::RemoveDirection</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelStage_1a9c264877cdb4da4c26c3e8a3f8ab0e2d" compoundref="stage-devel_8cpp" startline="53" endline="56">Dali::DevelStage::RemoveFrameCallback</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1ab37393da2d563dc386f31054aeb11d88" compoundref="renderer_8cpp" startline="75" endline="78">Dali::Renderer::RemoveGeometry</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a9acc036ef41721cc3779976afb26da4b" compoundref="handle_8cpp" startline="180" endline="183">Dali::Handle::RemovePropertyNotification</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a9a2be7d760f27124d0bd992040748abd" compoundref="handle_8cpp" startline="185" endline="188">Dali::Handle::RemovePropertyNotifications</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a366d5cf2e8678a21d1dcf2d8002e53fd" compoundref="actor_8cpp" startline="255" endline="258">Dali::Actor::RemoveRenderer</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a3ca1c2bc6c8633298cd2b434e6effd16" compoundref="actor_8cpp" startline="260" endline="263">Dali::Actor::RemoveRenderer</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1aa10f7d860ac0388c4a21dc853e5bcc2f" compoundref="scene_8cpp" startline="156" endline="159">Dali::Integration::Scene::RemoveSceneObject</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1abcdb9bfb93c09271808a199ff052deb6" compoundref="renderer_8cpp" startline="107" endline="110">Dali::Renderer::RemoveShader</referencedby>
+        <referencedby refid="classDali_1_1RenderTaskList_1a32ab9cd98425892553c6f9523274d8bd" compoundref="render-task-list_8cpp" startline="48" endline="54">Dali::RenderTaskList::RemoveTask</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a197959640d4726f7314a1255e387be10" compoundref="renderer_8cpp" startline="91" endline="94">Dali::Renderer::RemoveTextures</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1a63c8915ff20ce2ca2361d881113e0a91" compoundref="geometry_8cpp" startline="60" endline="63">Dali::Geometry::RemoveVertexBuffer</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a11b90bea2a73ef1993edc97dc7554922" compoundref="render-task_8cpp" startline="325" endline="334">Dali::RenderTask::RenderUntil</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ae96c46b67bbf78230595d54767b5b56c" compoundref="scene_8cpp" startline="86" endline="89">Dali::Integration::Scene::RequestFullUpdate</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a5a8165e0f22ebefd82742b95e21cce67" compoundref="handle_8cpp" startline="107" endline="110">Dali::Handle::ReserveCustomProperties</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aabfdde86969287c23fa2df175c36516d" compoundref="render-task_8cpp" startline="174" endline="177">Dali::RenderTask::ResetViewportGuideActor</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a4c74662ea11e3b04d3842f33c74abe80" compoundref="actor_8cpp" startline="134" endline="137">Dali::Actor::RotateBy</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aea1751d9b6d9adacc7d3c53f083af76f" compoundref="actor_8cpp" startline="129" endline="132">Dali::Actor::RotateBy</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelCameraActor_1a1ca279de59b9096edee5b8e4d3f0bcba" compoundref="camera-actor-devel_8cpp" startline="26" endline="29">Dali::DevelCameraActor::RotateProjection</referencedby>
+        <referencedby refid="classDali_1_1Path_1a2f40832fbef204be3357c69506a67c3b" compoundref="path_8cpp" startline="69" endline="72">Dali::Path::Sample</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a2892f52f3fedf2d9454a77e817537dd5" compoundref="actor_8cpp" startline="139" endline="142">Dali::Actor::ScaleBy</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a1cefd68ecd51dce589d4a55649c034b4" compoundref="stage_8cpp" startline="172" endline="175">Dali::Stage::SceneCreatedSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1ade076d138c95f666f0080188f3e15012" compoundref="actor_8cpp" startline="144" endline="147">Dali::Actor::ScreenToLocal</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a9f36b3e2eaac046d0e428075f26bd4af" compoundref="constraint_8cpp" startline="103" endline="106">Dali::Constraint::SetApplyRate</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a223a4d9829951c634c7565e4cd870e42" compoundref="camera-actor_8cpp" startline="99" endline="102">Dali::CameraActor::SetAspectRatio</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ab6b88fad4fb673ad84874130053fb289" compoundref="scene_8cpp" startline="111" endline="114">Dali::Integration::Scene::SetBackgroundColor</referencedby>
+        <referencedby refid="classDali_1_1Stage_1a4494c61f1015506a6b7b3740ffbe0ace" compoundref="stage_8cpp" startline="108" endline="111">Dali::Stage::SetBackgroundColor</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a6db4b0cc50690c194c52c8caa27f9b2c" compoundref="animation_8cpp" startline="326" endline="329">Dali::Animation::SetBlendPoint</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a72238999e6a3c9c01e41e515f7eb1632" compoundref="render-task_8cpp" startline="103" endline="113">Dali::RenderTask::SetCameraActor</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1ad45cf47f05f039ae3a8fa85c0ed6f039" compoundref="render-task_8cpp" startline="221" endline="224">Dali::RenderTask::SetClearColor</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1ab23acc8dd3f3274d04064018cb12f167" compoundref="render-task_8cpp" startline="231" endline="234">Dali::RenderTask::SetClearEnabled</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aeaaf9f338b6bf9b636cdef295c22993f" compoundref="render-task_8cpp" startline="241" endline="244">Dali::RenderTask::SetCullMode</referencedby>
+        <referencedby refid="classDali_1_1Animation_1acccc65048ea080f13be49857f30d5066" compoundref="animation_8cpp" startline="296" endline="299">Dali::Animation::SetCurrentProgress</referencedby>
+        <referencedby refid="classDali_1_1VertexBuffer_1af84cd0d7cb5b1f6c8a5e8f338db06dec" compoundref="vertex-buffer_8cpp" startline="90" endline="93">Dali::VertexBuffer::SetData</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a49060f130ff1a3b0d594e43f904c74f8" compoundref="animation_8cpp" startline="119" endline="122">Dali::Animation::SetDefaultAlphaFunction</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a543a03b667ac3e56720e7c847b8816d7" compoundref="animation_8cpp" startline="109" endline="112">Dali::Animation::SetDisconnectAction</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1a09d340083f1aae91924a5f6a721eb7d1" compoundref="pan-gesture-devel_8cpp" startline="43" endline="46">Dali::DevelPanGesture::SetDisplacement</referencedby>
+        <referencedby refid="classDali_1_1VertexBuffer_1ae048f5797f78ae66d0a6b280e8b7bfc8" compoundref="vertex-buffer_8cpp" startline="100" endline="103">Dali::VertexBuffer::SetDivisor</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a1839d9fb95932b6bc889b72c0423c56f" compoundref="scene_8cpp" startline="101" endline="104">Dali::Integration::Scene::SetDpi</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a01b93bfee1cfd2858aadc6f9a628b50d" compoundref="animation_8cpp" startline="64" endline="67">Dali::Animation::SetDuration</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a1eb6e6f984eb896072d77d283b15a107" compoundref="animation_8cpp" startline="99" endline="102">Dali::Animation::SetEndAction</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a80c5a58b89536616d0f04d2d51eaa7ed" compoundref="render-task_8cpp" startline="93" endline="96">Dali::RenderTask::SetExclusive</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a09136d9d5979f3607542e768ddd7abcd" compoundref="camera-actor_8cpp" startline="119" endline="122">Dali::CameraActor::SetFarClippingPlane</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1afa44d60878cadfef2d3ff71e0c4b7621" compoundref="camera-actor_8cpp" startline="89" endline="92">Dali::CameraActor::SetFieldOfView</referencedby>
+        <referencedby refid="classDali_1_1Sampler_1a1af8835e46439365435f7b11d41a0cdf" compoundref="sampler_8cpp" startline="49" endline="52">Dali::Sampler::SetFilterMode</referencedby>
+        <referencedby refid="classDali_1_1Stage_1adf9231689b2c1d98dc45f68e3d5c94b7" compoundref="stage_8cpp" startline="137" endline="140">Dali::Stage::SetForceRendering</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ad6088fca4c728ffb04a742365430a846" compoundref="scene_8cpp" startline="91" endline="94">Dali::Integration::Scene::SetForceRendering</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a162cf6f23cf0d1f54edda474ad069190" compoundref="render-task_8cpp" startline="120" endline="129">Dali::RenderTask::SetFrameBuffer</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a3abfd6a56ca0bad7fa3f12b651cd4b02" compoundref="renderer_8cpp" startline="64" endline="68">Dali::Renderer::SetGeometry</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ae682f0679e9076efb66a7b4ff4027158" compoundref="scene_8cpp" startline="256" endline="259">Dali::Integration::Scene::SetGeometryHittestEnabled</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aff392fede972433fa26f216f2427e0ff" compoundref="actor_8cpp" startline="204" endline="207">Dali::Actor::SetIgnored</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1ac98834ab1f77a12d8a70760bc72a6d46" compoundref="geometry_8cpp" startline="65" endline="68">Dali::Geometry::SetIndexBuffer</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1a3d0112ed6facc1fc5fd11f1c241884eb" compoundref="geometry_8cpp" startline="70" endline="73">Dali::Geometry::SetIndexBuffer</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a93cdb36e5071e03b37f20978b0221cf8" compoundref="render-task_8cpp" startline="266" endline="269">Dali::RenderTask::SetInputEnabled</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a005b2488e834e473c58c8a0622a287b4" compoundref="camera-actor_8cpp" startline="139" endline="142">Dali::CameraActor::SetInvertYAxis</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a3c3645494fc45d2670419591c9c89761" compoundref="key-event-devel_8cpp" startline="60" endline="63">Dali::DevelKeyEvent::SetKeyCode</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyFrames_1a4960bd5d492b8d5625bc77442d977542" compoundref="key-frames-devel_8cpp" startline="36" endline="39">Dali::DevelKeyFrames::SetKeyFrameValue</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a0907a1c5ee67f45a20e10857d8231c09" compoundref="key-event-devel_8cpp" startline="65" endline="68">Dali::DevelKeyEvent::SetKeyModifier</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a0f4647ce2febc3441c2f424f1c4adc62" compoundref="key-event-devel_8cpp" startline="50" endline="53">Dali::DevelKeyEvent::SetKeyName</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a019870d78da4eee9d1a1afcc2216665e" compoundref="key-event-devel_8cpp" startline="55" endline="58">Dali::DevelKeyEvent::SetKeyString</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a175a378a20b4745002e2c3613f909a1d" compoundref="animation_8cpp" startline="79" endline="82">Dali::Animation::SetLoopCount</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a2bac68d7d26e27ec8ca9c6c135be086b" compoundref="animation_8cpp" startline="74" endline="77">Dali::Animation::SetLooping</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a0ce2969f4028feafb5993e2eca733573" compoundref="animation_8cpp" startline="164" endline="167">Dali::Animation::SetLoopingMode</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a8e756bd78e93c2d6c51270a170fcbcb0" compoundref="pan-gesture-detector_8cpp" startline="73" endline="76">Dali::PanGestureDetector::SetMaximumMotionEventAge</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1a45dbc7a3cdcc219fa4674ad1a772ca4b" compoundref="tap-gesture-detector_8cpp" startline="67" endline="70">Dali::TapGestureDetector::SetMaximumTapsRequired</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1aee43ac9b12e6eab0d7e66b1f828055b4" compoundref="pan-gesture-detector_8cpp" startline="68" endline="71">Dali::PanGestureDetector::SetMaximumTouchesRequired</referencedby>
+        <referencedby refid="classDali_1_1TapGestureDetector_1a8d02d5ebc21368d50be8474db68e655c" compoundref="tap-gesture-detector_8cpp" startline="62" endline="65">Dali::TapGestureDetector::SetMinimumTapsRequired</referencedby>
+        <referencedby refid="classDali_1_1PanGestureDetector_1a97b41c6b40d59eaaaf6f6ea61aa981cb" compoundref="pan-gesture-detector_8cpp" startline="63" endline="66">Dali::PanGestureDetector::SetMinimumTouchesRequired</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelFrameBuffer_1a45392e36a94955e4027e47b1987c520f" compoundref="frame-buffer-devel_8cpp" startline="56" endline="59">Dali::DevelFrameBuffer::SetMultiSamplingLevel</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a42dbea9081d38a4b645512c64070355c" compoundref="scene_8cpp" startline="271" endline="274">Dali::Integration::Scene::SetNativeId</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a356b223a787ced73d749b34e8147e6a0" compoundref="camera-actor_8cpp" startline="109" endline="112">Dali::CameraActor::SetNearClippingPlane</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a05caaef9acb262b9152f2cadeeecc7dd" compoundref="actor-devel_8cpp" startline="77" endline="80">Dali::DevelActor::SetNeedGesturePropagation</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a68d29cfcab6d80a564bd8e07b6738eb7" compoundref="key-event-devel_8cpp" startline="70" endline="73">Dali::DevelKeyEvent::SetNoInterceptModifier</referencedby>
+        <referencedby refid="classDali_1_1PropertyNotification_1a839d40da3124304b8b713362a36274ed" compoundref="property-notification_8cpp" startline="74" endline="77">Dali::PropertyNotification::SetNotifyMode</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1a0bb9c571840542d810c0a241744937d6" compoundref="pan-gesture-devel_8cpp" startline="68" endline="71">Dali::DevelPanGesture::SetNumberOfTouches</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a9e3e14ae26ed7e616fec7440bb0ef2b3" compoundref="render-task_8cpp" startline="304" endline="313">Dali::RenderTask::SetOrderIndex</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1ae3d477b8002cd1aef11b84c6d46cec70" compoundref="camera-actor_8cpp" startline="154" endline="157">Dali::CameraActor::SetOrthographicProjection</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1af262775e03371d376efba74b30bab9f8" compoundref="scene_8cpp" startline="246" endline="249">Dali::Integration::Scene::SetPartialUpdateEnabled</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a298a4c89041cfbac828430cb5c7a56ef" compoundref="camera-actor_8cpp" startline="149" endline="152">Dali::CameraActor::SetPerspectiveProjection</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a474faf015fab9afc4683668864946f59" compoundref="animation_8cpp" startline="316" endline="319">Dali::Animation::SetPlayRange</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1a372d1c8ef69c0e5b926e27ad7251d37f" compoundref="pan-gesture-devel_8cpp" startline="48" endline="51">Dali::DevelPanGesture::SetPosition</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelAnimation_1a87851a90270da925aaf4ba15003331e3" compoundref="animation-devel_8cpp" startline="28" endline="31">Dali::DevelAnimation::SetProgressNotification</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1a482675cd1d918a9b9f7c615989817e1d" compoundref="camera-actor_8cpp" startline="79" endline="82">Dali::CameraActor::SetProjectionMode</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a3c9f3a03e463cf3efec254b86ae9d1ad" compoundref="handle_8cpp" startline="147" endline="150">Dali::Handle::SetProperties</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" compoundref="handle_8cpp" startline="102" endline="105">Dali::Handle::SetProperty</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a2796d092887a2037a736b285616a1a71" compoundref="render-task_8cpp" startline="251" endline="254">Dali::RenderTask::SetRefreshRate</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a18fed1e4c329504340d116c1b47c83c9" compoundref="constraint_8cpp" startline="93" endline="96">Dali::Constraint::SetRemoveAction</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a7ff46733ace1346d743452e802da30e7" compoundref="renderer_8cpp" startline="112" endline="115">Dali::Renderer::SetRenderCallback</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a5bcd2b23f5b7ca0b8ef98bc5bdc4957f" compoundref="render-task_8cpp" startline="179" endline="182">Dali::RenderTask::SetRenderedScaleFactor</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelStage_1a23363e9c32e577808f5c139440761215" compoundref="stage-devel_8cpp" startline="31" endline="34">Dali::DevelStage::SetRenderingBehavior</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a0d2c871a292444cd06ae3b4b5c269cd7" compoundref="render-task_8cpp" startline="294" endline="297">Dali::RenderTask::SetRenderPassTag</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a1b4d4d925bafddf4bb27982fa21d74a5" compoundref="key-event-devel_8cpp" startline="85" endline="88">Dali::DevelKeyEvent::SetRepeat</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aa32262412cf7206c8e5fb52ee10d2124" compoundref="actor_8cpp" startline="179" endline="182">Dali::Actor::SetResizePolicy</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1acb5368dd2e971845867eeba138b92784" compoundref="scene_8cpp" startline="231" endline="234">Dali::Integration::Scene::SetRotationCompletedAcknowledgement</referencedby>
+        <referencedby refid="classDali_1_1TextureSet_1a5df74aadfbc54c194f1a69f9c8acf186" compoundref="texture-set_8cpp" startline="70" endline="81">Dali::TextureSet::SetSampler</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1ae0c44ee74d53071a3154f04f92e0cee5" compoundref="pan-gesture-devel_8cpp" startline="58" endline="61">Dali::DevelPanGesture::SetScreenDisplacement</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1a0806e63e71a84d0e3a3ea23513c05139" compoundref="pan-gesture-devel_8cpp" startline="63" endline="66">Dali::DevelPanGesture::SetScreenPosition</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aee0d0d8f54b7ce334f4448f052eba780" compoundref="render-task_8cpp" startline="137" endline="140">Dali::RenderTask::SetScreenToFrameBufferFunction</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a88c94a4d7d839969429b24cb3ac8aaf8" compoundref="render-task_8cpp" startline="147" endline="150">Dali::RenderTask::SetScreenToFrameBufferMappingActor</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1a5dfd5ead5051ea8e2d0ba12740d20cc9" compoundref="pan-gesture-devel_8cpp" startline="53" endline="56">Dali::DevelPanGesture::SetScreenVelocity</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a3b5587900af5515b3f49ed5d6ac3d4d8" compoundref="renderer_8cpp" startline="96" endline="100">Dali::Renderer::SetShader</referencedby>
+        <referencedby refid="classDali_1_1Layer_1a0b9a4ff015d776ffb142ff64b831a93f" compoundref="layer_8cpp" startline="90" endline="93">Dali::Layer::SetSortFunction</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aa738964238dc9f5104e67f6dc355abed" compoundref="render-task_8cpp" startline="71" endline="81">Dali::RenderTask::SetSourceActor</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a2e3483a3e371832f5f3e71deffee7c25" compoundref="animation_8cpp" startline="306" endline="309">Dali::Animation::SetSpeedFactor</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1af8cf39d18252f70bc991e4a12bb1388a" compoundref="key-event-devel_8cpp" startline="80" endline="83">Dali::DevelKeyEvent::SetState</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a66f95b2eae7a2a21aba448bfffe59242" compoundref="scene_8cpp" startline="166" endline="169">Dali::Integration::Scene::SetSurfaceRenderTarget</referencedby>
+        <referencedby refid="classDali_1_1Constraint_1a6fbe3d569429df202ce13c9c2d835e18" compoundref="constraint_8cpp" startline="113" endline="117">Dali::Constraint::SetTag</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1aa70c0815e6b0c7fd9b58733100493db1" compoundref="camera-actor_8cpp" startline="129" endline="132">Dali::CameraActor::SetTargetPosition</referencedby>
+        <referencedby refid="classDali_1_1TextureSet_1a03d0b99ed1a577da68c1c2111cfd781f" compoundref="texture-set_8cpp" startline="51" endline="62">Dali::TextureSet::SetTexture</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a29f343871a8bd1df1ac05798b05a750c" compoundref="texture-integ_8cpp" startline="48" endline="51">Dali::Integration::SetTexturePixelFormat</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1af3645031d45ddbf050b7f232b470af2b" compoundref="renderer_8cpp" startline="80" endline="84">Dali::Renderer::SetTextures</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a6f57cd5502e0096a5552b8bc8b764153" compoundref="texture-integ_8cpp" startline="43" endline="46">Dali::Integration::SetTextureSize</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1adfc65743bc2d7f3b8f45039a1c1f6ab5" compoundref="pan-gesture-devel_8cpp" startline="33" endline="36">Dali::DevelPanGesture::SetTime</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a2bc93ba92dccf57711e3233b36530c05" compoundref="key-event-devel_8cpp" startline="75" endline="78">Dali::DevelKeyEvent::SetTime</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelTouchEvent_1ac1070ccea64278a611bdab0b0a5a2eb2" compoundref="touch-event-devel_8cpp" startline="26" endline="29">Dali::DevelTouchEvent::SetTime</referencedby>
+        <referencedby refid="classDali_1_1LongPressGestureDetector_1ae2c7a149cc8b17d2bea0f1144bca215b" compoundref="long-press-gesture-detector_8cpp" startline="74" endline="77">Dali::LongPressGestureDetector::SetTouchesRequired</referencedby>
+        <referencedby refid="classDali_1_1LongPressGestureDetector_1a808115f79e0e547f84542a62809bf4b2" compoundref="long-press-gesture-detector_8cpp" startline="69" endline="72">Dali::LongPressGestureDetector::SetTouchesRequired</referencedby>
+        <referencedby refid="classDali_1_1CameraActor_1ab1739c0fc0a55082bece11b4018403a1" compoundref="camera-actor_8cpp" startline="69" endline="72">Dali::CameraActor::SetType</referencedby>
+        <referencedby refid="classDali_1_1Geometry_1a947f9c445f53e964c77937ab946feabe" compoundref="geometry_8cpp" startline="75" endline="78">Dali::Geometry::SetType</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelHandle_1a9e1d41019eebe6fe4d928f6a0df63631" compoundref="handle-devel_8cpp" startline="30" endline="33">Dali::DevelHandle::SetTypeInfo</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelPanGesture_1ab5705d7701490f3bad776e89eadfd053" compoundref="pan-gesture-devel_8cpp" startline="38" endline="41">Dali::DevelPanGesture::SetVelocity</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelVertexBuffer_1a2e13033219b3c458a26325117976ce9c" compoundref="vertex-buffer-devel_8cpp" startline="24" endline="27">Dali::DevelVertexBuffer::SetVertexBufferUpdateCallback</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aeddde62d6630b0d6cf2ae7214787a1d1" compoundref="render-task_8cpp" startline="209" endline="212">Dali::RenderTask::SetViewport</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a95ae0c0087285468dcbb3249f413fe78" compoundref="render-task_8cpp" startline="157" endline="167">Dali::RenderTask::SetViewportGuideActor</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1aacd5c3b85fb8332a95c3ccf1c252279e" compoundref="render-task_8cpp" startline="189" endline="192">Dali::RenderTask::SetViewportPosition</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a663c24a5b5bce6d67a1dfea5f049ba11" compoundref="render-task_8cpp" startline="199" endline="202">Dali::RenderTask::SetViewportSize</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelKeyEvent_1a8ab7cc708d3abaff648ca30b0ad09a8a" compoundref="key-event-devel_8cpp" startline="90" endline="93">Dali::DevelKeyEvent::SetWindowId</referencedby>
+        <referencedby refid="classDali_1_1Sampler_1a2c7452aa33a711c3a8c91fa3889db6b9" compoundref="sampler_8cpp" startline="59" endline="62">Dali::Sampler::SetWrapMode</referencedby>
+        <referencedby refid="classDali_1_1Sampler_1ae479b7d5c4694380b47a2c04ee25d09e" compoundref="sampler_8cpp" startline="54" endline="57">Dali::Sampler::SetWrapMode</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1ab3889f9c3778d677dc445c6288d11f2b" compoundref="scene_8cpp" startline="71" endline="74">Dali::Integration::Scene::Show</referencedby>
+        <referencedby refid="classDali_1_1Animation_1a55c3bc2d960c4ae897705b06a5ad7e3e" compoundref="animation_8cpp" startline="286" endline="289">Dali::Animation::Show</referencedby>
+        <referencedby refid="group__dali__core__object_1ga861e4f4cfc55c5f2f6ab53fa85e37343" compoundref="property-conditions_8cpp" startline="94" endline="104">Dali::StepCondition</referencedby>
+        <referencedby refid="classDali_1_1Animation_1ad13cf87e47f8bbca001d058e870f17c9" compoundref="animation_8cpp" startline="154" endline="157">Dali::Animation::Stop</referencedby>
+        <referencedby refid="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" compoundref="handle_8cpp" startline="62" endline="65">Dali::Handle::Supports</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a1006198ce259710cfb580ef913a15a7a" compoundref="scene_8cpp" startline="151" endline="154">Dali::Integration::Scene::SurfaceReplaced</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a148239a158a5449aa7fbfc09d29f417b" compoundref="scene_8cpp" startline="146" endline="149">Dali::Integration::Scene::SurfaceResized</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a0d1e38b628b2f5128bf3db002b56c1f9" compoundref="scene_8cpp" startline="206" endline="209">Dali::Integration::Scene::SurfaceRotated</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1aeceb18de7bd596df7db926dc9c8260a8" compoundref="actor-devel_8cpp" startline="82" endline="85">Dali::DevelActor::SwitchParent</referencedby>
+        <referencedby refid="classDali_1_1Renderer_1a7cd9f365c77e9cf12fc2ee79a4677d3b" compoundref="renderer_8cpp" startline="117" endline="120">Dali::Renderer::TerminateRenderCallback</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ab652579778656c982e878f9ab5284b56" compoundref="texture-integ_8cpp" startline="53" endline="57">Dali::Integration::TextureUploadWithContent</referencedby>
+        <referencedby refid="classDali_1_1Stage_1aa537e9410f478cce42d36ecf5d40c137" compoundref="stage_8cpp" startline="152" endline="155">Dali::Stage::TouchedSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a63fead98f30f10f6c68ae844f5e26ee4" compoundref="scene_8cpp" startline="311" endline="314">Dali::Integration::Scene::TouchedSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1ada69138deca6823d7c4432de705a49d9" compoundref="actor_8cpp" startline="214" endline="217">Dali::Actor::TouchedSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a722ee8a9608d9a9fd8d0c251dcd223d9" compoundref="actor_8cpp" startline="124" endline="127">Dali::Actor::TranslateBy</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a1077f0048f5342385e9b0758cf3d9756" compoundref="actor_8cpp" startline="79" endline="82">Dali::Actor::Unparent</referencedby>
+        <referencedby refid="classDali_1_1SingletonService_1af33107200670734163e8c5348896186b" compoundref="singleton-service_8cpp" startline="40" endline="43">Dali::SingletonService::UnregisterAll</referencedby>
+        <referencedby refid="classDali_1_1Texture_1ad6e33d393b1ad96d587352e177a62e75" compoundref="texture_8cpp" startline="62" endline="66">Dali::Texture::Upload</referencedby>
+        <referencedby refid="classDali_1_1Texture_1ac8e147a5793cd9b7767b28742905cb9f" compoundref="texture_8cpp" startline="68" endline="78">Dali::Texture::Upload</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelTexture_1af1d9c2ae233e051cdfe653d9dffcf134" compoundref="texture-devel_8cpp" startline="36" endline="45">Dali::DevelTexture::UploadSubPixelData</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelTexture_1a447e2d3922dd525f29427119adbc739c" compoundref="texture-devel_8cpp" startline="47" endline="62">Dali::DevelTexture::UploadSubPixelData</referencedby>
+        <referencedby refid="group__dali__core__object_1ga17effa76214cc843988520dd6ec8c889" compoundref="property-conditions_8cpp" startline="106" endline="120">Dali::VariableStepCondition</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1abe0dd203cec99f367cb7db10c2b8c03b" compoundref="render-task_8cpp" startline="281" endline="292">Dali::RenderTask::ViewportToLocal</referencedby>
+        <referencedby refid="namespaceDali_1_1DevelActor_1a2505069eb2404a863402c9e6d6ef204a" compoundref="actor-devel_8cpp" startline="42" endline="45">Dali::DevelActor::VisibilityChangedSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1afb566285e6ddc9beca8293e5ae60fd30" compoundref="scene_8cpp" startline="321" endline="324">Dali::Integration::Scene::WheelEventGeneratedSignal</referencedby>
+        <referencedby refid="classDali_1_1Stage_1afa7a326d4819be5519f7e3344bd52f17" compoundref="stage_8cpp" startline="157" endline="160">Dali::Stage::WheelEventSignal</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a430b9daf18937b05bbb61e547f2f6587" compoundref="scene_8cpp" startline="316" endline="319">Dali::Integration::Scene::WheelEventSignal</referencedby>
+        <referencedby refid="classDali_1_1Actor_1abb45d4e8a7276addded42b6401a28bc7" compoundref="actor_8cpp" startline="224" endline="227">Dali::Actor::WheelEventSignal</referencedby>
+        <referencedby refid="classDali_1_1RenderTask_1a6754bc68093eda889a0165b5a6e61414" compoundref="render-task_8cpp" startline="276" endline="279">Dali::RenderTask::WorldToViewport</referencedby>
+        <referencedby refid="classDali_1_1CustomActor_1a325390766c6e2bedd17e4bd68519b075">Dali::CustomActor::~CustomActor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gacd882d884bc3c78ff53bbd94f18e7a61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const BaseObject &amp;</type>
+        <definition>const BaseObject &amp; Dali::GetImplementation</definition>
+        <argsstring>(const Dali::BaseHandle &amp;handle)</argsstring>
+        <name>GetImplementation</name>
+        <qualifiedname>Dali::GetImplementation</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1BaseHandle" kindref="compound">Dali::BaseHandle</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Gets the implementation of a handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the object the handle points at </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="159" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" bodystart="159" bodyend="164"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" compoundref="base-handle_8cpp" startline="64" endline="67">Dali::BaseHandle::GetBaseObject</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gaa8c5ca0aafcf53e16f1d8abdc241830e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyCondition</type>
+        <definition>DALI_CORE_API PropertyCondition Dali::LessThanCondition</definition>
+        <argsstring>(float arg)</argsstring>
+        <name>LessThanCondition</name>
+        <qualifiedname>Dali::LessThanCondition</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>LessThanCondition compares whether property is less than arg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>property type: bool (false = 0.0f, true = 1.0f) float (float) vector2 (the 2D length) vector3 (the 3D length) vector4 (the 4D length) @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The argument for the condition </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A property condition function object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" line="52" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" bodystart="52" bodyend="60" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.h" declline="127" declcolumn="33"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga04aea5bf576292349831f3c0fc698644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyCondition</type>
+        <definition>DALI_CORE_API PropertyCondition Dali::GreaterThanCondition</definition>
+        <argsstring>(float arg)</argsstring>
+        <name>GreaterThanCondition</name>
+        <qualifiedname>Dali::GreaterThanCondition</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>GreaterThanCondition compares whether property is greater than arg. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>property type: bool (false = 0.0f, true = 1.0f) float (float) vector2 (the 2D length) vector3 (the 3D length) vector4 (the 4D length) @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">arg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The argument for the condition </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A property condition function object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" line="62" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" bodystart="62" bodyend="70" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.h" declline="142" declcolumn="33"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga4f653611f8037b637c5fc9b5b87af89f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyCondition</type>
+        <definition>DALI_CORE_API PropertyCondition Dali::InsideCondition</definition>
+        <argsstring>(float arg0, float arg1)</argsstring>
+        <name>InsideCondition</name>
+        <qualifiedname>Dali::InsideCondition</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>arg0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>InsideCondition compares whether property is greater than arg0 and less than arg1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>property type: bool (false = 0.0f, true = 1.0f) float (float) vector2 (the 2D length) vector3 (the 3D length) vector4 (the 4D length) @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">arg0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first argument for the condition </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second argument for the condition </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A property condition function object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" line="72" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" bodystart="72" bodyend="81" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.h" declline="158" declcolumn="33"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gaef68e4f57993c9339bc54782ab238037" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyCondition</type>
+        <definition>DALI_CORE_API PropertyCondition Dali::OutsideCondition</definition>
+        <argsstring>(float arg0, float arg1)</argsstring>
+        <name>OutsideCondition</name>
+        <qualifiedname>Dali::OutsideCondition</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>arg0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>OutsideCondition compares whether property is less than arg0 or greater than arg1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>property type: bool (false = 0.0f, true = 1.0f) float (float) vector2 (the 2D length) vector3 (the 3D length) vector4 (the 4D length) @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">arg0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first argument for the condition </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second argument for the condition </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A property condition function object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" line="83" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" bodystart="83" bodyend="92" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.h" declline="174" declcolumn="33"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga861e4f4cfc55c5f2f6ab53fa85e37343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyCondition</type>
+        <definition>DALI_CORE_API PropertyCondition Dali::StepCondition</definition>
+        <argsstring>(float stepAmount, float initialValue=0.0f)</argsstring>
+        <name>StepCondition</name>
+        <qualifiedname>Dali::StepCondition</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>stepAmount</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>initialValue</declname>
+          <defval>0.0f</defval>
+        </param>
+        <briefdescription>
+<para>Detects when a property changes by stepAmount from initialValue, in both positive and negative directions. This will continue checking for multiples of stepAmount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>property type: float (float) vector2 (the 2D length) vector3 (the 3D length) vector4 (the 4D length) quaternion (the 3D length of eular angle) @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stepAmount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The step size required to trigger condition </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">initialValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial value to step from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A property condition function object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" line="94" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" bodystart="94" bodyend="104" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.h" declline="190" declcolumn="33"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga17effa76214cc843988520dd6ec8c889" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PropertyCondition</type>
+        <definition>DALI_CORE_API PropertyCondition Dali::VariableStepCondition</definition>
+        <argsstring>(const Dali::Vector&lt; float &gt; &amp;steps)</argsstring>
+        <name>VariableStepCondition</name>
+        <qualifiedname>Dali::VariableStepCondition</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Vector" kindref="compound">Dali::Vector</ref>&lt; float &gt; &amp;</type>
+          <declname>steps</declname>
+        </param>
+        <briefdescription>
+<para>Receives notifications as a property goes above/below the inputted values. Values must be ordered and can be either ascending or descending. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>property type: float (float) vector2 (the 2D length) vector3 (the 3D length) vector4 (the 4D length) @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">steps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of values to receive notifications for as a property crosses them </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A property condition function object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" line="106" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.cpp" bodystart="106" bodyend="120" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-conditions.h" declline="204" declcolumn="33"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="classDali_1_1Vector_1af552bde16aa0dcb0fc096f37ed97f8ed" compoundref="dali-vector_8h" startline="279" endline="300">Dali::Vector&lt; T, IsTrivialType &gt;::PushBack</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gaa2e9fcf176efc8fb4b89d1d03fd855f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>DALI_CORE_API std::ostream &amp; Dali::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;ouputStream, const Property::Value &amp;value)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Dali::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>ouputStream</declname>
+        </param>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Converts the value of the property into a string and appends to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ouputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream operator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output stream operator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-value.cpp" line="1477" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-value.cpp" bodystart="1477" bodyend="1559" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/stream-operators.h" declline="192" declcolumn="15"/>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dae1044b51824cb5bc9715f063549fa7ea" compoundref="property_8h" startline="97">Dali::Property::ARRAY</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da538a12b1a95a82f6dae06b9cf7835df7" compoundref="property_8h" startline="86">Dali::Property::BOOLEAN</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da77993d8ecbf2d9cf05dfb42c40df1279" compoundref="property_8h" startline="99">Dali::Property::EXTENTS</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" compoundref="property_8h" startline="87">Dali::Property::FLOAT</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" compoundref="property_8h" startline="88">Dali::Property::INTEGER</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa2797cc5930c018ec6bd57e57963c44c" compoundref="property_8h" startline="98">Dali::Property::MAP</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da80bed9c63b894010f9514d17f3e67f69" compoundref="property_8h" startline="93">Dali::Property::MATRIX</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0bada199f2b111eab4f90804e91873c8" compoundref="property_8h" startline="92">Dali::Property::MATRIX3</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da67591ad233734318c707cb70cf816f60" compoundref="property_8h" startline="84">Dali::Property::NONE</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da478a0ac68b6a747de651008974fc21aa" compoundref="property_8h" startline="94">Dali::Property::RECTANGLE</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dad7b0246e879ecd1fb0cbbef3ed4bf6dd" compoundref="property_8h" startline="95">Dali::Property::ROTATION</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da1554fbf61f4d3bbbfaaa914612cf12cb" compoundref="property-key_8h" startline="50">Dali::Property::STRING</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa5153e9670e8eeb32160ada6e41469a2" compoundref="property_8h" startline="89">Dali::Property::VECTOR2</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da61265bdf25f65c089b1aed5f25d9b336" compoundref="property_8h" startline="90">Dali::Property::VECTOR3</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" compoundref="property_8h" startline="91">Dali::Property::VECTOR4</references>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gad22cf428c79bf42d6f9e4fd1446e42f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>DALI_CORE_API std::ostream &amp; Dali::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;stream, const Property::Map &amp;map)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Dali::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>const Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Converts the key/value pairs of the property map into a string and append to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.28 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream operator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output stream operator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-map.cpp" line="641" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-map.cpp" bodystart="641" bodyend="678" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/stream-operators.h" declline="202" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1ga42b97ce56ef695000d692380639b391d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>DALI_CORE_API std::ostream &amp; Dali::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;stream, const Property::Array &amp;array)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Dali::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>const Property::Array &amp;</type>
+          <declname>array</declname>
+        </param>
+        <briefdescription>
+<para>Converts the values of the property array into a string and append to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.28 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream operator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output stream operator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-array.cpp" line="254" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-array.cpp" bodystart="254" bodyend="277" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/stream-operators.h" declline="212" declcolumn="15"/>
+        <referencedby refid="group__dali__core__object_1gac31fccbd521d4a56a3f8a4f9c30ed989" compoundref="property-key_8cpp" startline="113" endline="124">Dali::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__dali__core__object_1gac31fccbd521d4a56a3f8a4f9c30ed989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>DALI_CORE_API std::ostream &amp; Dali::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;stream, const Property::Key &amp;key)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Dali::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>const Property::Key &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Convert the key into a string and append to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.7 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream operator. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the key to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output stream operator. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-key.cpp" line="113" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-key.cpp" bodystart="113" bodyend="124" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/stream-operators.h" declline="222" declcolumn="15"/>
+        <references refid="group__dali__core__object_1ga42b97ce56ef695000d692380639b391d" compoundref="property-array_8cpp" startline="254" endline="277">Dali::operator&lt;&lt;</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

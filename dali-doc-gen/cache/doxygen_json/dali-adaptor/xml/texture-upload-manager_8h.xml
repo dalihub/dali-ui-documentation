@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="texture-upload-manager_8h" kind="file" language="C++">
+    <compoundname>texture-upload-manager.h</compoundname>
+    <includes local="no">dali/public-api/common/intrusive-ptr.h</includes>
+    <includes local="no">dali/public-api/images/pixel-data.h</includes>
+    <includes local="no">dali/public-api/object/base-handle.h</includes>
+    <includes local="no">dali/public-api/rendering/texture.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="texture-upload-manager_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/texture-upload-manager.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/texture-upload-manager.h</label>
+        <link refid="texture-upload-manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/common/intrusive-ptr.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/images/pixel-data.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/rendering/texture.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/texture-upload-manager.cpp</label>
+        <link refid="texture-upload-manager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/texture-upload-manager.h</label>
+        <link refid="texture-upload-manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Devel_1_1TextureUploadManager" prot="public">Dali::Devel::TextureUploadManager</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal_1_1Adaptor">Dali::Internal::Adaptor</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Devel">Dali::Devel</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_DEVEL_TEXTURE_UPLOAD_MANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_DEVEL_TEXTURE_UPLOAD_MANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/intrusive-ptr.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/images/pixel-data.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/base-handle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/rendering/texture.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal<sp/>DALI_INTERNAL</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Adaptor<sp/>DALI_INTERNAL</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TextureUploadManager;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>Adaptor<sp/>DALI_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>Internal<sp/>DALI_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Devel</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1Devel_1_1TextureUploadManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="classDali_1_1Devel_1_1TextureUploadManager" kindref="compound">TextureUploadManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BaseHandle</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65" refid="classDali_1_1Devel_1_1TextureUploadManager_1a1baf33b0157cb050032eb684292e1594" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Devel_1_1TextureUploadManager_1a1baf33b0157cb050032eb684292e1594" kindref="member">ResourceId</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uint32_t;</highlight></codeline>
+<codeline lineno="66" refid="classDali_1_1Devel_1_1TextureUploadManager_1a80f831a3de708c234d1ee6da96198411" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1TextureUploadManager_1a1baf33b0157cb050032eb684292e1594" kindref="member">ResourceId</ref><sp/>INVALID_RESOURCE_ID<sp/>=<sp/>0u;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Callbed<sp/>by<sp/>main<sp/>thread.</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Devel_1_1TextureUploadManager" kindref="compound">TextureUploadManager</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classDali_1_1Devel_1_1TextureUploadManager_1a563609dac96067a8dc7568164d962b82" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Devel_1_1TextureUploadManager_1a563609dac96067a8dc7568164d962b82" kindref="member">~TextureUploadManager</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Devel_1_1TextureUploadManager" kindref="compound">TextureUploadManager</ref><sp/>Get();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>Dali::Texture<sp/>GenerateTexture2D();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Called<sp/>by<sp/>update<sp/>thread.</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ResourceUpload();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Can<sp/>be<sp/>callbed<sp/>by<sp/>worker<sp/>thread.</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RequestUpload(<ref refid="classDali_1_1Devel_1_1TextureUploadManager_1a1baf33b0157cb050032eb684292e1594" kindref="member">ResourceId</ref><sp/>resourceId,<sp/>PixelData<sp/>pixelData);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>DALI_INTERNAL<sp/><ref refid="classDali_1_1Devel_1_1TextureUploadManager" kindref="compound">TextureUploadManager</ref>(Internal::Adaptor::TextureUploadManager*<sp/>impl);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Devel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/texture-upload-manager.h"/>
+  </compounddef>
+</doxygen>

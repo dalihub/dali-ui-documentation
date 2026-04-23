@@ -1,0 +1,423 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="npatch-utilities_8cpp" kind="file" language="C++">
+    <compoundname>npatch-utilities.cpp</compoundname>
+    <includes refid="npatch-utilities_8h" local="no">dali-ui-foundation/devel-api/utility/npatch-utilities.h</includes>
+    <includes local="no">dali/integration-api/debug.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/utility/npatch-utilities.cpp</label>
+        <link refid="npatch-utilities_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/devel-api/utility/npatch-utilities.h</label>
+        <link refid="npatch-utilities_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/devel-api/adaptor-framework/pixel-buffer.h</label>
+      </node>
+      <node id="9">
+        <label>dali/integration-api/debug.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/math/uint-16-pair.h</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui_1_1NPatchUtility">Dali::Ui::NPatchUtility</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="npatch-utilities_8h" kindref="compound">dali-ui-foundation/devel-api/utility/npatch-utilities.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/debug.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28" refid="namespaceDali_1_1Ui_1_1NPatchUtility" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">NPatchUtility</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">Uint16Pair<sp/>ParseRange(uint32_t&amp;<sp/>index,<sp/>uint32_t<sp/>width,<sp/>uint8_t*&amp;<sp/>pixel,<sp/>uint32_t<sp/>pixelStride,<sp/>int32_t<sp/>testByte,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int32_t<sp/>testBits,<sp/>int32_t<sp/>testValue)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start<sp/>=<sp/>0xFFFF;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;<sp/>index<sp/>&lt;<sp/>width;<sp/>++index,<sp/>pixel<sp/>+=<sp/>pixelStride)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((pixel[testByte]<sp/>&amp;<sp/>testBits)<sp/>==<sp/>testValue)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++index;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pixel<sp/>+=<sp/>pixelStride;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>end<sp/>=<sp/>width;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;<sp/>index<sp/>&lt;<sp/>width;<sp/>++index,<sp/>pixel<sp/>+=<sp/>pixelStride)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((pixel[testByte]<sp/>&amp;<sp/>testBits)<sp/>!=<sp/>testValue)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++index;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pixel<sp/>+=<sp/>pixelStride;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Uint16Pair(start,<sp/>end);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>unnamed<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="namespaceDali_1_1Ui_1_1NPatchUtility_1aac479dc2dfcceb2ff94beb1e00567e56" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1aac479dc2dfcceb2ff94beb1e00567e56" kindref="member">GetRedOffsetAndMask</ref>(Dali::Pixel::Format<sp/>pixelFormat,<sp/>int32_t&amp;<sp/>byteOffset,<sp/>int32_t&amp;<sp/>bitMask)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(pixelFormat)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::A8:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::L8:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::LA88:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGB888:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGB8888:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGBA8888:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0xFF;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::BGR8888:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::BGRA8888:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0xff;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGB565:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0xf8;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::BGR565:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0x1f;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGBA4444:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0xf0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::BGRA4444:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0xf0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGBA5551:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0xf8;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::BGRA5551:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0x1e;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::INVALID:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_R11_EAC:</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SIGNED_R11_EAC:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RG11_EAC:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SIGNED_RG11_EAC:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGB8_ETC2:</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ETC2:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGB8_ETC1:</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGB_PVRTC_4BPPV1:</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA8_ETC2_EAC:</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ETC2_EAC:</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_4x4_KHR:</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_5x4_KHR:</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_5x5_KHR:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_6x5_KHR:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_6x6_KHR:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_8x5_KHR:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_8x6_KHR:</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_8x8_KHR:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_10x5_KHR:</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_10x6_KHR:</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_10x8_KHR:</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_10x10_KHR:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_12x10_KHR:</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_RGBA_ASTC_12x12_KHR:</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR:</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR:</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR:</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR:</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR:</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR:</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR:</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR:</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR:</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR:</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pixel<sp/>formats<sp/>for<sp/>compressed<sp/>images<sp/>are<sp/>not<sp/>compatible<sp/>with<sp/>simple<sp/>masking-out<sp/>of<sp/>per-pixel<sp/>alpha.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGB16F:</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::RGB32F:</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::DEPTH_UNSIGNED_INT:</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::DEPTH_FLOAT:</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::DEPTH_STENCIL:</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::R11G11B10F:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::CHROMINANCE_U:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Dali::Pixel::CHROMINANCE_V:</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;Pixel<sp/>format<sp/>not<sp/>compatible.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>byteOffset<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bitMask<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="namespaceDali_1_1Ui_1_1NPatchUtility_1a5b004c4427cbcc72947b3623f17bef75" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1a5b004c4427cbcc72947b3623f17bef75" kindref="member">ParseBorders</ref>(Devel::PixelBuffer&amp;<sp/>pixelBuffer,<sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1aef9b817fd69e1779edef402d9eba19d0" kindref="member">StretchRanges</ref>&amp;<sp/>stretchPixelsX,<sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1aef9b817fd69e1779edef402d9eba19d0" kindref="member">StretchRanges</ref>&amp;<sp/>stretchPixelsY)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>stretchPixelsX.Clear();</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>stretchPixelsY.Clear();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>Pixel::Format<sp/>pixelFormat<sp/>=<sp/>pixelBuffer.GetPixelFormat();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>int32_t<sp/>alphaByte<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>int32_t<sp/>alphaBits<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>Pixel::GetAlphaOffsetAndMask(pixelFormat,<sp/>alphaByte,<sp/>alphaBits);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>int32_t<sp/>testByte<sp/><sp/>=<sp/>alphaByte;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>int32_t<sp/>testBits<sp/><sp/>=<sp/>alphaBits;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>int32_t<sp/>testValue<sp/>=<sp/>alphaBits;<sp/></highlight><highlight class="comment">//<sp/>Opaque<sp/>==<sp/>stretch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!alphaBits)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1aac479dc2dfcceb2ff94beb1e00567e56" kindref="member">GetRedOffsetAndMask</ref>(pixelFormat,<sp/>testByte,<sp/>testBits);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>testValue<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>Black<sp/>==<sp/>stretch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>uint32_t<sp/>bytesPerPixel<sp/>=<sp/>Pixel::GetBytesPerPixel(pixelFormat);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>uint32_t<sp/>width<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>pixelBuffer.GetWidth();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>uint32_t<sp/>height<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>pixelBuffer.GetHeight();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>uint32_t<sp/>srcStride<sp/><sp/><sp/><sp/><sp/>=<sp/>pixelBuffer.GetStrideBytes()<sp/>?<sp/>pixelBuffer.GetStrideBytes()<sp/>:<sp/>width<sp/>*<sp/>bytesPerPixel;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/>uint8_t*<sp/>srcPixels<sp/><sp/><sp/><sp/><sp/>=<sp/>pixelBuffer.GetBuffer();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(width<sp/>&lt;=<sp/>2<sp/>||<sp/>width<sp/>&gt;=<sp/>0xFFFF<sp/>||<sp/>height<sp/>&lt;=<sp/>2<sp/>||<sp/>height<sp/>&gt;=<sp/>0xFFFF)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;PixelBuffer<sp/>size<sp/>not<sp/>allowed!<sp/>[%u<sp/>x<sp/>%u]<sp/>border<sp/>parsing<sp/>failed\n&quot;</highlight><highlight class="normal">,<sp/>width,<sp/>height);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TOP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>uint8_t*<sp/>top<sp/><sp/><sp/>=<sp/>srcPixels<sp/>+<sp/>bytesPerPixel;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>uint32_t<sp/>index<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;<sp/>index<sp/>&lt;<sp/>width<sp/>-<sp/>2;)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint16Pair<sp/>range<sp/>=<sp/>ParseRange(index,<sp/>width<sp/>-<sp/>2,<sp/>top,<sp/>bytesPerPixel,<sp/>testByte,<sp/>testBits,<sp/>testValue);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(range.GetX()<sp/>!=<sp/>0xFFFF)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stretchPixelsX.PushBack(range);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>LEFT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>uint8_t*<sp/>left<sp/>=<sp/>srcPixels<sp/>+<sp/>srcStride;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>index<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;<sp/>index<sp/>&lt;<sp/>height<sp/>-<sp/>2;)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint16Pair<sp/>range<sp/>=<sp/>ParseRange(index,<sp/>height<sp/>-<sp/>2,<sp/>left,<sp/>srcStride,<sp/>testByte,<sp/>testBits,<sp/>testValue);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(range.GetX()<sp/>!=<sp/>0xFFFF)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stretchPixelsY.PushBack(range);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>there<sp/>are<sp/>no<sp/>stretch<sp/>pixels<sp/>then<sp/>make<sp/>the<sp/>entire<sp/>image<sp/>stretchable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(stretchPixelsX.Size()<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>stretchPixelsX.PushBack(Uint16Pair(0,<sp/>width<sp/>-<sp/>2));</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(stretchPixelsY.Size()<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>stretchPixelsY.PushBack(Uint16Pair(0,<sp/>height<sp/>-<sp/>2));</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="namespaceDali_1_1Ui_1_1NPatchUtility_1a5b62c8a2fa36e1ef6da843235480d7e6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1a5b62c8a2fa36e1ef6da843235480d7e6" kindref="member">IsNinePatchUrl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>url)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>match<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/>std::string::const_reverse_iterator<sp/>iter<sp/>=<sp/>url.rbegin();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>SUFFIX,</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>HASH,</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>HASH_DOT,</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>DONE</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>}<sp/>state<sp/>=<sp/>SUFFIX;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(iter<sp/>&lt;<sp/>url.rend())</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(state)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>SUFFIX:</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*iter<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>HASH;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!isalnum(*iter))</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>DONE;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>HASH:</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*iter<sp/>==<sp/></highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal"><sp/>||<sp/>*iter<sp/>==<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>HASH_DOT;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>DONE;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>HASH_DOT:</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*iter<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>match<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>DONE;<sp/></highlight><highlight class="comment">//<sp/>Stop<sp/>testing<sp/>characters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DONE:</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Satisfy<sp/>prevent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(state<sp/>==<sp/>DONE)</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>++iter;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>match;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328" refid="namespaceDali_1_1Ui_1_1NPatchUtility_1a9f8d405ff0a825f57f67e2727f78eb26" refkind="member"><highlight class="normal">Dali::Uint16Pair<sp/><ref refid="namespaceDali_1_1Ui_1_1NPatchUtility_1a9f8d405ff0a825f57f67e2727f78eb26" kindref="member">GetValidStrechPointFromBorder</ref>(uint32_t<sp/>maxRangeSize,<sp/>uint32_t<sp/>rangeFromZero,<sp/>uint32_t<sp/>rangeFromMax)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/>maxRangeSize<sp/><sp/>=<sp/>std::min(maxRangeSize,<sp/>0xFFFFu);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/>rangeFromZero<sp/>=<sp/>std::min(rangeFromZero,<sp/>0xFFFFu);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/>rangeFromMax<sp/><sp/>=<sp/>std::min(rangeFromMax,<sp/>0xFFFFu);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(DALI_UNLIKELY(rangeFromZero<sp/>+<sp/>rangeFromMax<sp/>&gt;<sp/>maxRangeSize))</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Keep<sp/>ratio<sp/>and<sp/>make<sp/>ensure<sp/>that<sp/>sume<sp/>of<sp/>value<sp/>didn&apos;t<sp/>overflow<sp/>the<sp/>max<sp/>range.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>we<sp/>can<sp/>assume<sp/>that<sp/>rangeSum<sp/>is<sp/>bigger<sp/>than<sp/>zero!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>rangeSum<sp/>=<sp/>rangeFromZero<sp/>+<sp/>rangeFromMax;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>rangeFromZero<sp/>=<sp/>(rangeFromZero<sp/>*<sp/>maxRangeSize)<sp/>/<sp/>rangeSum;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>rangeFromMax<sp/><sp/>=<sp/>(rangeFromMax<sp/>*<sp/>maxRangeSize)<sp/>/<sp/>rangeSum;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>to<sp/>make<sp/>rangeFromZero<sp/>+<sp/>rangeFromMax<sp/>is<sp/>equal<sp/>to<sp/>maxRangeSize.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>remainedRange<sp/>=<sp/>maxRangeSize<sp/>-<sp/>(rangeFromZero<sp/>+<sp/>rangeFromMax);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>rangeFromZero<sp/>+=<sp/>(remainedRange<sp/>/<sp/>2);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>rangeFromMax<sp/>+=<sp/>remainedRange<sp/>-<sp/>(remainedRange<sp/>/<sp/>2);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/>DALI_ASSERT_DEBUG(rangeFromZero<sp/>+<sp/>rangeFromMax<sp/>&lt;=<sp/>maxRangeSize<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Rearrange<sp/>strech<sp/>point<sp/>failed!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Uint16Pair(rangeFromZero,<sp/>maxRangeSize<sp/>-<sp/>rangeFromMax);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>NPatchUtility</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/utility/npatch-utilities.cpp"/>
+  </compounddef>
+</doxygen>

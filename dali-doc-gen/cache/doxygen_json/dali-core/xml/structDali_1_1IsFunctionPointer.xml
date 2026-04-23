@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structDali_1_1IsFunctionPointer" kind="struct" language="C++" prot="public">
+    <compoundname>Dali::IsFunctionPointer</compoundname>
+    <includes refid="type-traits_8h" local="no">type-traits.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Deleter</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structDali_1_1IsFunctionPointer_1a211764eea950a1bbb90067a8b327bcf3" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Dali::IsFunctionPointer&lt; Deleter &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>Dali::IsFunctionPointer::value</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="98" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper to detect if a type is a function pointer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a type trait used for compile-time type detection. It allows templates to behave differently based on whether a type is a function pointer or not.</para>
+<para>The primary template returns false for all non-function-pointer types. Specializations can be added to return true for specific function pointer types.</para>
+<para>@SINCE_2_5.11</para>
+<para>Example usage: <programlisting><codeline><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IsFunctionPointer&lt;void<sp/>(*)(T*)&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1IsFunctionPointer_1a211764eea950a1bbb90067a8b327bcf3" kindref="member">value</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>True<sp/>for<sp/>function<sp/>pointers</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Usage:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">IsFunctionPointer&lt;void<sp/>(*)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)&gt;<ref refid="structDali_1_1IsFunctionPointer_1a211764eea950a1bbb90067a8b327bcf3" kindref="member">::value</ref>;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="structDali_1_1IsFunctionPointer_1a211764eea950a1bbb90067a8b327bcf3" kindref="member">IsFunctionPointer&lt;CustomDeleter&gt;::value</ref>;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>false</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="96" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="97" bodyend="99"/>
+    <listofallmembers>
+      <member refid="structDali_1_1IsFunctionPointer_1a211764eea950a1bbb90067a8b327bcf3" prot="public" virt="non-virtual"><scope>Dali::IsFunctionPointer</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

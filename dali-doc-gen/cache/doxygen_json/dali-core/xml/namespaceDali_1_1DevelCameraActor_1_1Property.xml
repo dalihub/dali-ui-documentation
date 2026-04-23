@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1DevelCameraActor_1_1Property" kind="namespace" language="C++">
+    <compoundname>Dali::DevelCameraActor::Property</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1DevelCameraActor_1_1Property_1a379afc2ca93f94c4a78294d81aab93e5" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>Dali::DevelCameraActor::Property</qualifiedname>
+        <enumvalue id="namespaceDali_1_1DevelCameraActor_1_1Property_1a379afc2ca93f94c4a78294d81aab93e5a636460b1796554ef9d17ee056699b72c" prot="public">
+          <name>ORTHOGRAPHIC_SIZE</name>
+          <initializer>= CameraActor::Property::INVERT_Y_AXIS + 1</initializer>
+          <briefdescription>
+<para>Orthographic Size of this camera. If ProjectionDirection is Vertical, OrthographicSize is height/2 of viewing cube of Orthographic projection. If ProjectionDirection is Horizontal, OrthographicSize is width/2 of viewing cube of Orthographic projection. Remained Width or Height of viewing cube is internally computed by using aspect ratio. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Name &quot;orthographicSize&quot;, type <ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" kindref="member">Property::FLOAT</ref>, animatable, constraint-input <simplesect kind="note"><para>Default is 400.0f </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1DevelCameraActor_1_1Property_1a379afc2ca93f94c4a78294d81aab93e5a05fb3f8490c88bd4e14bc8a895f7ada2" prot="public">
+          <name>PROJECTION_DIRECTION</name>
+          <briefdescription>
+<para>Determine basic direction of projection relative properties. It will be used when we need to calculate some values relative with aspect ratio automatically. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>For example, if aspect ratio is 4:3 and set fieldOfView as 60 degree.<itemizedlist>
+<listitem><para><ref refid="namespaceDali_1_1DevelCameraActor_1aa116ff9243cf13ca98b4770ac2d0e5e8a3a9f4f50e9bf83f902c683e7b32a8f61" kindref="member">ProjectionDirection::VERTICAL</ref> : basic direction is vertical. so, FoV of horizontal direction become ~75.2 degree</para>
+</listitem><listitem><para><ref refid="namespaceDali_1_1DevelCameraActor_1aa116ff9243cf13ca98b4770ac2d0e5e8afa456aef5977fd7a15cf31320e53daff" kindref="member">ProjectionDirection::HORIZONTAL</ref> : basic direction is horizontal. so, FoV of vertical direction become ~46.8 degree</para>
+</listitem></itemizedlist>
+</para>
+<para>Another example, if aspect ratio is 4:3 and set orthographicSize as 400.0f.<itemizedlist>
+<listitem><para><ref refid="namespaceDali_1_1DevelCameraActor_1aa116ff9243cf13ca98b4770ac2d0e5e8a3a9f4f50e9bf83f902c683e7b32a8f61" kindref="member">ProjectionDirection::VERTICAL</ref> : basic direction is vertical. so, topPlaneDistance become 400.0f, rightPlaneDistance value become 533.3f.</para>
+</listitem><listitem><para><ref refid="namespaceDali_1_1DevelCameraActor_1aa116ff9243cf13ca98b4770ac2d0e5e8afa456aef5977fd7a15cf31320e53daff" kindref="member">ProjectionDirection::HORIZONTAL</ref> : basic direction is horizontal. so, topPlaneDistance become 300.0f, rightPlaneDistance value become 400.0f.</para>
+<para>Type Property::INT <simplesect kind="note"><para>This property doesn&apos;t change FieldOfView and OrthographicSize value automatically. So result scene might be changed. </para>
+</simplesect>
+<simplesect kind="note"><para>Default is <ref refid="namespaceDali_1_1DevelCameraActor_1aa116ff9243cf13ca98b4770ac2d0e5e8a3a9f4f50e9bf83f902c683e7b32a8f61" kindref="member">ProjectionDirection::VERTICAL</ref>. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1DevelCameraActor_1_1Property_1a379afc2ca93f94c4a78294d81aab93e5a9c956775cbdc2127220e5c859a1c5131" prot="public">
+          <name>REFLECTION_PLANE</name>
+          <briefdescription>
+<para>Defines reflection plane for the camera. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Type <ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" kindref="member">Property::VECTOR4</ref> <simplesect kind="note"><para>Optional </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/camera-actor-devel.h" line="38" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/camera-actor-devel.h" bodystart="39" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/camera-actor-devel.h" line="36" column="1"/>
+  </compounddef>
+</doxygen>

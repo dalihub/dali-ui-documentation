@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1DevelNativeImage" kind="namespace" language="C++">
+    <compoundname>Dali::DevelNativeImage</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1DevelNativeImage_1a4cf56976dbb0a999ec71f2487b9b00c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_ADAPTOR_API bool Dali::DevelNativeImage::EncodeToFile</definition>
+        <argsstring>(NativeImage &amp;image, const std::string &amp;filename, const uint32_t quality)</argsstring>
+        <name>EncodeToFile</name>
+        <qualifiedname>Dali::DevelNativeImage::EncodeToFile</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>quality</declname>
+        </param>
+        <briefdescription>
+<para>Converts the current pixel contents to either a JPEG or PNG format and write that to the filesystem. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identify the filesystem location at which to write the encoded image. The extension determines the encoding used. The two valid encoding are (&quot;.jpeg&quot;|&quot;.jpg&quot;) and &quot;.png&quot;. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to control image quality for jpeg file format in the range [1, 100] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the pixels were written, and <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="28" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" bodystart="28" bodyend="31" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h" declline="43" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelNativeImage_1aabcd46b9651b2f5d970060cf050990ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>DALI_ADAPTOR_API uint8_t * Dali::DevelNativeImage::AcquireBuffer</definition>
+        <argsstring>(NativeImage &amp;image, uint32_t &amp;width, uint32_t &amp;height, uint32_t &amp;stride)</argsstring>
+        <name>AcquireBuffer</name>
+        <qualifiedname>Dali::DevelNativeImage::AcquireBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>stride</declname>
+        </param>
+        <briefdescription>
+<para>Acquire buffer and information of an internal native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="namespaceDali_1_1DevelNativeImage_1aabcd46b9651b2f5d970060cf050990ef" kindref="member">AcquireBuffer()</ref> and <ref refid="namespaceDali_1_1DevelNativeImage_1a348cd0b2daa6be43e2f20b5ee3527bd9" kindref="member">ReleaseBuffer()</ref> are a pair. <ref refid="namespaceDali_1_1DevelNativeImage_1a348cd0b2daa6be43e2f20b5ee3527bd9" kindref="member">ReleaseBuffer()</ref> MUST be called after <ref refid="namespaceDali_1_1DevelNativeImage_1aabcd46b9651b2f5d970060cf050990ef" kindref="member">AcquireBuffer()</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stride of image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The buffer of an internal native image </para>
+</simplesect>
+<simplesect kind="note"><para>This locks a mutex until ReleaseBuffer is called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="33" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" bodystart="33" bodyend="36" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h" declline="57" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelNativeImage_1a348cd0b2daa6be43e2f20b5ee3527bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_ADAPTOR_API bool Dali::DevelNativeImage::ReleaseBuffer</definition>
+        <argsstring>(NativeImage &amp;image, const Rect&lt; uint32_t &gt; &amp;updatedArea)</argsstring>
+        <name>ReleaseBuffer</name>
+        <qualifiedname>Dali::DevelNativeImage::ReleaseBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>const Rect&lt; uint32_t &gt; &amp;</type>
+          <declname>updatedArea</declname>
+        </param>
+        <briefdescription>
+<para>Release information of an internal native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="namespaceDali_1_1DevelNativeImage_1aabcd46b9651b2f5d970060cf050990ef" kindref="member">AcquireBuffer()</ref> and <ref refid="namespaceDali_1_1DevelNativeImage_1a348cd0b2daa6be43e2f20b5ee3527bd9" kindref="member">ReleaseBuffer()</ref> are a pair. <ref refid="namespaceDali_1_1DevelNativeImage_1a348cd0b2daa6be43e2f20b5ee3527bd9" kindref="member">ReleaseBuffer()</ref> MUST be called after <ref refid="namespaceDali_1_1DevelNativeImage_1aabcd46b9651b2f5d970060cf050990ef" kindref="member">AcquireBuffer()</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">updatedArea</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The updated area of the buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> If the buffer is released successfully, and <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+<simplesect kind="note"><para>The empty updatedArea means that the entire area has been changed. </para>
+</simplesect>
+<simplesect kind="note"><para>This unlocks the mutex locked by AcquireBuffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="38" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" bodystart="38" bodyend="41" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h" declline="70" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelNativeImage_1a63f913340a1330c0eaa6dc10a55b7ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_ADAPTOR_API bool Dali::DevelNativeImage::SetPixels</definition>
+        <argsstring>(NativeImage &amp;image, uint8_t *pixbuf, const Pixel::Format &amp;pixelFormat)</argsstring>
+        <name>SetPixels</name>
+        <qualifiedname>Dali::DevelNativeImage::SetPixels</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>pixbuf</declname>
+        </param>
+        <param>
+          <type>const Pixel::Format &amp;</type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+<para>Sets PixelBuffers to <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pixbuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pixel buffer to copy. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pixel format of the pixel buffer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> If the buffer is successfully set. </para>
+</simplesect>
+<simplesect kind="note"><para>The width and height of the input pixel buffer should be same with those of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</simplesect>
+<simplesect kind="note"><para>Only Pixel::Format::RGB888 and Pixel::Format::RGBA8888 are available as a input pixel format. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="43" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" bodystart="43" bodyend="46" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h" declline="82" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelNativeImage_1a4710d1ac39d47ed6ef4ff7943480280a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_ADAPTOR_API void Dali::DevelNativeImage::SetResourceDestructionCallback</definition>
+        <argsstring>(NativeImage &amp;image, EventThreadCallback *callback, bool ownedCallback)</argsstring>
+        <name>SetResourceDestructionCallback</name>
+        <qualifiedname>Dali::DevelNativeImage::SetResourceDestructionCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1EventThreadCallback" kindref="compound">EventThreadCallback</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ownedCallback</declname>
+        </param>
+        <briefdescription>
+<para>Set the Resource Destruction Callback object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Resource Destruction callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ownedCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if ownership of the callback is passed onto this class. False if ownership of the callback is exclude. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="48" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" bodystart="48" bodyend="51" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h" declline="91" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelNativeImage_1a8fee65fc6012b368ca26a01ec37723e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_ADAPTOR_API void Dali::DevelNativeImage::EnableBackBuffer</definition>
+        <argsstring>(NativeImage &amp;image, bool enable)</argsstring>
+        <name>EnableBackBuffer</name>
+        <qualifiedname>Dali::DevelNativeImage::EnableBackBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+<para>Enable a back buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance of <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">enable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether a back buffer is enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The front buffer will be copied to the back buffer before rendering if the front buffer is updated by AcquireBuffer and ReleaseBuffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="53" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" bodystart="53" bodyend="56" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.h" declline="99" declcolumn="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-devel.cpp" line="26" column="1"/>
+  </compounddef>
+</doxygen>

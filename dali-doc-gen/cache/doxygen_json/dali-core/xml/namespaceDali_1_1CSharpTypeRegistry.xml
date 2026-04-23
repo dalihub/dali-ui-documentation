@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1CSharpTypeRegistry" kind="namespace" language="C++">
+    <compoundname>Dali::CSharpTypeRegistry</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1CSharpTypeRegistry_1ad39023868685ecb731393aec945669a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::CSharpTypeRegistry::RegisterType</definition>
+        <argsstring>(const std::string &amp;name, const std::type_info &amp;baseType, CSharpTypeInfo::CreateFunction f)</argsstring>
+        <name>RegisterType</name>
+        <qualifiedname>Dali::CSharpTypeRegistry::RegisterType</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::type_info &amp;</type>
+          <declname>baseType</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1CSharpTypeInfo_1a9877cd5fef6191c97b2b478719e3e1d4" kindref="member">CSharpTypeInfo::CreateFunction</ref></type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>Constructor registers the type creation function for a named class or type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This allows types to be created dynamically from script. The name must be unique for successful registration. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the type to be registered </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">baseType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the base type info of registerType </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>registerType instance creation function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the name could be registered. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.cpp" line="28" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.cpp" bodystart="28" bodyend="35" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.h" declline="47" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1CSharpTypeRegistry_1a02c82371cc2cbff05c16a8d378e71d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::CSharpTypeRegistry::RegisterProperty</definition>
+        <argsstring>(const std::string &amp;objectName, const std::string &amp;name, Property::Index index, Property::Type type, CSharpTypeInfo::SetPropertyFunction setFunc, CSharpTypeInfo::GetPropertyFunction getFunc)</argsstring>
+        <name>RegisterProperty</name>
+        <qualifiedname>Dali::CSharpTypeRegistry::RegisterProperty</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>objectName</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1acb569f557811bc94d2e98b5c880d759c" kindref="member">Property::Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1CSharpTypeInfo_1a286459b767ab26367f66a49f7bfb0339" kindref="member">CSharpTypeInfo::SetPropertyFunction</ref></type>
+          <declname>setFunc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1CSharpTypeInfo_1a3ee35f30fd45ab8692b84d2829d2ecdb" kindref="member">CSharpTypeInfo::GetPropertyFunction</ref></type>
+          <declname>getFunc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register an event-thread only property with a type (used by C# Custom controls) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">objectName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the object used to register the type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Property" kindref="compound">Property</ref> name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Property" kindref="compound">Property</ref> index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Property" kindref="compound">Property</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">setFunc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to set the property (Can be NULL). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">getFunc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to get the value of a property. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the property could be registered. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.cpp" line="37" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.cpp" bodystart="37" bodyend="47" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.h" declline="61" declcolumn="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Custom static functions for registering C# custom controls and properties </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/csharp-type-registry.cpp" line="26" column="1"/>
+  </compounddef>
+</doxygen>

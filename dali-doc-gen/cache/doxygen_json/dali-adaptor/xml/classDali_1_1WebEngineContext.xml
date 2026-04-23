@@ -1,0 +1,1344 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1WebEngineContext" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::WebEngineContext</compoundname>
+    <includes refid="web-engine-context_8h" local="no">web-engine-context.h</includes>
+    <innerclass refid="structDali_1_1WebEngineContext_1_1PasswordData" prot="public">Dali::WebEngineContext::PasswordData</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CacheModel</name>
+        <qualifiedname>Dali::WebEngineContext::CacheModel</qualifiedname>
+        <enumvalue id="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4ca60ca44fcb1cb3d115bae3e35ecaa4b28" prot="public">
+          <name>DOCUMENT_VIEWER</name>
+          <briefdescription>
+<para>Use the smallest cache capacity. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4ca6d10e0b67ae64f84bf28da968444f7af" prot="public">
+          <name>DOCUMENT_BROWSER</name>
+          <briefdescription>
+<para>Use the bigger cache capacity than DocumentBrowser. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4ca41231f4281ff41d372bf2d80822c06c0" prot="public">
+          <name>PRIMARY_WEB_BROWSER</name>
+          <briefdescription>
+<para>Use the biggest cache capacity. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for cache model options. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="79" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4de" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ApplicationType</name>
+        <qualifiedname>Dali::WebEngineContext::ApplicationType</qualifiedname>
+        <enumvalue id="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4dea8353ea70bc281bdb3c40353dfa18d495" prot="public">
+          <name>WEB_BROWSER</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4deae18d4fb0e6a843254bb721b5ea58b726" prot="public">
+          <name>HBB_TV</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4dead6ff710da01b9b30a12ca12f64f1504b" prot="public">
+          <name>WEB_RUNTIME</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4dea03570470bad94692ce93e32700d2e1cb" prot="public">
+          <name>OTHER</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for application type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="89" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="90" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1WebEngineContext_1a598fe60daaf0a371a50e8866a4feb272" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="namespaceDali_1a6cd3cf0261bf3ed9f7d27abfbdaff978" kindref="member">Dali::WebEngineRequestInterceptorPtr</ref>)&gt;</type>
+        <definition>using Dali::WebEngineContext::WebEngineRequestInterceptedCallback =  std::function&lt;void(Dali::WebEngineRequestInterceptorPtr)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebEngineRequestInterceptedCallback</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineRequestInterceptedCallback</qualifiedname>
+        <briefdescription>
+<para>WebView callback related with http request interceptor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="42" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1WebEngineContext_1a23d0f9cd1129f5a78be35919d8ec7812" prot="public" static="no">
+        <type>std::function&lt; void(std::vector&lt; std::unique_ptr&lt; <ref refid="classDali_1_1WebEngineSecurityOrigin" kindref="compound">Dali::WebEngineSecurityOrigin</ref> &gt; &gt; &amp;)&gt;</type>
+        <definition>using Dali::WebEngineContext::WebEngineSecurityOriginAcquiredCallback =  std::function&lt;void(std::vector&lt;std::unique_ptr&lt;Dali::WebEngineSecurityOrigin&gt; &gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebEngineSecurityOriginAcquiredCallback</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineSecurityOriginAcquiredCallback</qualifiedname>
+        <briefdescription>
+<para>Callback for getting web database origins. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="47" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1WebEngineContext_1a3accc37f1182822bf588a5ff6b65cbac" prot="public" static="no">
+        <type>std::function&lt; void(uint64_t)&gt;</type>
+        <definition>using Dali::WebEngineContext::WebEngineStorageUsageAcquiredCallback =  std::function&lt;void(uint64_t)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebEngineStorageUsageAcquiredCallback</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineStorageUsageAcquiredCallback</qualifiedname>
+        <briefdescription>
+<para>Callback for getting web storage usage. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="52" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1WebEngineContext_1a2adf739d72049ff28f37af90fa9a8a51" prot="public" static="no">
+        <type>std::function&lt; void(std::vector&lt; std::unique_ptr&lt; <ref refid="structDali_1_1WebEngineContext_1_1PasswordData" kindref="compound">PasswordData</ref> &gt; &gt; &amp;)&gt;</type>
+        <definition>using Dali::WebEngineContext::WebEngineFormPasswordAcquiredCallback =  std::function&lt;void(std::vector&lt;std::unique_ptr&lt;PasswordData&gt; &gt;&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebEngineFormPasswordAcquiredCallback</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineFormPasswordAcquiredCallback</qualifiedname>
+        <briefdescription>
+<para>Callback for getting form password. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="60" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1WebEngineContext_1abe9cec3161c1dc2d4338af3dbc3d4241" prot="public" static="no">
+        <type>std::function&lt; void(const std::string &amp;)&gt;</type>
+        <definition>using Dali::WebEngineContext::WebEngineDownloadStartedCallback =  std::function&lt;void(const std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebEngineDownloadStartedCallback</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineDownloadStartedCallback</qualifiedname>
+        <briefdescription>
+<para>Callback for download started with url. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="65" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1WebEngineContext_1a44d92399d20ade68ada0d7e307b19f9a" prot="public" static="no">
+        <type>std::function&lt; bool(const std::string &amp;, const std::string &amp;, std::string &amp;)&gt;</type>
+        <definition>using Dali::WebEngineContext::WebEngineMimeOverriddenCallback =  std::function&lt;bool(const std::string&amp;, const std::string&amp;, std::string&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WebEngineMimeOverriddenCallback</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineMimeOverriddenCallback</qualifiedname>
+        <briefdescription>
+<para>Callback for overriding default mime type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>for which the mime type can be overridden </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mime type that will be overridden </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>new mime type for web engine. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if mime should be overridden by new mime, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="74" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1aa2e905841a5c2d248df52c7a9f19161a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::WebEngineContext::WebEngineContext</definition>
+        <argsstring>()=default</argsstring>
+        <name>WebEngineContext</name>
+        <qualifiedname>Dali::WebEngineContext::WebEngineContext</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="109" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1aa27f43ac62bf19dd72444db72e186c7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::WebEngineContext::~WebEngineContext</definition>
+        <argsstring>()=default</argsstring>
+        <name>~WebEngineContext</name>
+        <qualifiedname>Dali::WebEngineContext::~WebEngineContext</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="114" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a3bc15e2f1d2dbde2bcc62fa44b7e1039" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4c" kindref="member">CacheModel</ref></type>
+        <definition>virtual CacheModel Dali::WebEngineContext::GetCacheModel</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCacheModel</name>
+        <qualifiedname>Dali::WebEngineContext::GetCacheModel</qualifiedname>
+        <briefdescription>
+<para>Return the cache model type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4c" kindref="member">CacheModel</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="120" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1ae82aa309431cf3e9d44f68846a2f68d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetCacheModel</definition>
+        <argsstring>(CacheModel cacheModel)=0</argsstring>
+        <name>SetCacheModel</name>
+        <qualifiedname>Dali::WebEngineContext::SetCacheModel</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4c" kindref="member">CacheModel</ref></type>
+          <declname>cacheModel</declname>
+        </param>
+        <briefdescription>
+<para>Request to set the cache model. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cacheModel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cache model </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="126" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1af2a4da3bde52c08827369747c8b9f6ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetProxyUri</definition>
+        <argsstring>(const std::string &amp;uri)=0</argsstring>
+        <name>SetProxyUri</name>
+        <qualifiedname>Dali::WebEngineContext::SetProxyUri</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+<para>Set the given proxy URI to network backend of specific context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proxy URI to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="132" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a093d61be4da0eff1316491762012f65e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Dali::WebEngineContext::GetProxyUri</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetProxyUri</name>
+        <qualifiedname>Dali::WebEngineContext::GetProxyUri</qualifiedname>
+        <briefdescription>
+<para>Get the proxy URI from the network backend of specific context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>current proxy URI or null if it&apos;s not set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="139" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a61c2e6b53a101590480317d0e8510cc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetDefaultProxyAuth</definition>
+        <argsstring>(const std::string &amp;username, const std::string &amp;password)=0</argsstring>
+        <name>SetDefaultProxyAuth</name>
+        <qualifiedname>Dali::WebEngineContext::SetDefaultProxyAuth</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Set a proxy auth credential to network backend of specific context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Normally, proxy auth credential should be got from the callback set by ewk_view_authentication_callback_set, once the username in this API has been set with a non-null value, the authentication callback will never been invoked. Try to avoid using this API. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>username to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>password to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="150" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a16e1eb27bf105064a4862e65f5e8b817" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetProxyBypassRule</definition>
+        <argsstring>(const std::string &amp;proxy, const std::string &amp;bypass)=0</argsstring>
+        <name>SetProxyBypassRule</name>
+        <qualifiedname>Dali::WebEngineContext::SetProxyBypassRule</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>proxy</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bypass</declname>
+        </param>
+        <briefdescription>
+<para>Set the given proxy to network backend of specific context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">proxy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URI to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">bypass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rule to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="158" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a984d49bfc668b3e8fee2b32acf9dd02d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Dali::WebEngineContext::GetProxyBypassRule</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetProxyBypassRule</name>
+        <qualifiedname>Dali::WebEngineContext::GetProxyBypassRule</qualifiedname>
+        <briefdescription>
+<para>Get the proxy bypass rule from the network backend of specific context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>current proxy bypass rule or null string if it&apos;s not set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="165" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a5eddeaeccce52f6086adc816c504dee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetCertificateFilePath</definition>
+        <argsstring>(const std::string &amp;certificatePath)=0</argsstring>
+        <name>SetCertificateFilePath</name>
+        <qualifiedname>Dali::WebEngineContext::SetCertificateFilePath</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>certificatePath</declname>
+        </param>
+        <briefdescription>
+<para>Add CA certificates to persistent NSS certificate database Function accepts a path to a CA certificate file, a path to a directory containing CA certificate files, or a colon-seprarated list of those. Certificate files should have *.crt extension. Directories are traversed recursively. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">certificatePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to a CA certificate file(s), see above for details </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="175" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a9c11563ff91c1c16c03a2ec37cfefe66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Dali::WebEngineContext::GetCertificateFilePath</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCertificateFilePath</name>
+        <qualifiedname>Dali::WebEngineContext::GetCertificateFilePath</qualifiedname>
+        <briefdescription>
+<para>Get CA certifcate file path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It returns an internal string and should not be modified.</para>
+<para><simplesect kind="return"><para>certificate_file path which is set during ewk_context_certificate_file_set or null string otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="184" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1affca791e8516870e4bafa51df15f3a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::DeleteAllWebDatabase</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteAllWebDatabase</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteAllWebDatabase</qualifiedname>
+        <briefdescription>
+<para>Request for deleting all web databases. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="189" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1ae6f273b1a03ac247cbd80fad6b71de75" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::GetWebDatabaseOrigins</definition>
+        <argsstring>(WebEngineSecurityOriginAcquiredCallback callback)=0</argsstring>
+        <name>GetWebDatabaseOrigins</name>
+        <qualifiedname>Dali::WebEngineContext::GetWebDatabaseOrigins</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a23d0f9cd1129f5a78be35919d8ec7812" kindref="member">WebEngineSecurityOriginAcquiredCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Request for getting web database origins. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback called after getting web database origins</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if succeeded, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="198" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a7104bd25b4e71eafbf4e15455f42a070" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::DeleteWebDatabase</definition>
+        <argsstring>(WebEngineSecurityOrigin &amp;origin)=0</argsstring>
+        <name>DeleteWebDatabase</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteWebDatabase</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineSecurityOrigin" kindref="compound">WebEngineSecurityOrigin</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Request for deleting web databases for origin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application cache origin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if succeeded, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="207" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a5734756972ef9d70367819bf277a923e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::GetWebStorageOrigins</definition>
+        <argsstring>(WebEngineSecurityOriginAcquiredCallback callback)=0</argsstring>
+        <name>GetWebStorageOrigins</name>
+        <qualifiedname>Dali::WebEngineContext::GetWebStorageOrigins</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a23d0f9cd1129f5a78be35919d8ec7812" kindref="member">WebEngineSecurityOriginAcquiredCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Get list of origins that is stored in web storage db. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback called after getting web storage origins</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if succeeded, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="216" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a2ca404b3f61a092518e19c1ea6f203c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::GetWebStorageUsageForOrigin</definition>
+        <argsstring>(WebEngineSecurityOrigin &amp;origin, WebEngineStorageUsageAcquiredCallback callback)=0</argsstring>
+        <name>GetWebStorageUsageForOrigin</name>
+        <qualifiedname>Dali::WebEngineContext::GetWebStorageUsageForOrigin</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineSecurityOrigin" kindref="compound">WebEngineSecurityOrigin</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a3accc37f1182822bf588a5ff6b65cbac" kindref="member">WebEngineStorageUsageAcquiredCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Get list of origins that is stored in web storage db. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>storage origin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback called after getting web storage origins</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if succeeded, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="226" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a510e3d91f0b6962a56caccf8a7a5dcd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::DeleteAllWebStorage</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteAllWebStorage</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteAllWebStorage</qualifiedname>
+        <briefdescription>
+<para>Delete all web storage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function does not ensure that all data will be removed. Should be used to extend free physical memory. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="233" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1aa98903aee5e298420d87504a2d2ad28a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::DeleteWebStorage</definition>
+        <argsstring>(WebEngineSecurityOrigin &amp;origin)=0</argsstring>
+        <name>DeleteWebStorage</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteWebStorage</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineSecurityOrigin" kindref="compound">WebEngineSecurityOrigin</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Delete web storage database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>origin of database</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if succeeded, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="242" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a8899db55936d0aaa86197f9cf6b6bdc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::DeleteLocalFileSystem</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteLocalFileSystem</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteLocalFileSystem</qualifiedname>
+        <briefdescription>
+<para>Request for deleting all local file systems. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="247" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a1a137bd59bbd6fb68065f6c093969444" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::ClearCache</definition>
+        <argsstring>()=0</argsstring>
+        <name>ClearCache</name>
+        <qualifiedname>Dali::WebEngineContext::ClearCache</qualifiedname>
+        <briefdescription>
+<para>Request to clear cache. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="252" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1ab1a4730acbecebe66e46e59e9d7e42a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::DeleteApplicationCache</definition>
+        <argsstring>(WebEngineSecurityOrigin &amp;origin)=0</argsstring>
+        <name>DeleteApplicationCache</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteApplicationCache</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineSecurityOrigin" kindref="compound">WebEngineSecurityOrigin</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Request for deleting web application cache for origin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application cache origin</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if succeeded, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="261" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1aa4d515761ee069f5c6bf189b7126ea18" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::GetFormPasswordList</definition>
+        <argsstring>(WebEngineFormPasswordAcquiredCallback callback)=0</argsstring>
+        <name>GetFormPasswordList</name>
+        <qualifiedname>Dali::WebEngineContext::GetFormPasswordList</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a2adf739d72049ff28f37af90fa9a8a51" kindref="member">WebEngineFormPasswordAcquiredCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous request to get list of all password data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback called after getting form password </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="268" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a0837bfbd1711881116f1b45302ae8721" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::RegisterDownloadStartedCallback</definition>
+        <argsstring>(WebEngineDownloadStartedCallback callback)=0</argsstring>
+        <name>RegisterDownloadStartedCallback</name>
+        <qualifiedname>Dali::WebEngineContext::RegisterDownloadStartedCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1abe9cec3161c1dc2d4338af3dbc3d4241" kindref="member">WebEngineDownloadStartedCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register callback for download started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback for download started </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="275" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1adcdb18219b5b31b964beebd917943560" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::RegisterMimeOverriddenCallback</definition>
+        <argsstring>(WebEngineMimeOverriddenCallback callback)=0</argsstring>
+        <name>RegisterMimeOverriddenCallback</name>
+        <qualifiedname>Dali::WebEngineContext::RegisterMimeOverriddenCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a44d92399d20ade68ada0d7e307b19f9a" kindref="member">WebEngineMimeOverriddenCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register callback for mime overridden. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>callback for mime overridden </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="282" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1aa7f9bd91fa964d72b0792699af9e53c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::RegisterRequestInterceptedCallback</definition>
+        <argsstring>(WebEngineRequestInterceptedCallback callback)=0</argsstring>
+        <name>RegisterRequestInterceptedCallback</name>
+        <qualifiedname>Dali::WebEngineContext::RegisterRequestInterceptedCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1WebEngineContext_1a598fe60daaf0a371a50e8866a4feb272" kindref="member">WebEngineRequestInterceptedCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register callback for intercepting http request. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This callback is not called on UI thread, so users should be cautious when accessing their data also used on UI thread. No other than <ref refid="classDali_1_1WebEngineRequestInterceptor" kindref="compound">WebEngineRequestInterceptor</ref> API should be used in the callback.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="292" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1afea7a9d9f75953609304ccd8c81112c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::EnableCache</definition>
+        <argsstring>(bool cacheEnabled)=0</argsstring>
+        <name>EnableCache</name>
+        <qualifiedname>Dali::WebEngineContext::EnableCache</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>cacheEnabled</declname>
+        </param>
+        <briefdescription>
+<para>Toggle the cache to be enabled or disabled. Function works asynchronously. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cacheEnabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>enable or disable cache </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="300" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a007ec7c9726c9633fa2e614fb1ebde90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::IsCacheEnabled</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsCacheEnabled</name>
+        <qualifiedname>Dali::WebEngineContext::IsCacheEnabled</qualifiedname>
+        <briefdescription>
+<para>Query if the cache is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> is cache is enabled or <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="307" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a25a800a2e4264ec94a34046dc80517df" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetAppId</definition>
+        <argsstring>(const std::string &amp;appId)=0</argsstring>
+        <name>SetAppId</name>
+        <qualifiedname>Dali::WebEngineContext::SetAppId</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>appId</declname>
+        </param>
+        <briefdescription>
+<para>Set application id for context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">appId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="314" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1abb58a38b9181b185d9bdaaf713bb8727" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::SetAppVersion</definition>
+        <argsstring>(const std::string &amp;appVersion)=0</argsstring>
+        <name>SetAppVersion</name>
+        <qualifiedname>Dali::WebEngineContext::SetAppVersion</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>appVersion</declname>
+        </param>
+        <briefdescription>
+<para>Set application version for context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">appVersion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application version</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="323" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a5e020df3f4f03938e9e4936821ace743" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetApplicationType</definition>
+        <argsstring>(const ApplicationType applicationType)=0</argsstring>
+        <name>SetApplicationType</name>
+        <qualifiedname>Dali::WebEngineContext::SetApplicationType</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4de" kindref="member">ApplicationType</ref></type>
+          <declname>applicationType</declname>
+        </param>
+        <briefdescription>
+<para>To declare application type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">applicationType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Application_Type enum </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="331" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1adef4201761ebbde550f2798544754c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetTimeOffset</definition>
+        <argsstring>(float timeOffset)=0</argsstring>
+        <name>SetTimeOffset</name>
+        <qualifiedname>Dali::WebEngineContext::SetTimeOffset</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>timeOffset</declname>
+        </param>
+        <briefdescription>
+<para>Set time offset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value will be added to system time as offset </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="338" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a1b2bcb92395fad29fc369ecad13cca21" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetTimeZoneOffset</definition>
+        <argsstring>(float timeZoneOffset, float daylightSavingTime)=0</argsstring>
+        <name>SetTimeZoneOffset</name>
+        <qualifiedname>Dali::WebEngineContext::SetTimeZoneOffset</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>timeZoneOffset</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>daylightSavingTime</declname>
+        </param>
+        <briefdescription>
+<para>Set timezone offset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeZoneOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>offset for time zone. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">daylightSavingTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value is for daylight saving time use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="346" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1af9b9186a815193b3ebbbc416f268dec3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::SetDefaultZoomFactor</definition>
+        <argsstring>(float zoomFactor)=0</argsstring>
+        <name>SetDefaultZoomFactor</name>
+        <qualifiedname>Dali::WebEngineContext::SetDefaultZoomFactor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>zoomFactor</declname>
+        </param>
+        <briefdescription>
+<para>Set default zoom factor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">zoomFactor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>default zoom factor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="353" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a0069005d67811baa8aded1c579c477fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float Dali::WebEngineContext::GetDefaultZoomFactor</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetDefaultZoomFactor</name>
+        <qualifiedname>Dali::WebEngineContext::GetDefaultZoomFactor</qualifiedname>
+        <briefdescription>
+<para>Get default zoom factor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets default zoom factor for all pages opened with this context.</para>
+<para><simplesect kind="return"><para>default zoom factor or negative value on error </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="362" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a8b87f90732ae8221bcbbeb2c8714e0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::RegisterUrlSchemesAsCorsEnabled</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;schemes)=0</argsstring>
+        <name>RegisterUrlSchemesAsCorsEnabled</name>
+        <qualifiedname>Dali::WebEngineContext::RegisterUrlSchemesAsCorsEnabled</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>schemes</declname>
+        </param>
+        <briefdescription>
+<para>Register url schemes as CORS enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">schemes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The URL schemes list which will be added to web security policy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="370" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1ada1e3fa58941e0c52a8fa99db017db5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::RegisterJsPluginMimeTypes</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;mimeTypes)=0</argsstring>
+        <name>RegisterJsPluginMimeTypes</name>
+        <qualifiedname>Dali::WebEngineContext::RegisterJsPluginMimeTypes</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>mimeTypes</declname>
+        </param>
+        <briefdescription>
+<para>Register JS plugin mime types. It is applied for all the pages opened within the context. The API is intended to be used by web applications to override default behaviour of the object tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mimeTypes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MIME types will be checked by the renderer frame loader to skip creating default frame for the object tags with the registered MIME type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="382" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a85f5cf3528dc9c38fd0ddca63bfe0543" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::DeleteAllApplicationCache</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteAllApplicationCache</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteAllApplicationCache</qualifiedname>
+        <briefdescription>
+<para>Request for deleting all web application caches. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> on success, otherwise <computeroutput>false</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="389" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a748c63eda5a6bb11cb63ae17585631a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::DeleteAllWebIndexedDatabase</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteAllWebIndexedDatabase</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteAllWebIndexedDatabase</qualifiedname>
+        <briefdescription>
+<para>Request for deleting all web indexed databases. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> on success, otherwise <computeroutput>false</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="396" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a81270bfa97641885128bae1c490c6f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::DeleteFormPasswordDataList</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;list)=0</argsstring>
+        <name>DeleteFormPasswordDataList</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteFormPasswordDataList</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Delete a given password data list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List with Ewk_Password_Data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="403" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a0fc4bb9ca70d1138c2c1531e164da650" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::DeleteAllFormPasswordData</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteAllFormPasswordData</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteAllFormPasswordData</qualifiedname>
+        <briefdescription>
+<para>Delete whole password data from DB. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="408" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1af796d4458a27f3a608a1ae3c90cc4fbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::WebEngineContext::DeleteAllFormCandidateData</definition>
+        <argsstring>()=0</argsstring>
+        <name>DeleteAllFormCandidateData</name>
+        <qualifiedname>Dali::WebEngineContext::DeleteAllFormCandidateData</qualifiedname>
+        <briefdescription>
+<para>Delete all candidate form data from DB. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="413" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WebEngineContext_1a12cb090f862f78f30ba15506a4b5d03a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::WebEngineContext::FreeUnusedMemory</definition>
+        <argsstring>()=0</argsstring>
+        <name>FreeUnusedMemory</name>
+        <qualifiedname>Dali::WebEngineContext::FreeUnusedMemory</qualifiedname>
+        <briefdescription>
+<para>Notify low memory to free unused memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> on success or <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="420" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A class <ref refid="classDali_1_1WebEngineContext" kindref="compound">WebEngineContext</ref> for context of web engine. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" line="36" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context.h" bodystart="37" bodyend="421"/>
+    <listofallmembers>
+      <member refid="classDali_1_1WebEngineContext_1a47e9f6afb9642b16d1073fcfc3ffb4de" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>ApplicationType</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a1813308a19b9a48617e9ae1b2e1add4c" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>CacheModel</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a1a137bd59bbd6fb68065f6c093969444" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>ClearCache</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a85f5cf3528dc9c38fd0ddca63bfe0543" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteAllApplicationCache</name></member>
+      <member refid="classDali_1_1WebEngineContext_1af796d4458a27f3a608a1ae3c90cc4fbf" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteAllFormCandidateData</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a0fc4bb9ca70d1138c2c1531e164da650" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteAllFormPasswordData</name></member>
+      <member refid="classDali_1_1WebEngineContext_1affca791e8516870e4bafa51df15f3a16" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteAllWebDatabase</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a748c63eda5a6bb11cb63ae17585631a5" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteAllWebIndexedDatabase</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a510e3d91f0b6962a56caccf8a7a5dcd7" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteAllWebStorage</name></member>
+      <member refid="classDali_1_1WebEngineContext_1ab1a4730acbecebe66e46e59e9d7e42a1" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteApplicationCache</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a81270bfa97641885128bae1c490c6f5f" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteFormPasswordDataList</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a8899db55936d0aaa86197f9cf6b6bdc8" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteLocalFileSystem</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a7104bd25b4e71eafbf4e15455f42a070" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteWebDatabase</name></member>
+      <member refid="classDali_1_1WebEngineContext_1aa98903aee5e298420d87504a2d2ad28a" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>DeleteWebStorage</name></member>
+      <member refid="classDali_1_1WebEngineContext_1afea7a9d9f75953609304ccd8c81112c1" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>EnableCache</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a12cb090f862f78f30ba15506a4b5d03a" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>FreeUnusedMemory</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a3bc15e2f1d2dbde2bcc62fa44b7e1039" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetCacheModel</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a9c11563ff91c1c16c03a2ec37cfefe66" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetCertificateFilePath</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a0069005d67811baa8aded1c579c477fb" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetDefaultZoomFactor</name></member>
+      <member refid="classDali_1_1WebEngineContext_1aa4d515761ee069f5c6bf189b7126ea18" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetFormPasswordList</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a984d49bfc668b3e8fee2b32acf9dd02d" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetProxyBypassRule</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a093d61be4da0eff1316491762012f65e" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetProxyUri</name></member>
+      <member refid="classDali_1_1WebEngineContext_1ae6f273b1a03ac247cbd80fad6b71de75" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetWebDatabaseOrigins</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a5734756972ef9d70367819bf277a923e" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetWebStorageOrigins</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a2ca404b3f61a092518e19c1ea6f203c0" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>GetWebStorageUsageForOrigin</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a007ec7c9726c9633fa2e614fb1ebde90" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>IsCacheEnabled</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a0837bfbd1711881116f1b45302ae8721" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>RegisterDownloadStartedCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1ada1e3fa58941e0c52a8fa99db017db5d" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>RegisterJsPluginMimeTypes</name></member>
+      <member refid="classDali_1_1WebEngineContext_1adcdb18219b5b31b964beebd917943560" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>RegisterMimeOverriddenCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1aa7f9bd91fa964d72b0792699af9e53c2" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>RegisterRequestInterceptedCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a8b87f90732ae8221bcbbeb2c8714e0c4" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>RegisterUrlSchemesAsCorsEnabled</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a25a800a2e4264ec94a34046dc80517df" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetAppId</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a5e020df3f4f03938e9e4936821ace743" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetApplicationType</name></member>
+      <member refid="classDali_1_1WebEngineContext_1abb58a38b9181b185d9bdaaf713bb8727" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetAppVersion</name></member>
+      <member refid="classDali_1_1WebEngineContext_1ae82aa309431cf3e9d44f68846a2f68d3" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetCacheModel</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a5eddeaeccce52f6086adc816c504dee8" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetCertificateFilePath</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a61c2e6b53a101590480317d0e8510cc3" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetDefaultProxyAuth</name></member>
+      <member refid="classDali_1_1WebEngineContext_1af9b9186a815193b3ebbbc416f268dec3" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetDefaultZoomFactor</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a16e1eb27bf105064a4862e65f5e8b817" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetProxyBypassRule</name></member>
+      <member refid="classDali_1_1WebEngineContext_1af2a4da3bde52c08827369747c8b9f6ea" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetProxyUri</name></member>
+      <member refid="classDali_1_1WebEngineContext_1adef4201761ebbde550f2798544754c03" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetTimeOffset</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a1b2bcb92395fad29fc369ecad13cca21" prot="public" virt="pure-virtual"><scope>Dali::WebEngineContext</scope><name>SetTimeZoneOffset</name></member>
+      <member refid="classDali_1_1WebEngineContext_1aa2e905841a5c2d248df52c7a9f19161a" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineContext</name></member>
+      <member refid="classDali_1_1WebEngineContext_1abe9cec3161c1dc2d4338af3dbc3d4241" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineDownloadStartedCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a2adf739d72049ff28f37af90fa9a8a51" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineFormPasswordAcquiredCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a44d92399d20ade68ada0d7e307b19f9a" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineMimeOverriddenCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a598fe60daaf0a371a50e8866a4feb272" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineRequestInterceptedCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a23d0f9cd1129f5a78be35919d8ec7812" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineSecurityOriginAcquiredCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1a3accc37f1182822bf588a5ff6b65cbac" prot="public" virt="non-virtual"><scope>Dali::WebEngineContext</scope><name>WebEngineStorageUsageAcquiredCallback</name></member>
+      <member refid="classDali_1_1WebEngineContext_1aa27f43ac62bf19dd72444db72e186c7b" prot="public" virt="virtual"><scope>Dali::WebEngineContext</scope><name>~WebEngineContext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

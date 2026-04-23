@@ -1,0 +1,1858 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1RenderTask" kind="class" language="C++" prot="public">
+    <compoundname>Dali::RenderTask</compoundname>
+    <basecompoundref refid="classDali_1_1Handle" prot="public" virt="non-virtual">Dali::Handle</basecompoundref>
+    <includes refid="render-task_8h" local="no">render-task.h</includes>
+    <innerclass refid="structDali_1_1RenderTask_1_1Property" prot="public">Dali::RenderTask::Property</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RefreshRate</name>
+        <qualifiedname>Dali::RenderTask::RefreshRate</qualifiedname>
+        <enumvalue id="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838acc7ce99675e0e907724853b599c0b8cf" prot="public">
+          <name>REFRESH_ONCE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Process once only e.g. take a snap-shot of the scene. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838afff8ca18f7f7535108f2daf08cafde51" prot="public">
+          <name>REFRESH_ALWAYS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Process every frame. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the refresh-rate of the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="179" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1RenderTask_1a167f9c533ce9d224b6dcff3a051a7875" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;)&gt;</type>
+        <definition>using Dali::RenderTask::RenderTaskSignalType =  Signal&lt;void(RenderTask&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>RenderTaskSignalType</name>
+        <qualifiedname>Dali::RenderTask::RenderTaskSignalType</qualifiedname>
+        <briefdescription>
+<para>Typedef for signals sent by this class. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="142" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1RenderTask_1a0fd6388b13e6cf90d84f5ccaea033ee9" prot="public" static="no">
+        <type>bool(*)(<ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;)</type>
+        <definition>using Dali::RenderTask::ScreenToFrameBufferFunction =  bool (*)(Vector2&amp;)</definition>
+        <argsstring></argsstring>
+        <name>ScreenToFrameBufferFunction</name>
+        <qualifiedname>Dali::RenderTask::ScreenToFrameBufferFunction</qualifiedname>
+        <briefdescription>
+<para>A pointer to a function for converting screen to frame-buffer coordinates. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">coordinates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen coordinates to convert where (0,0) is the top-left of the screen </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the conversion was successful, otherwise coordinates should be unmodified </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="150" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1RenderTask_1ab145e874ca82de4e9769b8a253f23d65" prot="public" static="no">
+        <type>bool(*const)(<ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;)</type>
+        <definition>using Dali::RenderTask::ConstScreenToFrameBufferFunction =  bool (*const)(Vector2&amp;)</definition>
+        <argsstring></argsstring>
+        <name>ConstScreenToFrameBufferFunction</name>
+        <qualifiedname>Dali::RenderTask::ConstScreenToFrameBufferFunction</qualifiedname>
+        <briefdescription>
+<para>A pointer to a function for converting screen to frame-buffer coordinates. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">coordinates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen coordinates to convert where (0,0) is the top-left of the screen </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the conversion was successful, otherwise coordinates should be unmodified </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="158" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1afe7ad19b96f3c1de9ecbcd3ef8aef5fb" prot="public" static="yes" mutable="no">
+        <type><ref refid="classDali_1_1RenderTask_1ab145e874ca82de4e9769b8a253f23d65" kindref="member">ConstScreenToFrameBufferFunction</ref></type>
+        <definition>RenderTask::ConstScreenToFrameBufferFunction Dali::RenderTask::DEFAULT_SCREEN_TO_FRAMEBUFFER_FUNCTION</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_SCREEN_TO_FRAMEBUFFER_FUNCTION</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_SCREEN_TO_FRAMEBUFFER_FUNCTION</qualifiedname>
+        <initializer>= <ref refid="namespaceDali_1a2a9efd0f9e7d3691a87762eca1ed6589" kindref="member">DefaultScreenToFrameBufferFunction</ref></initializer>
+        <briefdescription>
+<para>The default conversion function returns false for any screen coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This effectively disables hit-testing for RenderTasks rendering to a frame buffer. See also FULLSCREEN_FRAMEBUFFER_FUNCTION below. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="166" column="43" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1a818bffab5af0f91d79f319a12d5eec2f" prot="public" static="yes" mutable="no">
+        <type><ref refid="classDali_1_1RenderTask_1ab145e874ca82de4e9769b8a253f23d65" kindref="member">ConstScreenToFrameBufferFunction</ref></type>
+        <definition>RenderTask::ConstScreenToFrameBufferFunction Dali::RenderTask::FULLSCREEN_FRAMEBUFFER_FUNCTION</definition>
+        <argsstring></argsstring>
+        <name>FULLSCREEN_FRAMEBUFFER_FUNCTION</name>
+        <qualifiedname>Dali::RenderTask::FULLSCREEN_FRAMEBUFFER_FUNCTION</qualifiedname>
+        <initializer>= <ref refid="namespaceDali_1a704ccee57a5caccde1d2433faada4691" kindref="member">FullScreenFrameBufferFunction</ref></initializer>
+        <briefdescription>
+<para>This conversion function outputs the (unmodified) screen coordinates as frame-buffer coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Therefore the contents of an off-screen image is expected to be rendered &quot;full screen&quot;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="173" column="43" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1acab0e15ff58768cf7f20faff43c9a9f0" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Dali::RenderTask::DEFAULT_EXCLUSIVE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_EXCLUSIVE</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_EXCLUSIVE</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>false </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="185" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1a6c9b9c42dbc4d528a31aa86ce12f3e77" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Dali::RenderTask::DEFAULT_INPUT_ENABLED</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_INPUT_ENABLED</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_INPUT_ENABLED</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>true </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="186" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1a19e343776772d37b41a70d7744221b20" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref></type>
+        <definition>const Vector4 Dali::RenderTask::DEFAULT_CLEAR_COLOR</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_CLEAR_COLOR</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_CLEAR_COLOR</qualifiedname>
+        <initializer>= <ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>(0.0f, 0.0f, 0.0f, 1.0f)</initializer>
+        <briefdescription>
+<para><ref refid="namespaceDali_1_1Color_1abedc4ae7b85d899988b7c30459e5bbfe" kindref="member">Color::BLACK</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="187" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1a166f5a745f2c096018f84e4524f7a87a" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Dali::RenderTask::DEFAULT_CLEAR_ENABLED</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_CLEAR_ENABLED</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_CLEAR_ENABLED</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>false </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="188" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1aa26ad3517a233f55d1c68b144cd35e43" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Dali::RenderTask::DEFAULT_CULL_MODE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_CULL_MODE</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_CULL_MODE</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>true </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="189" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1RenderTask_1a997371f2a7efa130a702d97091dd97a3" prot="public" static="yes" mutable="no">
+        <type>const uint32_t</type>
+        <definition>const uint32_t Dali::RenderTask::DEFAULT_REFRESH_RATE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_REFRESH_RATE</name>
+        <qualifiedname>Dali::RenderTask::DEFAULT_REFRESH_RATE</qualifiedname>
+        <initializer>= <ref refid="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838afff8ca18f7f7535108f2daf08cafde51" kindref="member">REFRESH_ALWAYS</ref></initializer>
+        <briefdescription>
+<para>REFRESH_ALWAYS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="190" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a7c7076cf01fbc5542b64a89ced4fd74b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RenderTask::RenderTask</definition>
+        <argsstring>()</argsstring>
+        <name>RenderTask</name>
+        <qualifiedname>Dali::RenderTask::RenderTask</qualifiedname>
+        <briefdescription>
+<para>Creates an empty <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be initialised with RenderTaskList::CreateRenderTask(). @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="198" column="3"/>
+        <references refid="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" compoundref="base-handle_8h" startline="274" endline="277">Dali::DownCast</references>
+        <referencedby refid="classDali_1_1RenderTask_1a005393d6cb3d26603ed722b6bb807099" compoundref="render-task_8cpp" startline="56" endline="59">DownCast</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a62a92d58957947f8e22b46c58340fd6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RenderTask::~RenderTask</definition>
+        <argsstring>()</argsstring>
+        <name>~RenderTask</name>
+        <qualifiedname>Dali::RenderTask::~RenderTask</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="217" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1af1846acac7b4e2f6952a1426ba0c0ced" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RenderTask::RenderTask</definition>
+        <argsstring>(const RenderTask &amp;handle)</argsstring>
+        <name>RenderTask</name>
+        <qualifiedname>Dali::RenderTask::RenderTask</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="225" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a5f03c1c1d36c906b89706c2cf8aca8bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;</type>
+        <definition>RenderTask &amp; Dali::RenderTask::operator=</definition>
+        <argsstring>(const RenderTask &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::RenderTask::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="234" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a894fff8dc1d6f5f676e6946aa901f262" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RenderTask::RenderTask</definition>
+        <argsstring>(RenderTask &amp;&amp;rhs) noexcept</argsstring>
+        <name>RenderTask</name>
+        <qualifiedname>Dali::RenderTask::RenderTask</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="242" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1abe5b962557494dd696ab9774d9877541" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;</type>
+        <definition>RenderTask &amp; Dali::RenderTask::operator=</definition>
+        <argsstring>(RenderTask &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::RenderTask::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="251" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aa738964238dc9f5104e67f6dc355abed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetSourceActor</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>SetSourceActor</name>
+        <qualifiedname>Dali::RenderTask::SetSourceActor</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Sets the actors to be rendered. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This actor and its children will be rendered. If actor is an empty handle, then nothing will be rendered </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="259" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="71" bodyend="81"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1abf36b174ab339d6f017770fea959899c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::RenderTask::GetSourceActor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSourceActor</name>
+        <qualifiedname>Dali::RenderTask::GetSourceActor</qualifiedname>
+        <briefdescription>
+<para>Retrieves the actors to be rendered. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>This actor and its children will be rendered </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="266" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="83" bodyend="86"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a1acd4108fd7925605c2adb4f182ed7de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::RenderTask::GetStopperActor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStopperActor</name>
+        <qualifiedname>Dali::RenderTask::GetStopperActor</qualifiedname>
+        <briefdescription>
+<para>Retrives stopper actor. @SINCE_2_3.23. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The actor that marks where to stop rendering. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="273" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="88" bodyend="91"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a80c5a58b89536616d0f04d2d51eaa7ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetExclusive</definition>
+        <argsstring>(bool exclusive)</argsstring>
+        <name>SetExclusive</name>
+        <qualifiedname>Dali::RenderTask::SetExclusive</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>exclusive</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> has exclusive access to the source actors; the default is false. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">exclusive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the source actors will only be rendered by this render-task </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="280" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="93" bodyend="96"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aee0e54efa7b645674ae5fe18cfa12fe7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::RenderTask::IsExclusive</definition>
+        <argsstring>() const</argsstring>
+        <name>IsExclusive</name>
+        <qualifiedname>Dali::RenderTask::IsExclusive</qualifiedname>
+        <briefdescription>
+<para>Queries whether the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> has exclusive access to the source actors. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the source actors will only be rendered by this render-task </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="287" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="98" bodyend="101"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a93cdb36e5071e03b37f20978b0221cf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetInputEnabled</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>SetInputEnabled</name>
+        <qualifiedname>Dali::RenderTask::SetInputEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the render-task should be considered for input handling; the default is true. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The task used for input handling will be last task in the <ref refid="classDali_1_1RenderTaskList" kindref="compound">RenderTaskList</ref> which has input enabled, and has a valid source &amp; camera actor. A <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> targetting a frame-buffer can still be hit-tested, provided that the screen-&gt;frame-buffer coordinate conversion is successful; see also <ref refid="classDali_1_1RenderTask_1aee0d0d8f54b7ce334f4448f052eba780" kindref="member">SetScreenToFrameBufferFunction()</ref>. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the render-task should be considered for input handling </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="299" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="266" bodyend="269"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1afbdad68dc3a706dfbc9e6e89e71baf12" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::RenderTask::GetInputEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>GetInputEnabled</name>
+        <qualifiedname>Dali::RenderTask::GetInputEnabled</qualifiedname>
+        <briefdescription>
+<para>Queries whether the render-task should be considered for input handling. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the render-task should be considered for input handling </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="306" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="271" bodyend="274"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a72238999e6a3c9c01e41e515f7eb1632" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetCameraActor</definition>
+        <argsstring>(CameraActor cameraActor)</argsstring>
+        <name>SetCameraActor</name>
+        <qualifiedname>Dali::RenderTask::SetCameraActor</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CameraActor" kindref="compound">CameraActor</ref></type>
+          <declname>cameraActor</declname>
+        </param>
+        <briefdescription>
+<para>Sets the actor from which the scene is viewed. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cameraActor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scene is viewed from the perspective of this actor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="313" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="103" bodyend="113"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a127b94ce4156b559e643d82bfac5e21d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CameraActor" kindref="compound">CameraActor</ref></type>
+        <definition>CameraActor Dali::RenderTask::GetCameraActor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCameraActor</name>
+        <qualifiedname>Dali::RenderTask::GetCameraActor</qualifiedname>
+        <briefdescription>
+<para>Retrieves the actor from which the scene is viewed. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The scene is viewed from the perspective of this actor </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="320" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="115" bodyend="118"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a162cf6f23cf0d1f54edda474ad069190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetFrameBuffer</definition>
+        <argsstring>(FrameBuffer frameBuffer)</argsstring>
+        <name>SetFrameBuffer</name>
+        <qualifiedname>Dali::RenderTask::SetFrameBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1FrameBuffer" kindref="compound">FrameBuffer</ref></type>
+          <declname>frameBuffer</declname>
+        </param>
+        <briefdescription>
+<para>Sets the frame-buffer used as a render target. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">frameBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid <ref refid="classDali_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> handle to enable off-screen rendering, or an uninitialized handle to disable it </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="327" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="120" bodyend="129"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1ad875992e04e8a2f923a7575295599a7a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1FrameBuffer" kindref="compound">FrameBuffer</ref></type>
+        <definition>FrameBuffer Dali::RenderTask::GetFrameBuffer</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFrameBuffer</name>
+        <qualifiedname>Dali::RenderTask::GetFrameBuffer</qualifiedname>
+        <briefdescription>
+<para>Retrieves the frame-buffer used as a render target. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The framebuffer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="334" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="131" bodyend="135"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aee0d0d8f54b7ce334f4448f052eba780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetScreenToFrameBufferFunction</definition>
+        <argsstring>(ScreenToFrameBufferFunction conversionFunction)</argsstring>
+        <name>SetScreenToFrameBufferFunction</name>
+        <qualifiedname>Dali::RenderTask::SetScreenToFrameBufferFunction</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RenderTask_1a0fd6388b13e6cf90d84f5ccaea033ee9" kindref="member">ScreenToFrameBufferFunction</ref></type>
+          <declname>conversionFunction</declname>
+        </param>
+        <briefdescription>
+<para>Sets the function used to convert screen coordinates to frame-buffer coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is useful for hit-testing actors which are rendered off-screen. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">conversionFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The conversion function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="343" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="137" bodyend="140"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1abbe5ad0329c7e9e5d48cd6c1756a1b3e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderTask_1a0fd6388b13e6cf90d84f5ccaea033ee9" kindref="member">ScreenToFrameBufferFunction</ref></type>
+        <definition>RenderTask::ScreenToFrameBufferFunction Dali::RenderTask::GetScreenToFrameBufferFunction</definition>
+        <argsstring>() const</argsstring>
+        <name>GetScreenToFrameBufferFunction</name>
+        <qualifiedname>Dali::RenderTask::GetScreenToFrameBufferFunction</qualifiedname>
+        <briefdescription>
+<para>Retrieves the function used to convert screen coordinates to frame-buffer coordinates. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The conversion function </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="350" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="142" bodyend="145"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a88c94a4d7d839969429b24cb3ac8aaf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetScreenToFrameBufferMappingActor</definition>
+        <argsstring>(Actor mappingActor)</argsstring>
+        <name>SetScreenToFrameBufferMappingActor</name>
+        <qualifiedname>Dali::RenderTask::SetScreenToFrameBufferMappingActor</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>mappingActor</declname>
+        </param>
+        <briefdescription>
+<para>Sets the actor used to convert screen coordinates to frame-buffer coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The local coordinates of the actor are mapped as frame-buffer coordinates. This is useful for hit-testing actors which are rendered off-screen. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mappingActor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor used for conversion </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The mapping actor needs to be rendered by the default render task to make the mapping work properly. </para>
+</simplesect>
+<simplesect kind="note"><para>An <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> can be MappingActor for only one <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. </para>
+</simplesect>
+<simplesect kind="note"><para>If input mappingActor is null, then this <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> become to do not use mapping <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+</simplesect>
+<simplesect kind="note"><para>The mapping actor cannot be used as a <ref refid="structDali_1_1Source" kindref="compound">Source</ref> <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> of any <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="364" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="147" bodyend="150"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a27333ac3122e55681e11e5da74c16b53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Dali::Actor Dali::RenderTask::GetScreenToFrameBufferMappingActor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetScreenToFrameBufferMappingActor</name>
+        <qualifiedname>Dali::RenderTask::GetScreenToFrameBufferMappingActor</qualifiedname>
+        <briefdescription>
+<para>Retrieves the actor used to convert screen coordinates to frame-buffer coordinates. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The actor used for conversion </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="371" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="152" bodyend="155"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a95ae0c0087285468dcbb3249f413fe78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetViewportGuideActor</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>SetViewportGuideActor</name>
+        <qualifiedname>Dali::RenderTask::SetViewportGuideActor</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Sets the actor to compute viewport of this render task. <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> should be added on Scene. @SINCE_2_1.36. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This actor is used to compute viewport of the render task. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>If window default camera is rotated and the actor is no longer a rectangle on the screen, Viewport may be computed incorrectly. The Viewport properties VIEWPORT_POSITION and VIEWPORT_SIZE is kept during using ViewportGuideActor, but only current value is changed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="381" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="157" bodyend="167"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a4bbd02b9afe4e8badc7da951f89a33af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::RenderTask::GetViewportGuideActor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetViewportGuideActor</name>
+        <qualifiedname>Dali::RenderTask::GetViewportGuideActor</qualifiedname>
+        <briefdescription>
+<para>Retrieves the actor to compute viewport of this render task. @SINCE_2_1.36. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>This actor is used to compute viewport of the render task. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="388" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="169" bodyend="172"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aabfdde86969287c23fa2df175c36516d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::ResetViewportGuideActor</definition>
+        <argsstring>()</argsstring>
+        <name>ResetViewportGuideActor</name>
+        <qualifiedname>Dali::RenderTask::ResetViewportGuideActor</qualifiedname>
+        <briefdescription>
+<para>Resets the actor to compute viewport of this render task. @SINCE_2_1.36. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The Viewport properties VIEWPORT_POSITION and VIEWPORT_SIZE is still kept. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="395" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="174" bodyend="177"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a5bcd2b23f5b7ca0b8ef98bc5bdc4957f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetRenderedScaleFactor</definition>
+        <argsstring>(const Vector2 &amp;scaleFactor)</argsstring>
+        <name>SetRenderedScaleFactor</name>
+        <qualifiedname>Dali::RenderTask::SetRenderedScaleFactor</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>scaleFactor</declname>
+        </param>
+        <briefdescription>
+<para>Sets the scale factor for rendered output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The scale factor between source scene and rendered target. For example, if we render 200x200 scene into 50x400 FBO, rendered scale factor is <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>(0.5f, 2.0f). @SINCE_2_4.36 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">scaleFactor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scaling factor to apply to the rendered content </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="404" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="179" bodyend="182"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1ad37618a7843cdf0ea57c43338eb06953" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::RenderTask::GetRenderedScaleFactor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRenderedScaleFactor</name>
+        <qualifiedname>Dali::RenderTask::GetRenderedScaleFactor</qualifiedname>
+        <briefdescription>
+<para>Gets the current rendered output scale factor. @SINCE_2_4.36. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current scaling factor being applied to rendered content </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="411" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="184" bodyend="187"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aacd5c3b85fb8332a95c3ccf1c252279e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetViewportPosition</definition>
+        <argsstring>(Vector2 position)</argsstring>
+        <name>SetViewportPosition</name>
+        <qualifiedname>Dali::RenderTask::SetViewportPosition</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Sets the GL viewport position used when rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This specifies the transformation between normalized device coordinates and target window (or frame-buffer) coordinates. By default this will match the target window or frame-buffer size. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewports position (x,y) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Unlike the glViewport method, the x &amp; y coordinates refer to the top-left of the viewport rectangle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="422" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="189" bodyend="192"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a3452a2adcbf530c73e28f1d8e1be7953" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::RenderTask::GetCurrentViewportPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentViewportPosition</name>
+        <qualifiedname>Dali::RenderTask::GetCurrentViewportPosition</qualifiedname>
+        <briefdescription>
+<para>Retrieves the GL viewport position used when rendering. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The viewport </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="429" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="194" bodyend="197"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a663c24a5b5bce6d67a1dfea5f049ba11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetViewportSize</definition>
+        <argsstring>(Vector2 size)</argsstring>
+        <name>SetViewportSize</name>
+        <qualifiedname>Dali::RenderTask::SetViewportSize</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Sets the GL viewport size used when rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This specifies the transformation between normalized device coordinates and target window (or frame-buffer) coordinates. By default this will match the target window or frame-buffer size. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewports size (width,height) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="439" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="199" bodyend="202"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a8170a09564deebc9b9eb90c8f9ddd437" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::RenderTask::GetCurrentViewportSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentViewportSize</name>
+        <qualifiedname>Dali::RenderTask::GetCurrentViewportSize</qualifiedname>
+        <briefdescription>
+<para>Retrieves the GL viewport size used when rendering. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The viewport </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="446" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="204" bodyend="207"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aeddde62d6630b0d6cf2ae7214787a1d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetViewport</definition>
+        <argsstring>(Viewport viewport)</argsstring>
+        <name>SetViewport</name>
+        <qualifiedname>Dali::RenderTask::SetViewport</qualifiedname>
+        <param>
+          <type><ref refid="group__dali__core__math_1gaad044fe321d563408127429dace5a469" kindref="member">Viewport</ref></type>
+          <declname>viewport</declname>
+        </param>
+        <briefdescription>
+<para>Sets the GL viewport used when rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This specifies the transformation between normalized device coordinates and target window (or frame-buffer) coordinates. By default this will match the target window or frame-buffer size. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">viewport</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new viewport </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Unlike the glViewport method, the x &amp; y coordinates refer to the top-left of the viewport rectangle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="457" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="209" bodyend="212"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a4e93f92646902daeb4e131bc4e91af8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__core__math_1gaad044fe321d563408127429dace5a469" kindref="member">Viewport</ref></type>
+        <definition>Viewport Dali::RenderTask::GetViewport</definition>
+        <argsstring>() const</argsstring>
+        <name>GetViewport</name>
+        <qualifiedname>Dali::RenderTask::GetViewport</qualifiedname>
+        <briefdescription>
+<para>Retrieves the GL viewport used when rendering. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The viewport </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="464" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="214" bodyend="219"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1ad45cf47f05f039ae3a8fa85c0ed6f039" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetClearColor</definition>
+        <argsstring>(const Vector4 &amp;color)</argsstring>
+        <name>SetClearColor</name>
+        <qualifiedname>Dali::RenderTask::SetClearColor</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the clear color used when SetClearEnabled(true) is used. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new clear color </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="471" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="221" bodyend="224"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1adf1fc116c6a8fa5e4503097224ea1fc5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 Dali::RenderTask::GetClearColor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetClearColor</name>
+        <qualifiedname>Dali::RenderTask::GetClearColor</qualifiedname>
+        <briefdescription>
+<para>Retrieves the clear color used when SetClearEnabled(true) is used. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The clear color </para>
+</simplesect>
+<simplesect kind="note"><para>This property can be animated; the return value may not match the value written with <ref refid="classDali_1_1RenderTask_1ad45cf47f05f039ae3a8fa85c0ed6f039" kindref="member">SetClearColor()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="479" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="226" bodyend="229"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1ab23acc8dd3f3274d04064018cb12f167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetClearEnabled</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>SetClearEnabled</name>
+        <qualifiedname>Dali::RenderTask::SetClearEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the render-task will clear the results of previous render-tasks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default is false.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the render-task should clear </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The default GL surface is cleared automatically at the beginning of each frame; this setting is only useful when 2+ render-tasks are used, and the result of the first task needs to be (partially) cleared before rendering the second. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="494" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="231" bodyend="234"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a596a01cb02c40769765685152d9c9712" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::RenderTask::GetClearEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>GetClearEnabled</name>
+        <qualifiedname>Dali::RenderTask::GetClearEnabled</qualifiedname>
+        <briefdescription>
+<para>Queries whether the render-task will clear the results of previous render-tasks. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the render-task should clear </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="501" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="236" bodyend="239"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aeaaf9f338b6bf9b636cdef295c22993f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetCullMode</definition>
+        <argsstring>(bool cullMode)</argsstring>
+        <name>SetCullMode</name>
+        <qualifiedname>Dali::RenderTask::SetCullMode</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>cullMode</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the render task will cull the actors to the camera&apos;s view frustum. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cullMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the renderers should be culled </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The default mode is to cull actors. </para>
+</simplesect>
+<simplesect kind="note"><para>If the shader uses <ref refid="structDali_1_1Shader_1_1Hint_1ab0bfa42ce7c44f151b3783d207295d4aa9df88cb4d030ba08b605a543c9873f7f" kindref="member">Shader::Hint::MODIFIES_GEOMETRY</ref> then culling optimizations are disabled. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structDali_1_1Shader_1_1Hint" kindref="compound">Shader::Hint</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="512" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="241" bodyend="244"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aefcfaa8ab0d587fa9d0965447d937900" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::RenderTask::GetCullMode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCullMode</name>
+        <qualifiedname>Dali::RenderTask::GetCullMode</qualifiedname>
+        <briefdescription>
+<para>Gets the cull mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>True if the render task should cull the actors to the camera&apos;s view frustum </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="520" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="246" bodyend="249"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a2796d092887a2037a736b285616a1a71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetRefreshRate</definition>
+        <argsstring>(uint32_t refreshRate)</argsstring>
+        <name>SetRefreshRate</name>
+        <qualifiedname>Dali::RenderTask::SetRefreshRate</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>refreshRate</declname>
+        </param>
+        <briefdescription>
+<para>Sets the refresh-rate of the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default is REFRESH_ALWAYS (1), meaning that the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> will be processed every frame if the scene graph is changing. It may be desirable to process less frequently. For example, SetRefreshRate(3) will process once every 3 frames if the scene graph is changing. If the scene graph is not changing, then the render task will not be rendered, regardless of this value.</para>
+<para>The REFRESH_ONCE value means that the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> will be processed once only, to take a snap-shot of the scene. Repeatedly calling SetRefreshRate(REFRESH_ONCE) will cause more snap-shots to be taken.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">refreshRate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new refresh rate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="540" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="251" bodyend="254"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a029a66430b756018d30cf83b160a98ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::RenderTask::GetRefreshRate</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRefreshRate</name>
+        <qualifiedname>Dali::RenderTask::GetRefreshRate</qualifiedname>
+        <briefdescription>
+<para>Queries the refresh-rate of the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The refresh-rate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="547" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="256" bodyend="259"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a6754bc68093eda889a0165b5a6e61414" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::RenderTask::WorldToViewport</definition>
+        <argsstring>(const Vector3 &amp;position, float &amp;viewportX, float &amp;viewportY) const</argsstring>
+        <name>WorldToViewport</name>
+        <qualifiedname>Dali::RenderTask::WorldToViewport</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>viewportX</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>viewportY</declname>
+        </param>
+        <briefdescription>
+<para>Gets viewport coordinates for given world position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.13 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">viewportX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewport x position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">viewportY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewport y position </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the position has a screen coordinate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="558" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="276" bodyend="279"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1abe0dd203cec99f367cb7db10c2b8c03b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::RenderTask::ViewportToLocal</definition>
+        <argsstring>(Actor actor, float viewportX, float viewportY, float &amp;localX, float &amp;localY) const</argsstring>
+        <name>ViewportToLocal</name>
+        <qualifiedname>Dali::RenderTask::ViewportToLocal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewportX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewportY</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>localX</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>localY</declname>
+        </param>
+        <briefdescription>
+<para>Gets actor local coordinates for given viewport coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.13 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor describing local coordinate system </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">viewportX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewport x position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">viewportY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The viewport y position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">localX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local x position </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">localY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local y position </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the screen position has a local coordinate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="571" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="281" bodyend="292"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a0d2c871a292444cd06ae3b4b5c269cd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetRenderPassTag</definition>
+        <argsstring>(uint32_t renderPassTag)</argsstring>
+        <name>SetRenderPassTag</name>
+        <qualifiedname>Dali::RenderTask::SetRenderPassTag</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>renderPassTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets Render Pass key for this <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> code that matches this render pass is used for rendering. If no matching shader is found, the code with a render pass of 0 is used. In other cases, operation is not guaranteed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderPassTag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>RenderPassTag value for this render task. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>RenderPassTag of default <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> is 0u. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="581" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="294" bodyend="297"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a9f2f46b4eabf3d2e689c901c440e1384" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::RenderTask::GetRenderPassTag</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRenderPassTag</name>
+        <qualifiedname>Dali::RenderTask::GetRenderPassTag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets Render Pass key for this <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. <simplesect kind="return"><para>RenderPassTag value for this render task. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="587" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="299" bodyend="302"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a9e3e14ae26ed7e616fec7440bb0ef2b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::SetOrderIndex</definition>
+        <argsstring>(int32_t orderIndex)</argsstring>
+        <name>SetOrderIndex</name>
+        <qualifiedname>Dali::RenderTask::SetOrderIndex</qualifiedname>
+        <param>
+          <type>int32_t</type>
+          <declname>orderIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets Order Index to define rendering order for this <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. In the DALi, offscreen renderTasks are rendered earlier than onscreen renderTask. In each category of OffScreen <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> and OnScreen <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>, a <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> with a smaller orderIndex is rendered first. The RenderTasks in <ref refid="classDali_1_1RenderTaskList" kindref="compound">RenderTaskList</ref> is always sorted as acending order of the OrderIndex. The OrderIndex value is needed to be set between [-1000, 1000]. Default orderIndex is 0. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">orderIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the order index for this render task. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The order among RenderTasks whose OrderIndex has not changed follows the order in which they were created. </para>
+</simplesect>
+<simplesect kind="note"><para>Rendering order among RenderTasks those have same OrderIndex cannot be guaranteed after the OrderIndex is changed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="601" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="304" bodyend="313"/>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="namespaceDali_1a24c1f03d5984d7c81638e20ba2a51c0f" compoundref="render-task_8cpp" startline="52">Dali::MAX_ORDER_INDEX</references>
+        <references refid="namespaceDali_1a4d8dfc367cc3a1a2bc8f3cfa87125a88" compoundref="render-task_8cpp" startline="51">Dali::MIN_ORDER_INDEX</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a2c7c140a881e83eeefd56fb3a271e467" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Dali::RenderTask::GetOrderIndex</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOrderIndex</name>
+        <qualifiedname>Dali::RenderTask::GetOrderIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets Order Index for this <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. <simplesect kind="return"><para>OrderIndex value for this render task. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="607" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="315" bodyend="318"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a6168e4af9117c84d2502ab7d3e84cf64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::RenderTask::GetRenderTaskId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRenderTaskId</name>
+        <qualifiedname>Dali::RenderTask::GetRenderTaskId</qualifiedname>
+        <briefdescription>
+<para>Get the unique id of <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. It could be 0 given render task is invalid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.10 <simplesect kind="return"><para>The unique id of <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>, or 0 if invalid. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="615" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="320" bodyend="323"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a11b90bea2a73ef1993edc97dc7554922" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::RenderUntil</definition>
+        <argsstring>(Actor stopperActor)</argsstring>
+        <name>RenderUntil</name>
+        <qualifiedname>Dali::RenderTask::RenderUntil</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>stopperActor</declname>
+        </param>
+        <briefdescription>
+<para>Stop rendering from given actor. The actor is not included. @SINCE_2_3.23. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stopperActor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A marker to stop rendering. If actor is an empty handle, or stopperActor is not a child of sourceActor, then full scene will be rendered </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="623" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="325" bodyend="334"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a10d898f780f5f5b41d698c5cd64424fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::KeepRenderResult</definition>
+        <argsstring>()</argsstring>
+        <name>KeepRenderResult</name>
+        <qualifiedname>Dali::RenderTask::KeepRenderResult</qualifiedname>
+        <briefdescription>
+<para>Requests to Keep rendering result of this frame. @SINCE_2_3.51. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This mothod is only available when the refresh rate is REFRESH_ONCE. </para>
+</simplesect>
+<simplesect kind="note"><para>The result can be used after the FinishedSignal is emitted. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="631" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="336" bodyend="339"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a42162aee569bf1e91bf192c40a8f7655" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RenderTask::ClearRenderResult</definition>
+        <argsstring>()</argsstring>
+        <name>ClearRenderResult</name>
+        <qualifiedname>Dali::RenderTask::ClearRenderResult</qualifiedname>
+        <briefdescription>
+<para>Requests to Clear the rendered result. @SINCE_2_3.51. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Since the rendered result is kept in the render thread resource, this method asynchronously clears the result. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="638" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="341" bodyend="344"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a7468b4ebda4f6207e75ca40983cd4420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref></type>
+        <definition>PixelData Dali::RenderTask::GetRenderResult</definition>
+        <argsstring>()</argsstring>
+        <name>GetRenderResult</name>
+        <qualifiedname>Dali::RenderTask::GetRenderResult</qualifiedname>
+        <briefdescription>
+<para>Retrieves the rendered result as <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref>. @SINCE_2_3.51. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref> that contains rendered result. </para>
+</simplesect>
+<simplesect kind="note"><para>This method is only available after the FinishedSignal is emitted. If this method is called before the Finishedsignal is emitted, empty handle is returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="647" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="346" bodyend="349"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RenderTask_1aa42af8e4e031b0d53ae7e978a8f3a7ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderTask_1a167f9c533ce9d224b6dcff3a051a7875" kindref="member">RenderTaskSignalType</ref> &amp;</type>
+        <definition>RenderTask::RenderTaskSignalType &amp; Dali::RenderTask::FinishedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>FinishedSignal</name>
+        <qualifiedname>Dali::RenderTask::FinishedSignal</qualifiedname>
+        <briefdescription>
+<para>If the refresh rate is REFRESH_ONCE, connect to this signal to be notified when a <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> has finished. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="655" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="261" bodyend="264"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1RenderTask_1a005393d6cb3d26603ed722b6bb807099" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref></type>
+        <definition>RenderTask Dali::RenderTask::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::RenderTask::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts a handle to <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to a <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>, the downcast produces valid handle. If not, the returned handle is left uninitialized. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to an object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="209" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp" bodystart="56" bodyend="59"/>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+        <references refid="classDali_1_1RenderTask_1a7c7076cf01fbc5542b64a89ced4fd74b">RenderTask</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>RenderTasks describe how the <ref refid="namespaceDali" kindref="compound">Dali</ref> scene should be rendered. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The Scene provides access to an ordered list of render-tasks.</para>
+<para>Each <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> must specify the source actors to be rendered, and a camera actor from which the scene is viewed.</para>
+<para>RenderTasks may optionally target a frame-buffer, otherwise the default GL surface is used; typically this is a window provided by the native system.</para>
+<para>By default <ref refid="namespaceDali" kindref="compound">Dali</ref> provides a single <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>, which renders the entire actor hierarchy using a default camera actor and GL surface. If stereoscopic rendering is enabled, <ref refid="namespaceDali" kindref="compound">Dali</ref> will create two additional render tasks, on for each eye. Each render task will have its own camera parented to the default camera actor.</para>
+<para>The first <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> used for input handling will be the last one rendered, which also has input enabled, and has a valid source &amp; camera actor; see <ref refid="classDali_1_1RenderTask_1a93cdb36e5071e03b37f20978b0221cf8" kindref="member">SetInputEnabled()</ref>.</para>
+<para>If none of the actors are hit in the last <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> rendered, then input handling will continue with the second last <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> rendered, and so on.</para>
+<para>All RenderTasks which target a frame-buffer (i.e. off screen) will be rendered before all RenderTasks which target the default GL surface. This allows the user to render intermediate targets which are used later when targeting the screen.</para>
+<para>A <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> targeting a frame-buffer can still be hit-tested, provided that the screen-&gt;frame-buffer coordinate conversion is successful; see <ref refid="classDali_1_1RenderTask_1aee0d0d8f54b7ce334f4448f052eba780" kindref="member">SetScreenToFrameBufferFunction()</ref>.</para>
+<para>If the refresh rate id REFRESH_ONCE and a &quot;Finish&quot; signal is connected, it will be emitted when the <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> is completed. Note that all connected signals must be disconnected before the object is destroyed. This is typically done in the object destructor, and requires either the Dali::Connection object or <ref refid="classDali_1_1RenderTask" kindref="compound">Dali::RenderTask</ref> handle to be stored.</para>
+<para>Signals <table rows="2" cols="2"><row>
+<entry thead="yes"><para>Signal Name   </para>
+</entry><entry thead="yes"><para>Method    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>finished   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1RenderTask_1aa42af8e4e031b0d53ae7e978a8f3a7ed" kindref="member">FinishedSignal()</ref>   </para>
+</entry></row>
+</table>
+@SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="2">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::RenderTask</label>
+        <link refid="classDali_1_1RenderTask"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="2">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::RenderTask</label>
+        <link refid="classDali_1_1RenderTask"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>DEFAULT_CLEAR_COLOR</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Dali::Vector4</label>
+        <link refid="structDali_1_1Vector4"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ONE</edgelabel>
+          <edgelabel>XAXIS</edgelabel>
+          <edgelabel>YAXIS</edgelabel>
+          <edgelabel>ZAXIS</edgelabel>
+          <edgelabel>ZERO</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" line="88" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h" bodystart="89" bodyend="666"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Handle_1a9e6e041bcd7f7bc6a9af6196346d6886" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1aaf59eab452181c2bd072716362b84e19" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9b" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Capability</name></member>
+      <member refid="classDali_1_1RenderTask_1a42162aee569bf1e91bf192c40a8f7655" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ClearRenderResult</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1RenderTask_1ab145e874ca82de4e9769b8a253f23d65" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ConstScreenToFrameBufferFunction</name></member>
+      <member refid="classDali_1_1RenderTask_1a19e343776772d37b41a70d7744221b20" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_CLEAR_COLOR</name></member>
+      <member refid="classDali_1_1RenderTask_1a166f5a745f2c096018f84e4524f7a87a" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_CLEAR_ENABLED</name></member>
+      <member refid="classDali_1_1RenderTask_1aa26ad3517a233f55d1c68b144cd35e43" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_CULL_MODE</name></member>
+      <member refid="classDali_1_1RenderTask_1acab0e15ff58768cf7f20faff43c9a9f0" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_EXCLUSIVE</name></member>
+      <member refid="classDali_1_1RenderTask_1a6c9b9c42dbc4d528a31aa86ce12f3e77" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_INPUT_ENABLED</name></member>
+      <member refid="classDali_1_1RenderTask_1a997371f2a7efa130a702d97091dd97a3" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_REFRESH_RATE</name></member>
+      <member refid="classDali_1_1RenderTask_1afe7ad19b96f3c1de9ecbcd3ef8aef5fb" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DEFAULT_SCREEN_TO_FRAMEBUFFER_FUNCTION</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Handle_1abc9b975d5af192c527dce432a0258713" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DoesCustomPropertyExist</name></member>
+      <member refid="classDali_1_1RenderTask_1a005393d6cb3d26603ed722b6bb807099" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9ba5284559df1a09b2167bdfde50c8418f4" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>DYNAMIC_PROPERTIES</name></member>
+      <member refid="classDali_1_1RenderTask_1aa42af8e4e031b0d53ae7e978a8f3a7ed" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>FinishedSignal</name></member>
+      <member refid="classDali_1_1RenderTask_1a818bffab5af0f91d79f319a12d5eec2f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>FULLSCREEN_FRAMEBUFFER_FUNCTION</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1RenderTask_1a127b94ce4156b559e643d82bfac5e21d" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetCameraActor</name></member>
+      <member refid="classDali_1_1RenderTask_1adf1fc116c6a8fa5e4503097224ea1fc5" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetClearColor</name></member>
+      <member refid="classDali_1_1RenderTask_1a596a01cb02c40769765685152d9c9712" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetClearEnabled</name></member>
+      <member refid="classDali_1_1RenderTask_1aefcfaa8ab0d587fa9d0965447d937900" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetCullMode</name></member>
+      <member refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1Handle_1aa8324c9784866e5fe757ad12794a9f13" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1RenderTask_1a3452a2adcbf530c73e28f1d8e1be7953" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetCurrentViewportPosition</name></member>
+      <member refid="classDali_1_1RenderTask_1a8170a09564deebc9b9eb90c8f9ddd437" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetCurrentViewportSize</name></member>
+      <member refid="classDali_1_1RenderTask_1ad875992e04e8a2f923a7575295599a7a" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetFrameBuffer</name></member>
+      <member refid="classDali_1_1RenderTask_1afbdad68dc3a706dfbc9e6e89e71baf12" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetInputEnabled</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1RenderTask_1a2c7c140a881e83eeefd56fb3a271e467" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetOrderIndex</name></member>
+      <member refid="classDali_1_1Handle_1a020bfa4dfb5213a5e782853d8fe84306" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetProperties</name></member>
+      <member refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a872eda34f826c5525392e91b6d28770f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a3deffc1e9d3236c50140b37e2b6cf8db" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetPropertyCount</name></member>
+      <member refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetPropertyIndex</name></member>
+      <member refid="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetPropertyIndices</name></member>
+      <member refid="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetPropertyName</name></member>
+      <member refid="classDali_1_1Handle_1a775f97600cedf0798fea5c8cca5a0512" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetPropertyType</name></member>
+      <member refid="classDali_1_1RenderTask_1a029a66430b756018d30cf83b160a98ba" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetRefreshRate</name></member>
+      <member refid="classDali_1_1RenderTask_1ad37618a7843cdf0ea57c43338eb06953" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetRenderedScaleFactor</name></member>
+      <member refid="classDali_1_1RenderTask_1a9f2f46b4eabf3d2e689c901c440e1384" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetRenderPassTag</name></member>
+      <member refid="classDali_1_1RenderTask_1a7468b4ebda4f6207e75ca40983cd4420" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetRenderResult</name></member>
+      <member refid="classDali_1_1RenderTask_1a6168e4af9117c84d2502ab7d3e84cf64" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetRenderTaskId</name></member>
+      <member refid="classDali_1_1RenderTask_1abbe5ad0329c7e9e5d48cd6c1756a1b3e" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetScreenToFrameBufferFunction</name></member>
+      <member refid="classDali_1_1RenderTask_1a27333ac3122e55681e11e5da74c16b53" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetScreenToFrameBufferMappingActor</name></member>
+      <member refid="classDali_1_1RenderTask_1abf36b174ab339d6f017770fea959899c" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetSourceActor</name></member>
+      <member refid="classDali_1_1RenderTask_1a1acd4108fd7925605c2adb4f182ed7de" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetStopperActor</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1RenderTask_1a4e93f92646902daeb4e131bc4e91af8a" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetViewport</name></member>
+      <member refid="classDali_1_1RenderTask_1a4bbd02b9afe4e8badc7da951f89a33af" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>GetViewportGuideActor</name></member>
+      <member refid="classDali_1_1Handle_1a78b34f83f7c54495d9f3d0d69df56e1d" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1ac2e8233e0958c65d5b70ed277223ada9" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a305afca954732fe963f55c7d1dd152a9" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Handle</name></member>
+      <member refid="classDali_1_1RenderTask_1aee0e54efa7b645674ae5fe18cfa12fe7" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>IsExclusive</name></member>
+      <member refid="classDali_1_1Handle_1a025ccafe4d792290ba52c2acfc60f853" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>IsPropertyAConstraintInput</name></member>
+      <member refid="classDali_1_1Handle_1ac72ed10ef62da831eca7085c956e77f4" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>IsPropertyAnimatable</name></member>
+      <member refid="classDali_1_1Handle_1a46074ae35e8390eaa75ad5fc94b7a103" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>IsPropertyWritable</name></member>
+      <member refid="classDali_1_1RenderTask_1a10d898f780f5f5b41d698c5cd64424fa" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>KeepRenderResult</name></member>
+      <member refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>New</name></member>
+      <member refid="classDali_1_1Handle_1a2d33ee5b5d4efdf0681c0094d7c3a3ff" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>New</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1RenderTask_1a5f03c1c1d36c906b89706c2cf8aca8bd" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RenderTask_1abe5b962557494dd696ab9774d9877541" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a5709270eb2cf5cdefc0de5979066922d" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::RenderTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a6cba3d10b340f93975fabf2d5138caab" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::RenderTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::RenderTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::RenderTask</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Handle_1aac3062e4424159de0392f27fbf6ec9c8" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aec4050cb13dc0b68853017a769eb51fd" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aa264a86e930a78db250bbb92511dbc9d" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>PropertySetSignal</name></member>
+      <member refid="classDali_1_1Handle_1acca920cad56d4b14b12d2f4c00c0e555" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>PropertySetSignalType</name></member>
+      <member refid="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838afff8ca18f7f7535108f2daf08cafde51" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>REFRESH_ALWAYS</name></member>
+      <member refid="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838acc7ce99675e0e907724853b599c0b8cf" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>REFRESH_ONCE</name></member>
+      <member refid="classDali_1_1RenderTask_1aaeb6758e72f04ddd750841df3f1b6838" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RefreshRate</name></member>
+      <member refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1acf96c21cba52bbcdeb7342592ca3e2e5" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1afece056319aaa0d1507c8d777908dcea" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1aabccabf7e4551a684c7b97f39a973284" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1ad75eb7b366ebc913701058b1e5575581" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1aa5007b6000fcf922580a0895d5fc8755" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a13b771d88af488b89cd649ae1f161fb7" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a9acc036ef41721cc3779976afb26da4b" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RemovePropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1a9a2be7d760f27124d0bd992040748abd" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RemovePropertyNotifications</name></member>
+      <member refid="classDali_1_1RenderTask_1a7c7076cf01fbc5542b64a89ced4fd74b" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RenderTask</name></member>
+      <member refid="classDali_1_1RenderTask_1af1846acac7b4e2f6952a1426ba0c0ced" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RenderTask</name></member>
+      <member refid="classDali_1_1RenderTask_1a894fff8dc1d6f5f676e6946aa901f262" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RenderTask</name></member>
+      <member refid="classDali_1_1RenderTask_1a167f9c533ce9d224b6dcff3a051a7875" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RenderTaskSignalType</name></member>
+      <member refid="classDali_1_1RenderTask_1a11b90bea2a73ef1993edc97dc7554922" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>RenderUntil</name></member>
+      <member refid="classDali_1_1Handle_1a5a8165e0f22ebefd82742b95e21cce67" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ReserveCustomProperties</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Reset</name></member>
+      <member refid="classDali_1_1RenderTask_1aabfdde86969287c23fa2df175c36516d" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ResetViewportGuideActor</name></member>
+      <member refid="classDali_1_1RenderTask_1a0fd6388b13e6cf90d84f5ccaea033ee9" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ScreenToFrameBufferFunction</name></member>
+      <member refid="classDali_1_1RenderTask_1a72238999e6a3c9c01e41e515f7eb1632" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetCameraActor</name></member>
+      <member refid="classDali_1_1RenderTask_1ad45cf47f05f039ae3a8fa85c0ed6f039" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetClearColor</name></member>
+      <member refid="classDali_1_1RenderTask_1ab23acc8dd3f3274d04064018cb12f167" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetClearEnabled</name></member>
+      <member refid="classDali_1_1RenderTask_1aeaaf9f338b6bf9b636cdef295c22993f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetCullMode</name></member>
+      <member refid="classDali_1_1RenderTask_1a80c5a58b89536616d0f04d2d51eaa7ed" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetExclusive</name></member>
+      <member refid="classDali_1_1RenderTask_1a162cf6f23cf0d1f54edda474ad069190" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetFrameBuffer</name></member>
+      <member refid="classDali_1_1RenderTask_1a93cdb36e5071e03b37f20978b0221cf8" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetInputEnabled</name></member>
+      <member refid="classDali_1_1RenderTask_1a9e3e14ae26ed7e616fec7440bb0ef2b3" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetOrderIndex</name></member>
+      <member refid="classDali_1_1Handle_1a3c9f3a03e463cf3efec254b86ae9d1ad" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetProperties</name></member>
+      <member refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetProperty</name></member>
+      <member refid="classDali_1_1RenderTask_1a2796d092887a2037a736b285616a1a71" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetRefreshRate</name></member>
+      <member refid="classDali_1_1RenderTask_1a5bcd2b23f5b7ca0b8ef98bc5bdc4957f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetRenderedScaleFactor</name></member>
+      <member refid="classDali_1_1RenderTask_1a0d2c871a292444cd06ae3b4b5c269cd7" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetRenderPassTag</name></member>
+      <member refid="classDali_1_1RenderTask_1aee0d0d8f54b7ce334f4448f052eba780" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetScreenToFrameBufferFunction</name></member>
+      <member refid="classDali_1_1RenderTask_1a88c94a4d7d839969429b24cb3ac8aaf8" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetScreenToFrameBufferMappingActor</name></member>
+      <member refid="classDali_1_1RenderTask_1aa738964238dc9f5104e67f6dc355abed" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetSourceActor</name></member>
+      <member refid="classDali_1_1RenderTask_1aeddde62d6630b0d6cf2ae7214787a1d1" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetViewport</name></member>
+      <member refid="classDali_1_1RenderTask_1a95ae0c0087285468dcbb3249f413fe78" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetViewportGuideActor</name></member>
+      <member refid="classDali_1_1RenderTask_1aacd5c3b85fb8332a95c3ccf1c252279e" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetViewportPosition</name></member>
+      <member refid="classDali_1_1RenderTask_1a663c24a5b5bce6d67a1dfea5f049ba11" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>SetViewportSize</name></member>
+      <member refid="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>Supports</name></member>
+      <member refid="classDali_1_1RenderTask_1abe0dd203cec99f367cb7db10c2b8c03b" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>ViewportToLocal</name></member>
+      <member refid="classDali_1_1RenderTask_1a6754bc68093eda889a0165b5a6e61414" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>WorldToViewport</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>~BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1abf54df186713c711c2db1a389f1ff700" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>~Handle</name></member>
+      <member refid="classDali_1_1RenderTask_1a62a92d58957947f8e22b46c58340fd6f" prot="public" virt="non-virtual"><scope>Dali::RenderTask</scope><name>~RenderTask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

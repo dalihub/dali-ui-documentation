@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="vector4_8cpp" kind="file" language="C++">
+    <compoundname>vector4.cpp</compoundname>
+    <includes refid="vector4_8h" local="no">dali/public-api/math/vector4.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">dali/internal/render/common/performance-monitor.h</includes>
+    <includes refid="dali-common_8h" local="no">dali/public-api/common/dali-common.h</includes>
+    <includes refid="math-utils_8h" local="no">dali/public-api/math/math-utils.h</includes>
+    <includes refid="vector2_8h" local="no">dali/public-api/math/vector2.h</includes>
+    <includes refid="vector3_8h" local="no">dali/public-api/math/vector3.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>dali/public-api/common/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="10">
+        <label>dali/public-api/math/compile-time-math.h</label>
+        <link refid="compile-time-math_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/math/math-utils.h</label>
+        <link refid="math-utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/math/vector2.h</label>
+        <link refid="vector2_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>dali/public-api/math/vector3.h</label>
+        <link refid="vector3_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/vector4.cpp</label>
+        <link refid="vector4_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/math/vector4.h</label>
+        <link refid="vector4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>cfloat</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>cstdlib</label>
+      </node>
+      <node id="7">
+        <label>dali/internal/render/common/performance-monitor.h</label>
+      </node>
+      <node id="6">
+        <label>math.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vector4_8h" kindref="compound">dali/public-api/math/vector4.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/render/common/performance-monitor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-common_8h" kindref="compound">dali/public-api/common/dali-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="math-utils_8h" kindref="compound">dali/public-api/math/math-utils.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vector2_8h" kindref="compound">dali/public-api/math/vector2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vector3_8h" kindref="compound">dali/public-api/math/vector3.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Internal::PerformanceMonitor;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4<sp/><ref refid="structDali_1_1Vector4_1abb7fa6c7a889218093c7006b9348d9bd" kindref="member">Vector4::ONE</ref>(1.0f,<sp/>1.0f,<sp/>1.0f,<sp/>1.0f);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4<sp/><ref refid="structDali_1_1Vector4_1a72d681d5e20918176923215b21387298" kindref="member">Vector4::XAXIS</ref>(1.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4<sp/><ref refid="structDali_1_1Vector4_1a0a14b8c494ceabf60878177030930361" kindref="member">Vector4::YAXIS</ref>(0.0f,<sp/>1.0f,<sp/>0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4<sp/><ref refid="structDali_1_1Vector4_1afdfe0f3b70c5f4c7dece730f816f5cfa" kindref="member">Vector4::ZAXIS</ref>(0.0f,<sp/>0.0f,<sp/>1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4<sp/><ref refid="structDali_1_1Vector4_1a0afd695b23e14ff762c2ac9bf9a4b77d" kindref="member">Vector4::ZERO</ref>(0.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="structDali_1_1Vector4_1a0206c33b4eb85b2496b2ecc1e9b01d9e" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4_1a686b05ec634111bbf321b38b94a4d1d2" kindref="member">Vector4::Vector4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>&amp;<sp/>vec2)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">:<sp/>x(vec2.x),</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>y(vec2.y),</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>z(0.0f),</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>w(0.0f)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structDali_1_1Vector4_1a0939084b2218d365675428bcccb981d8" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4_1a686b05ec634111bbf321b38b94a4d1d2" kindref="member">Vector4::Vector4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref>&amp;<sp/>vec3)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">:<sp/>x(vec3.x),</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>y(vec3.y),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>z(vec3.z),</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>w(0.0f)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="structDali_1_1Vector4_1a1254889ac7fb4e54e992435e460e7528" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4_1a686b05ec634111bbf321b38b94a4d1d2" kindref="member">Vector4::Vector4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref>&amp;<sp/>vec3,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">:<sp/>x(vec3.x),</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>y(vec3.y),</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>z(vec3.z),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>w(w)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structDali_1_1Vector4_1a4f7313c02967575ed62240af0020e7f9" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/><ref refid="structDali_1_1Vector4_1acf34ba12dd8a4b3a46c57c76e7e0c304" kindref="member">Vector4::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>&amp;<sp/>vec2)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>=<sp/>vec2.<ref refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>=<sp/>vec2.<ref refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="structDali_1_1Vector4_1a373f677f59357483fa07ad2a14fb3aa2" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/><ref refid="structDali_1_1Vector4_1acf34ba12dd8a4b3a46c57c76e7e0c304" kindref="member">Vector4::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref>&amp;<sp/>vec3)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>=<sp/>vec3.<ref refid="structDali_1_1Vector3_1affcad36929ae50b632c8e7685091a629" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>=<sp/>vec3.<ref refid="structDali_1_1Vector3_1a97b51c862713b0f368d1602f7da359b5" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>=<sp/>vec3.<ref refid="structDali_1_1Vector3_1ac09d9bcfd9fa74ea7185b475624b9f1a" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structDali_1_1Vector4_1a6d77aff48465f56fb47d7e6771e93349" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a6d77aff48465f56fb47d7e6771e93349" kindref="member">Vector4::operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="84"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fabsf(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>-<sp/>rhs.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>)<sp/>&gt;<sp/><ref refid="group__dali__core__math_1ga1c87409077a7ca38580b826fa1fa1dbb" kindref="member">GetRangedEpsilon</ref>(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>,<sp/>rhs.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fabsf(<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>-<sp/>rhs.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>)<sp/>&gt;<sp/><ref refid="group__dali__core__math_1ga1c87409077a7ca38580b826fa1fa1dbb" kindref="member">GetRangedEpsilon</ref>(<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>,<sp/>rhs.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>))</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fabsf(<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>-<sp/>rhs.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>)<sp/>&gt;<sp/><ref refid="group__dali__core__math_1ga1c87409077a7ca38580b826fa1fa1dbb" kindref="member">GetRangedEpsilon</ref>(<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>,<sp/>rhs.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>))</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(fabsf(<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>-<sp/>rhs.<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>)<sp/>&gt;<sp/><ref refid="group__dali__core__math_1ga1c87409077a7ca38580b826fa1fa1dbb" kindref="member">GetRangedEpsilon</ref>(<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>,<sp/>rhs.<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>))</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="structDali_1_1Vector4_1ac988ee597ed9d7b933786829307a0cf2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ac988ee597ed9d7b933786829307a0cf2" kindref="member">Vector4::Dot</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="106"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>3);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector3_1affcad36929ae50b632c8e7685091a629" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector3_1a97b51c862713b0f368d1602f7da359b5" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector3_1ac09d9bcfd9fa74ea7185b475624b9f1a" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="structDali_1_1Vector4_1ae441a947c6f9c227d2426712ac2e92b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ac988ee597ed9d7b933786829307a0cf2" kindref="member">Vector4::Dot</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="113"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>4);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="structDali_1_1Vector4_1a8af312f85931a32e45b3ad3147e3c376" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a8af312f85931a32e45b3ad3147e3c376" kindref="member">Vector4::Dot3</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="120"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>3);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="structDali_1_1Vector4_1ab4c23dddc90065623e018a697b06c172" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ab4c23dddc90065623e018a697b06c172" kindref="member">Vector4::Dot4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ac988ee597ed9d7b933786829307a0cf2" kindref="member">Dot</ref>(other);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="structDali_1_1Vector4_1a83ad9a1af15d1f6d0191149aef3c86a8" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref><sp/><ref refid="structDali_1_1Vector4_1a83ad9a1af15d1f6d0191149aef3c86a8" kindref="member">Vector4::Cross</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="132"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>6);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a686b05ec634111bbf321b38b94a4d1d2" kindref="member">Vector4</ref>((<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>)<sp/>-<sp/>(<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>),</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>)<sp/>-<sp/>(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>),</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>)<sp/>-<sp/>(<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/>other.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>),</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Will<sp/>always<sp/>return<sp/>positive<sp/>square<sp/>root</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="structDali_1_1Vector4_1a030c49e528b24973da271511f7d6d49f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a030c49e528b24973da271511f7d6d49f" kindref="member">Vector4::Length</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="143"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>4);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sqrtf(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="structDali_1_1Vector4_1ae01b58449aa4d17973858ed4b1fb052e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ae01b58449aa4d17973858ed4b1fb052e" kindref="member">Vector4::Length3</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="150"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>3);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sqrtf(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="structDali_1_1Vector4_1aba877c7eac7284d0e4bd496bd829f924" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1aba877c7eac7284d0e4bd496bd829f924" kindref="member">Vector4::LengthSquared</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="157"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>4);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="structDali_1_1Vector4_1a5500994581f03844134dbbdd2488308f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a5500994581f03844134dbbdd2488308f" kindref="member">Vector4::LengthSquared3</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="164"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>3);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>+<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*<sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="structDali_1_1Vector4_1a66c6ef12071235d2747ee302e45b37ca" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a66c6ef12071235d2747ee302e45b37ca" kindref="member">Vector4::Normalize</ref>()</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>length<sp/>=<sp/><ref refid="structDali_1_1Vector4_1a030c49e528b24973da271511f7d6d49f" kindref="member">Length</ref>();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>the<sp/>case<sp/>where<sp/>the<sp/>length<sp/>is<sp/>exactly<sp/>zero,<sp/>the<sp/>vector<sp/>cannot<sp/>be<sp/>normalized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="group__dali__core__math_1gaa61193a221ab216f800c225143581b38" kindref="member">EqualsZero</ref>(length))</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>4);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>inverseLength<sp/>=<sp/>1.0f<sp/>/<sp/>length;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="structDali_1_1Vector4_1a388c382ad8d8f4643894b600d6b4d1c7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1a388c382ad8d8f4643894b600d6b4d1c7" kindref="member">Vector4::Normalize3</ref>()</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>length<sp/>=<sp/><ref refid="structDali_1_1Vector4_1ae01b58449aa4d17973858ed4b1fb052e" kindref="member">Length3</ref>();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>the<sp/>case<sp/>where<sp/>the<sp/>length<sp/>is<sp/>exactly<sp/>zero,<sp/>the<sp/>vector<sp/>cannot<sp/>be<sp/>normalized.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="group__dali__core__math_1gaa61193a221ab216f800c225143581b38" kindref="member">EqualsZero</ref>(length))</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>MATH_INCREASE_BY(PerformanceMonitor::FLOAT_POINT_MULTIPLY,<sp/>3);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>inverseLength<sp/>=<sp/>1.0f<sp/>/<sp/>length;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref><sp/>*=<sp/>inverseLength;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="structDali_1_1Vector4_1ad19b940a886a24cc9e458fb6a770b3cc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4_1ad19b940a886a24cc9e458fb6a770b3cc" kindref="member">Vector4::Clamp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>min,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>max)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>Dali::ClampInPlace&lt;float&gt;(<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>,<sp/>min.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>,<sp/>max.<ref refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/>Dali::ClampInPlace&lt;float&gt;(<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>,<sp/>min.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>,<sp/>max.<ref refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" kindref="member">y</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>Dali::ClampInPlace&lt;float&gt;(<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>,<sp/>min.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>,<sp/>max.<ref refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" kindref="member">z</ref>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>Dali::ClampInPlace&lt;float&gt;(<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>,<sp/>min.<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>,<sp/>max.<ref refid="structDali_1_1Vector4_1affcceca6e297adb2609d9304fa53f900" kindref="member">w</ref>);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="group__dali__core__math_1gaf802d1e7dec150bb03ff331e7c41b8e6" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref><sp/><ref refid="group__dali__core__math_1ga7ef1fd777eb6bc3e6bc722c210ae4305" kindref="member">Clamp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>v,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>min,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>max)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref><sp/>result(v);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>result.<ref refid="structDali_1_1Vector4_1ad19b940a886a24cc9e458fb6a770b3cc" kindref="member">Clamp</ref>(<ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>(min,<sp/>min,<sp/>min,<sp/>min),<sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>(max,<sp/>max,<sp/>max,<sp/>max));</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/math/vector4.cpp"/>
+  </compounddef>
+</doxygen>

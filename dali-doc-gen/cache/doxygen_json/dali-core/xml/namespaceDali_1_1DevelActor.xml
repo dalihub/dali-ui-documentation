@@ -1,0 +1,755 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1DevelActor" kind="namespace" language="C++">
+    <compoundname>Dali::DevelActor</compoundname>
+    <innernamespace refid="namespaceDali_1_1DevelActor_1_1ChildrenDepthIndexPolicy">Dali::DevelActor::ChildrenDepthIndexPolicy</innernamespace>
+    <innernamespace refid="namespaceDali_1_1DevelActor_1_1Property">Dali::DevelActor::Property</innernamespace>
+    <innernamespace refid="namespaceDali_1_1DevelActor_1_1VisibilityChange">Dali::DevelActor::VisibilityChange</innernamespace>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1DevelActor_1ac8236b37e7b31d7f2cd8e593d5be6c43" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, bool, <ref refid="namespaceDali_1_1DevelActor_1_1VisibilityChange_1a41a246494dc0ec30455eeb24adf67dd5" kindref="member">VisibilityChange::Type</ref>)&gt;</type>
+        <definition>using Dali::DevelActor::VisibilityChangedSignalType = typedef Signal&lt;void(Actor, bool, VisibilityChange::Type)&gt;</definition>
+        <argsstring></argsstring>
+        <name>VisibilityChangedSignalType</name>
+        <qualifiedname>Dali::DevelActor::VisibilityChangedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> type of VisibilityChangedSignalType. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" line="257" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1DevelActor_1a412f0fe3b50dae593f150cca5c633684" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>)&gt;</type>
+        <definition>using Dali::DevelActor::ChildChangedSignalType = typedef Signal&lt;void(Actor)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ChildChangedSignalType</name>
+        <qualifiedname>Dali::DevelActor::ChildChangedSignalType</qualifiedname>
+        <briefdescription>
+<para>Called when the actor has a child added or removed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" line="383" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" bodystart="383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1DevelActor_1a0e4d70e6d8830559213e9263eaa0b08a" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>)&gt;</type>
+        <definition>using Dali::DevelActor::ChildOrderChangedSignalType = typedef Signal&lt;void(Actor)&gt;</definition>
+        <argsstring></argsstring>
+        <name>ChildOrderChangedSignalType</name>
+        <qualifiedname>Dali::DevelActor::ChildOrderChangedSignalType</qualifiedname>
+        <briefdescription>
+<para>Used when the actor&apos;s children have changed order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" line="425" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" bodystart="425" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a3d959076b74c46e15dc0c7310fb8bb76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>DALI_CORE_API Vector2 Dali::DevelActor::CalculateScreenPosition</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>CalculateScreenPosition</name>
+        <qualifiedname>Dali::DevelActor::CalculateScreenPosition</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the current position of the actor in screen coordinates using event-side properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function calculates the screen coordinates of an actor by automatically detecting whether to use 2D or 3D calculation based on the actor&apos;s context and ancestor layers.</para>
+<para>For 2D calculation (when no 3D layers in ancestors):<itemizedlist>
+<listitem><para>Uses 2D-specific optimizations</para>
+</listitem><listitem><para>Assumes orthographic projection and no camera rotation</para>
+</listitem><listitem><para>Z coordinates are treated as 0 for screen position calculation</para>
+</listitem><listitem><para>Faster calculation with 2D limitations</para>
+</listitem></itemizedlist>
+</para>
+<para>For 3D calculation (when 3D layers exist in ancestors):<itemizedlist>
+<listitem><para>Uses full 3D projection with view and projection matrices</para>
+</listitem><listitem><para>Supports perspective projection, camera rotation, and full 3D transforms</para>
+</listitem><listitem><para>Considers Z depth for proper screen coordinate projection</para>
+</listitem><listitem><para>More accurate but computationally expensive</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para>Returns the screen position of actor. Returns (0,0) if actor is not on scene. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="27" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="27" bodyend="30" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="329" declcolumn="23"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a33d2783694b4a6f2e854fc30091340bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Rect" kindref="compound">Rect</ref></type>
+        <definition>DALI_CORE_API Rect Dali::DevelActor::CalculateScreenExtents</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>CalculateScreenExtents</name>
+        <qualifiedname>Dali::DevelActor::CalculateScreenExtents</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates screen position and size using event-side properties.</para>
+<para>This function calculates the bounding box screen coordinates and size of an actor by automatically detecting whether to use 2D or 3D calculation based on the actor&apos;s context and ancestor layers.</para>
+<para>For 2D calculation (when no 3D layers in ancestors):<itemizedlist>
+<listitem><para>Uses 2D-specific optimizations</para>
+</listitem><listitem><para>Assumes orthographic projection and no camera rotation</para>
+</listitem><listitem><para>Transforms 4 corner points in 2D space (Z=0) for bounding box calculation</para>
+</listitem><listitem><para>Faster calculation with 2D limitations</para>
+</listitem></itemizedlist>
+</para>
+<para>For 3D calculation (when 3D layers exist in ancestors):<itemizedlist>
+<listitem><para>Uses full 3D projection with view and projection matrices</para>
+</listitem><listitem><para>Supports perspective projection, camera rotation, and full 3D transforms</para>
+</listitem><listitem><para>Transforms all 8 corners of the 3D bounding box for accurate screen extents</para>
+</listitem><listitem><para>Accounts for perspective foreshortening and 3D rotation effects</para>
+</listitem><listitem><para>More accurate but computationally expensive</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para><ref refid="structDali_1_1Rect" kindref="compound">Rect</ref> containing position of top-left corner on screen and size respectively. Returns (0,0,0,0) if actor is not on scene. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="32" column="2" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="32" bodyend="35" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="354" declcolumn="16"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a41e901821495f55c788a50e5cca70ebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Rect" kindref="compound">Rect</ref></type>
+        <definition>DALI_CORE_API Rect Dali::DevelActor::CalculateCurrentScreenExtents</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>CalculateCurrentScreenExtents</name>
+        <qualifiedname>Dali::DevelActor::CalculateCurrentScreenExtents</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates screen position and size from current node values.</para>
+<para>This function calculates the bounding box screen coordinates and size of an actor using the current state from the update thread (node). It automatically detects whether to use 2D or 3D calculation based on the actor&apos;s context and ancestor layers.</para>
+<para>For 2D calculation (when no 3D layers in ancestors):<itemizedlist>
+<listitem><para>Uses 2D-specific optimizations</para>
+</listitem><listitem><para>Assumes orthographic projection and no camera rotation</para>
+</listitem><listitem><para>Transforms 4 corner points in 2D space (Z=0) for bounding box calculation</para>
+</listitem><listitem><para>Uses current node state for the specified buffer index</para>
+</listitem><listitem><para>Faster calculation with 2D limitations</para>
+</listitem></itemizedlist>
+</para>
+<para>For 3D calculation (when 3D layers exist in ancestors):<itemizedlist>
+<listitem><para>Uses full 3D projection with view and projection matrices</para>
+</listitem><listitem><para>Supports perspective projection, camera rotation, and full 3D transforms</para>
+</listitem><listitem><para>Transforms all 8 corners of the 3D bounding box for accurate screen extents</para>
+</listitem><listitem><para>Accounts for perspective foreshortening and 3D rotation effects</para>
+</listitem><listitem><para>Uses current node state for the specified buffer index</para>
+</listitem><listitem><para>More accurate but computationally expensive</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para><ref refid="structDali_1_1Rect" kindref="compound">Rect</ref> containing position of top-left corner on screen and size respectively. Returns (0,0,0,0) if actor is not on scene. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="37" column="2" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="37" bodyend="40" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="381" declcolumn="16"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a2505069eb2404a863402c9e6d6ef204a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1DevelActor_1ac8236b37e7b31d7f2cd8e593d5be6c43" kindref="member">VisibilityChangedSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API VisibilityChangedSignalType &amp; Dali::DevelActor::VisibilityChangedSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>VisibilityChangedSignal</name>
+        <qualifiedname>Dali::DevelActor::VisibilityChangedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when the visible property of this or a parent actor is changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visible,<sp/><ref refid="namespaceDali_1_1DevelActor_1_1VisibilityChange_1a41a246494dc0ec30455eeb24adf67dd5" kindref="member">VisibilityChange::Type</ref>&amp;<sp/>type<sp/>);</highlight></codeline>
+</programlisting> actor: The actor, or child of actor, whose visibility has changed. visible: If type is SELF, then this is true if this actor&apos;s VISIBILITY property is true. If Type is PARENT, this is true if a parent&apos;s VISIBILITY property has changed to true. type: Whether the actor&apos;s visible property has changed or a parent&apos;s. <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="note"><para>This signal is NOT emitted if the actor becomes transparent (or the reverse), it&apos;s ONLY linked with <ref refid="structDali_1_1Actor_1_1Property_1aa00cf4d2c81c442d5bf5c544f96410c3acc2b9aee38fe028fa41c38c2e1c38d96" kindref="member">Actor::Property::VISIBLE</ref>. </para>
+</simplesect>
+<simplesect kind="note"><para>For reference, an actor is only shown if it and it&apos;s parents (up to the root actor) are also visible, are not transparent, and this actor has a non-zero size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="42" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="42" bodyend="45" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="274" declcolumn="43"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>DALI_CORE_API Actor Dali::DevelActor::GetVisiblityChangedActor</definition>
+        <argsstring>()</argsstring>
+        <name>GetVisiblityChangedActor</name>
+        <qualifiedname>Dali::DevelActor::GetVisiblityChangedActor</qualifiedname>
+        <briefdescription>
+<para>Get the actor who trigger the VisibilityChangedSignal or InheritedVisibilityChangedSignal signal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The return value is &quot;INVALID&quot; if this API called outside of the VisibilityChangedSignal or InheritedVisibilityChangedSignal signal. &quot;INVALID&quot; don&apos;t mean the empty handle. It might return the valid handle. But it doesn&apos;t mean the visibility changed actor. if this API called outside of VisibilityChangedSignal or InheritedVisibilityChangedSignal signal.</para>
+</simplesect>
+For example, Let we assume some <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> tree looks like (root)A - B - C - D - E. If we change C&apos;s visibility as false + Change A&apos;s visibility inside of D&apos;s VisibilityChangedSignal callback, The result of this API will like this.</para>
+<para>(Some codes here) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is INVALID C.SetProperty(Actor::Property::VISIBLE, false) VisibilityChangedSignal(C, false, VisibilityChange::SELF) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C VisibilityChangedSignal(D, false, VisibilityChange::PARENT) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C A.SetProperty(Actor::Property::VISIBLE, false) VisibilityChangedSignal(A, false, VisibilityChange::SELF) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A VisibilityChangedSignal(B, false, VisibilityChange::PARENT) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A VisibilityChangedSignal(C, false, VisibilityChange::PARENT) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A VisibilityChangedSignal(D, false, VisibilityChange::PARENT) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A VisibilityChangedSignal(E, false, VisibilityChange::PARENT) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A InheritedVisibilityChangedSignal(A, false) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A InheritedVisibilityChangedSignal(B, false) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> A (Some codes here) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C VisibilityChangedSignal(E, false, VisibilityChange::PARENT) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C InheritedVisibilityChangedSignal(C, false) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C InheritedVisibilityChangedSignal(D, false) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C InheritedVisibilityChangedSignal(E, false) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> C (Some codes here) --&gt; <ref refid="namespaceDali_1_1DevelActor_1a7f198ee4e091495b94ee62638aaa4468" kindref="member">GetVisiblityChangedActor()</ref> is INVALID</para>
+<para><simplesect kind="return"><para>The actor who trigger the visibility changed signal. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="47" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="47" bodyend="50" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="307" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1add88e5c2970994c13a7d703eae1edb90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1DevelActor_1a412f0fe3b50dae593f150cca5c633684" kindref="member">ChildChangedSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API ChildChangedSignalType &amp; Dali::DevelActor::ChildAddedSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>ChildAddedSignal</name>
+        <qualifiedname>Dali::DevelActor::ChildAddedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when a child is added to this actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>child<sp/>);</highlight></codeline>
+</programlisting> child: The child that has been added.</para>
+<para><simplesect kind="note"><para>Use this signal with caution. Changing the parent of the actor within this callback is possible, but DALi will prevent further signals being sent.</para>
+</simplesect>
+<simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="52" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="52" bodyend="55" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="401" declcolumn="38"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a038d78e4e4711c84a2a2814945834a8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1DevelActor_1a412f0fe3b50dae593f150cca5c633684" kindref="member">ChildChangedSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API ChildChangedSignalType &amp; Dali::DevelActor::ChildRemovedSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>ChildRemovedSignal</name>
+        <qualifiedname>Dali::DevelActor::ChildRemovedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when a child is removed from this actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>child<sp/>);</highlight></codeline>
+</programlisting> child: The child that has been removed.</para>
+<para><simplesect kind="note"><para>Use this signal with caution. Changing the parent of the actor within this callback is possible, but DALi will prevent further signals being sent.</para>
+</simplesect>
+<simplesect kind="note"><para>If the child actor is moved from one actor to another, then this signal will be emitted followed immediately by an <ref refid="namespaceDali_1_1DevelActor_1add88e5c2970994c13a7d703eae1edb90" kindref="member">ChildAddedSignal()</ref> on the new parent.</para>
+</simplesect>
+<simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="57" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="57" bodyend="60" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="423" declcolumn="38"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a25f3dc98cb08c845f6f47586d4489628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1DevelActor_1a0e4d70e6d8830559213e9263eaa0b08a" kindref="member">ChildOrderChangedSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API ChildOrderChangedSignalType &amp; Dali::DevelActor::ChildOrderChangedSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>ChildOrderChangedSignal</name>
+        <qualifiedname>Dali::DevelActor::ChildOrderChangedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when an actor&apos;s children change their sibling order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>child<sp/>);</highlight></codeline>
+</programlisting> child The child actor that changed order</para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="62" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="62" bodyend="65" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="439" declcolumn="43"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a980e5dc2279020c40278729a46e83a8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a6836d62159b358e3ef969061f17ff148" kindref="member">Actor::TouchEventSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API Actor::TouchEventSignalType &amp; Dali::DevelActor::InterceptTouchedSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>InterceptTouchedSignal</name>
+        <qualifiedname>Dali::DevelActor::InterceptTouchedSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when intercepting the actor&apos;s touch event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor<sp/>);</highlight></codeline>
+</programlisting> actor The actor to intercept</para>
+<para><simplesect kind="note"><para><ref refid="classDali_1_1TouchEvent" kindref="compound">TouchEvent</ref> callbacks are called from the last child in the order of the parent&apos;s actor. The InterceptTouchEvent callback is to intercept the touch event in the parent. So, if the parent interepts the touch event, the child cannot receive the touch event.</para>
+</simplesect>
+<simplesect kind="note"><para>example <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> parent = <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>; <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> child = <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>; parent.Add(child); child.TouchedSignal().Connect(&amp;application, childFunctor); parent.TouchedSignal().Connect(&amp;application, parentFunctor); The touch event callbacks are called in the order childFunctor -&gt; parentFunctor.</para>
+</simplesect>
+If you connect interceptTouchSignal to parentActor. Dali::DevelActor::InterceptTouchedSignal(parent).Connect(&amp;application, interceptFunctor);</para>
+<para>When interceptFunctor returns false, the touch event callbacks are called in the same order childFunctor -&gt; parentFunctor. If interceptFunctor returns true, it means that the <ref refid="classDali_1_1TouchEvent" kindref="compound">TouchEvent</ref> was intercepted. So the child actor will not be able to receive touch events. Only the parentFunctor is called.</para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="67" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="67" bodyend="70" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="473" declcolumn="43"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1ac7290f7ef27644ccbda75354d3b22d6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1ad1adce84965265e107f628126b8916b6" kindref="member">Actor::WheelEventSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API Actor::WheelEventSignalType &amp; Dali::DevelActor::InterceptWheelSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>InterceptWheelSignal</name>
+        <qualifiedname>Dali::DevelActor::InterceptWheelSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when intercepting the actor&apos;s wheel event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor<sp/>);</highlight></codeline>
+</programlisting> actor The actor to intercept</para>
+<para><simplesect kind="note"><para><ref refid="classDali_1_1WheelEvent" kindref="compound">WheelEvent</ref> callbacks are called from the last child in the order of the parent&apos;s actor. The InterceptWheelEvent callback is to intercept the wheel event in the parent. So, if the parent interepts the wheel event, the child cannot receive the Wheel event.</para>
+</simplesect>
+<simplesect kind="note"><para>example <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> parent = <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>; <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> child = <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>; parent.Add(child); child.WheelEventSignal().Connect(&amp;application, childFunctor); parent.WheelEventSignal().Connect(&amp;application, parentFunctor); The wheel event callbacks are called in the order childFunctor -&gt; parentFunctor.</para>
+</simplesect>
+If you connect InterceptWheelSignal to parentActor. Dali::DevelActor::InterceptWheelSignal(parent).Connect(&amp;application, interceptFunctor);</para>
+<para>When interceptFunctor returns false, the wheel event callbacks are called in the same order childFunctor -&gt; parentFunctor. If interceptFunctor returns true, it means that the <ref refid="classDali_1_1WheelEvent" kindref="compound">WheelEvent</ref> was intercepted. So the child actor will not be able to receive wheel events. Only the parentFunctor is called.</para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="72" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="72" bodyend="75" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="507" declcolumn="43"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a05caaef9acb262b9152f2cadeeecc7dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::DevelActor::SetNeedGesturePropagation</definition>
+        <argsstring>(Actor actor, bool propagation)</argsstring>
+        <name>SetNeedGesturePropagation</name>
+        <qualifiedname>Dali::DevelActor::SetNeedGesturePropagation</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>propagation</declname>
+        </param>
+        <briefdescription>
+<para>This is used when the parent actor wants to listen to gesture events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>example The child is overlapped on the parent. Currently, if you tap a child, the parent cannot listen to the tap event. Now, If set to SetNeedGesturePropagation(true), the parent can receive gesture events. Please call this setting inside a gesture callback, it will be reset after the gesture callback is called. <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>parent<sp/>=<sp/><ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>child<sp/>=<sp/><ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>parent.<ref refid="classDali_1_1Actor_1a944e778fa4fc130da3d71ecd0848476a" kindref="member">Add</ref>(child);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>parentTapDetector<sp/>=<sp/><ref refid="classDali_1_1TapGestureDetector_1a5cb1497c9147408eb2508127f8af74c9" kindref="member">TapGestureDetector::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>childTapDetector<sp/>=<sp/><ref refid="classDali_1_1TapGestureDetector_1a5cb1497c9147408eb2508127f8af74c9" kindref="member">TapGestureDetector::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>parentTapDetector.Attach(parent);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>childTapDetector.Attach(child);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>parentTapDetector.DetectedSignal().Connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;OnParentTap);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>childTapDetector.DetectedSignal().Connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;OnChildTap);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnChildTap(<ref refid="classDali_1_1Actor" kindref="compound">Dali::Actor</ref><sp/>actor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TapGesture" kindref="compound">Dali::TapGesture</ref>&amp;<sp/>tap)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>you<sp/>set<sp/>SetNeedGesturePropagation<sp/>to<sp/>true<sp/>here,<sp/>the<sp/>parent<sp/>actor<sp/>can<sp/>also<sp/>listen<sp/>to<sp/>events</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><ref refid="namespaceDali_1_1DevelActor_1a05caaef9acb262b9152f2cadeeecc7dd" kindref="member">Dali::DevelActor::SetNeedGesturePropagation</ref>(Self(),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="77" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="77" bodyend="80" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="536" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1aeceb18de7bd596df7db926dc9c8260a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::DevelActor::SwitchParent</definition>
+        <argsstring>(Actor actor, Actor newParent)</argsstring>
+        <name>SwitchParent</name>
+        <qualifiedname>Dali::DevelActor::SwitchParent</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>newParent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Switch parent in the same tree. This method changes the actor&apos;s parent with keeping on scene state. Both of current parent <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> and new parent <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> must already be added on Scene. This method don&apos;t emit notification about add/remove and on/off scene. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">newParent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An actor to be a new parent of this actor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="82" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="82" bodyend="85" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="546" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a28f8fb882ec74bfeb4e9cbc33617ceac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a6836d62159b358e3ef969061f17ff148" kindref="member">Actor::TouchEventSignalType</ref> &amp;</type>
+        <definition>DALI_CORE_API Actor::TouchEventSignalType &amp; Dali::DevelActor::HitTestResultSignal</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>HitTestResultSignal</name>
+        <qualifiedname>Dali::DevelActor::HitTestResultSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>This signal is emitted when an actor is hit through hit-test. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCallbackName(<sp/><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor<sp/>);</highlight></codeline>
+</programlisting> actor The actor to intercept</para>
+<para><simplesect kind="warning"><para>You MUST NOT change the scene tree or <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> during this signal.</para>
+</simplesect>
+<simplesect kind="note"><para>This callback is called when the actor is hit. If true is returned, <ref refid="classDali_1_1TouchEvent" kindref="compound">TouchEvent</ref> is called from the this actor. If false is returned, the hit test starts again from the next lower actor.</para>
+</simplesect>
+<simplesect kind="note"><para>example <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> topActor = <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>; <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> bottomActor = <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>; topActor.TouchedSignal().Connect(&amp;application, topActorFunctor); bottomActor.TouchedSignal().Connect(&amp;application, bottomActorFunctor); The two actors have no relationship. So when the topActor is touched, the event cannot be propagated to the bottomActor.</para>
+</simplesect>
+If you connect HitTestResultSignal to topActor. Dali::DevelActor::HitTestResultSignal(topActor).Connect(&amp;application, hitTestResultFunctor);</para>
+<para>If the hitTestResult Functor returns false, it passes the hit-test and starts the hit-test again from the next lower actor. So the bottomActor can be hit and receive touch events. If hitTestResult returns true, it means that it has been hit. So it receives a <ref refid="classDali_1_1TouchEvent" kindref="compound">TouchEvent</ref> from itself.</para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="87" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="87" bodyend="90" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="581" declcolumn="43"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a4ed92cf65aa0b9f1a721a6fef7fa4ab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Matrix" kindref="compound">Matrix</ref></type>
+        <definition>DALI_CORE_API Matrix Dali::DevelActor::GetWorldTransform</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>GetWorldTransform</name>
+        <qualifiedname>Dali::DevelActor::GetWorldTransform</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the world transform of the actor.</para>
+<para>This calculates the world transform from scratch using only event side properties - it does not rely on the update thread to have already calculated the transform.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor for which to calculate the world transform </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The world transform matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="92" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="92" bodyend="95" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="593" declcolumn="22"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1af2dabd4dbb3990b5e58493fd5674e1ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref></type>
+        <definition>DALI_CORE_API Vector4 Dali::DevelActor::GetWorldColor</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>GetWorldColor</name>
+        <qualifiedname>Dali::DevelActor::GetWorldColor</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the world color of the actor.</para>
+<para>This calcualtes the world color of the actor from scratch using only event side properties. It does not rely on the update thread to have already calculated the color.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to calculate the world color for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the world color </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="97" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="97" bodyend="100" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="605" declcolumn="23"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1ad0a3df4a15b704c0b5f6d77ebe1e1d41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::DevelActor::IsEffectivelyVisible</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>IsEffectivelyVisible</name>
+        <qualifiedname>Dali::DevelActor::IsEffectivelyVisible</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the effective visibility of the actor.</para>
+<para>This calculates the effective visibility of the actor from scratch using only event side properties. It does not rely on the update thread to have already calculated the visibility.</para>
+<para>The effective visibility takes into account the actor&apos;s own visibility property as well as the visibility of all its parents in the hierarchy.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to calculate the effective visibility for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>False if the actor or any of its parents is not visible, or if the scene is off. True otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="102" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="102" bodyend="105" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="620" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a7c70c060ff3d8c9d39d7ff0549f44d27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::DevelActor::LookAt</definition>
+        <argsstring>(Actor actor, Vector3 target, Vector3 up, Vector3 localForward, Vector3 localUp)</argsstring>
+        <name>LookAt</name>
+        <qualifiedname>Dali::DevelActor::LookAt</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+          <declname>up</declname>
+          <defval><ref refid="structDali_1_1Vector3_1a3b9bd58eb5605e7a4ba8fd2fd76985fb" kindref="member">Vector3::YAXIS</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+          <declname>localForward</declname>
+          <defval><ref refid="structDali_1_1Vector3_1a47cc2fc7aa66437ddfaf87c9c0a2d6b4" kindref="member">Vector3::ZAXIS</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+          <declname>localUp</declname>
+          <defval><ref refid="structDali_1_1Vector3_1a3b9bd58eb5605e7a4ba8fd2fd76985fb" kindref="member">Vector3::YAXIS</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotate the actor look at specific position. It will change the actor&apos;s orientation property.</para>
+<para>This calculates the world transform from scratch using only event side properties - it does not rely on the update thread to have already calculated the transform.</para>
+<para><simplesect kind="note"><para>Target position should be setup by world coordinates. </para>
+</simplesect>
+<simplesect kind="note"><para>The result of invalid input is not determined. (ex : forward vector or actor-to-target vector has same direction with up, One of them is ZERO)</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor for which to calculate the look at orientation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target world position to look at. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">up</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The up vector after target look at. Default is +Y axis. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">localForward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward vector of actor when it&apos;s orientation is not applied. Default is +Z axis. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">localUp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The up vector of actor when it&apos;s orientation is not applied. Default is +Y axis. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="107" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="107" bodyend="111" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="640" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1a37fc993e2b9aa428cccca390a36bc9e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::DevelActor::IsHittable</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>IsHittable</name>
+        <qualifiedname>Dali::DevelActor::IsHittable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query whether the actor is actually hittable. This method checks whether the actor is sensitive, has the visibility flag set to true and is not fully transparent.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor for whether is hittable or not </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, if it can be hit, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="113" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="113" bodyend="116" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="649" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelActor_1ac363b9f41608c134b4f5f80333be5124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::DevelActor::GetTouchRequired</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>GetTouchRequired</name>
+        <qualifiedname>Dali::DevelActor::GetTouchRequired</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query whether the application or derived actor type requires touch events.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor for whether is required for touch event or not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if touch events are required. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="118" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" bodystart="118" bodyend="121" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h" declline="657" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp" line="25" column="1"/>
+  </compounddef>
+</doxygen>

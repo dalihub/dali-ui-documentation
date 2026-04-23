@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="absolute-layout-params_8cpp" kind="file" language="C++">
+    <compoundname>absolute-layout-params.cpp</compoundname>
+    <includes refid="absolute-layout-params_8h" local="no">dali-ui-foundation/public-api/layouts/absolute-layout-params.h</includes>
+    <includes local="no">dali/public-api/object/ref-object.h</includes>
+    <includes local="no">dali-ui-foundation/internal/layouts/absolute-layout-params-impl.h</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>dali-ui-foundation/public-api/callback.h</label>
+        <link refid="callback_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/absolute-layout-params.cpp</label>
+        <link refid="absolute-layout-params_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/public-api/layouts/absolute-layout-params.h</label>
+        <link refid="absolute-layout-params_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali-ui-foundation/public-api/layouts/layout-params.h</label>
+        <link refid="layout-params_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali-ui-foundation/public-api/layouts/layout-types.h</label>
+        <link refid="layout-types_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali-ui-foundation/public-api/trait.h</label>
+        <link refid="trait_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="16">
+        <label>dali-ui-foundation/internal/layouts/absolute-layout-params-impl.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/common/extents.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/common/unique-ptr.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="15">
+        <label>dali/public-api/object/ref-object.h</label>
+      </node>
+      <node id="14">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="absolute-layout-params_8h" kindref="compound">dali-ui-foundation/public-api/layouts/absolute-layout-params.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/ref-object.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/layouts/absolute-layout-params-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" kindref="member">AbsoluteLayoutParams::AbsoluteLayoutParams</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1ace24c5773d4cbcede2548c0d0a7a99c2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" kindref="member">AbsoluteLayoutParams::AbsoluteLayoutParams</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/>handle)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">:<sp/><ref refid="classDali_1_1Ui_1_1LayoutParams" kindref="compound">LayoutParams</ref>(handle)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a6ebbeaa4200ee150535829a2d117b9b9" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a6ebbeaa4200ee150535829a2d117b9b9" kindref="member">AbsoluteLayoutParams::~AbsoluteLayoutParams</ref>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" kindref="member">AbsoluteLayoutParams::AbsoluteLayoutParams</ref>(Internal::AbsoluteLayoutParamsImpl*<sp/>implementation)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">:<sp/><ref refid="classDali_1_1Ui_1_1LayoutParams" kindref="compound">LayoutParams</ref>(implementation)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a3c4a8f56b569a901ac137d32496c8285" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a3c4a8f56b569a901ac137d32496c8285" kindref="member">AbsoluteLayoutParams::New</ref>()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>IntrusivePtr&lt;Internal::AbsoluteLayoutParamsImpl&gt;<sp/>impl(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::AbsoluteLayoutParamsImpl());</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" kindref="member">AbsoluteLayoutParams</ref>(impl.Get());</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1aac9b56943f00bcf4abf3dd7e20be2257" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a3c4a8f56b569a901ac137d32496c8285" kindref="member">AbsoluteLayoutParams::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/>other)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>IntrusivePtr&lt;Internal::AbsoluteLayoutParamsImpl&gt;<sp/>impl(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::AbsoluteLayoutParamsImpl(<ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(other)));</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" kindref="member">AbsoluteLayoutParams</ref>(impl.Get());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af06124ed01db8d25085c35128607f276" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af06124ed01db8d25085c35128607f276" kindref="member">AbsoluteLayoutParams::DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1af82ba3fa3052f8c49014cb93967603e6" kindref="member">AbsoluteLayoutParams</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Internal::AbsoluteLayoutParamsImpl*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.GetObjectPtr()));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a2c80eb29074390b8141ef3d5ff0ac227" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1_1Ui_1a3cd32735897c3de65ac5c850fb272194" kindref="member">LayoutParamsType</ref><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a2c80eb29074390b8141ef3d5ff0ac227" kindref="member">AbsoluteLayoutParams::GetLayoutParamsType</ref>()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a3cd32735897c3de65ac5c850fb272194a3a0bc063b6db8cae0361657958be836f" kindref="member">LayoutParamsType::ABSOLUTE</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a06014c01bbe1e5fc5efe00c45caeaa77" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a06014c01bbe1e5fc5efe00c45caeaa77" kindref="member">AbsoluteLayoutParams::SetBounds</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1LayoutRect" kindref="compound">LayoutRect</ref>&amp;<sp/>bounds)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetBounds(bounds);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a5ce74ad77d3585462c0585a402588f1e" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1LayoutRect" kindref="compound">LayoutRect</ref><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a5ce74ad77d3585462c0585a402588f1e" kindref="member">AbsoluteLayoutParams::GetBounds</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="79"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetBounds();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a26d46163c0e8cbf4c8d64b5725f98771" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a26d46163c0e8cbf4c8d64b5725f98771" kindref="member">AbsoluteLayoutParams::SetX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetX(x);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a908609e3acdb8800cc1c81f94936acfb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a908609e3acdb8800cc1c81f94936acfb" kindref="member">AbsoluteLayoutParams::GetX</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="90"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetBounds().GetX();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a0d95f1eba6a6ed59cb856829cc27d41a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a0d95f1eba6a6ed59cb856829cc27d41a" kindref="member">AbsoluteLayoutParams::SetY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetY(y);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a2e14e75dc1a9494e3dda5cd9fb465787" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a2e14e75dc1a9494e3dda5cd9fb465787" kindref="member">AbsoluteLayoutParams::GetY</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="101"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetBounds().GetY();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a581ec535ea042bd50f7d905df4d639f1" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a581ec535ea042bd50f7d905df4d639f1" kindref="member">AbsoluteLayoutParams::SetWidth</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetWidth(width);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a4aea78cc218e726020a13c8ea847c737" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a4aea78cc218e726020a13c8ea847c737" kindref="member">AbsoluteLayoutParams::GetWidth</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="112"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetBounds().GetWidth();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1aae105ff3a940b65c36b90300934e6854" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1aae105ff3a940b65c36b90300934e6854" kindref="member">AbsoluteLayoutParams::SetHeight</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetHeight(height);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a15179abba7bf3b72323271a443d09aef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a15179abba7bf3b72323271a443d09aef" kindref="member">AbsoluteLayoutParams::GetHeight</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="123"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetBounds().GetHeight();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a22fa1c916bf3380c500e49915344a801" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams" kindref="compound">AbsoluteLayoutParams</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a22fa1c916bf3380c500e49915344a801" kindref="member">AbsoluteLayoutParams::SetFlags</ref>(<ref refid="namespaceDali_1_1Ui_1a9f255a872138cc23b880459af74b7f94" kindref="member">AbsoluteLayoutFlags</ref><sp/>flags)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).SetFlags(flags);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a8defff14e14a1a797566d9cff7247cd8" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1_1Ui_1a9f255a872138cc23b880459af74b7f94" kindref="member">AbsoluteLayoutFlags</ref><sp/><ref refid="classDali_1_1Ui_1_1AbsoluteLayoutParams_1a8defff14e14a1a797566d9cff7247cd8" kindref="member">AbsoluteLayoutParams::GetFlags</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="134"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetFlags();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/absolute-layout-params.cpp"/>
+  </compounddef>
+</doxygen>

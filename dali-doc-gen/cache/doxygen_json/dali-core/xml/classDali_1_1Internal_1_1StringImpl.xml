@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Internal_1_1StringImpl" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Internal::StringImpl</compoundname>
+    <includes refid="dali-string-impl_8h" local="no">dali-string-impl.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classDali_1_1Internal_1_1StringImpl_1a20263771db072b47cf888f67e6ddc115" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t Dali::Internal::StringImpl::StorageSize</definition>
+        <argsstring></argsstring>
+        <name>StorageSize</name>
+        <qualifiedname>Dali::Internal::StringImpl::StorageSize</qualifiedname>
+        <initializer>= 32</initializer>
+        <briefdescription>
+<para>Storage size for std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="90" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1Internal_1_1StringImpl_1a9b67f1fbf02eff1de097d69db9970b5f" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t Dali::Internal::StringImpl::StorageAlign</definition>
+        <argsstring></argsstring>
+        <name>StorageAlign</name>
+        <qualifiedname>Dali::Internal::StringImpl::StorageAlign</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Storage alignment for std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="91" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Internal_1_1StringImpl_1a2a19eae81ab7451eb2050b9724ddc5dd" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Dali::Internal::StringImpl::mStorage[StorageSize]</definition>
+        <argsstring>[StorageSize]</argsstring>
+        <name>mStorage</name>
+        <qualifiedname>Dali::Internal::StringImpl::mStorage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="92" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Internal_1_1StringImpl_1a1217414b3f229c4ce84a14524632ffb7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Internal::StringImpl::StringImpl</definition>
+        <argsstring>(String &amp;&amp;daliString) noexcept</argsstring>
+        <name>StringImpl</name>
+        <qualifiedname>Dali::Internal::StringImpl::StringImpl</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;&amp;</type>
+          <declname>daliString</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor from <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classDali_1_1Internal_1_1StringImpl" kindref="compound">StringImpl</ref> by moving the contents from a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>. The source <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> will be left in a destructed state.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">daliString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="50" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp" bodystart="50" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1StringImpl_1a2d995df5cc8673ec5ac74b27ea2372cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Internal::StringImpl::~StringImpl</definition>
+        <argsstring>()</argsstring>
+        <name>~StringImpl</name>
+        <qualifiedname>Dali::Internal::StringImpl::~StringImpl</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="55" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1StringImpl_1a334bd27506cdac2dc4ac2765e6755813" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Internal::StringImpl::Extract</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>Extract</name>
+        <qualifiedname>Dali::Internal::StringImpl::Extract</qualifiedname>
+        <briefdescription>
+<para>Extract the underlying std::string by moving. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A std::string containing the moved data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="62" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp" bodystart="71" bodyend="77"/>
+        <referencedby refid="namespaceDali_1_1Integration_1a77a2fdb0143a9dc15fb3307af532f373" compoundref="string-utils_8cpp" startline="40" endline="49">Dali::Integration::GetStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ab84cbf033793332625bd35cdb3a48d98" compoundref="string-utils_8cpp" startline="29" endline="38">Dali::Integration::ToStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">Dali::Integration::ToStdString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1StringImpl_1a5adaae7f826d3490713f9e2cc5333477" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::string &amp;</type>
+        <definition>std::string &amp; Dali::Internal::StringImpl::GetString</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>GetString</name>
+        <qualifiedname>Dali::Internal::StringImpl::GetString</qualifiedname>
+        <briefdescription>
+<para>Get a reference to the underlying std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the internal std::string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="69" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1StringImpl_1a21ad219e565bbe13941e56fb406b06ed" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; Dali::Internal::StringImpl::GetString</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>GetString</name>
+        <qualifiedname>Dali::Internal::StringImpl::GetString</qualifiedname>
+        <briefdescription>
+<para>Get a const reference to the underlying std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to the internal std::string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="76" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Internal_1_1StringImpl_1a2fa72e6661e7f70318b2a2a80d64fcb3" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">String</ref></type>
+        <definition>String Dali::Internal::StringImpl::ToDaliString</definition>
+        <argsstring>(std::string &amp;&amp;stdString) noexcept</argsstring>
+        <name>ToDaliString</name>
+        <qualifiedname>Dali::Internal::StringImpl::ToDaliString</qualifiedname>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>stdString</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> by moving from a std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a static factory method that efficiently moves the contents of a std::string into a new <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> without copying.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stdString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> containing the moved data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="87" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.cpp" bodystart="89" bodyend="101"/>
+        <referencedby refid="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" compoundref="string-utils_8cpp" startline="51" endline="54">Dali::Integration::ToDaliString</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="namespaceDali_1_1Internal" kindref="compound">Internal</ref> implementation class for <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides access to the underlying std::string storage for internal use within the dali-core library. It allows efficient move operations between <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> and std::string.</para>
+<para>This class is NOT part of the public API. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" line="39" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/dali-string-impl.h" bodystart="40" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a334bd27506cdac2dc4ac2765e6755813" prot="public" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>Extract</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a5adaae7f826d3490713f9e2cc5333477" prot="public" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>GetString</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a21ad219e565bbe13941e56fb406b06ed" prot="public" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>GetString</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a2a19eae81ab7451eb2050b9724ddc5dd" prot="private" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>mStorage</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a9b67f1fbf02eff1de097d69db9970b5f" prot="private" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>StorageAlign</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a20263771db072b47cf888f67e6ddc115" prot="private" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>StorageSize</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a1217414b3f229c4ce84a14524632ffb7" prot="public" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>StringImpl</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a2fa72e6661e7f70318b2a2a80d64fcb3" prot="public" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>ToDaliString</name></member>
+      <member refid="classDali_1_1Internal_1_1StringImpl_1a2d995df5cc8673ec5ac74b27ea2372cf" prot="public" virt="non-virtual"><scope>Dali::Internal::StringImpl</scope><name>~StringImpl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

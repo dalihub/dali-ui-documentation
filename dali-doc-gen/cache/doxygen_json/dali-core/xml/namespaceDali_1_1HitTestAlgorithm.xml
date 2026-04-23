@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1HitTestAlgorithm" kind="namespace" language="C++">
+    <compoundname>Dali::HitTestAlgorithm</compoundname>
+    <innerclass refid="structDali_1_1HitTestAlgorithm_1_1Results" prot="public">Dali::HitTestAlgorithm::Results</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TraverseType</name>
+        <qualifiedname>Dali::HitTestAlgorithm::TraverseType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520a8945642f5cf9b1d5710f3e51756f0506" prot="public">
+          <name>CHECK_ACTOR</name>
+          <briefdescription>
+<para>Hit test the given actor. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520a103d759a32d4e627dc8129e3a5febba1" prot="public">
+          <name>DESCEND_ACTOR_TREE</name>
+          <briefdescription>
+<para>Check whether the actor tree should be descended to hit-test its children. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>How the actor tree should be traversed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h" line="106" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h" bodystart="107" bodyend="110"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1HitTestAlgorithm_1a55bbd7ee5d43269c3d016931904dc4ad" prot="public" static="no">
+        <type>bool(*)(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, <ref refid="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520" kindref="member">TraverseType</ref>)</type>
+        <definition>using Dali::HitTestAlgorithm::HitTestFunction = typedef bool (*)(Actor, TraverseType)</definition>
+        <argsstring></argsstring>
+        <name>HitTestFunction</name>
+        <qualifiedname>Dali::HitTestAlgorithm::HitTestFunction</qualifiedname>
+        <briefdescription>
+<para>Definition of a hit-test function to use in <ref refid="namespaceDali_1_1HitTestAlgorithm_1a6bc732bc0892052d8fa8632271881604" kindref="member">HitTest()</ref> method to check if the actor is hittable (e.g. touchable or focusable). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true, if the actor is hittable, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h" line="126" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1HitTestAlgorithm_1a6bc732bc0892052d8fa8632271881604" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::HitTestAlgorithm::HitTest</definition>
+        <argsstring>(Stage stage, const Vector2 &amp;screenCoordinates, Results &amp;results, HitTestFunction func, const Integration::Scene::TouchPropagationType propagationType=Integration::Scene::TouchPropagationType::PARENT)</argsstring>
+        <name>HitTest</name>
+        <qualifiedname>Dali::HitTestAlgorithm::HitTest</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Stage" kindref="compound">Stage</ref></type>
+          <declname>stage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>screenCoordinates</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1HitTestAlgorithm_1_1Results" kindref="compound">Results</ref> &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1HitTestAlgorithm_1a55bbd7ee5d43269c3d016931904dc4ad" kindref="member">HitTestFunction</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338" kindref="member">Integration::Scene::TouchPropagationType</ref></type>
+          <declname>propagationType</declname>
+          <defval><ref refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338af262fe83bb03ad4eeef4f70f3bec240c" kindref="member">Integration::Scene::TouchPropagationType::PARENT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Given screen coordinates, this method returns the hit actor &amp; the local coordinates relative to the top-left (0.0f, 0.0f, 0.5f) of the actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An actor is only hittable if the actor meets all the conditions defined by the given function (see <ref refid="namespaceDali_1_1HitTestAlgorithm" kindref="compound">HitTestAlgorithm</ref>).</para>
+<para>Typically, if an actor has a zero size or its world color is fully transparent, it should not be hittable; and if an actor&apos;s visibility flag is unset, its children should not be hittable either.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stage. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">screenCoordinates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen coordinates. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The results of the hit-test, only modified if something is hit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to use in the hit-test algorithm. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propagationType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338ac8d9e7937956fe6ada8c9aeca1aec325" kindref="member">Integration::Scene::TouchPropagationType::GEOMETRY</ref>, hittest works in a geometry way. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if something was hit </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.cpp" line="32" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.cpp" bodystart="32" bodyend="36" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h" declline="145" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1HitTestAlgorithm_1ae3ce3f854ac2714c49fb03f1213fc287" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::HitTestAlgorithm::BuildPickingRay</definition>
+        <argsstring>(RenderTask renderTask, const Vector2 &amp;screenCoordinates, Vector3 &amp;origin, Vector3 &amp;direction)</argsstring>
+        <name>BuildPickingRay</name>
+        <qualifiedname>Dali::HitTestAlgorithm::BuildPickingRay</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref></type>
+          <declname>renderTask</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>screenCoordinates</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>direction</declname>
+        </param>
+        <briefdescription>
+<para>Given screen coordinates, this method returns the camera origin in world coordinates and the direction of the picking ray in world-space. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderTask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The render task owning a camera. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">screenCoordinates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen coordinates. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The camera origin in world coordinates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The direction of the picking ray in world-space </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the screen coordinates are inside the render task&apos;s viewport </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.cpp" line="38" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.cpp" bodystart="38" bodyend="70" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h" declline="156" declcolumn="20"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="structDali_1_1Rect_1ab64e0ea2b5ac576186b6c42acb49e41a" compoundref="rect_8h" startline="325">Dali::Rect&lt; T &gt;::height</references>
+        <references refid="structDali_1_1Rect_1a3012732d42883f7a1e79b52b9c4afac3" compoundref="rect_8h" startline="324">Dali::Rect&lt; T &gt;::width</references>
+        <references refid="structDali_1_1Rect_1a48840c8b1b9fb5e37cc417855cddebbd" compoundref="rect_8h" startline="322">Dali::Rect&lt; T &gt;::x</references>
+        <references refid="structDali_1_1Vector2_1ae87577b485176f73b7990ec801495c07" compoundref="vector2_8h" startline="466">Dali::Vector2::x</references>
+        <references refid="structDali_1_1Vector4_1ab9004e800515325a08e1e0d1f54767fe" compoundref="vector4_8h" startline="593">Dali::Vector4::x</references>
+        <references refid="structDali_1_1Rect_1a91d68ad26c85129a834f8e45675e5826" compoundref="rect_8h" startline="323">Dali::Rect&lt; T &gt;::y</references>
+        <references refid="structDali_1_1Vector2_1a335cf883f78e146b1610800735dba60d" compoundref="vector2_8h" startline="472">Dali::Vector2::y</references>
+        <references refid="structDali_1_1Vector4_1a740617e48b1ab17c122790cc3962a86d" compoundref="vector4_8h" startline="599">Dali::Vector4::y</references>
+        <references refid="structDali_1_1Vector4_1addec0c8e286b6c4a81a843fc9818c21b" compoundref="vector4_8h" startline="605">Dali::Vector4::z</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This namespace is provided for application developers to do hit-test for the actors. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="3">Hit Test Algorithm:</heading>
+</para>
+<para>Hit testing is dependent on the camera used, which is specific to each <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. For each <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>, hit testing starts from the top-most layer and we go through all the layers until we have a hit or there are none left. Before we perform a hit test within a layer, we check if all the layer&apos;s parents meet the conditions defined by the function ((e.g. whether it is visible)). If they are not, we skip hit testing the actors in that layer altogether. Otherwise, we walk through the actor tree within a layer to check whether the actors within the actor tree should be hit-tested.</para>
+<para>The following pseudocode gives an example of what the function can typically check, which should normally be provided by the application code:</para>
+<para><programlisting><codeline><highlight class="normal">HIT-TEST-FUNCTION(<sp/>ACTOR,<sp/>TRAVERSE-TYPE<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>TRAVERSE-TYPE<sp/>==<sp/><ref refid="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520a8945642f5cf9b1d5710f3e51756f0506" kindref="member">CHECK_ACTOR</ref><sp/>)<sp/></highlight><highlight class="comment">//<sp/>Check<sp/>whether<sp/>current<sp/>actor<sp/>should<sp/>be<sp/>hit-tested</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>ACTOR-IS-VISIBLE<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-WORLD-COLOR-IS-NOT-TRANSPARENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HITTABLE<sp/>=<sp/>TRUE</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>TRAVERSE-TYPE<sp/>==<sp/><ref refid="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520a103d759a32d4e627dc8129e3a5febba1" kindref="member">DESCEND_ACTOR_TREE</ref><sp/>)<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>ACTOR-IS-VISIBLE<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HITTABLE<sp/>=<sp/>TRUE</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>The following pseudocode explains how the algorithm performs the hit-test with the above functor:</para>
+<para><programlisting><codeline><highlight class="normal">HIT-TEST-WITHIN-LAYER(<sp/>ACTOR<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Depth-first<sp/>traversal<sp/>within<sp/>current<sp/>layer,<sp/>visiting<sp/>parent<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>whether<sp/>current<sp/>actor<sp/>should<sp/>be<sp/>hit-tested</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>IF<sp/>(<sp/>HIT-TEST-FUNCTION(<sp/>ACTOR,<sp/><ref refid="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520a8945642f5cf9b1d5710f3e51756f0506" kindref="member">CHECK_ACTOR</ref><sp/>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-HAS-NON-ZERO-SIZE<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Hit-test<sp/>current<sp/>actor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>ACTOR-HIT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>DISTANCE-TO-ACTOR<sp/>&lt;<sp/>DISTANCE-TO-LAST-HIT-ACTOR<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>current<sp/>actor<sp/>is<sp/>the<sp/>closest<sp/>actor<sp/>that<sp/>was<sp/>underneath<sp/>the<sp/>touch</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LAST-HIT-ACTOR<sp/>=<sp/>CURRENT-ACTOR</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Keep<sp/>checking<sp/>children,<sp/>in<sp/>case<sp/>we<sp/>hit<sp/>something<sp/>closer</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>FOR-EACH<sp/>CHILD<sp/>(in<sp/>order)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>HIT-TEST-FUNCTION(<sp/>ACTOR,<sp/><ref refid="namespaceDali_1_1HitTestAlgorithm_1a38e29dc1e1f0c7200a414e601dc71520a103d759a32d4e627dc8129e3a5febba1" kindref="member">DESCEND_ACTOR_TREE</ref><sp/>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-IS-NOT-A-LAYER<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Continue<sp/>traversal<sp/>for<sp/>this<sp/>child&apos;s<sp/>sub-tree</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HIT-TEST-WITHIN-LAYER<sp/>(<sp/>CHILD<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>else<sp/>we<sp/>skip<sp/>the<sp/>sub-tree<sp/>with<sp/>from<sp/>this<sp/>child</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.cpp" line="30" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,664 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Scripting" kind="namespace" language="C++">
+    <compoundname>Dali::Scripting</compoundname>
+    <innerclass refid="structDali_1_1Scripting_1_1StringEnum" prot="public">Dali::Scripting::StringEnum</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a369511decb48589353bc4b11983e8094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::Scripting::EnumStringToInteger</definition>
+        <argsstring>(const char *const value, const StringEnum *const table, uint32_t tableCount, int &amp;integerEnum)</argsstring>
+        <name>EnumStringToInteger</name>
+        <qualifiedname>Dali::Scripting::EnumStringToInteger</qualifiedname>
+        <param>
+          <type>const char *const</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">StringEnum</ref> *const</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>integerEnum</declname>
+        </param>
+        <briefdescription>
+<para>Find the enum as an integer from the table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.12</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string equivalent (case-insensitive, comma separate to OR values). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">integerEnum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the enum. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if one or more enums in value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" line="36" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" bodystart="36" bodyend="85" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" declline="68" declcolumn="20"/>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="structDali_1_1Scripting_1_1StringEnum_1a479b578fdfc2c22eab6d2f829b1caa41" compoundref="scripting_8h" startline="43">Dali::Scripting::StringEnum::string</references>
+        <references refid="structDali_1_1Scripting_1_1StringEnum_1a8d747206a93ded33ab708fd7a73e87c7" compoundref="scripting_8h" startline="44">Dali::Scripting::StringEnum::value</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a070a957e0751191e19c8308d1d906690" compoundref="scripting_8h" startline="81" endline="95">GetEnumeration</referencedby>
+        <referencedby refid="namespaceDali_1_1Scripting_1a872d8727935b9dad261ed2f25891169b" compoundref="scripting_8h" startline="108" endline="143">GetEnumerationProperty</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a639413307f2e85248fa7edc2a7dbd7e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>DALI_CORE_API uint32_t Dali::Scripting::FindEnumIndex</definition>
+        <argsstring>(const char *value, const StringEnum *table, uint32_t tableCount)</argsstring>
+        <name>FindEnumIndex</name>
+        <qualifiedname>Dali::Scripting::FindEnumIndex</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">StringEnum</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <briefdescription>
+<para>Find the given enum index from the table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string equivalent (case-insensitive). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the enumeration. If enumeration is not found, logs an error and returns tableCount. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" line="87" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" bodystart="87" bodyend="106" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" declline="55" declcolumn="24"/>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="structDali_1_1Scripting_1_1StringEnum_1a479b578fdfc2c22eab6d2f829b1caa41" compoundref="scripting_8h" startline="43">Dali::Scripting::StringEnum::string</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>DALI_CORE_API Actor Dali::Scripting::NewActor</definition>
+        <argsstring>(const Property::Map &amp;map)</argsstring>
+        <name>NewActor</name>
+        <qualifiedname>Dali::Scripting::NewActor</qualifiedname>
+        <param>
+          <type>const Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Creates an actor with the date from the property value map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value map with the properties (and hierarchy) of the actor required For example: <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Actor&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">:<sp/>[<sp/>100,<sp/>100,<sp/>0<sp/>],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="stringliteral">&quot;actors&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">:</highlight><highlight class="stringliteral">&quot;Actor&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;position&quot;</highlight><highlight class="normal">:[0,0,0]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to the newly created actor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" line="108" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" bodystart="108" bodyend="173" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" declline="273" declcolumn="21"/>
+        <references refid="classDali_1_1Actor_1a944e778fa4fc130da3d71ecd0848476a" compoundref="actor_8cpp" startline="69" endline="72">Dali::Actor::Add</references>
+        <references refid="classDali_1_1TypeInfo_1a21f6809c69124b344d1815ce00851f1d" compoundref="type-info_8cpp" startline="55" endline="58">Dali::TypeInfo::CreateInstance</references>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="classDali_1_1Actor_1af2bdfb061ccfbb938a47c4152e65ef0f" compoundref="actor_8cpp" startline="49" endline="52">Dali::Actor::DownCast</references>
+        <references refid="classDali_1_1Pair_1a2658e5bf5c4d218b23e54eb1d2e91331" compoundref="dali-pair_8h" startline="271">Dali::Pair&lt; T1, T2 &gt;::first</references>
+        <references refid="classDali_1_1TypeRegistry_1a7fea5d7e213fde687792753c4ed3aa84" compoundref="type-registry_8cpp" startline="46" endline="49">Dali::TypeRegistry::Get</references>
+        <references refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" compoundref="handle_8cpp" startline="77" endline="80">Dali::Handle::GetPropertyIndex</references>
+        <references refid="classDali_1_1TypeRegistry_1ac80afb8ce304e2099ff51c97df86492c" compoundref="type-registry_8cpp" startline="51" endline="54">Dali::TypeRegistry::GetTypeInfo</references>
+        <references refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" compoundref="property_8h" startline="52" endline="52">Dali::Property::INVALID_INDEX</references>
+        <references refid="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" compoundref="scripting_8cpp" startline="108" endline="173">NewActor</references>
+        <references refid="classDali_1_1Pair_1a024baf77c2f25dc3c6af1edf254746d2" compoundref="dali-pair_8h" startline="272">Dali::Pair&lt; T1, T2 &gt;::second</references>
+        <references refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" compoundref="handle_8cpp" startline="102" endline="105">Dali::Handle::SetProperty</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" compoundref="scripting_8cpp" startline="108" endline="173">NewActor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Scripting::CreatePropertyMap</definition>
+        <argsstring>(Actor actor, Property::Map &amp;map)</argsstring>
+        <name>CreatePropertyMap</name>
+        <qualifiedname>Dali::Scripting::CreatePropertyMap</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Creates a Property::Map from the actor provided. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base-actor from which a Property::Map should be created </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This map is cleared and a property map of actor and its children is filled in </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" line="175" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" bodystart="175" bodyend="207" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" declline="281" declcolumn="20"/>
+        <references refid="classDali_1_1Vector_1a952a342e158403997d3c1a52d1feb81b" compoundref="dali-vector_8h" startline="152" endline="156">Dali::Vector&lt; T, IsTrivialType &gt;::Begin</references>
+        <references refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">CreatePropertyMap</references>
+        <references refid="classDali_1_1Vector_1ab12a9b360d213cd1903ed3f0cc1538d9" compoundref="dali-vector_8h" startline="163" endline="168">Dali::Vector&lt; T, IsTrivialType &gt;::End</references>
+        <references refid="classDali_1_1Actor_1a72b882eb1a11f6e3119b0991858c85c9" compoundref="actor_8cpp" startline="89" endline="93">Dali::Actor::GetChildAt</references>
+        <references refid="classDali_1_1Actor_1af6a451eaf0669156f587d92b9fd5003d" compoundref="actor_8cpp" startline="84" endline="87">Dali::Actor::GetChildCount</references>
+        <references refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" compoundref="handle_8cpp" startline="137" endline="140">Dali::Handle::GetProperty</references>
+        <references refid="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" compoundref="handle_8cpp" startline="157" endline="160">Dali::Handle::GetPropertyIndices</references>
+        <references refid="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" compoundref="handle_8cpp" startline="72" endline="75">Dali::Handle::GetPropertyName</references>
+        <references refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" compoundref="base-handle_8cpp" startline="54" endline="57">Dali::BaseHandle::GetTypeName</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">CreatePropertyMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1aa0bd175153c58d3ed9968c07fc3d765a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Scripting::NewAnimation</definition>
+        <argsstring>(const Property::Map &amp;map, Dali::AnimationData &amp;outputAnimationData)</argsstring>
+        <name>NewAnimation</name>
+        <qualifiedname>Dali::Scripting::NewAnimation</qualifiedname>
+        <param>
+          <type>const Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1AnimationData" kindref="compound">Dali::AnimationData</ref> &amp;</type>
+          <declname>outputAnimationData</declname>
+        </param>
+        <briefdescription>
+<para>Creates description data required to create an <ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> object from a property map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property value map containing the animation description </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">outputAnimationData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Resultant data retrieved from the property map is written here </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" line="209" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" bodystart="209" bodyend="325" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" declline="289" declcolumn="20"/>
+        <references refid="structDali_1_1AnimationData_1_1AnimationDataElement_1a75b4bf298e79fbdcaef2d69ab77eca5d" compoundref="animation-data_8h" startline="51">Dali::AnimationData::AnimationDataElement::actor</references>
+        <references refid="classDali_1_1AnimationData_1a33ae393fd86ee46bed1b5c1e9a7549cd" compoundref="animation-data_8cpp" startline="30" endline="33">Dali::AnimationData::Add</references>
+        <references refid="structDali_1_1AnimationData_1_1AnimationDataElement_1acae73645e35e5943b0d94bdd9cd0995e" compoundref="animation-data_8h" startline="54">Dali::AnimationData::AnimationDataElement::alphaFunction</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca72c1e5bd5179c1215669f2567a2942e3" compoundref="alpha-function_8h" startline="69">Dali::AlphaFunction::BOUNCE</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca017432d50a3d75eb39ca8b3b247ba5a0" compoundref="alpha-function_8h" startline="63">Dali::AlphaFunction::EASE_IN</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca56544a68ca142b985312cabf7c91c4a0" compoundref="alpha-function_8h" startline="65">Dali::AlphaFunction::EASE_IN_OUT</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca64358fd94b734266aa7635aa6f09d4a9" compoundref="alpha-function_8h" startline="68">Dali::AlphaFunction::EASE_IN_OUT_SINE</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca777a0fdae9ed67a46a8ba4733e8bd97e" compoundref="alpha-function_8h" startline="66">Dali::AlphaFunction::EASE_IN_SINE</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7ccad357a1a8bc0c10bb91cde86b496e171a" compoundref="alpha-function_8h" startline="61">Dali::AlphaFunction::EASE_IN_SQUARE</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7ccab422b5fcc48ca8726fb1ffeca47ef588" compoundref="alpha-function_8h" startline="64">Dali::AlphaFunction::EASE_OUT</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca52d517481f3b7200656c888e646b2bf0" compoundref="alpha-function_8h" startline="71">Dali::AlphaFunction::EASE_OUT_BACK</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca96d59f169c14e24ab7074786e375451a" compoundref="alpha-function_8h" startline="67">Dali::AlphaFunction::EASE_OUT_SINE</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca0c4c5a4fd1f4315f848fffb2b3586123" compoundref="alpha-function_8h" startline="62">Dali::AlphaFunction::EASE_OUT_SQUARE</references>
+        <references refid="classDali_1_1Pair_1a2658e5bf5c4d218b23e54eb1d2e91331" compoundref="dali-pair_8h" startline="271">Dali::Pair&lt; T1, T2 &gt;::first</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca102083d790d36fc4f2cac0fdfa69a6ae" compoundref="alpha-function_8h" startline="59">Dali::AlphaFunction::LINEAR</references>
+        <references refid="structDali_1_1AnimationData_1_1AnimationDataElement_1af719b8dfbca162a97066bd8c58161d51" compoundref="animation-data_8h" startline="52">Dali::AnimationData::AnimationDataElement::property</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca6810e79f5566ae52d5f8f43c1ee2c066" compoundref="alpha-function_8h" startline="60">Dali::AlphaFunction::REVERSE</references>
+        <references refid="classDali_1_1Pair_1a024baf77c2f25dc3c6af1edf254746d2" compoundref="dali-pair_8h" startline="272">Dali::Pair&lt; T1, T2 &gt;::second</references>
+        <references refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca396226fd993804cfc8b6afa96bba4422" compoundref="alpha-function_8h" startline="70">Dali::AlphaFunction::SIN</references>
+        <references refid="structDali_1_1AnimationData_1_1AnimationDataElement_1a46d4effde76d5cc1a7105036a6f05240" compoundref="animation-data_8h" startline="55">Dali::AnimationData::AnimationDataElement::timePeriodDelay</references>
+        <references refid="structDali_1_1AnimationData_1_1AnimationDataElement_1a06316564499e98b2afc0009a4763df11" compoundref="animation-data_8h" startline="56">Dali::AnimationData::AnimationDataElement::timePeriodDuration</references>
+        <references refid="structDali_1_1AnimationData_1_1AnimationDataElement_1a7ec684b3392a55390953f814dfa0428a" compoundref="animation-data_8h" startline="53">Dali::AnimationData::AnimationDataElement::value</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a070a957e0751191e19c8308d1d906690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::Scripting::GetEnumeration</definition>
+        <argsstring>(const char *value, const StringEnum *table, uint32_t tableCount, T &amp;result)</argsstring>
+        <name>GetEnumeration</name>
+        <qualifiedname>Dali::Scripting::GetEnumeration</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">StringEnum</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Chooses the appropriate enumeration for the provided string from the given table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string equivalent (case-insensitive, comma separate to OR values). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enum value</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the value was found from the table </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" line="81" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" bodystart="81" bodyend="95"/>
+        <references refid="namespaceDali_1_1Scripting_1a369511decb48589353bc4b11983e8094" compoundref="scripting_8cpp" startline="36" endline="85">EnumStringToInteger</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a872d8727935b9dad261ed2f25891169b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::Scripting::GetEnumerationProperty</definition>
+        <argsstring>(const Property::Value &amp;propertyValue, const StringEnum *table, uint32_t tableCount, T &amp;result)</argsstring>
+        <name>GetEnumerationProperty</name>
+        <qualifiedname>Dali::Scripting::GetEnumerationProperty</qualifiedname>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>propertyValue</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">StringEnum</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Gets the enumeration value from an enumeration property. An enumeration property is a property that can be set with either an INTEGER or STRING. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property containing the int or string value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enum value. This is not modified if the enumeration could not be converted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the value was found successfully AND the value has changed. This is to allow the caller to do nothing if there is no change. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" line="108" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" bodystart="108" bodyend="143"/>
+        <references refid="classDali_1_1String_1a86a66f7917bdbcd1f1873e40a4544ce0" compoundref="dali-string_8cpp" startline="156" endline="159">Dali::String::CStr</references>
+        <references refid="namespaceDali_1_1Scripting_1a369511decb48589353bc4b11983e8094" compoundref="scripting_8cpp" startline="36" endline="85">EnumStringToInteger</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" compoundref="property_8h" startline="88">Dali::Property::INTEGER</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da1554fbf61f4d3bbbfaaa914612cf12cb" compoundref="property-key_8h" startline="50">Dali::Property::STRING</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a08bd8e01df245e6a6c9a6351f0051d10" compoundref="scripting_8h" startline="156" endline="201">GetBitmaskEnumerationProperty</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a08bd8e01df245e6a6c9a6351f0051d10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::Scripting::GetBitmaskEnumerationProperty</definition>
+        <argsstring>(const Property::Value &amp;propertyValue, const Scripting::StringEnum *table, uint32_t tableCount, T &amp;result)</argsstring>
+        <name>GetBitmaskEnumerationProperty</name>
+        <qualifiedname>Dali::Scripting::GetBitmaskEnumerationProperty</qualifiedname>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>propertyValue</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">Scripting::StringEnum</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Gets the enumeration value from a bitmask enumeration property. An enumeration property is a property that can be set with either an INTEGER, STRING or an ARRAY of STRING. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property containing the int, string or and array of string values. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enum value. This is not modified if the enumeration could not be converted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the value was found successfully AND the value has changed. This is to allow the caller to do nothing if there is no change. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" line="156" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" bodystart="156" bodyend="201"/>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dae1044b51824cb5bc9715f063549fa7ea" compoundref="property_8h" startline="97">Dali::Property::ARRAY</references>
+        <references refid="namespaceDali_1_1Scripting_1a872d8727935b9dad261ed2f25891169b" compoundref="scripting_8h" startline="108" endline="143">GetEnumerationProperty</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1a5b76eac4a84708edf20daf1ea1cd643c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>const char *</type>
+        <definition>const char * Dali::Scripting::GetEnumerationName</definition>
+        <argsstring>(T value, const StringEnum *table, uint32_t tableCount)</argsstring>
+        <name>GetEnumerationName</name>
+        <qualifiedname>Dali::Scripting::GetEnumerationName</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">StringEnum</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <briefdescription>
+<para>Chooses the appropriate string for the provided enumeration from the given table. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The equivalent enumeration for the given string. Will return NULL if the value does not exist</para>
+</simplesect>
+<simplesect kind="note"><para>The caller is NOT responsible for cleaning up the returned pointer as it is statically allocated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" line="215" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" bodystart="215" bodyend="228"/>
+        <references refid="structDali_1_1Scripting_1_1StringEnum_1a479b578fdfc2c22eab6d2f829b1caa41" compoundref="scripting_8h" startline="43">Dali::Scripting::StringEnum::string</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Scripting_1ac2f850bf3070947b7211d74f1d1f759b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>const char *</type>
+        <definition>const char * Dali::Scripting::GetLinearEnumerationName</definition>
+        <argsstring>(T value, const StringEnum *table, uint32_t tableCount)</argsstring>
+        <name>GetLinearEnumerationName</name>
+        <qualifiedname>Dali::Scripting::GetLinearEnumerationName</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Scripting_1_1StringEnum" kindref="compound">StringEnum</ref> *</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tableCount</declname>
+        </param>
+        <briefdescription>
+<para>Chooses the appropriate string for the provided enumeration from the given table. This is an optimised version that handles enumerations that start at 0 and are linear only. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array with the enumeration to string equivalents. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tableCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of items in the array.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The equivalent enumeration for the given string. Will return NULL if the value does not exist</para>
+</simplesect>
+<simplesect kind="note"><para>The caller is NOT responsible for cleaning up the returned pointer as it is statically allocated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" line="243" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h" bodystart="243" bodyend="250"/>
+        <references refid="structDali_1_1Scripting_1_1StringEnum_1a479b578fdfc2c22eab6d2f829b1caa41" compoundref="scripting_8h" startline="43">Dali::Scripting::StringEnum::string</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utilities for scripting support. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp" line="34" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="defined-characters_8h" kind="file" language="C++">
+    <compoundname>defined-characters.h</compoundname>
+    <includedby refid="emoji-character-properties_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/emoji-character-properties.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/defined-characters.h</label>
+        <link refid="defined-characters_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/emoji-character-properties.cpp</label>
+        <link refid="emoji-character-properties_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/emoji-character-properties.h</label>
+        <link refid="emoji-character-properties_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/emoji-helper.cpp</label>
+        <link refid="emoji-helper_8cpp"/>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/emoji-helper.h</label>
+        <link refid="emoji-helper_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/script.cpp</label>
+        <link refid="script_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/script.h</label>
+        <link refid="script_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/shaping.cpp</label>
+        <link refid="shaping_8cpp"/>
+      </node>
+      <node id="7">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/shaping.h</label>
+        <link refid="shaping_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-abstraction.h</label>
+        <link refid="text-abstraction_8h"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1TextAbstraction">Dali::TextAbstraction</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_TOOLKIT_TEXT_ABSTRACTION_DEFINED_CHARACTERS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_TOOLKIT_TEXT_ABSTRACTION_DEFINED_CHARACTERS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">TextAbstraction</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25" refid="namespaceDali_1_1TextAbstraction_1a11beffae5172dcd395fe6c70676e697f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a11beffae5172dcd395fe6c70676e697f" kindref="member">CHAR_COMBINING_ENCLOSING_KEYCAP</ref><sp/>=<sp/>0x20E3;<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//Emoji<sp/>Components<sp/>(Hair<sp/>style)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="namespaceDali_1_1TextAbstraction_1a15d4e9e119386dc5d97800173e797014" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a15d4e9e119386dc5d97800173e797014" kindref="member">CHAR_EMOJI_COMPONENT_BALD</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x1F9B2;<sp/></highlight></codeline>
+<codeline lineno="29" refid="namespaceDali_1_1TextAbstraction_1aa691f7a679eebf3bb8de8bf56d0042d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1aa691f7a679eebf3bb8de8bf56d0042d4" kindref="member">CHAR_EMOJI_COMPONENT_RED_HAIR</ref><sp/><sp/><sp/>=<sp/>0x1F9B0;<sp/></highlight></codeline>
+<codeline lineno="30" refid="namespaceDali_1_1TextAbstraction_1adb270e3e2986c1152ca48ca14f135f83" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1adb270e3e2986c1152ca48ca14f135f83" kindref="member">CHAR_EMOJI_COMPONENT_CURLY_HAIR</ref><sp/>=<sp/>0x1F9B1;<sp/></highlight></codeline>
+<codeline lineno="31" refid="namespaceDali_1_1TextAbstraction_1a3016dbcf9451f2151acf6dfc361dbadc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a3016dbcf9451f2151acf6dfc361dbadc" kindref="member">CHAR_EMOJI_COMPONENT_WHITE_HAIR</ref><sp/>=<sp/>0x1F9B3;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//Regional<sp/>Indicators</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="namespaceDali_1_1TextAbstraction_1a386003e55bf231c738dc7fb31cd1fead" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a386003e55bf231c738dc7fb31cd1fead" kindref="member">CHAR_REGIONAL_INDICATOR_SYMBOL_LETTER_A</ref><sp/>=<sp/>0x1F1E6;<sp/></highlight></codeline>
+<codeline lineno="35" refid="namespaceDali_1_1TextAbstraction_1ad5bdbd33e83e3c3d66b63776a47731ab" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ad5bdbd33e83e3c3d66b63776a47731ab" kindref="member">CHAR_REGIONAL_INDICATOR_SYMBOL_LETTER_Z</ref><sp/>=<sp/>0x1F1FF;<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//Variation<sp/>Selectors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="namespaceDali_1_1TextAbstraction_1a39ec16c68c79f8cc2ac505a085fa8a28" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a39ec16c68c79f8cc2ac505a085fa8a28" kindref="member">CHAR_VARIATION_SELECTOR_15</ref><sp/>=<sp/>0xFE0E;<sp/></highlight></codeline>
+<codeline lineno="39" refid="namespaceDali_1_1TextAbstraction_1a452582a9a20022fb7e962657c798151b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a452582a9a20022fb7e962657c798151b" kindref="member">CHAR_VARIATION_SELECTOR_16</ref><sp/>=<sp/>0xFE0F;<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//Emoji<sp/>Tags</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="namespaceDali_1_1TextAbstraction_1a52c2db92c6c2284e613c450951709058" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a52c2db92c6c2284e613c450951709058" kindref="member">CHAR_CANCEL_TAG</ref><sp/>=<sp/>0xE007F;<sp/></highlight></codeline>
+<codeline lineno="43" refid="namespaceDali_1_1TextAbstraction_1aeb0a318dea586ab3e53ae9aac5f95825" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1aeb0a318dea586ab3e53ae9aac5f95825" kindref="member">CHAR_TAG_SPACE</ref><sp/><sp/>=<sp/>0xE0020;<sp/></highlight></codeline>
+<codeline lineno="44" refid="namespaceDali_1_1TextAbstraction_1a287bf3b519b29562fdd19e77b1d12389" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a287bf3b519b29562fdd19e77b1d12389" kindref="member">CHAR_TAG_TILDE</ref><sp/><sp/>=<sp/>0xE007E;<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//Emoji<sp/>Modifiers<sp/>(Skin<sp/>tone)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="namespaceDali_1_1TextAbstraction_1acf2e427a28e5dfb139567e5ba06a4e61" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1acf2e427a28e5dfb139567e5ba06a4e61" kindref="member">CHAR_EMOJI_MODIFIER_FITZPATRICK_TYPE_1_2</ref><sp/>=<sp/>0x1F3FB;<sp/></highlight></codeline>
+<codeline lineno="48" refid="namespaceDali_1_1TextAbstraction_1ade5adf2727355ea0f118e12b266f5e59" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ade5adf2727355ea0f118e12b266f5e59" kindref="member">CHAR_EMOJI_MODIFIER_FITZPATRICK_TYPE_3</ref><sp/><sp/><sp/>=<sp/>0x1F3FC;<sp/></highlight></codeline>
+<codeline lineno="49" refid="namespaceDali_1_1TextAbstraction_1aa7b85eddc43625646627da785ef72ec7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1aa7b85eddc43625646627da785ef72ec7" kindref="member">CHAR_EMOJI_MODIFIER_FITZPATRICK_TYPE_4</ref><sp/><sp/><sp/>=<sp/>0x1F3FD;<sp/></highlight></codeline>
+<codeline lineno="50" refid="namespaceDali_1_1TextAbstraction_1a6f5a6f80afe37b4898470a47ba4aa98f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a6f5a6f80afe37b4898470a47ba4aa98f" kindref="member">CHAR_EMOJI_MODIFIER_FITZPATRICK_TYPE_5</ref><sp/><sp/><sp/>=<sp/>0x1F3FE;<sp/></highlight></codeline>
+<codeline lineno="51" refid="namespaceDali_1_1TextAbstraction_1aaca31f8b50264086bd1c0f31a71cd37e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1aaca31f8b50264086bd1c0f31a71cd37e" kindref="member">CHAR_EMOJI_MODIFIER_FITZPATRICK_TYPE_6</ref><sp/><sp/><sp/>=<sp/>0x1F3FF;<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//Miscellaneous<sp/>Symbols<sp/>and<sp/>Arrows.<sp/>Range:<sp/>2B00—2BFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="namespaceDali_1_1TextAbstraction_1a206a803e38473a75b16216cd34cd1fb1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a206a803e38473a75b16216cd34cd1fb1" kindref="member">CHAR_NORTH_EAST_WHITE_ARROW</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0x2B00;<sp/></highlight></codeline>
+<codeline lineno="55" refid="namespaceDali_1_1TextAbstraction_1af9f75faed44b9ff8c966675bd82b0ecc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1af9f75faed44b9ff8c966675bd82b0ecc" kindref="member">CHAR_HELLSCHREIBER_PAUSE_SYMBOL</ref><sp/>=<sp/>0x2BFF;<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//Dingbats.<sp/>Range:<sp/>2700—27BF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="namespaceDali_1_1TextAbstraction_1a66e3532eae448d9171f6c411f5011e8a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a66e3532eae448d9171f6c411f5011e8a" kindref="member">CHAR_BLACK_SAFETY_SCISSORS</ref><sp/><sp/><sp/>=<sp/>0x2700;<sp/></highlight></codeline>
+<codeline lineno="59" refid="namespaceDali_1_1TextAbstraction_1a3003c00fccc17db3ffcf1b5b92bfabb2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a3003c00fccc17db3ffcf1b5b92bfabb2" kindref="member">CHAR_DOUBLE_CURLY_LOOP_EMOJI</ref><sp/>=<sp/>0x27BF;<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//Basic<sp/>Latin.<sp/>Range:<sp/>0000—007F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="namespaceDali_1_1TextAbstraction_1a28b5d31d2ecf4ea797f234860b1f823f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a28b5d31d2ecf4ea797f234860b1f823f" kindref="member">CHAR_NUMBER_SIGN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0023;<sp/></highlight></codeline>
+<codeline lineno="63" refid="namespaceDali_1_1TextAbstraction_1a7f2695c290dad2217922ec4f47bed6cf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a7f2695c290dad2217922ec4f47bed6cf" kindref="member">CHAR_ASTERISK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x002A;<sp/></highlight></codeline>
+<codeline lineno="64" refid="namespaceDali_1_1TextAbstraction_1a6e848b4a7e83e0b0b58c7b4f4fa2250d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a6e848b4a7e83e0b0b58c7b4f4fa2250d" kindref="member">CHAR_ASCII_DIGIT_0</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0030;<sp/></highlight></codeline>
+<codeline lineno="65" refid="namespaceDali_1_1TextAbstraction_1a555885468658c83f380ec69545be5233" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a555885468658c83f380ec69545be5233" kindref="member">CHAR_ASCII_DIGIT_9</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0039;<sp/></highlight></codeline>
+<codeline lineno="66" refid="namespaceDali_1_1TextAbstraction_1aaaf2a862089c57ab25cf107d514e31ea" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1aaaf2a862089c57ab25cf107d514e31ea" kindref="member">CHAR_ASCII_SPACE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0020;<sp/></highlight></codeline>
+<codeline lineno="67" refid="namespaceDali_1_1TextAbstraction_1a2f005f02350180afc8263f4f3831d74b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a2f005f02350180afc8263f4f3831d74b" kindref="member">CHAR_ASCII_SOLIDUS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x002F;<sp/></highlight></codeline>
+<codeline lineno="68" refid="namespaceDali_1_1TextAbstraction_1a97c867e09d96e49e5db2ed358919a407" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a97c867e09d96e49e5db2ed358919a407" kindref="member">CHAR_ASCII_COLON</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x003A;<sp/></highlight></codeline>
+<codeline lineno="69" refid="namespaceDali_1_1TextAbstraction_1a0763aba6d47ca377c85a2d21852dda67" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a0763aba6d47ca377c85a2d21852dda67" kindref="member">CHAR_ASCII_COMMERCIAL_AT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0040;<sp/></highlight></codeline>
+<codeline lineno="70" refid="namespaceDali_1_1TextAbstraction_1a108fb7238c76e19a0676fc91355f4b26" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a108fb7238c76e19a0676fc91355f4b26" kindref="member">CHAR_ASCII_LEFT_SQUARE_BRACKET</ref><sp/>=<sp/>0x005B;<sp/></highlight></codeline>
+<codeline lineno="71" refid="namespaceDali_1_1TextAbstraction_1ab60d7306dc07f9429544914e3c07e27a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ab60d7306dc07f9429544914e3c07e27a" kindref="member">CHAR_ASCII_GRAVE_ACCENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x0060;<sp/></highlight></codeline>
+<codeline lineno="72" refid="namespaceDali_1_1TextAbstraction_1a330da28ceb7a772d0e9418b7d0d71274" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a330da28ceb7a772d0e9418b7d0d71274" kindref="member">CHAR_ASCII_LEFT_CURLY_BRACKET</ref><sp/><sp/>=<sp/>0x007B;<sp/></highlight></codeline>
+<codeline lineno="73" refid="namespaceDali_1_1TextAbstraction_1afae44ab74d49ffc3340b315acedc3443" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1afae44ab74d49ffc3340b315acedc3443" kindref="member">CHAR_ASCII_TILDE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x007E;<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>General<sp/>unicodes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="namespaceDali_1_1TextAbstraction_1a24347affb474b20db5149c0863236c23" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a24347affb474b20db5149c0863236c23" kindref="member">CHAR_ZWS</ref><sp/>=<sp/>0x200B;<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TextAbstraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_TOOLKIT_TEXT_ABSTRACTION_DEFINED_CHARACTERS_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/defined-characters.h"/>
+  </compounddef>
+</doxygen>

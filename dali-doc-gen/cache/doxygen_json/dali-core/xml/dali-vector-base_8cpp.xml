@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dali-vector-base_8cpp" kind="file" language="C++">
+    <compoundname>dali-vector-base.cpp</compoundname>
+    <includes refid="dali-vector-base_8h" local="no">dali/public-api/common/dali-vector-base.h</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">utility</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>dali/public-api/common/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-vector-base.cpp</label>
+        <link refid="dali-vector-base_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/common/dali-vector-base.h</label>
+        <link refid="dali-vector-base_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="10">
+        <label>dali/public-api/math/compile-time-math.h</label>
+        <link refid="compile-time-math_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/math/math-utils.h</label>
+        <link refid="math-utils_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>dali/public-api/math/vector3.h</label>
+        <link refid="vector3_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/math/vector4.h</label>
+        <link refid="vector4_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>cfloat</label>
+      </node>
+      <node id="3">
+        <label>cstddef</label>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>cstdlib</label>
+      </node>
+      <node id="15">
+        <label>cstring</label>
+      </node>
+      <node id="9">
+        <label>math.h</label>
+      </node>
+      <node id="16">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-vector-base_8h" kindref="compound">dali/public-api/common/dali-vector-base.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>for<sp/>memcpy<sp/>&amp;<sp/>memmove</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>std::swap</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Wrapper<sp/>to<sp/>adapt<sp/>memcpy<sp/>to<sp/>MemMoveFunctionType<sp/>signature.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>On<sp/>macOS<sp/>64-bit,<sp/>size_t<sp/>and<sp/>uint64_t<sp/>are<sp/>distinct<sp/>types<sp/>despite<sp/>having<sp/>the<sp/>same<sp/>size,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>so<sp/>memcpy<sp/>cannot<sp/>be<sp/>passed<sp/>directly<sp/>where<sp/>MemMoveFunctionType<sp/>is<sp/>expected.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>MemCpyWrapper(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>src,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">VectorBase::SizeType</ref><sp/>count)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>memcpy(dest,<sp/>src,<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(count));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classDali_1_1VectorBase_1af50a5d7f482dcbbb40cfd2ef658ad8f6" refkind="member"><highlight class="normal"><ref refid="classDali_1_1VectorBase_1af50a5d7f482dcbbb40cfd2ef658ad8f6" kindref="member">VectorBase::VectorBase</ref>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">:<sp/>mData(nullptr)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a96aa98e8d436ba46175bafe30f8d51d0" kindref="member">VectorBase::~VectorBase</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classDali_1_1VectorBase_1a2bbf9f431285eaca7a607041569561cd" refkind="member"><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">VectorBase::SizeType</ref><sp/><ref refid="classDali_1_1VectorBase_1a2bbf9f431285eaca7a607041569561cd" kindref="member">VectorBase::Capacity</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="46"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>capacity<sp/>=<sp/>0u;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>metadata<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>capacity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>*(metadata<sp/>-<sp/>2u);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>capacity;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1VectorBase_1a1980b5e8d94a5142c098d5d0bc376840" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a1980b5e8d94a5142c098d5d0bc376840" kindref="member">VectorBase::Release</ref>()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>adjust<sp/>pointer<sp/>to<sp/>real<sp/>beginning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>metadata<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>free(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(metadata<sp/>-<sp/>2u));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classDali_1_1VectorBase_1aed6f8affd5c205c0ef4453f6e78e58c7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1aed6f8affd5c205c0ef4453f6e78e58c7" kindref="member">VectorBase::ShrinkToFit</ref>(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>elementSize)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>count<sp/>=<sp/><ref refid="classDali_1_1VectorBase_1ac988e59b89d444a0d92e8a6beed1b99c" kindref="member">Count</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>oldCapacity<sp/>=<sp/><ref refid="classDali_1_1VectorBase_1a2bbf9f431285eaca7a607041569561cd" kindref="member">Capacity</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count<sp/>!=<sp/>oldCapacity)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dali-vector-base_8h_1a9d0b572e49c8f0208f34859ef2174fbe" kindref="member">DALI_ASSERT_VECTOR</ref>(count<sp/>&lt;<sp/>oldCapacity<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Count<sp/>is<sp/>bigger<sp/>than<sp/>capacity!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>real<sp/>size<sp/>of<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>wholeAllocation<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>)<sp/>*<sp/>2u<sp/>+<sp/>count<sp/>*<sp/>elementSize;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>adjust<sp/>pointer<sp/>to<sp/>real<sp/>beginning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>oldMetaData<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Reallocation.<sp/>We<sp/>can<sp/>assume<sp/>that<sp/>old<sp/>data<sp/>keep<sp/>well.<sp/>So<sp/>don&apos;t<sp/>need<sp/>to<sp/>copy<sp/>the<sp/>old<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>newMetaData<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(realloc(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(oldMetaData<sp/>-<sp/>2u),<sp/>wholeAllocation));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(newMetaData)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*newMetaData++<sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*newMetaData++<sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(oldMetaData<sp/>-<sp/>2u));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dali-vector-base_8h_1a9d0b572e49c8f0208f34859ef2174fbe" kindref="member">DALI_ASSERT_VECTOR</ref>(0<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;realloc<sp/>failed!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(newMetaData);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a1980b5e8d94a5142c098d5d0bc376840" kindref="member">Release</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classDali_1_1VectorBase_1a13cada8e0bafc82eefb8d9885fd9cdf3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a13cada8e0bafc82eefb8d9885fd9cdf3" kindref="member">VectorBase::Replace</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>newData)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mData)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>adjust<sp/>pointer<sp/>to<sp/>real<sp/>beginning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>metadata<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mData);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cause<sp/>timming<sp/>issue,<sp/>we<sp/>set<sp/>new<sp/>data<sp/>before<sp/>metadata<sp/>delete.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>mData<sp/>=<sp/>newData;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>delete<sp/>metadata<sp/>address<sp/>after<sp/>mData<sp/>setup<sp/>safety.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>free(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(metadata<sp/>-<sp/>2u));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mData<sp/>was<sp/>nullptr.<sp/>Just<sp/>copy<sp/>data<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>mData<sp/>=<sp/>newData;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="classDali_1_1VectorBase_1a88190cb6d710c9406620bb4b5ac80540" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a88190cb6d710c9406620bb4b5ac80540" kindref="member">VectorBase::SetCount</ref>(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>count)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>someone<sp/>can<sp/>call<sp/>Resize(<sp/>0u<sp/>)<sp/>before<sp/>ever<sp/>populating<sp/>the<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>metadata<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>*(metadata<sp/>-<sp/>1u)<sp/><sp/><sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="classDali_1_1VectorBase_1a5e8b75bac865b353c8784bd68a1ea82d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a5e8b75bac865b353c8784bd68a1ea82d" kindref="member">VectorBase::Reserve</ref>(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>capacity,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>elementSize)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1ad727decd17ab566b94485bcfc4c2a2ad" kindref="member">ReserveWithCustomMoveFunction</ref>(capacity,<sp/>elementSize,<sp/>MemCpyWrapper);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="classDali_1_1VectorBase_1ad727decd17ab566b94485bcfc4c2a2ad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1ad727decd17ab566b94485bcfc4c2a2ad" kindref="member">VectorBase::ReserveWithCustomMoveFunction</ref>(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>capacity,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>elementSize,<sp/><ref refid="classDali_1_1VectorBase_1a98c6f3c05a0c5290a1696dc0d3c83283" kindref="member">MemMoveFunctionType</ref><sp/>memMoveFunction)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>oldCapacity<sp/>=<sp/><ref refid="classDali_1_1VectorBase_1a2bbf9f431285eaca7a607041569561cd" kindref="member">Capacity</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>oldCount<sp/><sp/><sp/><sp/>=<sp/><ref refid="classDali_1_1VectorBase_1ac988e59b89d444a0d92e8a6beed1b99c" kindref="member">Count</ref>();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(capacity<sp/>&gt;<sp/>oldCapacity)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>wholeAllocation<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>)<sp/>*<sp/>2u<sp/>+<sp/>capacity<sp/>*<sp/>elementSize;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wholeData<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(wholeAllocation);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" kindref="member">DALI_ASSERT_ALWAYS</ref>(wholeData<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;VectorBase::Reserve<sp/>-<sp/>Memory<sp/>allocation<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(DEBUG_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>debug<sp/>build<sp/>this<sp/>will<sp/>help<sp/>identify<sp/>a<sp/>vector<sp/>of<sp/>uninitialized<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(wholeData,<sp/>0xaa,<sp/>wholeAllocation);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>metaData<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(wholeData);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>*metaData++<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>capacity;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>*metaData++<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>oldCount;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>over<sp/>the<sp/>old<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>memMoveFunction(metaData,<sp/><ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>,<sp/>oldCount<sp/>*<sp/>elementSize);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>old<sp/>buffer<sp/>and<sp/>set<sp/>new<sp/>data<sp/>as<sp/>mData</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a13cada8e0bafc82eefb8d9885fd9cdf3" kindref="member">Replace</ref>(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(metaData));</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classDali_1_1VectorBase_1a6c7d67619982890a23a40b6c8def99f0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a6c7d67619982890a23a40b6c8def99f0" kindref="member">VectorBase::Copy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase" kindref="compound">VectorBase</ref>&amp;<sp/>vector,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>elementSize)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>reserve<sp/>space<sp/>based<sp/>on<sp/>source<sp/>capacity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>capacity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>vector.<ref refid="classDali_1_1VectorBase_1a2bbf9f431285eaca7a607041569561cd" kindref="member">Capacity</ref>();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>wholeAllocation<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>)<sp/>*<sp/>2u<sp/>+<sp/>capacity<sp/>*<sp/>elementSize;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wholeData<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(wholeAllocation);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><ref refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" kindref="member">DALI_ASSERT_ALWAYS</ref>(wholeData<sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;VectorBase::Copy<sp/>-<sp/>Memory<sp/>allocation<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>over<sp/>whole<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>srcData<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(vector.<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*<sp/>dstData<sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(wholeData)<sp/>+<sp/>2u;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>memcpy(dstData<sp/>-<sp/>2u,<sp/>srcData<sp/>-<sp/>2u,<sp/>wholeAllocation);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>release<sp/>old<sp/>buffer<sp/>and<sp/>set<sp/>new<sp/>data<sp/>as<sp/>mData</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorBase_1a13cada8e0bafc82eefb8d9885fd9cdf3" kindref="member">Replace</ref>(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(dstData));</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="classDali_1_1VectorBase_1a1fcb9c660147c32d349579dac4e2a30a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a1fcb9c660147c32d349579dac4e2a30a" kindref="member">VectorBase::Swap</ref>(<ref refid="classDali_1_1VectorBase" kindref="compound">VectorBase</ref>&amp;<sp/>vector)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>just<sp/>swap<sp/>the<sp/>data<sp/>pointers,<sp/>metadata<sp/>will<sp/>swap<sp/>as<sp/>side<sp/>effect</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>std::swap(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>,<sp/>vector.<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="classDali_1_1VectorBase_1a5ee94b95be16da379aad5efd8bb8a268" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a5ee94b95be16da379aad5efd8bb8a268" kindref="member">VectorBase::Erase</ref>(uint8_t*<sp/>address,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>elementSize)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>erase<sp/>can<sp/>be<sp/>called<sp/>on<sp/>an<sp/>unallocated<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>startAddress<sp/><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uint8_t*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(address)<sp/>+<sp/>elementSize;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>endAddress<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uint8_t*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)<sp/>+<sp/><ref refid="classDali_1_1VectorBase_1ac988e59b89d444a0d92e8a6beed1b99c" kindref="member">Count</ref>()<sp/>*<sp/>elementSize;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfBytes<sp/>=<sp/>endAddress<sp/>-<sp/>startAddress;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>addresses<sp/>overlap<sp/>so<sp/>use<sp/>memmove</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>memmove(address,<sp/>startAddress,<sp/>numberOfBytes);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a88190cb6d710c9406620bb4b5ac80540" kindref="member">SetCount</ref>(<ref refid="classDali_1_1VectorBase_1ac988e59b89d444a0d92e8a6beed1b99c" kindref="member">Count</ref>()<sp/>-<sp/>1u);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="classDali_1_1VectorBase_1a17413c9f34b29a266cf4334b13f503ef" refkind="member"><highlight class="normal">uint8_t*<sp/><ref refid="classDali_1_1VectorBase_1a5ee94b95be16da379aad5efd8bb8a268" kindref="member">VectorBase::Erase</ref>(uint8_t*<sp/>first,<sp/>uint8_t*<sp/>last,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>elementSize)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>uint8_t*<sp/>next<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>startAddress<sp/><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uint8_t*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(last);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>endAddress<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uint8_t*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classDali_1_1VectorBase_1aa1ec2ad33db1bf5f631105ca29e3d7ee" kindref="member">mData</ref>)<sp/>+<sp/><ref refid="classDali_1_1VectorBase_1ac988e59b89d444a0d92e8a6beed1b99c" kindref="member">Count</ref>()<sp/>*<sp/>elementSize;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfBytes<sp/>=<sp/>endAddress<sp/>-<sp/>startAddress;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>addresses<sp/>overlap<sp/>so<sp/>use<sp/>memmove</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>memmove(first,<sp/>startAddress,<sp/>numberOfBytes);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1VectorBase_1a88190cb6d710c9406620bb4b5ac80540" kindref="member">SetCount</ref>(<ref refid="classDali_1_1VectorBase_1ac988e59b89d444a0d92e8a6beed1b99c" kindref="member">Count</ref>()<sp/>-<sp/>(last<sp/>-<sp/>first)<sp/>/<sp/>elementSize);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>next<sp/>=<sp/>first;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>next;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="classDali_1_1VectorBase_1a6b126727c37ba8655069d3fbbdb82638" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorBase_1a6b126727c37ba8655069d3fbbdb82638" kindref="member">VectorBase::CopyMemory</ref>(uint8_t*<sp/>destination,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>source,<sp/><ref refid="classDali_1_1VectorBase_1a58a2f1c8e479a08ca7431163c4bddcb8" kindref="member">SizeType</ref><sp/>numberOfBytes)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(((source<sp/>&lt;<sp/>destination)<sp/>&amp;&amp;<sp/>(source<sp/>+<sp/>numberOfBytes<sp/>&gt;<sp/>destination))<sp/>||</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>((destination<sp/>&lt;<sp/>source)<sp/>&amp;&amp;<sp/>(destination<sp/>+<sp/>numberOfBytes<sp/>&gt;<sp/>source)))</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>there<sp/>is<sp/>overlap,<sp/>use<sp/>memmove.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>memmove(destination,<sp/>source,<sp/>numberOfBytes);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>It&apos;s<sp/>safe<sp/>to<sp/>use<sp/>memcpy<sp/>if<sp/>there<sp/>isn&apos;t<sp/>overlap.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(destination,<sp/>source,<sp/>numberOfBytes);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/dali-vector-base.cpp"/>
+  </compounddef>
+</doxygen>

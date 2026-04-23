@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="json-parser_8cpp" kind="file" language="C++">
+    <compoundname>json-parser.cpp</compoundname>
+    <includes refid="json-parser_8h" local="no">dali-ui-foundation/devel-api/builder/json-parser.h</includes>
+    <includes local="no">memory.h</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">dali-ui-foundation/internal/builder/json-parser-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/json-parser.cpp</label>
+        <link refid="json-parser_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/devel-api/builder/json-parser.h</label>
+        <link refid="json-parser_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali-ui-foundation/devel-api/builder/tree-node.h</label>
+        <link refid="tree-node_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>algorithm</label>
+      </node>
+      <node id="14">
+        <label>cstring</label>
+      </node>
+      <node id="17">
+        <label>dali-ui-foundation/internal/builder/json-parser-impl.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="15">
+        <label>functional</label>
+      </node>
+      <node id="16">
+        <label>iostream</label>
+      </node>
+      <node id="10">
+        <label>iterator</label>
+      </node>
+      <node id="4">
+        <label>list</label>
+      </node>
+      <node id="12">
+        <label>memory.h</label>
+      </node>
+      <node id="5">
+        <label>ostream</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="json-parser_8h" kindref="compound">dali-ui-foundation/devel-api/builder/json-parser.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/builder/json-parser-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35" refid="classDali_1_1Ui_1_1JsonParser_1a5c5366257f68a0dea872cca9020abf84" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1JsonParser" kindref="compound">JsonParser</ref><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a5c5366257f68a0dea872cca9020abf84" kindref="member">JsonParser::New</ref>()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>Internal::JsonParser*<sp/>internal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::JsonParser();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1aec0c1086dbef88d149005db88f238a5a" kindref="member">JsonParser</ref>(internal);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classDali_1_1Ui_1_1JsonParser_1a964671cf3c1d35529f71cd182417dd1c" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1JsonParser" kindref="compound">JsonParser</ref><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a5c5366257f68a0dea872cca9020abf84" kindref="member">JsonParser::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>&amp;<sp/>tree)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>Internal::JsonParser*<sp/>internal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::JsonParser(tree);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1aec0c1086dbef88d149005db88f238a5a" kindref="member">JsonParser</ref>(internal);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classDali_1_1Ui_1_1JsonParser_1aec0c1086dbef88d149005db88f238a5a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1JsonParser_1aec0c1086dbef88d149005db88f238a5a" kindref="member">JsonParser::JsonParser</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1Ui_1_1JsonParser_1a400a243ec18396833d276ef0d3270278" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1JsonParser_1a400a243ec18396833d276ef0d3270278" kindref="member">JsonParser::~JsonParser</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classDali_1_1Ui_1_1JsonParser_1ad4bf1ba358dd5d03b35e6df698f9bd01" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1JsonParser" kindref="compound">JsonParser</ref><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1ad4bf1ba358dd5d03b35e6df698f9bd01" kindref="member">JsonParser::DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1aec0c1086dbef88d149005db88f238a5a" kindref="member">JsonParser</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Internal::JsonParser*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.GetObjectPtr()));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1Ui_1_1JsonParser_1a5a9225cc26a0fb0c8c7e7951f5aa934f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a5a9225cc26a0fb0c8c7e7951f5aa934f" kindref="member">JsonParser::Parse</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>source)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).Parse(source);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classDali_1_1Ui_1_1JsonParser_1ab4e894c3c530894f6358bcb342566399" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1ab4e894c3c530894f6358bcb342566399" kindref="member">JsonParser::Pack</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).Pack();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classDali_1_1Ui_1_1JsonParser_1a9d86e52735bf3082225b79bd86e90450" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a9d86e52735bf3082225b79bd86e90450" kindref="member">JsonParser::GetRoot</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).GetRoot();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDali_1_1Ui_1_1JsonParser_1a86972e295a07126d7a8c163aacd9d659" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a86972e295a07126d7a8c163aacd9d659" kindref="member">JsonParser::ParseError</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).ParseError();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classDali_1_1Ui_1_1JsonParser_1a1c7066a51b255d1e852e1ce515fac3fb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a1c7066a51b255d1e852e1ce515fac3fb" kindref="member">JsonParser::GetErrorPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="81"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).GetErrorPosition();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classDali_1_1Ui_1_1JsonParser_1a33aa697c4150293644ea6a4f60ecf758" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a33aa697c4150293644ea6a4f60ecf758" kindref="member">JsonParser::GetErrorDescription</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="86"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).GetErrorDescription();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classDali_1_1Ui_1_1JsonParser_1a410bafd064b2270086d0b9e93db2ed8b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a410bafd064b2270086d0b9e93db2ed8b" kindref="member">JsonParser::GetErrorLineNumber</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="91"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).GetErrorLineNumber();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classDali_1_1Ui_1_1JsonParser_1a8757755ecd4eaaec4907d99fe0ed2d07" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a8757755ecd4eaaec4907d99fe0ed2d07" kindref="member">JsonParser::GetErrorColumn</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="96"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).GetErrorColumn();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classDali_1_1Ui_1_1JsonParser_1a8e400703932ac7aeb8cf9974a17282ea" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1JsonParser_1a8e400703932ac7aeb8cf9974a17282ea" kindref="member">JsonParser::Write</ref>(std::ostream&amp;<sp/>output,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indent)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="101"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImplementation(*this).Write(output,<sp/>indent);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classDali_1_1Ui_1_1JsonParser_1a236d4dbf015e9fc9f04432b7c7e05764" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1JsonParser_1aec0c1086dbef88d149005db88f238a5a" kindref="member">JsonParser::JsonParser</ref>(Internal::JsonParser*<sp/>internal)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">:<sp/>BaseHandle(internal)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/json-parser.cpp"/>
+  </compounddef>
+</doxygen>

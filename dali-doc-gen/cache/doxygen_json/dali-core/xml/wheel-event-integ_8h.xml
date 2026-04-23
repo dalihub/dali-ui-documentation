@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="wheel-event-integ_8h" kind="file" language="C++">
+    <compoundname>wheel-event-integ.h</compoundname>
+    <includes local="no">string</includes>
+    <includes refid="event_8h" local="no">dali/integration-api/events/event.h</includes>
+    <includes refid="vector2_8h" local="no">dali/public-api/math/vector2.h</includes>
+    <includedby refid="wheel-event-integ_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/wheel-event-integ.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>dali/integration-api/events/event.h</label>
+        <link refid="event_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/wheel-event-integ.h</label>
+        <link refid="wheel-event-integ_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="5">
+        <label>dali/public-api/math/vector2.h</label>
+        <link refid="vector2_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/wheel-event-integ.cpp</label>
+        <link refid="wheel-event-integ_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/wheel-event-integ.h</label>
+        <link refid="wheel-event-integ_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDali_1_1Integration_1_1WheelEvent" prot="public">Dali::Integration::WheelEvent</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration">Dali::Integration</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_INTEGRATION_WHEEL_EVENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_INTEGRATION_WHEEL_EVENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="event_8h" kindref="compound">dali/integration-api/events/event.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vector2_8h" kindref="compound">dali/public-api/math/vector2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Integration</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37" refid="structDali_1_1Integration_1_1WheelEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1Event" kindref="compound">Event</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Enumerations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structDali_1_1Integration_1_1WheelEvent_1a84dbae836ba8356e1ba9f8d985f24764" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1a84dbae836ba8356e1ba9f8d985f24764" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46" refid="structDali_1_1Integration_1_1WheelEvent_1a84dbae836ba8356e1ba9f8d985f24764a16b9861c6c6eabf4a9a576e02c7d598c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1a84dbae836ba8356e1ba9f8d985f24764a16b9861c6c6eabf4a9a576e02c7d598c" kindref="member">MOUSE_WHEEL</ref>,<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>CUSTOM_WHEEL<sp/></highlight></codeline>
+<codeline lineno="48" refid="structDali_1_1Integration_1_1WheelEvent_1a84dbae836ba8356e1ba9f8d985f24764a254ed9ebc461340bc105541ca8a97fe8" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref>(Type<sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>direction,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>modifiers,<sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref><sp/>point,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>delta,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeStamp);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref>&amp;<sp/>rhs);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="structDali_1_1Integration_1_1WheelEvent_1a37e418abb8fe1a4f8b0cc93f93bcc785" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1a37e418abb8fe1a4f8b0cc93f93bcc785" kindref="member">~WheelEvent</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structDali_1_1Integration_1_1WheelEvent_1ac3d89aa6aae426b8513128bcf473c417" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1a84dbae836ba8356e1ba9f8d985f24764" kindref="member">Type</ref><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1ac3d89aa6aae426b8513128bcf473c417" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="structDali_1_1Integration_1_1WheelEvent_1ad69e4b9c0bcab6fdd8d8dd4c35a39808" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1ad69e4b9c0bcab6fdd8d8dd4c35a39808" kindref="member">direction</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="structDali_1_1Integration_1_1WheelEvent_1a3fc68a335f20200503102e96cd5cffc5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1a3fc68a335f20200503102e96cd5cffc5" kindref="member">modifiers</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="structDali_1_1Integration_1_1WheelEvent_1a0b602f7614717ca821e6a23144618311" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1a0b602f7614717ca821e6a23144618311" kindref="member">point</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="structDali_1_1Integration_1_1WheelEvent_1adb3394fca6e51f3b92af6b922c717e99" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1adb3394fca6e51f3b92af6b922c717e99" kindref="member">delta</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="structDali_1_1Integration_1_1WheelEvent_1aee5657043683a2638d49f2fd80609827" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1WheelEvent_1aee5657043683a2638d49f2fd80609827" kindref="member">timeStamp</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Integration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_INTEGRATION_WHEEL_EVENT_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/wheel-event-integ.h"/>
+  </compounddef>
+</doxygen>

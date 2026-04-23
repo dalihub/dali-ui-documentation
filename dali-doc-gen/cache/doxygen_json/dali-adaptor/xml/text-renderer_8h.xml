@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="text-renderer_8h" kind="file" language="C++">
+    <compoundname>text-renderer.h</compoundname>
+    <includes local="no">dali/public-api/common/dali-vector.h</includes>
+    <includes local="no">dali/public-api/object/base-handle.h</includes>
+    <includes refid="pixel-buffer_8h" local="no">dali/devel-api/adaptor-framework/pixel-buffer.h</includes>
+    <includes refid="glyph-info_8h" local="no">dali/devel-api/text-abstraction/glyph-info.h</includes>
+    <includedby refid="text-renderer_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>dali/devel-api/adaptor-framework/pixel-buffer.h</label>
+        <link refid="pixel-buffer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali/devel-api/text-abstraction/glyph-info.h</label>
+        <link refid="glyph-info_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>dali/devel-api/text-abstraction/text-abstraction-definitions.h</label>
+        <link refid="text-abstraction-definitions_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer.h</label>
+        <link refid="text-renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/images/pixel-data.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="11">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer.cpp</label>
+        <link refid="text-renderer_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer.h</label>
+        <link refid="text-renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1TextAbstraction_1_1TextRenderer" prot="public">Dali::TextAbstraction::TextRenderer</innerclass>
+    <innerclass refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters" prot="public">Dali::TextAbstraction::TextRenderer::Parameters</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1TextAbstraction">Dali::TextAbstraction</innernamespace>
+    <innernamespace refid="namespaceDali_1_1TextAbstraction_1_1Internal">Dali::TextAbstraction::Internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_TOOLKIT_TEXT_ABSTRACTION_TEXT_RENDERER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_TOOLKIT_TEXT_ABSTRACTION_TEXT_RENDERER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/dali-vector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/base-handle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="pixel-buffer_8h" kindref="compound">dali/devel-api/adaptor-framework/pixel-buffer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="glyph-info_8h" kindref="compound">dali/devel-api/text-abstraction/glyph-info.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">TextAbstraction</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declaration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TextRenderer;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Internal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classDali_1_1TextAbstraction_1_1TextRenderer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="classDali_1_1TextAbstraction_1_1TextRenderer" kindref="compound">TextRenderer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BaseHandle</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters" kindref="compound">Parameters</ref></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af77bcd085ba3b8fd21b73669665ff797" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af77bcd085ba3b8fd21b73669665ff797" kindref="member">PixelFormat</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af77bcd085ba3b8fd21b73669665ff797ad15ec1d187a0b45026c3c431c7a2109d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af77bcd085ba3b8fd21b73669665ff797ad15ec1d187a0b45026c3c431c7a2109d" kindref="member">A8</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>RGBA8888<sp/></highlight></codeline>
+<codeline lineno="63" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af77bcd085ba3b8fd21b73669665ff797ac266bf943d21d0267622e5a355c4ed86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a656cc71eab93cb35cbdc846c74477208" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a656cc71eab93cb35cbdc846c74477208" kindref="member">CircularLayout</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a656cc71eab93cb35cbdc846c74477208a396ccfb9b8d915982de0d2c2496f9f3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a656cc71eab93cb35cbdc846c74477208a396ccfb9b8d915982de0d2c2496f9f3f" kindref="member">CLOCKWISE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>COUNTER_CLOCKWISE<sp/></highlight></codeline>
+<codeline lineno="72" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a656cc71eab93cb35cbdc846c74477208ab4147bbd1c12c929d8f8a3bac267d993" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1ac9b4a3241321373f8e3f67710d61b73c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1ac9b4a3241321373f8e3f67710d61b73c" kindref="member">Parameters</ref>(Vector&lt;GlyphInfo&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glyphs,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Vector2&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>positions,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Vector4&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>colors,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;ColorIndex&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>colorIndices,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;ColorBlendingMode&gt;&amp;<sp/>blendingMode,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;bool&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isEmoji)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>glyphs(glyphs),</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>positions(positions),</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>colors(colors),</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>colorIndices(colorIndices),</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>blendingMode(blendingMode),</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>isEmoji(isEmoji),</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>width{0u},</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>height{0u},</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>radius{0u},</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>circularWidth{0u},</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>circularHeight{0u},</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>centerX{0},</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>centerY{0},</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>beginAngle{0.f},</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pixelFormat{A8},</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>circularLayout{CLOCKWISE}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aea8f4f7419f1b9b052fb399c7698c41e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;GlyphInfo&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aea8f4f7419f1b9b052fb399c7698c41e" kindref="member">glyphs</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a09cc584662b6ffebf7774f99f47ad41e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Vector2&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a09cc584662b6ffebf7774f99f47ad41e" kindref="member">positions</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a4ca97e5c57fef7debdefaaa20b3d3ab2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Vector4&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a4ca97e5c57fef7debdefaaa20b3d3ab2" kindref="member">colors</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aa91c68648509b21798fdd64aa8e3c79c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;ColorIndex&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aa91c68648509b21798fdd64aa8e3c79c" kindref="member">colorIndices</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1ab1deef40da736be539d81925a10cd020" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;ColorBlendingMode&gt;&amp;<sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1ab1deef40da736be539d81925a10cd020" kindref="member">blendingMode</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a3c67157f4f8640db3d4eb4fc5cfbe8d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;bool&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a3c67157f4f8640db3d4eb4fc5cfbe8d9" kindref="member">isEmoji</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aab5faf5e286601527ce6f86ed9468df7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aab5faf5e286601527ce6f86ed9468df7" kindref="member">width</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a54f9c4b9636a6acfac493321a5522900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a54f9c4b9636a6acfac493321a5522900" kindref="member">height</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af1e4e075041c82e62d16dcffa7e91e42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af1e4e075041c82e62d16dcffa7e91e42" kindref="member">radius</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a6cf468a6758313160d22889111420abf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a6cf468a6758313160d22889111420abf" kindref="member">circularWidth</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="112" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a80c40fb753e1bae515ee7a692eac16a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a80c40fb753e1bae515ee7a692eac16a0" kindref="member">circularHeight</ref>;<sp/></highlight></codeline>
+<codeline lineno="113" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a954733332ded10b236b325c555dcf65a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a954733332ded10b236b325c555dcf65a" kindref="member">centerX</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1acdc35ea85f077dd2b5a802bbcb41a39a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1acdc35ea85f077dd2b5a802bbcb41a39a" kindref="member">centerY</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aa70155ea1c355f394f36ff58a5fe5143" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1aa70155ea1c355f394f36ff58a5fe5143" kindref="member">beginAngle</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a4fe2f761f82475070b8278a47dbb5cf1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1af77bcd085ba3b8fd21b73669665ff797" kindref="member">PixelFormat</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a4fe2f761f82475070b8278a47dbb5cf1" kindref="member">pixelFormat</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117" refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a79a4b24cd8e5393070d964ef71dcf1cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a656cc71eab93cb35cbdc846c74477208" kindref="member">CircularLayout</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters_1a79a4b24cd8e5393070d964ef71dcf1cc" kindref="member">circularLayout</ref>;<sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1TextAbstraction_1_1TextRenderer" kindref="compound">TextRenderer</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1TextAbstraction_1_1TextRenderer" kindref="compound">~TextRenderer</ref>();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TextAbstraction_1_1TextRenderer" kindref="compound">TextRenderer</ref><sp/>Get();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">Devel::PixelBuffer</ref><sp/>Render(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1TextAbstraction_1_1TextRenderer_1_1Parameters" kindref="compound">Parameters</ref>&amp;<sp/>parameters);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>intended<sp/>for<sp/>application<sp/>developers.</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>DALI_INTERNAL<sp/><ref refid="classDali_1_1TextAbstraction_1_1TextRenderer" kindref="compound">TextRenderer</ref>(Internal::TextRenderer*<sp/>implementation);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TextAbstraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_TOOLKIT_TEXT_ABSTRACTION_TEXT_RENDERER_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/text-renderer.h"/>
+  </compounddef>
+</doxygen>

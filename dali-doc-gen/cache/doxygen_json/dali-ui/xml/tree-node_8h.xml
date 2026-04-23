@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="tree-node_8h" kind="file" language="C++">
+    <compoundname>tree-node.h</compoundname>
+    <includes refid="dali-ui-common_8h" local="no">dali-ui-foundation/public-api/dali-ui-common.h</includes>
+    <includes local="no">iterator</includes>
+    <includes local="no">string</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="json-parser_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/json-parser.h</includedby>
+    <includedby refid="tree-node_8cpp" local="yes">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/tree-node.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/tree-node.h</label>
+        <link refid="tree-node_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="4">
+        <label>iterator</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/json-parser.cpp</label>
+        <link refid="json-parser_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/json-parser.h</label>
+        <link refid="json-parser_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/tree-node.cpp</label>
+        <link refid="tree-node_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/tree-node.h</label>
+        <link refid="tree-node_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Ui_1_1TreeNode" prot="public">Dali::Ui::TreeNode</innerclass>
+    <innerclass refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" prot="public">Dali::Ui::TreeNode::ConstIterator</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui_1_1Internal">Dali::Ui::Internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_SCRIPT_TREE_NODE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_SCRIPT_TREE_NODE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-ui-common_8h" kindref="compound">dali-ui-foundation/public-api/dali-ui-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iterator&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>pair</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal<sp/>DALI_INTERNAL</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TreeNodeManipulator;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Internal<sp/>DALI_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>TreeNode<sp/>describes<sp/>a<sp/>tree<sp/>of<sp/>nodes.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>TreeNode<sp/>does<sp/>not<sp/>own<sp/>its<sp/>string<sp/>data<sp/>which<sp/>is<sp/>held<sp/>by<sp/>a<sp/>container<sp/>eg<sp/>JsonParser</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>Modification<sp/>operations<sp/>should<sp/>be<sp/>done<sp/>through<sp/>a<sp/>container.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classDali_1_1Ui_1_1TreeNode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-ui-common_8h_1aef2307dd4c2caad2d52fb78f0d24a16c" kindref="member">DALI_UI_API</ref><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/>*<sp/>enum<sp/>typedef<sp/>describing<sp/>the<sp/>node<sp/>type</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93c" kindref="member">NodeType</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca4b4254e5bf16283876461937674548ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca4b4254e5bf16283876461937674548ec" kindref="member">IS_NULL</ref>,</highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93cae38ff6f21c49f66c1e5b5fae6d261a25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93cae38ff6f21c49f66c1e5b5fae6d261a25" kindref="member">OBJECT</ref>,</highlight></codeline>
+<codeline lineno="52" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca26e9c1d0390f8a21ce4931a1c43a6000" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca26e9c1d0390f8a21ce4931a1c43a6000" kindref="member">ARRAY</ref>,</highlight></codeline>
+<codeline lineno="53" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93caa3a6f3ee8b23ce7daed9edf8d7b640e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93caa3a6f3ee8b23ce7daed9edf8d7b640e5" kindref="member">STRING</ref>,</highlight></codeline>
+<codeline lineno="54" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca679c6172681b3d556436c5267aa1fa61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca679c6172681b3d556436c5267aa1fa61" kindref="member">INTEGER</ref>,</highlight></codeline>
+<codeline lineno="55" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca772e01380a6fcfc42f9acd54adbb5e3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca772e01380a6fcfc42f9acd54adbb5e3a" kindref="member">FLOAT</ref>,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>BOOLEAN</highlight></codeline>
+<codeline lineno="57" refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93ca414d5003223899e6d311b5b0c81341f1" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Non<sp/>virtual<sp/>destructor;<sp/>this<sp/>class<sp/>should<sp/>not<sp/>be<sp/>inherited<sp/>from.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">~TreeNode</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::pair&lt;const<sp/>char*,<sp/>const<sp/>TreeNode&amp;&gt;<sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Iterator<sp/>to<sp/>iterate<sp/>through<sp/>children</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-ui-common_8h_1aef2307dd4c2caad2d52fb78f0d24a16c" kindref="member">DALI_UI_API</ref><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="72" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ac887873f673be0c3d2f3aa59bfe265c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ac887873f673be0c3d2f3aa59bfe265c6" kindref="member">value_type</ref>;</highlight></codeline>
+<codeline lineno="73" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1afbbe89ee7848e7c4d2f7a4f249ddd0d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1afbbe89ee7848e7c4d2f7a4f249ddd0d2" kindref="member">pointer</ref>;</highlight></codeline>
+<codeline lineno="74" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1a51f2d10b5d29c5ca4ed6ef5b940e311d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1a51f2d10b5d29c5ca4ed6ef5b940e311d" kindref="member">const_pointer</ref>;</highlight></codeline>
+<codeline lineno="75" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ae42b1f83e8e93cb5cdb8303b68b6f095" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ae42b1f83e8e93cb5cdb8303b68b6f095" kindref="member">reference</ref>;</highlight></codeline>
+<codeline lineno="76" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ae7c10e59e5b725fd6126f60cd12a2103" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ae7c10e59e5b725fd6126f60cd12a2103" kindref="member">const_reference</ref>;</highlight></codeline>
+<codeline lineno="77" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1a0f904c33938be204e41dc421ace4af85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1a0f904c33938be204e41dc421ace4af85" kindref="member">size_type</ref>;</highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1a7a8e8d7615ad9eb9d5ae5add98f5d22b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::ptrdiff_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1a7a8e8d7615ad9eb9d5ae5add98f5d22b" kindref="member">difference_type</ref>;</highlight></codeline>
+<codeline lineno="79" refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ae366876a71f9102da09a34e37f8bc03c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::forward_iterator_tag<sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator_1ae366876a71f9102da09a34e37f8bc03c" kindref="member">iterator_category</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>constructor</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref>(<ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>v);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>pre<sp/>increment</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref>&amp;<sp/>operator++();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>post<sp/>increment</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref><sp/>operator++(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>!=<sp/>test</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator!=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref>&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>pointer<sp/>semantics</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a770d410bc2ca8bbbd5d69973544f7be9" kindref="member">KeyNodePair</ref><sp/>operator*();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>mNode;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Iterate<sp/>begin()<sp/>over<sp/>the<sp/>nodes<sp/>children</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>a<sp/>const<sp/>interator</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref><sp/>CBegin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Iterate<sp/>end()</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>a<sp/>const<sp/>interator</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1_1ConstIterator" kindref="compound">ConstIterator</ref><sp/>CEnd()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Size<sp/>(number<sp/>of<sp/>children)</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>number<sp/>of<sp/>children</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Size()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Count<sp/>(the<sp/>number<sp/>of<sp/>children<sp/>of<sp/>a<sp/>sub<sp/>child<sp/>node)</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@param<sp/>childName<sp/>The<sp/>name<sp/>of<sp/>the<sp/>child<sp/>to<sp/>find</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>the<sp/>number<sp/>of<sp/>children<sp/>in<sp/>the<sp/>found<sp/>child</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>Count(std::string_view<sp/>childName)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Get<sp/>the<sp/>nodes<sp/>name</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>nodes<sp/>name</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>the<sp/>nodes<sp/>type</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>nodes<sp/>type</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a06b6df872e760ad13bbd28244dcab93c" kindref="member">NodeType</ref><sp/>GetType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>the<sp/>nodes<sp/>string<sp/>value</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Only<sp/>valid<sp/>if<sp/>the<sp/>type<sp/>==<sp/>TreeNode::STRING</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>string<sp/>value</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>GetString()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>the<sp/>nodes<sp/>float<sp/>value</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Only<sp/>valid<sp/>if<sp/>the<sp/>type<sp/>==<sp/>TreeNode::FLOAT</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>float<sp/>value</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetFloat()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>the<sp/>nodes<sp/>integer<sp/>value</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Only<sp/>valid<sp/>if<sp/>the<sp/>type<sp/>==<sp/>TreeNode::INTEGER</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>integer<sp/>value</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetInteger()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>the<sp/>nodes<sp/>boolean<sp/>value</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Only<sp/>valid<sp/>if<sp/>the<sp/>type<sp/>==<sp/>TreeNode::BOOLEAN</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>boolean<sp/>value</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetBoolean()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>the<sp/>substituion<sp/>flag</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Only<sp/>valid<sp/>if<sp/>the<sp/>type<sp/>==<sp/>TreeNode::STRING</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>substitution<sp/>flag</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HasSubstitution()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>a<sp/>child<sp/>of<sp/>the<sp/>node<sp/>(using<sp/>case<sp/>sensitive<sp/>matching)</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@param<sp/>name<sp/>The<sp/>name<sp/>of<sp/>the<sp/>child.</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>child<sp/>if<sp/>found,<sp/>else<sp/>NULL</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>GetChild(std::string_view<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Gets<sp/>a<sp/>child<sp/>of<sp/>the<sp/>node<sp/>(using<sp/>case<sp/>insensitive<sp/>matching)</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@param<sp/>name<sp/>The<sp/>name<sp/>of<sp/>the<sp/>child<sp/>in<sp/>lower<sp/>case</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>child<sp/>if<sp/>found,<sp/>else<sp/>NULL</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>GetChildIgnoreCase(std::string_view<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Recursively<sp/>search<sp/>for<sp/>a<sp/>child<sp/>of<sp/>the<sp/>node</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@param<sp/>name<sp/>The<sp/>name<sp/>of<sp/>the<sp/>child</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>The<sp/>child<sp/>if<sp/>found,<sp/>else<sp/>NULL</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>Find(std::string_view<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="204" refid="classDali_1_1Ui_1_1TreeNode_1acfd4dede9f8d0ddb19dda66ce0136ad5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Internal::TreeNodeManipulator;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/><sp/>*<sp/>Constructor</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>DALI_INTERNAL<sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>non<sp/>copyable<sp/>or<sp/>assignable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>DALI_INTERNAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>(<ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>&amp;);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>DALI_INTERNAL<sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>&amp;);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mName;<sp/></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>mParent;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>mNextSibling;<sp/></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>mFirstChild;<sp/><sp/></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode" kindref="compound">TreeNode</ref>*<sp/>mLastChild;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224" refid="classDali_1_1Ui_1_1TreeNode_1ad5d7581757fc26bcbc907090a10616e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1ad5d7581757fc26bcbc907090a10616e9" kindref="member">mStringValue</ref>;<sp/></highlight></codeline>
+<codeline lineno="225" refid="classDali_1_1Ui_1_1TreeNode_1a38365f07dc19ffb3a216ae1bb63658f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a38365f07dc19ffb3a216ae1bb63658f9" kindref="member">mIntValue</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="226" refid="classDali_1_1Ui_1_1TreeNode_1a0994847d95f412e9a6717290ed98b653" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1TreeNode_1a0994847d95f412e9a6717290ed98b653" kindref="member">mFloatValue</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>NodeType<sp/>mType;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>mSubstituion;<sp/></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_SCRIPT_TREE_NODE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/tree-node.h"/>
+  </compounddef>
+</doxygen>

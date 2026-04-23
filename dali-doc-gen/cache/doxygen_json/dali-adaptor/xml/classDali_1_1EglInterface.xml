@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1EglInterface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::EglInterface</compoundname>
+    <includes refid="egl-interface_8h" local="no">egl-interface.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1EglInterface_1ae3178efbc841de87d0344acdde6f33ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::EglInterface::ChooseConfig</definition>
+        <argsstring>(bool isWindowType, ColorDepth depth)=0</argsstring>
+        <name>ChooseConfig</name>
+        <qualifiedname>Dali::EglInterface::ChooseConfig</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isWindowType</declname>
+        </param>
+        <param>
+          <type>ColorDepth</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Choose config of egl <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isWindowType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether the config for window or pixmap </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>colorDepth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bit per pixel value (ex. 32 or 24) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the eglChooseConfig is succeed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="41" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a1b7032b243b59af97b93e45236e55ea5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::EglInterface::CreateContext</definition>
+        <argsstring>()=0</argsstring>
+        <name>CreateContext</name>
+        <qualifiedname>Dali::EglInterface::CreateContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create the OpenGL context. <simplesect kind="return"><para>true if successful </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="47" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1ac7b4701bb0a680f4d72b10e6a22d698c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::EglInterface::CreateWindowContext</definition>
+        <argsstring>(EGLContext &amp;eglContext)=0</argsstring>
+        <name>CreateWindowContext</name>
+        <qualifiedname>Dali::EglInterface::CreateWindowContext</qualifiedname>
+        <param>
+          <type>EGLContext &amp;</type>
+          <declname>eglContext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create the OpenGL context for the window. <simplesect kind="return"><para>true if successful </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="53" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a163560b236a269f4586414414c026bf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>EGLSurface</type>
+        <definition>virtual EGLSurface Dali::EglInterface::CreateSurfaceWindow</definition>
+        <argsstring>(EGLNativeWindowType window, ColorDepth depth)=0</argsstring>
+        <name>CreateSurfaceWindow</name>
+        <qualifiedname>Dali::EglInterface::CreateSurfaceWindow</qualifiedname>
+        <param>
+          <type>EGLNativeWindowType</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>ColorDepth</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an OpenGL surface using a window <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window to create the surface on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>colorDepth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bit per pixel value (ex. 32 or 24) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Handle to an on-screen EGL window surface (the requester has an ownership of this egl surface) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="61" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a3f20e7a06c1de2502f5cf11753e6a9e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::DestroyContext</definition>
+        <argsstring>(EGLContext &amp;eglContext)=0</argsstring>
+        <name>DestroyContext</name>
+        <qualifiedname>Dali::EglInterface::DestroyContext</qualifiedname>
+        <param>
+          <type>EGLContext &amp;</type>
+          <declname>eglContext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy the OpenGL context. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="66" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a5da13be1e8097bd7a7ff371d763cf09f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::DestroySurface</definition>
+        <argsstring>(EGLSurface &amp;eglSurface)=0</argsstring>
+        <name>DestroySurface</name>
+        <qualifiedname>Dali::EglInterface::DestroySurface</qualifiedname>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy the OpenGL surface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="71" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1acdc294ddd6dd58cec0610e5e71b421ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::MakeContextCurrent</definition>
+        <argsstring>(EGLSurface eglSurface, EGLContext eglContext)=0</argsstring>
+        <name>MakeContextCurrent</name>
+        <qualifiedname>Dali::EglInterface::MakeContextCurrent</qualifiedname>
+        <param>
+          <type>EGLSurface</type>
+          <declname>eglSurface</declname>
+        </param>
+        <param>
+          <type>EGLContext</type>
+          <declname>eglContext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make the OpenGL context current </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="76" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1ac2af5270b11ea170bbb896b8e8885636" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::TerminateGles</definition>
+        <argsstring>()=0</argsstring>
+        <name>TerminateGles</name>
+        <qualifiedname>Dali::EglInterface::TerminateGles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Terminate GL </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="81" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a245346d64d111e74ec9d4ad9077c36eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::EglInterface::ReplaceSurfaceWindow</definition>
+        <argsstring>(EGLNativeWindowType window, EGLSurface &amp;eglSurface, EGLContext &amp;eglContext)=0</argsstring>
+        <name>ReplaceSurfaceWindow</name>
+        <qualifiedname>Dali::EglInterface::ReplaceSurfaceWindow</qualifiedname>
+        <param>
+          <type>EGLNativeWindowType</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <param>
+          <type>EGLContext &amp;</type>
+          <declname>eglContext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Replaces the render surface <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+<parametername direction="in">the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>window to create the new surface on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the context was lost due to a change in display between old surface and new surface </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="89" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1ac687866f657eac4df9feeedc200b2b76" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::EglInterface::IsPartialUpdateRequired</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsPartialUpdateRequired</name>
+        <qualifiedname>Dali::EglInterface::IsPartialUpdateRequired</qualifiedname>
+        <briefdescription>
+<para>Returns whether the partial update is required. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the partial update is required. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="95" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a7dd1ce65d7d555e98ea56d942c3781a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Dali::EglInterface::GetBufferAge</definition>
+        <argsstring>(EGLSurface &amp;eglSurface) const =0</argsstring>
+        <name>GetBufferAge</name>
+        <qualifiedname>Dali::EglInterface::GetBufferAge</qualifiedname>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets current back buffer age </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="100" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1afa5eaa6dfa473a41b3b76e5328da8ab4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::SetDamageRegion</definition>
+        <argsstring>(EGLSurface &amp;eglSurface, std::vector&lt; Rect&lt; int &gt; &gt; &amp;damagedRects)=0</argsstring>
+        <name>SetDamageRegion</name>
+        <qualifiedname>Dali::EglInterface::SetDamageRegion</qualifiedname>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; Rect&lt; int &gt; &gt; &amp;</type>
+          <declname>damagedRects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs an OpenGL set damage command with damaged rects </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="105" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a2ea4cf7fd9b433d54dfc363c493ad90e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::SwapBuffers</definition>
+        <argsstring>(EGLSurface &amp;eglSurface)=0</argsstring>
+        <name>SwapBuffers</name>
+        <qualifiedname>Dali::EglInterface::SwapBuffers</qualifiedname>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs an OpenGL swap buffers command </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="110" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1ac7565932a891fb8e940f88c32c835ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::SwapBuffers</definition>
+        <argsstring>(EGLSurface &amp;eglSurface, const std::vector&lt; Rect&lt; int &gt; &gt; &amp;damagedRects)=0</argsstring>
+        <name>SwapBuffers</name>
+        <qualifiedname>Dali::EglInterface::SwapBuffers</qualifiedname>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; Rect&lt; int &gt; &gt; &amp;</type>
+          <declname>damagedRects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs an OpenGL swap buffers command </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="115" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a5f91e58bfa738d355a1ed970cc0fe0eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::CopyBuffers</definition>
+        <argsstring>(EGLSurface &amp;eglSurface)=0</argsstring>
+        <name>CopyBuffers</name>
+        <qualifiedname>Dali::EglInterface::CopyBuffers</qualifiedname>
+        <param>
+          <type>EGLSurface &amp;</type>
+          <declname>eglSurface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs an OpenGL copy buffers command </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="120" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1EglInterface_1adfa5e096b9450ab319b89b44c47242ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::EglInterface::WaitGL</definition>
+        <argsstring>()=0</argsstring>
+        <name>WaitGL</name>
+        <qualifiedname>Dali::EglInterface::WaitGL</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs an EGL wait GL command </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="125" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1EglInterface_1a5510836a365c20f0506748adee43121d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::EglInterface::~EglInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~EglInterface</name>
+        <qualifiedname>Dali::EglInterface::~EglInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual protected destructor, no deletion through this interface </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="131" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" bodystart="131" bodyend="133"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1EglInterface" kindref="compound">EglInterface</ref> provides an interface for managing EGL contexts </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/egl-interface.h" bodystart="33" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classDali_1_1EglInterface_1ae3178efbc841de87d0344acdde6f33ac" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>ChooseConfig</name></member>
+      <member refid="classDali_1_1EglInterface_1a5f91e58bfa738d355a1ed970cc0fe0eb" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>CopyBuffers</name></member>
+      <member refid="classDali_1_1EglInterface_1a1b7032b243b59af97b93e45236e55ea5" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>CreateContext</name></member>
+      <member refid="classDali_1_1EglInterface_1a163560b236a269f4586414414c026bf0" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>CreateSurfaceWindow</name></member>
+      <member refid="classDali_1_1EglInterface_1ac7b4701bb0a680f4d72b10e6a22d698c" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>CreateWindowContext</name></member>
+      <member refid="classDali_1_1EglInterface_1a3f20e7a06c1de2502f5cf11753e6a9e8" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>DestroyContext</name></member>
+      <member refid="classDali_1_1EglInterface_1a5da13be1e8097bd7a7ff371d763cf09f" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>DestroySurface</name></member>
+      <member refid="classDali_1_1EglInterface_1a7dd1ce65d7d555e98ea56d942c3781a1" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>GetBufferAge</name></member>
+      <member refid="classDali_1_1EglInterface_1ac687866f657eac4df9feeedc200b2b76" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>IsPartialUpdateRequired</name></member>
+      <member refid="classDali_1_1EglInterface_1acdc294ddd6dd58cec0610e5e71b421ff" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>MakeContextCurrent</name></member>
+      <member refid="classDali_1_1EglInterface_1a245346d64d111e74ec9d4ad9077c36eb" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>ReplaceSurfaceWindow</name></member>
+      <member refid="classDali_1_1EglInterface_1afa5eaa6dfa473a41b3b76e5328da8ab4" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>SetDamageRegion</name></member>
+      <member refid="classDali_1_1EglInterface_1a2ea4cf7fd9b433d54dfc363c493ad90e" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>SwapBuffers</name></member>
+      <member refid="classDali_1_1EglInterface_1ac7565932a891fb8e940f88c32c835ba4" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>SwapBuffers</name></member>
+      <member refid="classDali_1_1EglInterface_1ac2af5270b11ea170bbb896b8e8885636" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>TerminateGles</name></member>
+      <member refid="classDali_1_1EglInterface_1adfa5e096b9450ab319b89b44c47242ca" prot="public" virt="pure-virtual"><scope>Dali::EglInterface</scope><name>WaitGL</name></member>
+      <member refid="classDali_1_1EglInterface_1a5510836a365c20f0506748adee43121d" prot="protected" virt="virtual"><scope>Dali::EglInterface</scope><name>~EglInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

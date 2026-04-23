@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="alpha-function_8cpp" kind="file" language="C++">
+    <compoundname>alpha-function.cpp</compoundname>
+    <includes refid="alpha-function_8h" local="no">dali/public-api/animation/alpha-function.h</includes>
+    <includes local="no">variant</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/alpha-function.cpp</label>
+        <link refid="alpha-function_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/animation/alpha-function.h</label>
+        <link refid="alpha-function_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/animation/spring-data.h</label>
+        <link refid="spring-data_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="12">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="8">
+        <label>dali/public-api/math/compile-time-math.h</label>
+        <link refid="compile-time-math_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/math/math-utils.h</label>
+        <link refid="math-utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>dali/public-api/math/vector2.h</label>
+        <link refid="vector2_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dali/public-api/math/vector3.h</label>
+        <link refid="vector3_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>dali/public-api/math/vector4.h</label>
+        <link refid="vector4_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>cfloat</label>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="10">
+        <label>cstdlib</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="16">
+        <label>variant</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structDali_1_1AlphaFunction_1_1Impl" prot="public">Dali::AlphaFunction::Impl</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="alpha-function_8h" kindref="compound">dali/public-api/animation/alpha-function.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="classDali_1_1SpringData" kindref="compound">Dali::SpringData</ref><sp/>GetSpringDefaultData(<ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9" kindref="member">Dali::AlphaFunction::SpringType</ref><sp/>springType)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(springType)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9aeb93c16caac50bf34ec5b6e58321cf4c" kindref="member">Dali::AlphaFunction::SpringType::GENTLE</ref>:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{100.0f,<sp/>15.0f,<sp/>1.0f};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9a33711d942cb8ce04d3e9a67def194307" kindref="member">Dali::AlphaFunction::SpringType::QUICK</ref>:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{300.0f,<sp/>20.0f,<sp/>1.0f};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9aad90e295622747b689feea7ced992a58" kindref="member">Dali::AlphaFunction::SpringType::BOUNCY</ref>:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{600.0f,<sp/>15.0f,<sp/>1.0f};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9a9e01401e2c5d54e08c8d4410fe6b6dc8" kindref="member">Dali::AlphaFunction::SpringType::SLOW</ref>:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{94.0f,<sp/>18.5f,<sp/>1.0f};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{100.0f,<sp/>15.0f,<sp/>1.0f};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structDali_1_1AlphaFunction_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">AlphaFunction::Impl</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63" refid="structDali_1_1AlphaFunction_1_1Impl_1aaaf2ddb0c00a940a013e1c73c755649b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1aaaf2ddb0c00a940a013e1c73c755649b" kindref="member">Impl</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(<ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41a95c745ba1239ec98c2bcd550013243a8" kindref="member">BUILTIN_FUNCTION</ref>),</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca95914e7f1c22d902941b82d231a29e3c" kindref="member">DEFAULT</ref>),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(<ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>{100.0f,<sp/>15.0f,<sp/>1.0f})</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="structDali_1_1AlphaFunction_1_1Impl_1ac01f215d329d14a967e9f8be8c24d9d7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1ac01f215d329d14a967e9f8be8c24d9d7" kindref="member">Impl</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cc" kindref="member">BuiltinFunction</ref><sp/>builtin)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(<ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41a95c745ba1239ec98c2bcd550013243a8" kindref="member">BUILTIN_FUNCTION</ref>),</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(builtin),</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(<ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>{100.0f,<sp/>15.0f,<sp/>1.0f})</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structDali_1_1AlphaFunction_1_1Impl_1ad9e98a3bce53a800987a27bff6c3309f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1ad9e98a3bce53a800987a27bff6c3309f" kindref="member">Impl</ref>(<ref refid="group__dali__core__animation_1ga63324c452b524c1a0045e68197626188" kindref="member">AlphaFunctionPrototype</ref><sp/>customFunction)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(<ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41a22f7542ebed5be43819024b3e90a4bc8" kindref="member">CUSTOM_FUNCTION</ref>),</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca95914e7f1c22d902941b82d231a29e3c" kindref="member">DEFAULT</ref>),</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(customFunction)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="structDali_1_1AlphaFunction_1_1Impl_1aadf8afb2b40d62ffcb3cc362116b0f0f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1aadf8afb2b40d62ffcb3cc362116b0f0f" kindref="member">Impl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>&amp;<sp/>controlPoint0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>&amp;<sp/>controlPoint1)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(<ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41a5a936ee94a0cafb17d8d010a676f3c12" kindref="member">BEZIER</ref>),</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca95914e7f1c22d902941b82d231a29e3c" kindref="member">DEFAULT</ref>),</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>(<ref refid="group__dali__core__math_1ga7ef1fd777eb6bc3e6bc722c210ae4305" kindref="member">Clamp</ref>(controlPoint0.x,<sp/>0.0f,<sp/>1.0f),</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlPoint0.y,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__dali__core__math_1ga7ef1fd777eb6bc3e6bc722c210ae4305" kindref="member">Clamp</ref>(controlPoint1.x,<sp/>0.0f,<sp/>1.0f),</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>controlPoint1.y))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="structDali_1_1AlphaFunction_1_1Impl_1a7470f5a8a6b0312b68bfaa5fbcf7be1c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a7470f5a8a6b0312b68bfaa5fbcf7be1c" kindref="member">Impl</ref>(<ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9" kindref="member">SpringType</ref><sp/>springType)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(<ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41ae5ff054a60fddf0b72915255d7d46570" kindref="member">SPRING</ref>),</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca95914e7f1c22d902941b82d231a29e3c" kindref="member">DEFAULT</ref>),</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(GetSpringDefaultData(springType))</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="structDali_1_1AlphaFunction_1_1Impl_1a239713031488b6abe222664d099cf5a6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a239713031488b6abe222664d099cf5a6" kindref="member">Impl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref>&amp;<sp/>springData)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(<ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41a8cd3872733848fefe023b265d12b9c5a" kindref="member">CUSTOM_SPRING</ref>),</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cca95914e7f1c22d902941b82d231a29e3c" kindref="member">DEFAULT</ref>),</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(springData)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="structDali_1_1AlphaFunction_1_1Impl_1a225b77a16800abea024edd36f64992c2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a225b77a16800abea024edd36f64992c2" kindref="member">Impl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>(rhs.<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>(rhs.<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>),</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>(rhs.<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="structDali_1_1AlphaFunction_1_1Impl_1a60758e621e8a4005324ae86c5e45ff2f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a60758e621e8a4005324ae86c5e45ff2f" kindref="member">~Impl</ref>()</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41" kindref="member">AlphaFunction::Mode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139" refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cc" kindref="member">AlphaFunction::BuiltinFunction</ref><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>;<sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" refkind="member"><highlight class="normal"><sp/><sp/>std::variant&lt;Vector4,<sp/>AlphaFunctionPrototype,<sp/>SpringData&gt;<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>()</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>())</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="classDali_1_1AlphaFunction_1a3cca70bc3f9a05822a74a22acc6100ce" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(<ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cc" kindref="member">BuiltinFunction</ref><sp/>function)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(function))</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="classDali_1_1AlphaFunction_1a5b17a47cb1c85d02aa35509ccab73b28" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(<ref refid="group__dali__core__animation_1ga63324c452b524c1a0045e68197626188" kindref="member">AlphaFunctionPrototype</ref><sp/>function)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(function))</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classDali_1_1AlphaFunction_1a5416e3b3ab2b1fef48d93d7c1b208f1b" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>&amp;<sp/>controlPoint0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>&amp;<sp/>controlPoint1)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(controlPoint0,<sp/>controlPoint1))</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="classDali_1_1AlphaFunction_1aa710e10b4b85ccbf7eccd19f3f93ebe7" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(<ref refid="classDali_1_1AlphaFunction_1a7e31820f55a7303264f9ddb2dd21b2f9" kindref="member">SpringType</ref><sp/>springType)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(springType))</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="classDali_1_1AlphaFunction_1a2f6de3379d13769a1ef7b17fd4083160" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData" kindref="compound">Dali::SpringData</ref>&amp;<sp/>springData)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(springData))</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classDali_1_1AlphaFunction_1a1f2bd72738a93adb9192898c1ffcd4f5" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a1f2bd72738a93adb9192898c1ffcd4f5" kindref="member">AlphaFunction::~AlphaFunction</ref>()</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="classDali_1_1AlphaFunction_1a90bcd5e96e0b3cc7c200bd88c0f51b3f" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(*rhs.mImpl))</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="classDali_1_1AlphaFunction_1a62dc24d096629b8e96a149d90fcbfaed" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a681a95c4f9fe961570d87506cfca53a2" kindref="member">AlphaFunction::AlphaFunction</ref>(<ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref>&amp;&amp;<sp/>rhs)<sp/>noexcept</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">:<sp/>mImpl(rhs.mImpl)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>rhs.mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="classDali_1_1AlphaFunction_1a08ce477c77527efaa1f4fbd08857000d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref>&amp;<sp/><ref refid="classDali_1_1AlphaFunction_1a08ce477c77527efaa1f4fbd08857000d" kindref="member">AlphaFunction::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>&amp;rhs)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>mImpl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1AlphaFunction_1_1Impl" kindref="compound">Impl</ref>(*rhs.mImpl);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="classDali_1_1AlphaFunction_1a68167ad11ce8b9e0a8240150c8ddb23f" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref>&amp;<sp/><ref refid="classDali_1_1AlphaFunction_1a08ce477c77527efaa1f4fbd08857000d" kindref="member">AlphaFunction::operator=</ref>(<ref refid="classDali_1_1AlphaFunction" kindref="compound">AlphaFunction</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>&amp;rhs)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>mImpl<sp/><sp/><sp/><sp/><sp/>=<sp/>rhs.mImpl;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>rhs.mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="classDali_1_1AlphaFunction_1a6c55ab14008c9a6b123b112d15f0e959" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref><sp/><ref refid="classDali_1_1AlphaFunction_1a6c55ab14008c9a6b123b112d15f0e959" kindref="member">AlphaFunction::GetBezierControlPoints</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="212"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>value<sp/>=<sp/>std::get_if&lt;Vector4&gt;(&amp;mImpl-&gt;<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>?<sp/>*value<sp/>:<sp/><ref refid="structDali_1_1Vector4_1a0afd695b23e14ff762c2ac9bf9a4b77d" kindref="member">Vector4::ZERO</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="classDali_1_1AlphaFunction_1a2778c5888d5a0f271668f30d9d40404f" refkind="member"><highlight class="normal"><ref refid="group__dali__core__animation_1ga63324c452b524c1a0045e68197626188" kindref="member">AlphaFunctionPrototype</ref><sp/><ref refid="classDali_1_1AlphaFunction_1a2778c5888d5a0f271668f30d9d40404f" kindref="member">AlphaFunction::GetCustomFunction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="218"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>value<sp/>=<sp/>std::get_if&lt;AlphaFunctionPrototype&gt;(&amp;mImpl-&gt;<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>?<sp/>*value<sp/>:<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="classDali_1_1AlphaFunction_1ac0a46ceae2521fc1cf155fb03fefd00d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1ad1dc4b5a46da20d1da9c2cc0929fb7cc" kindref="member">AlphaFunction::BuiltinFunction</ref><sp/><ref refid="classDali_1_1AlphaFunction_1ac0a46ceae2521fc1cf155fb03fefd00d" kindref="member">AlphaFunction::GetBuiltinFunction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="224"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a753acfc35c8f866d764497ffcbb8bbef" kindref="member">mBuiltin</ref>;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="classDali_1_1AlphaFunction_1abb31477c954eeaa9291b3075a5330d29" refkind="member"><highlight class="normal"><ref refid="classDali_1_1AlphaFunction_1a7fe1707e32a53ad842320d96a69b3d41" kindref="member">AlphaFunction::Mode</ref><sp/><ref refid="classDali_1_1AlphaFunction_1abb31477c954eeaa9291b3075a5330d29" kindref="member">AlphaFunction::GetMode</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="229"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a8cd1f6de3fef923d203e7f9a6ebb8e81" kindref="member">mMode</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="classDali_1_1AlphaFunction_1a934ab61a71ba215432fcb97244a0d7de" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData" kindref="compound">Dali::SpringData</ref>&amp;<sp/><ref refid="classDali_1_1AlphaFunction_1a934ab61a71ba215432fcb97244a0d7de" kindref="member">AlphaFunction::GetSpringData</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="234"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">*<sp/>value<sp/>=<sp/>std::get_if&lt;SpringData&gt;(&amp;mImpl-&gt;<ref refid="structDali_1_1AlphaFunction_1_1Impl_1a17883f7c881c08680f0fe8a610ed2c53" kindref="member">mVariantData</ref>);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SpringData" kindref="compound">SpringData</ref><sp/>defaultSpringData{};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>defaultSpringData;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/alpha-function.cpp"/>
+  </compounddef>
+</doxygen>

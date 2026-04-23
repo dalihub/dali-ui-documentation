@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Ui_1_1GaussianBlurEffect" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Ui::GaussianBlurEffect</compoundname>
+    <basecompoundref refid="classDali_1_1Ui_1_1RenderEffect" prot="public" virt="non-virtual">Dali::Ui::RenderEffect</basecompoundref>
+    <includes refid="gaussian-blur-effect_8h" local="no">gaussian-blur-effect.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a931852a142df74490390b26f400edd98" prot="public" static="no">
+        <type>Signal&lt; void()&gt;</type>
+        <definition>typedef Signal&lt;void()&gt; Dali::Ui::GaussianBlurEffect::FinishedSignalType</definition>
+        <argsstring></argsstring>
+        <name>FinishedSignalType</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::FinishedSignalType</qualifiedname>
+        <briefdescription>
+<para>Typedef for finished signals sent by this class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="54" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a52ca26f5190f1823bb43644aaeb2f444" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1GaussianBlurEffect" kindref="compound">GaussianBlurEffect</ref></type>
+        <definition>GaussianBlurEffect Dali::Ui::GaussianBlurEffect::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Ui_1_1GaussianBlurEffect" kindref="compound">GaussianBlurEffect</ref>, with default blur radius 10u. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="60" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="41" bodyend="45"/>
+        <references refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a05a27cbf4a9f9856fc1cdc2b89941026">GaussianBlurEffect</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a0234deebb4f11fd7db9f2607788f0d46" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1GaussianBlurEffect" kindref="compound">GaussianBlurEffect</ref></type>
+        <definition>GaussianBlurEffect Dali::Ui::GaussianBlurEffect::New</definition>
+        <argsstring>(uint32_t blurRadius)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::New</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>blurRadius</declname>
+        </param>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Ui_1_1GaussianBlurEffect" kindref="compound">GaussianBlurEffect</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of Gaussian kernel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+<simplesect kind="note"><para>Due to the downscale factor and kernel optimizations, the actual applied blur changes only in fixed increments. </para>
+</simplesect>
+<simplesect kind="note"><para>The increment size is (2 / downscaleFactor). For example, with downscaleFactor = 0.25, the effective blur radius changes in steps of 8 pixels, so small adjustments below that threshold will have no visual effect. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="71" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="47" bodyend="51"/>
+        <references refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a05a27cbf4a9f9856fc1cdc2b89941026">GaussianBlurEffect</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a05a27cbf4a9f9856fc1cdc2b89941026" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::GaussianBlurEffect::GaussianBlurEffect</definition>
+        <argsstring>()</argsstring>
+        <name>GaussianBlurEffect</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::GaussianBlurEffect</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized blur effect. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="76" column="3"/>
+        <referencedby refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a52ca26f5190f1823bb43644aaeb2f444" compoundref="gaussian-blur-effect_8cpp" startline="41" endline="45">New</referencedby>
+        <referencedby refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a0234deebb4f11fd7db9f2607788f0d46" compoundref="gaussian-blur-effect_8cpp" startline="47" endline="51">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a8d2535f184291dacc36995795227cfa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::GaussianBlurEffect::GaussianBlurEffect</definition>
+        <argsstring>(const GaussianBlurEffect &amp;handle)</argsstring>
+        <name>GaussianBlurEffect</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::GaussianBlurEffect</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1GaussianBlurEffect" kindref="compound">GaussianBlurEffect</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="81" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1ac483cbcbe926a63e51cd7af0263aa4a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::GaussianBlurEffect::~GaussianBlurEffect</definition>
+        <argsstring>()</argsstring>
+        <name>~GaussianBlurEffect</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::~GaussianBlurEffect</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="86" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1ad461d4fd81101242d036a59be2b98f56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::GaussianBlurEffect::SetBlurOnce</definition>
+        <argsstring>(bool blurOnce)</argsstring>
+        <name>SetBlurOnce</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::SetBlurOnce</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>blurOnce</declname>
+        </param>
+        <briefdescription>
+<para>Set whether to refresh effect once or every frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurOnce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, renders effect once, else updates effect rendering every frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="92" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a3e7beb1bd52356dfb4dbb908e7ba4eb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Ui::GaussianBlurEffect::GetBlurOnce</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlurOnce</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::GetBlurOnce</qualifiedname>
+        <briefdescription>
+<para>Retrives whether effect rendering is done once(true) or every frame(false) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether blur is rendered once or every frame. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="98" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a3c0e1eee7225425c8ad88c84a7d46914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::GaussianBlurEffect::SetBlurRadius</definition>
+        <argsstring>(uint32_t blurRadius)</argsstring>
+        <name>SetBlurRadius</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::SetBlurRadius</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>blurRadius</declname>
+        </param>
+        <briefdescription>
+<para>Set blur radius value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of Gaussian kernel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Due to the downscale factor and kernel optimizations, the actual applied blur changes only in fixed increments. </para>
+</simplesect>
+<simplesect kind="note"><para>The increment size is (2 / downscaleFactor). For example, with downscaleFactor = 0.25, the effective blur radius changes in steps of 8 pixels, so small adjustments below that threshold will have no visual effect. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="108" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a54d07ffb1ad707bd34f383b3951b3225" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Ui::GaussianBlurEffect::GetBlurRadius</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlurRadius</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::GetBlurRadius</qualifiedname>
+        <briefdescription>
+<para>Retrieves blur radius value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The blur radius. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="114" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1af6f62435f328e2301a2468cb9291baf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::GaussianBlurEffect::SetBlurDownscaleFactor</definition>
+        <argsstring>(float downscaleFactor)</argsstring>
+        <name>SetBlurDownscaleFactor</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::SetBlurDownscaleFactor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>downscaleFactor</declname>
+        </param>
+        <briefdescription>
+<para>Set blur downscale factor. The value resides between 0.0f to 1.0f. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">downscaleFactor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The downscale factor for input texture. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="120" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1ac8d5e1b8f7aafad1ba16f71324ab2a85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Ui::GaussianBlurEffect::GetBlurDownscaleFactor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlurDownscaleFactor</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::GetBlurDownscaleFactor</qualifiedname>
+        <briefdescription>
+<para>Retrives blur downscale factor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The blur downscale factor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="126" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1ad0cb562c1379f29868f15e9f3ca29d4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::GaussianBlurEffect::AddBlurStrengthAnimation</definition>
+        <argsstring>(Animation &amp;animation, AlphaFunction alphaFunction, TimePeriod timePeriod, float fromValue, float toValue)</argsstring>
+        <name>AddBlurStrengthAnimation</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::AddBlurStrengthAnimation</qualifiedname>
+        <param>
+          <type>Animation &amp;</type>
+          <declname>animation</declname>
+        </param>
+        <param>
+          <type>AlphaFunction</type>
+          <declname>alphaFunction</declname>
+        </param>
+        <param>
+          <type>TimePeriod</type>
+          <declname>timePeriod</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fromValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>toValue</declname>
+        </param>
+        <briefdescription>
+<para>Adds blur strength animation. Blurifies clear texture within given animation parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">animation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Animation instance to which we add blur strength animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alphaFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>AlphaFunction of blur strength animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timePeriod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TimePeriod of blur strength animation. Default value is animation&apos;s duration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fromValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting value of blur strength. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">toValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End value of blur strength. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>If toValue is smaller than fromValue, animation would show reversed(blurred-&gt;clarified) animation. </para>
+</simplesect>
+<simplesect kind="note"><para>When choosing alpha function, note that gaussian curve itself is innately non-linear. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="138" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a15dae532def6a206df1a7db99097ef19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::GaussianBlurEffect::AddBlurOpacityAnimation</definition>
+        <argsstring>(Animation &amp;animation, AlphaFunction alphaFunction, TimePeriod timePeriod, float fromValue, float toValue)</argsstring>
+        <name>AddBlurOpacityAnimation</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::AddBlurOpacityAnimation</qualifiedname>
+        <param>
+          <type>Animation &amp;</type>
+          <declname>animation</declname>
+        </param>
+        <param>
+          <type>AlphaFunction</type>
+          <declname>alphaFunction</declname>
+        </param>
+        <param>
+          <type>TimePeriod</type>
+          <declname>timePeriod</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fromValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>toValue</declname>
+        </param>
+        <briefdescription>
+<para>Adds blur opacity animation. Blurifies clear texture within given animation parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">animation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Animation instance to which we add blur opacity animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alphaFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>AlphaFunction of blur opacity animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timePeriod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TimePeriod of blur opacity animation. Default value is animation&apos;s duration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fromValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting value of blur opacity. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">toValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End value of blur opacity. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>If toValue is smaller than fromValue, animation would show reversed(blurred-&gt;clarified) animation. </para>
+</simplesect>
+<simplesect kind="note"><para>When choosing alpha function, note that gaussian curve itself is innately non-linear. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="151" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="89" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1GaussianBlurEffect_1a71f2bd9e5f367f6f40c85f9569371050" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a931852a142df74490390b26f400edd98" kindref="member">FinishedSignalType</ref> &amp;</type>
+        <definition>GaussianBlurEffect::FinishedSignalType &amp; Dali::Ui::GaussianBlurEffect::FinishedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>FinishedSignal</name>
+        <qualifiedname>Dali::Ui::GaussianBlurEffect::FinishedSignal</qualifiedname>
+        <briefdescription>
+<para>If blurOnce is true and effect is activated, then connect to this signal to be notified when the target actor has been rendered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The finished signal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="160" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.cpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Ui_1_1GaussianBlurEffect" kindref="compound">GaussianBlurEffect</ref> is a visual effect that blurs owner view and its children. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a05a27cbf4a9f9856fc1cdc2b89941026" kindref="member">GaussianBlurEffect</ref><sp/>effect<sp/>=<sp/><ref refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a52ca26f5190f1823bb43644aaeb2f444" kindref="member">GaussianBlurEffect::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal">view.SetRenderEffect(effect);<sp/></highlight><highlight class="comment">//<sp/>Activate</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">effect.Deactivate();</highlight></codeline>
+<codeline><highlight class="normal">effect.Activate();</highlight></codeline>
+<codeline><highlight class="normal">view.ClearRenderEffect();<sp/></highlight><highlight class="comment">//<sp/>Deactivate</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::GaussianBlurEffect</label>
+        <link refid="classDali_1_1Ui_1_1GaussianBlurEffect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Ui::RenderEffect</label>
+        <link refid="classDali_1_1Ui_1_1RenderEffect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::GaussianBlurEffect</label>
+        <link refid="classDali_1_1Ui_1_1GaussianBlurEffect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Ui::RenderEffect</label>
+        <link refid="classDali_1_1Ui_1_1RenderEffect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" line="48" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/gaussian-blur-effect.h" bodystart="49" bodyend="170"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a06bfd8f08981e19872a7c56e1dae0c9e" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>Activate</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a15dae532def6a206df1a7db99097ef19" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>AddBlurOpacityAnimation</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1ad0cb562c1379f29868f15e9f3ca29d4f" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>AddBlurStrengthAnimation</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a0f4f92a1e2757322f0a6655d9526bcab" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>Deactivate</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a71f2bd9e5f367f6f40c85f9569371050" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>FinishedSignal</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a931852a142df74490390b26f400edd98" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>FinishedSignalType</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a05a27cbf4a9f9856fc1cdc2b89941026" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>GaussianBlurEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a8d2535f184291dacc36995795227cfa9" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>GaussianBlurEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1ac8d5e1b8f7aafad1ba16f71324ab2a85" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>GetBlurDownscaleFactor</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a3e7beb1bd52356dfb4dbb908e7ba4eb1" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>GetBlurOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a54d07ffb1ad707bd34f383b3951b3225" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>GetBlurRadius</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1aab7d084c4e9f8fe0f01331d52d6b588c" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>IsActivated</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a52ca26f5190f1823bb43644aaeb2f444" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>New</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a0234deebb4f11fd7db9f2607788f0d46" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>New</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1acc5addb128e22b57d2b953d5f2131da8" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>Refresh</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a5ff85ac14ffda9ea84917c03948d61ed" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>RenderEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a13c67c62b3ba858caaec2f376c71d681" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>RenderEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1af6f62435f328e2301a2468cb9291baf8" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>SetBlurDownscaleFactor</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1ad461d4fd81101242d036a59be2b98f56" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>SetBlurOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1a3c0e1eee7225425c8ad88c84a7d46914" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>SetBlurRadius</name></member>
+      <member refid="classDali_1_1Ui_1_1GaussianBlurEffect_1ac483cbcbe926a63e51cd7af0263aa4a1" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>~GaussianBlurEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a4bf86a7291e7e4fa09c3915f2f0c1fa8" prot="public" virt="non-virtual"><scope>Dali::Ui::GaussianBlurEffect</scope><name>~RenderEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

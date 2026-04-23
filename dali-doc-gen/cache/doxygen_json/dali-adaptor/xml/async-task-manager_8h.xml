@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="async-task-manager_8h" kind="file" language="C++">
+    <compoundname>async-task-manager.h</compoundname>
+    <includes local="no">dali/public-api/common/intrusive-ptr.h</includes>
+    <includes local="no">dali/public-api/common/unique-ptr.h</includes>
+    <includes local="no">dali/public-api/object/base-handle.h</includes>
+    <includes local="no">dali/public-api/signals/callback.h</includes>
+    <includes local="no">string_view</includes>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="async-task-manager_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h</label>
+        <link refid="async-task-manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/common/intrusive-ptr.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/unique-ptr.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+      <node id="6">
+        <label>string_view</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.cpp</label>
+        <link refid="async-task-manager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h</label>
+        <link refid="async-task-manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1AsyncTask" prot="public">Dali::AsyncTask</innerclass>
+    <innerclass refid="classDali_1_1AsyncTaskManager" prot="public">Dali::AsyncTaskManager</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Internal_1_1Adaptor">Dali::Internal::Adaptor</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_ASYNC_TASK_MANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ASYNC_TASK_MANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/intrusive-ptr.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/unique-ptr.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/base-handle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/signals/callback.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Internal<sp/>DALI_INTERNAL</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Adaptor</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">AsyncTaskManager;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Internal<sp/>DALI_INTERNAL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">AsyncTask;</highlight></codeline>
+<codeline lineno="41" refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref><sp/>=<sp/>IntrusivePtr&lt;AsyncTask&gt;;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classDali_1_1AsyncTask" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>RefObject</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>Type<sp/>of<sp/>invocation<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask_1a4528b68db6a719a72efd08c9bcf09343" kindref="member">ThreadType</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>MAIN_THREAD,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>WORKER_THREAD</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask_1a725bf9b2f2d8199fda8ea0bed5962803" kindref="member">PriorityType</ref></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1a4038c9221b976455bd8e78c4800d26f0ab89de3b4b81c4facfac906edf29aec8c" kindref="member">HIGH</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>LOW<sp/><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>PRIORITY_COUNT,<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>DEFAULT<sp/>=<sp/><ref refid="namespaceDali_1a4038c9221b976455bd8e78c4800d26f0ab89de3b4b81c4facfac906edf29aec8c" kindref="member">HIGH</ref>,<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref>(CallbackBase*<sp/>callback,<sp/>PriorityType<sp/>priority<sp/>=<sp/>PriorityType::DEFAULT,<sp/>ThreadType<sp/>threadType<sp/>=<sp/>AsyncTask::ThreadType::MAIN_THREAD);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>CallbackBase*<sp/>GetCompletedCallback();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>ThreadType<sp/>GetCallbackInvocationThread()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>PriorityType<sp/>GetPriorityType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NotifyToReady();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classDali_1_1AsyncTask_1a79a86e247e399c6a3c673e3f9254a999" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask_1a79a86e247e399c6a3c673e3f9254a999" kindref="member">~AsyncTask</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classDali_1_1AsyncTask_1a7994d9577128895b08380d7d269b78a3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask_1a7994d9577128895b08380d7d269b78a3" kindref="member">Process</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classDali_1_1AsyncTask_1a0b5694b28444b6ffb5ff291a215b106c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask_1a0b5694b28444b6ffb5ff291a215b106c" kindref="member">IsReady</ref>()</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="classDali_1_1AsyncTask_1aa00a567d881786b561c7e1b33f4eb7a4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>Dali::StringView<sp/><ref refid="classDali_1_1AsyncTask_1aa00a567d881786b561c7e1b33f4eb7a4" kindref="member">GetTaskName</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="145"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>Dali::DaliPrintBackTrace();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>UniquePtr&lt;CallbackBase&gt;<sp/>mCompletedCallback;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>PriorityType<sp/><sp/><sp/><sp/><sp/><sp/>mPriorityType;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>ThreadType<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mThreadType;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Undefined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref>&amp;<sp/>task)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Undefined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTask" kindref="compound">AsyncTask</ref>&amp;<sp/>task)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classDali_1_1AsyncTaskManager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BaseHandle</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref>();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="classDali_1_1AsyncTaskManager_1ab888ca330817e379e11d50e990720b12" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1AsyncTaskManager_1ab888ca330817e379e11d50e990720b12" kindref="member">~AsyncTaskManager</ref>();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref><sp/>Get();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddTask(<ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref><sp/>task);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RemoveTask(<ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref><sp/>task);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>NotifyToTaskReady(<ref refid="namespaceDali_1a75078118bc5a303df62cd97b10dc0170" kindref="member">AsyncTaskPtr</ref><sp/>task);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="214" refid="classDali_1_1AsyncTaskManager_1a590d6d09c97d17ac5f3809c6d7ff4603" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1AsyncTaskManager_1a590d6d09c97d17ac5f3809c6d7ff4603" kindref="member">TasksCompletedId</ref><sp/>=<sp/>uint32_t;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bb" kindref="member">CompletedCallbackTraceMask</ref></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba28373dcc321af5c8443d35d05f492e6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>THREAD_MASK_MAIN<sp/><sp/><sp/>=<sp/>1u<sp/>&lt;&lt;<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="219" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaf685fb9a72e218a12090ec58c07c1f6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>THREAD_MASK_WORKER<sp/>=<sp/>1u<sp/>&lt;&lt;<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba151fe0fb49b634a66966353fd63cb973" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>PRIORITY_MASK_HIGH<sp/>=<sp/>1u<sp/>&lt;&lt;<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="222" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbae30148e643f45b6a6cb228479ce0e424" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>PRIORITY_MASK_LOW<sp/><sp/>=<sp/>1u<sp/>&lt;&lt;<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba695d62278f3586b3aa7f89efe92ad725" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>THREAD_MASK_ALL<sp/><sp/><sp/>=<sp/>THREAD_MASK_MAIN<sp/>|<sp/>THREAD_MASK_WORKER,</highlight></codeline>
+<codeline lineno="225" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba19ce690b55f104b43e9dc8628c50f058" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>PRIORITY_MASK_ALL<sp/>=<sp/>PRIORITY_MASK_HIGH<sp/>|<sp/>PRIORITY_MASK_LOW,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Useful<sp/>preset<sp/>of<sp/>task<sp/>mask.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaa2004107ddc56b12a61e3a7841eec5b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MAIN_THREAD_TASKS<sp/><sp/><sp/>=<sp/>THREAD_MASK_MAIN<sp/>|<sp/>PRIORITY_MASK_ALL,</highlight></codeline>
+<codeline lineno="230" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba3307c4155a607cdc1a2958069840237c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>WORKER_THREAD_TASKS<sp/>=<sp/>THREAD_MASK_WORKER<sp/>|<sp/>PRIORITY_MASK_ALL,</highlight></codeline>
+<codeline lineno="231" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbabb1e6a35067633b7f4373ce49f47f236" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>HIGH_PRIORITY_TASKS<sp/>=<sp/>THREAD_MASK_ALL<sp/>|<sp/>PRIORITY_MASK_HIGH,</highlight></codeline>
+<codeline lineno="232" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba72f937c0c600f46611f7c81d84e2ac0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>LOW_PRIORITY_TASKS<sp/><sp/>=<sp/>THREAD_MASK_ALL<sp/>|<sp/>PRIORITY_MASK_LOW,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaa87e35f832644d926db128368ea25155" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MAIN_THREAD_HIGH_PRIORITY_TASKS<sp/>=<sp/>THREAD_MASK_MAIN<sp/>|<sp/>PRIORITY_MASK_HIGH,</highlight></codeline>
+<codeline lineno="235" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bbaf32be9b040534b5354d2801cf8a49008" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>MAIN_THREAD_LOW_PRIORITY_TASKS<sp/><sp/>=<sp/>THREAD_MASK_MAIN<sp/>|<sp/>PRIORITY_MASK_LOW,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba2004dad712a98427e8af61bbf21922e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>ALL_TASKS<sp/>=<sp/>THREAD_MASK_ALL<sp/>|<sp/>PRIORITY_MASK_ALL,</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="classDali_1_1AsyncTaskManager_1a6b76719cda985b92cc7c3a2e211b90bba7a89efc59ef4732c907c04eee04458f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>DEFAULT<sp/>=<sp/>ALL_TASKS,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/>TasksCompletedId<sp/>SetCompletedCallback(CallbackBase*<sp/>callback,<sp/>CompletedCallbackTraceMask<sp/>mask<sp/>=<sp/>CompletedCallbackTraceMask::DEFAULT);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>RemoveCompletedCallback(TasksCompletedId<sp/>tasksCompletedId);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>DALI_INTERNAL<sp/><ref refid="classDali_1_1AsyncTaskManager" kindref="compound">AsyncTaskManager</ref>(Internal::Adaptor::AsyncTaskManager*<sp/>impl);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/async-task-manager.h"/>
+  </compounddef>
+</doxygen>

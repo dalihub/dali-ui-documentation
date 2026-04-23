@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Ui_1_1IntegrationView" kind="namespace" language="C++">
+    <compoundname>Dali::Ui::IntegrationView</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Ui_1_1IntegrationView_1a6ffef0f8d3882bdd5f5c3e4244dd451f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_UI_API void Dali::Ui::IntegrationView::AddActorChild</definition>
+        <argsstring>(Ui::View view, Dali::Actor actor)</argsstring>
+        <name>AddActorChild</name>
+        <qualifiedname>Dali::Ui::IntegrationView::AddActorChild</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1View" kindref="compound">Ui::View</ref></type>
+          <declname>view</declname>
+        </param>
+        <param>
+          <type>Dali::Actor</type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Adds a raw (non-View) Actor as a child of the given <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>View::OnChildAdd normally asserts when the added child cannot be DownCast to <ref refid="classDali_1_1Ui_1_1View" kindref="compound">Ui::View</ref>. This <ref refid="namespaceDali_1_1Ui_1_1Integration" kindref="compound">Integration</ref> helper bypasses that check so internal modules can attach supporting Actors (clipping stencils, render-effect roots, decoration layers, etc.) without violating the View-only invariant for application code.</para>
+<para>The added Actor is NOT tracked in the <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&apos;s child container and therefore is excluded from the <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&apos;s measure/arrange layout pass. The caller is fully responsible for the Actor&apos;s size, position, and lifecycle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref> to add to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The raw Actor to attach as a child. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.cpp" line="2154" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.cpp" bodystart="2154" bodyend="2181" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-integration.h" declline="49" declcolumn="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.cpp" line="2151" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1Socket" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Accessibility::Socket</compoundname>
+    <basecompoundref refid="structDali_1_1Accessibility_1_1IAccessibilityFeature" prot="public" virt="non-virtual">Dali::Accessibility::IAccessibilityFeature</basecompoundref>
+    <includes refid="socket_8h" local="no">socket.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Socket_1ae33ab416982f9cd4b809dfaea890cf2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref></type>
+        <definition>virtual Address Dali::Accessibility::Socket::Embed</definition>
+        <argsstring>(Address plug)=0</argsstring>
+        <name>Embed</name>
+        <qualifiedname>Dali::Accessibility::Socket::Embed</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref></type>
+          <declname>plug</declname>
+        </param>
+        <briefdescription>
+<para>Establishes the Plug-Socket connection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plug</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref> of the Plug (remote parent) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref> of the <ref refid="classDali_1_1Accessibility_1_1Socket" kindref="compound">Socket</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/socket.h" line="42" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Socket_1aafffae512b7c98f574be0447b58ece72" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Accessibility::Socket::Unembed</definition>
+        <argsstring>(Address plug)=0</argsstring>
+        <name>Unembed</name>
+        <qualifiedname>Dali::Accessibility::Socket::Unembed</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref></type>
+          <declname>plug</declname>
+        </param>
+        <briefdescription>
+<para>Terminates the Plug-Socket connection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plug</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Accessibility_1_1Address" kindref="compound">Address</ref> of the Plug (remote parent) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/socket.h" line="49" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Socket_1a040e2989aa7afd2fcfd8ad818ebac724" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Accessibility::Socket::SetOffset</definition>
+        <argsstring>(std::int32_t x, std::int32_t y)=0</argsstring>
+        <name>SetOffset</name>
+        <qualifiedname>Dali::Accessibility::Socket::SetOffset</qualifiedname>
+        <param>
+          <type>std::int32_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>std::int32_t</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Set the offset (position information). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal offset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical offset </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/socket.h" line="57" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classDali_1_1Accessibility_1_1Socket" kindref="compound">Socket</ref> is the root of the AT-SPI tree that can be embedded as a subtree in the tree belonging to another process (the Plug). The Plug initiates the Plug-Socket connection by calling <ref refid="classDali_1_1Accessibility_1_1Socket_1ae33ab416982f9cd4b809dfaea890cf2b" kindref="member">Embed()</ref> and terminates it by calling <ref refid="classDali_1_1Accessibility_1_1Socket_1aafffae512b7c98f574be0447b58ece72" kindref="member">Unembed()</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>See AT_SPI2_CORE/xml/Socket.xml for a description of this interface in XML format. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Socket</label>
+        <link refid="classDali_1_1Accessibility_1_1Socket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Socket</label>
+        <link refid="classDali_1_1Accessibility_1_1Socket"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/socket.h" line="33" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/socket.h" bodystart="34" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Socket_1ae33ab416982f9cd4b809dfaea890cf2b" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Socket</scope><name>Embed</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Socket_1a040e2989aa7afd2fcfd8ad818ebac724" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Socket</scope><name>SetOffset</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Socket_1aafffae512b7c98f574be0447b58ece72" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Socket</scope><name>Unembed</name></member>
+      <member refid="structDali_1_1Accessibility_1_1IAccessibilityFeature_1a6e182386d889c026bb3337b7863104d7" prot="public" virt="virtual"><scope>Dali::Accessibility::Socket</scope><name>~IAccessibilityFeature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1AnimatablePropertyComponentRegistration" kind="class" language="C++" prot="public">
+    <compoundname>Dali::AnimatablePropertyComponentRegistration</compoundname>
+    <includes refid="type-registry_8h" local="no">type-registry.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1AnimatablePropertyComponentRegistration_1a8dd0dc656b07f0957b3ded7e038deb02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::AnimatablePropertyComponentRegistration::AnimatablePropertyComponentRegistration</definition>
+        <argsstring>(TypeRegistration &amp;registered, Dali::String name, Property::Index index, Property::Index baseIndex, uint32_t componentIndex)</argsstring>
+        <name>AnimatablePropertyComponentRegistration</name>
+        <qualifiedname>Dali::AnimatablePropertyComponentRegistration::AnimatablePropertyComponentRegistration</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1TypeRegistration" kindref="compound">TypeRegistration</ref> &amp;</type>
+          <declname>registered</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>baseIndex</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>componentIndex</declname>
+        </param>
+        <briefdescription>
+<para>This constructor registers a component of an animatable property where the base animatable property must be a property that supports property component (i.e. <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref>, <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> or <ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>) and the base animatable property must have been registered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor is for a component of scene-graph only properties where the value of the property can be retrieved and set via specified functions.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">registered</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1TypeRegistration" kindref="compound">TypeRegistration</ref> object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property index. Must be a value between ANIMATABLE_PROPERTY_REGISTRATION_START_INDEX and ANIMATABLE_PROPERTY_REGISTRATION_MAX_INDEX inclusive </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">baseIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the base animatable property. Must be a value between ANIMATABLE_PROPERTY_REGISTRATION_START_INDEX and ANIMATABLE_PROPERTY_REGISTRATION_MAX_INDEX inclusive </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">componentIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the component (e.g. 0 for the x component of a <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> property and 1 for the y component of a <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> property) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>&quot;registered&quot; must be registered with the <ref refid="classDali_1_1TypeRegistry" kindref="compound">TypeRegistry</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.h" line="457" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.cpp" bodystart="166" bodyend="171"/>
+        <references refid="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a0d0039f88743fefe5ea8d5b3e6529672" compoundref="property-index-ranges_8h" startline="61">Dali::ANIMATABLE_PROPERTY_REGISTRATION_MAX_INDEX</references>
+        <references refid="group__dali__core__object_1ggae1870db92315eef0d9599c013d951869a93bf56e7a49b167f479e1f7cc7e64636" compoundref="property-index-ranges_8h" startline="58">Dali::ANIMATABLE_PROPERTY_REGISTRATION_START_INDEX</references>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Registers a component of animatable property for the given component index. @SINCE_1_0.0. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.h" line="437" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/type-registry.h" bodystart="438" bodyend="458"/>
+    <listofallmembers>
+      <member refid="classDali_1_1AnimatablePropertyComponentRegistration_1a8dd0dc656b07f0957b3ded7e038deb02" prot="public" virt="non-virtual"><scope>Dali::AnimatablePropertyComponentRegistration</scope><name>AnimatablePropertyComponentRegistration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

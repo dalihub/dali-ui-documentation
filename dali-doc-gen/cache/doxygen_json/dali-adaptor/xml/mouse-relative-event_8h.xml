@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mouse-relative-event_8h" kind="file" language="C++">
+    <compoundname>mouse-relative-event.h</compoundname>
+    <includes local="no">dali/public-api/events/device.h</includes>
+    <includes local="no">dali/public-api/math/vector2.h</includes>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="window-devel_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-devel.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/mouse-relative-event.h</label>
+        <link refid="mouse-relative-event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/events/device.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.cpp</label>
+        <link refid="accessibility_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp</label>
+        <link refid="actor-accessible_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/mouse-relative-event.h</label>
+        <link refid="mouse-relative-event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-devel.cpp</label>
+        <link refid="window-devel_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-devel.h</label>
+        <link refid="window-devel_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent" prot="public">Dali::DevelWindow::MouseRelativeEvent</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1DevelWindow">Dali::DevelWindow</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_WINDOW_DEVEL_MOUSE_RELATIVE_EVENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_WINDOW_DEVEL_MOUSE_RELATIVE_EVENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2023<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/events/device.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/math/vector2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">DevelWindow</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent" kindref="compound">MouseRelativeEvent</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a1317a2fd792fffd64ded349441553d5e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a1317a2fd792fffd64ded349441553d5e" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>NONE<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>RELATIVE_MOVE</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a45d371889b85b160e4dc272b8a0dba26" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a45d371889b85b160e4dc272b8a0dba26" kindref="member">MouseRelativeEvent</ref>(<ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a1317a2fd792fffd64ded349441553d5e" kindref="member">Type</ref><sp/>type,<sp/>uint32_t<sp/>modifiers,<sp/>uint32_t<sp/>timeStamp,<sp/>Vector2<sp/>diffPosition,<sp/>Vector2<sp/>unaccelatedPosition,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Device::Class::Type<sp/>deviceClass,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Device::Subclass::Type<sp/>deviceSubclass)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>:<sp/>type(type),</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>modifiers(modifiers),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>timeStamp(timeStamp),</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>diffPosition(diffPosition),</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>unaccelatedPosition(unaccelatedPosition),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>deviceClass(deviceClass),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>deviceSubclass(deviceSubclass)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a879e40af90662f916ca8250aba511522" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a1317a2fd792fffd64ded349441553d5e" kindref="member">Type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a879e40af90662f916ca8250aba511522" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="67" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a7077b6c17b48398d5976e4d462515712" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a7077b6c17b48398d5976e4d462515712" kindref="member">modifiers</ref>;</highlight></codeline>
+<codeline lineno="68" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1abc15b4b767777760f491445a9e6d23f9" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1abc15b4b767777760f491445a9e6d23f9" kindref="member">timeStamp</ref>;</highlight></codeline>
+<codeline lineno="69" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a8fd6d47fe08013326859a88d0c85e111" refkind="member"><highlight class="normal"><sp/><sp/>Vector2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a8fd6d47fe08013326859a88d0c85e111" kindref="member">diffPosition</ref>;</highlight></codeline>
+<codeline lineno="70" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a20babe5efc5a8b77333902129b2f453e" refkind="member"><highlight class="normal"><sp/><sp/>Vector2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1a20babe5efc5a8b77333902129b2f453e" kindref="member">unaccelatedPosition</ref>;</highlight></codeline>
+<codeline lineno="71" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1adef2536490cf250b8c46e04786dcc808" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Device::Class::Type<sp/><sp/><sp/><sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1adef2536490cf250b8c46e04786dcc808" kindref="member">deviceClass</ref>;</highlight></codeline>
+<codeline lineno="72" refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1aad5eaa75f86e64bff9889111a2766e2b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Device::Subclass::Type<sp/><ref refid="structDali_1_1DevelWindow_1_1MouseRelativeEvent_1aad5eaa75f86e64bff9889111a2766e2b" kindref="member">deviceSubclass</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>DevelWindow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_WINDOW_DEVEL_MOUSE_RELATIVE_EVENT_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/mouse-relative-event.h"/>
+  </compounddef>
+</doxygen>

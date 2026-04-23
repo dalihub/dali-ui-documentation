@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="segmentation_8cpp" kind="file" language="C++">
+    <compoundname>segmentation.cpp</compoundname>
+    <includes refid="segmentation_8h" local="no">dali/devel-api/text-abstraction/segmentation.h</includes>
+    <includes local="no">dali/internal/text/text-abstraction/segmentation-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/segmentation.cpp</label>
+        <link refid="segmentation_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/text-abstraction/segmentation.h</label>
+        <link refid="segmentation_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/devel-api/text-abstraction/text-abstraction-definitions.h</label>
+        <link refid="text-abstraction-definitions_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/internal/text/text-abstraction/segmentation-impl.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1TextAbstraction">Dali::TextAbstraction</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2022<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="segmentation_8h" kindref="compound">dali/devel-api/text-abstraction/segmentation.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/text/text-abstraction/segmentation-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">TextAbstraction</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28" refid="classDali_1_1TextAbstraction_1_1Segmentation_1a51a5230f83c393febe8a920976feb56e" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a51a5230f83c393febe8a920976feb56e" kindref="member">Segmentation::Segmentation</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classDali_1_1TextAbstraction_1_1Segmentation_1a971ba96e46be7fea82b59ed0f39e4fa0" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a971ba96e46be7fea82b59ed0f39e4fa0" kindref="member">Segmentation::~Segmentation</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1TextAbstraction_1_1Segmentation_1a78b2836c7cb0910b1fbfee548d716a2a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a51a5230f83c393febe8a920976feb56e" kindref="member">Segmentation::Segmentation</ref>(Internal::Segmentation*<sp/>implementation)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">:<sp/>BaseHandle(implementation)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classDali_1_1TextAbstraction_1_1Segmentation_1a5b55dcee8a9976d2b383dac0c71c232a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TextAbstraction_1_1Segmentation" kindref="compound">Segmentation</ref><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a5b55dcee8a9976d2b383dac0c71c232a" kindref="member">Segmentation::Get</ref>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Internal::Segmentation::Get();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classDali_1_1TextAbstraction_1_1Segmentation_1a59b356b8276b6a0f42d9afb2406848c7" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TextAbstraction_1_1Segmentation" kindref="compound">Segmentation</ref><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a59b356b8276b6a0f42d9afb2406848c7" kindref="member">Segmentation::New</ref>()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>segmentationImpl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::Segmentation();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a51a5230f83c393febe8a920976feb56e" kindref="member">Segmentation</ref>(segmentationImpl);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classDali_1_1TextAbstraction_1_1Segmentation_1ad4295db1cea978235ea5f36187bdc9c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1ad4295db1cea978235ea5f36187bdc9c2" kindref="member">Segmentation::GetLineBreakPositions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ac95051206fbc2cf8cbe3cef9cb19889f" kindref="member">Character</ref>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>text,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ac3940128a70937da869f51378b6c8192" kindref="member">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a52fab5112fc4fa23aa6df678e21f0382" kindref="member">LineBreakInfo</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetLineBreakPositions(text,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1TextAbstraction_1_1Segmentation_1afdb244f1414472762eac8449922f80ae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1afdb244f1414472762eac8449922f80ae" kindref="member">Segmentation::GetWordBreakPositions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ac95051206fbc2cf8cbe3cef9cb19889f" kindref="member">Character</ref>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>text,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ac3940128a70937da869f51378b6c8192" kindref="member">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a365a2007d0a6b96a165c6504bba86ed2" kindref="member">WordBreakInfo</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetWordBreakPositions(text,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classDali_1_1TextAbstraction_1_1Segmentation_1a974d36a3e38467e25577e97c84b3b8de" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1a974d36a3e38467e25577e97c84b3b8de" kindref="member">Segmentation::GetLineBreakPositionsUtf8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>text,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ac3940128a70937da869f51378b6c8192" kindref="member">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a52fab5112fc4fa23aa6df678e21f0382" kindref="member">LineBreakInfo</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetLineBreakPositionsUtf8(text,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classDali_1_1TextAbstraction_1_1Segmentation_1ae653f6349997e7ee2cec171857992471" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TextAbstraction_1_1Segmentation_1ae653f6349997e7ee2cec171857992471" kindref="member">Segmentation::GetWordBreakPositionsUtf8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>text,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1ac3940128a70937da869f51378b6c8192" kindref="member">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceDali_1_1TextAbstraction_1a365a2007d0a6b96a165c6504bba86ed2" kindref="member">WordBreakInfo</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetWordBreakPositionsUtf8(text,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numberOfCharacters,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>breakInfo);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TextAbstraction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/text-abstraction/segmentation.cpp"/>
+  </compounddef>
+</doxygen>

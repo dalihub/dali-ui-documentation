@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="capture_8cpp" kind="file" language="C++">
+    <compoundname>capture.cpp</compoundname>
+    <includes refid="capture_8h" local="no">dali/public-api/adaptor-framework/capture.h</includes>
+    <includes local="no">dali/integration-api/string-utils.h</includes>
+    <includes local="no">dali/internal/system/common/capture-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/capture.cpp</label>
+        <link refid="capture_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/adaptor-framework/capture.h</label>
+        <link refid="capture_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/adaptor-framework/native-image.h</label>
+        <link refid="native-image_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="16">
+        <label>dali/integration-api/string-utils.h</label>
+      </node>
+      <node id="17">
+        <label>dali/internal/system/common/capture-impl.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/actors/camera-actor.h</label>
+      </node>
+      <node id="15">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/images/native-image-interface.h</label>
+      </node>
+      <node id="12">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/object/any.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/rendering/texture.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="capture_8h" kindref="compound">dali/public-api/adaptor-framework/capture.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/string-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/system/common/capture-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToStdString;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29" refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture::Capture</ref>()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classDali_1_1Capture_1adce92610e35fcd2eb852af0092ad4cbf" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref><sp/><ref refid="classDali_1_1Capture_1adce92610e35fcd2eb852af0092ad4cbf" kindref="member">Capture::New</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>Internal::Adaptor::CapturePtr<sp/>internal<sp/>=<sp/>Internal::Adaptor::Capture::New();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classDali_1_1Capture_1a4c6128f736465eba5dda75a73c1c1336" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref><sp/><ref refid="classDali_1_1Capture_1adce92610e35fcd2eb852af0092ad4cbf" kindref="member">Capture::New</ref>(Dali::CameraActor<sp/>cameraActor)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>Internal::Adaptor::CapturePtr<sp/>internal<sp/>=<sp/>Internal::Adaptor::Capture::New(cameraActor);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classDali_1_1Capture_1a638423460e4c7f679172d97a9e0dbaf9" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref><sp/><ref refid="classDali_1_1Capture_1a638423460e4c7f679172d97a9e0dbaf9" kindref="member">Capture::DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Internal::Adaptor::Capture*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.GetObjectPtr()));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classDali_1_1Capture_1a551e9f4e2878a392264d6664bf95a5b9" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Capture_1a551e9f4e2878a392264d6664bf95a5b9" kindref="member">Capture::~Capture</ref>()</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture::Capture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref>&amp;<sp/>copy)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref>&amp;<sp/><ref refid="classDali_1_1Capture_1a2a3ef92c21a1e75956a640272fd04088" kindref="member">Capture::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref>&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture::Capture</ref>(<ref refid="classDali_1_1Capture" kindref="compound">Capture</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="classDali_1_1Capture" kindref="compound">Capture</ref>&amp;<sp/><ref refid="classDali_1_1Capture_1a2a3ef92c21a1e75956a640272fd04088" kindref="member">Capture::operator=</ref>(<ref refid="classDali_1_1Capture" kindref="compound">Capture</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classDali_1_1Capture_1ada936527cb489347587e015cce9378f4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1ada936527cb489347587e015cce9378f4" kindref="member">Capture::Start</ref>(Actor<sp/>source,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>position,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>clearColor)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>GetImpl(*this).<ref refid="classDali_1_1Capture_1ada936527cb489347587e015cce9378f4" kindref="member">Start</ref>(source,<sp/>position,<sp/>size,<sp/>ToStdString(path),<sp/>clearColor);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classDali_1_1Capture_1a76d4c6b4241c473fbe5279659864328b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1ada936527cb489347587e015cce9378f4" kindref="member">Capture::Start</ref>(Actor<sp/>source,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>clearColor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>quality)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>GetImpl(*this).Start(source,<sp/>Vector2::ZERO,<sp/>size,<sp/>ToStdString(path),<sp/>clearColor,<sp/>quality);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classDali_1_1Capture_1a762ad17a51df93e70ae32ebfd7cc9661" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1ada936527cb489347587e015cce9378f4" kindref="member">Capture::Start</ref>(Actor<sp/>source,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>clearColor)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>GetImpl(*this).Start(source,<sp/>Vector2::ZERO,<sp/>size,<sp/>ToStdString(path),<sp/>clearColor);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classDali_1_1Capture_1a253714582bee9271c7dc4098239d63ca" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1ada936527cb489347587e015cce9378f4" kindref="member">Capture::Start</ref>(Actor<sp/>source,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>path)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>GetImpl(*this).Start(source,<sp/>Vector2::ZERO,<sp/>size,<sp/>ToStdString(path),<sp/>Dali::Color::TRANSPARENT);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classDali_1_1Capture_1a73e0bd37265c695165b409ef215eb82d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1a73e0bd37265c695165b409ef215eb82d" kindref="member">Capture::SetImageQuality</ref>(uint32_t<sp/>quality)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImpl(*this).SetImageQuality(quality);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classDali_1_1Capture_1a6448dda1cd1baf351f912d4c2f7714b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1a6448dda1cd1baf351f912d4c2f7714b7" kindref="member">Capture::SetExclusive</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>exclusive)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImpl(*this).SetExclusive(exclusive);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classDali_1_1Capture_1a6cc85742d28c3288320687967c4ff157" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Capture_1a6cc85742d28c3288320687967c4ff157" kindref="member">Capture::IsExclusive</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="95"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImpl(*this).IsExclusive();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classDali_1_1Capture_1a179d41fae9910024170d21d84cc1abfc" refkind="member"><highlight class="normal"><ref refid="group__dali__adaptor__framework_1ga66ad744612018f55ae9bf88bc933e0e7" kindref="member">Dali::NativeImagePtr</ref><sp/><ref refid="classDali_1_1Capture_1a179d41fae9910024170d21d84cc1abfc" kindref="member">Capture::GetNativeImage</ref>()</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImpl(*this).GetNativeImage();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="classDali_1_1Capture_1aee7f9db075d6e6af4dba94787e2f25a3" refkind="member"><highlight class="normal">Dali::Texture<sp/><ref refid="classDali_1_1Capture_1aee7f9db075d6e6af4dba94787e2f25a3" kindref="member">Capture::GetTexture</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="105"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImpl(*this).GetTexture();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classDali_1_1Capture_1a29040dee6bb751d6ecdf432362b86c3a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Capture_1a5daf86a1ff1c975fe172a6e66cb51a1b" kindref="member">Capture::CaptureFinishedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Capture_1a29040dee6bb751d6ecdf432362b86c3a" kindref="member">Capture::FinishedSignal</ref>()</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GetImpl(*this).FinishedSignal();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><ref refid="classDali_1_1Capture_1a411b8d93c297db25d0ed94d94d89f534" kindref="member">Capture::Capture</ref>(Internal::Adaptor::Capture*<sp/>internal)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">:<sp/>BaseHandle(internal)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/capture.cpp"/>
+  </compounddef>
+</doxygen>

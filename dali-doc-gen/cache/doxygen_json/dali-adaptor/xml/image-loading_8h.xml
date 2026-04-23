@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="image-loading_8h" kind="file" language="C++">
+    <compoundname>image-loading.h</compoundname>
+    <includes refid="pixel-buffer_8h" local="no">dali/devel-api/adaptor-framework/pixel-buffer.h</includes>
+    <includes local="no">dali/devel-api/common/vector-wrapper.h</includes>
+    <includes local="no">string</includes>
+    <includes refid="image-options_8h" local="no">dali/public-api/adaptor-framework/image-options.h</includes>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="image-loading_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/image-loading.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/image-loading.h</label>
+        <link refid="image-loading_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/pixel-buffer.h</label>
+        <link refid="pixel-buffer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>dali/public-api/adaptor-framework/image-options.h</label>
+        <link refid="image-options_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/devel-api/common/vector-wrapper.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/images/pixel-data.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/images/pixel.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/math/uint-16-pair.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/image-loading.cpp</label>
+        <link refid="image-loading_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/image-loading.h</label>
+        <link refid="image-loading_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_IMAGE_LOADING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_IMAGE_LOADING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="pixel-buffer_8h" kindref="compound">dali/devel-api/adaptor-framework/pixel-buffer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/devel-api/common/vector-wrapper.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="image-options_8h" kindref="compound">dali/public-api/adaptor-framework/image-options.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/>Devel::PixelBuffer<sp/><ref refid="namespaceDali_1a2649281d5919184d11f133847c7332a6" kindref="member">LoadImageFromFile</ref>(</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>url,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(0,<sp/>0),</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1FittingMode_1ada61f2cd883656da75a0bc5847b936f7" kindref="member">FittingMode::Type</ref><sp/><sp/>fittingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1FittingMode_1a35380a6a5a4f1af45950897d4bc2bb22" kindref="member">FittingMode::DEFAULT</ref>,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">SamplingMode::Type</ref><sp/>samplingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" kindref="member">SamplingMode::BOX_THEN_LINEAR</ref>,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1ab1d0992f92fffa486041ac350ea47118" kindref="member">LoadImagePlanesFromFile</ref>(</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>url,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>std::vector&lt;Devel::PixelBuffer&gt;&amp;<sp/>buffers,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(0,<sp/>0),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1FittingMode_1ada61f2cd883656da75a0bc5847b936f7" kindref="member">FittingMode::Type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fittingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1FittingMode_1a35380a6a5a4f1af45950897d4bc2bb22" kindref="member">FittingMode::DEFAULT</ref>,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">SamplingMode::Type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>samplingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" kindref="member">SamplingMode::BOX_THEN_LINEAR</ref>,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/>Devel::PixelBuffer<sp/><ref refid="namespaceDali_1a9214bcf80055e98f64ad0324ff91c2e4" kindref="member">LoadImageFromBuffer</ref>(</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::Vector&lt;uint8_t&gt;&amp;<sp/>buffer,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(0,<sp/>0),</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1FittingMode_1ada61f2cd883656da75a0bc5847b936f7" kindref="member">FittingMode::Type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fittingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1FittingMode_1a35380a6a5a4f1af45950897d4bc2bb22" kindref="member">FittingMode::DEFAULT</ref>,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">SamplingMode::Type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>samplingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" kindref="member">SamplingMode::BOX_THEN_LINEAR</ref>,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/>Devel::PixelBuffer<sp/><ref refid="namespaceDali_1a9214bcf80055e98f64ad0324ff91c2e4" kindref="member">LoadImageFromBuffer</ref>(</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>uint8_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffer,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bufferSize,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(0,<sp/>0),</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1FittingMode_1ada61f2cd883656da75a0bc5847b936f7" kindref="member">FittingMode::Type</ref><sp/><sp/>fittingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1FittingMode_1a35380a6a5a4f1af45950897d4bc2bb22" kindref="member">FittingMode::DEFAULT</ref>,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">SamplingMode::Type</ref><sp/>samplingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" kindref="member">SamplingMode::BOX_THEN_LINEAR</ref>,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><ref refid="namespaceDali_1a61e487b984cb16dca72e4d5f5ba90096" kindref="member">GetClosestImageSize</ref>(</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(0,<sp/>0),</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1FittingMode_1ada61f2cd883656da75a0bc5847b936f7" kindref="member">FittingMode::Type</ref><sp/><sp/>fittingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1FittingMode_1a35380a6a5a4f1af45950897d4bc2bb22" kindref="member">FittingMode::DEFAULT</ref>,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">SamplingMode::Type</ref><sp/>samplingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" kindref="member">SamplingMode::BOX_THEN_LINEAR</ref>,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><ref refid="namespaceDali_1a7d61f0e93bc20341e259b2db7a1782ea" kindref="member">GetOriginalImageSize</ref>(</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/>Devel::PixelBuffer<sp/><ref refid="namespaceDali_1a43552da76bff2ab80f56c42c22a496b3" kindref="member">DownloadImageSynchronously</ref>(</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>url,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref><sp/><sp/><sp/><sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="group__dali__adaptor__framework_1gaff2e3ce76fcaec411b1b9514799dfd0b" kindref="member">ImageDimensions</ref>(0,<sp/>0),</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1FittingMode_1ada61f2cd883656da75a0bc5847b936f7" kindref="member">FittingMode::Type</ref><sp/><sp/>fittingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1FittingMode_1a35380a6a5a4f1af45950897d4bc2bb22" kindref="member">FittingMode::DEFAULT</ref>,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34" kindref="member">SamplingMode::Type</ref><sp/>samplingMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1SamplingMode_1a65bf66e54fef928377198cc9adfc6b34af1df3fd98d56199f9ef3cfffd8c10e10" kindref="member">SamplingMode::BOX_THEN_LINEAR</ref>,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orientationCorrection<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a498374f8e8909ba3d5f508326a60cb60" kindref="member">GetMaxTextureSize</ref>();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_IMAGE_LOADING_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/image-loading.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Internal_1_1Adaptor_1_1Widget" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Internal::Adaptor::Widget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseObject</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ConnectionTrackerInterface</basecompoundref>
+    <includes refid="widget-impl_8h" local="no">widget-impl.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a8076cf48f5cfb366fa847a38fc494760" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1a9ba174e9554e80bd75b93b1550e250df" kindref="member">WidgetPtr</ref></type>
+        <definition>WidgetPtr Dali::Internal::Adaptor::Widget::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::New</qualifiedname>
+        <briefdescription>
+<para>Creates a new WidgetImpl instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_3_5 <simplesect kind="return"><para>A handle to the WidgetImpl instance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="67" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="34" bodyend="37"/>
+        <references refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1afe5114ad632ab03cc6f8e518337c7bec" compoundref="widget-impl_8cpp" startline="39" endline="42">Widget</references>
+        <referencedby refid="classDali_1_1Widget_1a480b0f61da518e0f0395e2821141cbaa" compoundref="widget_8cpp" startline="26" endline="30">Dali::Widget::New</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a6abbb719a471d0f151bd6ad8a16cde5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::OnCreate</definition>
+        <argsstring>(const Dali::String &amp;contentInfo, Dali::Window window)</argsstring>
+        <name>OnCreate</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::OnCreate</qualifiedname>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>contentInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Window" kindref="compound">Dali::Window</ref></type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>The user should override this function to determine when they create widget. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_3_5 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">contentInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Information from WidgetView for creating. It contains previous status of widget which is sent by SetContentInfo before. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Window" kindref="compound">Window</ref> handle for widget </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="76" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1adb32f0aabedea98dd133bf33cb99b933" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::OnTerminate</definition>
+        <argsstring>(const Dali::String &amp;contentInfo, Dali::Widget::Termination type)</argsstring>
+        <name>OnTerminate</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::OnTerminate</qualifiedname>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>contentInfo</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Widget_1aa1c36a4d411a2b9c1c3e8e41703d5049" kindref="member">Dali::Widget::Termination</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>The user should override this function to determine when they terminate widget. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_3_5 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">contentInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data from WidgetView for deleting </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Termination type. When user delete widget view, termination type is PERMANENT. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="85" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ab79954927fc36ebbbb23328f4d0546af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::OnPause</definition>
+        <argsstring>()</argsstring>
+        <name>OnPause</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::OnPause</qualifiedname>
+        <briefdescription>
+<para>The user should override this function to determine when they pause widget. @SINCE_1_3_5. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="91" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a2a844bd47f915e3eb11dba73be03c08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::OnResume</definition>
+        <argsstring>()</argsstring>
+        <name>OnResume</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::OnResume</qualifiedname>
+        <briefdescription>
+<para>The user should override this function to determine when they resume widget. @SINCE_1_3_5. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="97" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1afe0dc856a8148b8630a62918bfb67aad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::OnResize</definition>
+        <argsstring>(Dali::Window window)</argsstring>
+        <name>OnResize</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::OnResize</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Window" kindref="compound">Dali::Window</ref></type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>The user should override this function to determine when they resize widget. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_3_5 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Window" kindref="compound">Window</ref> handle for widget </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="105" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ade13007cd4cc26730cf1a52a743224a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::OnUpdate</definition>
+        <argsstring>(const Dali::String &amp;contentInfo, int force)</argsstring>
+        <name>OnUpdate</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::OnUpdate</qualifiedname>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>contentInfo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>force</declname>
+        </param>
+        <briefdescription>
+<para>The user should override this function to determine when they update widget. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_3_5 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">contentInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data from WidgetView for updating </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Although the widget is paused, if it is true, the widget can be updated </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="114" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1aded010aed511d916ce22a1ddface999e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::SignalConnected</definition>
+        <argsstring>(SlotObserver *slotObserver, CallbackBase *callback) override</argsstring>
+        <name>SignalConnected</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::SignalConnected</qualifiedname>
+        <param>
+          <type>SlotObserver *</type>
+          <declname>slotObserver</declname>
+        </param>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="121" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ac4517b28a75870d95905e49b42482216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::SignalDisconnected</definition>
+        <argsstring>(SlotObserver *slotObserver, CallbackBase *callback) override</argsstring>
+        <name>SignalDisconnected</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::SignalDisconnected</qualifiedname>
+        <param>
+          <type>SlotObserver *</type>
+          <declname>slotObserver</declname>
+        </param>
+        <param>
+          <type>CallbackBase *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="126" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1aec5f55af4f1b03d0bf5160e23bf8c449" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::SetContentInfo</definition>
+        <argsstring>(const Dali::String &amp;contentInfo)</argsstring>
+        <name>SetContentInfo</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::SetContentInfo</qualifiedname>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>contentInfo</declname>
+        </param>
+        <briefdescription>
+<para>Set content info to WidgetView. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_3_5 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">contentInfo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Content info is kind of context information which contains current status of widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="134" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="86" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ac58580c71eb6c42b2c8f99c1cf112d6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Internal::Adaptor::Widget::IsKeyEventUsing</definition>
+        <argsstring>() const</argsstring>
+        <name>IsKeyEventUsing</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::IsKeyEventUsing</qualifiedname>
+        <briefdescription>
+<para>Check <ref refid="classDali_1_1Internal_1_1Adaptor_1_1Widget" kindref="compound">Widget</ref> is using key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>widget can set flag to SetUsingKeyEvent</para>
+<para><simplesect kind="return"><para>True if <ref refid="classDali_1_1Internal_1_1Adaptor_1_1Widget" kindref="compound">Widget</ref> is using key </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="143" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="94" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1af2de1f692ee8536555e00ad8a050b49d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Internal::Adaptor::Widget::SetUsingKeyEvent</definition>
+        <argsstring>(bool flag)</argsstring>
+        <name>SetUsingKeyEvent</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::SetUsingKeyEvent</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>Set the flag that widget is using keyEvent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="150" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="105" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1afe5114ad632ab03cc6f8e518337c7bec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Internal::Adaptor::Widget::Widget</definition>
+        <argsstring>()</argsstring>
+        <name>Widget</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::Widget</qualifiedname>
+        <briefdescription>
+<para>WidgetImpl constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="156" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="39" bodyend="42"/>
+        <referencedby refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a8076cf48f5cfb366fa847a38fc494760" compoundref="widget-impl_8cpp" startline="34" endline="37">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a044af1296dbc0488a805eb6de3c47a0a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Internal::Adaptor::Widget::~Widget</definition>
+        <argsstring>() override</argsstring>
+        <name>~Widget</name>
+        <qualifiedname>Dali::Internal::Adaptor::Widget::~Widget</qualifiedname>
+        <briefdescription>
+<para>Virtual destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="161" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.cpp" bodystart="44" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This is the internal base class of custom widget. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It will provides several widget instance lifecycle virtual functions which the user can override.</para>
+<para>User should override OnCreate function and create scene for custom widget.</para>
+<para>Plus, Implements ConnectionTrackerInterface so that signals (typically connected to member functions) will be disconnected automatically when the control is destroyed.</para>
+<para>@SINCE_1_3_5 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseObject</label>
+      </node>
+      <node id="3">
+        <label>ConnectionTrackerInterface</label>
+      </node>
+      <node id="1">
+        <label>Dali::Internal::Adaptor::Widget</label>
+        <link refid="classDali_1_1Internal_1_1Adaptor_1_1Widget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseObject</label>
+      </node>
+      <node id="3">
+        <label>ConnectionTrackerInterface</label>
+      </node>
+      <node id="1">
+        <label>Dali::Internal::Adaptor::Widget</label>
+        <link refid="classDali_1_1Internal_1_1Adaptor_1_1Widget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" line="58" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/widget-impl.h" bodystart="59" bodyend="202"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ac58580c71eb6c42b2c8f99c1cf112d6d" prot="public" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>IsKeyEventUsing</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a8076cf48f5cfb366fa847a38fc494760" prot="public" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>New</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a6abbb719a471d0f151bd6ad8a16cde5a" prot="public" virt="virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>OnCreate</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ab79954927fc36ebbbb23328f4d0546af" prot="public" virt="virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>OnPause</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1afe0dc856a8148b8630a62918bfb67aad" prot="public" virt="virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>OnResize</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a2a844bd47f915e3eb11dba73be03c08e" prot="public" virt="virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>OnResume</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1adb32f0aabedea98dd133bf33cb99b933" prot="public" virt="virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>OnTerminate</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ade13007cd4cc26730cf1a52a743224a0" prot="public" virt="virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>OnUpdate</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1aec5f55af4f1b03d0bf5160e23bf8c449" prot="public" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>SetContentInfo</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1af2de1f692ee8536555e00ad8a050b49d" prot="public" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>SetUsingKeyEvent</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1aded010aed511d916ce22a1ddface999e" prot="public" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>SignalConnected</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1ac4517b28a75870d95905e49b42482216" prot="public" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>SignalDisconnected</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1afe5114ad632ab03cc6f8e518337c7bec" prot="protected" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>Widget</name></member>
+      <member refid="classDali_1_1Internal_1_1Adaptor_1_1Widget_1a044af1296dbc0488a805eb6de3c47a0a" prot="protected" virt="non-virtual"><scope>Dali::Internal::Adaptor::Widget</scope><name>~Widget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dissolve-effect_8cpp" kind="file" language="C++">
+    <compoundname>dissolve-effect.cpp</compoundname>
+    <includes refid="dissolve-effect_8h" local="no">dali-ui-foundation/devel-api/shader-effects/dissolve-effect.h</includes>
+    <includes local="no">dali/integration-api/string-utils.h</includes>
+    <includes local="no">dali/public-api/rendering/shader.h</includes>
+    <includes local="no">dali-ui-foundation/internal/graphics/builtin-shader-extern-gen.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/shader-effects/dissolve-effect.cpp</label>
+        <link refid="dissolve-effect_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/devel-api/shader-effects/dissolve-effect.h</label>
+        <link refid="dissolve-effect_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>dali-ui-foundation/public-api/ui-property-index-ranges.h</label>
+        <link refid="public-api_2ui-property-index-ranges_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali-ui-foundation/public-api/visuals/visual-properties.h</label>
+        <link refid="visual-properties_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali-ui-foundation/internal/graphics/builtin-shader-extern-gen.h</label>
+      </node>
+      <node id="12">
+        <label>dali/integration-api/string-utils.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/object/property-index-ranges.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/object/property-map.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/rendering/shader.h</label>
+      </node>
+      <node id="6">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dissolve-effect_8h" kindref="compound">dali-ui-foundation/devel-api/shader-effects/dissolve-effect.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/string-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/rendering/shader.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/graphics/builtin-shader-extern-gen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToPropertyValue;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33" refid="namespaceDali_1_1Ui_1ad43400d50267c3e9156387b31b856a86" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1ad43400d50267c3e9156387b31b856a86" kindref="member">DissolveEffectSetCentralLine</ref>(Actor&amp;<sp/>actor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>position,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>displacement,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>initialProgress)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>line<sp/>passes<sp/>through<sp/>&apos;position&apos;<sp/>and<sp/>has<sp/>the<sp/>direction<sp/>of<sp/>&apos;displacement&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>coefA,<sp/>coefB,<sp/>coefC;<sp/></highlight><highlight class="comment">//<sp/>line<sp/>equation:<sp/>Ax+By+C=0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>coefA<sp/>=<sp/>displacement.y;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>coefB<sp/>=<sp/>-displacement.x;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>coefC<sp/>=<sp/>-displacement.y<sp/>*<sp/>position.x<sp/>+<sp/>displacement.x<sp/>*<sp/>position.y;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>inversedAABB<sp/><sp/><sp/><sp/><sp/>=<sp/>1.f<sp/>/<sp/>(coefA<sp/>*<sp/>coefA<sp/>+<sp/>coefB<sp/>*<sp/>coefB);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>inversedSqrtAABB<sp/>=<sp/>sqrtf(inversedAABB);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>saddleA;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>saddle<sp/>surface(Hyperbolic<sp/>paraboloid)function,<sp/>used<sp/>to<sp/>calculate<sp/>the<sp/>dissolve<sp/>starting<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>z<sp/>=<sp/>y*y/a/a<sp/>-<sp/>x*x/b/b</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>with<sp/>our<sp/>selection<sp/>of<sp/>parameters(a<sp/>and<sp/>b),<sp/>this<sp/>value<sp/>for<sp/>any<sp/>texture<sp/>coordinate<sp/>is<sp/>between<sp/>-1.0<sp/>and<sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>Vector3<sp/>saddleParam;<sp/></highlight><highlight class="comment">//<sp/>[0]:<sp/>a*a,<sp/>[1]:<sp/>b*b,<sp/>[2]<sp/>b</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>Vector2<sp/>translation;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>Vector2<sp/>rotation;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/>toNext<sp/>=<sp/>-1.f;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(displacement.x<sp/>&gt;<sp/>0.f<sp/>||<sp/>(EqualsZero(displacement.x)<sp/>&amp;&amp;<sp/>displacement.y<sp/>&gt;<sp/>0.f))</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>toNext<sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((displacement.y<sp/>*<sp/>displacement.x<sp/>&lt;<sp/>0.0f))</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distance<sp/>from<sp/>(0,0)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distanceTopLeft<sp/>=<sp/>fabsf(coefC)<sp/>*<sp/>inversedSqrtAABB;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distance<sp/>from<sp/>(1,<sp/>1<sp/>)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distanceBottomRight<sp/>=<sp/>fabsf(coefA<sp/>+<sp/>coefB<sp/>+<sp/>coefC)<sp/>*<sp/>inversedSqrtAABB;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>saddleA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::max(distanceTopLeft,<sp/>distanceBottomRight);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>foot<sp/>of<sp/>a<sp/>perpendicular:<sp/>(1,0)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footX1<sp/>=<sp/>(coefB<sp/>*<sp/>coefB<sp/>-<sp/>coefA<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footY1<sp/>=<sp/>(-coefA<sp/>*<sp/>coefB<sp/>-<sp/>coefB<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>foot<sp/>of<sp/>a<sp/>perpendicular:<sp/>(0,1)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footX2<sp/><sp/><sp/>=<sp/>(-coefA<sp/>*<sp/>coefB<sp/>-<sp/>coefA<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footY2<sp/><sp/><sp/>=<sp/>(coefA<sp/>*<sp/>coefA<sp/>-<sp/>coefB<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>saddleParam[1]<sp/>=<sp/>(footX1<sp/>-<sp/>footX2)<sp/>*<sp/>(footX1<sp/>-<sp/>footX2)<sp/>+<sp/>(footY1<sp/>-<sp/>footY2)<sp/>*<sp/>(footY1<sp/>-<sp/>footY2);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>translation<sp/><sp/><sp/><sp/>=<sp/>Vector2(-footX2,<sp/>-footY2);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distance<sp/>from(1,0)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distanceTopRight<sp/>=<sp/>fabsf(coefA<sp/>+<sp/>coefC)<sp/>*<sp/>inversedSqrtAABB;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distance<sp/>from(0,1)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distanceBottomLeft<sp/>=<sp/>fabsf(coefB<sp/>+<sp/>coefC)<sp/>*<sp/>inversedSqrtAABB;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>saddleA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::max(distanceTopRight,<sp/>distanceBottomLeft);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>foot<sp/>of<sp/>a<sp/>perpendicular:<sp/>(0,0)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footX3<sp/>=<sp/>(-coefA<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footY3<sp/>=<sp/>(-coefB<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>foot<sp/>of<sp/>a<sp/>perpendicular:<sp/>(1.0,1.0)<sp/>to<sp/>the<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footX4<sp/><sp/><sp/>=<sp/>(coefB<sp/>*<sp/>coefB<sp/>-<sp/>coefA<sp/>*<sp/>coefB<sp/>-<sp/>coefA<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>footY4<sp/><sp/><sp/>=<sp/>(-coefA<sp/>*<sp/>coefB<sp/>+<sp/>coefA<sp/>*<sp/>coefA<sp/>-<sp/>coefB<sp/>*<sp/>coefC)<sp/>*<sp/>inversedAABB;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>saddleParam[1]<sp/>=<sp/>(footX3<sp/>-<sp/>footX4)<sp/>*<sp/>(footX3<sp/>-<sp/>footX4)<sp/>+<sp/>(footY3<sp/>-<sp/>footY4)<sp/>*<sp/>(footY3<sp/>-<sp/>footY4);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>translation<sp/><sp/><sp/><sp/>=<sp/>Vector2(-footX3,<sp/>-footY3);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>saddleParam[2]<sp/>=<sp/>sqrtf(saddleParam[1]);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>saddleParam[0]<sp/>=<sp/>saddleA<sp/>*<sp/>saddleA;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>rotation<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>Vector2(-displacement.x,<sp/>displacement.y);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>rotation.Normalize();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>actor.RegisterProperty(Dali::StringView(</highlight><highlight class="stringliteral">&quot;uSaddleParam&quot;</highlight><highlight class="normal">),<sp/>saddleParam);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>actor.RegisterProperty(Dali::StringView(</highlight><highlight class="stringliteral">&quot;uTranslation&quot;</highlight><highlight class="normal">),<sp/>translation);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>actor.RegisterProperty(Dali::StringView(</highlight><highlight class="stringliteral">&quot;uRotation&quot;</highlight><highlight class="normal">),<sp/>rotation);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>actor.RegisterProperty(Dali::StringView(</highlight><highlight class="stringliteral">&quot;uToNext&quot;</highlight><highlight class="normal">),<sp/>toNext);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>actor.RegisterProperty(Dali::StringView(</highlight><highlight class="stringliteral">&quot;uPercentage&quot;</highlight><highlight class="normal">),<sp/>initialProgress,<sp/>Dali::Property::ANIMATABLE);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="namespaceDali_1_1Ui_1a7c1e17385899af9085adae83e7a281e1" refkind="member"><highlight class="normal">Property::Map<sp/><ref refid="namespaceDali_1_1Ui_1a7c1e17385899af9085adae83e7a281e1" kindref="member">CreateDissolveEffect</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useHighPrecision)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>prefixHighPrecision(</highlight><highlight class="stringliteral">&quot;precision<sp/>highp<sp/>float;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>prefixMediumPrecision(</highlight><highlight class="stringliteral">&quot;precision<sp/>mediump<sp/>float;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>vertexShader<sp/><sp/><sp/>=<sp/>SHADER_DISSOLVE_EFFECT_VERT.data();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fragmentShader<sp/>=<sp/>SHADER_DISSOLVE_EFFECT_FRAG.data();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>Property::Map<sp/>map;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>Property::Map<sp/>customShader;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>std::string<sp/>vertexShaderString;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>std::string<sp/>fragmentShaderString;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(useHighPrecision)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>vertexShaderString.reserve(strlen(prefixHighPrecision)<sp/>+<sp/>strlen(vertexShader));</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>vertexShaderString.append(prefixHighPrecision);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>fragmentShaderString.reserve(strlen(prefixHighPrecision)<sp/>+<sp/>strlen(fragmentShader));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>fragmentShaderString.append(prefixHighPrecision);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>vertexShaderString.reserve(strlen(prefixMediumPrecision)<sp/>+<sp/>strlen(vertexShader));</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>vertexShaderString.append(prefixMediumPrecision);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>fragmentShaderString.reserve(strlen(prefixMediumPrecision)<sp/>+<sp/>strlen(fragmentShader));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>fragmentShaderString.append(prefixMediumPrecision);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>vertexShaderString.append(vertexShader);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>fragmentShaderString.append(fragmentShader);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>customShader[<ref refid="namespaceDali_1_1Ui_1_1Visual_1_1Shader_1_1Property_1aca355ba21e1f562d969ac2c5021ea580a7b206b196f0c6da39a9f359927022713" kindref="member">Visual::Shader::Property::VERTEX_SHADER</ref>]<sp/><sp/><sp/>=<sp/>ToPropertyValue(vertexShaderString);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>customShader[<ref refid="namespaceDali_1_1Ui_1_1Visual_1_1Shader_1_1Property_1aca355ba21e1f562d969ac2c5021ea580ac77f683c1d48f38b1bfa0a5ea0d6aae5" kindref="member">Visual::Shader::Property::FRAGMENT_SHADER</ref>]<sp/>=<sp/>ToPropertyValue(fragmentShaderString);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>customShader[<ref refid="namespaceDali_1_1Ui_1_1Visual_1_1Shader_1_1Property_1aca355ba21e1f562d969ac2c5021ea580ac0be0f2cb35d11808a71a790adc515da" kindref="member">Visual::Shader::Property::SUBDIVIDE_GRID_X</ref>]<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>customShader[<ref refid="namespaceDali_1_1Ui_1_1Visual_1_1Shader_1_1Property_1aca355ba21e1f562d969ac2c5021ea580a8c04b4327822cba85a63e77aa0c6f802" kindref="member">Visual::Shader::Property::SUBDIVIDE_GRID_Y</ref>]<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>customShader[<ref refid="namespaceDali_1_1Ui_1_1Visual_1_1Shader_1_1Property_1aca355ba21e1f562d969ac2c5021ea580aeca05ec5b246b3b3a4c57f1371f38289" kindref="member">Visual::Shader::Property::HINTS</ref>]<sp/>=<sp/>Shader::Hint::OUTPUT_IS_TRANSPARENT;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>map[<ref refid="namespaceDali_1_1Ui_1_1Visual_1_1Property_1ae7b2df1d16ca251eb8c667ba6b81e757ac28895277e703a5984547765e8db5819" kindref="member">Ui::Visual::Property::SHADER</ref>]<sp/>=<sp/>customShader;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>map;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/shader-effects/dissolve-effect.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1DragAndDrop" kind="class" language="C++" prot="public">
+    <compoundname>Dali::DragAndDrop</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseHandle</basecompoundref>
+    <includes refid="drag-and-drop_8h" local="no">drag-and-drop.h</includes>
+    <innerclass refid="structDali_1_1DragAndDrop_1_1DragData" prot="public">Dali::DragAndDrop::DragData</innerclass>
+    <innerclass refid="structDali_1_1DragAndDrop_1_1DragEvent" prot="public">Dali::DragAndDrop::DragEvent</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SourceEventType</name>
+        <qualifiedname>Dali::DragAndDrop::SourceEventType</qualifiedname>
+        <enumvalue id="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823aab078ffd28db767c502ac367053f6e0ac" prot="public">
+          <name>START</name>
+          <briefdescription>
+<para>Drag and drop is started. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823aa2027c027133e22c8929e2874dc44dd36" prot="public">
+          <name>CANCEL</name>
+          <briefdescription>
+<para>Drag and drop is cancelled. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823aa1fd72e016e8fbf2cf1f0c918dcd9bad3" prot="public">
+          <name>ACCEPT</name>
+          <briefdescription>
+<para>Drag and drop is accepted. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823aae73b26e82a742972e6213f965a808795" prot="public">
+          <name>FINISH</name>
+          <briefdescription>
+<para>Drag and drop is finished. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the drag source event type in the source object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="53" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1DragAndDrop_1a1bd69ea39cd203ef78c1c2ca253e764a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DragType</name>
+        <qualifiedname>Dali::DragAndDrop::DragType</qualifiedname>
+        <enumvalue id="classDali_1_1DragAndDrop_1a1bd69ea39cd203ef78c1c2ca253e764aa331b3100a485d8cacff1d3df8e9b0c13" prot="public">
+          <name>ENTER</name>
+          <briefdescription>
+<para>The drag object has entered the target object. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1DragAndDrop_1a1bd69ea39cd203ef78c1c2ca253e764aae0f9ef6d3025baf33497bafcca7ff781" prot="public">
+          <name>LEAVE</name>
+          <briefdescription>
+<para>The drag object has left the target object. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1DragAndDrop_1a1bd69ea39cd203ef78c1c2ca253e764aaf7f93635f8e193a924ae4a691bb66b8f" prot="public">
+          <name>MOVE</name>
+          <briefdescription>
+<para>The drag object moves in the target object. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1DragAndDrop_1a1bd69ea39cd203ef78c1c2ca253e764aabf8f3be424eb6a72b21549fbb24ffb57" prot="public">
+          <name>DROP</name>
+          <briefdescription>
+<para>The drag object dropped in the target object. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the drag event type in the target object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="64" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" bodystart="65" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1DragAndDrop_1a3b4469d4866c63f0582f9e1549dec7b1" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="structDali_1_1DragAndDrop_1_1DragEvent" kindref="compound">DragEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::DragAndDrop::DragAndDropFunction =  std::function&lt;void(const DragEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>DragAndDropFunction</name>
+        <qualifiedname>Dali::DragAndDrop::DragAndDropFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="181" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1DragAndDrop_1ac38beef941724106e8cb21d389cfdf24" prot="public" static="no">
+        <type>std::function&lt; void(enum <ref refid="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823a" kindref="member">SourceEventType</ref>)&gt;</type>
+        <definition>using Dali::DragAndDrop::SourceFunction =  std::function&lt;void(enum SourceEventType)&gt;</definition>
+        <argsstring></argsstring>
+        <name>SourceFunction</name>
+        <qualifiedname>Dali::DragAndDrop::SourceFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="182" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1afa136d67f9d855ce38d338fc192a976f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::DragAndDrop::DragAndDrop</definition>
+        <argsstring>()</argsstring>
+        <name>DragAndDrop</name>
+        <qualifiedname>Dali::DragAndDrop::DragAndDrop</qualifiedname>
+        <briefdescription>
+<para>Create an uninitialized <ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>this can be initialized with one of the derived <ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref>&apos;s New() methods </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="189" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1a42c381271ed941950bdc4ab406ae895c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::DragAndDrop::~DragAndDrop</definition>
+        <argsstring>()</argsstring>
+        <name>~DragAndDrop</name>
+        <qualifiedname>Dali::DragAndDrop::~DragAndDrop</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived Handle types must not contain data or virtual methods. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="196" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1ae7ac5bd9fa6933793a7a2f8394b39b9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::DragAndDrop::DragAndDrop</definition>
+        <argsstring>(const DragAndDrop &amp;handle)=default</argsstring>
+        <name>DragAndDrop</name>
+        <qualifiedname>Dali::DragAndDrop::DragAndDrop</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="201" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1aebe95cd99b415b5eb01adbbe548765b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::DragAndDrop::StartDragAndDrop</definition>
+        <argsstring>(Dali::Actor source, Dali::Window shadowWindow, const DragData &amp;dragData, Dali::DragAndDrop::SourceFunction callback)</argsstring>
+        <name>StartDragAndDrop</name>
+        <qualifiedname>Dali::DragAndDrop::StartDragAndDrop</qualifiedname>
+        <param>
+          <type>Dali::Actor</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Window" kindref="compound">Dali::Window</ref></type>
+          <declname>shadowWindow</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1DragAndDrop_1_1DragData" kindref="compound">DragData</ref> &amp;</type>
+          <declname>dragData</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1DragAndDrop_1ac38beef941724106e8cb21d389cfdf24" kindref="member">Dali::DragAndDrop::SourceFunction</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Start the drag operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drag source object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">shadowWindow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shadow window for drag object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dragData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to send to target object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drag source event callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool true if the drag operation is started successfully. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="219" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="42" bodyend="45"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1a43dc64ccc3b06bbef0a046e2f4c6d79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::DragAndDrop::AddListener</definition>
+        <argsstring>(Dali::Actor target, char *mimeType, DragAndDropFunction callback)</argsstring>
+        <name>AddListener</name>
+        <qualifiedname>Dali::DragAndDrop::AddListener</qualifiedname>
+        <param>
+          <type>Dali::Actor</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>mimeType</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1DragAndDrop_1a3b4469d4866c63f0582f9e1549dec7b1" kindref="member">DragAndDropFunction</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Add the listener for receiving the drag and drop events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drop target object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mimeType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mime type of target object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A drag and drop event callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool true if the listener is added successfully. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="229" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="47" bodyend="50"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1ac2ee3dfeb30e5e85794f391bca332047" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::DragAndDrop::RemoveListener</definition>
+        <argsstring>(Dali::Actor target)</argsstring>
+        <name>RemoveListener</name>
+        <qualifiedname>Dali::DragAndDrop::RemoveListener</qualifiedname>
+        <param>
+          <type>Dali::Actor</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Remove the listener. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drop target object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool true if the listener is removed successfully. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="237" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="52" bodyend="55"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1a1757cb87bc353669cac4f025f88272b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::DragAndDrop::AddListener</definition>
+        <argsstring>(Dali::Window target, char *mimeType, DragAndDropFunction callback)</argsstring>
+        <name>AddListener</name>
+        <qualifiedname>Dali::DragAndDrop::AddListener</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Window" kindref="compound">Dali::Window</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>mimeType</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1DragAndDrop_1a3b4469d4866c63f0582f9e1549dec7b1" kindref="member">DragAndDropFunction</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Add the listener for receiving the drag and drop events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drop target object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mimeType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mime type of target object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A drag and drop event callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool true if the listener is added successfully. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="247" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="57" bodyend="60"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1afe0213f0bd7c66ddfe75c990c2b452d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::DragAndDrop::RemoveListener</definition>
+        <argsstring>(Dali::Window target)</argsstring>
+        <name>RemoveListener</name>
+        <qualifiedname>Dali::DragAndDrop::RemoveListener</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Window" kindref="compound">Dali::Window</ref></type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Remove the listener. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drop target object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool true if the listener is removed successfully. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="255" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="62" bodyend="65"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1ab1a1025111f61bb83f5e8d4d6c2422a4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::DragAndDrop::DragAndDrop</definition>
+        <argsstring>(Internal::Adaptor::DragAndDrop *dnd)</argsstring>
+        <name>DragAndDrop</name>
+        <qualifiedname>Dali::DragAndDrop::DragAndDrop</qualifiedname>
+        <param>
+          <type>Internal::Adaptor::DragAndDrop *</type>
+          <declname>dnd</declname>
+        </param>
+        <briefdescription>
+<para>This constructor is used by Adaptor::GetDragAndDrop(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the <ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="263" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1DragAndDrop_1ac8850b7877fea7fc0035e67ed7f5f6f4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref></type>
+        <definition>DragAndDrop Dali::DragAndDrop::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::DragAndDrop::Get</qualifiedname>
+        <briefdescription>
+<para>Retrieve a handle to the <ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to the <ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="208" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface to the device&apos;s drag and drop. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1DragAndDrop" kindref="compound">DragAndDrop</ref> class supports the drag and drop functionality for multi-window. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::DragAndDrop</label>
+        <link refid="classDali_1_1DragAndDrop"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::DragAndDrop</label>
+        <link refid="classDali_1_1DragAndDrop"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" line="47" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/drag-and-drop.h" bodystart="48" bodyend="264"/>
+    <listofallmembers>
+      <member refid="classDali_1_1DragAndDrop_1a43dc64ccc3b06bbef0a046e2f4c6d79f" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>AddListener</name></member>
+      <member refid="classDali_1_1DragAndDrop_1a1757cb87bc353669cac4f025f88272b6" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>AddListener</name></member>
+      <member refid="classDali_1_1DragAndDrop_1afa136d67f9d855ce38d338fc192a976f" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>DragAndDrop</name></member>
+      <member refid="classDali_1_1DragAndDrop_1ae7ac5bd9fa6933793a7a2f8394b39b9d" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>DragAndDrop</name></member>
+      <member refid="classDali_1_1DragAndDrop_1ab1a1025111f61bb83f5e8d4d6c2422a4" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>DragAndDrop</name></member>
+      <member refid="classDali_1_1DragAndDrop_1a3b4469d4866c63f0582f9e1549dec7b1" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>DragAndDropFunction</name></member>
+      <member refid="classDali_1_1DragAndDrop_1a1bd69ea39cd203ef78c1c2ca253e764a" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>DragType</name></member>
+      <member refid="classDali_1_1DragAndDrop_1ac8850b7877fea7fc0035e67ed7f5f6f4" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>Get</name></member>
+      <member refid="classDali_1_1DragAndDrop_1ac2ee3dfeb30e5e85794f391bca332047" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>RemoveListener</name></member>
+      <member refid="classDali_1_1DragAndDrop_1afe0213f0bd7c66ddfe75c990c2b452d8" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>RemoveListener</name></member>
+      <member refid="classDali_1_1DragAndDrop_1ac4f0fdcb4b70e4a67f46bd818c4c823a" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>SourceEventType</name></member>
+      <member refid="classDali_1_1DragAndDrop_1ac38beef941724106e8cb21d389cfdf24" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>SourceFunction</name></member>
+      <member refid="classDali_1_1DragAndDrop_1aebe95cd99b415b5eb01adbbe548765b6" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>StartDragAndDrop</name></member>
+      <member refid="classDali_1_1DragAndDrop_1a42c381271ed941950bdc4ab406ae895c" prot="public" virt="non-virtual"><scope>Dali::DragAndDrop</scope><name>~DragAndDrop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

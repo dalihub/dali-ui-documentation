@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="shadow_8cpp" kind="file" language="C++">
+    <compoundname>shadow.cpp</compoundname>
+    <includes local="no">dali/public-api/common/dali-common.h</includes>
+    <includes refid="shadow_8h" local="no">dali-ui-foundation/public-api/text/style/shadow.h</includes>
+    <includes local="no">algorithm</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/style/shadow.cpp</label>
+        <link refid="shadow_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali-ui-foundation/public-api/text/style/shadow.h</label>
+        <link refid="shadow_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali-ui-foundation/public-api/ui-color.h</label>
+        <link refid="ui-color_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>algorithm</label>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/math/vector4.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" prot="public">Dali::Ui::Text::Shadow::Impl</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui_1_1Text">Dali::Ui::Text</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" prot="public" static="no">
+        <name>DALI_ASSERT_VALID_SHADOW</name>
+        <param><defname>impl</defname></param>
+        <initializer>  DALI_ASSERT_ALWAYS((impl) &amp;&amp; &quot;Cannot use a moved-from Shadow object&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/style/shadow.cpp" line="25" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/style/shadow.cpp" bodystart="25" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/dali-common.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="shadow_8h" kindref="compound">dali-ui-foundation/public-api/text/style/shadow.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_ASSERT_VALID_SHADOW(impl)<sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/>DALI_ASSERT_ALWAYS((impl)<sp/>&amp;&amp;<sp/>&quot;Cannot<sp/>use<sp/>a<sp/>moved-from<sp/>Shadow<sp/>object&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Text</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32_t<sp/>DEFAULT_COLOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x000000;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>DEFAULT_BLUR_RADIUS<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" kindref="compound">Shadow::Impl</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a1fc6a99f3dba8ab7634bb11e215c86ef" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a1fc6a99f3dba8ab7634bb11e215c86ef" kindref="member">Impl</ref>()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" kindref="member">mColor</ref>(DEFAULT_COLOR),</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" kindref="member">mOffset</ref>(Vector2::ONE),</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" kindref="member">mBlurRadius</ref>(DEFAULT_BLUR_RADIUS)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a6fbd692ced19f54254585533b79c73ff" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a6fbd692ced19f54254585533b79c73ff" kindref="member">Impl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" kindref="compound">Impl</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>:<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" kindref="member">mColor</ref>(rhs.<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" kindref="member">mColor</ref>),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" kindref="member">mOffset</ref>(rhs.<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" kindref="member">mOffset</ref>),</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" kindref="member">mBlurRadius</ref>(rhs.<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" kindref="member">mBlurRadius</ref>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" kindref="member">mColor</ref>;</highlight></codeline>
+<codeline lineno="58" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" refkind="member"><highlight class="normal"><sp/><sp/>Vector2<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" kindref="member">mOffset</ref>;</highlight></codeline>
+<codeline lineno="59" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" kindref="member">mBlurRadius</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ad6cd2c77d66cb413e8ffc913810b6f60" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ad6cd2c77d66cb413e8ffc913810b6f60" kindref="member">Shadow::Shadow</ref>()</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">:<sp/>mImpl(new<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" kindref="compound">Impl</ref>())</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1acbcfa26975025c469b4804e4232609d2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ad6cd2c77d66cb413e8ffc913810b6f60" kindref="member">Shadow::Shadow</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">:<sp/>mImpl(nullptr)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(rhs.mImpl);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>mImpl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" kindref="compound">Impl</ref>(*rhs.mImpl);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a44d288f69fdd5a708b1ec67affe565e7" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ad6cd2c77d66cb413e8ffc913810b6f60" kindref="member">Shadow::Shadow</ref>(<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;&amp;<sp/>rhs)<sp/>noexcept</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">:<sp/>mImpl(rhs.mImpl)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>rhs.mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1aa5b2abf90a7c2c5d07c726e6782e1d5d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1aa5b2abf90a7c2c5d07c726e6782e1d5d" kindref="member">Shadow::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>&amp;rhs)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(rhs.mImpl);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" kindref="compound">Impl</ref>*<sp/>newImpl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl" kindref="compound">Impl</ref>(*rhs.mImpl);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>mImpl<sp/>=<sp/>newImpl;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a34348790bab5eb5e1b5c6f448a2ac498" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1aa5b2abf90a7c2c5d07c726e6782e1d5d" kindref="member">Shadow::operator=</ref>(<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>&amp;rhs)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>mImpl<sp/><sp/><sp/><sp/><sp/>=<sp/>rhs.mImpl;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>rhs.mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a1ef957f6ac6292ee6c89daabfb24d214" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a1ef957f6ac6292ee6c89daabfb24d214" kindref="member">Shadow::~Shadow</ref>()</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a1372f231810c12c6424aafd5eb00e9f8" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a1372f231810c12c6424aafd5eb00e9f8" kindref="member">Shadow::SetColor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref>&amp;<sp/>color)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(mImpl);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>mImpl-&gt;<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" kindref="member">mColor</ref><sp/>=<sp/>color;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ac8e99041e2f00c9742414c9501dcd692" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ac8e99041e2f00c9742414c9501dcd692" kindref="member">Shadow::GetColor</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="116"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(mImpl);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1adbbc0f3ae283bdff0d9282a92118a23a" kindref="member">mColor</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a76e1a4852c03cbb6f85bcd518701f8f4" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a76e1a4852c03cbb6f85bcd518701f8f4" kindref="member">Shadow::SetOffset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/>offset)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(mImpl);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>mImpl-&gt;<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" kindref="member">mOffset</ref><sp/>=<sp/>offset;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a6927961adf0d47ab032ec773df598443" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector2&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a6927961adf0d47ab032ec773df598443" kindref="member">Shadow::GetOffset</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="129"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(mImpl);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a643c7f810cb9abed026e66e46c45f1b2" kindref="member">mOffset</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ae7ff25a004ab6c2e4b003e593ff37708" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow" kindref="compound">Shadow</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1ae7ff25a004ab6c2e4b003e593ff37708" kindref="member">Shadow::SetBlurRadius</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>blurRadius)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(mImpl);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>mImpl-&gt;<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" kindref="member">mBlurRadius</ref><sp/>=<sp/>std::max(0.0f,<sp/>blurRadius);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a1846c377853b0dffa2dd7c4a1e95caa0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1a1846c377853b0dffa2dd7c4a1e95caa0" kindref="member">Shadow::GetBlurRadius</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="142"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><ref refid="shadow_8cpp_1a2ac140230f452e8b47125d18d6e4794b" kindref="member">DALI_ASSERT_VALID_SHADOW</ref>(mImpl);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;<ref refid="classDali_1_1Ui_1_1Text_1_1Shadow_1_1Impl_1a282158521c84b3e32c2ffa3921d2ec6b" kindref="member">mBlurRadius</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>DALI_ASSERT_VALID_SHADOW</highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/text/style/shadow.cpp"/>
+  </compounddef>
+</doxygen>

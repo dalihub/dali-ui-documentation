@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1TtsPlayer" kind="class" language="C++" prot="public">
+    <compoundname>Dali::TtsPlayer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Dali::BaseHandle</basecompoundref>
+    <includes refid="tts-player_8h" local="no">tts-player.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Mode</name>
+        <qualifiedname>Dali::TtsPlayer::Mode</qualifiedname>
+        <enumvalue id="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1fa3df08e53927b8464b99f920de711c442" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Default mode for normal application @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1faa558759eb53d61b4d5fc8473da4130a8" prot="public">
+          <name>NOTIFICATION</name>
+          <briefdescription>
+<para>Notification mode, such as playing utterance is started or completed @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1fa9fc0bd60eaa8ff928e6efa27ff9f9ca1" prot="public">
+          <name>SCREEN_READER</name>
+          <briefdescription>
+<para>Screen reader mode. To help visually impaired users interact with their devices, screen reader reads text or graphic elements on the screen using the TTS engine. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1faca7582e632f0822b9a3ec64e52ad3222" prot="public">
+          <name>MODE_NUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the instance of TTS mode. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="55" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87" prot="public" static="no" strong="no">
+        <type></type>
+        <name>State</name>
+        <qualifiedname>Dali::TtsPlayer::State</qualifiedname>
+        <enumvalue id="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87aa36633ef1f834c57f5914adef1d742be" prot="public">
+          <name>UNAVAILABLE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Player is not available @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87aa0707af8bc95bbe255e487caa0489569" prot="public">
+          <name>READY</name>
+          <briefdescription>
+<para>Player is ready to play @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87ab837d16631ba375a09351b49da2b88ef" prot="public">
+          <name>PLAYING</name>
+          <briefdescription>
+<para>Player is playing @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87a6c05a2dc254b4a4444d4f2db0dd8a75b" prot="public">
+          <name>PAUSED</name>
+          <briefdescription>
+<para>Player is paused @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the instance of TTS state. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="67" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1TtsPlayer_1aadd67b87eba0d9ef36ae9cf89a2f20a8" prot="public" static="no">
+        <type>Signal&lt; void(const <ref refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87" kindref="member">Dali::TtsPlayer::State</ref>, const <ref refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87" kindref="member">Dali::TtsPlayer::State</ref>)&gt;</type>
+        <definition>typedef Signal&lt;void(const Dali::TtsPlayer::State, const Dali::TtsPlayer::State)&gt; Dali::TtsPlayer::StateChangedSignalType</definition>
+        <argsstring></argsstring>
+        <name>StateChangedSignalType</name>
+        <qualifiedname>Dali::TtsPlayer::StateChangedSignalType</qualifiedname>
+        <briefdescription>
+<para>Type of signal emitted when the TTS state changes. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="80" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::TtsPlayer::TtsPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>TtsPlayer</name>
+        <qualifiedname>Dali::TtsPlayer::TtsPlayer</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be initialized by calling <ref refid="classDali_1_1TtsPlayer_1a69ef34d86faf341c3c9dd857573b8b2d" kindref="member">TtsPlayer::Get()</ref>. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="89" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1acfa62d2d515c465c4fd0f16df5547eed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::TtsPlayer::~TtsPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>~TtsPlayer</name>
+        <qualifiedname>Dali::TtsPlayer::~TtsPlayer</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived Handle types must not contain data or virtual methods. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="106" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1aa11ee4443fc63456567c71919fccc6f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::TtsPlayer::TtsPlayer</definition>
+        <argsstring>(const TtsPlayer &amp;handle)</argsstring>
+        <name>TtsPlayer</name>
+        <qualifiedname>Dali::TtsPlayer::TtsPlayer</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="114" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a4ae18ed612b0693b0ac06a5d5dd5092c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> &amp;</type>
+        <definition>TtsPlayer &amp; Dali::TtsPlayer::operator=</definition>
+        <argsstring>(const TtsPlayer &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::TtsPlayer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="123" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a92e63dae09f2e95f2db557bf0cb8e533" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::TtsPlayer::TtsPlayer</definition>
+        <argsstring>(TtsPlayer &amp;&amp;rhs) noexcept</argsstring>
+        <name>TtsPlayer</name>
+        <qualifiedname>Dali::TtsPlayer::TtsPlayer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.24 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="131" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a33430d903af275701cac9b9830d3b878" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> &amp;</type>
+        <definition>TtsPlayer &amp; Dali::TtsPlayer::operator=</definition>
+        <argsstring>(TtsPlayer &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::TtsPlayer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.24 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="140" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a1bfdea3d1e67b2595eecdf7d5bbef773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::TtsPlayer::Play</definition>
+        <argsstring>(const Dali::String &amp;text)</argsstring>
+        <name>Play</name>
+        <qualifiedname>Dali::TtsPlayer::Play</qualifiedname>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Starts playing the audio data synthesized from the specified text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to play </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> needs to be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="149" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="58" bodyend="61"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1adca2ede4020896d5431432760325637d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::TtsPlayer::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <qualifiedname>Dali::TtsPlayer::Stop</qualifiedname>
+        <briefdescription>
+<para>Stops playing the utterance. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> needs to be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="156" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="63" bodyend="66"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a8427dd015389b980e2fb6bf31db65b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::TtsPlayer::Pause</definition>
+        <argsstring>()</argsstring>
+        <name>Pause</name>
+        <qualifiedname>Dali::TtsPlayer::Pause</qualifiedname>
+        <briefdescription>
+<para>Pauses the currently playing utterance. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> needs to be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="163" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="68" bodyend="71"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+        <references refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a39b4d31ca7b4092b2e4de2dab180823d" compoundref="scene-holder-impl_8cpp" startline="300" endline="305">Dali::Internal::Adaptor::SceneHolder::Pause</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a3940768ccef2921f7d561f016413ce7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::TtsPlayer::Resume</definition>
+        <argsstring>()</argsstring>
+        <name>Resume</name>
+        <qualifiedname>Dali::TtsPlayer::Resume</qualifiedname>
+        <briefdescription>
+<para>Resumes the previously paused utterance. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>The <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> needs to be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="170" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="73" bodyend="76"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+        <references refid="classDali_1_1Internal_1_1Adaptor_1_1SceneHolder_1a8c573467e0a91b5e9b44c1ec2d75bed1" compoundref="scene-holder-impl_8cpp" startline="307" endline="314">Dali::Internal::Adaptor::SceneHolder::Resume</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a6eb8c58362bc79eee55f18c55f30bff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87" kindref="member">State</ref></type>
+        <definition>TtsPlayer::State Dali::TtsPlayer::GetState</definition>
+        <argsstring>()</argsstring>
+        <name>GetState</name>
+        <qualifiedname>Dali::TtsPlayer::GetState</qualifiedname>
+        <briefdescription>
+<para>Gets the current state of the player. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current TTS state </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> needs to be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="178" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="78" bodyend="81"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a4f24c0bbda3ce70addd3405717337260" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1TtsPlayer_1aadd67b87eba0d9ef36ae9cf89a2f20a8" kindref="member">Dali::TtsPlayer::StateChangedSignalType</ref> &amp;</type>
+        <definition>TtsPlayer::StateChangedSignalType &amp; Dali::TtsPlayer::StateChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>StateChangedSignal</name>
+        <qualifiedname>Dali::TtsPlayer::StateChangedSignal</qualifiedname>
+        <briefdescription>
+<para>Allows connection TTS state change signal. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the signal for connection </para>
+</simplesect>
+<simplesect kind="note"><para>Only supported by some adaptor types. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="186" column="43" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="83" bodyend="86"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1TtsPlayer_1a69ef34d86faf341c3c9dd857573b8b2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref></type>
+        <definition>TtsPlayer Dali::TtsPlayer::Get</definition>
+        <argsstring>(Dali::TtsPlayer::Mode mode=Dali::TtsPlayer::DEFAULT)</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::TtsPlayer::Get</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1f" kindref="member">Dali::TtsPlayer::Mode</ref></type>
+          <declname>mode</declname>
+          <defval><ref refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1fa3df08e53927b8464b99f920de711c442" kindref="member">Dali::TtsPlayer::DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets the singleton of the <ref refid="classDali_1_1TtsPlayer" kindref="compound">TtsPlayer</ref> for the given mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mode of tts-player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle of the Ttsplayer for the given mode </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="98" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.cpp" bodystart="34" bodyend="44"/>
+        <references refid="classDali_1_1Adaptor_1a9d291bc288f006898af6bc25dfa81704">Dali::Adaptor::Get</references>
+        <references refid="classDali_1_1Adaptor_1ad10ea884fef5da0d7b903c6de68737ad">Dali::Adaptor::IsAvailable</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The Text-to-speech (TTS) Player. @SINCE_1_0.0. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::TtsPlayer</label>
+        <link refid="classDali_1_1TtsPlayer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::TtsPlayer</label>
+        <link refid="classDali_1_1TtsPlayer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" line="48" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tts-player.h" bodystart="49" bodyend="197"/>
+    <listofallmembers>
+      <member refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1fa3df08e53927b8464b99f920de711c442" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>DEFAULT</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a69ef34d86faf341c3c9dd857573b8b2d" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>Get</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a6eb8c58362bc79eee55f18c55f30bff1" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>GetState</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1f" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>Mode</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1faca7582e632f0822b9a3ec64e52ad3222" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>MODE_NUM</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1faa558759eb53d61b4d5fc8473da4130a8" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>NOTIFICATION</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a4ae18ed612b0693b0ac06a5d5dd5092c" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>operator=</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a33430d903af275701cac9b9830d3b878" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>operator=</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a8427dd015389b980e2fb6bf31db65b56" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>Pause</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87a6c05a2dc254b4a4444d4f2db0dd8a75b" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>PAUSED</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a1bfdea3d1e67b2595eecdf7d5bbef773" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>Play</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87ab837d16631ba375a09351b49da2b88ef" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>PLAYING</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87aa0707af8bc95bbe255e487caa0489569" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>READY</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a3940768ccef2921f7d561f016413ce7f" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>Resume</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a15285c0f4f9f14bd366a961a47225d1fa9fc0bd60eaa8ff928e6efa27ff9f9ca1" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>SCREEN_READER</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>State</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a4f24c0bbda3ce70addd3405717337260" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>StateChangedSignal</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aadd67b87eba0d9ef36ae9cf89a2f20a8" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>StateChangedSignalType</name></member>
+      <member refid="classDali_1_1TtsPlayer_1adca2ede4020896d5431432760325637d" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>Stop</name></member>
+      <member refid="classDali_1_1TtsPlayer_1adfb0afc154586adee7f7c139a344b2a2" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>TtsPlayer</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aa11ee4443fc63456567c71919fccc6f4" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>TtsPlayer</name></member>
+      <member refid="classDali_1_1TtsPlayer_1a92e63dae09f2e95f2db557bf0cb8e533" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>TtsPlayer</name></member>
+      <member refid="classDali_1_1TtsPlayer_1aba06bfd7c39e5c69d844dddf827b8d87aa36633ef1f834c57f5914adef1d742be" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>UNAVAILABLE</name></member>
+      <member refid="classDali_1_1TtsPlayer_1acfa62d2d515c465c4fd0f16df5547eed" prot="public" virt="non-virtual"><scope>Dali::TtsPlayer</scope><name>~TtsPlayer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1BaseObject" kind="class" language="C++" prot="public">
+    <compoundname>Dali::BaseObject</compoundname>
+    <basecompoundref refid="classDali_1_1RefObject" prot="public" virt="non-virtual">Dali::RefObject</basecompoundref>
+    <includes refid="base-object_8h" local="no">base-object.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1BaseObject_1acc57e2d23bad47367a3112aa4db822d7" prot="private" static="no" mutable="no">
+        <type>Impl *</type>
+        <definition>Impl* Dali::BaseObject::mImpl</definition>
+        <argsstring></argsstring>
+        <name>mImpl</name>
+        <qualifiedname>Dali::BaseObject::mImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="133" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a6c02bc97f609b4558f50498f7198598a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Dali::BaseObject::ConnectSignal</definition>
+        <argsstring>(ConnectionTrackerInterface *connectionTracker, const Dali::StringView &amp;signalName, T &amp;&amp;functor)</argsstring>
+        <name>ConnectSignal</name>
+        <qualifiedname>Dali::BaseObject::ConnectSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref> *</type>
+          <declname>connectionTracker</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> &amp;</type>
+          <declname>signalName</declname>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>functor</declname>
+        </param>
+        <briefdescription>
+<para>Connects a void() functor to a specified signal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">connectionTracker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A connection tracker which can be used to disconnect </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">signalName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the signal to connect to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">functor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The functor to move </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the signal was available </para>
+</simplesect>
+<simplesect kind="pre"><para>The signal must be available in this object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="57" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a6472c9976b4614373a756cb094d32590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::BaseObject::DoAction</definition>
+        <argsstring>(const Dali::StringView &amp;actionName, const Property::Map &amp;attributes)</argsstring>
+        <name>DoAction</name>
+        <qualifiedname>Dali::BaseObject::DoAction</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> &amp;</type>
+          <declname>actionName</declname>
+        </param>
+        <param>
+          <type>const Property::Map &amp;</type>
+          <declname>attributes</declname>
+        </param>
+        <briefdescription>
+<para>Performs an action on this object with the given action name and attributes.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usage example: - <programlisting><codeline><highlight class="normal">BaseHandle<sp/>handle<sp/>=<sp/>SomeClass::New();<sp/></highlight><highlight class="comment">//<sp/>Initialized<sp/>with<sp/>New()<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Property::Map<sp/>attributes;<sp/></highlight><highlight class="comment">//<sp/>Type<sp/>is<sp/>Property<sp/>Map</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">handle.DoAction(</highlight><highlight class="stringliteral">&quot;show&quot;</highlight><highlight class="normal">,<sp/>attributes);</highlight></codeline>
+</programlisting> @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actionName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command for the action </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attributes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of attributes for the action </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The action is performed by the object or not   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="65" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="72" bodyend="82"/>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">Dali::Integration::ToStdString</references>
+        <referencedby refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" compoundref="base-handle_8cpp" startline="49" endline="52">Dali::BaseHandle::DoAction</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a5054ffe8534b84c4a42f1aab704bcbc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+        <definition>Dali::String Dali::BaseObject::GetTypeName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTypeName</name>
+        <qualifiedname>Dali::BaseObject::GetTypeName</qualifiedname>
+        <briefdescription>
+<para>Returns the type name for the <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref>.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Will return an empty string if the typename does not exist. This will happen for types that have not registered with type-registry.</para>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The type name. Empty string if the typename does not exist   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="70" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="84" bodyend="100"/>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <referencedby refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" compoundref="base-handle_8cpp" startline="54" endline="57">Dali::BaseHandle::GetTypeName</referencedby>
+        <referencedby refid="classDali_1_1TypeRegistry_1a94c9fc5262b997038268b43778657dc7" compoundref="type-registry_8cpp" startline="66" endline="69">Dali::TypeRegistry::GetTypeName</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a0e853bade42a7454de3d12d538376c5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::BaseObject::GetTypeInfo</definition>
+        <argsstring>(Dali::TypeInfo &amp;info) const</argsstring>
+        <name>GetTypeInfo</name>
+        <qualifiedname>Dali::BaseObject::GetTypeInfo</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1TypeInfo" kindref="compound">Dali::TypeInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Returns the type info for the <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref>.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type information </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the type info exists   </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="75" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="102" bodyend="116"/>
+        <referencedby refid="classDali_1_1TypeRegistry_1ac80afb8ce304e2099ff51c97df86492c" compoundref="type-registry_8cpp" startline="51" endline="54">Dali::TypeRegistry::GetTypeInfo</referencedby>
+        <referencedby refid="classDali_1_1TypeRegistry_1a88195e3c0411785b41aa708655427bd4" compoundref="type-registry_8cpp" startline="56" endline="59">Dali::TypeRegistry::GetTypeInfo</referencedby>
+        <referencedby refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" compoundref="base-handle_8cpp" startline="59" endline="62">Dali::BaseHandle::GetTypeInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1ab17b75a9f7726a0f3568f26a0fd664af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::BaseObject::DoConnectSignal</definition>
+        <argsstring>(ConnectionTrackerInterface *connectionTracker, const Dali::StringView &amp;signalName, FunctorDelegate *functorDelegate)</argsstring>
+        <name>DoConnectSignal</name>
+        <qualifiedname>Dali::BaseObject::DoConnectSignal</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref> *</type>
+          <declname>connectionTracker</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> &amp;</type>
+          <declname>signalName</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref> *</type>
+          <declname>functorDelegate</declname>
+        </param>
+        <briefdescription>
+<para>Not intended for application developers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">connectionTracker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A connection tracker which can be used to disconnect </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">signalName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the signal to connect to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">functorDelegate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A newly allocated functor delegate (takes ownership) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the signal was available </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="87" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="118" bodyend="128"/>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">Dali::Integration::ToStdString</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a8d363acb5bbbd2a672931dde1046734e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseObject::BaseObject</definition>
+        <argsstring>()</argsstring>
+        <name>BaseObject</name>
+        <qualifiedname>Dali::BaseObject::BaseObject</qualifiedname>
+        <briefdescription>
+<para>Default constructor. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="94" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a4fd67f6fbdac89dc66174ecdb26bcd3d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseObject::~BaseObject</definition>
+        <argsstring>() override</argsstring>
+        <name>~BaseObject</name>
+        <qualifiedname>Dali::BaseObject::~BaseObject</qualifiedname>
+        <briefdescription>
+<para>A reference counted object may only be deleted by calling <ref refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" kindref="member">Unreference()</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="100" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a64644c5b792f3796230c24b9124b32cc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::BaseObject::OnDestroy</definition>
+        <argsstring>() override</argsstring>
+        <name>OnDestroy</name>
+        <qualifiedname>Dali::BaseObject::OnDestroy</qualifiedname>
+        <reimplements refid="classDali_1_1RefObject_1a8d4561eff5738e0adc27df94b1a885ca">OnDestroy</reimplements>
+        <briefdescription>
+<para>Pre-destructor method for derived class. It will be called when the reference count become zero.   </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.39  </para>
+<para><simplesect kind="note"><para>If Derived class override this function, derived class MUST call base class function. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="107" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="43" bodyend="50"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a41c6a33643afa749d6b042630bd5db44" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseObject::RegisterObject</definition>
+        <argsstring>()</argsstring>
+        <name>RegisterObject</name>
+        <qualifiedname>Dali::BaseObject::RegisterObject</qualifiedname>
+        <briefdescription>
+<para>Registers the object as created with the Object registry. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="113" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="52" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1ad86e56d615d0c787054f8c316b23e537" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::BaseObject::UnregisterObject</definition>
+        <argsstring>()</argsstring>
+        <name>UnregisterObject</name>
+        <qualifiedname>Dali::BaseObject::UnregisterObject</qualifiedname>
+        <briefdescription>
+<para>Unregisters the object from Object registry. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="119" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.cpp" bodystart="61" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a493ebc7c18fae6b0d796e63497301c98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseObject::BaseObject</definition>
+        <argsstring>(const BaseObject &amp;rhs)=delete</argsstring>
+        <name>BaseObject</name>
+        <qualifiedname>Dali::BaseObject::BaseObject</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1BaseObject" kindref="compound">BaseObject</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="124" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1acaca5091e05f013e3645286508c02e57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::BaseObject::BaseObject</definition>
+        <argsstring>(BaseObject &amp;&amp;rhs)=delete</argsstring>
+        <name>BaseObject</name>
+        <qualifiedname>Dali::BaseObject::BaseObject</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseObject" kindref="compound">BaseObject</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="125" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1af0679fccd9b500b25b0ef9c0f5c09e5e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1BaseObject" kindref="compound">BaseObject</ref> &amp;</type>
+        <definition>BaseObject &amp; Dali::BaseObject::operator=</definition>
+        <argsstring>(const BaseObject &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::BaseObject::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1BaseObject" kindref="compound">BaseObject</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="126" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1BaseObject_1a3fed949c10315e9097fb5966e32c91f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1BaseObject" kindref="compound">BaseObject</ref> &amp;</type>
+        <definition>BaseObject &amp; Dali::BaseObject::operator=</definition>
+        <argsstring>(BaseObject &amp;&amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::BaseObject::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseObject" kindref="compound">BaseObject</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="127" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A base class for objects. @SINCE_1_0.0. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::BaseObject</label>
+        <link refid="classDali_1_1BaseObject"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::BaseObject</label>
+        <link refid="classDali_1_1BaseObject"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" line="43" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/base-object.h" bodystart="44" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classDali_1_1BaseObject_1a8d363acb5bbbd2a672931dde1046734e" prot="protected" virt="non-virtual"><scope>Dali::BaseObject</scope><name>BaseObject</name></member>
+      <member refid="classDali_1_1BaseObject_1a493ebc7c18fae6b0d796e63497301c98" prot="private" virt="non-virtual"><scope>Dali::BaseObject</scope><name>BaseObject</name></member>
+      <member refid="classDali_1_1BaseObject_1acaca5091e05f013e3645286508c02e57" prot="private" virt="non-virtual"><scope>Dali::BaseObject</scope><name>BaseObject</name></member>
+      <member refid="classDali_1_1BaseObject_1a6c02bc97f609b4558f50498f7198598a" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1BaseObject_1a6472c9976b4614373a756cb094d32590" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1BaseObject_1ab17b75a9f7726a0f3568f26a0fd664af" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>DoConnectSignal</name></member>
+      <member refid="classDali_1_1BaseObject_1a0e853bade42a7454de3d12d538376c5a" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseObject_1a5054ffe8534b84c4a42f1aab704bcbc0" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1BaseObject_1acc57e2d23bad47367a3112aa4db822d7" prot="private" virt="non-virtual"><scope>Dali::BaseObject</scope><name>mImpl</name></member>
+      <member refid="classDali_1_1BaseObject_1a64644c5b792f3796230c24b9124b32cc" prot="protected" virt="virtual"><scope>Dali::BaseObject</scope><name>OnDestroy</name></member>
+      <member refid="classDali_1_1BaseObject_1af0679fccd9b500b25b0ef9c0f5c09e5e" prot="private" virt="non-virtual"><scope>Dali::BaseObject</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseObject_1a3fed949c10315e9097fb5966e32c91f7" prot="private" virt="non-virtual"><scope>Dali::BaseObject</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RefObject_1a840c6388ec1e12b1a8cc4cdb77232589" prot="protected" virt="non-virtual" ambiguityscope="Dali::RefObject::"><scope>Dali::BaseObject</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RefObject_1a704b3658a61345abe6f087976b844373" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>Reference</name></member>
+      <member refid="classDali_1_1RefObject_1a76ddae6672a3a475600afbf11c1de4e0" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>ReferenceCount</name></member>
+      <member refid="classDali_1_1RefObject_1ac16c6f0e745027ae9e003a1ad454f37b" prot="protected" virt="non-virtual"><scope>Dali::BaseObject</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1RefObject_1acbaa8edefcb9bec5689d3a7506e4fc5e" prot="protected" virt="non-virtual"><scope>Dali::BaseObject</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1BaseObject_1a41c6a33643afa749d6b042630bd5db44" prot="protected" virt="non-virtual"><scope>Dali::BaseObject</scope><name>RegisterObject</name></member>
+      <member refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" prot="public" virt="non-virtual"><scope>Dali::BaseObject</scope><name>Unreference</name></member>
+      <member refid="classDali_1_1BaseObject_1ad86e56d615d0c787054f8c316b23e537" prot="protected" virt="non-virtual"><scope>Dali::BaseObject</scope><name>UnregisterObject</name></member>
+      <member refid="classDali_1_1BaseObject_1a4fd67f6fbdac89dc66174ecdb26bcd3d" prot="protected" virt="non-virtual"><scope>Dali::BaseObject</scope><name>~BaseObject</name></member>
+      <member refid="classDali_1_1RefObject_1ace8513a27ef2d48383da36ce9d1931f7" prot="protected" virt="virtual"><scope>Dali::BaseObject</scope><name>~RefObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

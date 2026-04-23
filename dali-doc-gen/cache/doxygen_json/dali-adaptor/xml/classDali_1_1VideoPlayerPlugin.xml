@@ -1,0 +1,1295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1VideoPlayerPlugin" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::VideoPlayerPlugin</compoundname>
+    <includes refid="video-player-plugin_8h" local="no">video-player-plugin.h</includes>
+    <innerclass refid="structDali_1_1VideoPlayerPlugin_1_1DisplayMode" prot="public">Dali::VideoPlayerPlugin::DisplayMode</innerclass>
+    <innerclass refid="structDali_1_1VideoPlayerPlugin_1_1PlayerHandle" prot="public">Dali::VideoPlayerPlugin::PlayerHandle</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1VideoPlayerPlugin_1a512a008da29a93c8810786da084e38b5" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>PlayerHandleType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::PlayerHandleType</qualifiedname>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a512a008da29a93c8810786da084e38b5ab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No type specified. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a512a008da29a93c8810786da084e38b5a5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Default player. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a512a008da29a93c8810786da084e38b5a3932d629fb5e2be9d09b3a4485b3cc9d" prot="public">
+          <name>EXTERNAL</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>External player. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for external player handle type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum identifies the type of player handle passed to VideoView. It is used when creating a VideoView with an externally managed player. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="47" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1VideoPlayerPlugin_1a2a51ed0074d84a541a56799f0523b651" prot="public" static="no" strong="yes">
+        <type>int</type>
+        <name>PlayerEventType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::PlayerEventType</qualifiedname>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a2a51ed0074d84a541a56799f0523b651a83625c3c00a68260196e380b1dacf659" prot="public">
+          <name>PLAYBACK_FINISHED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a2a51ed0074d84a541a56799f0523b651abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for player event type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="71" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DisplayRotation</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::DisplayRotation</qualifiedname>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609a2b335ff49598278ce9b01000806085b0" prot="public">
+          <name>ROTATION_NONE</name>
+          <briefdescription>
+<para>Display isn&apos;t rotated. @SINCE_1_1.38. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609a810bc8d1cd555229cc7291a342621d84" prot="public">
+          <name>ROTATION_90</name>
+          <briefdescription>
+<para>Display is rotated 90 degree. @SINCE_1_1.38. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609afcf86956ef17583ecf1a44cb54c0240f" prot="public">
+          <name>ROTATION_180</name>
+          <briefdescription>
+<para>Display is rotated 180 degree. @SINCE_1_1.38. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609aeed6c7311652420e724017082b74b253" prot="public">
+          <name>ROTATION_270</name>
+          <briefdescription>
+<para>Display is rotated 270 degree. @SINCE_1_1.38. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Video display rotation option @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>The option is needed only for window surface rendering target </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="84" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CodecType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::CodecType</qualifiedname>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1ba5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <briefdescription>
+<para>Codec which has higher priority as default. Platform selects it. Usually the H/W codec has higher priority than S/W codec if it exist. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1ba4bd2241a3a809d3cc2bb28e951cc183a" prot="public">
+          <name>HW</name>
+          <briefdescription>
+<para>H/W codec. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1ba6f56aa4e2561eb66f17f6d8de8070a77" prot="public">
+          <name>SW</name>
+          <briefdescription>
+<para>S/W codec. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for video codec type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="95" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1VideoPlayerPlugin_1a558b9c19ada737a9c63f65d350d554f4" prot="public" static="no">
+        <type>Signal&lt; void()&gt;</type>
+        <definition>typedef Signal&lt;void()&gt; Dali::VideoPlayerPlugin::VideoPlayerSignalType</definition>
+        <argsstring></argsstring>
+        <name>VideoPlayerSignalType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::VideoPlayerSignalType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="66" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1VideoPlayerPlugin_1a7b28d49af599723792761289e1e5323d" prot="public" static="no">
+        <type>Signal&lt; void(<ref refid="classDali_1_1VideoPlayerPlugin_1a2a51ed0074d84a541a56799f0523b651" kindref="member">PlayerEventType</ref>)&gt;</type>
+        <definition>typedef Signal&lt;void(PlayerEventType)&gt; Dali::VideoPlayerPlugin::VideoPlayerEventSignalType</definition>
+        <argsstring></argsstring>
+        <name>VideoPlayerEventSignalType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::VideoPlayerEventSignalType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="77" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a48e5b860a8c5a41a81ead6ed3bf93c92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::VideoPlayerPlugin::VideoPlayerPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>VideoPlayerPlugin</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::VideoPlayerPlugin</qualifiedname>
+        <briefdescription>
+<para>Constructor. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="122" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a3a79798cc193323fede86acbd0315af1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::VideoPlayerPlugin::~VideoPlayerPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>~VideoPlayerPlugin</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::~VideoPlayerPlugin</qualifiedname>
+        <briefdescription>
+<para>Destructor. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="130" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a63984fea91bd740f9962b113b3646745" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetUrl</definition>
+        <argsstring>(const std::string &amp;url)=0</argsstring>
+        <name>SetUrl</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetUrl</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+<para>Sets a URL of the video file to play. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.38 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The url of video file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="140" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a0bfbd5df0d16b495538e12014a82513f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Dali::VideoPlayerPlugin::GetUrl</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetUrl</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetUrl</qualifiedname>
+        <briefdescription>
+<para>Returns the URL of the video file. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Url of string type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="147" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a472a539e14096ea062e17f0491ff37ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetLooping</definition>
+        <argsstring>(bool looping)=0</argsstring>
+        <name>SetLooping</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetLooping</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>looping</declname>
+        </param>
+        <briefdescription>
+<para>Sets the player looping status. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">looping</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new looping status: true or false </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="155" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a3e92a800423c0c59f21078e4e7c1d6e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::VideoPlayerPlugin::IsLooping</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsLooping</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::IsLooping</qualifiedname>
+        <briefdescription>
+<para>Returns the player looping status. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if player is looping, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="163" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1afe9a4b5154d6e786e281d4fcee12de07" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::Play</definition>
+        <argsstring>()=0</argsstring>
+        <name>Play</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::Play</qualifiedname>
+        <briefdescription>
+<para>Starts the video playback. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="169" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ace2d0a069dcc4322e6d3b1703f56826e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::Pause</definition>
+        <argsstring>()=0</argsstring>
+        <name>Pause</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::Pause</qualifiedname>
+        <briefdescription>
+<para>Pauses the video playback. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="175" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1abd49bc1c44f23f21faedfb601fdc8169" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::Stop</definition>
+        <argsstring>()=0</argsstring>
+        <name>Stop</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::Stop</qualifiedname>
+        <briefdescription>
+<para>Stops the video playback. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="181" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ae8f020f40723ca292cf0a8393714058f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetMute</definition>
+        <argsstring>(bool mute)=0</argsstring>
+        <name>SetMute</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetMute</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>mute</declname>
+        </param>
+        <briefdescription>
+<para>Sets the player mute status. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new mute status, true is mute. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="188" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ad792e9d320a58bf241d296bf54bd0206" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::VideoPlayerPlugin::IsMuted</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsMuted</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::IsMuted</qualifiedname>
+        <briefdescription>
+<para>Returns the player mute status. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if player is mute. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="195" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a6664ae802d233d2977a0b79f6810ac4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetVolume</definition>
+        <argsstring>(float left, float right)=0</argsstring>
+        <name>SetVolume</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetVolume</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Sets the player volume. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left volume scalar </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right volume scalar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="203" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aed49b3c0a20cd48c9c21b4777a981754" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::GetVolume</definition>
+        <argsstring>(float &amp;left, float &amp;right)=0</argsstring>
+        <name>GetVolume</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetVolume</qualifiedname>
+        <param>
+          <type>float &amp;</type>
+          <declname>left</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>right</declname>
+        </param>
+        <briefdescription>
+<para>Gets current volume factor. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">left</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current left volume scalar </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">right</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current right volume scalar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="211" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a6136e246d0deeff392431afcd3bb1461" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetRenderingTarget</definition>
+        <argsstring>(Any target)=0</argsstring>
+        <name>SetRenderingTarget</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetRenderingTarget</qualifiedname>
+        <param>
+          <type>Any</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Sets video rendering target. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target for video rendering, window surface or native image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="218" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a4d83e63c9eba410eba286142c61d1422" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetPlayPosition</definition>
+        <argsstring>(int millisecond)=0</argsstring>
+        <name>SetPlayPosition</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetPlayPosition</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>millisecond</declname>
+        </param>
+        <briefdescription>
+<para>Sets the position for playback. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">millisecond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position for playback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="226" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aa2d0ec42ffe68ca2a9fc952070889a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Dali::VideoPlayerPlugin::GetPlayPosition</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetPlayPosition</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetPlayPosition</qualifiedname>
+        <briefdescription>
+<para>Returns the current position in milliseconds. @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current position of playback </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="234" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1abe089e2815f4524bac2bfcfd212c0995" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetDisplayArea</definition>
+        <argsstring>(DisplayArea area)=0</argsstring>
+        <name>SetDisplayArea</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetDisplayArea</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1a59ae436d4959b6ace5aff5498693da06" kindref="member">DisplayArea</ref></type>
+          <declname>area</declname>
+        </param>
+        <briefdescription>
+<para>Sets the area of video display. @SINCE_1_2.46 param[in] area The left-top position and size of the video display area. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="241" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a59c6c8122ebcd7e66dd87b8c9cd0e889" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetDisplayRotation</definition>
+        <argsstring>(Dali::VideoPlayerPlugin::DisplayRotation rotation)=0</argsstring>
+        <name>SetDisplayRotation</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetDisplayRotation</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609" kindref="member">Dali::VideoPlayerPlugin::DisplayRotation</ref></type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+<para>Sets video display rotation @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation of display </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="248" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a64bde6b0fec3ad9339cdbb8649a5c9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609" kindref="member">Dali::VideoPlayerPlugin::DisplayRotation</ref></type>
+        <definition>virtual Dali::VideoPlayerPlugin::DisplayRotation Dali::VideoPlayerPlugin::GetDisplayRotation</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetDisplayRotation</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetDisplayRotation</qualifiedname>
+        <briefdescription>
+<para>Returns rotation of current video display @SINCE_1_1.38. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The rotation of current display </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="255" column="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a0ae81e62c5d71ff6ed3d54da041554c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1VideoPlayerPlugin_1a558b9c19ada737a9c63f65d350d554f4" kindref="member">VideoPlayerSignalType</ref> &amp;</type>
+        <definition>virtual VideoPlayerSignalType &amp; Dali::VideoPlayerPlugin::FinishedSignal</definition>
+        <argsstring>()=0</argsstring>
+        <name>FinishedSignal</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::FinishedSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when a video playback have finished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.38 <simplesect kind="return"><para>A signal object to connect with. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="263" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a8763c069c34270effe06de1e38010fad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1VideoPlayerPlugin_1a7b28d49af599723792761289e1e5323d" kindref="member">VideoPlayerEventSignalType</ref> &amp;</type>
+        <definition>virtual VideoPlayerEventSignalType &amp; Dali::VideoPlayerPlugin::EventSignal</definition>
+        <argsstring>()=0</argsstring>
+        <name>EventSignal</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::EventSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when a video playback have evented. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A signal object to connect with. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="270" column="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a6691b82ac7e6a2d9ac2817f89fcd1214" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::Forward</definition>
+        <argsstring>(int millisecond)=0</argsstring>
+        <name>Forward</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::Forward</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>millisecond</declname>
+        </param>
+        <briefdescription>
+<para>Seeks forward by the specified number of milliseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">millisecond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position for forward playback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="278" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ab730b90cbb9e49d6762514cfa9c2ccaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::Backward</definition>
+        <argsstring>(int millisecond)=0</argsstring>
+        <name>Backward</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::Backward</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>millisecond</declname>
+        </param>
+        <briefdescription>
+<para>Seeks backward by the specified number of milliseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">millisecond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position for backward playback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="286" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aa78a633f126e3ce0c3f0b088afe84110" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::VideoPlayerPlugin::IsVideoTextureSupported</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsVideoTextureSupported</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::IsVideoTextureSupported</qualifiedname>
+        <briefdescription>
+<para>Checks whether the video texture is supported. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if supported, otherwise false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="292" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aa65977ef9eb9c08ee57126604a85c192" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetCodecType</definition>
+        <argsstring>(VideoPlayerPlugin::CodecType type)=0</argsstring>
+        <name>SetCodecType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetCodecType</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1b" kindref="member">VideoPlayerPlugin::CodecType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Sets codec type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CodecType </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="298" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1afd8811a41d0792cf81ee1d5dd40759fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1b" kindref="member">VideoPlayerPlugin::CodecType</ref></type>
+        <definition>virtual VideoPlayerPlugin::CodecType Dali::VideoPlayerPlugin::GetCodecType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCodecType</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetCodecType</qualifiedname>
+        <briefdescription>
+<para>Gets codec type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>CodecType </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="304" column="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1afc48ff9fdf4599289be6a31e9238f1be" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetDisplayMode</definition>
+        <argsstring>(VideoPlayerPlugin::DisplayMode::Type mode)=0</argsstring>
+        <name>SetDisplayMode</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetDisplayMode</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1VideoPlayerPlugin_1_1DisplayMode_1a072c177ff24b54d660a7a3b84825bbe9" kindref="member">VideoPlayerPlugin::DisplayMode::Type</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Sets the display mode for playback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of playback </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="310" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a21e8bf0d3d6f2874b23ee853aca4ae97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structDali_1_1VideoPlayerPlugin_1_1DisplayMode_1a072c177ff24b54d660a7a3b84825bbe9" kindref="member">VideoPlayerPlugin::DisplayMode::Type</ref></type>
+        <definition>virtual VideoPlayerPlugin::DisplayMode::Type Dali::VideoPlayerPlugin::GetDisplayMode</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetDisplayMode</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetDisplayMode</qualifiedname>
+        <briefdescription>
+<para>Returns the current display mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current display mode of playback </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="316" column="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ad65f575b4bb8c05706453d620e0540f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Any</type>
+        <definition>virtual Any Dali::VideoPlayerPlugin::GetMediaPlayer</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetMediaPlayer</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetMediaPlayer</qualifiedname>
+        <briefdescription>
+<para>Returns the current internal media player. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current internal media player of video player </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="322" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aa3bd70c611e0adce77d98c664f730238" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::StartSynchronization</definition>
+        <argsstring>()=0</argsstring>
+        <name>StartSynchronization</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::StartSynchronization</qualifiedname>
+        <briefdescription>
+<para>calls synchronization function in window system This function is called, the synchronization is started between UI(transparent hole) and video player. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="328" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ab14a54e9b859502436b148ae4ceba0aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::FinishSynchronization</definition>
+        <argsstring>()=0</argsstring>
+        <name>FinishSynchronization</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::FinishSynchronization</qualifiedname>
+        <briefdescription>
+<para>calls desynchronization function in window system This function is called, the synchronization is finished between UI(transparent hole) and video player. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="334" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aacd81c10a8ab827d09a2021ae48dbc7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::RaiseAbove</definition>
+        <argsstring>(Any target)=0</argsstring>
+        <name>RaiseAbove</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::RaiseAbove</qualifiedname>
+        <param>
+          <type>Any</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Raise the video player above the target video plaer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target video player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="341" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a7bce45b723eea1558efcb69134f6b3f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::LowerBelow</definition>
+        <argsstring>(Any target)=0</argsstring>
+        <name>LowerBelow</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::LowerBelow</qualifiedname>
+        <param>
+          <type>Any</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Lower the video player to below the target video player. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target video player </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="348" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a853d5989aa777abb1121166f195aa0af" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::RaiseToTop</definition>
+        <argsstring>()=0</argsstring>
+        <name>RaiseToTop</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::RaiseToTop</qualifiedname>
+        <briefdescription>
+<para>Raise video player above all other sibling video players. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="354" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1aa1eee2fc06acc9748a1da9ed34730a0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::LowerToBottom</definition>
+        <argsstring>()=0</argsstring>
+        <name>LowerToBottom</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::LowerToBottom</qualifiedname>
+        <briefdescription>
+<para>Lower video player to the bottom of all other sibling video players. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="360" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1abef3106fb9bbbdfc87d924746fdf8a33" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Any</type>
+        <definition>virtual Any Dali::VideoPlayerPlugin::GetVideoPlayerSurface</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetVideoPlayerSurface</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::GetVideoPlayerSurface</qualifiedname>
+        <briefdescription>
+<para>Gets Video Player&apos;s native surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The return of native surface pointer of video player </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="367" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a2839756e2d417847a0024be7e78be838" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SceneConnection</definition>
+        <argsstring>()=0</argsstring>
+        <name>SceneConnection</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SceneConnection</qualifiedname>
+        <briefdescription>
+<para>Video View has video player is connected to <ref refid="classDali_1_1Window" kindref="compound">Window</ref>&apos;s Scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="373" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ad3f0b9ce7bbfb94503a6c69882654ad4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SceneDisconnection</definition>
+        <argsstring>()=0</argsstring>
+        <name>SceneDisconnection</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SceneDisconnection</qualifiedname>
+        <briefdescription>
+<para>Video View has video player is disconnected to <ref refid="classDali_1_1Window" kindref="compound">Window</ref>&apos;s Scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="379" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1acf4159888fb752e83eb447dd34b5632d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetAutoRotationEnabled</definition>
+        <argsstring>(bool enable)=0</argsstring>
+        <name>SetAutoRotationEnabled</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetAutoRotationEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+<para>Sets auto rotation feature. If enabled, video will rotate automatically according to the video orientation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable auto rotation feature. Default value is false. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="385" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ae9e02ffe2716f2c0027bc09f91f34192" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::VideoPlayerPlugin::IsAutoRotationEnabled</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsAutoRotationEnabled</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::IsAutoRotationEnabled</qualifiedname>
+        <briefdescription>
+<para>Checks whether auto rotation feature is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if auto rotation feature is enabled, otherwise false. Default value is false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="391" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ae5e2cc8e1b3f8c7e538ac76d8fa1a1ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetLetterBoxEnabled</definition>
+        <argsstring>(bool enable)=0</argsstring>
+        <name>SetLetterBoxEnabled</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetLetterBoxEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+<para>Sets letter box feature. If enabled, the video will play in the video player&apos;s aspect ratio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable letter box feature. Default value is false. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="397" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ac3d88e550f7b3139774f0bf1446f9211" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::VideoPlayerPlugin::IsLetterBoxEnabled</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsLetterBoxEnabled</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::IsLetterBoxEnabled</qualifiedname>
+        <briefdescription>
+<para>Checks whether letter box feature is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if letter box feature is enabled, otherwise false. Default value is false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="403" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a49414da91be20e97147d7545061948c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetFrameInterpolationInterval</definition>
+        <argsstring>(float intervalSeconds)=0</argsstring>
+        <name>SetFrameInterpolationInterval</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetFrameInterpolationInterval</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>intervalSeconds</declname>
+        </param>
+        <briefdescription>
+<para>Sets the frame interpolation interval for smooth video playback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the target duration for frame interpolation in seconds. The video player will use this interval to smoothly interpolate between video frames.</para>
+<para>@SINCE_2_4.39 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">intervalSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolation interval in seconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="414" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1ad8cb77eda262398f4cae60d35cd72ca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::EnableOffscreenFrameRendering</definition>
+        <argsstring>(bool useOffScreenFrame, Dali::NativeImagePtr previousFrameBufferNativeImagePtr, Dali::NativeImagePtr currentFrameBufferNativeImagePtr)=0</argsstring>
+        <name>EnableOffscreenFrameRendering</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::EnableOffscreenFrameRendering</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useOffScreenFrame</declname>
+        </param>
+        <param>
+          <type><ref refid="group__dali__adaptor__framework_1ga66ad744612018f55ae9bf88bc933e0e7" kindref="member">Dali::NativeImagePtr</ref></type>
+          <declname>previousFrameBufferNativeImagePtr</declname>
+        </param>
+        <param>
+          <type><ref refid="group__dali__adaptor__framework_1ga66ad744612018f55ae9bf88bc933e0e7" kindref="member">Dali::NativeImagePtr</ref></type>
+          <declname>currentFrameBufferNativeImagePtr</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables offscreen frame rendering for video interpolation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method enables offscreen frame rendering which allows for smooth frame interpolation between previous and current video frames. When enabled, it creates two native images for storing previous and current frames respectively.</para>
+<para>@SINCE_2_4.39 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">useOffScreenFrame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True to enable offscreen frame rendering, false to disable </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">previousFrameBufferNativeImagePtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Native image for previous frame buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">currentFrameBufferNativeImagePtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Native image for current frame buffer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="428" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1VideoPlayerPlugin_1a4788c3ef15472ecc4b1408769829452e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::VideoPlayerPlugin::SetVideoFrameBuffer</definition>
+        <argsstring>(Dali::NativeImagePtr source)=0</argsstring>
+        <name>SetVideoFrameBuffer</name>
+        <qualifiedname>Dali::VideoPlayerPlugin::SetVideoFrameBuffer</qualifiedname>
+        <param>
+          <type><ref refid="group__dali__adaptor__framework_1ga66ad744612018f55ae9bf88bc933e0e7" kindref="member">Dali::NativeImagePtr</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Sets the video frame buffer for rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method updates the video frame buffer with new video frame data. The source should contain the video frame surface (e.g., tbm_surface) for rendering.</para>
+<para>@SINCE_2_4.39 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The video frame buffer source containing surface data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="439" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1VideoPlayerPlugin" kindref="compound">VideoPlayerPlugin</ref> is an abstract interface, used by dali-adaptor to access video player plugin. A concrete implementation must be created for each platform and provided as dynamic library. @SINCE_1_1.38. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" line="38" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/video-player-plugin.h" bodystart="39" bodyend="440"/>
+    <listofallmembers>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ab730b90cbb9e49d6762514cfa9c2ccaf" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>Backward</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a73a1772540f5f7b033871e3b3de22a1b" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>CodecType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>DisplayRotation</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ad8cb77eda262398f4cae60d35cd72ca0" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>EnableOffscreenFrameRendering</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a8763c069c34270effe06de1e38010fad" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>EventSignal</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a0ae81e62c5d71ff6ed3d54da041554c5" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>FinishedSignal</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ab14a54e9b859502436b148ae4ceba0aa" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>FinishSynchronization</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a6691b82ac7e6a2d9ac2817f89fcd1214" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>Forward</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1afd8811a41d0792cf81ee1d5dd40759fe" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetCodecType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a21e8bf0d3d6f2874b23ee853aca4ae97" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetDisplayMode</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a64bde6b0fec3ad9339cdbb8649a5c9a0" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetDisplayRotation</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ad65f575b4bb8c05706453d620e0540f3" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetMediaPlayer</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa2d0ec42ffe68ca2a9fc952070889a98" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetPlayPosition</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a0bfbd5df0d16b495538e12014a82513f" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetUrl</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1abef3106fb9bbbdfc87d924746fdf8a33" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetVideoPlayerSurface</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aed49b3c0a20cd48c9c21b4777a981754" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>GetVolume</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ae9e02ffe2716f2c0027bc09f91f34192" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>IsAutoRotationEnabled</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ac3d88e550f7b3139774f0bf1446f9211" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>IsLetterBoxEnabled</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a3e92a800423c0c59f21078e4e7c1d6e6" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>IsLooping</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ad792e9d320a58bf241d296bf54bd0206" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>IsMuted</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa78a633f126e3ce0c3f0b088afe84110" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>IsVideoTextureSupported</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a7bce45b723eea1558efcb69134f6b3f2" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>LowerBelow</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa1eee2fc06acc9748a1da9ed34730a0b" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>LowerToBottom</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ace2d0a069dcc4322e6d3b1703f56826e" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>Pause</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1afe9a4b5154d6e786e281d4fcee12de07" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>Play</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a2a51ed0074d84a541a56799f0523b651" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>PlayerEventType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a512a008da29a93c8810786da084e38b5" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>PlayerHandleType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aacd81c10a8ab827d09a2021ae48dbc7a" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>RaiseAbove</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a853d5989aa777abb1121166f195aa0af" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>RaiseToTop</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609afcf86956ef17583ecf1a44cb54c0240f" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>ROTATION_180</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609aeed6c7311652420e724017082b74b253" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>ROTATION_270</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609a810bc8d1cd555229cc7291a342621d84" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>ROTATION_90</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa79687cad4d42b516935c13820562609a2b335ff49598278ce9b01000806085b0" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>ROTATION_NONE</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a2839756e2d417847a0024be7e78be838" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SceneConnection</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ad3f0b9ce7bbfb94503a6c69882654ad4" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SceneDisconnection</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1acf4159888fb752e83eb447dd34b5632d" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetAutoRotationEnabled</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa65977ef9eb9c08ee57126604a85c192" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetCodecType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1abe089e2815f4524bac2bfcfd212c0995" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetDisplayArea</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1afc48ff9fdf4599289be6a31e9238f1be" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetDisplayMode</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a59c6c8122ebcd7e66dd87b8c9cd0e889" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetDisplayRotation</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a49414da91be20e97147d7545061948c6" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetFrameInterpolationInterval</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ae5e2cc8e1b3f8c7e538ac76d8fa1a1ee" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetLetterBoxEnabled</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a472a539e14096ea062e17f0491ff37ce" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetLooping</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1ae8f020f40723ca292cf0a8393714058f" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetMute</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a4d83e63c9eba410eba286142c61d1422" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetPlayPosition</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a6136e246d0deeff392431afcd3bb1461" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetRenderingTarget</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a63984fea91bd740f9962b113b3646745" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetUrl</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a4788c3ef15472ecc4b1408769829452e" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetVideoFrameBuffer</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a6664ae802d233d2977a0b79f6810ac4e" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>SetVolume</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1aa3bd70c611e0adce77d98c664f730238" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>StartSynchronization</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1abd49bc1c44f23f21faedfb601fdc8169" prot="public" virt="pure-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>Stop</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a7b28d49af599723792761289e1e5323d" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>VideoPlayerEventSignalType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a48e5b860a8c5a41a81ead6ed3bf93c92" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>VideoPlayerPlugin</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a558b9c19ada737a9c63f65d350d554f4" prot="public" virt="non-virtual"><scope>Dali::VideoPlayerPlugin</scope><name>VideoPlayerSignalType</name></member>
+      <member refid="classDali_1_1VideoPlayerPlugin_1a3a79798cc193323fede86acbd0315af1" prot="public" virt="virtual"><scope>Dali::VideoPlayerPlugin</scope><name>~VideoPlayerPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

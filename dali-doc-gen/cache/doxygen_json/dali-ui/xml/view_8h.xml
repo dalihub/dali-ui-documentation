@@ -1,0 +1,1725 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="view_8h" kind="file" language="C++">
+    <compoundname>view.h</compoundname>
+    <includes local="no">dali/public-api/actors/actor.h</includes>
+    <includes local="no">dali/public-api/actors/custom-actor.h</includes>
+    <includes local="no">dali/public-api/animation/animation.h</includes>
+    <includes local="no">dali/public-api/animation/constraint.h</includes>
+    <includes local="no">dali/public-api/common/dali-common.h</includes>
+    <includes local="no">dali/public-api/common/dali-string.h</includes>
+    <includes local="no">dali/public-api/common/dali-utility.h</includes>
+    <includes local="no">dali/public-api/events/long-press-gesture-detector.h</includes>
+    <includes local="no">dali/public-api/events/pan-gesture-detector.h</includes>
+    <includes local="no">dali/public-api/events/pinch-gesture-detector.h</includes>
+    <includes local="no">dali/public-api/events/tap-gesture-detector.h</includes>
+    <includes local="no">dali/public-api/signals/callback.h</includes>
+    <includes local="no">dali/public-api/signals/connection-tracker-interface.h</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">initializer_list</includes>
+    <includes refid="dali-ui-common_8h" local="no">dali-ui-foundation/public-api/dali-ui-common.h</includes>
+    <includes refid="interactive-trait_8h" local="no">dali-ui-foundation/public-api/interactive-trait.h</includes>
+    <includes refid="layout-params_8h" local="no">dali-ui-foundation/public-api/layouts/layout-params.h</includes>
+    <includes refid="layout-types_8h" local="no">dali-ui-foundation/public-api/layouts/layout-types.h</includes>
+    <includes refid="selectable-trait_8h" local="no">dali-ui-foundation/public-api/selectable-trait.h</includes>
+    <includes refid="state-event_8h" local="no">dali-ui-foundation/public-api/state-event.h</includes>
+    <includes refid="trait_8h" local="no">dali-ui-foundation/public-api/trait.h</includes>
+    <includes refid="view-accessibility-enums_8h" local="no">dali-ui-foundation/public-api/view-accessibility-enums.h</includes>
+    <includes refid="view-state_8h" local="no">dali-ui-foundation/public-api/view-state.h</includes>
+    <includes refid="view-types_8h" local="no">dali-ui-foundation/public-api/view-types.h</includes>
+    <includes refid="visual-properties_8h" local="no">dali-ui-foundation/public-api/visuals/visual-properties.h</includes>
+    <includes refid="view_8autogen_8h" local="yes">view.autogen.h</includes>
+    <includedby refid="dummy-component_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-components/public-api/dummy-component.h</includedby>
+    <includedby refid="drag-and-drop-detector_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/drag-drop-detector/drag-and-drop-detector.h</includedby>
+    <includedby refid="focus-finder_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-finder.h</includedby>
+    <includedby refid="focus-manager-devel_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h</includedby>
+    <includedby refid="ui-foundation-pre-initialize_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/ui-foundation-pre-initialize.cpp</includedby>
+    <includedby refid="exclusive-trait-impl_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/exclusive-trait-impl.h</includedby>
+    <includedby refid="input-field-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-impl.cpp</includedby>
+    <includedby refid="label-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-impl.cpp</includedby>
+    <includedby refid="selectable-trait-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/selectable-trait-impl.cpp</includedby>
+    <includedby refid="view-accessible_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-accessible.cpp</includedby>
+    <includedby refid="view-integration_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-integration.h</includedby>
+    <includedby refid="animated-image-view_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animated-image-view.h</includedby>
+    <includedby refid="view-animation-bridge_8autogen_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/view-animation-bridge.autogen.h</includedby>
+    <includedby refid="view-animation-spec_8autogen_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/view-animation-spec.autogen.cpp</includedby>
+    <includedby refid="focus-manager_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/focus-manager/focus-manager.h</includedby>
+    <includedby refid="image-view_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/image-view.h</includedby>
+    <includedby refid="input-field_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/input-field.h</includedby>
+    <includedby refid="interactive-view_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/interactive-view.h</includedby>
+    <includedby refid="label_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/label.h</includedby>
+    <includedby refid="layout-controller_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp</includedby>
+    <includedby refid="layout_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout.h</includedby>
+    <includedby refid="lottie-animation-view_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/lottie-animation-view.h</includedby>
+    <includedby refid="mask-effect_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h</includedby>
+    <includedby refid="scroll-view_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/scroll-view.h</includedby>
+    <includedby refid="view-impl_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.cpp</includedby>
+    <includedby refid="view-impl_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.h</includedby>
+    <includedby refid="view_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view.cpp</includedby>
+    <includedby refid="web-view_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/web-view.h</includedby>
+    <incdepgraph>
+      <node id="36">
+        <label>dali-ui-foundation/public-api/callback.h</label>
+        <link refid="callback_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>dali-ui-foundation/public-api/input-event-type.h</label>
+        <link refid="input-event-type_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>dali-ui-foundation/public-api/input-event.h</label>
+        <link refid="input-event_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>dali-ui-foundation/public-api/interactive-trait.h</label>
+        <link refid="interactive-trait_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>dali-ui-foundation/public-api/key-click-policy.h</label>
+        <link refid="key-click-policy_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>dali-ui-foundation/public-api/layouts/layout-params.h</label>
+        <link refid="layout-params_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>dali-ui-foundation/public-api/layouts/layout-types.h</label>
+        <link refid="layout-types_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>dali-ui-foundation/public-api/selectable-trait.h</label>
+        <link refid="selectable-trait_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>dali-ui-foundation/public-api/state-event.h</label>
+        <link refid="state-event_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>dali-ui-foundation/public-api/trait.h</label>
+        <link refid="trait_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>dali-ui-foundation/public-api/ui-property-index-ranges.h</label>
+        <link refid="public-api_2ui-property-index-ranges_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>dali-ui-foundation/public-api/view-accessibility-enums.h</label>
+        <link refid="view-accessibility-enums_8h"/>
+      </node>
+      <node id="40">
+        <label>dali-ui-foundation/public-api/view-state.h</label>
+        <link refid="view-state_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>dali-ui-foundation/public-api/view-types.h</label>
+        <link refid="view-types_8h"/>
+      </node>
+      <node id="47">
+        <label>view.autogen.h</label>
+        <link refid="view_8autogen_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view.h</label>
+        <link refid="view_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>dali-ui-foundation/public-api/visuals/visual-properties.h</label>
+        <link refid="visual-properties_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/actors/custom-actor.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/animation/animation.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/animation/constraint.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="41">
+        <label>dali/public-api/common/dali-string-view.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-utility.h</label>
+      </node>
+      <node id="34">
+        <label>dali/public-api/common/extents.h</label>
+      </node>
+      <node id="37">
+        <label>dali/public-api/common/unique-ptr.h</label>
+      </node>
+      <node id="18">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="23">
+        <label>dali/public-api/events/key-event.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/events/long-press-gesture-detector.h</label>
+      </node>
+      <node id="24">
+        <label>dali/public-api/events/long-press-gesture.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/events/pan-gesture-detector.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/events/pinch-gesture-detector.h</label>
+      </node>
+      <node id="12">
+        <label>dali/public-api/events/tap-gesture-detector.h</label>
+      </node>
+      <node id="25">
+        <label>dali/public-api/events/tap-gesture.h</label>
+      </node>
+      <node id="26">
+        <label>dali/public-api/events/touch-event.h</label>
+      </node>
+      <node id="27">
+        <label>dali/public-api/events/wheel-event.h</label>
+      </node>
+      <node id="35">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="20">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="46">
+        <label>dali/public-api/object/property-index-ranges.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+      <node id="14">
+        <label>dali/public-api/signals/connection-tracker-interface.h</label>
+      </node>
+      <node id="21">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+      <node id="15">
+        <label>functional</label>
+      </node>
+      <node id="16">
+        <label>initializer_list</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-components/public-api/dummy-component.cpp</label>
+        <link refid="dummy-component_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-components/public-api/dummy-component.h</label>
+        <link refid="dummy-component_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/drag-drop-detector/drag-and-drop-detector.cpp</label>
+        <link refid="drag-and-drop-detector_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/drag-drop-detector/drag-and-drop-detector.h</label>
+        <link refid="drag-and-drop-detector_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-finder.cpp</label>
+        <link refid="focus-finder_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-finder.h</label>
+        <link refid="focus-finder_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.cpp</label>
+        <link refid="focus-manager-devel_8cpp"/>
+      </node>
+      <node id="8">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h</label>
+        <link refid="focus-manager-devel_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/ui-foundation-pre-initialize.cpp</label>
+        <link refid="ui-foundation-pre-initialize_8cpp"/>
+      </node>
+      <node id="31">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/accessibility-highlight-overlay.cpp</label>
+        <link refid="accessibility-highlight-overlay_8cpp"/>
+      </node>
+      <node id="80">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/animated-image-view-impl.cpp</label>
+        <link refid="animated-image-view-impl_8cpp"/>
+      </node>
+      <node id="79">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/animated-image-view-impl.h</label>
+        <link refid="animated-image-view-impl_8h"/>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/exclusive-trait-impl.cpp</label>
+        <link refid="exclusive-trait-impl_8cpp"/>
+      </node>
+      <node id="11">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/exclusive-trait-impl.h</label>
+        <link refid="exclusive-trait-impl_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/image-view-impl.cpp</label>
+        <link refid="image-view-impl_8cpp"/>
+      </node>
+      <node id="81">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/image-view-impl.h</label>
+        <link refid="image-view-impl_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-impl.cpp</label>
+        <link refid="input-field-impl_8cpp"/>
+      </node>
+      <node id="83">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-impl.h</label>
+        <link refid="input-field-impl_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-property-handler.cpp</label>
+        <link refid="input-field-property-handler_8cpp"/>
+      </node>
+      <node id="85">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/input-field-property-handler.h</label>
+        <link refid="input-field-property-handler_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/interactive-trait-impl.cpp</label>
+        <link refid="interactive-trait-impl_8cpp"/>
+      </node>
+      <node id="40">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/interactive-view-impl.cpp</label>
+        <link refid="interactive-view-impl_8cpp"/>
+      </node>
+      <node id="41">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/interactive-view-impl.h</label>
+        <link refid="interactive-view-impl_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-impl.cpp</label>
+        <link refid="label-impl_8cpp"/>
+      </node>
+      <node id="87">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-impl.h</label>
+        <link refid="label-impl_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-property-handler.cpp</label>
+        <link refid="label-property-handler_8cpp"/>
+      </node>
+      <node id="89">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/label-property-handler.h</label>
+        <link refid="label-property-handler_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/absolute-layout-impl.cpp</label>
+        <link refid="absolute-layout-impl_8cpp"/>
+      </node>
+      <node id="48">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/absolute-layout-impl.h</label>
+        <link refid="absolute-layout-impl_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/absolute-layout-manager.cpp</label>
+        <link refid="absolute-layout-manager_8cpp"/>
+      </node>
+      <node id="94">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/absolute-layout-manager.h</label>
+        <link refid="absolute-layout-manager_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/flex-layout-impl.cpp</label>
+        <link refid="flex-layout-impl_8cpp"/>
+      </node>
+      <node id="51">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/flex-layout-impl.h</label>
+        <link refid="flex-layout-impl_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/flex-layout-manager.cpp</label>
+        <link refid="flex-layout-manager_8cpp"/>
+      </node>
+      <node id="95">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/flex-layout-manager.h</label>
+        <link refid="flex-layout-manager_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/grid-layout-impl.cpp</label>
+        <link refid="grid-layout-impl_8cpp"/>
+      </node>
+      <node id="54">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/grid-layout-impl.h</label>
+        <link refid="grid-layout-impl_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/grid-layout-manager.cpp</label>
+        <link refid="grid-layout-manager_8cpp"/>
+      </node>
+      <node id="96">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/grid-layout-manager.h</label>
+        <link refid="grid-layout-manager_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/layout-impl.cpp</label>
+        <link refid="layout-impl_8cpp"/>
+      </node>
+      <node id="47">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/layout-impl.h</label>
+        <link refid="layout-impl_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/layout-manager.cpp</label>
+        <link refid="layout-manager_8cpp"/>
+      </node>
+      <node id="93">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/layout-manager.h</label>
+        <link refid="layout-manager_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/scroll-view-layout-manager.cpp</label>
+        <link refid="scroll-view-layout-manager_8cpp"/>
+      </node>
+      <node id="97">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/scroll-view-layout-manager.h</label>
+        <link refid="scroll-view-layout-manager_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/stack-layout-impl.cpp</label>
+        <link refid="stack-layout-impl_8cpp"/>
+      </node>
+      <node id="59">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/stack-layout-impl.h</label>
+        <link refid="stack-layout-impl_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/stack-layout-manager.cpp</label>
+        <link refid="stack-layout-manager_8cpp"/>
+      </node>
+      <node id="71">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/layouts/stack-layout-manager.h</label>
+        <link refid="stack-layout-manager_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/lottie-animation-view-impl.cpp</label>
+        <link refid="lottie-animation-view-impl_8cpp"/>
+      </node>
+      <node id="98">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/lottie-animation-view-impl.h</label>
+        <link refid="lottie-animation-view-impl_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/scroll-view-impl.cpp</label>
+        <link refid="scroll-view-impl_8cpp"/>
+      </node>
+      <node id="62">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/scroll-view-impl.h</label>
+        <link refid="scroll-view-impl_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/selectable-trait-impl.cpp</label>
+        <link refid="selectable-trait-impl_8cpp"/>
+      </node>
+      <node id="16">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-accessible.cpp</label>
+        <link refid="view-accessible_8cpp"/>
+      </node>
+      <node id="17">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-integration.h</label>
+        <link refid="view-integration_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/web-view-impl.cpp</label>
+        <link refid="web-view-impl_8cpp"/>
+      </node>
+      <node id="32">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/web-view-impl.h</label>
+        <link refid="web-view-impl_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animated-image-view.cpp</label>
+        <link refid="animated-image-view_8cpp"/>
+      </node>
+      <node id="18">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animated-image-view.h</label>
+        <link refid="animated-image-view_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/label-animation-bridge.autogen.cpp</label>
+        <link refid="label-animation-bridge_8autogen_8cpp"/>
+      </node>
+      <node id="21">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/label-animation-bridge.autogen.h</label>
+        <link refid="label-animation-bridge_8autogen_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/label-animation-spec.autogen.cpp</label>
+        <link refid="label-animation-spec_8autogen_8cpp"/>
+      </node>
+      <node id="24">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/view-animation-bridge.autogen.cpp</label>
+        <link refid="view-animation-bridge_8autogen_8cpp"/>
+      </node>
+      <node id="20">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/view-animation-bridge.autogen.h</label>
+        <link refid="view-animation-bridge_8autogen_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/animation/view-animation-spec.autogen.cpp</label>
+        <link refid="view-animation-spec_8autogen_8cpp"/>
+      </node>
+      <node id="28">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/focus-manager/focus-manager.cpp</label>
+        <link refid="focus-manager_8cpp"/>
+      </node>
+      <node id="27">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/focus-manager/focus-manager.h</label>
+        <link refid="focus-manager_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/image-view.cpp</label>
+        <link refid="image-view_8cpp"/>
+      </node>
+      <node id="30">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/image-view.h</label>
+        <link refid="image-view_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/input-field.cpp</label>
+        <link refid="input-field_8cpp"/>
+      </node>
+      <node id="37">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/input-field.h</label>
+        <link refid="input-field_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/interactive-view.cpp</label>
+        <link refid="interactive-view_8cpp"/>
+      </node>
+      <node id="39">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/interactive-view.h</label>
+        <link refid="interactive-view_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/label.cpp</label>
+        <link refid="label_8cpp"/>
+      </node>
+      <node id="43">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/label.h</label>
+        <link refid="label_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/absolute-layout.cpp</label>
+        <link refid="absolute-layout_8cpp"/>
+      </node>
+      <node id="67">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/absolute-layout.h</label>
+        <link refid="absolute-layout_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/flex-layout.cpp</label>
+        <link refid="flex-layout_8cpp"/>
+      </node>
+      <node id="68">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/flex-layout.h</label>
+        <link refid="flex-layout_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/grid-layout.cpp</label>
+        <link refid="grid-layout_8cpp"/>
+      </node>
+      <node id="69">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/grid-layout.h</label>
+        <link refid="grid-layout_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp</label>
+        <link refid="layout-controller_8cpp"/>
+      </node>
+      <node id="66">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout.cpp</label>
+        <link refid="layout_8cpp"/>
+      </node>
+      <node id="46">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout.h</label>
+        <link refid="layout_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/stack-layout.cpp</label>
+        <link refid="stack-layout_8cpp"/>
+      </node>
+      <node id="70">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/stack-layout.h</label>
+        <link refid="stack-layout_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/lottie-animation-view.cpp</label>
+        <link refid="lottie-animation-view_8cpp"/>
+      </node>
+      <node id="73">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/lottie-animation-view.h</label>
+        <link refid="lottie-animation-view_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp</label>
+        <link refid="mask-effect_8cpp"/>
+      </node>
+      <node id="75">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h</label>
+        <link refid="mask-effect_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/scroll-view.cpp</label>
+        <link refid="scroll-view_8cpp"/>
+      </node>
+      <node id="77">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/scroll-view.h</label>
+        <link refid="scroll-view_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.cpp</label>
+        <link refid="view-impl_8cpp"/>
+      </node>
+      <node id="78">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view-impl.h</label>
+        <link refid="view-impl_8h"/>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view.cpp</label>
+        <link refid="view_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view.h</label>
+        <link refid="view_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/web-view.cpp</label>
+        <link refid="web-view_8cpp"/>
+      </node>
+      <node id="36">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/web-view.h</label>
+        <link refid="web-view_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Ui_1_1View" prot="public">Dali::Ui::View</innerclass>
+    <innerclass refid="structDali_1_1Ui_1_1View_1_1Property" prot="public">Dali::Ui::View::Property</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui_1_1Visual">Dali::Ui::Visual</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/actors/actor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/actors/custom-actor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/animation/animation.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/animation/constraint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/dali-common.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/dali-string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/common/dali-utility.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/events/long-press-gesture-detector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/events/pan-gesture-detector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/events/pinch-gesture-detector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/events/tap-gesture-detector.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/signals/callback.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/signals/connection-tracker-interface.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;initializer_list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-ui-common_8h" kindref="compound">dali-ui-foundation/public-api/dali-ui-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="interactive-trait_8h" kindref="compound">dali-ui-foundation/public-api/interactive-trait.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="layout-params_8h" kindref="compound">dali-ui-foundation/public-api/layouts/layout-params.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="layout-types_8h" kindref="compound">dali-ui-foundation/public-api/layouts/layout-types.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="selectable-trait_8h" kindref="compound">dali-ui-foundation/public-api/selectable-trait.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="state-event_8h" kindref="compound">dali-ui-foundation/public-api/state-event.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="trait_8h" kindref="compound">dali-ui-foundation/public-api/trait.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="view-accessibility-enums_8h" kindref="compound">dali-ui-foundation/public-api/view-accessibility-enums.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="view-state_8h" kindref="compound">dali-ui-foundation/public-api/view-state.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="view-types_8h" kindref="compound">dali-ui-foundation/public-api/view-types.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="visual-properties_8h" kindref="compound">dali-ui-foundation/public-api/visuals/visual-properties.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Actor;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Any;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Constraint;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">RenderEffect;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="namespaceDali_1_1Ui_1_1Visual" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Visual</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Visual_1_1Base" kindref="compound">Base</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1ViewAnimationBridge" kindref="compound">ViewAnimationBridge</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1ViewAnimationSpec" kindref="compound">ViewAnimationSpec</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ANIMATION_CONFIG(View)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ANIMATABLE_MANUAL(BackgroundColor,<sp/>UiColor)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ANIMATABLE_MANUAL(SizeWidth,<sp/>float)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@ANIMATABLE_MANUAL(SizeHeight,<sp/>float)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1ViewImpl" kindref="compound">ViewImpl</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="view_8autogen_8h" kindref="compound">view.autogen.h</ref>&quot;</highlight></codeline>
+<codeline lineno="86" refid="classDali_1_1Ui_1_1View" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="dali-ui-common_8h_1aef2307dd4c2caad2d52fb78f0d24a16c" kindref="member">DALI_UI_API</ref><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>CustomActor</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Typedefs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Creation<sp/>&amp;<sp/>Destruction</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>New();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classDali_1_1Ui_1_1View_1a96ceb31f9179c3b18f54917c48cbacda" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1a96ceb31f9179c3b18f54917c48cbacda" kindref="member">View</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>view);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classDali_1_1Ui_1_1View_1aa4c35fe519238dd39cef00e57b7504b9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1aa4c35fe519238dd39cef00e57b7504b9" kindref="member">View</ref>(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">~View</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Operators</highlight></codeline>
+<codeline lineno="137" refid="classDali_1_1Ui_1_1View_1afbe009294dbb702b540fc7f5146eeae3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1afbe009294dbb702b540fc7f5146eeae3" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>handle)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classDali_1_1Ui_1_1View_1aabae2e3f749d3d58352bf6b527d71739" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1aabae2e3f749d3d58352bf6b527d71739" kindref="member">operator=</ref>(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Static<sp/>Methods</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>DownCast(BaseHandle<sp/>handle);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Measure<sp/>/<sp/>Arrange<sp/>API</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1MeasuredSize" kindref="compound">MeasuredSize</ref><sp/>Measure(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>widthConstraint,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>heightConstraint);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1MeasuredSize" kindref="compound">MeasuredSize</ref><sp/>Arrange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1LayoutRect" kindref="compound">LayoutRect</ref>&amp;<sp/>bounds);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>InvalidateMeasure();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>InvalidateArrange();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1MeasuredSize" kindref="compound">MeasuredSize</ref><sp/>GetMeasuredSize()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetMeasureCallback(<ref refid="classDali_1_1Ui_1_1Callback" kindref="compound">MeasureCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetArrangeCallback(<ref refid="classDali_1_1Ui_1_1Callback" kindref="compound">ArrangeCallback</ref><sp/>callback);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Properties</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_START(View)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetScaleX()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(Actor::Property::SCALE_X,<sp/>float)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetScaleX(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleX);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetScaleY()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(Actor::Property::SCALE_Y,<sp/>float)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetScaleY(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleY);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetScale(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scaleY);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsVisible()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetVisibility(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visibility);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetOpacity()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(Actor::Property::OPACITY,<sp/>float)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetOpacity(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>opacity);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1MeasuredSize" kindref="compound">MeasuredSize</ref><sp/>GetSize()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(Actor::Property::POSITION_X,<sp/>float)</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetPositionX(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetPositionX()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(Actor::Property::POSITION_Y,<sp/>float)</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetPositionY(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetPositionY()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetParentOrigin(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3&amp;<sp/>point);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/>Vector3<sp/>GetParentOrigin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetPivot(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector3&amp;<sp/>point);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/>Vector3<sp/>GetPivot()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetRequestedWidth(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetRequestedWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetRequestedHeight(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetRequestedHeight()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetMinimumWidth(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetMinimumWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetMinimumHeight(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetMinimumHeight()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetMaximumWidth(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetMaximumWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetMaximumHeight(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetMaximumHeight()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetMargin(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Extents&amp;<sp/>margin);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/>Extents<sp/>GetMargin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetPadding(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Extents&amp;<sp/>padding);</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/>Extents<sp/>GetPadding()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetLayoutMode(<ref refid="namespaceDali_1_1Ui_1a5cb497bff2a0c15e963cc12e1b98d7c5" kindref="member">LayoutMode</ref><sp/>mode);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a5cb497bff2a0c15e963cc12e1b98d7c5" kindref="member">LayoutMode</ref><sp/>GetLayoutMode()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"></highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsFocusable()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetFocusable(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>focusable);</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"></highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsTouchFocusable()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"></highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetTouchFocusable(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>touchFocusable);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetLeftFocusableView(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view);</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetRightFocusableView(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view);</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetUpFocusableView(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetDownFocusableView(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetClockwiseFocusableView(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCounterClockwiseFocusableView(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref><sp/>GetBackgroundColor();</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetBackgroundColor(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref>&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="628"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@brief<sp/>Checks<sp/>if<sp/>the<sp/>view<sp/>is<sp/>enabled.</highlight></codeline>
+<codeline lineno="629"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="630"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return<sp/>True<sp/>if<sp/>the<sp/>view<sp/>is<sp/>enabled<sp/>(default),<sp/>false<sp/>if<sp/>disabled</highlight></codeline>
+<codeline lineno="631"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsEnabled()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"></highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetEnabled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/>Vector4<sp/>GetCornerRadius()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"></highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerRadius(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radius);</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"></highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerRadius(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>topLeft,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>topRight,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottomRight,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottomLeft);</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(View::Property::CORNER_RADIUS,<sp/>Vector4)</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerRadius(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>radius);</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"></highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a122070390936f55d956af2120abcdbda" kindref="member">CornerRadiusPolicy</ref><sp/>GetCornerRadiusPolicy()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"></highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerRadiusPolicy(<ref refid="namespaceDali_1_1Ui_1a122070390936f55d956af2120abcdbda" kindref="member">CornerRadiusPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"></highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerRadiusPolicyRelative();</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"></highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsCornerRadiusPolicyRelative()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"></highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/>Vector4<sp/>GetCornerSquareness()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"></highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerSquareness(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>squareness);</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"></highlight></codeline>
+<codeline lineno="726"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerSquareness(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>topLeft,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>topRight,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottomRight,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bottomLeft);</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"></highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(View::Property::CORNER_SQUARENESS,<sp/>Vector4)</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetCornerSquareness(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>squareness);</highlight></codeline>
+<codeline lineno="735"><highlight class="normal"></highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetBorderlineWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"></highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(View::Property::BORDERLINE_WIDTH,<sp/>float)</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetBorderlineWidth(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"></highlight></codeline>
+<codeline lineno="756"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref><sp/>GetBorderlineColor();</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"></highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(View::Property::BORDERLINE_COLOR,<sp/>UiColor)</highlight></codeline>
+<codeline lineno="768"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetBorderlineColor(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1UiColor" kindref="compound">UiColor</ref>&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="769"><highlight class="normal"></highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>GetBorderlineOffset()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"></highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@ANIMATABLE(View::Property::BORDERLINE_OFFSET,<sp/>float)</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetBorderlineOffset(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>offset);</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"></highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/>Dali::String<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="791"><highlight class="normal"></highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="798"><highlight class="normal"></highlight></codeline>
+<codeline lineno="808"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsEffectivelyEnabled()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="809"><highlight class="normal"></highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsEffectivelyFocused()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"></highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL</highlight></codeline>
+<codeline lineno="826" refid="classDali_1_1Ui_1_1View_1abb9eb3359d7fe8018509164ca66445db" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1abb9eb3359d7fe8018509164ca66445db" kindref="member">AsInteractive</ref>()</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/>EnsureInteractiveTrait();</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"></highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline lineno="840" refid="classDali_1_1Ui_1_1View_1ae1f56ca9668668cbaaa155efa310feb5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1ae1f56ca9668668cbaaa155efa310feb5" kindref="member">AsInteractive</ref>(F&amp;&amp;<sp/>configure)</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1InteractiveTrait" kindref="compound">InteractiveTrait</ref><sp/>trait<sp/>=<sp/>EnsureInteractiveTrait();</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trait)</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>configure(trait);</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"></highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL</highlight></codeline>
+<codeline lineno="859" refid="classDali_1_1Ui_1_1View_1a5264182d9a0fd17d7457566311a41a95" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1a5264182d9a0fd17d7457566311a41a95" kindref="member">AsSelectable</ref>()</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/>EnsureSelectableTrait();</highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"></highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL</highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline lineno="877" refid="classDali_1_1Ui_1_1View_1ac0c2ed573f23eb433aef601e6256f841" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1ac0c2ed573f23eb433aef601e6256f841" kindref="member">AsSelectable</ref>(F&amp;&amp;<sp/>configure)</highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1SelectableTrait" kindref="compound">SelectableTrait</ref><sp/>trait<sp/>=<sp/>EnsureSelectableTrait();</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(trait)</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>configure(trait);</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="885"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"></highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL</highlight></codeline>
+<codeline lineno="893" refid="classDali_1_1Ui_1_1View_1a298d1f1e198f813fe61669c472da9acc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1a298d1f1e198f813fe61669c472da9acc" kindref="member">As</ref>(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>self)</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/>self<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(*this);</highlight></codeline>
+<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"></highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL_SELF</highlight></codeline>
+<codeline lineno="911"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline lineno="912" refid="classDali_1_1Ui_1_1View_1a9a17e9b61f2d1dae58cc86fda5d06676" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1a9a17e9b61f2d1dae58cc86fda5d06676" kindref="member">With</ref>(F&amp;&amp;<sp/>action)</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/>action(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="915"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="917"><highlight class="normal"></highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetLayoutParams(<ref refid="classDali_1_1Ui_1_1LayoutParams" kindref="compound">LayoutParams</ref><sp/>params);</highlight></codeline>
+<codeline lineno="935"><highlight class="normal"></highlight></codeline>
+<codeline lineno="936"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_MANUAL</highlight></codeline>
+<codeline lineno="943" refid="classDali_1_1Ui_1_1View_1ac380f4b7a7939b88564b7bbf55f2ef66" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1View_1ac380f4b7a7939b88564b7bbf55f2ef66" kindref="member">Children</ref>(std::initializer_list&lt;View&gt;<sp/>children)</highlight></codeline>
+<codeline lineno="944"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>child<sp/>:<sp/>children)</highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="947"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Add(child);</highlight></codeline>
+<codeline lineno="948"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="949"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"></highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>@CHAIN_END</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="953"><highlight class="normal"></highlight></codeline>
+<codeline lineno="960"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Insert(uint32_t<sp/>index,<sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>child);</highlight></codeline>
+<codeline lineno="961"><highlight class="normal"></highlight></codeline>
+<codeline lineno="965"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RemoveAllChildren();</highlight></codeline>
+<codeline lineno="966"><highlight class="normal"></highlight></codeline>
+<codeline lineno="972"><highlight class="normal"><sp/><sp/>uint32_t<sp/>GetChildCount()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="973"><highlight class="normal"></highlight></codeline>
+<codeline lineno="980"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>GetChildAt(uint32_t<sp/>index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="981"><highlight class="normal"></highlight></codeline>
+<codeline lineno="988"><highlight class="normal"><sp/><sp/>int32_t<sp/>IndexOfChild(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>view)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="989"><highlight class="normal"></highlight></codeline>
+<codeline lineno="990"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Keep<sp/>the<sp/>base<sp/>Actor<sp/>sibling-order<sp/>APIs<sp/>reachable.<sp/>The<sp/>overloads<sp/>below<sp/>take</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="991"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>LayoutOrderPolicy<sp/>and<sp/>would<sp/>otherwise<sp/>hide<sp/>the<sp/>inherited<sp/>Actor<sp/>versions;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="992"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>pulling<sp/>them<sp/>back<sp/>in<sp/>lets<sp/>callers<sp/>that<sp/>don&apos;t<sp/>care<sp/>about<sp/>layout<sp/>order<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="993"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>`view.Raise()`,<sp/>`view.RaiseAbove(actor)`,<sp/>etc.<sp/>exactly<sp/>as<sp/>before.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="994"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Actor::Lower;</highlight></codeline>
+<codeline lineno="995"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Actor::LowerBelow;</highlight></codeline>
+<codeline lineno="996"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Actor::LowerToBottom;</highlight></codeline>
+<codeline lineno="997"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Actor::Raise;</highlight></codeline>
+<codeline lineno="998"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Actor::RaiseAbove;</highlight></codeline>
+<codeline lineno="999"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Actor::RaiseToTop;</highlight></codeline>
+<codeline lineno="1000"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1009"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Raise(<ref refid="namespaceDali_1_1Ui_1a66e0af50ef04f2697ca5b263016ad73a" kindref="member">LayoutOrderPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="1010"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1019"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Lower(<ref refid="namespaceDali_1_1Ui_1a66e0af50ef04f2697ca5b263016ad73a" kindref="member">LayoutOrderPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="1020"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1028"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RaiseToTop(<ref refid="namespaceDali_1_1Ui_1a66e0af50ef04f2697ca5b263016ad73a" kindref="member">LayoutOrderPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="1029"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1037"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LowerToBottom(<ref refid="namespaceDali_1_1Ui_1a66e0af50ef04f2697ca5b263016ad73a" kindref="member">LayoutOrderPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="1038"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1048"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RaiseAbove(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>target,<sp/><ref refid="namespaceDali_1_1Ui_1a66e0af50ef04f2697ca5b263016ad73a" kindref="member">LayoutOrderPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="1049"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1059"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>LowerBelow(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref><sp/>target,<sp/><ref refid="namespaceDali_1_1Ui_1a66e0af50ef04f2697ca5b263016ad73a" kindref="member">LayoutOrderPolicy</ref><sp/>policy);</highlight></codeline>
+<codeline lineno="1060"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1081"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="1082" refid="classDali_1_1Ui_1_1View_1a3aca1f83952f8c5a90bc6641ad8fda91" refkind="member"><highlight class="normal"><sp/><sp/>T<sp/><ref refid="classDali_1_1Ui_1_1View_1a3aca1f83952f8c5a90bc6641ad8fda91" kindref="member">GetLayoutParams</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1083"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1084"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>T::DownCast(GetLayoutParamsInternal(T::GetLayoutParamsType()));</highlight></codeline>
+<codeline lineno="1085"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1086"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1087"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>State<sp/>API<sp/>(non-chaining)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1088" refid="classDali_1_1Ui_1_1View_1a5e44a1b4a0fdd16332a9213c4d7577a2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1View_1a5e44a1b4a0fdd16332a9213c4d7577a2" kindref="member">StateChangedSignalType</ref><sp/>=<sp/>Signal&lt;void(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1StateEvent" kindref="compound">StateEvent</ref>&amp;)&gt;;</highlight></codeline>
+<codeline lineno="1089"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1095"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1ViewState" kindref="compound">ViewState</ref>&amp;<sp/>GetState()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1096"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1110"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1a5e44a1b4a0fdd16332a9213c4d7577a2" kindref="member">StateChangedSignalType</ref>&amp;<sp/>StateChangedSignal();</highlight></codeline>
+<codeline lineno="1111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1112"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Trait<sp/>accessors<sp/>(non-chaining)</highlight></codeline>
+<codeline lineno="1122"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1InteractiveTrait" kindref="compound">InteractiveTrait</ref><sp/>EnsureInteractiveTrait();</highlight></codeline>
+<codeline lineno="1123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsInteractive()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1140"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1SelectableTrait" kindref="compound">SelectableTrait</ref><sp/>EnsureSelectableTrait();</highlight></codeline>
+<codeline lineno="1141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsSelectable()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1164"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>&amp;<sp/>SetInteractionEffect(<ref refid="classDali_1_1Ui_1_1Trait" kindref="compound">Trait</ref><sp/>effect);</highlight></codeline>
+<codeline lineno="1165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1166"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>intended<sp/>for<sp/>application<sp/>developers</highlight></codeline>
+<codeline lineno="1168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="dali-ui-common_8h_1aef2307dd4c2caad2d52fb78f0d24a16c" kindref="member">DALI_UI_API</ref><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>(<ref refid="classDali_1_1Ui_1_1ViewImpl" kindref="compound">ViewImpl</ref>&amp;<sp/>implementation);</highlight></codeline>
+<codeline lineno="1174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="dali-ui-common_8h_1aef2307dd4c2caad2d52fb78f0d24a16c" kindref="member">DALI_UI_API</ref><sp/><ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>(Dali::Internal::CustomActor*<sp/>internal);</highlight></codeline>
+<codeline lineno="1182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1183"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="1190"><highlight class="normal"><sp/><sp/>BaseHandle<sp/>GetLayoutParamsInternal(<ref refid="namespaceDali_1_1Ui_1a3cd32735897c3de65ac5c850fb272194" kindref="member">LayoutParamsType</ref><sp/>type)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1192"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>From<sp/>Control.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Refactoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1195"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="1199" refid="classDali_1_1Ui_1_1View_1a4c879849fdea4bc1feed76270a5c5692" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View_1a4c879849fdea4bc1feed76270a5c5692" kindref="member">PropertyRange</ref></highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1201"><highlight class="normal"><sp/><sp/><sp/><sp/>PROPERTY_START_INDEX<sp/>=</highlight></codeline>
+<codeline lineno="1202" refid="classDali_1_1Ui_1_1View_1a4c879849fdea4bc1feed76270a5c5692a66915d41df8bcdad7252f34821f76c41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PROPERTY_REGISTRATION_START_INDEX,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1203" refid="classDali_1_1Ui_1_1View_1a4c879849fdea4bc1feed76270a5c5692a66038cc306d8367642b3d77f60a6007d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>VIEW_PROPERTY_START_INDEX<sp/>=<sp/>PROPERTY_START_INDEX,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1204"><highlight class="normal"><sp/><sp/><sp/><sp/>VIEW_PROPERTY_END_INDEX<sp/><sp/><sp/>=<sp/>VIEW_PROPERTY_START_INDEX<sp/>+<sp/>1000<sp/></highlight></codeline>
+<codeline lineno="1205" refid="classDali_1_1Ui_1_1View_1a4c879849fdea4bc1feed76270a5c5692a10a9e1cedf368f3f04cb73f40d374517" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1210" refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063" kindref="member">OffScreenRenderingType</ref></highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1212" refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063aeb20b0ea0a1ca3fe17afefedce92e890" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063aeb20b0ea0a1ca3fe17afefedce92e890" kindref="member">NONE</ref>,</highlight></codeline>
+<codeline lineno="1213" refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063aa81419dab5d98165e863c190d1423ce9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063aa81419dab5d98165e863c190d1423ce9" kindref="member">REFRESH_ONCE</ref>,</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/>REFRESH_ALWAYS</highlight></codeline>
+<codeline lineno="1215" refid="classDali_1_1Ui_1_1View_1ab3e6104855f180fc84aaed3d01887063acad846f2376b7b0126663594fe9e41b1" refkind="member"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="1219" refid="structDali_1_1Ui_1_1View_1_1Property" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDali_1_1Ui_1_1View_1_1Property" kindref="compound">Property</ref></highlight></codeline>
+<codeline lineno="1220"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1231" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa945b563763c0274083d0383a5fea9fbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>BACKGROUND<sp/>=<sp/>PROPERTY_START_INDEX<sp/>+<sp/>1,</highlight></codeline>
+<codeline lineno="1232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1238" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa92144dd409f8b550e66988c5cf56af99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa92144dd409f8b550e66988c5cf56af99" kindref="member">MARGIN</ref>,</highlight></codeline>
+<codeline lineno="1239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1244" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa8bbbd564cd32393376ea4504fba9a788" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa8bbbd564cd32393376ea4504fba9a788" kindref="member">PADDING</ref>,</highlight></codeline>
+<codeline lineno="1245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1250" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa7b2f2468b2438d06790d69435419fd5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa7b2f2468b2438d06790d69435419fd5b" kindref="member">LEFT_FOCUSABLE_ACTOR_ID</ref>,</highlight></codeline>
+<codeline lineno="1251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1256" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaf9bd895a796dbf5ed5f5090c3a049ad5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaf9bd895a796dbf5ed5f5090c3a049ad5" kindref="member">RIGHT_FOCUSABLE_ACTOR_ID</ref>,</highlight></codeline>
+<codeline lineno="1257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1262" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aae022f0f0b25d002e11e9b9a8eacc4d09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aae022f0f0b25d002e11e9b9a8eacc4d09" kindref="member">UP_FOCUSABLE_ACTOR_ID</ref>,</highlight></codeline>
+<codeline lineno="1263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1268" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa53cfa4c90c49fb1511965a05b98fb08d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa53cfa4c90c49fb1511965a05b98fb08d" kindref="member">DOWN_FOCUSABLE_ACTOR_ID</ref>,</highlight></codeline>
+<codeline lineno="1269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1274" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa0cbedc3b6e089fefc208ece98356668c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa0cbedc3b6e089fefc208ece98356668c" kindref="member">SHADOW</ref>,</highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1280" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaa9c9c8d7b10b46ac827c1ca41f598ee7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaa9c9c8d7b10b46ac827c1ca41f598ee7" kindref="member">ACCESSIBILITY_NAME</ref>,</highlight></codeline>
+<codeline lineno="1281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1286" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aabcbdd7080758ec161e958ed456ba705a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aabcbdd7080758ec161e958ed456ba705a" kindref="member">ACCESSIBILITY_DESCRIPTION</ref>,</highlight></codeline>
+<codeline lineno="1287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1292" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aab9bd7675bcc0c5be2cbad184f0eaa005" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aab9bd7675bcc0c5be2cbad184f0eaa005" kindref="member">ACCESSIBILITY_TRANSLATION_DOMAIN</ref>,</highlight></codeline>
+<codeline lineno="1293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1302" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aacb631da149625fb58cfd0a9572a28498" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aacb631da149625fb58cfd0a9572a28498" kindref="member">ACCESSIBILITY_ROLE</ref>,</highlight></codeline>
+<codeline lineno="1303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1308" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaad0c9319570c7d757823e2f74b3eaad5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaad0c9319570c7d757823e2f74b3eaad5" kindref="member">ACCESSIBILITY_HIGHLIGHTABLE</ref>,</highlight></codeline>
+<codeline lineno="1309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1314" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aac3271385068a265c91777747ba754c64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aac3271385068a265c91777747ba754c64" kindref="member">ACCESSIBILITY_ATTRIBUTES</ref>,</highlight></codeline>
+<codeline lineno="1315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1322" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa888d99c6f3f8e8beaf164fc4b57f0488" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa888d99c6f3f8e8beaf164fc4b57f0488" kindref="member">DISPATCH_KEY_EVENTS</ref>,</highlight></codeline>
+<codeline lineno="1323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1329" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa116a86b291bdeabc0749378cf6050460" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa116a86b291bdeabc0749378cf6050460" kindref="member">ACCESSIBILITY_HIDDEN</ref>,</highlight></codeline>
+<codeline lineno="1330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1335" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa806b96e4a22d8604f5c6d5db8b01ed11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa806b96e4a22d8604f5c6d5db8b01ed11" kindref="member">CLOCKWISE_FOCUSABLE_ACTOR_ID</ref>,</highlight></codeline>
+<codeline lineno="1336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1341" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaf0c8b59f375ac6ff5d277b39f28a020b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aaf0c8b59f375ac6ff5d277b39f28a020b" kindref="member">COUNTER_CLOCKWISE_FOCUSABLE_ACTOR_ID</ref>,</highlight></codeline>
+<codeline lineno="1342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1349" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa82a442f50d136ce67cf8740b48b7b205" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa82a442f50d136ce67cf8740b48b7b205" kindref="member">AUTOMATION_ID</ref>,</highlight></codeline>
+<codeline lineno="1350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1355" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aad7eaeb676ce5d051f68c0be24c2815f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aad7eaeb676ce5d051f68c0be24c2815f4" kindref="member">ACCESSIBILITY_VALUE</ref>,</highlight></codeline>
+<codeline lineno="1356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1361" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa4771aaeff3eb0ea54463aeafa1e8771b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa4771aaeff3eb0ea54463aeafa1e8771b" kindref="member">ACCESSIBILITY_SCROLLABLE</ref>,</highlight></codeline>
+<codeline lineno="1362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1367" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa4840065dc895d10a86745f9366049220" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa4840065dc895d10a86745f9366049220" kindref="member">ACCESSIBILITY_STATES</ref>,</highlight></codeline>
+<codeline lineno="1368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1373" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa325a81651303174cac0cb205c5b9e58a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa325a81651303174cac0cb205c5b9e58a" kindref="member">ACCESSIBILITY_IS_MODAL</ref>,</highlight></codeline>
+<codeline lineno="1374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1380" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aad9aceb5fb45789830b98648d918c5e6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aad9aceb5fb45789830b98648d918c5e6f" kindref="member">OFFSCREEN_RENDERING</ref>,</highlight></codeline>
+<codeline lineno="1381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1386" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aabc12ae715aec17075c6316885a4d9610" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aabc12ae715aec17075c6316885a4d9610" kindref="member">INNER_SHADOW</ref>,</highlight></codeline>
+<codeline lineno="1387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1392" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa9426acfee613a4902483a282b680f9a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa9426acfee613a4902483a282b680f9a9" kindref="member">BORDERLINE</ref>,</highlight></codeline>
+<codeline lineno="1393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1399" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aac086c0b236023018f54e8909944bfb49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aac086c0b236023018f54e8909944bfb49" kindref="member">REQUESTED_WIDTH</ref>,</highlight></codeline>
+<codeline lineno="1400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1406" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa8979798e3870e2dc7fef1f0f26e8afd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa8979798e3870e2dc7fef1f0f26e8afd7" kindref="member">REQUESTED_HEIGHT</ref>,</highlight></codeline>
+<codeline lineno="1407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1412" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa630c090ed7f5a4eb7f15bbd9409e958a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa630c090ed7f5a4eb7f15bbd9409e958a" kindref="member">MINIMUM_WIDTH</ref>,</highlight></codeline>
+<codeline lineno="1413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1418" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa52b325d6a7aaaac08e25b246c578e83e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa52b325d6a7aaaac08e25b246c578e83e" kindref="member">MINIMUM_HEIGHT</ref>,</highlight></codeline>
+<codeline lineno="1419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1424" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa210aa451d754a6459ec0def93ac6e85c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa210aa451d754a6459ec0def93ac6e85c" kindref="member">MAXIMUM_WIDTH</ref>,</highlight></codeline>
+<codeline lineno="1425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1430" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aacf7b34b0344948b61f39c13c3c61db45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aacf7b34b0344948b61f39c13c3c61db45" kindref="member">MAXIMUM_HEIGHT</ref>,</highlight></codeline>
+<codeline lineno="1431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1436" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa0f4b94619a1033adf72652a4e9e790c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa0f4b94619a1033adf72652a4e9e790c0" kindref="member">LAYOUT_MODE</ref>,</highlight></codeline>
+<codeline lineno="1437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1442" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa10ad99c26b84786752c7df7f7c72e415" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa10ad99c26b84786752c7df7f7c72e415" kindref="member">KEY_NAVIGATION_SUPPORT</ref>,</highlight></codeline>
+<codeline lineno="1443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1448" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa296e9841d47c9058c2bb051adc6b6f18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa296e9841d47c9058c2bb051adc6b6f18" kindref="member">FOCUS_GROUP</ref>,</highlight></codeline>
+<codeline lineno="1449"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1459" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aab526752a2567d311f5ec6a13ea5105b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>CORNER_RADIUS<sp/>=<sp/>ANIMATABLE_PROPERTY_WITHOUT_UNIFORM_REGISTRATION_START_INDEX,</highlight></codeline>
+<codeline lineno="1460"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1469" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa6ada1b37222ec1a01953cc26e9bfc67c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa6ada1b37222ec1a01953cc26e9bfc67c" kindref="member">CORNER_RADIUS_POLICY</ref>,</highlight></codeline>
+<codeline lineno="1470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1480" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aac3a3cabc4e99a563bddeab9446e66063" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aac3a3cabc4e99a563bddeab9446e66063" kindref="member">CORNER_SQUARENESS</ref>,</highlight></codeline>
+<codeline lineno="1481"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1488" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa23b2e8e8ae663236cceda1a4c4f98f1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa23b2e8e8ae663236cceda1a4c4f98f1b" kindref="member">BORDERLINE_WIDTH</ref>,</highlight></codeline>
+<codeline lineno="1489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1496" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa1054af02d68b7ee96000f1e1e837fd62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa1054af02d68b7ee96000f1e1e837fd62" kindref="member">BORDERLINE_COLOR</ref>,</highlight></codeline>
+<codeline lineno="1497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>BORDERLINE_OFFSET</highlight></codeline>
+<codeline lineno="1505" refid="structDali_1_1Ui_1_1View_1_1Property_1a0d4a1ec82beb19f25d9986d4c8b7371aa25b7932a1d3ba59b574f7ebee740b46b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="1506"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="1507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1508"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Typedefs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1509"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1511" refid="classDali_1_1Ui_1_1View_1a8bd9f3862da33ae00a7de19125d10ee8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;bool(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a8bd9f3862da33ae00a7de19125d10ee8" kindref="member">KeyEventSignalType</ref>;</highlight></codeline>
+<codeline lineno="1512"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1514" refid="classDali_1_1Ui_1_1View_1a1645e9c10c54bf3714555b973e94fe7e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a1645e9c10c54bf3714555b973e94fe7e" kindref="member">FocusChangedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1515"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1517" refid="classDali_1_1Ui_1_1View_1a114893fa21b66faaaa6e49a669b81f1f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a114893fa21b66faaaa6e49a669b81f1f" kindref="member">ResourceReadySignalType</ref>;</highlight></codeline>
+<codeline lineno="1518"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1520" refid="classDali_1_1Ui_1_1View_1a1909d9627ba1bf109ab55c607a8b5cb6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a1909d9627ba1bf109ab55c607a8b5cb6" kindref="member">OffScreenRenderingFinishedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1521"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1523" refid="classDali_1_1Ui_1_1View_1ae759488364765360bd05b446ddc6d92f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void()&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1ae759488364765360bd05b446ddc6d92f" kindref="member">AccessibilityActivateSignalType</ref>;</highlight></codeline>
+<codeline lineno="1524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1526" refid="classDali_1_1Ui_1_1View_1af0c4f2901fe2e7aae9fb8216038000b5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void()&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1af0c4f2901fe2e7aae9fb8216038000b5" kindref="member">AccessibilityReadingSkippedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1529" refid="classDali_1_1Ui_1_1View_1a73e4089551fed409b50a20d270f9fb72" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void()&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a73e4089551fed409b50a20d270f9fb72" kindref="member">AccessibilityReadingPausedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1532" refid="classDali_1_1Ui_1_1View_1aef6597f24c37d4cfbf2d6ff1238ca274" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void()&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1aef6597f24c37d4cfbf2d6ff1238ca274" kindref="member">AccessibilityReadingResumedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1535" refid="classDali_1_1Ui_1_1View_1afe3e92c44a895a1097a3358cf12fd7da" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void()&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1afe3e92c44a895a1097a3358cf12fd7da" kindref="member">AccessibilityReadingCancelledSignalType</ref>;</highlight></codeline>
+<codeline lineno="1536"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1538" refid="classDali_1_1Ui_1_1View_1a9b065426721fc9fae157c172cee9038e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void()&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a9b065426721fc9fae157c172cee9038e" kindref="member">AccessibilityReadingStoppedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1539"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1541" refid="classDali_1_1Ui_1_1View_1af04765c9a084153ab3a2207b46789d22" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(Dali::String&amp;)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1af04765c9a084153ab3a2207b46789d22" kindref="member">AccessibilityGetNameSignalType</ref>;</highlight></codeline>
+<codeline lineno="1542"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1544" refid="classDali_1_1Ui_1_1View_1ac141cc4fd2cd74b168e5f53791594fa3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(Dali::String&amp;)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1ac141cc4fd2cd74b168e5f53791594fa3" kindref="member">AccessibilityGetDescriptionSignalType</ref>;</highlight></codeline>
+<codeline lineno="1545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1548" refid="classDali_1_1Ui_1_1View_1a7ad905ca195132e831de9f9aafb250e4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a7ad905ca195132e831de9f9aafb250e4" kindref="member">AccessibilityHighlightedSignalType</ref>;</highlight></codeline>
+<codeline lineno="1549"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1551" refid="classDali_1_1Ui_1_1View_1a9c804bfc5a245b5857f832af68d86cbf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Signal&lt;void(<ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>,<sp/>Dali::Property::Index,<sp/>Dali::Property::Index)&gt;<sp/><ref refid="classDali_1_1Ui_1_1View_1a9c804bfc5a245b5857f832af68d86cbf" kindref="member">VisualEventSignalType</ref>;</highlight></codeline>
+<codeline lineno="1552"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1553"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Background</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1554"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1558"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ClearBackground();</highlight></codeline>
+<codeline lineno="1559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1567"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetRenderEffect(<ref refid="classDali_1_1Ui_1_1RenderEffect" kindref="compound">Ui::RenderEffect</ref><sp/>effect);</highlight></codeline>
+<codeline lineno="1568"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1573"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1RenderEffect" kindref="compound">Ui::RenderEffect</ref><sp/>GetRenderEffect()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1574"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1578"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ClearRenderEffect();</highlight></codeline>
+<codeline lineno="1579"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1580"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Resources</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1581"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1588"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsResourceReady()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1595"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsOnScene()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1596"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1597"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Signals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1629"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1a114893fa21b66faaaa6e49a669b81f1f" kindref="member">ResourceReadySignalType</ref>&amp;<sp/>ResourceReadySignal();</highlight></codeline>
+<codeline lineno="1630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1644"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1a1909d9627ba1bf109ab55c607a8b5cb6" kindref="member">OffScreenRenderingFinishedSignalType</ref>&amp;<sp/>OffScreenRenderingFinishedSignal();</highlight></codeline>
+<codeline lineno="1645"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1658"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1a8bd9f3862da33ae00a7de19125d10ee8" kindref="member">KeyEventSignalType</ref>&amp;<sp/>KeyEventSignal();</highlight></codeline>
+<codeline lineno="1659"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1670"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1View_1a1645e9c10c54bf3714555b973e94fe7e" kindref="member">FocusChangedSignalType</ref>&amp;<sp/>FocusChangedSignal();</highlight></codeline>
+<codeline lineno="1671"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1672"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Animation</highlight></codeline>
+<codeline lineno="1688"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1ViewAnimationBridge" kindref="compound">ViewAnimationBridge</ref><sp/>Animate(Animation<sp/>animation);</highlight></codeline>
+<codeline lineno="1689"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1701"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1ViewAnimationSpec" kindref="compound">ViewAnimationSpec</ref><sp/>NewAnimationSpec();</highlight></codeline>
+<codeline lineno="1702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1703"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>Templates<sp/>for<sp/>Deriving<sp/>Classes</highlight></codeline>
+<codeline lineno="1713"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>I&gt;</highlight></codeline>
+<codeline lineno="1714" refid="classDali_1_1Ui_1_1View_1abc3d141ef4b60009080519c10c88584e" refkind="member"><highlight class="normal"><sp/><sp/>DALI_INTERNAL<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>T<sp/><ref refid="classDali_1_1Ui_1_1View_1abc3d141ef4b60009080519c10c88584e" kindref="member">DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="1715"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1716"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>result;</highlight></codeline>
+<codeline lineno="1717"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/>CustomActor<sp/>custom<sp/>=<sp/>Dali::CustomActor::DownCast(handle);</highlight></codeline>
+<codeline lineno="1719"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(custom)</highlight></codeline>
+<codeline lineno="1720"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>CustomActorImpl&amp;<sp/>customImpl<sp/>=<sp/>custom.GetImplementation();</highlight></codeline>
+<codeline lineno="1722"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1723"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>I*<sp/>impl<sp/>=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">I*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(&amp;customImpl);</highlight></codeline>
+<codeline lineno="1724"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(impl)</highlight></codeline>
+<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>T(customImpl.GetOwner());</highlight></codeline>
+<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1729"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1730"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1731"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="1732"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1733"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1741"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>I&gt;</highlight></codeline>
+<codeline lineno="1742" refid="classDali_1_1Ui_1_1View_1af0972c884998af0cfb42706a11e9d9cd" refkind="member"><highlight class="normal"><sp/><sp/>DALI_INTERNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1View_1af0972c884998af0cfb42706a11e9d9cd" kindref="member">VerifyCustomActorPointer</ref>(Dali::Internal::CustomActor*<sp/>internal)</highlight></codeline>
+<codeline lineno="1743"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Can<sp/>have<sp/>a<sp/>NULL<sp/>pointer<sp/>so<sp/>we<sp/>only<sp/>need<sp/>to<sp/>check<sp/>if<sp/>the<sp/>internal<sp/>implementation<sp/>is<sp/>our<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>when<sp/>there<sp/>is<sp/>a<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(internal)</highlight></codeline>
+<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>DALI_ASSERT_DEBUG(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">I*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(&amp;CustomActor(internal).GetImplementation()));</highlight></codeline>
+<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1750"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1751"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1752"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1753"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1754"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1755"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/view.h"/>
+  </compounddef>
+</doxygen>

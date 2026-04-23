@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Ui_1_1MaskEffect" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Ui::MaskEffect</compoundname>
+    <basecompoundref refid="classDali_1_1Ui_1_1RenderEffect" prot="public" virt="non-virtual">Dali::Ui::RenderEffect</basecompoundref>
+    <includes refid="mask-effect_8h" local="no">mask-effect.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ce" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MaskMode</name>
+        <qualifiedname>Dali::Ui::MaskEffect::MaskMode</qualifiedname>
+        <enumvalue id="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ceaa3979984b2f9a4e159f94fd121849e50" prot="public">
+          <name>ALPHA</name>
+          <briefdescription>
+<para>Uses the alpha channel of the mask texture. (Default) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ceacb24c078266b1e639eccaec85db796f7" prot="public">
+          <name>LUMINANCE</name>
+          <briefdescription>
+<para>Converts RGB to grayscale and uses the luminance as mask value. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for selecting how the mask source interprets pixel data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="51" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1a54b2ee914261b1396aa386c4dfec18e4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1MaskEffect" kindref="compound">MaskEffect</ref></type>
+        <definition>MaskEffect Dali::Ui::MaskEffect::New</definition>
+        <argsstring>(Ui::View maskView)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Ui::MaskEffect::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1View" kindref="compound">Ui::View</ref></type>
+          <declname>maskView</declname>
+        </param>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Ui_1_1MaskEffect" kindref="compound">MaskEffect</ref> with view, using default settings. The default settings are: </para>
+        </briefdescription>
+        <detaileddescription>
+<para>maskMode = <ref refid="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ceaa3979984b2f9a4e159f94fd121849e50" kindref="member">MaskMode::ALPHA</ref> maskPosition = Vector2(0.f, 0.f) maskScale = Vector2(1.f, 1.f)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">maskView</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref> to affect mask.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="68" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="40" bodyend="44"/>
+        <references refid="classDali_1_1Ui_1_1MaskEffect_1a1aab1da45e4da7f8ab22c54064caaee1">MaskEffect</references>
+        <referencedby refid="classDali_1_1Ui_1_1Integration_1_1LabelImpl_1a90e9cf61fba2383c63866f6306798266" compoundref="label-impl_8cpp" startline="892" endline="911">Dali::Ui::Integration::LabelImpl::SetMaskEffect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1ac0dfab302dabea77fbf2282a4aedf7f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1MaskEffect" kindref="compound">MaskEffect</ref></type>
+        <definition>MaskEffect Dali::Ui::MaskEffect::New</definition>
+        <argsstring>(Ui::View maskView, MaskMode maskMode, Vector2 maskPosition, Vector2 maskScale)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Ui::MaskEffect::New</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1View" kindref="compound">Ui::View</ref></type>
+          <declname>maskView</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ce" kindref="member">MaskMode</ref></type>
+          <declname>maskMode</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>maskPosition</declname>
+        </param>
+        <param>
+          <type>Vector2</type>
+          <declname>maskScale</declname>
+        </param>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Ui_1_1MaskEffect" kindref="compound">MaskEffect</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">maskView</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref> to affect mask. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maskMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Defines pixel data type (alpha, luminance) used as the mask source. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maskPosition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Position of mask source. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">maskScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Scale of mask source.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="80" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="66" bodyend="70"/>
+        <references refid="classDali_1_1Ui_1_1MaskEffect_1a1aab1da45e4da7f8ab22c54064caaee1">MaskEffect</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1a1aab1da45e4da7f8ab22c54064caaee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::MaskEffect::MaskEffect</definition>
+        <argsstring>()</argsstring>
+        <name>MaskEffect</name>
+        <qualifiedname>Dali::Ui::MaskEffect::MaskEffect</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized mask effect. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="85" column="3"/>
+        <referencedby refid="classDali_1_1Ui_1_1MaskEffect_1a54b2ee914261b1396aa386c4dfec18e4" compoundref="mask-effect_8cpp" startline="40" endline="44">New</referencedby>
+        <referencedby refid="classDali_1_1Ui_1_1MaskEffect_1ac0dfab302dabea77fbf2282a4aedf7f6" compoundref="mask-effect_8cpp" startline="66" endline="70">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1af9ae20023157983092d81b0686d0c9bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::MaskEffect::MaskEffect</definition>
+        <argsstring>(const MaskEffect &amp;handle)</argsstring>
+        <name>MaskEffect</name>
+        <qualifiedname>Dali::Ui::MaskEffect::MaskEffect</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1MaskEffect" kindref="compound">MaskEffect</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="90" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1a859dd2f68903e2959325ea9b0db76cd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::MaskEffect::~MaskEffect</definition>
+        <argsstring>()</argsstring>
+        <name>~MaskEffect</name>
+        <qualifiedname>Dali::Ui::MaskEffect::~MaskEffect</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="95" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1a2d8a04ef284f7f5ddd9ee12b625bfedf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::MaskEffect::SetTargetMaskOnce</definition>
+        <argsstring>(bool targetMaskOnce)</argsstring>
+        <name>SetTargetMaskOnce</name>
+        <qualifiedname>Dali::Ui::MaskEffect::SetTargetMaskOnce</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>targetMaskOnce</declname>
+        </param>
+        <briefdescription>
+<para>Set whether the target should be rendered once(true) or every frame(false). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">targetMaskOnce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, renders target once, else updates every frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="101" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1a0a6fd22c3671fe4dabcc044b561336d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Ui::MaskEffect::GetTargetMaskOnce</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTargetMaskOnce</name>
+        <qualifiedname>Dali::Ui::MaskEffect::GetTargetMaskOnce</qualifiedname>
+        <briefdescription>
+<para>Retrives whether the target should be rendered once(true) or every frame(false). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="106" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1af58da3202f09d07992bf2eead2e4e03b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::MaskEffect::SetSourceMaskOnce</definition>
+        <argsstring>(bool sourceMaskOnce)</argsstring>
+        <name>SetSourceMaskOnce</name>
+        <qualifiedname>Dali::Ui::MaskEffect::SetSourceMaskOnce</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>sourceMaskOnce</declname>
+        </param>
+        <briefdescription>
+<para>Set whether the source should be rendered once(true) or every frame(false). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sourceMaskOnce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, renders source once, else updates every frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="112" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1MaskEffect_1a977de5018af11272aaffe8a74942e89b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Ui::MaskEffect::GetSourceMaskOnce</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSourceMaskOnce</name>
+        <qualifiedname>Dali::Ui::MaskEffect::GetSourceMaskOnce</qualifiedname>
+        <briefdescription>
+<para>Retrives whether the source should be rendered once(true) or every frame(false). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="117" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Ui_1_1MaskEffect" kindref="compound">MaskEffect</ref> is a visual effect that masks owner <ref refid="classDali_1_1Ui_1_1View" kindref="compound">View</ref>. This class is a concrete class from <ref refid="classDali_1_1Ui_1_1RenderEffect" kindref="compound">RenderEffect</ref> interface. Add this effect to a view, clear manually to deactivate. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1Ui_1_1View" kindref="compound">Ui::View</ref> view = <ref refid="classDali_1_1Ui_1_1View_1a3967c207da7b24fed7ab7430668a93ac" kindref="member">Ui::View::New()</ref>; parent.Add(view); view.SetRenderEffect(MaskEffect::New(maskView)); // Activate ... view.ClearRenderEffect(); // Deactivate </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::MaskEffect</label>
+        <link refid="classDali_1_1Ui_1_1MaskEffect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Ui::RenderEffect</label>
+        <link refid="classDali_1_1Ui_1_1RenderEffect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::MaskEffect</label>
+        <link refid="classDali_1_1Ui_1_1MaskEffect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Ui::RenderEffect</label>
+        <link refid="classDali_1_1Ui_1_1RenderEffect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" line="45" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/mask-effect.h" bodystart="46" bodyend="127"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a06bfd8f08981e19872a7c56e1dae0c9e" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>Activate</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ceaa3979984b2f9a4e159f94fd121849e50" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>ALPHA</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a0f4f92a1e2757322f0a6655d9526bcab" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>Deactivate</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a977de5018af11272aaffe8a74942e89b" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>GetSourceMaskOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a0a6fd22c3671fe4dabcc044b561336d0" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>GetTargetMaskOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1aab7d084c4e9f8fe0f01331d52d6b588c" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>IsActivated</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ceacb24c078266b1e639eccaec85db796f7" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>LUMINANCE</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a1aab1da45e4da7f8ab22c54064caaee1" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>MaskEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1af9ae20023157983092d81b0686d0c9bb" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>MaskEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a82bf97f51d78ea17738c942b6eea33ce" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>MaskMode</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a54b2ee914261b1396aa386c4dfec18e4" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>New</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1ac0dfab302dabea77fbf2282a4aedf7f6" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>New</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1acc5addb128e22b57d2b953d5f2131da8" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>Refresh</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a5ff85ac14ffda9ea84917c03948d61ed" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>RenderEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a13c67c62b3ba858caaec2f376c71d681" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>RenderEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1af58da3202f09d07992bf2eead2e4e03b" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>SetSourceMaskOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a2d8a04ef284f7f5ddd9ee12b625bfedf" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>SetTargetMaskOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1MaskEffect_1a859dd2f68903e2959325ea9b0db76cd4" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>~MaskEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a4bf86a7291e7e4fa09c3915f2f0c1fa8" prot="public" virt="non-virtual"><scope>Dali::Ui::MaskEffect</scope><name>~RenderEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="window-blur-info_8h" kind="file" language="C++">
+    <compoundname>window-blur-info.h</compoundname>
+    <includes refid="window-enumerations_8h" local="no">dali/public-api/adaptor-framework/window-enumerations.h</includes>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includes local="no">dali/public-api/math/vector4.h</includes>
+    <includedby refid="window-blur-info_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-blur-info.cpp</includedby>
+    <includedby refid="window-devel_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-devel.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-blur-info.h</label>
+        <link refid="window-blur-info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/adaptor-framework/window-enumerations.h</label>
+        <link refid="window-enumerations_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/math/vector4.h</label>
+      </node>
+      <node id="3">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/accessibility.cpp</label>
+        <link refid="accessibility_8cpp"/>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/actor-accessible.cpp</label>
+        <link refid="actor-accessible_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-blur-info.cpp</label>
+        <link refid="window-blur-info_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-blur-info.h</label>
+        <link refid="window-blur-info_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-devel.cpp</label>
+        <link refid="window-devel_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-devel.h</label>
+        <link refid="window-devel_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structDali_1_1WindowDimInfo" prot="public">Dali::WindowDimInfo</innerclass>
+    <innerclass refid="structDali_1_1WindowBlurInfo" prot="public">Dali::WindowBlurInfo</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_WINDOW_BLUR_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_WINDOW_BLUR_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="window-enumerations_8h" kindref="compound">dali/public-api/adaptor-framework/window-enumerations.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/math/vector4.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structDali_1_1WindowDimInfo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53" refid="structDali_1_1WindowDimInfo_1a578abc0f57335e346661aaf7574600fd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowDimInfo_1a578abc0f57335e346661aaf7574600fd" kindref="member">WindowDimInfo</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable,<sp/>Vector4<sp/>dim)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">:<sp/>isEnabled(enable),</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>dimColor(dim)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65" refid="structDali_1_1WindowDimInfo_1a3897f371f184a1eea1ddb1260a21bd07" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowDimInfo_1a3897f371f184a1eea1ddb1260a21bd07" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;<sp/>dimInfo)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="66"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isEnabled<sp/>!=<sp/>dimInfo.<ref refid="structDali_1_1WindowDimInfo_1ad67f7830bd3884ab2589a9e6e6f2dcbd" kindref="member">isEnabled</ref>)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dimColor<sp/>!=<sp/>dimInfo.<ref refid="structDali_1_1WindowDimInfo_1a8ad8f48fcbace5af6787444501da7c99" kindref="member">dimColor</ref>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="structDali_1_1WindowDimInfo_1ad26bbf5e029fc23619b6138b1abf7324" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowDimInfo_1ad26bbf5e029fc23619b6138b1abf7324" kindref="member">WindowDimInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="79" refid="structDali_1_1WindowDimInfo_1ac74532b25e4a839c313ba69ada8c86fa" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowDimInfo_1ac74532b25e4a839c313ba69ada8c86fa" kindref="member">WindowDimInfo</ref>(<ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;&amp;)<sp/>noexcept<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="80" refid="structDali_1_1WindowDimInfo_1aeef1c56aebebfb1a4a0fe83c5a5c4510" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;<sp/>operator=(const<sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;)<sp/><sp/><sp/><sp/><sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="81" refid="structDali_1_1WindowDimInfo_1ada0a45dd86cedbb5d80ce79994bf7faf" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;<sp/>operator=(<ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="95" refid="structDali_1_1WindowDimInfo_1ad67f7830bd3884ab2589a9e6e6f2dcbd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEnabled;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="structDali_1_1WindowDimInfo_1a8ad8f48fcbace5af6787444501da7c99" refkind="member"><highlight class="normal"><sp/><sp/>Vector4<sp/>dimColor;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="structDali_1_1WindowBlurInfo" refkind="compound"><highlight class="normal">struct<sp/><ref refid="dali-adaptor-common_8h_1af483d92d053cc35925e904ef1c85bc5b" kindref="member">DALI_ADAPTOR_API</ref><sp/><ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="137" refid="structDali_1_1WindowBlurInfo_1a27fc4131eec15b640efc3e87ffd8f5dd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowBlurInfo_1a27fc4131eec15b640efc3e87ffd8f5dd" kindref="member">WindowBlurInfo</ref>()</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>:<sp/>windowBlurType(<ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref>::NONE),</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>windowBlurRadius(0),</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>backgroundCornerRadius(0),</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>behindDimInfo(false,<sp/>Vector4(0.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f))</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="structDali_1_1WindowBlurInfo_1a879ad6b06e34efb9989bde263c78a341" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowBlurInfo_1a879ad6b06e34efb9989bde263c78a341" kindref="member">WindowBlurInfo</ref>(<ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blurRadius,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cornerRadius)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>:<sp/>windowBlurType(type),</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>windowBlurRadius(blurRadius),</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>backgroundCornerRadius(cornerRadius),</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>behindDimInfo(false,<sp/>Vector4(0.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f))</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="structDali_1_1WindowBlurInfo_1a87f88c70d43c41f6178f1e1af26cb00a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowBlurInfo_1a87f88c70d43c41f6178f1e1af26cb00a" kindref="member">WindowBlurInfo</ref>(<ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blurRadius)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>:<sp/>windowBlurType(type),</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>windowBlurRadius(blurRadius),</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>backgroundCornerRadius(0),</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>behindDimInfo(false,<sp/>Vector4(0.0f,<sp/>0.0f,<sp/>0.0f,<sp/>0.0f))</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="structDali_1_1WindowBlurInfo_1ad6f8329180607e2152c62f031caac61f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowBlurInfo_1ad6f8329180607e2152c62f031caac61f" kindref="member">WindowBlurInfo</ref>(<ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blurRadius,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cornerRadius,<sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref><sp/>dimInfo)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>:<sp/>windowBlurType(type),</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>windowBlurRadius(blurRadius),</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>backgroundCornerRadius(cornerRadius),</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>behindDimInfo(dimInfo)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;<sp/>blurInfo)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBlurType(<ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref><sp/>GetBlurType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBlurRadius(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blurRadius);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetBlurRadius()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetCornerRadiusForBackground(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cornerRadius);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetCornerRadiusForBackground()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBehindBlurDimInfo(<ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref><sp/>dimInfo);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref><sp/>GetBehindBlurDimInfo()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297" refid="structDali_1_1WindowBlurInfo_1a6c31a649b9e2ecc29989091bdca72769" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowBlurInfo_1a6c31a649b9e2ecc29989091bdca72769" kindref="member">WindowBlurInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="298" refid="structDali_1_1WindowBlurInfo_1a4bf0743df09e7e58fc0a14b9defa3325" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowBlurInfo_1a4bf0743df09e7e58fc0a14b9defa3325" kindref="member">WindowBlurInfo</ref>(<ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;&amp;)<sp/>noexcept<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="299" refid="structDali_1_1WindowBlurInfo_1ac8ef1b5fc848865e0e49c783199e44af" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;<sp/>operator=(const<sp/><ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;)<sp/><sp/><sp/><sp/><sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="300" refid="structDali_1_1WindowBlurInfo_1a3edaa741cabc9ed2afdd91241eab12a7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;<sp/>operator=(<ref refid="structDali_1_1WindowBlurInfo" kindref="compound">WindowBlurInfo</ref>&amp;&amp;)<sp/>noexcept<sp/>=<sp/>default;<sp/></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="303" refid="structDali_1_1WindowBlurInfo_1ab011c9214ea6930f11599f5c5210687e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a8aa8c647e594b2a97f07a8acbdc40170" kindref="member">WindowBlurType</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>windowBlurType;</highlight></codeline>
+<codeline lineno="304" refid="structDali_1_1WindowBlurInfo_1a7e9d72cca33e25d1f60efff0a065d08c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>windowBlurRadius;</highlight></codeline>
+<codeline lineno="305" refid="structDali_1_1WindowBlurInfo_1a9924d905696ad6a86de5b44e93fef1ff" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backgroundCornerRadius;</highlight></codeline>
+<codeline lineno="306" refid="structDali_1_1WindowBlurInfo_1adadfa604ac3169225280326ae08a0059" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1WindowDimInfo" kindref="compound">WindowDimInfo</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>behindDimInfo;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_WINDOW_BLUR_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/window-blur-info.h"/>
+  </compounddef>
+</doxygen>

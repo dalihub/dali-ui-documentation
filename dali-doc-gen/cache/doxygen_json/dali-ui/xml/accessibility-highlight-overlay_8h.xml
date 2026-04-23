@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="accessibility-highlight-overlay_8h" kind="file" language="C++">
+    <compoundname>accessibility-highlight-overlay.h</compoundname>
+    <includes local="no">dali/public-api/actors/actor.h</includes>
+    <includes local="no">dali/public-api/math/rect.h</includes>
+    <includes local="no">dali/public-api/object/weak-handle.h</includes>
+    <includedby refid="accessibility-highlight-overlay_8cpp" local="yes">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/accessibility-highlight-overlay.cpp</includedby>
+    <includedby refid="view-accessible_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-accessible.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/accessibility-highlight-overlay.h</label>
+        <link refid="accessibility-highlight-overlay_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/math/rect.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/weak-handle.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/accessibility-highlight-overlay.cpp</label>
+        <link refid="accessibility-highlight-overlay_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/accessibility-highlight-overlay.h</label>
+        <link refid="accessibility-highlight-overlay_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-accessible.cpp</label>
+        <link refid="view-accessible_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/view-accessible.h</label>
+        <link refid="view-accessible_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay" prot="public">Dali::Ui::AccessibilityHighlightOverlay</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>accessibility-highlight-overlay.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DALI_UI_ACCESSIBILITY_HIGHLIGHT_OVERLAY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_UI_ACCESSIBILITY_HIGHLIGHT_OVERLAY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2025<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/actors/actor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/math/rect.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/object/weak-handle.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali_1_1Ui" kindref="compound">Dali::Ui</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="namespaceDali_1_1Ui_1adfcba9c2d25bc9b76dad7a562284d01b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1adfcba9c2d25bc9b76dad7a562284d01b" kindref="member">OverlayHighlightMode</ref><sp/>:<sp/>uint32_t</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a670ff563a0558bda5632781c269d3c7dae1f2d5134ed2543d38a0de9751cf75d9" kindref="member">AUTO</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1adfcba9c2d25bc9b76dad7a562284d01baa60a6a471c0681e5a49c4f5d00f6bc5a" kindref="member">MANUAL</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay" kindref="compound">AccessibilityHighlightOverlay</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1afe188449151fd39e94d633515be32ff5" kindref="member">AccessibilityHighlightOverlay</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1aff0d0f65f432d3cfe1e787be8b226930" kindref="member">SetCustomHighlight</ref>(Vector2<sp/>position,<sp/>Vector2<sp/>size);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1aac345a298d24f7e957ba7a73e95e7df5" kindref="member">ResetCustomHighlight</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1a37c1dd16d08c2f79f482e1bd1ff62ed0" kindref="member">UpdateOverlay</ref>(Dali::Actor&amp;<sp/>activeHighlight);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1a4bcc44161c5b8758078780dd809c7164" kindref="member">HideOverlay</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1a05cafe1b9da77441e0c629c49b39876d" kindref="member">SetOverlayMode</ref>(<ref refid="namespaceDali_1_1Ui_1adfcba9c2d25bc9b76dad7a562284d01b" kindref="member">OverlayHighlightMode</ref><sp/>mode);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1adfcba9c2d25bc9b76dad7a562284d01b" kindref="member">OverlayHighlightMode</ref><sp/><ref refid="classDali_1_1Ui_1_1AccessibilityHighlightOverlay_1a41e491f78b6d76f9f93187afb8badd16" kindref="member">GetOverlayMode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>Dali::Actor<sp/>FindParentSceneView(Dali::Actor<sp/>current);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CreateOverlay(Dali::Actor&amp;<sp/>sceneView);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateOverlayPosition(Dali::Actor&amp;<sp/>sceneView,<sp/>Dali::Actor&amp;<sp/>highlight);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>Rect&lt;float&gt;<sp/>GetOverlayExtents(Dali::Actor&amp;<sp/>sceneView,<sp/>Dali::Actor&amp;<sp/>highlight);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mHasOverlayActor;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1adfcba9c2d25bc9b76dad7a562284d01b" kindref="member">OverlayHighlightMode</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mOverlayMode;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>Vector2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mManualPosition;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>Vector2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mManualSize;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>Dali::WeakHandle&lt;Dali::Actor&gt;<sp/>mOverlayActor;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali::Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_UI_ACCESSIBILITY_HIGHLIGHT_OVERLAY_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/integration-api/accessibility-highlight-overlay.h"/>
+  </compounddef>
+</doxygen>

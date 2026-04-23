@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1WorkerThread" kind="class" language="C++" prot="public">
+    <compoundname>Dali::WorkerThread</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1WorkerThread_1a39f93e178be0ea2cb2be7c855f83ae03" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread Dali::WorkerThread::mWorker</definition>
+        <argsstring></argsstring>
+        <name>mWorker</name>
+        <qualifiedname>Dali::WorkerThread::mWorker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="74" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1WorkerThread_1a8ed3840a3f7bbc6502d0e755d1a17dbb" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::WorkerThread::mIndex</definition>
+        <argsstring></argsstring>
+        <name>mIndex</name>
+        <qualifiedname>Dali::WorkerThread::mIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="75" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1WorkerThread_1ac3bb65db8a0d41fad49fdb2a8f9d5be0" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceDali_1a0b7b83e31e9758117f06ce22709f9897" kindref="member">TaskQueue</ref></type>
+        <definition>TaskQueue Dali::WorkerThread::mTaskQueue</definition>
+        <argsstring></argsstring>
+        <name>mTaskQueue</name>
+        <qualifiedname>Dali::WorkerThread::mTaskQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="76" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1WorkerThread_1ac152911daa991f7824e7a1d2dea93b47" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Dali::WorkerThread::mTaskQueueMutex</definition>
+        <argsstring></argsstring>
+        <name>mTaskQueueMutex</name>
+        <qualifiedname>Dali::WorkerThread::mTaskQueueMutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="77" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1WorkerThread_1acbf090130004a235d4a67a419fdaf7c6" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable Dali::WorkerThread::mConditionVariable</definition>
+        <argsstring></argsstring>
+        <name>mConditionVariable</name>
+        <qualifiedname>Dali::WorkerThread::mConditionVariable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="78" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1WorkerThread_1a5484b6b9b21ae827b1a91d587eff9267" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Dali::WorkerThread::mTerminating</definition>
+        <argsstring></argsstring>
+        <name>mTerminating</name>
+        <qualifiedname>Dali::WorkerThread::mTerminating</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="80" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="80" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1a8207e48054e0413da2915f3fdfac7f9c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::WorkerThread::WorkerThread</definition>
+        <argsstring>(uint32_t index)</argsstring>
+        <name>WorkerThread</name>
+        <qualifiedname>Dali::WorkerThread::WorkerThread</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of worker thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Thread" kindref="compound">Thread</ref> index assigned to the object during pool initialisation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="42" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="115" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1ad35adec72862517fd378f3390aeea74d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::WorkerThread::~WorkerThread</definition>
+        <argsstring>()</argsstring>
+        <name>~WorkerThread</name>
+        <qualifiedname>Dali::WorkerThread::~WorkerThread</qualifiedname>
+        <briefdescription>
+<para>Destructor of the worker thread. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="47" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="122" bodyend="137"/>
+        <references refid="classDali_1_1WorkerThread_1a05dcb0dccedd10115c377b540fb865d7" compoundref="thread-pool_8cpp" startline="146" endline="150">Notify</references>
+        <references refid="classDali_1_1WorkerThread_1ace560e46e500fecb4c934059bc3e2fe2" compoundref="thread-pool_8cpp" startline="152" endline="157">Wait</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1a6b8b2a08603fce1264f044f9834dcd90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::WorkerThread::WorkerThread</definition>
+        <argsstring>(const WorkerThread &amp;other)=delete</argsstring>
+        <name>WorkerThread</name>
+        <qualifiedname>Dali::WorkerThread::WorkerThread</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1WorkerThread" kindref="compound">WorkerThread</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="49" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1a1e896d8c002ab7547168b7c7aff07ce5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1WorkerThread" kindref="compound">WorkerThread</ref> &amp;</type>
+        <definition>WorkerThread &amp; Dali::WorkerThread::operator=</definition>
+        <argsstring>(const WorkerThread &amp;other)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::WorkerThread::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1WorkerThread" kindref="compound">WorkerThread</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="50" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1a5a903c85aa1078686d50fb55fc799949" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::WorkerThread::AddTask</definition>
+        <argsstring>(Task task)</argsstring>
+        <name>AddTask</name>
+        <qualifiedname>Dali::WorkerThread::AddTask</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1ae746e96d4d8635875c6177864c3cba7d" kindref="member">Task</ref></type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+<para>Adds task to the task queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>task</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Task to be executed by the thread </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="56" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="139" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1a05dcb0dccedd10115c377b540fb865d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::WorkerThread::Notify</definition>
+        <argsstring>()</argsstring>
+        <name>Notify</name>
+        <qualifiedname>Dali::WorkerThread::Notify</qualifiedname>
+        <briefdescription>
+<para>Wakes up thread. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="61" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="146" bodyend="150"/>
+        <referencedby refid="classDali_1_1WorkerThread_1ad35adec72862517fd378f3390aeea74d" compoundref="thread-pool_8cpp" startline="122" endline="137">~WorkerThread</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1ace560e46e500fecb4c934059bc3e2fe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::WorkerThread::Wait</definition>
+        <argsstring>()</argsstring>
+        <name>Wait</name>
+        <qualifiedname>Dali::WorkerThread::Wait</qualifiedname>
+        <briefdescription>
+<para>Waits for the thread to complete all the tasks currently in the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="66" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="152" bodyend="157"/>
+        <referencedby refid="classDali_1_1WorkerThread_1ad35adec72862517fd378f3390aeea74d" compoundref="thread-pool_8cpp" startline="122" endline="137">~WorkerThread</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1WorkerThread_1a41850e1065567a3f5c3e8828c670f937" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::WorkerThread::WaitAndExecute</definition>
+        <argsstring>()</argsstring>
+        <name>WaitAndExecute</name>
+        <qualifiedname>Dali::WorkerThread::WaitAndExecute</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespaceDali_1_1Internal" kindref="compound">Internal</ref> thread loop function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="72" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="83" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1WorkerThread" kindref="compound">WorkerThread</ref> executes tasks submitted to the pool </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" line="35" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/threading/thread-pool.cpp" bodystart="36" bodyend="81"/>
+    <listofallmembers>
+      <member refid="classDali_1_1WorkerThread_1a5a903c85aa1078686d50fb55fc799949" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>AddTask</name></member>
+      <member refid="classDali_1_1WorkerThread_1acbf090130004a235d4a67a419fdaf7c6" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>mConditionVariable</name></member>
+      <member refid="classDali_1_1WorkerThread_1a8ed3840a3f7bbc6502d0e755d1a17dbb" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>mIndex</name></member>
+      <member refid="classDali_1_1WorkerThread_1ac3bb65db8a0d41fad49fdb2a8f9d5be0" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>mTaskQueue</name></member>
+      <member refid="classDali_1_1WorkerThread_1ac152911daa991f7824e7a1d2dea93b47" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>mTaskQueueMutex</name></member>
+      <member refid="classDali_1_1WorkerThread_1a5484b6b9b21ae827b1a91d587eff9267" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>mTerminating</name></member>
+      <member refid="classDali_1_1WorkerThread_1a39f93e178be0ea2cb2be7c855f83ae03" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>mWorker</name></member>
+      <member refid="classDali_1_1WorkerThread_1a05dcb0dccedd10115c377b540fb865d7" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>Notify</name></member>
+      <member refid="classDali_1_1WorkerThread_1a1e896d8c002ab7547168b7c7aff07ce5" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>operator=</name></member>
+      <member refid="classDali_1_1WorkerThread_1ace560e46e500fecb4c934059bc3e2fe2" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>Wait</name></member>
+      <member refid="classDali_1_1WorkerThread_1a41850e1065567a3f5c3e8828c670f937" prot="private" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>WaitAndExecute</name></member>
+      <member refid="classDali_1_1WorkerThread_1a8207e48054e0413da2915f3fdfac7f9c" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>WorkerThread</name></member>
+      <member refid="classDali_1_1WorkerThread_1a6b8b2a08603fce1264f044f9834dcd90" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>WorkerThread</name></member>
+      <member refid="classDali_1_1WorkerThread_1ad35adec72862517fd378f3390aeea74d" prot="public" virt="non-virtual"><scope>Dali::WorkerThread</scope><name>~WorkerThread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

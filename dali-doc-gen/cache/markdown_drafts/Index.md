@@ -1,0 +1,158 @@
+# DALi Documentation Index
+
+> Auto-generated documentation index. Tree structure reflects the class hierarchy determined by Taxonomy.
+
+*Last updated: 2026-04-23 13:44*
+
+---
+
+## All Features
+
+Complete list of all documented features:
+
+- **accessibility-highlight-overlay** *(not yet generated)*
+- **adaptor-framework** *(not yet generated)*
+  - Accessibility *(not yet generated)*
+  - Adaptor *(not yet generated)*
+  - Application Management *(not yet generated)*
+  - Canvas Renderer *(not yet generated)*
+  - Device Status *(not yet generated)*
+  - Drag and Drop *(not yet generated)*
+  - Graphics and Rendering *(not yet generated)*
+  - Input Method and Keyboard *(not yet generated)*
+  - Media (Video/Camera/Sound) *(not yet generated)*
+  - Native Image and Surface *(not yet generated)*
+  - Web Engine *(not yet generated)*
+  - Widget Framework *(not yet generated)*
+  - Window System *(not yet generated)*
+- **addon-manager** *(not yet generated)*
+- **addons** *(not yet generated)*
+- **[animated-image-view](animated-image-view.md)**
+  - animated-image-view-impl *(not yet generated)*
+  - animated-image-view-types *(not yet generated)*
+  - animated-image-view-properties *(not yet generated)*
+- **[animation](animation.md)**
+- **asset-manager** *(not yet generated)*
+- **atspi-interfaces** *(not yet generated)*
+- **builder** *(not yet generated)*
+- **constraint-integ** *(not yet generated)*
+- **context-notifier** *(not yet generated)*
+- **core** *(not yet generated)*
+  - core-enumerations *(not yet generated)*
+- **dali-adaptor-common** *(not yet generated)*
+- **dali-adaptor-version** *(not yet generated)*
+- **dali-core** *(not yet generated)*
+- **dali-core-version** *(not yet generated)*
+- **dali-string-impl** *(not yet generated)*
+- **dali-ui-common** *(not yet generated)*
+- **debug** *(not yet generated)*
+- **default-theme-loader** *(not yet generated)*
+- **direction-enums** *(not yet generated)*
+- **drag-drop-detector** *(not yet generated)*
+- **events** *(not yet generated)*
+- **exclusive-trait-impl** *(not yet generated)*
+- **focus-manager** *(not yet generated)*
+- **gl-abstraction** *(not yet generated)*
+- **gl-defines** *(not yet generated)*
+- **graphics-config** *(not yet generated)*
+- **graphics-sync-abstraction** *(not yet generated)*
+- **image-loader** *(not yet generated)*
+- **[image-view](image-view.md)**
+  - image-view-impl *(not yet generated)*
+  - image-view-properties *(not yet generated)*
+- **images** *(not yet generated)*
+- **input-event** *(not yet generated)*
+- **input-event-type** *(not yet generated)*
+- **[input-field](input-field.md)**
+  - input-field-impl *(not yet generated)*
+  - input-field-property-handler *(not yet generated)*
+- **input-options** *(not yet generated)*
+- **interactive-event-receiver-interface** *(not yet generated)*
+- **interactive-trait-impl** *(not yet generated)*
+- **interactive-trait-interface** *(not yet generated)*
+- **interactive-view** *(not yet generated)*
+  - interactive-view-impl *(not yet generated)*
+- **key-click-policy** *(not yet generated)*
+- **[label](label.md)**
+  - label-impl *(not yet generated)*
+  - label-property-handler *(not yet generated)*
+- **[layouts](layouts.md)**
+- **lockless-buffer** *(not yet generated)*
+- **lottie-animation-view** *(not yet generated)*
+  - lottie-animation-view-impl *(not yet generated)*
+  - lottie-animation-view-types *(not yet generated)*
+  - lottie-animation-view-properties *(not yet generated)*
+- **[math](math.md)**
+- **object** *(not yet generated)*
+- **open-hash-map** *(not yet generated)*
+- **ordered-set** *(not yet generated)*
+- **pixel-data-integ** *(not yet generated)*
+- **platform-abstraction** *(not yet generated)*
+- **processor-interface** *(not yet generated)*
+- **profiling** *(not yet generated)*
+- **property-bridge** *(not yet generated)*
+- **property-registration-helper** *(not yet generated)*
+- **render-controller** *(not yet generated)*
+- **render-effects** *(not yet generated)*
+- **render-task-list-integ** *(not yet generated)*
+- **render-tasks** *(not yet generated)*
+- **rendering** *(not yet generated)*
+- **reserved-trait-id** *(not yet generated)*
+- **scene** *(not yet generated)*
+- **scene-pre-render-status** *(not yet generated)*
+- **scripting** *(not yet generated)*
+- **scroll-view** *(not yet generated)*
+  - scroll-view-impl *(not yet generated)*
+- **scrollable-enum** *(not yet generated)*
+- **selectable-trait-impl** *(not yet generated)*
+- **shader-effects** *(not yet generated)*
+- **shader-integ** *(not yet generated)*
+- **signals** *(not yet generated)*
+- **state-event** *(not yet generated)*
+- **stream-operators** *(not yet generated)*
+- **string-utils** *(not yet generated)*
+- **testing** *(not yet generated)*
+- **text** *(not yet generated)*
+- **text-abstraction** *(not yet generated)*
+- **texture-integ** *(not yet generated)*
+- **theme-loader-interface** *(not yet generated)*
+- **threading** *(not yet generated)*
+- **trace** *(not yet generated)*
+- **trait-id** *(not yet generated)*
+- **trait-impl** *(not yet generated)*
+- **ui-action-index-ranges** *(not yet generated)*
+- **ui-color** *(not yet generated)*
+- **ui-color-manager** *(not yet generated)*
+- **ui-component-config** *(not yet generated)*
+  - ui-component-config-impl *(not yet generated)*
+- **ui-config** *(not yet generated)*
+  - ui-config-impl *(not yet generated)*
+- **ui-config-manager** *(not yet generated)*
+  - ui-config-manager-impl *(not yet generated)*
+- **ui-constraint-tag-ranges** *(not yet generated)*
+- **ui-foundation-pre-initialize** *(not yet generated)*
+- **ui-property-index-ranges** *(not yet generated)*
+- **ui-theme-manager** *(not yet generated)*
+  - ui-theme-manager-impl *(not yet generated)*
+- **unit** *(not yet generated)*
+- **update** *(not yet generated)*
+- **utility** *(not yet generated)*
+- **[View (Base UI Object)](view.md)**
+- **view-accessibility-enums** *(not yet generated)*
+- **view-accessible** *(not yet generated)*
+- **view-depth-index-ranges** *(not yet generated)*
+- **view-focus-enums** *(not yet generated)*
+- **view-impl** *(not yet generated)*
+- **view-integration** *(not yet generated)*
+- **view-state** *(not yet generated)*
+- **view-types** *(not yet generated)*
+- **visual-factory** *(not yet generated)*
+- **visuals** *(not yet generated)*
+- **watch** *(not yet generated)*
+- **web-view** *(not yet generated)*
+  - web-view-impl *(not yet generated)*
+  - web-view-types *(not yet generated)*
+
+---
+
+*This index is auto-generated by the DALi documentation pipeline.*

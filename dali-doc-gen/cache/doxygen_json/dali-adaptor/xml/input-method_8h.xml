@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="input-method_8h" kind="file" language="C++">
+    <compoundname>input-method.h</compoundname>
+    <includes refid="dali-adaptor-common_8h" local="no">dali/public-api/dali-adaptor-common.h</includes>
+    <includedby refid="input-method-options_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.h</includedby>
+    <includedby refid="virtual-keyboard_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/virtual-keyboard.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/input-method.h</label>
+        <link refid="input-method_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp</label>
+        <link refid="input-method-context_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h</label>
+        <link refid="input-method-context_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.cpp</label>
+        <link refid="input-method-options_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.h</label>
+        <link refid="input-method-options_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/virtual-keyboard.cpp</label>
+        <link refid="virtual-keyboard_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/virtual-keyboard.h</label>
+        <link refid="virtual-keyboard_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/input-method.h</label>
+        <link refid="input-method_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod">Dali::InputMethod</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1Category">Dali::InputMethod::Category</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1PanelLayout">Dali::InputMethod::PanelLayout</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1ButtonAction">Dali::InputMethod::ButtonAction</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1AutoCapital">Dali::InputMethod::AutoCapital</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1NormalLayout">Dali::InputMethod::NormalLayout</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout">Dali::InputMethod::NumberOnlyLayout</innernamespace>
+    <innernamespace refid="namespaceDali_1_1InputMethod_1_1PasswordLayout">Dali::InputMethod::PasswordLayout</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_INPUT_METHOD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_INPUT_METHOD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-adaptor-common_8h" kindref="compound">dali/public-api/dali-adaptor-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35" refid="namespaceDali_1_1InputMethod" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">InputMethod</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43" refid="namespaceDali_1_1InputMethod_1_1Category" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Category</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50" refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86ea" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86ea" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52" refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa89b88f00907f22b2524d99254e97b7e1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa89b88f00907f22b2524d99254e97b7e1" kindref="member">PANEL_LAYOUT</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa4ceb58b53cd5206491eff63601d6679d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa4ceb58b53cd5206491eff63601d6679d" kindref="member">BUTTON_ACTION</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54" refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa335e6510b28347d66179126f8e55aa5a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa335e6510b28347d66179126f8e55aa5a" kindref="member">AUTO_CAPITALIZE</ref>,<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa51f44fc78c1f49f5d70794cd8fd408ea" kindref="member">VARIATION</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56" refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa51f44fc78c1f49f5d70794cd8fd408ea" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Category</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"></codeline>
+<codeline lineno="69" refid="namespaceDali_1_1InputMethod_1_1PanelLayout" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PanelLayout</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365e" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea22e49c2e1a72cc005b6260b46941a4ec" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea22e49c2e1a72cc005b6260b46941a4ec" kindref="member">NORMAL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eac8840a56b6572bb4dc41194c801d7743" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eac8840a56b6572bb4dc41194c801d7743" kindref="member">NUMBER</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea281ebf8eecc4ac05ee76f9b4b21b4a28" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea281ebf8eecc4ac05ee76f9b4b21b4a28" kindref="member">EMAIL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaae751cfc0ff6c9465e01870c3f319211" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaae751cfc0ff6c9465e01870c3f319211" kindref="member">URL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaf705087c1a214e654d579be18eb6bc1a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaf705087c1a214e654d579be18eb6bc1a" kindref="member">PHONENUMBER</ref>,<sp/></highlight></codeline>
+<codeline lineno="83" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eab75fbc634d92ab5193de3d31f0f5ead6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eab75fbc634d92ab5193de3d31f0f5ead6" kindref="member">IP</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="84" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eac6f9d4bf42a7b67af576c0ff8651306b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eac6f9d4bf42a7b67af576c0ff8651306b" kindref="member">MONTH</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaec57ae5927ee91e0ea548e8c1f96c2d3" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaec57ae5927ee91e0ea548e8c1f96c2d3" kindref="member">NUMBER_ONLY</ref>,<sp/></highlight></codeline>
+<codeline lineno="86" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eabdd305730e7033896873473a6060f963" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eabdd305730e7033896873473a6060f963" kindref="member">HEX</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaa18aa6a12e726337c62d71de5a9310dc" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaa18aa6a12e726337c62d71de5a9310dc" kindref="member">TERMINAL</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea65a5ed3212d6e9bf32dbb04ccf2e4099" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea65a5ed3212d6e9bf32dbb04ccf2e4099" kindref="member">PASSWORD</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea445751a63d28fb819b06183d6355c776" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea445751a63d28fb819b06183d6355c776" kindref="member">DATE_TIME</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaa349140ff64f19aab58dd48ff3cc7768" kindref="member">EMOTICON</ref><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91" refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365eaa349140ff64f19aab58dd48ff3cc7768" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>PanelLayout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="namespaceDali_1_1InputMethod_1_1ButtonAction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">ButtonAction</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a0cd84b1a38a191c6db773cfb7c0d6dde" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a0cd84b1a38a191c6db773cfb7c0d6dde" kindref="member">DEFAULT</ref>,<sp/></highlight></codeline>
+<codeline lineno="113" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1ac92900beff452c0b44ddc692fcff2a6a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1ac92900beff452c0b44ddc692fcff2a6a" kindref="member">DONE</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1ab522bfa8d32e5f29abdc75b3915be83f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1ab522bfa8d32e5f29abdc75b3915be83f" kindref="member">GO</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a9e371b9abd59643ff3a256cc611c01c8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a9e371b9abd59643ff3a256cc611c01c8" kindref="member">JOIN</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a21f176b04f2cbf23bfcfbede773b1f29" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a21f176b04f2cbf23bfcfbede773b1f29" kindref="member">LOGIN</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a5e4bbb0ef77be0fbf648537e56c3808e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a5e4bbb0ef77be0fbf648537e56c3808e" kindref="member">NEXT</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a660ef35094702440fbe2922dc8d115e9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a660ef35094702440fbe2922dc8d115e9" kindref="member">SEARCH</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="119" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a235218e95153bea41fd72f94ee46a90d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a235218e95153bea41fd72f94ee46a90d" kindref="member">SEND</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a27b10c00d37158abb3a8dff8b485b4aa" kindref="member">SIGNIN</ref><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121" refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a27b10c00d37158abb3a8dff8b485b4aa" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ButtonAction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="namespaceDali_1_1InputMethod_1_1AutoCapital" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">AutoCapital</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137" refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1d" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139" refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1da2f53440e87d8fdd8f7e81bcafe0a8c4d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1da2f53440e87d8fdd8f7e81bcafe0a8c4d" kindref="member">NONE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140" refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1dadba70e3e9c80d44eb8c6257e9df692ed" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1dadba70e3e9c80d44eb8c6257e9df692ed" kindref="member">WORD</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141" refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1da56fd69c1496872a59c19f9d954031ced" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1da56fd69c1496872a59c19f9d954031ced" kindref="member">SENTENCE</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1dad0814410046f6d287bc7be7e906ec104" kindref="member">ALL_CHARACTER</ref><sp/></highlight></codeline>
+<codeline lineno="143" refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1dad0814410046f6d287bc7be7e906ec104" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>AutoCapital</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"></codeline>
+<codeline lineno="154" refid="namespaceDali_1_1InputMethod_1_1NormalLayout" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">NormalLayout</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="161" refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163" refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794aa385ae9c4c2e7d16acb9b29a7f7eec4f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794aa385ae9c4c2e7d16acb9b29a7f7eec4f" kindref="member">NORMAL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164" refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794abb8c295045e47e1c830c03b6d8dc0508" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794abb8c295045e47e1c830c03b6d8dc0508" kindref="member">WITH_FILENAME</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794a92d6cc7eda8adea8b53b27fb91a92346" kindref="member">WITH_PERSON_NAME</ref><sp/></highlight></codeline>
+<codeline lineno="166" refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794a92d6cc7eda8adea8b53b27fb91a92346" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>NormalLayout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">NumberOnlyLayout</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182" refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3ef" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3ef" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="183"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184" refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa38d92806106fecbee353daa20c548f02" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa38d92806106fecbee353daa20c548f02" kindref="member">NORMAL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185" refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa80a5a77281885aa6b85bcb51d3cb9506" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa80a5a77281885aa6b85bcb51d3cb9506" kindref="member">WITH_SIGNED</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186" refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa3882605c0cd1b188506274772093ac16" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa3882605c0cd1b188506274772093ac16" kindref="member">WITH_DECIMAL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa3dce746bd20ea97f8e05211d273b7f8f" kindref="member">WITH_SIGNED_AND_DECIMAL</ref><sp/></highlight></codeline>
+<codeline lineno="188" refid="namespaceDali_1_1InputMethod_1_1NumberOnlyLayout_1ad8caadf42b850e8a28a9f400faf5e3efa3dce746bd20ea97f8e05211d273b7f8f" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>NumberOnlyLayout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="namespaceDali_1_1InputMethod_1_1PasswordLayout" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">PasswordLayout</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204" refid="namespaceDali_1_1InputMethod_1_1PasswordLayout_1a6bab2afd96b88a8150c8636731b777b7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PasswordLayout_1a6bab2afd96b88a8150c8636731b777b7" kindref="member">Type</ref></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206" refid="namespaceDali_1_1InputMethod_1_1PasswordLayout_1a6bab2afd96b88a8150c8636731b777b7af48ec54351f3eaa6d54eb92f106bdcb7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PasswordLayout_1a6bab2afd96b88a8150c8636731b777b7af48ec54351f3eaa6d54eb92f106bdcb7" kindref="member">NORMAL</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PasswordLayout_1a6bab2afd96b88a8150c8636731b777b7a284791b54f0b6d5a33ceacdc5b18366f" kindref="member">WITH_NUMBER_ONLY</ref><sp/></highlight></codeline>
+<codeline lineno="208" refid="namespaceDali_1_1InputMethod_1_1PasswordLayout_1a6bab2afd96b88a8150c8636731b777b7a284791b54f0b6d5a33ceacdc5b18366f" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>PasswordLayout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>InputMethod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_INPUT_METHOD_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/input-method.h"/>
+  </compounddef>
+</doxygen>

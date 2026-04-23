@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="input-method-options_8cpp" kind="file" language="C++">
+    <compoundname>input-method-options.cpp</compoundname>
+    <includes refid="input-method-options_8h" local="no">dali/devel-api/adaptor-framework/input-method-options.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.cpp</label>
+        <link refid="input-method-options_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/input-method-options.h</label>
+        <link refid="input-method-options_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/adaptor-framework/input-method.h</label>
+        <link refid="input-method_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/property-map.h</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structDali_1_1InputMethodOptions_1_1Impl" prot="public">Dali::InputMethodOptions::Impl</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" prot="public" static="no">
+        <name>TOKEN_STRING</name>
+        <param><defname>x</defname></param>
+        <initializer>#x</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.cpp" line="26" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="input-method-options_8h" kindref="compound">dali/devel-api/adaptor-framework/input-method-options.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali_1_1InputMethod" kindref="compound">Dali::InputMethod</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali_1_1InputMethod_1_1Category" kindref="compound">Dali::InputMethod::Category</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TOKEN_STRING(x)<sp/>#x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structDali_1_1InputMethodOptions_1_1Impl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structDali_1_1InputMethodOptions_1_1Impl" kindref="compound">InputMethodOptions::Impl</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="structDali_1_1InputMethodOptions_1_1Impl_1af18e3660625a7a992f7c7d584f05d863" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1af18e3660625a7a992f7c7d584f05d863" kindref="member">Impl</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1a709b84fa98d1800e87116629f26988d2" kindref="member">mPanelLayout</ref><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea22e49c2e1a72cc005b6260b46941a4ec" kindref="member">PanelLayout::NORMAL</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1aba1317d5a3cbf48b55dfc60f513ecac2" kindref="member">mAutoCapital</ref><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1da56fd69c1496872a59c19f9d954031ced" kindref="member">AutoCapital::SENTENCE</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1a90f3f93511fbbb8ddbeb5853dc17ed89" kindref="member">mButtonAction</ref><sp/>=<sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1a0cd84b1a38a191c6db773cfb7c0d6dde" kindref="member">ButtonAction::DEFAULT</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1a6885d024b5da7409af80f485491a1143" kindref="member">mVariation</ref><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceDali_1_1InputMethod_1_1NormalLayout_1aa0a8cf4177c961f7660b4f6092803794aa385ae9c4c2e7d16acb9b29a7f7eec4f" kindref="member">NormalLayout::NORMAL</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="structDali_1_1InputMethodOptions_1_1Impl_1a709b84fa98d1800e87116629f26988d2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365e" kindref="member">PanelLayout::Type</ref><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1a709b84fa98d1800e87116629f26988d2" kindref="member">mPanelLayout</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structDali_1_1InputMethodOptions_1_1Impl_1aba1317d5a3cbf48b55dfc60f513ecac2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1d" kindref="member">AutoCapital::Type</ref><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1aba1317d5a3cbf48b55dfc60f513ecac2" kindref="member">mAutoCapital</ref>;</highlight></codeline>
+<codeline lineno="40" refid="structDali_1_1InputMethodOptions_1_1Impl_1a90f3f93511fbbb8ddbeb5853dc17ed89" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1" kindref="member">ButtonAction::Type</ref><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1a90f3f93511fbbb8ddbeb5853dc17ed89" kindref="member">mButtonAction</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structDali_1_1InputMethodOptions_1_1Impl_1a6885d024b5da7409af80f485491a1143" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl_1a6885d024b5da7409af80f485491a1143" kindref="member">mVariation</ref><sp/>:<sp/>4;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classDali_1_1InputMethodOptions_1a68c50f015d458b75c47a09469711186d" refkind="member"><highlight class="normal"><ref refid="classDali_1_1InputMethodOptions_1a68c50f015d458b75c47a09469711186d" kindref="member">InputMethodOptions::InputMethodOptions</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>mImpl.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1InputMethodOptions_1_1Impl" kindref="compound">Impl</ref>());</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classDali_1_1InputMethodOptions_1af6436e6cb61d14fdf60fb4bf85b146a3" refkind="member"><highlight class="normal"><ref refid="classDali_1_1InputMethodOptions_1af6436e6cb61d14fdf60fb4bf85b146a3" kindref="member">InputMethodOptions::~InputMethodOptions</ref>()</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>destructor<sp/>cannot<sp/>be<sp/>inlined<sp/>and<sp/>must<sp/>be<sp/>in<sp/>a<sp/>unit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>unique_ptr<sp/>to<sp/>work<sp/>with<sp/>forward<sp/>declaration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classDali_1_1InputMethodOptions_1a361ce2451555d4f93dc4816987e91d4e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1InputMethodOptions_1a361ce2451555d4f93dc4816987e91d4e" kindref="member">InputMethodOptions::IsPassword</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="56"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(mImpl-&gt;mPanelLayout<sp/>==<sp/><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365ea65a5ed3212d6e9bf32dbb04ccf2e4099" kindref="member">Dali::InputMethod::PanelLayout::PASSWORD</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1InputMethodOptions_1a48933a5d57e36d6fac649dcda6f53e51" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1InputMethodOptions_1a48933a5d57e36d6fac649dcda6f53e51" kindref="member">InputMethodOptions::ApplyProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>settings)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>count<sp/>=<sp/>settings.Count();<sp/>i<sp/>&lt;<sp/>count;<sp/>++i)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Property::Key<sp/>key<sp/>=<sp/>settings.GetKeyAt(i);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key.type<sp/>==<sp/>Property::Key::INDEX)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>Property::Value<sp/>item<sp/>=<sp/>settings.GetValue(i);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/><ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa89b88f00907f22b2524d99254e97b7e1" kindref="member">PANEL_LAYOUT</ref>))</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(item.GetType()<sp/>==<sp/>Property::INTEGER)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>item.Get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mPanelLayout<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespaceDali_1_1InputMethod_1_1PanelLayout_1aa3cfa13a677ba833500a1a77a92f365e" kindref="member">InputMethod::PanelLayout::Type</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(value);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/><ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa4ceb58b53cd5206491eff63601d6679d" kindref="member">BUTTON_ACTION</ref>))</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(item.GetType()<sp/>==<sp/>Property::INTEGER)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>item.Get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mButtonAction<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespaceDali_1_1InputMethod_1_1ButtonAction_1af56dca921f419edc2765f164be9abbf1" kindref="member">InputMethod::ButtonAction::Type</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(value);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/><ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa335e6510b28347d66179126f8e55aa5a" kindref="member">AUTO_CAPITALIZE</ref>))</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(item.GetType()<sp/>==<sp/>Property::INTEGER)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>item.Get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mAutoCapital<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespaceDali_1_1InputMethod_1_1AutoCapital_1ab335b7ebc6d7f55b3a2769c07b2d3b1d" kindref="member">InputMethod::AutoCapital::Type</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(value);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(key<sp/>==<sp/><ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa51f44fc78c1f49f5d70794cd8fd408ea" kindref="member">VARIATION</ref>))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(item.GetType()<sp/>==<sp/>Property::INTEGER)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>item.Get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mVariation<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classDali_1_1InputMethodOptions_1a4eb53408a7f305abbe87128e3e9d081a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1InputMethodOptions_1a4eb53408a7f305abbe87128e3e9d081a" kindref="member">InputMethodOptions::RetrieveProperty</ref>(Property::Map&amp;<sp/>settings)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>settings[<ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa89b88f00907f22b2524d99254e97b7e1" kindref="member">PANEL_LAYOUT</ref>)]<sp/><sp/><sp/><sp/>=<sp/>mImpl-&gt;mPanelLayout;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>settings[<ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa4ceb58b53cd5206491eff63601d6679d" kindref="member">BUTTON_ACTION</ref>)]<sp/><sp/><sp/>=<sp/>mImpl-&gt;mButtonAction;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>settings[<ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa335e6510b28347d66179126f8e55aa5a" kindref="member">AUTO_CAPITALIZE</ref>)]<sp/>=<sp/>mImpl-&gt;mAutoCapital;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>settings[<ref refid="input-method-options_8cpp_1a3ddf64e4861d990b25839b1d6622e9f8" kindref="member">TOKEN_STRING</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa51f44fc78c1f49f5d70794cd8fd408ea" kindref="member">VARIATION</ref>)]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>mImpl-&gt;mVariation;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classDali_1_1InputMethodOptions_1a6d943235dfb1cf9d9cdeee9296af2b0b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1InputMethodOptions_1a6d943235dfb1cf9d9cdeee9296af2b0b" kindref="member">InputMethodOptions::CompareAndSet</ref>(<ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86ea" kindref="member">InputMethod::Category::Type</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1InputMethodOptions" kindref="compound">InputMethodOptions</ref>&amp;<sp/>options,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>index)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updated<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(type)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa89b88f00907f22b2524d99254e97b7e1" kindref="member">PANEL_LAYOUT</ref>:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(options.mImpl-&gt;mPanelLayout<sp/>!=<sp/>mImpl-&gt;mPanelLayout)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mPanelLayout<sp/>=<sp/>options.mImpl-&gt;mPanelLayout;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;mPanelLayout);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>updated<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa4ceb58b53cd5206491eff63601d6679d" kindref="member">BUTTON_ACTION</ref>:</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(options.mImpl-&gt;mButtonAction<sp/>!=<sp/>mImpl-&gt;mButtonAction)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mButtonAction<sp/>=<sp/>options.mImpl-&gt;mButtonAction;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;mButtonAction);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>updated<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa335e6510b28347d66179126f8e55aa5a" kindref="member">AUTO_CAPITALIZE</ref>:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(options.mImpl-&gt;mAutoCapital<sp/>!=<sp/>mImpl-&gt;mAutoCapital)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mAutoCapital<sp/>=<sp/>options.mImpl-&gt;mAutoCapital;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;mAutoCapital);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>updated<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1InputMethod_1_1Category_1acb0de120c61a2e3c67bce7d8782c86eaa51f44fc78c1f49f5d70794cd8fd408ea" kindref="member">VARIATION</ref>:</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(options.mImpl-&gt;mVariation<sp/>!=<sp/>mImpl-&gt;mVariation)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mImpl-&gt;mVariation<sp/>=<sp/>options.mImpl-&gt;mVariation;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(mImpl-&gt;mVariation);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>updated<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>updated;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-options.cpp"/>
+  </compounddef>
+</doxygen>

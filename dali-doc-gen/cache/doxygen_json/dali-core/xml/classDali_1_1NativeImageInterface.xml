@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1NativeImageInterface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::NativeImageInterface</compoundname>
+    <basecompoundref refid="classDali_1_1RefObject" prot="public" virt="non-virtual">Dali::RefObject</basecompoundref>
+    <includes refid="native-image-interface_8h" local="no">native-image-interface.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2" prot="public" static="no" strong="no">
+        <type></type>
+        <name>PrepareTextureResult</name>
+        <qualifiedname>Dali::NativeImageInterface::PrepareTextureResult</qualifiedname>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a290d99d96b0c39196827faa505d9c69d" prot="public">
+          <name>NO_ERROR_MIN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a02a0f37383f5821630f8eee524b062e7" prot="public">
+          <name>NO_ERROR</name>
+          <initializer>= NO_ERROR_MIN</initializer>
+          <briefdescription>
+<para>Everything works okay without any error. @SINCE_2_4.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2ae372a5f7dd4f0467110cee5dbb4568db" prot="public">
+          <name>IMAGE_CHANGED</name>
+          <briefdescription>
+<para>Not an error. just for notify image data changed. @SINCE_2_4.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a0f7fdfc20a1f5ec19e812a4feddceba6" prot="public">
+          <name>NO_ERROR_MAX</name>
+          <initializer>= 0x0f</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2ac4d73fa1eb704ae4dfde55dfe0f31ced" prot="public">
+          <name>ERROR_MIN</name>
+          <initializer>= NO_ERROR_MAX + 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a50553b3bf67a8b95277cf6e44626e84a" prot="public">
+          <name>NOT_INITIALIZED_IMAGE</name>
+          <initializer>= ERROR_MIN</initializer>
+          <briefdescription>
+<para>Native image data not initialized yet. @SINCE_2_4.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a7a9b550857fe4cc586b085617a44c5b7" prot="public">
+          <name>NOT_INITIALIZED_GRAPHICS</name>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Graphics" kindref="compound">Graphics</ref> interface not initialized yet. @SINCE_2_4.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2afec6ce2aed682ac696e3dc7303d64d01" prot="public">
+          <name>NOT_SUPPORTED</name>
+          <briefdescription>
+<para>Native image not supported for this platform. @SINCE_2_4.28. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2ac140927030b9fa66d7aa12e19cf63399" prot="public">
+          <name>ERROR_MAX</name>
+          <initializer>= 0xff</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2aedc885b0789f9dbb375a2b0a416a7896" prot="public">
+          <name>UNKNOWN_ERROR</name>
+          <initializer>= ERROR_MAX</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Forward declare future extension interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumeration for PrepareTexture result. If it is normal case, result value between [NO_ERROR_MIN ~ NO_ERROR_MAX] If it is error case, result value between [ERROR_MIN ~ ERROR_MAX] @SINCE_2_4.28 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="55" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" bodystart="56" bodyend="69"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a15b1fe578a96cf21ff1f199d8c073200" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::NativeImageInterface::CreateResource</definition>
+        <argsstring>()=0</argsstring>
+        <name>CreateResource</name>
+        <qualifiedname>Dali::NativeImageInterface::CreateResource</qualifiedname>
+        <briefdescription>
+<para>Creates the resource for the NativeImage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>e.g. For the EglImageKHR extension, this corresponds to calling eglCreateImageKHR(). @SINCE_1_9.23 <simplesect kind="return"><para>false If the initialization fails </para>
+</simplesect>
+<simplesect kind="pre"><para>The graphics subsystem has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="79" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1af4f3e3fb9f41be5488c6fb92d9b622f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::NativeImageInterface::DestroyResource</definition>
+        <argsstring>()=0</argsstring>
+        <name>DestroyResource</name>
+        <qualifiedname>Dali::NativeImageInterface::DestroyResource</qualifiedname>
+        <briefdescription>
+<para>Destroys the resource for the NativeImage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>e.g. For the EglImageKHR extension, this corresponds to calling eglDestroyImageKHR(). @SINCE_1_9.23 <simplesect kind="pre"><para>The graphics subsystem has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="88" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a201a8f2a11e0e4f19007af0fcbbf723e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t Dali::NativeImageInterface::TargetTexture</definition>
+        <argsstring>()=0</argsstring>
+        <name>TargetTexture</name>
+        <qualifiedname>Dali::NativeImageInterface::TargetTexture</qualifiedname>
+        <briefdescription>
+<para>Uses the NativeImage as a texture for rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>An error code from the graphics subsystem. </para>
+</simplesect>
+<simplesect kind="pre"><para>The graphics subsystem has been initialized </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="97" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a0f35b1fb63a77ed1887f3f73278355bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2" kindref="member">PrepareTextureResult</ref></type>
+        <definition>virtual PrepareTextureResult Dali::NativeImageInterface::PrepareTexture</definition>
+        <argsstring>()=0</argsstring>
+        <name>PrepareTexture</name>
+        <qualifiedname>Dali::NativeImageInterface::PrepareTexture</qualifiedname>
+        <briefdescription>
+<para>Called internally when the texture is bound in the GPU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The correct texture sampler has already been bound before the function gets called. @SINCE_1_0.0 <simplesect kind="pre"><para>The graphics subsystem has been initialized </para>
+</simplesect>
+<simplesect kind="return"><para>The result of PrepareTexture API. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="107" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1afe03f0d334c61173f9c41e78d11f031a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t Dali::NativeImageInterface::GetWidth</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>Dali::NativeImageInterface::GetWidth</qualifiedname>
+        <briefdescription>
+<para>Returns the width of the NativeImage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>Width </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="115" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1af847bb21662319c2730590e9c988e8ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t Dali::NativeImageInterface::GetHeight</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>Dali::NativeImageInterface::GetHeight</qualifiedname>
+        <briefdescription>
+<para>Returns the height of the NativeImage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>Height </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="123" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1ad6d1ee8ad9619c1f3395e602751535e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::NativeImageInterface::RequiresBlending</definition>
+        <argsstring>() const =0</argsstring>
+        <name>RequiresBlending</name>
+        <qualifiedname>Dali::NativeImageInterface::RequiresBlending</qualifiedname>
+        <briefdescription>
+<para>Queries whether blending is required. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if blending is required </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="130" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1ad99b4252c768d7754219f5a5ad5699db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Dali::NativeImageInterface::GetTextureTarget</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetTextureTarget</name>
+        <qualifiedname>Dali::NativeImageInterface::GetTextureTarget</qualifiedname>
+        <briefdescription>
+<para>Get the texture target for binding native image as texture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.23 <simplesect kind="return"><para><ref refid="classDali_1_1Texture" kindref="compound">Texture</ref> target. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="138" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a3b26e2518ab3493f3dce84262e3a5729" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::NativeImageInterface::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::String &amp;shader)=0</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::NativeImageInterface::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+<para>Apply custom fragment prefix for rendering native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>shader code that will be applied fragment prefix. @DEPRECATED_2_4.33 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the shader is changed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="147" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a464a504f4410db208190d658e7d7a79a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::NativeImageInterface::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::String &amp;shader, int mask)=0</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::NativeImageInterface::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+<para>Apply custom fragment prefix for rendering native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>shader code that will be applied fragment prefix. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mask of samplers those uses native image. For example, if mask = 0x5, 1st and 3rd samplers become native samplers. @SINCE_2_4.33 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the shader is changed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="158" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1ad3dc86d7c8bca5de9faa36a65938fc13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const char *</type>
+        <definition>virtual const char * Dali::NativeImageInterface::GetCustomSamplerTypename</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCustomSamplerTypename</name>
+        <qualifiedname>Dali::NativeImageInterface::GetCustomSamplerTypename</qualifiedname>
+        <briefdescription>
+<para>Get custom sampler type name for rendering native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.23 <simplesect kind="return"><para>Custom sampler type name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="166" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1af8a8b302c58ba19229e658fdf3a8f745" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1Any" kindref="compound">Any</ref></type>
+        <definition>virtual Any Dali::NativeImageInterface::GetNativeImageHandle</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetNativeImageHandle</name>
+        <qualifiedname>Dali::NativeImageInterface::GetNativeImageHandle</qualifiedname>
+        <briefdescription>
+<para>Retrieves the internal native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.23 <simplesect kind="return"><para><ref refid="classDali_1_1Any" kindref="compound">Any</ref> object containing the internal native image handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="174" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a6eed7b2668637b5ed66964b90d440614" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::NativeImageInterface::SourceChanged</definition>
+        <argsstring>() const =0</argsstring>
+        <name>SourceChanged</name>
+        <qualifiedname>Dali::NativeImageInterface::SourceChanged</qualifiedname>
+        <briefdescription>
+<para>Determine if the source data for the native image has changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.23 <simplesect kind="return"><para>true if the source data has changed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="182" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a837d2b4a069d5097750dff98ca98411b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structDali_1_1Rect" kindref="compound">Rect</ref>&lt; uint32_t &gt;</type>
+        <definition>virtual Rect&lt; uint32_t &gt; Dali::NativeImageInterface::GetUpdatedArea</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetUpdatedArea</name>
+        <qualifiedname>Dali::NativeImageInterface::GetUpdatedArea</qualifiedname>
+        <briefdescription>
+<para>Retrieves the updated area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_2.31 <simplesect kind="return"><para>The updated area </para>
+</simplesect>
+<simplesect kind="note"><para>The x and y are the offset of the top left corner of the area from the top left of the image. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="191" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a15b4e8c66a756dfc01642d0d125f35de" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::NativeImageInterface::PostRender</definition>
+        <argsstring>()=0</argsstring>
+        <name>PostRender</name>
+        <qualifiedname>Dali::NativeImageInterface::PostRender</qualifiedname>
+        <briefdescription>
+<para>Called after rendering is completed to perform post-render operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is called internally after the rendering process is finished, allowing native image implementations to perform any necessary cleanup or post-processing operations. @SINCE_2_4.43 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="201" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1a701ee47b1d382b39a4b378184f6a6ec9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Extension *</type>
+        <definition>virtual Extension * Dali::NativeImageInterface::GetExtension</definition>
+        <argsstring>()</argsstring>
+        <name>GetExtension</name>
+        <qualifiedname>Dali::NativeImageInterface::GetExtension</qualifiedname>
+        <briefdescription>
+<para>Retrieves the extension for the interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The extension if available, NULL otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="209" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" bodystart="209" bodyend="212"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1NativeImageInterface_1aa2931a4f40091e7aa10474c396e2dc79" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::NativeImageInterface::~NativeImageInterface</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~NativeImageInterface</name>
+        <qualifiedname>Dali::NativeImageInterface::~NativeImageInterface</qualifiedname>
+        <briefdescription>
+<para>A reference counted object may only be deleted by calling <ref refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" kindref="member">Unreference()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The implementation should destroy the NativeImage resources. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="221" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract interface to provide platform-specific support for handling image data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>For example, an implementation could use EGL extensions, etc. @SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::NativeImageInterface</label>
+        <link refid="classDali_1_1NativeImageInterface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::NativeImageInterface</label>
+        <link refid="classDali_1_1NativeImageInterface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" line="44" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/native-image-interface.h" bodystart="45" bodyend="222"/>
+    <listofallmembers>
+      <member refid="classDali_1_1NativeImageInterface_1a3b26e2518ab3493f3dce84262e3a5729" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>ApplyNativeFragmentShader</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a464a504f4410db208190d658e7d7a79a" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>ApplyNativeFragmentShader</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a15b1fe578a96cf21ff1f199d8c073200" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>CreateResource</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1af4f3e3fb9f41be5488c6fb92d9b622f1" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>DestroyResource</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2ac140927030b9fa66d7aa12e19cf63399" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>ERROR_MAX</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2ac4d73fa1eb704ae4dfde55dfe0f31ced" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>ERROR_MIN</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1ad3dc86d7c8bca5de9faa36a65938fc13" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>GetCustomSamplerTypename</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a701ee47b1d382b39a4b378184f6a6ec9" prot="public" virt="virtual"><scope>Dali::NativeImageInterface</scope><name>GetExtension</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1af847bb21662319c2730590e9c988e8ae" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>GetHeight</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1af8a8b302c58ba19229e658fdf3a8f745" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>GetNativeImageHandle</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1ad99b4252c768d7754219f5a5ad5699db" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>GetTextureTarget</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a837d2b4a069d5097750dff98ca98411b" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>GetUpdatedArea</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1afe03f0d334c61173f9c41e78d11f031a" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>GetWidth</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2ae372a5f7dd4f0467110cee5dbb4568db" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>IMAGE_CHANGED</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a02a0f37383f5821630f8eee524b062e7" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>NO_ERROR</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a0f7fdfc20a1f5ec19e812a4feddceba6" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>NO_ERROR_MAX</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a290d99d96b0c39196827faa505d9c69d" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>NO_ERROR_MIN</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a7a9b550857fe4cc586b085617a44c5b7" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>NOT_INITIALIZED_GRAPHICS</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2a50553b3bf67a8b95277cf6e44626e84a" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>NOT_INITIALIZED_IMAGE</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2afec6ce2aed682ac696e3dc7303d64d01" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>NOT_SUPPORTED</name></member>
+      <member refid="classDali_1_1RefObject_1a8d4561eff5738e0adc27df94b1a885ca" prot="protected" virt="virtual"><scope>Dali::NativeImageInterface</scope><name>OnDestroy</name></member>
+      <member refid="classDali_1_1RefObject_1a840c6388ec1e12b1a8cc4cdb77232589" prot="protected" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>operator=</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a15b4e8c66a756dfc01642d0d125f35de" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>PostRender</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a0f35b1fb63a77ed1887f3f73278355bc" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>PrepareTexture</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>PrepareTextureResult</name></member>
+      <member refid="classDali_1_1RefObject_1a704b3658a61345abe6f087976b844373" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>Reference</name></member>
+      <member refid="classDali_1_1RefObject_1a76ddae6672a3a475600afbf11c1de4e0" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>ReferenceCount</name></member>
+      <member refid="classDali_1_1RefObject_1ac16c6f0e745027ae9e003a1ad454f37b" prot="protected" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1RefObject_1acbaa8edefcb9bec5689d3a7506e4fc5e" prot="protected" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1ad6d1ee8ad9619c1f3395e602751535e6" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>RequiresBlending</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a6eed7b2668637b5ed66964b90d440614" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>SourceChanged</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1a201a8f2a11e0e4f19007af0fcbbf723e" prot="public" virt="pure-virtual"><scope>Dali::NativeImageInterface</scope><name>TargetTexture</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1add50a4746bfae8c7e89818def0112dc2aedc885b0789f9dbb375a2b0a416a7896" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>UNKNOWN_ERROR</name></member>
+      <member refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" prot="public" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>Unreference</name></member>
+      <member refid="classDali_1_1NativeImageInterface_1aa2931a4f40091e7aa10474c396e2dc79" prot="protected" virt="non-virtual"><scope>Dali::NativeImageInterface</scope><name>~NativeImageInterface</name></member>
+      <member refid="classDali_1_1RefObject_1ace8513a27ef2d48383da36ce9d1931f7" prot="protected" virt="virtual"><scope>Dali::NativeImageInterface</scope><name>~RefObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="state-event_8cpp" kind="file" language="C++">
+    <compoundname>state-event.cpp</compoundname>
+    <includes refid="state-event_8h" local="no">dali-ui-foundation/public-api/state-event.h</includes>
+    <includes local="no">dali-ui-foundation/internal/state-event-impl.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>dali-ui-foundation/public-api/input-event-type.h</label>
+        <link refid="input-event-type_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali-ui-foundation/public-api/input-event.h</label>
+        <link refid="input-event_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/state-event.cpp</label>
+        <link refid="state-event_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali-ui-foundation/public-api/state-event.h</label>
+        <link refid="state-event_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali-ui-foundation/public-api/view-state.h</label>
+        <link refid="view-state_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>cstdint</label>
+      </node>
+      <node id="17">
+        <label>dali-ui-foundation/internal/state-event-impl.h</label>
+      </node>
+      <node id="15">
+        <label>dali/public-api/common/dali-string-view.h</label>
+      </node>
+      <node id="16">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/events/key-event.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/events/long-press-gesture.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/events/tap-gesture.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/events/touch-event.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/events/wheel-event.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="state-event_8h" kindref="compound">dali-ui-foundation/public-api/state-event.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/state-event-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classDali_1_1Ui_1_1StateEvent_1adce05f5bf5fc0ecfa5d4541ed48b409b" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1StateEvent_1a0e258903ba87d22af4e2b2d34ac7afec" kindref="member">StateEvent::StateEvent</ref>(Internal::StateEventImpl*<sp/>implementation)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">:<sp/>BaseHandle(implementation)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="classDali_1_1Ui_1_1StateEvent_1ab576e4c24d881abfdd2055754e6c20ae" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1ViewState" kindref="compound">ViewState</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1ab576e4c24d881abfdd2055754e6c20ae" kindref="member">StateEvent::GetPrev</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="36"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetPrev();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classDali_1_1Ui_1_1StateEvent_1ad8314e8602c36c994cb8dda9b7c5ed86" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1ViewState" kindref="compound">ViewState</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1ad8314e8602c36c994cb8dda9b7c5ed86" kindref="member">StateEvent::GetCurrent</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="41"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCurrent();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classDali_1_1Ui_1_1StateEvent_1a0bb71b1c38c4a2b089471d347349fb86" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1InputEvent" kindref="compound">InputEvent</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1a0bb71b1c38c4a2b089471d347349fb86" kindref="member">StateEvent::GetCause</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="46"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classDali_1_1Ui_1_1StateEvent_1a48a68f2349a1ff19f81329599437e428" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1_1Ui_1ab9202c59d269cb7db0d1bc1c730d2791" kindref="member">InputEventType</ref><sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1a48a68f2349a1ff19f81329599437e428" kindref="member">StateEvent::GetInputEventType</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="51"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause().GetInputEventType();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classDali_1_1Ui_1_1StateEvent_1a01093442601478c0788e1f73041f90d5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TouchEvent&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1a01093442601478c0788e1f73041f90d5" kindref="member">StateEvent::GetTouchEvent</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="56"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause().GetTouchEvent();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1Ui_1_1StateEvent_1a7ea12121974c51d1251c7560059f24d5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1a7ea12121974c51d1251c7560059f24d5" kindref="member">StateEvent::GetKeyEvent</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="61"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause().GetKeyEvent();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classDali_1_1Ui_1_1StateEvent_1ab03db254e9cf7308af2a38273c97f395" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TapGesture&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1ab03db254e9cf7308af2a38273c97f395" kindref="member">StateEvent::GetTapGesture</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="66"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause().GetTapGesture();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classDali_1_1Ui_1_1StateEvent_1a8879cd609e490fcad66f4229609aeff6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LongPressGesture&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1a8879cd609e490fcad66f4229609aeff6" kindref="member">StateEvent::GetLongPressGesture</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause().GetLongPressGesture();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDali_1_1Ui_1_1StateEvent_1a4adfe448b2a0f16d3d9878dd4a404403" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>WheelEvent&amp;<sp/><ref refid="classDali_1_1Ui_1_1StateEvent_1a4adfe448b2a0f16d3d9878dd4a404403" kindref="member">StateEvent::GetWheelEvent</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetCause().GetWheelEvent();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/state-event.cpp"/>
+  </compounddef>
+</doxygen>

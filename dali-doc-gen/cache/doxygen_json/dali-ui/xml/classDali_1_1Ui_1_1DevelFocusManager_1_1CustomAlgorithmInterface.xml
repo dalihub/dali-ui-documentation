@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Ui_1_1DevelFocusManager_1_1CustomAlgorithmInterface" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Ui::DevelFocusManager::CustomAlgorithmInterface</compoundname>
+    <includes refid="focus-manager-devel_8h" local="no">focus-manager-devel.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1DevelFocusManager_1_1CustomAlgorithmInterface_1af660dd2951d0fc79801c498bb2a53d1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::Ui::DevelFocusManager::CustomAlgorithmInterface::~CustomAlgorithmInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~CustomAlgorithmInterface</name>
+        <qualifiedname>Dali::Ui::DevelFocusManager::CustomAlgorithmInterface::~CustomAlgorithmInterface</qualifiedname>
+        <briefdescription>
+<para>Virtual destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h" line="48" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1DevelFocusManager_1_1CustomAlgorithmInterface_1a372ae2563c5b902f5a95e0200c47cbbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Actor</type>
+        <definition>virtual Actor Dali::Ui::DevelFocusManager::CustomAlgorithmInterface::GetNextFocusableActor</definition>
+        <argsstring>(Actor current, Actor proposed, Ui::FocusDirection direction, const Dali::String &amp;deviceName=&quot;&quot;)=0</argsstring>
+        <name>GetNextFocusableActor</name>
+        <qualifiedname>Dali::Ui::DevelFocusManager::CustomAlgorithmInterface::GetNextFocusableActor</qualifiedname>
+        <param>
+          <type>Actor</type>
+          <declname>current</declname>
+        </param>
+        <param>
+          <type>Actor</type>
+          <declname>proposed</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Ui_1a5e0aa20a0e608d1748931e830e3d5a8e" kindref="member">Ui::FocusDirection</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>deviceName</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Called by the <ref refid="classDali_1_1Ui_1_1FocusManager" kindref="compound">FocusManager</ref> to get the next focusable actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current focused actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">proposed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proposed focused actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The direction of focus movement </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">deviceName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the device where the key event occurred. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to the next focusable actor </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h" line="59" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface used to provide custom focus algorithm for retrieving the next focusable actor. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The application / ui can implement the interface and override the focus behaviour. Upon providing an implementation of this interface, the PreFocusChangeSignal is no longer emitted. If focus is changing within a layout container, then the layout container is queried first to provide the next focusable actor. If this does not provide a valid actor, then the <ref refid="classDali_1_1Ui_1_1FocusManager" kindref="compound">FocusManager</ref> will check focusable properties to determine next focusable actor. If focusable properties are not set, then the <ref refid="classDali_1_1Ui_1_1FocusManager" kindref="compound">FocusManager</ref> calls the <ref refid="classDali_1_1Ui_1_1DevelFocusManager_1_1CustomAlgorithmInterface_1a372ae2563c5b902f5a95e0200c47cbbc" kindref="member">GetNextFocusableActor()</ref> method of this interface. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h" line="42" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/focus-manager/focus-manager-devel.h" bodystart="43" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Ui_1_1DevelFocusManager_1_1CustomAlgorithmInterface_1a372ae2563c5b902f5a95e0200c47cbbc" prot="public" virt="pure-virtual"><scope>Dali::Ui::DevelFocusManager::CustomAlgorithmInterface</scope><name>GetNextFocusableActor</name></member>
+      <member refid="classDali_1_1Ui_1_1DevelFocusManager_1_1CustomAlgorithmInterface_1af660dd2951d0fc79801c498bb2a53d1e" prot="public" virt="virtual"><scope>Dali::Ui::DevelFocusManager::CustomAlgorithmInterface</scope><name>~CustomAlgorithmInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

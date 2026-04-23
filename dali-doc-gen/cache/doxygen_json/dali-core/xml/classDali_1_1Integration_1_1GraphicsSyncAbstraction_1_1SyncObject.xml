@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Integration::GraphicsSyncAbstraction::SyncObject</compoundname>
+    <includes refid="graphics-sync-abstraction_8h" local="no">graphics-sync-abstraction.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a0cb490c8ed11478ee971029f1af873d0" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SyncType</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::SyncObject::SyncType</qualifiedname>
+        <enumvalue id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a0cb490c8ed11478ee971029f1af873d0a76631ebc7c90f81181f763f4456869c4" prot="public">
+          <name>FENCE_SYNC</name>
+          <briefdescription>
+<para>Standard fence sync for GPU-CPU synchronization within the same process. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a0cb490c8ed11478ee971029f1af873d0ae9ac067a7486e7887f4936320bc26cc4" prot="public">
+          <name>NATIVE_FENCE_SYNC</name>
+          <briefdescription>
+<para>Native fence sync that supports cross-process synchronization via file descriptors. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Sync object type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the type of sync object that can be created. Different sync types provide different synchronization capabilities and are used for different synchronization scenarios. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="51" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1aa3d2ae81e48a45ca0be92932ad369c95" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::Integration::GraphicsSyncAbstraction::SyncObject::~SyncObject</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SyncObject</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::SyncObject::~SyncObject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual protected destructor, no deletion through this interface. This prevents <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref> from deleting SyncObjects - only Adaptor implementation is able to delete them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="63" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1aa8f244a0cbe915cbc1a9287a1837ce56" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Integration::GraphicsSyncAbstraction::SyncObject::IsSynced</definition>
+        <argsstring>()=0</argsstring>
+        <name>IsSynced</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::SyncObject::IsSynced</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine if the synchronisation object has been signalled. <simplesect kind="return"><para>false if the sync object has not been signalled, true if it has been signalled (and can now be destroyed) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="71" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a92b0fb2c012372e321bb159655efa282" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Integration::GraphicsSyncAbstraction::SyncObject::Wait</definition>
+        <argsstring>()=0</argsstring>
+        <name>Wait</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::SyncObject::Wait</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wait in the GPU for the synchronisation object to be signalled (but can timeout) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="76" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a05147f4c89a5b8b81b594777ef1b495a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Integration::GraphicsSyncAbstraction::SyncObject::ClientWait</definition>
+        <argsstring>()=0</argsstring>
+        <name>ClientWait</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::SyncObject::ClientWait</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wait in the CPU for the synchronisation object to be signalled. This will block the render thread - use with caution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="82" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="41" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" bodystart="42" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a05147f4c89a5b8b81b594777ef1b495a" prot="public" virt="pure-virtual"><scope>Dali::Integration::GraphicsSyncAbstraction::SyncObject</scope><name>ClientWait</name></member>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1aa8f244a0cbe915cbc1a9287a1837ce56" prot="public" virt="pure-virtual"><scope>Dali::Integration::GraphicsSyncAbstraction::SyncObject</scope><name>IsSynced</name></member>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a0cb490c8ed11478ee971029f1af873d0" prot="public" virt="non-virtual"><scope>Dali::Integration::GraphicsSyncAbstraction::SyncObject</scope><name>SyncType</name></member>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a92b0fb2c012372e321bb159655efa282" prot="public" virt="pure-virtual"><scope>Dali::Integration::GraphicsSyncAbstraction::SyncObject</scope><name>Wait</name></member>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1aa3d2ae81e48a45ca0be92932ad369c95" prot="protected" virt="virtual"><scope>Dali::Integration::GraphicsSyncAbstraction::SyncObject</scope><name>~SyncObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

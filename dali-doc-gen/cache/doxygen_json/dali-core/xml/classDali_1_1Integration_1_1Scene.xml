@@ -1,0 +1,1850 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1Scene" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Integration::Scene</compoundname>
+    <basecompoundref refid="classDali_1_1BaseHandle" prot="public" virt="non-virtual">Dali::BaseHandle</basecompoundref>
+    <includes refid="scene_8h" local="no">scene.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TouchPropagationType</name>
+        <qualifiedname>Dali::Integration::Scene::TouchPropagationType</qualifiedname>
+        <enumvalue id="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338af262fe83bb03ad4eeef4f70f3bec240c" prot="public">
+          <name>PARENT</name>
+          <briefdescription>
+<para>events are propagated to parents in the traditional way </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338ac8d9e7937956fe6ada8c9aeca1aec325" prot="public">
+          <name>GEOMETRY</name>
+          <briefdescription>
+<para>events are propagated based on geometry. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Touch event propagation way. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="68" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1a5f67425fa25df17f10c26b9aef2e02ed" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void()&gt;</type>
+        <definition>using Dali::Integration::Scene::EventProcessingFinishedSignalType =  Signal&lt;void()&gt;</definition>
+        <argsstring></argsstring>
+        <name>EventProcessingFinishedSignalType</name>
+        <qualifiedname>Dali::Integration::Scene::EventProcessingFinishedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="structDali_1_1Integration_1_1Event" kindref="compound">Event</ref> Processing finished signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="74" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1ae078e0944d4664b2b172560ccfab87c2" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(const <ref refid="classDali_1_1KeyEvent" kindref="compound">Dali::KeyEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Integration::Scene::KeyEventSignalType =  Signal&lt;void(const Dali::KeyEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>KeyEventSignalType</name>
+        <qualifiedname>Dali::Integration::Scene::KeyEventSignalType</qualifiedname>
+        <briefdescription>
+<para>Key event signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="75" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1a424ef6d0817ebc09aa9ce9b343dfcab8" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; bool(const <ref refid="classDali_1_1KeyEvent" kindref="compound">Dali::KeyEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Integration::Scene::KeyEventGeneratedSignalType =  Signal&lt;bool(const Dali::KeyEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>KeyEventGeneratedSignalType</name>
+        <qualifiedname>Dali::Integration::Scene::KeyEventGeneratedSignalType</qualifiedname>
+        <briefdescription>
+<para>key event generated signal type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="76" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1a82948492397c57680ba641f6e064cd74" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(const <ref refid="classDali_1_1TouchEvent" kindref="compound">Dali::TouchEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Integration::Scene::TouchEventSignalType =  Signal&lt;void(const Dali::TouchEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>TouchEventSignalType</name>
+        <qualifiedname>Dali::Integration::Scene::TouchEventSignalType</qualifiedname>
+        <briefdescription>
+<para>Touch signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="77" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1a46bf8e9c1070d5acdb91112c19cba59b" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(const <ref refid="classDali_1_1WheelEvent" kindref="compound">Dali::WheelEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Integration::Scene::WheelEventSignalType =  Signal&lt;void(const Dali::WheelEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WheelEventSignalType</name>
+        <qualifiedname>Dali::Integration::Scene::WheelEventSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref> signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="78" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1a6305c4b4068e6cb018e4c28442c06447" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; bool(const <ref refid="classDali_1_1WheelEvent" kindref="compound">Dali::WheelEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Integration::Scene::WheelEventGeneratedSignalType =  Signal&lt;bool(const Dali::WheelEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WheelEventGeneratedSignalType</name>
+        <qualifiedname>Dali::Integration::Scene::WheelEventGeneratedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref> generated signal type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="79" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Integration_1_1Scene_1a271aab1cb392b11e4ae546d8648268ed" prot="public" static="no">
+        <type>std::vector&lt; std::pair&lt; std::unique_ptr&lt; <ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> &gt;, int32_t &gt; &gt;</type>
+        <definition>using Dali::Integration::Scene::FrameCallbackContainer =  std::vector&lt;std::pair&lt;std::unique_ptr&lt;CallbackBase&gt;, int32_t&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>FrameCallbackContainer</name>
+        <qualifiedname>Dali::Integration::Scene::FrameCallbackContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="81" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a01874fe0908bb41a64c1572de0664eee" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref></type>
+        <definition>Scene Dali::Integration::Scene::New</definition>
+        <argsstring>(Size size, int32_t windowOrientation=0, int32_t screenOrientation=0)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Integration::Scene::New</qualifiedname>
+        <param>
+          <type><ref refid="group__dali__core__math_1ga82440fed421eb7c08a0b879c68df59e1" kindref="member">Size</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>windowOrientation</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>screenOrientation</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Create an initialized <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the set surface for this scene </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">windowOrientation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotated angle of the set surface for this scene </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">screenOrientation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotated angle of the screen</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="92" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="33" bodyend="37"/>
+        <references refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1">Scene</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1abe169bc5d37460cd14a47cd61411cbf5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref></type>
+        <definition>Scene Dali::Integration::Scene::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::Integration::Scene::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcast an Object handle to <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to a <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> object the downcast produces valid handle. If not the returned handle is left uninitialized. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>handle to a <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> object or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="102" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="39" bodyend="42"/>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+        <references refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1">Scene</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a725572aa620859e2d025778d05f1c3ae" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Integration::Scene</ref></type>
+        <definition>Integration::Scene Dali::Integration::Scene::Get</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::Integration::Scene::Get</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> that the given actor belongs to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="310" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="171" bodyend="174"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::Scene::Scene</definition>
+        <argsstring>()</argsstring>
+        <name>Scene</name>
+        <qualifiedname>Dali::Integration::Scene::Scene</qualifiedname>
+        <briefdescription>
+<para>Create an uninitialized <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be initialized with <ref refid="classDali_1_1Integration_1_1Scene_1a01874fe0908bb41a64c1572de0664eee" kindref="member">Scene::New()</ref>. Calling member functions with an uninitialized Dali::Object is not allowed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="110" column="3"/>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1abe169bc5d37460cd14a47cd61411cbf5" compoundref="scene_8cpp" startline="39" endline="42">DownCast</referencedby>
+        <referencedby refid="classDali_1_1Integration_1_1Scene_1a01874fe0908bb41a64c1572de0664eee" compoundref="scene_8cpp" startline="33" endline="37">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1abe6831b294e8e1925a5b6232f5629e98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::Scene::~Scene</definition>
+        <argsstring>()</argsstring>
+        <name>~Scene</name>
+        <qualifiedname>Dali::Integration::Scene::~Scene</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="117" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1afbc496720e60c0a270d1e6fcfbb6457a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::Scene::Scene</definition>
+        <argsstring>(const Scene &amp;handle)</argsstring>
+        <name>Scene</name>
+        <qualifiedname>Dali::Integration::Scene::Scene</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="124" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aaa173819c5508f28c63e225a4d7de52c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> &amp;</type>
+        <definition>Scene &amp; Dali::Integration::Scene::operator=</definition>
+        <argsstring>(const Scene &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Integration::Scene::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="132" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1af6bad11da437ad9ca3c5566643bc5204" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::Scene::Scene</definition>
+        <argsstring>(Scene &amp;&amp;handle) noexcept</argsstring>
+        <name>Scene</name>
+        <qualifiedname>Dali::Integration::Scene::Scene</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> &amp;&amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This move constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="139" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ab35a7432585ec58274baf581f056a1c5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> &amp;</type>
+        <definition>Scene &amp; Dali::Integration::Scene::operator=</definition>
+        <argsstring>(Scene &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Integration::Scene::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This move assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="147" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a56eef5d1c770f5e37b75f396cc6ea44f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::Add</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>Add</name>
+        <qualifiedname>Dali::Integration::Scene::Add</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Adds a child <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> to the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The child will be referenced. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The actor does not have a parent. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="157" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="61" bodyend="64"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ac3f4a9ba66aef3b4642334e6a053ead1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::Remove</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Dali::Integration::Scene::Remove</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Removes a child <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> from the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The child will be unreferenced. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been added to the stage. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="166" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="66" bodyend="69"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ab3889f9c3778d677dc445c6288d11f2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::Show</definition>
+        <argsstring>()</argsstring>
+        <name>Show</name>
+        <qualifiedname>Dali::Integration::Scene::Show</qualifiedname>
+        <briefdescription>
+<para>Shows the scene if it is hidden. @SINCE_2_3.35. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="172" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="71" bodyend="74"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1add118f346bfa9a7c02ed48bc63f21c13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::Hide</definition>
+        <argsstring>()</argsstring>
+        <name>Hide</name>
+        <qualifiedname>Dali::Integration::Scene::Hide</qualifiedname>
+        <briefdescription>
+<para>Hides the scene if it is showing. @SINCE_2_3.35. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="178" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="76" bodyend="79"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a7a228fda3ad0844dbdeef451c2bdc67a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Integration::Scene::IsVisible</definition>
+        <argsstring>() const</argsstring>
+        <name>IsVisible</name>
+        <qualifiedname>Dali::Integration::Scene::IsVisible</qualifiedname>
+        <briefdescription>
+<para>Returns whether the window is visible or not. @SINCE_2_3.35. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the window is visible, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="185" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="81" bodyend="84"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ae96c46b67bbf78230595d54767b5b56c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::RequestFullUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>RequestFullUpdate</name>
+        <qualifiedname>Dali::Integration::Scene::RequestFullUpdate</qualifiedname>
+        <briefdescription>
+<para>Informs the scene need full update. @SINCE_2_4.42. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="191" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="86" bodyend="89"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ad6088fca4c728ffb04a742365430a846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetForceRendering</definition>
+        <argsstring>(uint32_t frameCount)</argsstring>
+        <name>SetForceRendering</name>
+        <qualifiedname>Dali::Integration::Scene::SetForceRendering</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>frameCount</declname>
+        </param>
+        <briefdescription>
+<para>Requests forced rendering for this scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">frameCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of frames to render forcibly. @SINCE_2_5.17 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="198" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="91" bodyend="94"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a118e40207b6720c5c42f4487787f4d51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__core__math_1ga82440fed421eb7c08a0b879c68df59e1" kindref="member">Size</ref></type>
+        <definition>Size Dali::Integration::Scene::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <qualifiedname>Dali::Integration::Scene::GetSize</qualifiedname>
+        <briefdescription>
+<para>Returns the size of the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> in pixels as a <ref refid="classDali_1_1Vector" kindref="compound">Vector</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The x component will be the width of the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> in pixels. The y component will be the height of the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> in pixels.</para>
+<para><simplesect kind="return"><para>The size of the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> as a <ref refid="classDali_1_1Vector" kindref="compound">Vector</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="208" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="96" bodyend="99"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a1839d9fb95932b6bc889b72c0423c56f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetDpi</definition>
+        <argsstring>(Vector2 dpi)</argsstring>
+        <name>SetDpi</name>
+        <qualifiedname>Dali::Integration::Scene::SetDpi</qualifiedname>
+        <param>
+          <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+          <declname>dpi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets horizontal and vertical pixels per inch value that is used by the display <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dpi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal and vertical dpi value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="214" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="101" bodyend="104"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1af9f9e9d69c9b1fd2f726fffc33afd311" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 Dali::Integration::Scene::GetDpi</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDpi</name>
+        <qualifiedname>Dali::Integration::Scene::GetDpi</qualifiedname>
+        <briefdescription>
+<para>Retrieves the DPI of the display device to which the scene is connected. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The horizontal and vertical DPI </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="221" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="106" bodyend="109"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ab6b88fad4fb673ad84874130053fb289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetBackgroundColor</definition>
+        <argsstring>(const Vector4 &amp;color)</argsstring>
+        <name>SetBackgroundColor</name>
+        <qualifiedname>Dali::Integration::Scene::SetBackgroundColor</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the background color. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new background color </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="228" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="111" bodyend="114"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a78bf456d307607ca5b20c0f79df302c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 Dali::Integration::Scene::GetBackgroundColor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBackgroundColor</name>
+        <qualifiedname>Dali::Integration::Scene::GetBackgroundColor</qualifiedname>
+        <briefdescription>
+<para>Gets the background color of the render　surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The background color </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="235" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="116" bodyend="119"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a8377729b4a94254e4edeefbaf215a056" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RenderTaskList" kindref="compound">Dali::RenderTaskList</ref></type>
+        <definition>RenderTaskList Dali::Integration::Scene::GetRenderTaskList</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRenderTaskList</name>
+        <qualifiedname>Dali::Integration::Scene::GetRenderTaskList</qualifiedname>
+        <briefdescription>
+<para>Retrieves the list of render-tasks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A valid handle to a <ref refid="namespaceDali_1_1Integration_1_1RenderTaskList" kindref="compound">RenderTaskList</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="242" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="121" bodyend="124"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a4919d56bf71020ca76aba87454eed31a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref></type>
+        <definition>Layer Dali::Integration::Scene::GetRootLayer</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRootLayer</name>
+        <qualifiedname>Dali::Integration::Scene::GetRootLayer</qualifiedname>
+        <briefdescription>
+<para>Returns the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&apos;s Root <ref refid="classDali_1_1Layer" kindref="compound">Layer</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The root layer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="249" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="126" bodyend="129"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ac28e9b6d9a66ef629d58671f2eabf8e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref></type>
+        <definition>Layer Dali::Integration::Scene::GetOverlayLayer</definition>
+        <argsstring>()</argsstring>
+        <name>GetOverlayLayer</name>
+        <qualifiedname>Dali::Integration::Scene::GetOverlayLayer</qualifiedname>
+        <briefdescription>
+<para>Returns the <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&apos;s Overlay <ref refid="classDali_1_1Layer" kindref="compound">Layer</ref>. If there is no overlay layer yet, this creates the layer and an associated render task. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The overlay layer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="257" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="131" bodyend="134"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1af9deb4168e421ff5153defd4da1f2da6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Integration::Scene::GetLayerCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLayerCount</name>
+        <qualifiedname>Dali::Integration::Scene::GetLayerCount</qualifiedname>
+        <briefdescription>
+<para>Queries the number of on-stage layers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that a default layer is always provided (count &gt;= 1). <simplesect kind="return"><para>The number of layers </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="265" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="136" bodyend="139"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1af89306a10441a5d644edbf43922d2f44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref></type>
+        <definition>Layer Dali::Integration::Scene::GetLayer</definition>
+        <argsstring>(uint32_t depth) const</argsstring>
+        <name>GetLayer</name>
+        <qualifiedname>Dali::Integration::Scene::GetLayer</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the layer at a specified depth. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The depth </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The layer found at the given depth </para>
+</simplesect>
+<simplesect kind="pre"><para>Depth is less than layer count; see <ref refid="classDali_1_1Integration_1_1Scene_1af9deb4168e421ff5153defd4da1f2da6" kindref="member">GetLayerCount()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="274" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="141" bodyend="144"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a148239a158a5449aa7fbfc09d29f417b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SurfaceResized</definition>
+        <argsstring>(float width, float height)</argsstring>
+        <name>SurfaceResized</name>
+        <qualifiedname>Dali::Integration::Scene::SurfaceResized</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Informs the scene that the set surface has been resized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new width of the set surface </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new height of the set surface </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="282" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="146" bodyend="149"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a1006198ce259710cfb580ef913a15a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SurfaceReplaced</definition>
+        <argsstring>()</argsstring>
+        <name>SurfaceReplaced</name>
+        <qualifiedname>Dali::Integration::Scene::SurfaceReplaced</qualifiedname>
+        <briefdescription>
+<para>Informs the scene that the surface has been replaced. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="287" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="151" bodyend="154"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aa10f7d860ac0388c4a21dc853e5bcc2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::RemoveSceneObject</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveSceneObject</name>
+        <qualifiedname>Dali::Integration::Scene::RemoveSceneObject</qualifiedname>
+        <briefdescription>
+<para>Removes the scene graph object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="292" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="156" bodyend="159"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a3e8f229698ad11142983e039f9a6f862" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::Discard</definition>
+        <argsstring>()</argsstring>
+        <name>Discard</name>
+        <qualifiedname>Dali::Integration::Scene::Discard</qualifiedname>
+        <briefdescription>
+<para>Discards this <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> from the <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="297" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="161" bodyend="164"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a66f95b2eae7a2a21aba448bfffe59242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetSurfaceRenderTarget</definition>
+        <argsstring>(const Graphics::RenderTargetCreateInfo &amp;createInfo)</argsstring>
+        <name>SetSurfaceRenderTarget</name>
+        <qualifiedname>Dali::Integration::Scene::SetSurfaceRenderTarget</qualifiedname>
+        <param>
+          <type>const Graphics::RenderTargetCreateInfo &amp;</type>
+          <declname>createInfo</declname>
+        </param>
+        <briefdescription>
+<para>Sets the render target for the surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderTarget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The render target create info for the surface </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="304" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="166" bodyend="169"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aef530d0afa35c5149e1e5078a934530e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::QueueEvent</definition>
+        <argsstring>(const Integration::Event &amp;event)</argsstring>
+        <name>QueueEvent</name>
+        <qualifiedname>Dali::Integration::Scene::QueueEvent</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Integration_1_1Event" kindref="compound">Integration::Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called when an event is queued. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A event to queue. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="316" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="176" bodyend="179"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a3a08f31250c31f92da813dcb086bbea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::ProcessEvents</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessEvents</name>
+        <qualifiedname>Dali::Integration::Scene::ProcessEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called by <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref> when events are processed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="321" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="181" bodyend="184"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a3ecdc109ac39f63f518b810ee292c66f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::AddFrameRenderedCallback</definition>
+        <argsstring>(std::unique_ptr&lt; CallbackBase &gt; callback, int32_t frameId)</argsstring>
+        <name>AddFrameRenderedCallback</name>
+        <qualifiedname>Dali::Integration::Scene::AddFrameRenderedCallback</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>frameId</declname>
+        </param>
+        <briefdescription>
+<para>Adds a callback that is called when the frame rendering is done by the graphics driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to call </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">frameId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id to specify the frame. It will be passed when the callback is called.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>A callback of the following type may be used: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFunction(<sp/>int32_t<sp/>frameId<sp/>);</highlight></codeline>
+</programlisting> This callback will be deleted once it is called.</para>
+</simplesect>
+<simplesect kind="note"><para>Ownership of the callback is passed onto this class. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="337" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="186" bodyend="189"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a3f7de49f55dfa78d8db6924062f00ae4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::AddFramePresentedCallback</definition>
+        <argsstring>(std::unique_ptr&lt; CallbackBase &gt; callback, int32_t frameId)</argsstring>
+        <name>AddFramePresentedCallback</name>
+        <qualifiedname>Dali::Integration::Scene::AddFramePresentedCallback</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classDali_1_1CallbackBase" kindref="compound">CallbackBase</ref> &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>frameId</declname>
+        </param>
+        <briefdescription>
+<para>Adds a callback that is called when the frame is displayed on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to call </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">frameId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Id to specify the frame. It will be passed when the callback is called.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>A callback of the following type may be used: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFunction(<sp/>int32_t<sp/>frameId<sp/>);</highlight></codeline>
+</programlisting> This callback will be deleted once it is called.</para>
+</simplesect>
+<simplesect kind="note"><para>Ownership of the callback is passed onto this class. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="353" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="191" bodyend="194"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aba5314555d810829cd813a3cf3fbfed8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::GetFrameRenderedCallback</definition>
+        <argsstring>(FrameCallbackContainer &amp;callbacks)</argsstring>
+        <name>GetFrameRenderedCallback</name>
+        <qualifiedname>Dali::Integration::Scene::GetFrameRenderedCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1Scene_1a271aab1cb392b11e4ae546d8648268ed" kindref="member">FrameCallbackContainer</ref> &amp;</type>
+          <declname>callbacks</declname>
+        </param>
+        <briefdescription>
+<para>Gets the callback list that is called when the frame rendering is done by the graphics driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">callbacks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback list</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This is called in the update thread. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="362" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="196" bodyend="199"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a5c96ef8a2a47f53ed28931193be35f60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::GetFramePresentedCallback</definition>
+        <argsstring>(FrameCallbackContainer &amp;callbacks)</argsstring>
+        <name>GetFramePresentedCallback</name>
+        <qualifiedname>Dali::Integration::Scene::GetFramePresentedCallback</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1Scene_1a271aab1cb392b11e4ae546d8648268ed" kindref="member">FrameCallbackContainer</ref> &amp;</type>
+          <declname>callbacks</declname>
+        </param>
+        <briefdescription>
+<para>Gets the callback list that is called when the frame is displayed on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">callbacks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback list</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This is called in the update thread. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="371" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="201" bodyend="204"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a0d1e38b628b2f5128bf3db002b56c1f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SurfaceRotated</definition>
+        <argsstring>(float width, float height, int32_t windowOrientation, int32_t screenOrientation)</argsstring>
+        <name>SurfaceRotated</name>
+        <qualifiedname>Dali::Integration::Scene::SurfaceRotated</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>windowOrientation</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>screenOrientation</declname>
+        </param>
+        <briefdescription>
+<para>Informs the scene that the set surface has been rotated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of rotated surface </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of rotated surface </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">windowOrientation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current window orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">screenOrientation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the current screen orientation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="381" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="206" bodyend="209"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ab8132a13527cfbc6ea11db2d9a2382ed" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Dali::Integration::Scene::GetCurrentSurfaceOrientation</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentSurfaceOrientation</name>
+        <qualifiedname>Dali::Integration::Scene::GetCurrentSurfaceOrientation</qualifiedname>
+        <briefdescription>
+<para>Gets the current surface orientation. It gets the value from the scene object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current surface orientation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="388" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="211" bodyend="214"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ab9a90b9c03de00ffe421416a26ff32cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Dali::Integration::Scene::GetCurrentScreenOrientation</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentScreenOrientation</name>
+        <qualifiedname>Dali::Integration::Scene::GetCurrentScreenOrientation</qualifiedname>
+        <briefdescription>
+<para>Gets the current screen orientation. It gets the value from the scene object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current screen orientation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="395" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="216" bodyend="219"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a8f0bf5e7129bf0f9fa8a0f62cb7d66a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structDali_1_1Rect" kindref="compound">Rect</ref>&lt; int32_t &gt; &amp;</type>
+        <definition>const Rect&lt; int32_t &gt; &amp; Dali::Integration::Scene::GetCurrentSurfaceRect</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentSurfaceRect</name>
+        <qualifiedname>Dali::Integration::Scene::GetCurrentSurfaceRect</qualifiedname>
+        <briefdescription>
+<para>Gets the current surface rectangle. It gets the value from the scene object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current surface rectangle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="402" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="221" bodyend="224"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aae8e18e75b838aa76c7651474bfd8d41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Integration::Scene::GetSurfaceRectChangedCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSurfaceRectChangedCount</name>
+        <qualifiedname>Dali::Integration::Scene::GetSurfaceRectChangedCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Query how many times the surface rect changed. <simplesect kind="note"><para>It will reset surface rect changed count. </para>
+</simplesect>
+<simplesect kind="return"><para>The count of the surface rect changed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="409" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="226" bodyend="229"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1acb5368dd2e971845867eeba138b92784" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetRotationCompletedAcknowledgement</definition>
+        <argsstring>()</argsstring>
+        <name>SetRotationCompletedAcknowledgement</name>
+        <qualifiedname>Dali::Integration::Scene::SetRotationCompletedAcknowledgement</qualifiedname>
+        <briefdescription>
+<para>Send message to acknowledge for completing window rotation with current window orientation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this function is called, the message is sent to render thread, then mSurfaceRectChanged in scene-graph-scene is set with true. After that, render thread checks whether window rotation event is received, mSurfaceRectChanged and the neccessary flag are set. If they are all true, rotation done function is called to complete window rotation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="418" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="231" bodyend="234"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a753bef9318726a6774a65fdff1bc46bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Integration::Scene::IsRotationCompletedAcknowledgementSet</definition>
+        <argsstring>() const</argsstring>
+        <name>IsRotationCompletedAcknowledgementSet</name>
+        <qualifiedname>Dali::Integration::Scene::IsRotationCompletedAcknowledgementSet</qualifiedname>
+        <briefdescription>
+<para>Query wheter is set to acknowledge for completing surface rotation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true it should be acknowledged.</para>
+</simplesect>
+If <ref refid="classDali_1_1Integration_1_1Scene_1acb5368dd2e971845867eeba138b92784" kindref="member">SetRotationCompletedAcknowledgement()</ref> is called and the related message is received to scene-graph-scene, then mSurfaceRectChanged in scene-graph-scene is set with true.</para>
+<para>When this function is called, the mSurfaceRectChanged in scene-graph-scene is return. Then, the flag will be reset.</para>
+<para><simplesect kind="note"><para>This function should be not called the application&apos;s main thread. Because this function should be called in windwow surface&apos;s postrender() function to complete window rotation manually. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="433" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="236" bodyend="239"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a5b1b3c60962ec89d3dda156683ca6aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::KeepRendering</definition>
+        <argsstring>(float durationSeconds)</argsstring>
+        <name>KeepRendering</name>
+        <qualifiedname>Dali::Integration::Scene::KeepRendering</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>durationSeconds</declname>
+        </param>
+        <briefdescription>
+<para>Keep rendering for at least the given amount of time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, <ref refid="namespaceDali" kindref="compound">Dali</ref> will stop rendering when no <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> positions are being set, and when no animations are running etc. This method is useful to force screen refreshes.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">durationSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time to keep rendering, 0 means render at least one more frame </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="443" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="241" bodyend="244"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1af262775e03371d376efba74b30bab9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetPartialUpdateEnabled</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>SetPartialUpdateEnabled</name>
+        <qualifiedname>Dali::Integration::Scene::SetPartialUpdateEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the scene will update partial area or full area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the scene should update partial area </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This doesn&apos;t change the global value which is set by the environment variable. This works when partial update is enabled by the environment variable. If the partial update is disabled by the environment variable, it changes nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="452" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="246" bodyend="249"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a96b45918527cb7c6c2782a9ffd8c7120" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Integration::Scene::IsPartialUpdateEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>IsPartialUpdateEnabled</name>
+        <qualifiedname>Dali::Integration::Scene::IsPartialUpdateEnabled</qualifiedname>
+        <briefdescription>
+<para>Queries whether the scene will update partial area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the scene should update partial area </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="459" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="251" bodyend="254"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ae682f0679e9076efb66a7b4ff4027158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetGeometryHittestEnabled</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>SetGeometryHittestEnabled</name>
+        <qualifiedname>Dali::Integration::Scene::SetGeometryHittestEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the processes using geometry event propagation touch and hover events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the processes using geometry event propagation touch and hover events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="466" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="256" bodyend="259"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aed99764baf7a7f47df4c45bbf28c2f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Integration::Scene::IsGeometryHittestEnabled</definition>
+        <argsstring>()</argsstring>
+        <name>IsGeometryHittestEnabled</name>
+        <qualifiedname>Dali::Integration::Scene::IsGeometryHittestEnabled</qualifiedname>
+        <briefdescription>
+<para>Queries whether the scene using geometry event propagation touch and hover events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the scene using geometry event propagation touch and hover events. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="473" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="261" bodyend="264"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ada1f2059cca2aee588e71a55a011c050" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338" kindref="member">TouchPropagationType</ref></type>
+        <definition>Scene::TouchPropagationType Dali::Integration::Scene::GetTouchPropagationType</definition>
+        <argsstring>()</argsstring>
+        <name>GetTouchPropagationType</name>
+        <qualifiedname>Dali::Integration::Scene::GetTouchPropagationType</qualifiedname>
+        <briefdescription>
+<para>Get the Touch Propagation Type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TouchPropagationType </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="480" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="266" bodyend="269"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a42dbea9081d38a4b645512c64070355c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Integration::Scene::SetNativeId</definition>
+        <argsstring>(int32_t nativeId)</argsstring>
+        <name>SetNativeId</name>
+        <qualifiedname>Dali::Integration::Scene::SetNativeId</qualifiedname>
+        <param>
+          <type>int32_t</type>
+          <declname>nativeId</declname>
+        </param>
+        <briefdescription>
+<para>Sets the native window id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nativeId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The native window id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="487" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="271" bodyend="274"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a0c77f732ffcb69b32b378eb727f2ea64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t Dali::Integration::Scene::GetNativeId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNativeId</name>
+        <qualifiedname>Dali::Integration::Scene::GetNativeId</qualifiedname>
+        <briefdescription>
+<para>Gets the native window id. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The native window id </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="494" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="276" bodyend="279"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a7ce8fa5a875b0528c3d9e3e27f48ef03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1a1c7153324546349d2a60223f6e1895af" kindref="member">Dali::GestureState</ref></type>
+        <definition>Dali::GestureState Dali::Integration::Scene::GetLastPanGestureState</definition>
+        <argsstring>()</argsstring>
+        <name>GetLastPanGestureState</name>
+        <qualifiedname>Dali::Integration::Scene::GetLastPanGestureState</qualifiedname>
+        <briefdescription>
+<para>Gets the last pan gesture state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="namespaceDali_1a1c7153324546349d2a60223f6e1895af" kindref="member">Dali::GestureState</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="501" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="281" bodyend="284"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1aceb3ea379d18f3e55153b73d6a9d5fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a5f67425fa25df17f10c26b9aef2e02ed" kindref="member">EventProcessingFinishedSignalType</ref> &amp;</type>
+        <definition>Scene::EventProcessingFinishedSignalType &amp; Dali::Integration::Scene::EventProcessingFinishedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>EventProcessingFinishedSignal</name>
+        <qualifiedname>Dali::Integration::Scene::EventProcessingFinishedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted just after the event processing is finished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="508" column="37" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="286" bodyend="289"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a0cc263e021f2bd37b659c4e950e19158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1ae078e0944d4664b2b172560ccfab87c2" kindref="member">KeyEventSignalType</ref> &amp;</type>
+        <definition>Scene::KeyEventSignalType &amp; Dali::Integration::Scene::KeyEventSignal</definition>
+        <argsstring>()</argsstring>
+        <name>KeyEventSignal</name>
+        <qualifiedname>Dali::Integration::Scene::KeyEventSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when key event is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting> <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="519" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="291" bodyend="294"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a6182cc25936d3337fadf6e0b33f4ad2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a424ef6d0817ebc09aa9ce9b343dfcab8" kindref="member">KeyEventGeneratedSignalType</ref> &amp;</type>
+        <definition>Scene::KeyEventGeneratedSignalType &amp; Dali::Integration::Scene::KeyEventGeneratedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>KeyEventGeneratedSignal</name>
+        <qualifiedname>Dali::Integration::Scene::KeyEventGeneratedSignal</qualifiedname>
+        <briefdescription>
+<para>The user would connect to this signal to get a <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> when <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is generated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the control already consumed key event, KeyEventProcessor do not need to Emit keyEvent. Therefore, KeyinputManager first checks whether <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is generated as KeyEventGeneratedSignal. After that keyEventProcessor must invoke <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> only if KeyEventGeneratedSignal () is not consumed.</para>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The return is true if <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is consumed, otherwise false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="535" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="296" bodyend="299"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a336548acce09c1e45450c42e68bd3783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a424ef6d0817ebc09aa9ce9b343dfcab8" kindref="member">KeyEventGeneratedSignalType</ref> &amp;</type>
+        <definition>Scene::KeyEventGeneratedSignalType &amp; Dali::Integration::Scene::InterceptKeyEventSignal</definition>
+        <argsstring>()</argsstring>
+        <name>InterceptKeyEventSignal</name>
+        <qualifiedname>Dali::Integration::Scene::InterceptKeyEventSignal</qualifiedname>
+        <briefdescription>
+<para>The user would connect to this signal to intercept a <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> at window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Intercepts KeyEvents in the window before dispatching KeyEvents to the control. If a <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is consumed, no <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is delivered to the control.</para>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The return is true if <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is consumed, otherwise false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="550" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="301" bodyend="304"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a1999d7dd1e7f3e73d35d380aa0a068e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1ae078e0944d4664b2b172560ccfab87c2" kindref="member">KeyEventSignalType</ref> &amp;</type>
+        <definition>Scene::KeyEventSignalType &amp; Dali::Integration::Scene::KeyEventMonitorSignal</definition>
+        <argsstring>()</argsstring>
+        <name>KeyEventMonitorSignal</name>
+        <qualifiedname>Dali::Integration::Scene::KeyEventMonitorSignal</qualifiedname>
+        <briefdescription>
+<para>The user would connect to this signal to monitor a <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> at window. This signal is emitted when <ref refid="structDali_1_1Integration_1_1KeyEvent" kindref="compound">KeyEvent</ref> is generated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="classDali_1_1Callback" kindref="compound">Callback</ref> of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KeyEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="563" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="306" bodyend="309"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a63fead98f30f10f6c68ae844f5e26ee4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a82948492397c57680ba641f6e064cd74" kindref="member">TouchEventSignalType</ref> &amp;</type>
+        <definition>Scene::TouchEventSignalType &amp; Dali::Integration::Scene::TouchedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>TouchedSignal</name>
+        <qualifiedname>Dali::Integration::Scene::TouchedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when the screen is touched and when the touch ends (i.e. the down &amp; up touch events only). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If there are multiple touch points, then this will be emitted when the first touch occurs and then when the last finger is lifted. An interrupted event will also be emitted (if it occurs). A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/>TouchEvent<sp/>event<sp/>);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The touch signal to connect to </para>
+</simplesect>
+<simplesect kind="note"><para>Motion events are not emitted. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="580" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="311" bodyend="314"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1a430b9daf18937b05bbb61e547f2f6587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a46bf8e9c1070d5acdb91112c19cba59b" kindref="member">WheelEventSignalType</ref> &amp;</type>
+        <definition>Scene::WheelEventSignalType &amp; Dali::Integration::Scene::WheelEventSignal</definition>
+        <argsstring>()</argsstring>
+        <name>WheelEventSignal</name>
+        <qualifiedname>Dali::Integration::Scene::WheelEventSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when wheel event is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>WheelEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting> <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="591" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="316" bodyend="319"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1afb566285e6ddc9beca8293e5ae60fd30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1Scene_1a6305c4b4068e6cb018e4c28442c06447" kindref="member">WheelEventGeneratedSignalType</ref> &amp;</type>
+        <definition>Scene::WheelEventGeneratedSignalType &amp; Dali::Integration::Scene::WheelEventGeneratedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>WheelEventGeneratedSignal</name>
+        <qualifiedname>Dali::Integration::Scene::WheelEventGeneratedSignal</qualifiedname>
+        <briefdescription>
+<para>When a custom wheel event occurs, it need to process the focused actor first. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Therefore, KeyboardFocusManager first checks whether <ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref> is generated as WheelEventGeneratedSignal. After that wheelEventProcessor must invoke <ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref> only if wheelEventGeneratedSignal () is not consumed.</para>
+<para>This is only valid for custom wheel events.</para>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>WheelEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The return is true if <ref refid="structDali_1_1Integration_1_1WheelEvent" kindref="compound">WheelEvent</ref> is consumed, otherwise false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="608" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="321" bodyend="324"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1Scene_1ac1b3bea8390641922e92008a6e56cbe8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Integration::Scene::Scene</definition>
+        <argsstring>(Internal::Scene *scene)</argsstring>
+        <name>Scene</name>
+        <qualifiedname>Dali::Integration::Scene::Scene</qualifiedname>
+        <param>
+          <type>Internal::Scene *</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+<para>This constructor is used by Dali::New() methods. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an internal <ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> resource </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="616" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref> creates a &quot;world&quot; that can be bound to a surface for rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="1">
+        <label>Dali::Integration::Scene</label>
+        <link refid="classDali_1_1Integration_1_1Scene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="1">
+        <label>Dali::Integration::Scene</label>
+        <link refid="classDali_1_1Integration_1_1Scene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" line="62" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h" bodystart="63" bodyend="617"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1Scene_1a56eef5d1c770f5e37b75f396cc6ea44f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Add</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a3f7de49f55dfa78d8db6924062f00ae4" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>AddFramePresentedCallback</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a3ecdc109ac39f63f518b810ee292c66f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>AddFrameRenderedCallback</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a3e8f229698ad11142983e039f9a6f862" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Discard</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1abe169bc5d37460cd14a47cd61411cbf5" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aceb3ea379d18f3e55153b73d6a9d5fd8" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>EventProcessingFinishedSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a5f67425fa25df17f10c26b9aef2e02ed" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>EventProcessingFinishedSignalType</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a271aab1cb392b11e4ae546d8648268ed" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>FrameCallbackContainer</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338ac8d9e7937956fe6ada8c9aeca1aec325" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GEOMETRY</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a725572aa620859e2d025778d05f1c3ae" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Get</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a78bf456d307607ca5b20c0f79df302c5" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetBackgroundColor</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ab9a90b9c03de00ffe421416a26ff32cc" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetCurrentScreenOrientation</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ab8132a13527cfbc6ea11db2d9a2382ed" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetCurrentSurfaceOrientation</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a8f0bf5e7129bf0f9fa8a0f62cb7d66a8" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetCurrentSurfaceRect</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1af9f9e9d69c9b1fd2f726fffc33afd311" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetDpi</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a5c96ef8a2a47f53ed28931193be35f60" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetFramePresentedCallback</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aba5314555d810829cd813a3cf3fbfed8" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetFrameRenderedCallback</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a7ce8fa5a875b0528c3d9e3e27f48ef03" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetLastPanGestureState</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1af89306a10441a5d644edbf43922d2f44" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetLayer</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1af9deb4168e421ff5153defd4da1f2da6" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetLayerCount</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a0c77f732ffcb69b32b378eb727f2ea64" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetNativeId</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ac28e9b6d9a66ef629d58671f2eabf8e6" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetOverlayLayer</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a8377729b4a94254e4edeefbaf215a056" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetRenderTaskList</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a4919d56bf71020ca76aba87454eed31a" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetRootLayer</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a118e40207b6720c5c42f4487787f4d51" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetSize</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aae8e18e75b838aa76c7651474bfd8d41" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetSurfaceRectChangedCount</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ada1f2059cca2aee588e71a55a011c050" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetTouchPropagationType</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1add118f346bfa9a7c02ed48bc63f21c13" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Hide</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a336548acce09c1e45450c42e68bd3783" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>InterceptKeyEventSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aed99764baf7a7f47df4c45bbf28c2f5f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>IsGeometryHittestEnabled</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a96b45918527cb7c6c2782a9ffd8c7120" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>IsPartialUpdateEnabled</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a753bef9318726a6774a65fdff1bc46bd" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>IsRotationCompletedAcknowledgementSet</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a7a228fda3ad0844dbdeef451c2bdc67a" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>IsVisible</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a5b1b3c60962ec89d3dda156683ca6aa4" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>KeepRendering</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a6182cc25936d3337fadf6e0b33f4ad2e" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>KeyEventGeneratedSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a424ef6d0817ebc09aa9ce9b343dfcab8" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>KeyEventGeneratedSignalType</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a1999d7dd1e7f3e73d35d380aa0a068e2" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>KeyEventMonitorSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a0cc263e021f2bd37b659c4e950e19158" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>KeyEventSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ae078e0944d4664b2b172560ccfab87c2" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>KeyEventSignalType</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a01874fe0908bb41a64c1572de0664eee" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>New</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aaa173819c5508f28c63e225a4d7de52c" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ab35a7432585ec58274baf581f056a1c5" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Integration::Scene</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Integration::Scene</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338af262fe83bb03ad4eeef4f70f3bec240c" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>PARENT</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a3a08f31250c31f92da813dcb086bbea1" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>ProcessEvents</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aef530d0afa35c5149e1e5078a934530e" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>QueueEvent</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ac3f4a9ba66aef3b4642334e6a053ead1" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Remove</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1aa10f7d860ac0388c4a21dc853e5bcc2f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>RemoveSceneObject</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ae96c46b67bbf78230595d54767b5b56c" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>RequestFullUpdate</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Scene</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1afbc496720e60c0a270d1e6fcfbb6457a" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Scene</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1af6bad11da437ad9ca3c5566643bc5204" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Scene</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ac1b3bea8390641922e92008a6e56cbe8" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Scene</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ab6b88fad4fb673ad84874130053fb289" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetBackgroundColor</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a1839d9fb95932b6bc889b72c0423c56f" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetDpi</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ad6088fca4c728ffb04a742365430a846" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetForceRendering</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ae682f0679e9076efb66a7b4ff4027158" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetGeometryHittestEnabled</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a42dbea9081d38a4b645512c64070355c" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetNativeId</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1af262775e03371d376efba74b30bab9f8" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetPartialUpdateEnabled</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1acb5368dd2e971845867eeba138b92784" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetRotationCompletedAcknowledgement</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a66f95b2eae7a2a21aba448bfffe59242" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SetSurfaceRenderTarget</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1ab3889f9c3778d677dc445c6288d11f2b" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>Show</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a1006198ce259710cfb580ef913a15a7a" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SurfaceReplaced</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a148239a158a5449aa7fbfc09d29f417b" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SurfaceResized</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a0d1e38b628b2f5128bf3db002b56c1f9" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>SurfaceRotated</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a63fead98f30f10f6c68ae844f5e26ee4" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>TouchedSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a82948492397c57680ba641f6e064cd74" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>TouchEventSignalType</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>TouchPropagationType</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1afb566285e6ddc9beca8293e5ae60fd30" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>WheelEventGeneratedSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a6305c4b4068e6cb018e4c28442c06447" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>WheelEventGeneratedSignalType</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a430b9daf18937b05bbb61e547f2f6587" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>WheelEventSignal</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1a46bf8e9c1070d5acdb91112c19cba59b" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>WheelEventSignalType</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>~BaseHandle</name></member>
+      <member refid="classDali_1_1Integration_1_1Scene_1abe6831b294e8e1925a5b6232f5629e98" prot="public" virt="non-virtual"><scope>Dali::Integration::Scene</scope><name>~Scene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

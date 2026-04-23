@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="performance-logger_8cpp" kind="file" language="C++">
+    <compoundname>performance-logger.cpp</compoundname>
+    <includes refid="performance-logger_8h" local="no">dali/devel-api/adaptor-framework/performance-logger.h</includes>
+    <includes local="no">dali/internal/system/common/performance-logger-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/performance-logger.cpp</label>
+        <link refid="performance-logger_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/performance-logger.h</label>
+        <link refid="performance-logger_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/internal/system/common/performance-logger-impl.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="performance-logger_8h" kindref="compound">dali/devel-api/adaptor-framework/performance-logger.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/system/common/performance-logger-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26" refid="classDali_1_1PerformanceLogger_1aa2fff7a928f9e69068e8080719270db0" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger_1aa2fff7a928f9e69068e8080719270db0" kindref="member">PerformanceLogger::PerformanceLogger</ref>()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classDali_1_1PerformanceLogger_1a97ed6b3218c0161b606c2bdf0567de4a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref><sp/><ref refid="classDali_1_1PerformanceLogger_1a97ed6b3218c0161b606c2bdf0567de4a" kindref="member">PerformanceLogger::New</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>Internal::Adaptor::PerformanceLoggerPtr<sp/>internal<sp/>=<sp/>Internal::Adaptor::PerformanceLogger::New(name);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger_1aa2fff7a928f9e69068e8080719270db0" kindref="member">PerformanceLogger</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1PerformanceLogger_1adc061c1906fb395f777d2d598c66df89" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger_1aa2fff7a928f9e69068e8080719270db0" kindref="member">PerformanceLogger::PerformanceLogger</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref>&amp;<sp/>performanceLogger)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">:<sp/>BaseHandle(performanceLogger)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classDali_1_1PerformanceLogger_1a0236acbee4221bcaa795cb60d5a6e230" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref>&amp;<sp/><ref refid="classDali_1_1PerformanceLogger_1a0236acbee4221bcaa795cb60d5a6e230" kindref="member">PerformanceLogger::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref>&amp;<sp/>performanceLogger)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>self<sp/>assignment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>!=<sp/>performanceLogger)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>BaseHandle::operator=(performanceLogger);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1PerformanceLogger_1aee12066f21544383d1f4d5826b625b28" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger_1aee12066f21544383d1f4d5826b625b28" kindref="member">PerformanceLogger::~PerformanceLogger</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classDali_1_1PerformanceLogger_1a3a5344d6e6821d68bb1e809f7b424efa" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref><sp/><ref refid="classDali_1_1PerformanceLogger_1a3a5344d6e6821d68bb1e809f7b424efa" kindref="member">PerformanceLogger::DownCast</ref>(BaseHandle<sp/>handle)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger_1aa2fff7a928f9e69068e8080719270db0" kindref="member">PerformanceLogger</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Internal::Adaptor::PerformanceLogger*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.GetObjectPtr()));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1PerformanceLogger_1aa088d1ba6bfd3995c4cc16bde61f3e8c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger_1aa088d1ba6bfd3995c4cc16bde61f3e8c" kindref="member">PerformanceLogger::AddMarker</ref>(<ref refid="classDali_1_1PerformanceLogger_1a1cf7c68790255125ac867609bb54b3c7" kindref="member">Marker</ref><sp/>markerType)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).AddMarker(markerType);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classDali_1_1PerformanceLogger_1ad4a688a82590ddb9937a20a70f39eea6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger_1ad4a688a82590ddb9937a20a70f39eea6" kindref="member">PerformanceLogger::SetLoggingFrequency</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>logFrequency)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).SetLoggingFrequency(logFrequency);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classDali_1_1PerformanceLogger_1ac3391f6426117fea91cc9587218f553f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1PerformanceLogger_1ac3391f6426117fea91cc9587218f553f" kindref="member">PerformanceLogger::EnableLogging</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).EnableLogging(enable);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDali_1_1PerformanceLogger_1a78a4cf4c856af26436a70bc0e80fe2d5" refkind="member"><highlight class="normal"><ref refid="classDali_1_1PerformanceLogger_1aa2fff7a928f9e69068e8080719270db0" kindref="member">PerformanceLogger::PerformanceLogger</ref>(Internal::Adaptor::PerformanceLogger*<sp/><ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">:<sp/>BaseHandle(<ref refid="classDali_1_1PerformanceLogger" kindref="compound">PerformanceLogger</ref>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/performance-logger.cpp"/>
+  </compounddef>
+</doxygen>

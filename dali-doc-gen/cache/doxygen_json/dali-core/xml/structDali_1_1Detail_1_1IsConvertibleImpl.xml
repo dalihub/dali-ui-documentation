@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structDali_1_1Detail_1_1IsConvertibleImpl" kind="struct" language="C++" prot="public">
+    <compoundname>Dali::Detail::IsConvertibleImpl</compoundname>
+    <derivedcompoundref refid="structDali_1_1IsConvertible" prot="public" virt="non-virtual">Dali::IsConvertible&lt; From, To &gt;</derivedcompoundref>
+    <includes refid="type-traits_8h" local="no">type-traits.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename From</type>
+      </param>
+      <param>
+        <type>typename To</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool Dali::Detail::IsConvertibleImpl&lt; From, To &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>Dali::Detail::IsConvertibleImpl::value</qualifiedname>
+        <initializer>= sizeof(<ref refid="structDali_1_1Detail_1_1ConvertibleHelper" kindref="compound">ConvertibleHelper</ref>&lt;To&gt;::Test(<ref refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a24686da2a7d4217d1e6179d6c59f611a" kindref="member">Create</ref>())) == sizeof(To)</initializer>
+        <briefdescription>
+<para>Static constant indicating if From is convertible to To. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If From is implicitly convertible to To:<itemizedlist>
+<listitem><para>Test(Create()) returns type To</para>
+</listitem><listitem><para>sizeof(To) == sizeof(To) evaluates to true</para>
+</listitem></itemizedlist>
+</para>
+<para>If From is NOT implicitly convertible to To:<itemizedlist>
+<listitem><para>The Test(From) overload causes substitution failure (SFINAE)</para>
+</listitem><listitem><para>Test(AnyType) is selected instead, returning char</para>
+</listitem><listitem><para>sizeof(char) == sizeof(To) evaluates to false (assuming To != char) </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="231" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structDali_1_1Detail_1_1IsConvertibleImpl_1a24686da2a7d4217d1e6179d6c59f611a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>From &amp;</type>
+        <definition>static From &amp; Dali::Detail::IsConvertibleImpl&lt; From, To &gt;::Create</definition>
+        <argsstring>()</argsstring>
+        <name>Create</name>
+        <qualifiedname>Dali::Detail::IsConvertibleImpl::Create</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="217" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implementation of <ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Uses sizeof on the return type of Test() to determine which overload was selected, which indicates whether the conversion is possible.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>From</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>To</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::Detail::IsConvertibleImpl&lt; From, To &gt;</label>
+        <link refid="structDali_1_1Detail_1_1IsConvertibleImpl"/>
+      </node>
+      <node id="2">
+        <label>Dali::IsConvertible&lt; From, To &gt;</label>
+        <link refid="structDali_1_1IsConvertible"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="215" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="216" bodyend="232"/>
+    <listofallmembers>
+      <member refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a24686da2a7d4217d1e6179d6c59f611a" prot="public" virt="non-virtual"><scope>Dali::Detail::IsConvertibleImpl</scope><name>Create</name></member>
+      <member refid="structDali_1_1Detail_1_1IsConvertibleImpl_1a6e34ab5c9095c422b1bef050adea2cd4" prot="public" virt="non-virtual"><scope>Dali::Detail::IsConvertibleImpl</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

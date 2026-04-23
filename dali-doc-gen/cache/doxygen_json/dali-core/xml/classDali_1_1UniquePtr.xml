@@ -1,0 +1,628 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1UniquePtr" kind="class" language="C++" prot="public">
+    <compoundname>Dali::UniquePtr</compoundname>
+    <includes refid="unique-ptr_8h" local="no">unique-ptr.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Type</type>
+      </param>
+      <param>
+        <type>typename Deleter</type>
+        <defval>void (*)(Type*)</defval>
+      </param>
+      <param>
+        <type>typename</type>
+        <defval>void</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classDali_1_1UniquePtr_1a75f4dc1ed464b83ee4805b513a3fee14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename</type>
+          </param>
+          <param>
+            <type>typename</type>
+          </param>
+          <param>
+            <type>typename</type>
+          </param>
+        </templateparamlist>
+        <type>class</type>
+        <definition>friend class UniquePtr</definition>
+        <argsstring></argsstring>
+        <name>UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::UniquePtr</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="43" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classDali_1_1UniquePtr_1aaa760a65f4a1bf664ce12f001a0f236a" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr Deleter</type>
+        <definition>constexpr Deleter Dali::UniquePtr&lt; Type, Deleter, typename &gt;::DefaultDeleter</definition>
+        <argsstring></argsstring>
+        <name>DefaultDeleter</name>
+        <qualifiedname>Dali::UniquePtr::DefaultDeleter</qualifiedname>
+        <initializer>= [](Type* p)
+  {
+    delete p;
+  }</initializer>
+        <briefdescription>
+<para>Default deleter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="45" column="28" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="45" bodyend="48"/>
+        <referencedby refid="classDali_1_1UniquePtr_1a2c3d223000f0b76235367604c0ab18d2" compoundref="unique-ptr_8h" startline="104" endline="119">Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator=</referencedby>
+        <referencedby refid="classDali_1_1UniquePtr_1a4888d336999639620e5dfe4f9a5c37e7" compoundref="unique-ptr_8h" startline="152" endline="163">Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator=</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1UniquePtr_1a4ea701b5e696e14dc7eeed2f3d965c52" prot="private" static="no" mutable="no">
+        <type>Type *</type>
+        <definition>Type* Dali::UniquePtr&lt; Type, Deleter, typename &gt;::mPtr</definition>
+        <argsstring></argsstring>
+        <name>mPtr</name>
+        <qualifiedname>Dali::UniquePtr::mPtr</qualifiedname>
+        <briefdescription>
+<para>The managed object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="270" column="33" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1UniquePtr_1a0df4e5fa161f9c117aaa9507afae4203" prot="private" static="no" mutable="no">
+        <type><ref refid="dali-common_8h_1acc22c3e49eb4c1d5c8dd1015db615a4b" kindref="member">DALI_NO_UNIQUE_ADDRESS</ref> Deleter</type>
+        <definition>DALI_NO_UNIQUE_ADDRESS Deleter Dali::UniquePtr&lt; Type, Deleter, typename &gt;::mDeleter</definition>
+        <argsstring></argsstring>
+        <name>mDeleter</name>
+        <qualifiedname>Dali::UniquePtr::mDeleter</qualifiedname>
+        <briefdescription>
+<para>The custom deleter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="271" column="34" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a09e578745da70ec803239119abcd24d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::UniquePtr</definition>
+        <argsstring>()</argsstring>
+        <name>UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::UniquePtr</qualifiedname>
+        <briefdescription>
+<para>Default constructor. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="54" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a0388fee90919340151bcc3b88d841c1d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::UniquePtr</definition>
+        <argsstring>(Type *ptr, Deleter deleter=DefaultDeleter)</argsstring>
+        <name>UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::UniquePtr</qualifiedname>
+        <param>
+          <type>Type *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>Deleter</type>
+          <declname>deleter</declname>
+          <defval><ref refid="classDali_1_1UniquePtr_1aaa760a65f4a1bf664ce12f001a0f236a" kindref="member">DefaultDeleter</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructor that takes ownership of a raw pointer. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Raw pointer to take ownership of </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">deleter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to delete the <emphasis>ptr</emphasis> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>If <emphasis>deleter</emphasis> is nullptr, then the <ref refid="classDali_1_1UniquePtr_1aaa760a65f4a1bf664ce12f001a0f236a" kindref="member">DefaultDeleter</ref> will be used (i.e. simple delete) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="67" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a9f5d34960c0353cc94a04779d29cf430" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::~UniquePtr</definition>
+        <argsstring>()</argsstring>
+        <name>~UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::~UniquePtr</qualifiedname>
+        <briefdescription>
+<para>Destructor. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="77" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="77" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a574c61016233a0915b1a0053bea508e2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::UniquePtr</definition>
+        <argsstring>(UniquePtr &amp;&amp;other) noexcept</argsstring>
+        <name>UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::UniquePtr</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be moved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><emphasis>other</emphasis> deleter is not changed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="91" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="91" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a2c3d223000f0b76235367604c0ab18d2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;</type>
+        <definition>UniquePtr &amp; Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator=</definition>
+        <argsstring>(UniquePtr &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::UniquePtr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be moved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><emphasis>other</emphasis> deleter is not changed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="104" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="104" bodyend="119"/>
+        <references refid="classDali_1_1UniquePtr_1aaa760a65f4a1bf664ce12f001a0f236a" compoundref="unique-ptr_8h" startline="45" endline="48">Dali::UniquePtr&lt; Type, Deleter, typename &gt;::DefaultDeleter</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a050ae1981a8e86427e14658689329469" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename <ref refid="structDali_1_1EnableIf" kindref="compound">EnableIf</ref>&lt;<ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;U*, Type*&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::UniquePtr</definition>
+        <argsstring>(UniquePtr&lt; U, E &gt; &amp;&amp;other) noexcept</argsstring>
+        <name>UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::UniquePtr</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; U, E &gt; &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Converting move constructor from derived type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a UniquePtr&lt;Base&gt; from a UniquePtr&lt;Derived&gt;.</para>
+<para>@SINCE_2_5.11 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deleter type of the source </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived <ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Enabled only if U* is convertible to Type* </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="133" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="133" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a4888d336999639620e5dfe4f9a5c37e7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+          <param>
+            <type>typename E</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>typename <ref refid="structDali_1_1EnableIf" kindref="compound">EnableIf</ref>&lt;<ref refid="structDali_1_1IsConvertible" kindref="compound">IsConvertible</ref>&lt;U*, Type*&gt;::value&gt;::type</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;</type>
+        <definition>UniquePtr &amp; Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator=</definition>
+        <argsstring>(UniquePtr&lt; U, E &gt; &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::UniquePtr::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref>&lt; U, E &gt; &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Converting move assignment operator from derived type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assigns a UniquePtr&lt;Base&gt; from a UniquePtr&lt;Derived&gt;.</para>
+<para>@SINCE_2_5.11 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>E</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deleter type of the source </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived <ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this object </para>
+</simplesect>
+<simplesect kind="note"><para>Enabled only if U* is convertible to Type* </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="152" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="152" bodyend="163"/>
+        <references refid="classDali_1_1UniquePtr_1aaa760a65f4a1bf664ce12f001a0f236a" compoundref="unique-ptr_8h" startline="45" endline="48">Dali::UniquePtr&lt; Type, Deleter, typename &gt;::DefaultDeleter</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a5691b544657e3860487b266c427ae983" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::UniquePtr</definition>
+        <argsstring>(const UniquePtr &amp;)=delete</argsstring>
+        <name>UniquePtr</name>
+        <qualifiedname>Dali::UniquePtr::UniquePtr</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="165" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a27798c98fb18d1954b433daeaa8b77b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;</type>
+        <definition>UniquePtr &amp; Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator=</definition>
+        <argsstring>(const UniquePtr &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::UniquePtr::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1UniquePtr" kindref="compound">UniquePtr</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="166" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a7144fbe6cc729b38b9791bf8373a232b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type &amp;</type>
+        <definition>Type &amp; Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Dali::UniquePtr::operator*</qualifiedname>
+        <briefdescription>
+<para>Overloaded dereference operator. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="173" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a33f1c25176b227a9d2146498af9ec34d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Type &amp;</type>
+        <definition>const Type &amp; Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>Dali::UniquePtr::operator*</qualifiedname>
+        <briefdescription>
+<para>Overloaded const dereference operator. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="183" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a8f40acde677c91a14bce955fac16fa21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type *</type>
+        <definition>Type * Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator-&gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>Dali::UniquePtr::operator-&gt;</qualifiedname>
+        <briefdescription>
+<para>Overloaded pointer operator. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="193" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="193" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a6bef39a96c8a0e31f7016af7a13a65ee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Type *</type>
+        <definition>const Type * Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>Dali::UniquePtr::operator-&gt;</qualifiedname>
+        <briefdescription>
+<para>Overloaded pointer to const operator. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to a const object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="203" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1ab1d486427dd700b7e37274bda07c3e1c" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::UniquePtr&lt; Type, Deleter, typename &gt;::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>Dali::UniquePtr::operator bool</qualifiedname>
+        <briefdescription>
+<para>Explicit conversion to bool. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="212" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="212" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1abf5ad48402ee9d6fd4a44ef985f21ef9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type *</type>
+        <definition>Type * Dali::UniquePtr&lt; Type, Deleter, typename &gt;::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::UniquePtr::Get</qualifiedname>
+        <briefdescription>
+<para>Get the raw pointer. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The raw pointer to the object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="222" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="222" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a26b3a6246fc2e2e9775524e8859a3da8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Type *</type>
+        <definition>const Type * Dali::UniquePtr&lt; Type, Deleter, typename &gt;::Get</definition>
+        <argsstring>() const</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::UniquePtr::Get</qualifiedname>
+        <briefdescription>
+<para>Get the raw pointer to const object. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The raw pointer to the const object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="232" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="232" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a82a20e9eb8f9494ecafe50b4dead4885" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Type *</type>
+        <definition>Type * Dali::UniquePtr&lt; Type, Deleter, typename &gt;::Release</definition>
+        <argsstring>()</argsstring>
+        <name>Release</name>
+        <qualifiedname>Dali::UniquePtr::Release</qualifiedname>
+        <briefdescription>
+<para>Release ownership of the managed object. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the object that has been released </para>
+</simplesect>
+<simplesect kind="note"><para>The deleter remains the same as before </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="243" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="243" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1UniquePtr_1a9e8cfed88162ceb83542f97c79fb00a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::UniquePtr&lt; Type, Deleter, typename &gt;::Reset</definition>
+        <argsstring>(Type *ptr=nullptr)</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Dali::UniquePtr::Reset</qualifiedname>
+        <param>
+          <type>Type *</type>
+          <declname>ptr</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Reset the managed object. @SINCE_2_5.11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to take ownership of </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The deleter remains the same as before </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="256" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="256" bodyend="267"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Templated unique pointer class with function pointer deleters. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>@SINCE_2_5.11 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the pointer stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Deleter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to delete the object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" line="38" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/unique-ptr.h" bodystart="39" bodyend="272"/>
+    <listofallmembers>
+      <member refid="classDali_1_1UniquePtr_1aaa760a65f4a1bf664ce12f001a0f236a" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>DefaultDeleter</name></member>
+      <member refid="classDali_1_1UniquePtr_1abf5ad48402ee9d6fd4a44ef985f21ef9" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>Get</name></member>
+      <member refid="classDali_1_1UniquePtr_1a26b3a6246fc2e2e9775524e8859a3da8" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>Get</name></member>
+      <member refid="classDali_1_1UniquePtr_1a0df4e5fa161f9c117aaa9507afae4203" prot="private" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>mDeleter</name></member>
+      <member refid="classDali_1_1UniquePtr_1a4ea701b5e696e14dc7eeed2f3d965c52" prot="private" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>mPtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1ab1d486427dd700b7e37274bda07c3e1c" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1UniquePtr_1a7144fbe6cc729b38b9791bf8373a232b" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator*</name></member>
+      <member refid="classDali_1_1UniquePtr_1a33f1c25176b227a9d2146498af9ec34d" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator*</name></member>
+      <member refid="classDali_1_1UniquePtr_1a8f40acde677c91a14bce955fac16fa21" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator-&gt;</name></member>
+      <member refid="classDali_1_1UniquePtr_1a6bef39a96c8a0e31f7016af7a13a65ee" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator-&gt;</name></member>
+      <member refid="classDali_1_1UniquePtr_1a2c3d223000f0b76235367604c0ab18d2" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1UniquePtr_1a4888d336999639620e5dfe4f9a5c37e7" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1UniquePtr_1a27798c98fb18d1954b433daeaa8b77b7" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>operator=</name></member>
+      <member refid="classDali_1_1UniquePtr_1a82a20e9eb8f9494ecafe50b4dead4885" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>Release</name></member>
+      <member refid="classDali_1_1UniquePtr_1a9e8cfed88162ceb83542f97c79fb00a6" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>Reset</name></member>
+      <member refid="classDali_1_1UniquePtr_1a75f4dc1ed464b83ee4805b513a3fee14" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>UniquePtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1a09e578745da70ec803239119abcd24d1" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>UniquePtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1a0388fee90919340151bcc3b88d841c1d" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>UniquePtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1a574c61016233a0915b1a0053bea508e2" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>UniquePtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1a050ae1981a8e86427e14658689329469" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>UniquePtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1a5691b544657e3860487b266c427ae983" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>UniquePtr</name></member>
+      <member refid="classDali_1_1UniquePtr_1a9f5d34960c0353cc94a04779d29cf430" prot="public" virt="non-virtual"><scope>Dali::UniquePtr</scope><name>~UniquePtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

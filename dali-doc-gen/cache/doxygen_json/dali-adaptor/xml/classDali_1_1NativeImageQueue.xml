@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1NativeImageQueue" kind="class" language="C++" prot="public">
+    <compoundname>Dali::NativeImageQueue</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">NativeImageInterface</basecompoundref>
+    <includes refid="native-image-queue_8h" local="no">native-image-queue.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ColorFormat</name>
+        <qualifiedname>Dali::NativeImageQueue::ColorFormat</qualifiedname>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aa7cec9e9c2dffb6982c75cdbf5f2af9ef" prot="public">
+          <name>BGR888</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aa0ec600bfbcf9efd33a5d337700f19896" prot="public">
+          <name>BGRA8888</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>8 blue bits, 8 green bits, 8 red bits </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aab5dbc9955a7992b2f2b4986c8f09afe9" prot="public">
+          <name>BGRX8888</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>8 blue bits, 8 green bits, 8 red bits, alpha 8 bits </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aa30ff380a3be74628024063a99fba10f0" prot="public">
+          <name>RGB888</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>8 blue bits, 8 green bits, 8 red bits, and 8 ignored bits </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aa165f06116e7b8d9b2481dfc805db4619" prot="public">
+          <name>RGBA8888</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>8 red bits, 8 green bits, 8 blue bits </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aa09b5bfc9fb1465f47366aa752fb826a2" prot="public">
+          <name>RGBX8888</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>8 red bits, 8 green bits, 8 blue bits, alpha 8 bits </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the instance when creating a native image, the color depth has to be specified. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This ColorFormat follows pixel byte order. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="65" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" bodystart="66" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>BufferAccessType</name>
+        <qualifiedname>Dali::NativeImageQueue::BufferAccessType</qualifiedname>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0a9fec778b8ca332c15ead2b0cb502e8e3" prot="public">
+          <name>READ</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Read access to the buffer (can read buffer contents) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0af493dda4174ac95a478ae674b180df63" prot="public">
+          <name>WRITE</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+<para>Write access to the buffer (can modify buffer contents) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for buffer access types when dequeuing buffers from the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>These values can be combined using bitwise OR to specify multiple access types. For example: <ref refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0a9fec778b8ca332c15ead2b0cb502e8e3" kindref="member">BufferAccessType::READ</ref> | <ref refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0af493dda4174ac95a478ae674b180df63" kindref="member">BufferAccessType::WRITE</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="80" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1NativeImageQueue_1a4065835cab8da0f974b90a402dff8dfd" prot="public" static="no" strong="no">
+        <type></type>
+        <name>QueueUsageType</name>
+        <qualifiedname>Dali::NativeImageQueue::QueueUsageType</qualifiedname>
+        <enumvalue id="classDali_1_1NativeImageQueue_1a4065835cab8da0f974b90a402dff8dfdad6ce9a81e050b4c810d18a3e766cae2e" prot="public">
+          <name>ENQUEUE_DEQUEUE</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Enqueue and dequeue operations will be used. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for queue usage types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="89" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" bodystart="90" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a246e56b3491bce521150889b44e961d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__adaptor__framework_1ga6080f2a7ca58a5cf537ccf7f7349969b" kindref="member">NativeImageQueuePtr</ref></type>
+        <definition>NativeImageQueuePtr Dali::NativeImageQueue::New</definition>
+        <argsstring>(uint32_t width, uint32_t height, ColorFormat colorFormat)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::NativeImageQueue::New</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6a" kindref="member">ColorFormat</ref></type>
+          <declname>colorFormat</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="classDali_1_1NativeImageQueue" kindref="compound">NativeImageQueue</ref>. Depending on hardware, the width and height may have to be a power of two. It will use 3, or defined by DALI_TBM_SURFACE_QUEUE_SIZE as default. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">colorFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color format of the image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A smart-pointer to a newly allocated image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="103" column="30" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="31" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a2034d47584271dbf1a48f193ae359f70" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__adaptor__framework_1ga6080f2a7ca58a5cf537ccf7f7349969b" kindref="member">NativeImageQueuePtr</ref></type>
+        <definition>NativeImageQueuePtr Dali::NativeImageQueue::New</definition>
+        <argsstring>(uint32_t queueCount, uint32_t width, uint32_t height, ColorFormat colorFormat)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::NativeImageQueue::New</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>queueCount</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6a" kindref="member">ColorFormat</ref></type>
+          <declname>colorFormat</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="classDali_1_1NativeImageQueue" kindref="compound">NativeImageQueue</ref> with the queue size. Depending on hardware, the width and height may have to be a power of two. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Since queueCount can increase the memory usage, we recommened queueCount value is less or equal than 3. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">queueCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of queue of the image. If it is 0, will use default. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">colorFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color format of the image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A smart-pointer to a newly allocated image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="115" column="30" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="42" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1ab098dcc119894bd931f35203725b4c41" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__adaptor__framework_1ga6080f2a7ca58a5cf537ccf7f7349969b" kindref="member">NativeImageQueuePtr</ref></type>
+        <definition>NativeImageQueuePtr Dali::NativeImageQueue::New</definition>
+        <argsstring>(Any nativeImageQueue)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::NativeImageQueue::New</qualifiedname>
+        <param>
+          <type>Any</type>
+          <declname>nativeImageQueue</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="classDali_1_1NativeImageQueue" kindref="compound">NativeImageQueue</ref> from an existing native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nativeImageQueue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>must be a any handle with native image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A smart-pointer to a newly allocated image </para>
+</simplesect>
+<simplesect kind="see"><para>NativeImageInterface </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="124" column="30" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="53" bodyend="62"/>
+        <references refid="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6aa0ec600bfbcf9efd33a5d337700f19896">BGRA8888</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a2e234cb3c0975ec2ba31789ed02e4856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Any</type>
+        <definition>Any Dali::NativeImageQueue::GetNativeImageQueue</definition>
+        <argsstring>()</argsstring>
+        <name>GetNativeImageQueue</name>
+        <qualifiedname>Dali::NativeImageQueue::GetNativeImageQueue</qualifiedname>
+        <briefdescription>
+<para>Retrieves the internal native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Any object containing the internal native image queue </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="131" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a17f9affae55a54005423472e90f3a402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::SetSize</definition>
+        <argsstring>(uint32_t width, uint32_t height)</argsstring>
+        <name>SetSize</name>
+        <qualifiedname>Dali::NativeImageQueue::SetSize</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Sets the size of the image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="139" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1aef89898fff82dd64c5933952a2b55d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::IgnoreSourceImage</definition>
+        <argsstring>()</argsstring>
+        <name>IgnoreSourceImage</name>
+        <qualifiedname>Dali::NativeImageQueue::IgnoreSourceImage</qualifiedname>
+        <briefdescription>
+<para>Ignores a source image which is inserted to the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This can be called from worker threads. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="146" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a1565181eeeb9ea7b9ac1e3c910f1ced3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::CanDequeueBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>CanDequeueBuffer</name>
+        <qualifiedname>Dali::NativeImageQueue::CanDequeueBuffer</qualifiedname>
+        <briefdescription>
+<para>Checks if the buffer can be got from the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Check the available buffer using this API before call <ref refid="classDali_1_1NativeImageQueue_1a8917339a07f115fed6b9b850f4f0ef6e" kindref="member">DequeueBuffer()</ref> <simplesect kind="return"><para>True if the buffer can be got from the queue. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="154" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a8917339a07f115fed6b9b850f4f0ef6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * Dali::NativeImageQueue::DequeueBuffer</definition>
+        <argsstring>(uint32_t &amp;width, uint32_t &amp;height, uint32_t &amp;stride)</argsstring>
+        <name>DequeueBuffer</name>
+        <qualifiedname>Dali::NativeImageQueue::DequeueBuffer</qualifiedname>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>stride</declname>
+        </param>
+        <briefdescription>
+<para>Dequeue buffer from the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Acquire buffer and information of the queue. It returns the information of the buffer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stride of the buffer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the buffer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="166" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="84" bodyend="87"/>
+        <references refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0af493dda4174ac95a478ae674b180df63" compoundref="native-image-queue_8h" startline="83">WRITE</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a798886140c96e21efd19a82e94f46f45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * Dali::NativeImageQueue::DequeueBuffer</definition>
+        <argsstring>(uint32_t &amp;width, uint32_t &amp;height, uint32_t &amp;stride, BufferAccessType type)</argsstring>
+        <name>DequeueBuffer</name>
+        <qualifiedname>Dali::NativeImageQueue::DequeueBuffer</qualifiedname>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>stride</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0" kindref="member">BufferAccessType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Dequeue buffer from the queue with specified access type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Acquire buffer and information of the queue with the specified buffer access type. It returns the information of the buffer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">stride</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stride of the buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer access type (READ, WRITE, or READ|WRITE) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the buffer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="179" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a2e5aa9ea6e13239dbfc660468d398a43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::EnqueueBuffer</definition>
+        <argsstring>(uint8_t *buffer)</argsstring>
+        <name>EnqueueBuffer</name>
+        <qualifiedname>Dali::NativeImageQueue::EnqueueBuffer</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Enqueue buffer to the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enqueue buffer to the queue this requests the release of the buffer internally. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer of buffer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if success </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="189" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a4427d65a6bed70d118857c0561aacfb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::CancelDequeuedBuffer</definition>
+        <argsstring>(uint8_t *buffer)</argsstring>
+        <name>CancelDequeuedBuffer</name>
+        <qualifiedname>Dali::NativeImageQueue::CancelDequeuedBuffer</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Cancel dequeued buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cancel a buffer that was previously dequeued but not enqueued. This releases the buffer back to the queue without processing it. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the buffer to cancel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="198" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a7d4a28094f4e5bf9855e8466638cd912" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::FreeReleasedBuffers</definition>
+        <argsstring>()</argsstring>
+        <name>FreeReleasedBuffers</name>
+        <qualifiedname>Dali::NativeImageQueue::FreeReleasedBuffers</qualifiedname>
+        <briefdescription>
+<para>Free all released buffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="203" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a8aba6e93277b2d1c6b4f1a3cbc59e5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::SetQueueUsageHint</definition>
+        <argsstring>(QueueUsageType type)</argsstring>
+        <name>SetQueueUsageHint</name>
+        <qualifiedname>Dali::NativeImageQueue::SetQueueUsageHint</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImageQueue_1a4065835cab8da0f974b90a402dff8dfd" kindref="member">QueueUsageType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Sets a hint for queue usage type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call this method to specify what type of queue operations will be used. This hint allows the implementation to prepare appropriate queue management. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The queue usage type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>This should be called before DequeueBuffer and EnqueueBuffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="213" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1abc8f414fce2e6c380cb83421826dc281" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Dali::NativeImageQueue::GetTextureTarget</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetTextureTarget</name>
+        <qualifiedname>Dali::NativeImageQueue::GetTextureTarget</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="218" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1adb7d3b06d524536ba9d2ced08454d857" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::String &amp;shader) override</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::NativeImageQueue::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type>Dali::String &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="223" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1ab8d8e426f8428af43e4869262be8386b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::String &amp;shader, int mask) override</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::NativeImageQueue::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type>Dali::String &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="228" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a4dc00f918334ddf2f241a0b88ceddaec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * Dali::NativeImageQueue::GetCustomSamplerTypename</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetCustomSamplerTypename</name>
+        <qualifiedname>Dali::NativeImageQueue::GetCustomSamplerTypename</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="233" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="172" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a3c767f29a54808c467e3f75cf7f04272" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImageQueue::GetQueueCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetQueueCount</name>
+        <qualifiedname>Dali::NativeImageQueue::GetQueueCount</qualifiedname>
+        <briefdescription>
+<para>Get the number of queue count for this image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of queue count. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="240" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a289706abce7b85b4223423cf62fc8f8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::CreateResource</definition>
+        <argsstring>() override</argsstring>
+        <name>CreateResource</name>
+        <qualifiedname>Dali::NativeImageQueue::CreateResource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="246" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a8a63262dae79d337ee11feca62ed38e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::DestroyResource</definition>
+        <argsstring>() override</argsstring>
+        <name>DestroyResource</name>
+        <qualifiedname>Dali::NativeImageQueue::DestroyResource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="251" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="119" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a0b17e469c0c7a3274fb3ac3043a5393f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImageQueue::TargetTexture</definition>
+        <argsstring>() override</argsstring>
+        <name>TargetTexture</name>
+        <qualifiedname>Dali::NativeImageQueue::TargetTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="256" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1abe92136604fd2ca6931cd432faa8da98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::NativeImageInterface::PrepareTextureResult</type>
+        <definition>Dali::NativeImageInterface::PrepareTextureResult Dali::NativeImageQueue::PrepareTexture</definition>
+        <argsstring>() override</argsstring>
+        <name>PrepareTexture</name>
+        <qualifiedname>Dali::NativeImageQueue::PrepareTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="261" column="52" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1ab57ef095a6d8827f6f9ba5027494ff62" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImageQueue::GetWidth</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>Dali::NativeImageQueue::GetWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="266" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="139" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a64f70e6a3bafab53325a239cbc2aae6e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImageQueue::GetHeight</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>Dali::NativeImageQueue::GetHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="271" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a87b3d42618c4973582e912390e2b38f3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::RequiresBlending</definition>
+        <argsstring>() const override</argsstring>
+        <name>RequiresBlending</name>
+        <qualifiedname>Dali::NativeImageQueue::RequiresBlending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="276" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a673dfd57de3a2f71a8bcd81afd7c7961" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Any</type>
+        <definition>Any Dali::NativeImageQueue::GetNativeImageHandle</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetNativeImageHandle</name>
+        <qualifiedname>Dali::NativeImageQueue::GetNativeImageHandle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="281" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1aa2719f3907bf640930c679f1ae4cede0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImageQueue::SourceChanged</definition>
+        <argsstring>() const override</argsstring>
+        <name>SourceChanged</name>
+        <qualifiedname>Dali::NativeImageQueue::SourceChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="286" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a028501e619e77d96f2d31690c825f8cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Rect&lt; uint32_t &gt;</type>
+        <definition>Rect&lt; uint32_t &gt; Dali::NativeImageQueue::GetUpdatedArea</definition>
+        <argsstring>() override</argsstring>
+        <name>GetUpdatedArea</name>
+        <qualifiedname>Dali::NativeImageQueue::GetUpdatedArea</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="291" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1a0afb61cf8bca703e8af6d0a61bdff5a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImageQueue::PostRender</definition>
+        <argsstring>() override</argsstring>
+        <name>PostRender</name>
+        <qualifiedname>Dali::NativeImageQueue::PostRender</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="296" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImageQueue_1afb2e13b7e37b3842eabe340d09476e9f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>NativeImageInterface::Extension *</type>
+        <definition>NativeImageInterface::Extension * Dali::NativeImageQueue::GetExtension</definition>
+        <argsstring>() override</argsstring>
+        <name>GetExtension</name>
+        <qualifiedname>Dali::NativeImageQueue::GetExtension</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="301" column="35" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.cpp" bodystart="197" bodyend="200"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Used for displaying native images. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> is a platform specific way of providing pixel data to the GPU for rendering,for example via an EGL image. <ref refid="classDali_1_1NativeImageQueue" kindref="compound">NativeImageQueue</ref> can be created internally or externally by native image. It has a queue which handles some image buffers. Someone should fill the buffers and enqueue them, then DALi will show them. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::NativeImageQueue</label>
+        <link refid="classDali_1_1NativeImageQueue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NativeImageInterface</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::NativeImageQueue</label>
+        <link refid="classDali_1_1NativeImageQueue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NativeImageInterface</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" line="58" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/native-image-queue.h" bodystart="59" bodyend="343"/>
+    <listofallmembers>
+      <member refid="classDali_1_1NativeImageQueue_1adb7d3b06d524536ba9d2ced08454d857" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>ApplyNativeFragmentShader</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1ab8d8e426f8428af43e4869262be8386b" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>ApplyNativeFragmentShader</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>BufferAccessType</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a4427d65a6bed70d118857c0561aacfb2" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>CancelDequeuedBuffer</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a1565181eeeb9ea7b9ac1e3c910f1ced3" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>CanDequeueBuffer</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a487efde9909bcf18a382a4a2a7466f6a" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>ColorFormat</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a289706abce7b85b4223423cf62fc8f8f" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>CreateResource</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a8917339a07f115fed6b9b850f4f0ef6e" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>DequeueBuffer</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a798886140c96e21efd19a82e94f46f45" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>DequeueBuffer</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a8a63262dae79d337ee11feca62ed38e6" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>DestroyResource</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a4065835cab8da0f974b90a402dff8dfdad6ce9a81e050b4c810d18a3e766cae2e" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>ENQUEUE_DEQUEUE</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a2e5aa9ea6e13239dbfc660468d398a43" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>EnqueueBuffer</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a7d4a28094f4e5bf9855e8466638cd912" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>FreeReleasedBuffers</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a4dc00f918334ddf2f241a0b88ceddaec" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetCustomSamplerTypename</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1afb2e13b7e37b3842eabe340d09476e9f" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetExtension</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a64f70e6a3bafab53325a239cbc2aae6e" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetHeight</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a673dfd57de3a2f71a8bcd81afd7c7961" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetNativeImageHandle</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a2e234cb3c0975ec2ba31789ed02e4856" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetNativeImageQueue</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a3c767f29a54808c467e3f75cf7f04272" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetQueueCount</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1abc8f414fce2e6c380cb83421826dc281" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetTextureTarget</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a028501e619e77d96f2d31690c825f8cd" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetUpdatedArea</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1ab57ef095a6d8827f6f9ba5027494ff62" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>GetWidth</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1aef89898fff82dd64c5933952a2b55d6c" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>IgnoreSourceImage</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a246e56b3491bce521150889b44e961d4" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>New</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a2034d47584271dbf1a48f193ae359f70" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>New</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1ab098dcc119894bd931f35203725b4c41" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>New</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a0afb61cf8bca703e8af6d0a61bdff5a7" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>PostRender</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1abe92136604fd2ca6931cd432faa8da98" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>PrepareTexture</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a4065835cab8da0f974b90a402dff8dfd" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>QueueUsageType</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0a9fec778b8ca332c15ead2b0cb502e8e3" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>READ</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a87b3d42618c4973582e912390e2b38f3" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>RequiresBlending</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a8aba6e93277b2d1c6b4f1a3cbc59e5ba" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>SetQueueUsageHint</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a17f9affae55a54005423472e90f3a402" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>SetSize</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1aa2719f3907bf640930c679f1ae4cede0" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>SourceChanged</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a0b17e469c0c7a3274fb3ac3043a5393f" prot="private" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>TargetTexture</name></member>
+      <member refid="classDali_1_1NativeImageQueue_1a17e32148a3af0f9cda06d5012752f6b0af493dda4174ac95a478ae674b180df63" prot="public" virt="non-virtual"><scope>Dali::NativeImageQueue</scope><name>WRITE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

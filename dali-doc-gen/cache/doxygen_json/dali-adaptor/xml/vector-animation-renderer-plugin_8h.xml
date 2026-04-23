@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="vector-animation-renderer-plugin_8h" kind="file" language="C++">
+    <compoundname>vector-animation-renderer-plugin.h</compoundname>
+    <includes local="no">dali/public-api/rendering/renderer.h</includes>
+    <includes local="no">string</includes>
+    <includes refid="vector-animation-renderer_8h" local="no">dali/devel-api/adaptor-framework/vector-animation-renderer.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/vector-animation-renderer-plugin.h</label>
+        <link refid="vector-animation-renderer-plugin_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/devel-api/adaptor-framework/vector-animation-renderer.h</label>
+        <link refid="vector-animation-renderer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/dali-vector.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="2">
+        <label>dali/public-api/rendering/renderer.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classDali_1_1VectorAnimationRendererPlugin" prot="public">Dali::VectorAnimationRendererPlugin</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_VECTOR_ANIMATION_RENDERER_PLUGIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_VECTOR_ANIMATION_RENDERER_PLUGIN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2023<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/rendering/renderer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="vector-animation-renderer_8h" kindref="compound">dali/devel-api/adaptor-framework/vector-animation-renderer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35" refid="classDali_1_1VectorAnimationRendererPlugin" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1VectorAnimationRendererPlugin" kindref="compound">VectorAnimationRendererPlugin</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="classDali_1_1VectorAnimationRendererPlugin_1a05f1e801b6fc6227f00954beaa40be31" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a05f1e801b6fc6227f00954beaa40be31" kindref="member">UploadCompletedSignalType</ref><sp/>=<sp/><ref refid="classDali_1_1VectorAnimationRenderer_1aef74f96349ed24c29db23b1c034730fa" kindref="member">Dali::VectorAnimationRenderer::UploadCompletedSignalType</ref>;</highlight></codeline>
+<codeline lineno="39" refid="classDali_1_1VectorAnimationRendererPlugin_1ac0af8fee328240ea9af37067157ad912" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1VectorAnimationRenderer_1a38d8ce6d0f13c82d0e60c8e3b21afa2e" kindref="member">VectorProperty</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classDali_1_1VectorAnimationRenderer_1a38d8ce6d0f13c82d0e60c8e3b21afa2e" kindref="member">Dali::VectorAnimationRenderer::VectorProperty</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classDali_1_1VectorAnimationRendererPlugin_1a5910d49ccc476208d207eb1b06472684" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a5910d49ccc476208d207eb1b06472684" kindref="member">VectorAnimationRendererPlugin</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1VectorAnimationRendererPlugin_1a1c53551fa2ed8cb6eebbc46092a120fc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a1c53551fa2ed8cb6eebbc46092a120fc" kindref="member">~VectorAnimationRendererPlugin</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classDali_1_1VectorAnimationRendererPlugin_1aa2fe2a4b7d63de2c3613e6ac6187f0b7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1aa2fe2a4b7d63de2c3613e6ac6187f0b7" kindref="member">Finalize</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classDali_1_1VectorAnimationRendererPlugin_1a7d5acffb09a5466cecec877d94a21cd4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a7d5acffb09a5466cecec877d94a21cd4" kindref="member">Load</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>url)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classDali_1_1VectorAnimationRendererPlugin_1a863e4831a996e784c713803b877aab41" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a863e4831a996e784c713803b877aab41" kindref="member">Load</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::Vector&lt;uint8_t&gt;&amp;<sp/>data)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classDali_1_1VectorAnimationRendererPlugin_1acf2c9d1172a61c424d664f348656823e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1acf2c9d1172a61c424d664f348656823e" kindref="member">SetRenderer</ref>(Renderer<sp/>renderer)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classDali_1_1VectorAnimationRendererPlugin_1a96fd0dafd0f6034494aefcd92d83aef4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a96fd0dafd0f6034494aefcd92d83aef4" kindref="member">SetSize</ref>(uint32_t<sp/>width,<sp/>uint32_t<sp/>height)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classDali_1_1VectorAnimationRendererPlugin_1ac8b67e0a5bb9d51b1baf57b20584d435" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1ac8b67e0a5bb9d51b1baf57b20584d435" kindref="member">Render</ref>(uint32_t<sp/>frameNumber)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classDali_1_1VectorAnimationRendererPlugin_1a6a0bdac14b8b74dbeb90e3f1d23c1c50" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a6a0bdac14b8b74dbeb90e3f1d23c1c50" kindref="member">RenderStopped</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="classDali_1_1VectorAnimationRendererPlugin_1a1a1d13825e5f23fc79eccb36b8d7ff0f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a1a1d13825e5f23fc79eccb36b8d7ff0f" kindref="member">GetTotalFrameNumber</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classDali_1_1VectorAnimationRendererPlugin_1a7201584b8010a4dc9b194a7bfd15aa3c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a7201584b8010a4dc9b194a7bfd15aa3c" kindref="member">GetFrameRate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="classDali_1_1VectorAnimationRendererPlugin_1a07c77883ba1fd083f58ad583a3731646" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a07c77883ba1fd083f58ad583a3731646" kindref="member">GetDefaultSize</ref>(uint32_t&amp;<sp/>width,<sp/>uint32_t&amp;<sp/>height)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classDali_1_1VectorAnimationRendererPlugin_1accd843693d329ea9e460e9307a418ba7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1accd843693d329ea9e460e9307a418ba7" kindref="member">GetLayerInfo</ref>(Property::Map&amp;<sp/>map)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classDali_1_1VectorAnimationRendererPlugin_1ac9c3f6a5231368aacbb6fc6fbc5d32ed" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1ac9c3f6a5231368aacbb6fc6fbc5d32ed" kindref="member">GetMarkerInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>marker,<sp/>uint32_t&amp;<sp/>startFrame,<sp/>uint32_t&amp;<sp/>endFrame)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="classDali_1_1VectorAnimationRendererPlugin_1af66c361a9e8e55cb996bd340d06272df" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1af66c361a9e8e55cb996bd340d06272df" kindref="member">GetMarkerInfo</ref>(Property::Map&amp;<sp/>map)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classDali_1_1VectorAnimationRendererPlugin_1a7f9e815d4e529914b1c0f9cd932bcbad" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a7f9e815d4e529914b1c0f9cd932bcbad" kindref="member">InvalidateBuffer</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classDali_1_1VectorAnimationRendererPlugin_1a20846af0b2327512505c7c9c1c09185a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a20846af0b2327512505c7c9c1c09185a" kindref="member">AddPropertyValueCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>keyPath,<sp/><ref refid="classDali_1_1VectorAnimationRenderer_1a38d8ce6d0f13c82d0e60c8e3b21afa2e" kindref="member">VectorProperty</ref><sp/>property,<sp/>CallbackBase*<sp/>callback,<sp/>int32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="classDali_1_1VectorAnimationRendererPlugin_1a1a962312e5b5dfa5119c64026c6d1fe3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a1a962312e5b5dfa5119c64026c6d1fe3" kindref="member">KeepRasterizedBuffer</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="classDali_1_1VectorAnimationRendererPlugin_1acca8a1c8cc7081864c1802669254730f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a05f1e801b6fc6227f00954beaa40be31" kindref="member">UploadCompletedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin_1acca8a1c8cc7081864c1802669254730f" kindref="member">UploadCompletedSignal</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="classDali_1_1VectorAnimationRendererPlugin_1a2e74dbbae7de22bc1c5dc99ba994d546" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1VectorAnimationRendererPlugin_1a2e74dbbae7de22bc1c5dc99ba994d546" kindref="member">CreateVectorAnimationRendererFunction</ref><sp/>=<sp/><ref refid="classDali_1_1VectorAnimationRendererPlugin" kindref="compound">VectorAnimationRendererPlugin</ref>*<sp/>(*)();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_VECTOR_ANIMATION_RENDERER_PLUGIN_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/vector-animation-renderer-plugin.h"/>
+  </compounddef>
+</doxygen>

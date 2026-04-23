@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="web-engine-context-menu_8h" kind="file" language="C++">
+    <compoundname>web-engine-context-menu.h</compoundname>
+    <includes refid="web-engine-context-menu-item_8h" local="no">dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu-item.h</includes>
+    <includes local="no">dali/public-api/math/vector2.h</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="web-engine_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu-item.h</label>
+        <link refid="web-engine-context-menu-item_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu.h</label>
+        <link refid="web-engine-context-menu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu.h</label>
+        <link refid="web-engine-context-menu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine.cpp</label>
+        <link refid="web-engine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1WebEngineContextMenu" prot="public">Dali::WebEngineContextMenu</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_WEB_ENGINE_CONTEXT_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_WEB_ENGINE_CONTEXT_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2022<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="web-engine-context-menu-item_8h" kindref="compound">dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu-item.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/math/vector2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33" refid="classDali_1_1WebEngineContextMenu" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1WebEngineContextMenu" kindref="compound">WebEngineContextMenu</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="classDali_1_1WebEngineContextMenu_1ae6bf972cef74d06f84121b10f43728f7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1WebEngineContextMenu_1ae6bf972cef74d06f84121b10f43728f7" kindref="member">WebEngineContextMenu</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classDali_1_1WebEngineContextMenu_1a1505ec616ad38f32d27a9cd920b42e0e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineContextMenu_1a1505ec616ad38f32d27a9cd920b42e0e" kindref="member">~WebEngineContextMenu</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1WebEngineContextMenu_1af5ba9092885c4793ba38233de0d09ee5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="classDali_1_1WebEngineContextMenu_1af5ba9092885c4793ba38233de0d09ee5" kindref="member">GetItemCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1WebEngineContextMenu_1a536a7bc018e1ccd7fe0fb75bb8b37852" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;WebEngineContextMenuItem&gt;<sp/><ref refid="classDali_1_1WebEngineContextMenu_1a536a7bc018e1ccd7fe0fb75bb8b37852" kindref="member">GetItemAt</ref>(uint32_t<sp/>index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classDali_1_1WebEngineContextMenu_1a17745a7e8eba6a5fa94f32ccb4014856" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;std::unique_ptr&lt;WebEngineContextMenuItem&gt;&gt;<sp/><ref refid="classDali_1_1WebEngineContextMenu_1a17745a7e8eba6a5fa94f32ccb4014856" kindref="member">GetItemList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classDali_1_1WebEngineContextMenu_1abd49c2e8b61755a1cfba2f65db3d1d69" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineContextMenu_1abd49c2e8b61755a1cfba2f65db3d1d69" kindref="member">RemoveItem</ref>(<ref refid="classDali_1_1WebEngineContextMenuItem" kindref="compound">WebEngineContextMenuItem</ref>&amp;<sp/>item)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classDali_1_1WebEngineContextMenu_1a1511abe32d6141c8de0fff66e8730d03" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineContextMenu_1a1511abe32d6141c8de0fff66e8730d03" kindref="member">AppendItemAsAction</ref>(<ref refid="classDali_1_1WebEngineContextMenuItem_1a27e80f05e9a62c2c8c3c58001f3c046d" kindref="member">WebEngineContextMenuItem::ItemTag</ref><sp/>tag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>title,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classDali_1_1WebEngineContextMenu_1a6d297c58723e388d0305991d146f8c0d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineContextMenu_1a6d297c58723e388d0305991d146f8c0d" kindref="member">AppendItem</ref>(<ref refid="classDali_1_1WebEngineContextMenuItem_1a27e80f05e9a62c2c8c3c58001f3c046d" kindref="member">WebEngineContextMenuItem::ItemTag</ref><sp/>tag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>iconFile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classDali_1_1WebEngineContextMenu_1a9fb59a19fc01c5fc7c466a00cec054c3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineContextMenu_1a9fb59a19fc01c5fc7c466a00cec054c3" kindref="member">SelectItem</ref>(<ref refid="classDali_1_1WebEngineContextMenuItem" kindref="compound">WebEngineContextMenuItem</ref>&amp;<sp/>item)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classDali_1_1WebEngineContextMenu_1a2bbc0b1375208ddb98b3908d967669fa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1WebEngineContextMenu_1a2bbc0b1375208ddb98b3908d967669fa" kindref="member">Hide</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_WEB_ENGINE_CONTEXT_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/web-engine/web-engine-context-menu.h"/>
+  </compounddef>
+</doxygen>

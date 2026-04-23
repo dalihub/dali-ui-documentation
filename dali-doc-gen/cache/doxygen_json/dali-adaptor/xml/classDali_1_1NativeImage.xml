@@ -1,0 +1,633 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1NativeImage" kind="class" language="C++" prot="public">
+    <compoundname>Dali::NativeImage</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">NativeImageInterface</basecompoundref>
+    <includes refid="native-image_8h" local="no">native-image.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9be" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ColorDepth</name>
+        <qualifiedname>Dali::NativeImage::ColorDepth</qualifiedname>
+        <enumvalue id="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea22234765a2c0361c6a4d0e7531c37900" prot="public">
+          <name>COLOR_DEPTH_DEFAULT</name>
+          <briefdescription>
+<para>Uses the current screen default depth (recommended) @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bead5937464aee0103ff9aa10d6e0ce04a8" prot="public">
+          <name>COLOR_DEPTH_8</name>
+          <briefdescription>
+<para>8 bits per pixel @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea9b6b0bc20604c2834f9210be6811e83b" prot="public">
+          <name>COLOR_DEPTH_16</name>
+          <briefdescription>
+<para>16 bits per pixel @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea760dc0364c6921661559c18e394a9525" prot="public">
+          <name>COLOR_DEPTH_24</name>
+          <briefdescription>
+<para>24 bits per pixel @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea1aa3f6b80d5c5b288d3fbdc21104683b" prot="public">
+          <name>COLOR_DEPTH_32</name>
+          <briefdescription>
+<para>32 bits per pixel @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the instance when creating a native image, the color depth has to be specified. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="73" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" bodystart="74" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a119603eb51a9705c8fbf57747c7bb450" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__adaptor__framework_1ga66ad744612018f55ae9bf88bc933e0e7" kindref="member">NativeImagePtr</ref></type>
+        <definition>NativeImagePtr Dali::NativeImage::New</definition>
+        <argsstring>(uint32_t width, uint32_t height, ColorDepth depth)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::NativeImage::New</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9be" kindref="member">ColorDepth</ref></type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Depending on hardware, the width and height may have to be a power of two. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>color depth of the image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A smart-pointer to a newly allocated image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="92" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="34" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a45e688de5ba22a765444eb753431204c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__dali__adaptor__framework_1ga66ad744612018f55ae9bf88bc933e0e7" kindref="member">NativeImagePtr</ref></type>
+        <definition>NativeImagePtr Dali::NativeImage::New</definition>
+        <argsstring>(Any nativeImage)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::NativeImage::New</qualifiedname>
+        <param>
+          <type>Any</type>
+          <declname>nativeImage</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> from an existing native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nativeImage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> must be a any handle with native image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A smart-pointer to a newly allocated image </para>
+</simplesect>
+<simplesect kind="see"><para>NativeImageInterface </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="102" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="45" bodyend="53"/>
+        <references refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea22234765a2c0361c6a4d0e7531c37900" compoundref="native-image_8h" startline="75">COLOR_DEPTH_DEFAULT</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1NativeImage_1adf42ecf9ad3c2f39e0ce7cb276de04ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Any</type>
+        <definition>Any Dali::NativeImage::GetNativeImage</definition>
+        <argsstring>()</argsstring>
+        <name>GetNativeImage</name>
+        <qualifiedname>Dali::NativeImage::GetNativeImage</qualifiedname>
+        <briefdescription>
+<para>Retrieves the internal native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_5.13 <simplesect kind="return"><para>Any object containing the internal native image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="110" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ad785826b22728641f5dd744052e80e39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::GetPixels</definition>
+        <argsstring>(Dali::Vector&lt; uint8_t &gt; &amp;pixbuf, uint32_t &amp;width, uint32_t &amp;height, Pixel::Format &amp;pixelFormat) const</argsstring>
+        <name>GetPixels</name>
+        <qualifiedname>Dali::NativeImage::GetPixels</qualifiedname>
+        <param>
+          <type>Dali::Vector&lt; uint8_t &gt; &amp;</type>
+          <declname>pixbuf</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>Pixel::Format &amp;</type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+<para>Gets a copy of the pixels used by <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is only supported for 24 bit RGB and 32 bit RGBA internal formats (COLOR_DEPTH_24 and COLOR_DEPTH_32). @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pixbuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector to store the pixels in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pixelFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pixel format used by image </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the pixels were gotten, and <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="124" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a414efd2a4129a90fc6e3953b4abd1f28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::EncodeToFile</definition>
+        <argsstring>(const Dali::String &amp;filename) const</argsstring>
+        <name>EncodeToFile</name>
+        <qualifiedname>Dali::NativeImage::EncodeToFile</qualifiedname>
+        <param>
+          <type>const Dali::String &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Converts the current pixel contents to either a JPEG or PNG format and write that to the filesystem. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identify the filesystem location at which to write the encoded image. The extension determines the encoding used. The two valid encoding are (&quot;.jpeg&quot;|&quot;.jpg&quot;) and &quot;.png&quot;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the pixels were written, and <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="136" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a9346d25c1067f8f6b70cec6843b1fb16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImage::SetSource</definition>
+        <argsstring>(Any source)</argsstring>
+        <name>SetSource</name>
+        <qualifiedname>Dali::NativeImage::SetSource</qualifiedname>
+        <param>
+          <type>Any</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Sets an existing source. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.19 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any handle with the source </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="144" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a8169491148f2e269bd43cc7dd7d41847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::IsColorDepthSupported</definition>
+        <argsstring>(ColorDepth colorDepth)</argsstring>
+        <name>IsColorDepthSupported</name>
+        <qualifiedname>Dali::NativeImage::IsColorDepthSupported</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9be" kindref="member">ColorDepth</ref></type>
+          <declname>colorDepth</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the specified color depth is supported. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_1.34 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">colorDepth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color depth to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if colorDepth is supported, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="153" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a4ea62f74f8d47f19a2babf1769520ffd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImage::GetWidth</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>Dali::NativeImage::GetWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="159" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a4a5d9f0c44b45189ff8d1c18a03ba2e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImage::GetHeight</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>Dali::NativeImage::GetHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="164" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ad9ec6c3fad28aa4dd65ef4c572a3937d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Dali::NativeImage::GetTextureTarget</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetTextureTarget</name>
+        <qualifiedname>Dali::NativeImage::GetTextureTarget</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="169" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a70f62ba204dcab1ca2d4f8ad34663e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::String &amp;shader) override</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::NativeImage::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type>Dali::String &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="174" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a2e0d5d7e80bc0667cae57aa14e338734" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::String &amp;shader, int mask) override</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::NativeImage::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type>Dali::String &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="179" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a902cd95e4815d90a6b5cb86a5e298534" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * Dali::NativeImage::GetCustomSamplerTypename</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetCustomSamplerTypename</name>
+        <qualifiedname>Dali::NativeImage::GetCustomSamplerTypename</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="184" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ae96b2cba3f0bedfa4cf54d1686592c99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::CreateResource</definition>
+        <argsstring>() override</argsstring>
+        <name>CreateResource</name>
+        <qualifiedname>Dali::NativeImage::CreateResource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="190" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ad357510c8a7872ba576f441c9074e6a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImage::DestroyResource</definition>
+        <argsstring>() override</argsstring>
+        <name>DestroyResource</name>
+        <qualifiedname>Dali::NativeImage::DestroyResource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="195" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ae41d2aeea597d0be99ba0a016745c058" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::NativeImage::TargetTexture</definition>
+        <argsstring>() override</argsstring>
+        <name>TargetTexture</name>
+        <qualifiedname>Dali::NativeImage::TargetTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="200" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ab391e3424d5f015b2a186b4d119c2fa6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::NativeImageInterface::PrepareTextureResult</type>
+        <definition>Dali::NativeImageInterface::PrepareTextureResult Dali::NativeImage::PrepareTexture</definition>
+        <argsstring>() override</argsstring>
+        <name>PrepareTexture</name>
+        <qualifiedname>Dali::NativeImage::PrepareTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="205" column="52" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a59477d8ed37ea531cdbe020c1766d362" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::RequiresBlending</definition>
+        <argsstring>() const override</argsstring>
+        <name>RequiresBlending</name>
+        <qualifiedname>Dali::NativeImage::RequiresBlending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="210" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1aaad064adb868383d4286771aef4b3693" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Any</type>
+        <definition>Any Dali::NativeImage::GetNativeImageHandle</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetNativeImageHandle</name>
+        <qualifiedname>Dali::NativeImage::GetNativeImageHandle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="215" column="7" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1ae95f191af4693b64a425ed8fd728abae" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::NativeImage::SourceChanged</definition>
+        <argsstring>() const override</argsstring>
+        <name>SourceChanged</name>
+        <qualifiedname>Dali::NativeImage::SourceChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="220" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a85e61b1f790ed3100edd0eeb122be72c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Rect&lt; uint32_t &gt;</type>
+        <definition>Rect&lt; uint32_t &gt; Dali::NativeImage::GetUpdatedArea</definition>
+        <argsstring>() override</argsstring>
+        <name>GetUpdatedArea</name>
+        <qualifiedname>Dali::NativeImage::GetUpdatedArea</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="225" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1aa8642aee913171644a83adc4da8525bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::NativeImage::PostRender</definition>
+        <argsstring>() override</argsstring>
+        <name>PostRender</name>
+        <qualifiedname>Dali::NativeImage::PostRender</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="230" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1NativeImage_1a9101eb4419d6e14cde0e4869414c376b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>NativeImageInterface::Extension *</type>
+        <definition>NativeImageInterface::Extension * Dali::NativeImage::GetExtension</definition>
+        <argsstring>() override</argsstring>
+        <name>GetExtension</name>
+        <qualifiedname>Dali::NativeImage::GetExtension</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="235" column="35" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.cpp" bodystart="158" bodyend="161"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Used for displaying native images. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> can be created internally or externally by native image. <ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> is a platform specific way of providing pixel data to the GPU for rendering, for example via an EGL image.</para>
+<para>@SINCE_1_1.4 <simplesect kind="see"><para><ref refid="classDali_1_1NativeImage" kindref="compound">NativeImage</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::NativeImage</label>
+        <link refid="classDali_1_1NativeImage"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NativeImageInterface</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::NativeImage</label>
+        <link refid="classDali_1_1NativeImage"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NativeImageInterface</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" line="66" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/native-image.h" bodystart="67" bodyend="282"/>
+    <listofallmembers>
+      <member refid="classDali_1_1NativeImage_1a70f62ba204dcab1ca2d4f8ad34663e92" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>ApplyNativeFragmentShader</name></member>
+      <member refid="classDali_1_1NativeImage_1a2e0d5d7e80bc0667cae57aa14e338734" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>ApplyNativeFragmentShader</name></member>
+      <member refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea9b6b0bc20604c2834f9210be6811e83b" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>COLOR_DEPTH_16</name></member>
+      <member refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea760dc0364c6921661559c18e394a9525" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>COLOR_DEPTH_24</name></member>
+      <member refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea1aa3f6b80d5c5b288d3fbdc21104683b" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>COLOR_DEPTH_32</name></member>
+      <member refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bead5937464aee0103ff9aa10d6e0ce04a8" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>COLOR_DEPTH_8</name></member>
+      <member refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9bea22234765a2c0361c6a4d0e7531c37900" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>COLOR_DEPTH_DEFAULT</name></member>
+      <member refid="classDali_1_1NativeImage_1a4162b1c38750b3c3dd2732607f42f9be" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>ColorDepth</name></member>
+      <member refid="classDali_1_1NativeImage_1ae96b2cba3f0bedfa4cf54d1686592c99" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>CreateResource</name></member>
+      <member refid="classDali_1_1NativeImage_1ad357510c8a7872ba576f441c9074e6a7" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>DestroyResource</name></member>
+      <member refid="classDali_1_1NativeImage_1a414efd2a4129a90fc6e3953b4abd1f28" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>EncodeToFile</name></member>
+      <member refid="classDali_1_1NativeImage_1a902cd95e4815d90a6b5cb86a5e298534" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetCustomSamplerTypename</name></member>
+      <member refid="classDali_1_1NativeImage_1a9101eb4419d6e14cde0e4869414c376b" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetExtension</name></member>
+      <member refid="classDali_1_1NativeImage_1a4a5d9f0c44b45189ff8d1c18a03ba2e8" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetHeight</name></member>
+      <member refid="classDali_1_1NativeImage_1adf42ecf9ad3c2f39e0ce7cb276de04ce" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetNativeImage</name></member>
+      <member refid="classDali_1_1NativeImage_1aaad064adb868383d4286771aef4b3693" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetNativeImageHandle</name></member>
+      <member refid="classDali_1_1NativeImage_1ad785826b22728641f5dd744052e80e39" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetPixels</name></member>
+      <member refid="classDali_1_1NativeImage_1ad9ec6c3fad28aa4dd65ef4c572a3937d" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetTextureTarget</name></member>
+      <member refid="classDali_1_1NativeImage_1a85e61b1f790ed3100edd0eeb122be72c" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetUpdatedArea</name></member>
+      <member refid="classDali_1_1NativeImage_1a4ea62f74f8d47f19a2babf1769520ffd" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>GetWidth</name></member>
+      <member refid="classDali_1_1NativeImage_1a8169491148f2e269bd43cc7dd7d41847" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>IsColorDepthSupported</name></member>
+      <member refid="classDali_1_1NativeImage_1a119603eb51a9705c8fbf57747c7bb450" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>New</name></member>
+      <member refid="classDali_1_1NativeImage_1a45e688de5ba22a765444eb753431204c" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>New</name></member>
+      <member refid="classDali_1_1NativeImage_1aa8642aee913171644a83adc4da8525bb" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>PostRender</name></member>
+      <member refid="classDali_1_1NativeImage_1ab391e3424d5f015b2a186b4d119c2fa6" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>PrepareTexture</name></member>
+      <member refid="classDali_1_1NativeImage_1a59477d8ed37ea531cdbe020c1766d362" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>RequiresBlending</name></member>
+      <member refid="classDali_1_1NativeImage_1a9346d25c1067f8f6b70cec6843b1fb16" prot="public" virt="non-virtual"><scope>Dali::NativeImage</scope><name>SetSource</name></member>
+      <member refid="classDali_1_1NativeImage_1ae95f191af4693b64a425ed8fd728abae" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>SourceChanged</name></member>
+      <member refid="classDali_1_1NativeImage_1ae41d2aeea597d0be99ba0a016745c058" prot="private" virt="non-virtual"><scope>Dali::NativeImage</scope><name>TargetTexture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

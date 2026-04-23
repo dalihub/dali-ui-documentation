@@ -1,0 +1,2094 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Actor" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Actor</compoundname>
+    <basecompoundref refid="classDali_1_1Handle" prot="public" virt="non-virtual">Dali::Handle</basecompoundref>
+    <derivedcompoundref refid="classDali_1_1CameraActor" prot="public" virt="non-virtual">Dali::CameraActor</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1CustomActor" prot="public" virt="non-virtual">Dali::CustomActor</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1DrawableActor" prot="public" virt="non-virtual">Dali::DrawableActor</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1Layer" prot="public" virt="non-virtual">Dali::Layer</derivedcompoundref>
+    <includes refid="actor_8h" local="no">actor.h</includes>
+    <innerclass refid="structDali_1_1Actor_1_1Property" prot="public">Dali::Actor::Property</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1Actor_1a6836d62159b358e3ef969061f17ff148" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; bool(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, const <ref refid="classDali_1_1TouchEvent" kindref="compound">TouchEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Actor::TouchEventSignalType =  Signal&lt;bool(Actor, const TouchEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>TouchEventSignalType</name>
+        <qualifiedname>Dali::Actor::TouchEventSignalType</qualifiedname>
+        <briefdescription>
+<para>Touch signal type @SINCE_1_1.37. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="742" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="742" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1a2582b325fff7d81f2ad9611a081ab71b" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; bool(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, const <ref refid="classDali_1_1HoverEvent" kindref="compound">HoverEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Actor::HoverSignalType =  Signal&lt;bool(Actor, const HoverEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>HoverSignalType</name>
+        <qualifiedname>Dali::Actor::HoverSignalType</qualifiedname>
+        <briefdescription>
+<para>Hover signal type @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="743" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="743" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1ad1adce84965265e107f628126b8916b6" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; bool(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, const <ref refid="classDali_1_1WheelEvent" kindref="compound">WheelEvent</ref> &amp;)&gt;</type>
+        <definition>using Dali::Actor::WheelEventSignalType =  Signal&lt;bool(Actor, const WheelEvent&amp;)&gt;</definition>
+        <argsstring></argsstring>
+        <name>WheelEventSignalType</name>
+        <qualifiedname>Dali::Actor::WheelEventSignalType</qualifiedname>
+        <briefdescription>
+<para>Wheel signal type @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="744" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="744" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1aa954b7ae9bf3e4cdc54135bfe5a073ce" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>)&gt;</type>
+        <definition>using Dali::Actor::OnSceneSignalType =  Signal&lt;void(Actor)&gt;</definition>
+        <argsstring></argsstring>
+        <name>OnSceneSignalType</name>
+        <qualifiedname>Dali::Actor::OnSceneSignalType</qualifiedname>
+        <briefdescription>
+<para>Scene connection signal type @SINCE_1_9.24. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="745" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="745" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1a79f565136afd12dc79d8c8f6af2771c1" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>)&gt;</type>
+        <definition>using Dali::Actor::OffSceneSignalType =  Signal&lt;void(Actor)&gt;</definition>
+        <argsstring></argsstring>
+        <name>OffSceneSignalType</name>
+        <qualifiedname>Dali::Actor::OffSceneSignalType</qualifiedname>
+        <briefdescription>
+<para>Scene disconnection signal type @SINCE_1_9.24. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="746" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="746" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1a7a0cbd33729b81fe7025e5e24fb955da" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>)&gt;</type>
+        <definition>using Dali::Actor::OnRelayoutSignalType =  Signal&lt;void(Actor)&gt;</definition>
+        <argsstring></argsstring>
+        <name>OnRelayoutSignalType</name>
+        <qualifiedname>Dali::Actor::OnRelayoutSignalType</qualifiedname>
+        <briefdescription>
+<para>Called when the actor is relaid out @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="747" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="747" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1ae9e531deacdfec355caece3df16ed0fd" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, <ref refid="namespaceDali_1_1LayoutDirection_1a5bbefb3a0f538d8d45c85fb05084417e" kindref="member">LayoutDirection::Type</ref>)&gt;</type>
+        <definition>using Dali::Actor::LayoutDirectionChangedSignalType =  Signal&lt;void(Actor, LayoutDirection::Type)&gt;</definition>
+        <argsstring></argsstring>
+        <name>LayoutDirectionChangedSignalType</name>
+        <qualifiedname>Dali::Actor::LayoutDirectionChangedSignalType</qualifiedname>
+        <briefdescription>
+<para>Layout direction changes signal type. @SINCE_1_2.60. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="748" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="748" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Actor_1a4145909f91cd81aae3da3dfc11f1281d" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>, bool)&gt;</type>
+        <definition>using Dali::Actor::InheritedVisibilityChangedSignalType =  Signal&lt;void(Actor, bool)&gt;</definition>
+        <argsstring></argsstring>
+        <name>InheritedVisibilityChangedSignalType</name>
+        <qualifiedname>Dali::Actor::InheritedVisibilityChangedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref> type of InheritedVisibilityChangedSignalType. @SINCE_2_3.22. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="749" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="749" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Actor::Actor</definition>
+        <argsstring>()</argsstring>
+        <name>Actor</name>
+        <qualifiedname>Dali::Actor::Actor</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>; this can be initialized with <ref refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" kindref="member">Actor::New()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calling member functions with an uninitialized <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> handle is not allowed. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="759" column="3"/>
+        <references refid="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" compoundref="base-handle_8h" startline="274" endline="277">Dali::DownCast</references>
+        <referencedby refid="classDali_1_1Actor_1af2bdfb061ccfbb938a47c4152e65ef0f" compoundref="actor_8cpp" startline="49" endline="52">DownCast</referencedby>
+        <referencedby refid="classDali_1_1Actor_1acd8364a4f028b36a036f13ecc2e14070" compoundref="actor_8cpp" startline="101" endline="105">FindChildById</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a7ef6fe1ef0187d3e6f1bf77098e43575" compoundref="actor_8cpp" startline="95" endline="99">FindChildByName</referencedby>
+        <referencedby refid="classDali_1_1Actor_1a72b882eb1a11f6e3119b0991858c85c9" compoundref="actor_8cpp" startline="89" endline="93">GetChildAt</referencedby>
+        <referencedby refid="classDali_1_1Actor_1aed35f4d804823936a6125519c553d691" compoundref="actor_8cpp" startline="107" endline="112">GetParent</referencedby>
+        <referencedby refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" compoundref="actor_8cpp" startline="42" endline="47">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1ae17ad577040baea7e5e67e814022b636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Actor::~Actor</definition>
+        <argsstring>()</argsstring>
+        <name>~Actor</name>
+        <qualifiedname>Dali::Actor::~Actor</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Actor" kindref="compound">Dali::Actor</ref> is intended as a base class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="787" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a26cce4c82765a32e39aa229d6b9c1c6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Actor::Actor</definition>
+        <argsstring>(const Actor &amp;copy)</argsstring>
+        <name>Actor</name>
+        <qualifiedname>Dali::Actor::Actor</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="795" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1adbeef6e8775751a17dfbc861eade10e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;</type>
+        <definition>Actor &amp; Dali::Actor::operator=</definition>
+        <argsstring>(const Actor &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Actor::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="804" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a8fd21a371006564cc7b4fc412f1d607c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Actor::Actor</definition>
+        <argsstring>(Actor &amp;&amp;rhs) noexcept</argsstring>
+        <name>Actor</name>
+        <qualifiedname>Dali::Actor::Actor</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the actor to move </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="812" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a6cbe8378cf06efbe7740e1476110e416" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;</type>
+        <definition>Actor &amp; Dali::Actor::operator=</definition>
+        <argsstring>(Actor &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Actor::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the actor to move </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="821" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a5388e2a695a271d2af005ff4afcd4df5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref></type>
+        <definition>Layer Dali::Actor::GetLayer</definition>
+        <argsstring>()</argsstring>
+        <name>GetLayer</name>
+        <qualifiedname>Dali::Actor::GetLayer</qualifiedname>
+        <briefdescription>
+<para>Gets the layer in which the actor is present. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The layer, which will be uninitialized if the actor is off-stage </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="832" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="64" bodyend="67"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a944e778fa4fc130da3d71ecd0848476a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::Add</definition>
+        <argsstring>(Actor child)</argsstring>
+        <name>Add</name>
+        <qualifiedname>Dali::Actor::Add</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Adds a child <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> to this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>This <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> (the parent) has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The child actor has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The child actor is not the same as the parent actor. </para>
+</simplesect>
+<simplesect kind="pre"><para>The actor is not the Root actor. </para>
+</simplesect>
+<simplesect kind="post"><para>The child will be referenced by its parent. This means that the child will be kept alive, even if the handle passed into this method is reset or destroyed. </para>
+</simplesect>
+<simplesect kind="note"><para>If the child already has a parent, it will be removed from old parent and reparented to this actor. This may change child&apos;s position, color, scale etc as it now inherits them from this actor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="849" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="69" bodyend="72"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" compoundref="scripting_8cpp" startline="108" endline="173">Dali::Scripting::NewActor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a3e923ce03758e30ca3f50e1f70402636" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::Remove</definition>
+        <argsstring>(Actor child)</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Dali::Actor::Remove</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Removes a child <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> from this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the actor was not a child of this actor, this is a no-op. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>This <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> (the parent) has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The child actor is not the same as the parent actor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="860" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="74" bodyend="77"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a1077f0048f5342385e9b0758cf3d9756" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::Unparent</definition>
+        <argsstring>()</argsstring>
+        <name>Unparent</name>
+        <qualifiedname>Dali::Actor::Unparent</qualifiedname>
+        <briefdescription>
+<para>Removes an actor from its parent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the actor has no parent, this method does nothing. @SINCE_1_0.0 <simplesect kind="pre"><para>The (child) actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="869" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="79" bodyend="82"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="group__dali__core__actors_1ga6185153977c594cc662ee45cf9ef6ffb" compoundref="actor_8h" startline="1374" endline="1381">Dali::UnparentAndReset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1af6a451eaf0669156f587d92b9fd5003d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Actor::GetChildCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetChildCount</name>
+        <qualifiedname>Dali::Actor::GetChildCount</qualifiedname>
+        <briefdescription>
+<para>Retrieves the number of children held by the actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The number of children </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="878" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="84" bodyend="87"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">Dali::Scripting::CreatePropertyMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a72b882eb1a11f6e3119b0991858c85c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::Actor::GetChildAt</definition>
+        <argsstring>(uint32_t index) const</argsstring>
+        <name>GetChildAt</name>
+        <qualifiedname>Dali::Actor::GetChildAt</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve and child actor by index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the child to retrieve </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The actor for the given index or empty handle if children not initialized </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="888" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="89" bodyend="93"/>
+        <references refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Actor</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">Dali::Scripting::CreatePropertyMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a7ef6fe1ef0187d3e6f1bf77098e43575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::Actor::FindChildByName</definition>
+        <argsstring>(Dali::StringView actorName)</argsstring>
+        <name>FindChildByName</name>
+        <qualifiedname>Dali::Actor::FindChildByName</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>actorName</declname>
+        </param>
+        <briefdescription>
+<para>Search through this actor&apos;s hierarchy for an actor with the given name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actor itself is also considered in the search. @SINCE_2_0.9 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actorName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the actor to find </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to the actor if found, or an empty handle if not </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="899" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="95" bodyend="99"/>
+        <references refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Actor</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1acd8364a4f028b36a036f13ecc2e14070" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::Actor::FindChildById</definition>
+        <argsstring>(const uint32_t id)</argsstring>
+        <name>FindChildById</name>
+        <qualifiedname>Dali::Actor::FindChildById</qualifiedname>
+        <param>
+          <type>const uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Search through this actor&apos;s hierarchy for an actor with the given unique ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The actor itself is also considered in the search. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the actor to find </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to the actor if found, or an empty handle if not </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="910" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="101" bodyend="105"/>
+        <references refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Actor</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1aed35f4d804823936a6125519c553d691" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::Actor::GetParent</definition>
+        <argsstring>() const</argsstring>
+        <name>GetParent</name>
+        <qualifiedname>Dali::Actor::GetParent</qualifiedname>
+        <briefdescription>
+<para>Retrieves the actor&apos;s parent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>A handle to the actor&apos;s parent. If the actor has no parent, this handle will be invalid </para>
+</simplesect>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="919" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="107" bodyend="112"/>
+        <references refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Actor</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a2fd83eafcdce7283f77774e719f52abb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Dali::Actor::GetTargetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTargetSize</name>
+        <qualifiedname>Dali::Actor::GetTargetSize</qualifiedname>
+        <briefdescription>
+<para>Retrieves the actor&apos;s size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The actor&apos;s target size </para>
+</simplesect>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+<simplesect kind="note"><para>This return is the value that was set using SetSize or the target size of an animation. It may not match the current value in some cases, i.e. when the animation is progressing or the maximum or minimum size is set. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="932" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="114" bodyend="117"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1ae376720357f05d128969bbb6076284e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 Dali::Actor::GetNaturalSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNaturalSize</name>
+        <qualifiedname>Dali::Actor::GetNaturalSize</qualifiedname>
+        <briefdescription>
+<para>Returns the natural size of the actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Deriving classes stipulate the natural size and by default an actor has a ZERO natural size.</para>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The actor&apos;s natural size </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="942" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="119" bodyend="122"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a722ee8a9608d9a9fd8d0c251dcd223d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::TranslateBy</definition>
+        <argsstring>(const Vector3 &amp;distance)</argsstring>
+        <name>TranslateBy</name>
+        <qualifiedname>Dali::Actor::TranslateBy</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>distance</declname>
+        </param>
+        <briefdescription>
+<para>Translates an actor relative to its existing position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">distance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor will move by this distance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="951" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="124" bodyend="127"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a5e657c042333c44f6089c8ff6a52ef52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RotateBy</definition>
+        <argsstring>(const Degree &amp;angle, const Vector3 &amp;axis)</argsstring>
+        <name>RotateBy</name>
+        <qualifiedname>Dali::Actor::RotateBy</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Degree" kindref="compound">Degree</ref> &amp;</type>
+          <declname>angle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+<para>Applies a relative rotation to an actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle to the rotation to combine with the existing orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis of the rotation to combine with the existing orientation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="961" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="961" bodyend="964"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1aea1751d9b6d9adacc7d3c53f083af76f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RotateBy</definition>
+        <argsstring>(const Radian &amp;angle, const Vector3 &amp;axis)</argsstring>
+        <name>RotateBy</name>
+        <qualifiedname>Dali::Actor::RotateBy</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Radian" kindref="compound">Radian</ref> &amp;</type>
+          <declname>angle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+<para>Applies a relative rotation to an actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle to the rotation to combine with the existing orientation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis of the rotation to combine with the existing orientation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="974" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="129" bodyend="132"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a4c74662ea11e3b04d3842f33c74abe80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RotateBy</definition>
+        <argsstring>(const Quaternion &amp;relativeRotation)</argsstring>
+        <name>RotateBy</name>
+        <qualifiedname>Dali::Actor::RotateBy</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>relativeRotation</declname>
+        </param>
+        <briefdescription>
+<para>Applies a relative rotation to an actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">relativeRotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation to combine with the existing orientation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="983" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="134" bodyend="137"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a2892f52f3fedf2d9454a77e817537dd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::ScaleBy</definition>
+        <argsstring>(const Vector3 &amp;relativeScale)</argsstring>
+        <name>ScaleBy</name>
+        <qualifiedname>Dali::Actor::ScaleBy</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>relativeScale</declname>
+        </param>
+        <briefdescription>
+<para>Applies a relative scale to an actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">relativeScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale to combine with the actor&apos;s existing scale </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The actor has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="992" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="139" bodyend="142"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1ade076d138c95f666f0080188f3e15012" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Actor::ScreenToLocal</definition>
+        <argsstring>(float &amp;localX, float &amp;localY, float screenX, float screenY) const</argsstring>
+        <name>ScreenToLocal</name>
+        <qualifiedname>Dali::Actor::ScreenToLocal</qualifiedname>
+        <param>
+          <type>float &amp;</type>
+          <declname>localX</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>localY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>screenX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>screenY</declname>
+        </param>
+        <briefdescription>
+<para>Converts screen coordinates into the actor&apos;s coordinate system using the default camera. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">localX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On return, the X-coordinate relative to the actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">localY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On return, the Y-coordinate relative to the actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">screenX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen X-coordinate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">screenY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen Y-coordinate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the conversion succeeded </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="note"><para>The actor coordinates are relative to the top-left (0.0, 0.0, 0.5) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1008" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="144" bodyend="147"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a2e2335e2b8ea4bf6c6bc0e1199fcf135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::Raise</definition>
+        <argsstring>()</argsstring>
+        <name>Raise</name>
+        <qualifiedname>Dali::Actor::Raise</qualifiedname>
+        <briefdescription>
+<para>Raise actor above the next sibling actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been parented. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1017" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="149" bodyend="152"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a1b093bf1abd877052f5423e80928de45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::Lower</definition>
+        <argsstring>()</argsstring>
+        <name>Lower</name>
+        <qualifiedname>Dali::Actor::Lower</qualifiedname>
+        <briefdescription>
+<para>Lower the actor below the previous sibling actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been parented. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1026" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="154" bodyend="157"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a69f2371d740b78a427be8bf94055ca7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RaiseToTop</definition>
+        <argsstring>()</argsstring>
+        <name>RaiseToTop</name>
+        <qualifiedname>Dali::Actor::RaiseToTop</qualifiedname>
+        <briefdescription>
+<para>Raise actor above all other sibling actors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been parented. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1035" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="159" bodyend="162"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a30509858cc2143439abe94cc645c1ff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::LowerToBottom</definition>
+        <argsstring>()</argsstring>
+        <name>LowerToBottom</name>
+        <qualifiedname>Dali::Actor::LowerToBottom</qualifiedname>
+        <briefdescription>
+<para>Lower actor to the bottom of all other sibling actors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been parented. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1044" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="164" bodyend="167"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a8bc4298901f1085c972075a62c373d53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RaiseAbove</definition>
+        <argsstring>(Actor target)</argsstring>
+        <name>RaiseAbove</name>
+        <qualifiedname>Dali::Actor::RaiseAbove</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Raises the actor above the target actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target actor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been parented. </para>
+</simplesect>
+<simplesect kind="pre"><para>The target actor is a sibling. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1055" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="169" bodyend="172"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a2a746d2b4453ab51b58b8c8e96bb8a83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::LowerBelow</definition>
+        <argsstring>(Actor target)</argsstring>
+        <name>LowerBelow</name>
+        <qualifiedname>Dali::Actor::LowerBelow</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+<para>Lower the actor to below the target actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.60 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target actor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been parented. </para>
+</simplesect>
+<simplesect kind="pre"><para>The target actor is a sibling. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1066" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="174" bodyend="177"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1aa32262412cf7206c8e5fb52ee10d2124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::SetResizePolicy</definition>
+        <argsstring>(ResizePolicy::Type policy, Dimension::Type dimension)</argsstring>
+        <name>SetResizePolicy</name>
+        <qualifiedname>Dali::Actor::SetResizePolicy</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1ResizePolicy_1a8c47ec1e0b9c73e0fa8e40cfdd99276a" kindref="member">ResizePolicy::Type</ref></type>
+          <declname>policy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Sets the resize policy to be used for the given dimension(s). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">policy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The resize policy to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension(s) to set policy for. Can be a bitfield of multiple dimensions </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1077" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="179" bodyend="182"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a895c4e4dbb2993272da1e41ae4af1e93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1ResizePolicy_1a8c47ec1e0b9c73e0fa8e40cfdd99276a" kindref="member">ResizePolicy::Type</ref></type>
+        <definition>ResizePolicy::Type Dali::Actor::GetResizePolicy</definition>
+        <argsstring>(Dimension::Type dimension) const</argsstring>
+        <name>GetResizePolicy</name>
+        <qualifiedname>Dali::Actor::GetResizePolicy</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Returns the resize policy used for a single dimension. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension to get policy for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return the dimension resize policy. If more than one dimension is requested, just return the first one found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1086" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="184" bodyend="187"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a8916dc02c0b61e82ef6fec81c325f4b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Actor::GetHeightForWidth</definition>
+        <argsstring>(float width)</argsstring>
+        <name>GetHeightForWidth</name>
+        <qualifiedname>Dali::Actor::GetHeightForWidth</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the height of the actor given a width. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The natural size is used for default calculation. size 0 is treated as aspect ratio 1:1.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return the height based on the width </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1098" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="189" bodyend="192"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1af1c55b64b4bf4b43d9a3af48eb1354c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Actor::GetWidthForHeight</definition>
+        <argsstring>(float height)</argsstring>
+        <name>GetWidthForHeight</name>
+        <qualifiedname>Dali::Actor::GetWidthForHeight</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the width of the actor given a height. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The natural size is used for default calculation. size 0 is treated as aspect ratio 1:1.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return the width based on the height </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1110" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="194" bodyend="197"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a13bf7ff6e54b2accb83de3cb0935db5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Actor::GetRelayoutSize</definition>
+        <argsstring>(Dimension::Type dimension) const</argsstring>
+        <name>GetRelayoutSize</name>
+        <qualifiedname>Dali::Actor::GetRelayoutSize</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Returns the value of negotiated dimension for the given dimension. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension to retrieve </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return the value of the negotiated dimension. If more than one dimension is requested, just return the first one found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1119" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="199" bodyend="202"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1aff392fede972433fa26f216f2427e0ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::SetIgnored</definition>
+        <argsstring>(bool ignored)</argsstring>
+        <name>SetIgnored</name>
+        <qualifiedname>Dali::Actor::SetIgnored</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>ignored</declname>
+        </param>
+        <briefdescription>
+<para>Sets a flag to identify whether the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> is ignored or not. If the actor is marked as ignored, it will not be rendered and will be excluded from render thread computation. So, the current properties like WorldPosition and WorldColor become inaccurate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.21 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ignored</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True to make the actor be ignored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1129" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="204" bodyend="207"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a79f00abc4ce3ca00a6ad1b9a3063a802" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Actor::IsIgnored</definition>
+        <argsstring>() const</argsstring>
+        <name>IsIgnored</name>
+        <qualifiedname>Dali::Actor::IsIgnored</qualifiedname>
+        <briefdescription>
+<para>Returns whether the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> is ignored or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.21 <simplesect kind="return"><para>Return True if the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> is ignored. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1137" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="209" bodyend="212"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a0cf638856c8a20238839fc910d16e21c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Actor::AddRenderer</definition>
+        <argsstring>(Renderer &amp;renderer)</argsstring>
+        <name>AddRenderer</name>
+        <qualifiedname>Dali::Actor::AddRenderer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> &amp;</type>
+          <declname>renderer</declname>
+        </param>
+        <briefdescription>
+<para>Adds a renderer to this actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>We don&apos;t allow to add duplicated renderers. If we add the same renderer twice, it will just return the index of renderer.</para>
+</simplesect>
+@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> to add to the actor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the <ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> that was added </para>
+</simplesect>
+<simplesect kind="pre"><para>The renderer must be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1150" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="239" bodyend="242"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a324a0927da543dd0731d0d068fb9181a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Actor::GetRendererCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRendererCount</name>
+        <qualifiedname>Dali::Actor::GetRendererCount</qualifiedname>
+        <briefdescription>
+<para>Gets the number of renderers on this actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The number of renderers on this actor </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1158" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="244" bodyend="247"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a409da6877a0073a557bb27697932141b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref></type>
+        <definition>Renderer Dali::Actor::GetRendererAt</definition>
+        <argsstring>(uint32_t index)</argsstring>
+        <name>GetRendererAt</name>
+        <qualifiedname>Dali::Actor::GetRendererAt</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets a <ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> by index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the renderer to fetch </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The renderer at the specified index </para>
+</simplesect>
+<simplesect kind="pre"><para>The index must be between 0 and <ref refid="classDali_1_1Actor_1a324a0927da543dd0731d0d068fb9181a" kindref="member">GetRendererCount()</ref>-1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1169" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="249" bodyend="253"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a366d5cf2e8678a21d1dcf2d8002e53fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RemoveRenderer</definition>
+        <argsstring>(Renderer &amp;renderer)</argsstring>
+        <name>RemoveRenderer</name>
+        <qualifiedname>Dali::Actor::RemoveRenderer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> &amp;</type>
+          <declname>renderer</declname>
+        </param>
+        <briefdescription>
+<para>Removes a renderer from the actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> to the renderer that is to be removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1177" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="255" bodyend="258"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a3ca1c2bc6c8633298cd2b434e6effd16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RemoveRenderer</definition>
+        <argsstring>(uint32_t index)</argsstring>
+        <name>RemoveRenderer</name>
+        <qualifiedname>Dali::Actor::RemoveRenderer</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Removes a renderer from the actor by index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the renderer that is to be removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The index must be between 0 and <ref refid="classDali_1_1Actor_1a324a0927da543dd0731d0d068fb9181a" kindref="member">GetRendererCount()</ref>-1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1187" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="260" bodyend="263"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1adf17a3f13db2568925c6e1bfdf65b1c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Actor::AddCacheRenderer</definition>
+        <argsstring>(Renderer &amp;renderer)</argsstring>
+        <name>AddCacheRenderer</name>
+        <qualifiedname>Dali::Actor::AddCacheRenderer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> &amp;</type>
+          <declname>renderer</declname>
+        </param>
+        <briefdescription>
+<para>Add renderer drawing cached output to this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. @SINCE_2_3.54. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> to set to the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the <ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> that was added </para>
+</simplesect>
+<simplesect kind="pre"><para>The renderer must be initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1196" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="265" bodyend="268"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a4c6fdf601ea476f3e5116f16f7c21786" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Actor::GetCacheRendererCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCacheRendererCount</name>
+        <qualifiedname>Dali::Actor::GetCacheRendererCount</qualifiedname>
+        <briefdescription>
+<para>Get total number of cache renderers. @SINCE_2_4.19. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The size of cache renderer container </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1203" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="270" bodyend="273"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a479a20d903ccc08d970ccb4fbe029010" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Actor::RemoveCacheRenderer</definition>
+        <argsstring>(Renderer &amp;renderer)</argsstring>
+        <name>RemoveCacheRenderer</name>
+        <qualifiedname>Dali::Actor::RemoveCacheRenderer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> &amp;</type>
+          <declname>renderer</declname>
+        </param>
+        <briefdescription>
+<para>Removes cache renderer from the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">renderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1Renderer" kindref="compound">Renderer</ref> to erase. @SINCE_2_3.54 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1210" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="275" bodyend="278"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1ada69138deca6823d7c4432de705a49d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a6836d62159b358e3ef969061f17ff148" kindref="member">TouchEventSignalType</ref> &amp;</type>
+        <definition>Actor::TouchEventSignalType &amp; Dali::Actor::TouchedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>TouchedSignal</name>
+        <qualifiedname>Dali::Actor::TouchedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when touch input is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" kindref="member">Actor</ref><sp/>actor,<sp/>TouchEvent&amp;<sp/>touch<sp/>);</highlight></codeline>
+</programlisting> The return value of True, indicates that the touch event has been consumed. Otherwise the signal will be emitted on the next sensitive parent of the actor. @SINCE_1_9.28 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1226" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="214" bodyend="217"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1aedbb509e546778a7f37e2ced79b59a0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a2582b325fff7d81f2ad9611a081ab71b" kindref="member">HoverSignalType</ref> &amp;</type>
+        <definition>Actor::HoverSignalType &amp; Dali::Actor::HoveredSignal</definition>
+        <argsstring>()</argsstring>
+        <name>HoveredSignal</name>
+        <qualifiedname>Dali::Actor::HoveredSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when hover input is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(<ref refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" kindref="member">Actor</ref><sp/>actor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>HoverEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting> The return value of True, indicates that the hover event should be consumed. Otherwise the signal will be emitted on the next sensitive parent of the actor. @SINCE_1_0.0 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1241" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="219" bodyend="222"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1abb45d4e8a7276addded42b6401a28bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1ad1adce84965265e107f628126b8916b6" kindref="member">WheelEventSignalType</ref> &amp;</type>
+        <definition>Actor::WheelEventSignalType &amp; Dali::Actor::WheelEventSignal</definition>
+        <argsstring>()</argsstring>
+        <name>WheelEventSignal</name>
+        <qualifiedname>Dali::Actor::WheelEventSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when wheel event is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>YourCallbackName(<ref refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" kindref="member">Actor</ref><sp/>actor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>WheelEvent&amp;<sp/>event);</highlight></codeline>
+</programlisting> The return value of True, indicates that the wheel event should be consumed. Otherwise the signal will be emitted on the next sensitive parent of the actor. @SINCE_1_0.0 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1256" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="224" bodyend="227"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1ac8637f9abf16beb5d586df86334a9fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1aa954b7ae9bf3e4cdc54135bfe5a073ce" kindref="member">OnSceneSignalType</ref> &amp;</type>
+        <definition>Actor::OnSceneSignalType &amp; Dali::Actor::OnSceneSignal</definition>
+        <argsstring>()</argsstring>
+        <name>OnSceneSignal</name>
+        <qualifiedname>Dali::Actor::OnSceneSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted after the actor has been connected to the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When an actor is connected, it will be directly or indirectly parented to the root <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. @SINCE_1_9.24 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="note"><para>The root <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> is provided automatically by the Scene, and is always considered to be connected.</para>
+</simplesect>
+<simplesect kind="note"><para>When the parent of a set of actors is connected to the stage, then all of the children will received this callback. For the following actor tree, the callback order will be A, B, D, E, C, and finally F.</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>(parent)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>/<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>B<sp/><sp/><sp/>C</highlight></codeline>
+<codeline><highlight class="normal"><sp/>/<sp/>\<sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal">D<sp/><sp/><sp/>E<sp/><sp/><sp/>F</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1280" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="229" bodyend="232"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a698c7f1bcd07beb937ac2775eba082b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a79f565136afd12dc79d8c8f6af2771c1" kindref="member">OffSceneSignalType</ref> &amp;</type>
+        <definition>Actor::OffSceneSignalType &amp; Dali::Actor::OffSceneSignal</definition>
+        <argsstring>()</argsstring>
+        <name>OffSceneSignal</name>
+        <qualifiedname>Dali::Actor::OffSceneSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted after the actor has been disconnected from the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an actor is disconnected it either has no parent, or is parented to a disconnected actor.</para>
+<para>@SINCE_1_9.24 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="note"><para>When the parent of a set of actors is disconnected to the scene, then all of the children will received this callback, starting with the leaf actors. For the following actor tree, the callback order will be D, E, B, F, C, and finally A.</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>(parent)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>/<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>B<sp/><sp/><sp/>C</highlight></codeline>
+<codeline><highlight class="normal"><sp/>/<sp/>\<sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal">D<sp/><sp/><sp/>E<sp/><sp/><sp/>F</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1304" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="234" bodyend="237"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1aa03e20e4eb454e701afff631f325484c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a7a0cbd33729b81fe7025e5e24fb955da" kindref="member">OnRelayoutSignalType</ref> &amp;</type>
+        <definition>Actor::OnRelayoutSignalType &amp; Dali::Actor::OnRelayoutSignal</definition>
+        <argsstring>()</argsstring>
+        <name>OnRelayoutSignal</name>
+        <qualifiedname>Dali::Actor::OnRelayoutSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted after the size has been set on the actor during relayout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The signal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1312" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="280" bodyend="283"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1a6f127598c250e0d390e58ba5d35fb6c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1ae9e531deacdfec355caece3df16ed0fd" kindref="member">LayoutDirectionChangedSignalType</ref> &amp;</type>
+        <definition>Actor::LayoutDirectionChangedSignalType &amp; Dali::Actor::LayoutDirectionChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>LayoutDirectionChangedSignal</name>
+        <qualifiedname>Dali::Actor::LayoutDirectionChangedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when the layout direction property of this or a parent actor is changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" kindref="member">Actor</ref><sp/>actor,<sp/><ref refid="namespaceDali_1_1LayoutDirection_1a5bbefb3a0f538d8d45c85fb05084417e" kindref="member">LayoutDirection::Type</ref><sp/>type<sp/>);</highlight></codeline>
+</programlisting> actor: The actor, or child of actor, whose layout direction has changed type: Whether the actor&apos;s layout direction property has changed or a parent&apos;s.</para>
+<para>@SINCE_1_2.60 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1328" column="36" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="285" bodyend="288"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1add2fe682e69d697c18b2ced77635b6aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor_1a4145909f91cd81aae3da3dfc11f1281d" kindref="member">InheritedVisibilityChangedSignalType</ref> &amp;</type>
+        <definition>Actor::InheritedVisibilityChangedSignalType &amp; Dali::Actor::InheritedVisibilityChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>InheritedVisibilityChangedSignal</name>
+        <qualifiedname>Dali::Actor::InheritedVisibilityChangedSignal</qualifiedname>
+        <briefdescription>
+<para>This signal is emitted when the visible property of this actor or any of its parents (right up to the root layer) changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" kindref="member">Actor</ref><sp/>actor,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visible<sp/>);</highlight></codeline>
+</programlisting> actor: The actor whose inherited visibility has changed. visible: This is true if this actor&apos;s inherited VISIBLE property is true. If it is true, it denotes one of the 2 cases. One is VISIBLE property of this actor or only one of the parent actors were originally false and it becomes true now. Another is this actor is connected on Scene now with that the VISIBLE property of this actor and all of its parent were true. If it is false, it also denotes one of the 2 cases. One is that VISIBLE property of this actor and all of the parent actors were originally true but one of them becomes false now. Another is VISIBLE property of this actor and all of the parent actors are true and this actor is disconnected from the Scene now.</para>
+<para>@SINCE_2_3.22 <simplesect kind="return"><para>The signal to connect to </para>
+</simplesect>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> has been initialized. </para>
+</simplesect>
+<simplesect kind="note"><para>This signal is NOT emitted if the actor becomes transparent (or the reverse). </para>
+</simplesect>
+<simplesect kind="note"><para>For reference, an actor is only shown if it and it&apos;s parents (up to the root actor) are also visible, are not transparent, and this actor has a non-zero size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="1352" column="40" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="290" bodyend="293"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::Actor::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Actor::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="767" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="42" bodyend="47"/>
+        <references refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Actor</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Actor_1af2bdfb061ccfbb938a47c4152e65ef0f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref></type>
+        <definition>Actor Dali::Actor::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::Actor::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts a handle to <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to an <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> object, the downcast produces valid handle. If not, the returned handle is left uninitialized.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>handle to a <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> object or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="779" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp" bodystart="49" bodyend="52"/>
+        <references refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563">Actor</references>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" compoundref="scripting_8cpp" startline="108" endline="173">Dali::Scripting::NewActor</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> is the primary object with which <ref refid="namespaceDali" kindref="compound">Dali</ref> applications interact. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>UI controls can be built by combining multiple actors.</para>
+<para><heading level="3">Multi-Touch Events:</heading>
+</para>
+<para>Touch or hover events are received via signals; see <ref refid="classDali_1_1Actor_1ada69138deca6823d7c4432de705a49d9" kindref="member">Actor::TouchedSignal()</ref> and <ref refid="classDali_1_1Actor_1aedbb509e546778a7f37e2ced79b59a0e" kindref="member">Actor::HoveredSignal()</ref> for more details.</para>
+<para><emphasis>Hit Testing Rules Summary:</emphasis></para>
+<para><itemizedlist>
+<listitem><para>An actor is only hittable if the actor&apos;s touch or hover signal has a connection.</para>
+</listitem><listitem><para>An actor is only hittable when it is between the camera&apos;s near and far planes.</para>
+</listitem><listitem><para>If an actor is made insensitive, then the actor and its children are not hittable; see <ref refid="structDali_1_1Actor_1_1Property_1aa00cf4d2c81c442d5bf5c544f96410c3adabd32d5f99491cac08f24d5d6ea86ea" kindref="member">Actor::Property::SENSITIVE</ref>.</para>
+</listitem><listitem><para>If an actor&apos;s visibility flag is unset, then none of its children are hittable either; see <ref refid="structDali_1_1Actor_1_1Property_1aa00cf4d2c81c442d5bf5c544f96410c3acc2b9aee38fe028fa41c38c2e1c38d96" kindref="member">Actor::Property::VISIBLE</ref>.</para>
+</listitem><listitem><para>To be hittable, an actor must have a non-zero size.</para>
+</listitem><listitem><para>If an actor&apos;s world color is fully transparent, then it is not hittable; see GetCurrentWorldColor().</para>
+</listitem></itemizedlist>
+</para>
+<para><emphasis>Hit Test Algorithm:</emphasis></para>
+<para><itemizedlist>
+<listitem><para><ref refid="classDali_1_1Stage" kindref="compound">Stage</ref><itemizedlist>
+<listitem><para>Gets the first down and the last up touch events to the screen, regardless of actor touch event consumption.</para>
+</listitem><listitem><para><ref refid="classDali_1_1Stage" kindref="compound">Stage</ref>&apos;s root layer can be used to catch unconsumed touch events.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>RenderTasks<itemizedlist>
+<listitem><para>Hit testing is dependent on the camera used, which is specific to each <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Layers<itemizedlist>
+<listitem><para>For each <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>, hit testing starts from the top-most layer and we go through all the layers until we have a hit or there are none left.</para>
+</listitem><listitem><para>Before we perform a hit test within a layer, we check if all the layer&apos;s parents are visible and sensitive.</para>
+</listitem><listitem><para>If they are not, we skip hit testing the actors in that layer altogether.</para>
+</listitem><listitem><para>If a layer is set to consume all touch, then we do not check any layers behind this layer.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Actors<itemizedlist>
+<listitem><para>The final part of hit testing is performed by walking through the actor tree within a layer.</para>
+</listitem><listitem><para>The following pseudocode shows the algorithm used: <programlisting><codeline><highlight class="normal">HIT-TEST-WITHIN-LAYER(<sp/>ACTOR<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>hit-test<sp/>the<sp/>actor<sp/>and<sp/>its<sp/>children<sp/>if<sp/>it<sp/>is<sp/>sensitive<sp/>and<sp/>visible</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>IF<sp/>(<sp/>ACTOR-IS-SENSITIVE<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-IS-VISIBLE<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-IS-ON-SCENE<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Depth-first<sp/>traversal<sp/>within<sp/>current<sp/>layer,<sp/>visiting<sp/>parent<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>whether<sp/>current<sp/>actor<sp/>should<sp/>be<sp/>hit-tested.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>(<sp/><ref refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8a2b40a1ea27beb450618885ec87f0ee15" kindref="member">TOUCH</ref>-SIGNAL-NOT-EMPTY<sp/>||<sp/>HOVER-SIGNAL-NOT-EMPTY<sp/>)<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-HAS-NON-ZERO-SIZE<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTOR-WORLD-COLOR-IS-NOT-TRANSPARENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Hit-test<sp/>current<sp/>actor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>ACTOR-HIT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>ACTOR-IS-OVERLAY<sp/>||<sp/>(<sp/>DISTANCE-TO-ACTOR<sp/>&lt;<sp/>DISTANCE-TO-LAST-HIT-ACTOR<sp/>)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>current<sp/>actor<sp/>is<sp/>the<sp/>closest<sp/>actor<sp/>that<sp/>was<sp/>underneath<sp/>the<sp/>touch.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LAST-HIT-ACTOR<sp/>=<sp/>CURRENT-ACTOR</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Keep<sp/>checking<sp/>children,<sp/>in<sp/>case<sp/>we<sp/>hit<sp/>something<sp/>closer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>FOR-EACH<sp/>CHILD<sp/>(in<sp/>order)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>CHILD-IS-NOT-A-LAYER<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Continue<sp/>traversal<sp/>for<sp/>this<sp/>child&apos;s<sp/>sub-tree</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HIT-TEST-WITHIN-LAYER<sp/>(<sp/>CHILD<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>else<sp/>we<sp/>skip<sp/>hit-testing<sp/>the<sp/>child&apos;s<sp/>sub-tree<sp/>altogether.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Overlays always take priority (i.e. they&apos;re considered closer) regardless of distance. The overlay children take priority over their parents, and overlay siblings take priority over their previous siblings (i.e. reverse of rendering order): <programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>/<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/<sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>2<sp/><sp/><sp/><sp/><sp/>5</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>/<sp/>\<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/>/<sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal">3<sp/><sp/><sp/><sp/><sp/>4<sp/><sp/><sp/><sp/><sp/>6</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Hit<sp/>Priority<sp/>of<sp/>above<sp/><ref refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" kindref="member">Actor</ref><sp/>tree<sp/>(all<sp/>overlays):<sp/>1<sp/>-<sp/>Lowest.<sp/>6<sp/>-<sp/>Highest.</highlight></codeline>
+</programlisting> For more information, see <ref refid="structDali_1_1Actor_1_1Property_1aa00cf4d2c81c442d5bf5c544f96410c3a6798c2c28cd3fcbed16fa4b6e9982bf4" kindref="member">Property::DRAW_MODE</ref>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><emphasis>Touch or hover Event Delivery:</emphasis></para>
+<para><itemizedlist>
+<listitem><para>Delivery<itemizedlist>
+<listitem><para>The hit actor&apos;s touch or hover signal is emitted first; if it is not consumed by any of the listeners, the parent&apos;s touch or hover signal is emitted, and so on.</para>
+</listitem><listitem><para>The following pseudocode shows the delivery mechanism: <programlisting><codeline><highlight class="normal">EMIT-<ref refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8a2b40a1ea27beb450618885ec87f0ee15" kindref="member">TOUCH</ref>-SIGNAL(<sp/>ACTOR<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>IF<sp/>(<sp/><ref refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8a2b40a1ea27beb450618885ec87f0ee15" kindref="member">TOUCH</ref>-SIGNAL-NOT-EMPTY<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>do<sp/>the<sp/>emission<sp/>if<sp/>touch<sp/>signal<sp/>of<sp/>actor<sp/>has<sp/>connections.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CONSUMED<sp/>=<sp/>TOUCHED-SIGNAL(<sp/><ref refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8a2b40a1ea27beb450618885ec87f0ee15" kindref="member">TOUCH</ref>-EVENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>IF<sp/>(<sp/>NOT-CONSUMED<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>event<sp/>is<sp/>not<sp/>consumed<sp/>then<sp/>deliver<sp/>it<sp/>to<sp/>the<sp/>parent<sp/>unless<sp/>we<sp/>reach<sp/>the<sp/>root<sp/>actor</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>ACTOR-PARENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>EMIT-<ref refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8a2b40a1ea27beb450618885ec87f0ee15" kindref="member">TOUCH</ref>-SIGNAL(<sp/>ACTOR-PARENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">EMIT-HOVER-SIGNAL(<sp/>ACTOR<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>IF<sp/>(<sp/>HOVER-SIGNAL-NOT-EMPTY<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>do<sp/>the<sp/>emission<sp/>if<sp/>hover<sp/>signal<sp/>of<sp/>actor<sp/>has<sp/>connections.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CONSUMED<sp/>=<sp/>HOVERED-SIGNAL(<sp/>HOVER-EVENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>IF<sp/>(<sp/>NOT-CONSUMED<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>event<sp/>is<sp/>not<sp/>consumed<sp/>then<sp/>deliver<sp/>it<sp/>to<sp/>the<sp/>parent<sp/>unless<sp/>we<sp/>reach<sp/>the<sp/>root<sp/>actor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IF<sp/>(<sp/>ACTOR-PARENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>EMIT-HOVER-SIGNAL(<sp/>ACTOR-PARENT<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>If there are several touch points, then the delivery is only to the first touch point&apos;s hit actor (and its parents). There will be NO touch or hover signal delivery for the hit actors of the other touch points.</para>
+</listitem><listitem><para>The local coordinates are from the top-left (0.0f, 0.0f, 0.5f) of the hit actor.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Leave State<itemizedlist>
+<listitem><para>A &quot;Leave&quot; state is set when the first point exits the bounds of the previous first point&apos;s hit actor (primary hit actor).</para>
+</listitem><listitem><para>When this happens, the last primary hit actor&apos;s touch or hover signal is emitted with a &quot;Leave&quot; state (only if it requires leave signals); see SetLeaveRequired().</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Interrupted State<itemizedlist>
+<listitem><para>If a system event occurs which interrupts the touch or hover processing, then the last primary hit actor&apos;s touch or hover signals are emitted with an &quot;Interrupted&quot; state.</para>
+</listitem><listitem><para>If the last primary hit actor, or one of its parents, is no longer touchable or hoverable, then its touch or hover signals are also emitted with an &quot;Interrupted&quot; state.</para>
+</listitem><listitem><para>If the consumed actor on touch-down is not the same as the consumed actor on touch-up, then touch signals are also emitted from the touch-down actor with an &quot;Interrupted&quot; state.</para>
+</listitem><listitem><para>If the consumed actor on hover-start is not the same as the consumed actor on hover-finished, then hover signals are also emitted from the hover-started actor with an &quot;Interrupted&quot; state.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para>Signals <table rows="9" cols="2"><row>
+<entry thead="yes"><para>Signal Name   </para>
+</entry><entry thead="yes"><para>Method    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>touched   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1ada69138deca6823d7c4432de705a49d9" kindref="member">TouchedSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>hovered   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1aedbb509e546778a7f37e2ced79b59a0e" kindref="member">HoveredSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wheelEvent   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1abb45d4e8a7276addded42b6401a28bc7" kindref="member">WheelEventSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>onScene   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1ac8637f9abf16beb5d586df86334a9fef" kindref="member">OnSceneSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>offScene   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1a698c7f1bcd07beb937ac2775eba082b5" kindref="member">OffSceneSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>onRelayout   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1aa03e20e4eb454e701afff631f325484c" kindref="member">OnRelayoutSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>layoutDirectionChanged   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1a6f127598c250e0d390e58ba5d35fb6c8" kindref="member">LayoutDirectionChangedSignal()</ref>    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>inheritedVisibilityChanged   </para>
+</entry><entry thead="no"><para><ref refid="classDali_1_1Actor_1add2fe682e69d697c18b2ced77635b6aa" kindref="member">InheritedVisibilityChangedSignal()</ref>   </para>
+</entry></row>
+</table>
+</para>
+<para>@SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::Actor</label>
+        <link refid="classDali_1_1Actor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="4">
+        <label>Dali::CameraActor</label>
+        <link refid="classDali_1_1CameraActor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Dali::CustomActor</label>
+        <link refid="classDali_1_1CustomActor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Dali::DrawableActor</label>
+        <link refid="classDali_1_1DrawableActor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Dali::Layer</label>
+        <link refid="classDali_1_1Layer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::Actor</label>
+        <link refid="classDali_1_1Actor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="2">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" line="232" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h" bodystart="233" bodyend="1364"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Actor_1a7109c5679485fe340ae8ccef066e2563" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Actor</name></member>
+      <member refid="classDali_1_1Actor_1a26cce4c82765a32e39aa229d6b9c1c6a" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Actor</name></member>
+      <member refid="classDali_1_1Actor_1a8fd21a371006564cc7b4fc412f1d607c" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Actor</name></member>
+      <member refid="classDali_1_1Actor_1a944e778fa4fc130da3d71ecd0848476a" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Add</name></member>
+      <member refid="classDali_1_1Actor_1adf17a3f13db2568925c6e1bfdf65b1c8" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>AddCacheRenderer</name></member>
+      <member refid="classDali_1_1Handle_1a9e6e041bcd7f7bc6a9af6196346d6886" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1aaf59eab452181c2bd072716362b84e19" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1Actor_1a0cf638856c8a20238839fc910d16e21c" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>AddRenderer</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9b" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Capability</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Handle_1abc9b975d5af192c527dce432a0258713" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>DoesCustomPropertyExist</name></member>
+      <member refid="classDali_1_1Actor_1af2bdfb061ccfbb938a47c4152e65ef0f" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9ba5284559df1a09b2167bdfde50c8418f4" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>DYNAMIC_PROPERTIES</name></member>
+      <member refid="classDali_1_1Actor_1acd8364a4f028b36a036f13ecc2e14070" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>FindChildById</name></member>
+      <member refid="classDali_1_1Actor_1a7ef6fe1ef0187d3e6f1bf77098e43575" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>FindChildByName</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1Actor_1a4c6fdf601ea476f3e5116f16f7c21786" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetCacheRendererCount</name></member>
+      <member refid="classDali_1_1Actor_1a72b882eb1a11f6e3119b0991858c85c9" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetChildAt</name></member>
+      <member refid="classDali_1_1Actor_1af6a451eaf0669156f587d92b9fd5003d" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetChildCount</name></member>
+      <member refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1Handle_1aa8324c9784866e5fe757ad12794a9f13" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1Actor_1a8916dc02c0b61e82ef6fec81c325f4b4" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetHeightForWidth</name></member>
+      <member refid="classDali_1_1Actor_1a5388e2a695a271d2af005ff4afcd4df5" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetLayer</name></member>
+      <member refid="classDali_1_1Actor_1ae376720357f05d128969bbb6076284e3" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetNaturalSize</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1Actor_1aed35f4d804823936a6125519c553d691" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetParent</name></member>
+      <member refid="classDali_1_1Handle_1a020bfa4dfb5213a5e782853d8fe84306" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetProperties</name></member>
+      <member refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a872eda34f826c5525392e91b6d28770f" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a3deffc1e9d3236c50140b37e2b6cf8db" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetPropertyCount</name></member>
+      <member refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetPropertyIndex</name></member>
+      <member refid="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetPropertyIndices</name></member>
+      <member refid="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetPropertyName</name></member>
+      <member refid="classDali_1_1Handle_1a775f97600cedf0798fea5c8cca5a0512" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetPropertyType</name></member>
+      <member refid="classDali_1_1Actor_1a13bf7ff6e54b2accb83de3cb0935db5b" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetRelayoutSize</name></member>
+      <member refid="classDali_1_1Actor_1a409da6877a0073a557bb27697932141b" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetRendererAt</name></member>
+      <member refid="classDali_1_1Actor_1a324a0927da543dd0731d0d068fb9181a" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetRendererCount</name></member>
+      <member refid="classDali_1_1Actor_1a895c4e4dbb2993272da1e41ae4af1e93" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetResizePolicy</name></member>
+      <member refid="classDali_1_1Actor_1a2fd83eafcdce7283f77774e719f52abb" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetTargetSize</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1Actor_1af1c55b64b4bf4b43d9a3af48eb1354c6" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>GetWidthForHeight</name></member>
+      <member refid="classDali_1_1Handle_1a78b34f83f7c54495d9f3d0d69df56e1d" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1ac2e8233e0958c65d5b70ed277223ada9" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a305afca954732fe963f55c7d1dd152a9" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Actor_1aedbb509e546778a7f37e2ced79b59a0e" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>HoveredSignal</name></member>
+      <member refid="classDali_1_1Actor_1a2582b325fff7d81f2ad9611a081ab71b" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>HoverSignalType</name></member>
+      <member refid="classDali_1_1Actor_1add2fe682e69d697c18b2ced77635b6aa" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>InheritedVisibilityChangedSignal</name></member>
+      <member refid="classDali_1_1Actor_1a4145909f91cd81aae3da3dfc11f1281d" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>InheritedVisibilityChangedSignalType</name></member>
+      <member refid="classDali_1_1Actor_1a79f00abc4ce3ca00a6ad1b9a3063a802" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>IsIgnored</name></member>
+      <member refid="classDali_1_1Handle_1a025ccafe4d792290ba52c2acfc60f853" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>IsPropertyAConstraintInput</name></member>
+      <member refid="classDali_1_1Handle_1ac72ed10ef62da831eca7085c956e77f4" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>IsPropertyAnimatable</name></member>
+      <member refid="classDali_1_1Handle_1a46074ae35e8390eaa75ad5fc94b7a103" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>IsPropertyWritable</name></member>
+      <member refid="classDali_1_1Actor_1a6f127598c250e0d390e58ba5d35fb6c8" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>LayoutDirectionChangedSignal</name></member>
+      <member refid="classDali_1_1Actor_1ae9e531deacdfec355caece3df16ed0fd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>LayoutDirectionChangedSignalType</name></member>
+      <member refid="classDali_1_1Actor_1a1b093bf1abd877052f5423e80928de45" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Lower</name></member>
+      <member refid="classDali_1_1Actor_1a2a746d2b4453ab51b58b8c8e96bb8a83" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>LowerBelow</name></member>
+      <member refid="classDali_1_1Actor_1a30509858cc2143439abe94cc645c1ff6" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>LowerToBottom</name></member>
+      <member refid="classDali_1_1Actor_1afbc2ddbec114fadcb5631e9afa3abfb5" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>New</name></member>
+      <member refid="classDali_1_1Handle_1a2d33ee5b5d4efdf0681c0094d7c3a3ff" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Actor</scope><name>New</name></member>
+      <member refid="classDali_1_1Actor_1a698c7f1bcd07beb937ac2775eba082b5" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>OffSceneSignal</name></member>
+      <member refid="classDali_1_1Actor_1a79f565136afd12dc79d8c8f6af2771c1" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>OffSceneSignalType</name></member>
+      <member refid="classDali_1_1Actor_1aa03e20e4eb454e701afff631f325484c" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>OnRelayoutSignal</name></member>
+      <member refid="classDali_1_1Actor_1a7a0cbd33729b81fe7025e5e24fb955da" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>OnRelayoutSignalType</name></member>
+      <member refid="classDali_1_1Actor_1ac8637f9abf16beb5d586df86334a9fef" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>OnSceneSignal</name></member>
+      <member refid="classDali_1_1Actor_1aa954b7ae9bf3e4cdc54135bfe5a073ce" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>OnSceneSignalType</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1Actor_1adbeef6e8775751a17dfbc861eade10e8" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Actor_1a6cbe8378cf06efbe7740e1476110e416" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a5709270eb2cf5cdefc0de5979066922d" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Actor</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a6cba3d10b340f93975fabf2d5138caab" prot="public" virt="non-virtual" ambiguityscope="Dali::Handle::"><scope>Dali::Actor</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Actor</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Actor</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Handle_1aac3062e4424159de0392f27fbf6ec9c8" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aec4050cb13dc0b68853017a769eb51fd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aa264a86e930a78db250bbb92511dbc9d" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>PropertySetSignal</name></member>
+      <member refid="classDali_1_1Handle_1acca920cad56d4b14b12d2f4c00c0e555" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>PropertySetSignalType</name></member>
+      <member refid="classDali_1_1Actor_1a2e2335e2b8ea4bf6c6bc0e1199fcf135" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Raise</name></member>
+      <member refid="classDali_1_1Actor_1a8bc4298901f1085c972075a62c373d53" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RaiseAbove</name></member>
+      <member refid="classDali_1_1Actor_1a69f2371d740b78a427be8bf94055ca7f" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RaiseToTop</name></member>
+      <member refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1acf96c21cba52bbcdeb7342592ca3e2e5" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1afece056319aaa0d1507c8d777908dcea" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1aabccabf7e4551a684c7b97f39a973284" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1ad75eb7b366ebc913701058b1e5575581" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Actor_1a3e923ce03758e30ca3f50e1f70402636" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Remove</name></member>
+      <member refid="classDali_1_1Actor_1a479a20d903ccc08d970ccb4fbe029010" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemoveCacheRenderer</name></member>
+      <member refid="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1aa5007b6000fcf922580a0895d5fc8755" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a13b771d88af488b89cd649ae1f161fb7" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a9acc036ef41721cc3779976afb26da4b" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemovePropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1a9a2be7d760f27124d0bd992040748abd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemovePropertyNotifications</name></member>
+      <member refid="classDali_1_1Actor_1a366d5cf2e8678a21d1dcf2d8002e53fd" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemoveRenderer</name></member>
+      <member refid="classDali_1_1Actor_1a3ca1c2bc6c8633298cd2b434e6effd16" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RemoveRenderer</name></member>
+      <member refid="classDali_1_1Handle_1a5a8165e0f22ebefd82742b95e21cce67" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>ReserveCustomProperties</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Actor_1a5e657c042333c44f6089c8ff6a52ef52" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RotateBy</name></member>
+      <member refid="classDali_1_1Actor_1aea1751d9b6d9adacc7d3c53f083af76f" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RotateBy</name></member>
+      <member refid="classDali_1_1Actor_1a4c74662ea11e3b04d3842f33c74abe80" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>RotateBy</name></member>
+      <member refid="classDali_1_1Actor_1a2892f52f3fedf2d9454a77e817537dd5" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>ScaleBy</name></member>
+      <member refid="classDali_1_1Actor_1ade076d138c95f666f0080188f3e15012" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>ScreenToLocal</name></member>
+      <member refid="classDali_1_1Actor_1aff392fede972433fa26f216f2427e0ff" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>SetIgnored</name></member>
+      <member refid="classDali_1_1Handle_1a3c9f3a03e463cf3efec254b86ae9d1ad" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>SetProperties</name></member>
+      <member refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>SetProperty</name></member>
+      <member refid="classDali_1_1Actor_1aa32262412cf7206c8e5fb52ee10d2124" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>SetResizePolicy</name></member>
+      <member refid="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Supports</name></member>
+      <member refid="classDali_1_1Actor_1ada69138deca6823d7c4432de705a49d9" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>TouchedSignal</name></member>
+      <member refid="classDali_1_1Actor_1a6836d62159b358e3ef969061f17ff148" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>TouchEventSignalType</name></member>
+      <member refid="classDali_1_1Actor_1a722ee8a9608d9a9fd8d0c251dcd223d9" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>TranslateBy</name></member>
+      <member refid="classDali_1_1Actor_1a1077f0048f5342385e9b0758cf3d9756" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>Unparent</name></member>
+      <member refid="classDali_1_1Actor_1abb45d4e8a7276addded42b6401a28bc7" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>WheelEventSignal</name></member>
+      <member refid="classDali_1_1Actor_1ad1adce84965265e107f628126b8916b6" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>WheelEventSignalType</name></member>
+      <member refid="classDali_1_1Actor_1ae17ad577040baea7e5e67e814022b636" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>~Actor</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>~BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1abf54df186713c711c2db1a389f1ff700" prot="public" virt="non-virtual"><scope>Dali::Actor</scope><name>~Handle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

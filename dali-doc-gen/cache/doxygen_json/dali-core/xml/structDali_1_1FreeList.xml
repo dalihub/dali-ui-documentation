@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structDali_1_1FreeList" kind="struct" language="C++" prot="public">
+    <compoundname>Dali::FreeList</compoundname>
+    <includes refid="free-list_8h" local="no">free-list.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structDali_1_1FreeList_1a20826d3ae53012dc138af83652c77825" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1Vector" kindref="compound">Dali::Vector</ref>&lt; uint32_t &gt;</type>
+        <definition>Dali::Vector&lt;uint32_t&gt; Dali::FreeList::mData</definition>
+        <argsstring></argsstring>
+        <name>mData</name>
+        <qualifiedname>Dali::FreeList::mData</qualifiedname>
+        <briefdescription>
+<para>data </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="112" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDali_1_1FreeList_1a1aba2bbf66fc8f2623c24069caeeb0e4" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::FreeList::mFirstFreeIndex</definition>
+        <argsstring></argsstring>
+        <name>mFirstFreeIndex</name>
+        <qualifiedname>Dali::FreeList::mFirstFreeIndex</qualifiedname>
+        <briefdescription>
+<para>Index where a new element will be added. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="113" column="26" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structDali_1_1FreeList_1aa84a3f32aa8cc9850d6de66db062ae80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FreeList::FreeList</definition>
+        <argsstring>()</argsstring>
+        <name>FreeList</name>
+        <qualifiedname>Dali::FreeList::FreeList</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="40" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="structDali_1_1FreeList_1aad07e86b4eb896bb6bd6d36fac5f1194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::FreeList::~FreeList</definition>
+        <argsstring>()=default</argsstring>
+        <name>~FreeList</name>
+        <qualifiedname>Dali::FreeList::~FreeList</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="49" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="structDali_1_1FreeList_1a46b0e30655f2789a651e89d669f89f23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::FreeList::Add</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>Add</name>
+        <qualifiedname>Dali::FreeList::Add</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Adds a new item to the list. If there is no more space in the vector it will allocate more space, otherwise, it will use the first free cell to store the new value and will update the first free index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index where the value has been added </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="59" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="59" bodyend="75"/>
+        <references refid="classDali_1_1Vector_1af552bde16aa0dcb0fc096f37ed97f8ed" compoundref="dali-vector_8h" startline="279" endline="300">Dali::Vector&lt; T, IsTrivialType &gt;::PushBack</references>
+      </memberdef>
+      <memberdef kind="function" id="structDali_1_1FreeList_1a22cd181e89453d236d1e5aa845b7460f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::FreeList::Remove</definition>
+        <argsstring>(uint32_t index)</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Dali::FreeList::Remove</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Removes the item at position &quot;index&quot; from the list and updates the first free index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the element to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="83" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="structDali_1_1FreeList_1a2f343ebb97bf43f3be8c722698105562" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t &amp;</type>
+        <definition>uint32_t &amp; Dali::FreeList::operator[]</definition>
+        <argsstring>(uint32_t index)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>Dali::FreeList::operator[]</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Subscript operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the element. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the element for given index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="95" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="structDali_1_1FreeList_1a34377d5e55ebe0e8551c7e8c4eadcf3b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::FreeList::operator[]</definition>
+        <argsstring>(uint32_t index) const</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>Dali::FreeList::operator[]</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Subscript operator (const). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the element. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the element for given index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="106" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="106" bodyend="109"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="structDali_1_1FreeList" kindref="compound">FreeList</ref> operates by connecting unused elements of a vector together in a linked list using the value of each unused cell as a pointer to the next. When a new element is added, it will be added to the first free index of the vector and the new free index will be the value which was on that cell. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" line="35" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/free-list.h" bodystart="36" bodyend="114"/>
+    <listofallmembers>
+      <member refid="structDali_1_1FreeList_1a46b0e30655f2789a651e89d669f89f23" prot="public" virt="non-virtual"><scope>Dali::FreeList</scope><name>Add</name></member>
+      <member refid="structDali_1_1FreeList_1aa84a3f32aa8cc9850d6de66db062ae80" prot="public" virt="non-virtual"><scope>Dali::FreeList</scope><name>FreeList</name></member>
+      <member refid="structDali_1_1FreeList_1a20826d3ae53012dc138af83652c77825" prot="private" virt="non-virtual"><scope>Dali::FreeList</scope><name>mData</name></member>
+      <member refid="structDali_1_1FreeList_1a1aba2bbf66fc8f2623c24069caeeb0e4" prot="private" virt="non-virtual"><scope>Dali::FreeList</scope><name>mFirstFreeIndex</name></member>
+      <member refid="structDali_1_1FreeList_1a2f343ebb97bf43f3be8c722698105562" prot="public" virt="non-virtual"><scope>Dali::FreeList</scope><name>operator[]</name></member>
+      <member refid="structDali_1_1FreeList_1a34377d5e55ebe0e8551c7e8c4eadcf3b" prot="public" virt="non-virtual"><scope>Dali::FreeList</scope><name>operator[]</name></member>
+      <member refid="structDali_1_1FreeList_1a22cd181e89453d236d1e5aa845b7460f" prot="public" virt="non-virtual"><scope>Dali::FreeList</scope><name>Remove</name></member>
+      <member refid="structDali_1_1FreeList_1aad07e86b4eb896bb6bd6d36fac5f1194" prot="public" virt="non-virtual"><scope>Dali::FreeList</scope><name>~FreeList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

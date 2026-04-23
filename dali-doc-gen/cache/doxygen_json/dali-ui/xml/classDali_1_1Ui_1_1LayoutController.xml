@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Ui_1_1LayoutController" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Ui::LayoutController</compoundname>
+    <includes refid="layout-controller_8h" local="no">layout-controller.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1Ui_1_1LayoutController_1abc0a319afe1cbefb8be8048910aae6f4" prot="private" static="no" mutable="no">
+        <type>Dali::UniquePtr&lt; <ref refid="classDali_1_1Ui_1_1Integration_1_1LayoutControllerImpl" kindref="compound">Integration::LayoutControllerImpl</ref> &gt;</type>
+        <definition>Dali::UniquePtr&lt;Integration::LayoutControllerImpl&gt; Dali::Ui::LayoutController::mImpl</definition>
+        <argsstring></argsstring>
+        <name>mImpl</name>
+        <qualifiedname>Dali::Ui::LayoutController::mImpl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="170" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a596146c9f8667b6234f98e2e653ea911" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;</type>
+        <definition>LayoutController &amp; Dali::Ui::LayoutController::Get</definition>
+        <argsstring>(Window window)</argsstring>
+        <name>Get</name>
+        <qualifiedname>Dali::Ui::LayoutController::Get</qualifiedname>
+        <param>
+          <type>Window</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Gets the layout controller instance for a window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the controller if it doesn&apos;t exist for the given window.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window to get the controller for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the layout controller </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="62" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="370" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a6138ccbae4623d69d91567f97f10ab67" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::Remove</definition>
+        <argsstring>(Window window)</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Dali::Ui::LayoutController::Remove</qualifiedname>
+        <param>
+          <type>Window</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Removes the layout controller for the given window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should be called when a window is being closed to release the associated <ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> and prevent stale entries.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window whose controller should be removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="89" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="395" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a4b248e9100c8065576d62600a1d94406" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::UnregisterFromAll</definition>
+        <argsstring>(ViewImpl *view)</argsstring>
+        <name>UnregisterFromAll</name>
+        <qualifiedname>Dali::Ui::LayoutController::UnregisterFromAll</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1ViewImpl" kindref="compound">ViewImpl</ref> *</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Unregisters a view from all known layout controllers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used when a view is being destroyed but its window cannot be determined (e.g. the view is already off-scene).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The view to unregister </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="109" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="406" bodyend="415"/>
+        <referencedby refid="classDali_1_1Ui_1_1ViewImpl_1a601c63f8173379e715a193c90abf657b" compoundref="view-impl_8cpp" startline="269" endline="284">Dali::Ui::ViewImpl::~ViewImpl</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a566e0f006189ef5a3e9bd7fe7b838884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::LayoutController::~LayoutController</definition>
+        <argsstring>()</argsstring>
+        <name>~LayoutController</name>
+        <qualifiedname>Dali::Ui::LayoutController::~LayoutController</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="67" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="422" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1ae2d1d9a1d066310386873101ba96d84c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::RequestLayout</definition>
+        <argsstring>(ViewImpl *view)</argsstring>
+        <name>RequestLayout</name>
+        <qualifiedname>Dali::Ui::LayoutController::RequestLayout</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1ViewImpl" kindref="compound">ViewImpl</ref> *</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Schedules a view with layout capability for layout processing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Ui_1_1Layout" kindref="compound">Layout</ref> roots are views that have a <ref refid="classDali_1_1Ui_1_1LayoutManager" kindref="compound">LayoutManager</ref> and are at the top of the layout hierarchy (e.g. directly under the window). The controller will batch these requests and process them during the next frame.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The view with layout capability to schedule </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="79" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="426" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a4db6fc84e541c869a72d7ed2538d73e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::UnregisterView</definition>
+        <argsstring>(ViewImpl *view)</argsstring>
+        <name>UnregisterView</name>
+        <qualifiedname>Dali::Ui::LayoutController::UnregisterView</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1ViewImpl" kindref="compound">ViewImpl</ref> *</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Unregisters a view from the layout controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should be called when a layout root is being destroyed to prevent dangling pointer access.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The view to unregister </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="99" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="431" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a5653473d9fdec94acfdfd31d97d60c18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::OnWindowResize</definition>
+        <argsstring>(int32_t width, int32_t height)</argsstring>
+        <name>OnWindowResize</name>
+        <qualifiedname>Dali::Ui::LayoutController::OnWindowResize</qualifiedname>
+        <param>
+          <type>int32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int32_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Called when the window is resized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This invalidates all layout roots and triggers a layout pass.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new window width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new window height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="119" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="436" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a49cd87d153debe0ec1b62ed8008c0e6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::ProcessLayouts</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessLayouts</name>
+        <qualifiedname>Dali::Ui::LayoutController::ProcessLayouts</qualifiedname>
+        <briefdescription>
+<para>Processes all pending layout requests immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is called automatically by the system once per frame, but can be called manually if immediate layout is needed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="127" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="441" bodyend="444"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a13612af5816fb22de29606e75230ae21" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::LayoutController::LayoutController</definition>
+        <argsstring>(Window window)</argsstring>
+        <name>LayoutController</name>
+        <qualifiedname>Dali::Ui::LayoutController::LayoutController</qualifiedname>
+        <param>
+          <type>Window</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Private constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use <ref refid="classDali_1_1Ui_1_1LayoutController_1a596146c9f8667b6234f98e2e653ea911" kindref="member">LayoutController::Get()</ref> to obtain an instance.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window this controller manages </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="137" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="417" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a317738b4f00c88f757b580ea7eec4e12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::LayoutController::LayoutController</definition>
+        <argsstring>(const LayoutController &amp;)=delete</argsstring>
+        <name>LayoutController</name>
+        <qualifiedname>Dali::Ui::LayoutController::LayoutController</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="140" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1acb62c8e92f0ed6f6f37f71e39f73c9f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::LayoutController::LayoutController</definition>
+        <argsstring>(LayoutController &amp;&amp;)=delete</argsstring>
+        <name>LayoutController</name>
+        <qualifiedname>Dali::Ui::LayoutController::LayoutController</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="141" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a6f0f4abf6ebe3e46942a5961b73bbedf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;</type>
+        <definition>LayoutController &amp; Dali::Ui::LayoutController::operator=</definition>
+        <argsstring>(const LayoutController &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Ui::LayoutController::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="142" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a2d82fb638d9421653fdbdfadd4b7aa27" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;</type>
+        <definition>LayoutController &amp; Dali::Ui::LayoutController::operator=</definition>
+        <argsstring>(LayoutController &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Ui::LayoutController::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="143" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1ac687838157d88785f1a2e62846cda460" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::Window</type>
+        <definition>Dali::Window Dali::Ui::LayoutController::GetCurrentWindow</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentWindow</name>
+        <qualifiedname>Dali::Ui::LayoutController::GetCurrentWindow</qualifiedname>
+        <briefdescription>
+<para>Gets the current window handle managed by this layout controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the window that this layout controller instance is associated with. This is used internally to verify if the window has been replaced.</para>
+<para><simplesect kind="return"><para>The current window handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="154" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="446" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1LayoutController_1a34cbb29a7faa8ad6a4deaf14e3b0b9b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::LayoutController::ReplaceCurrentWindow</definition>
+        <argsstring>(Dali::Window window)</argsstring>
+        <name>ReplaceCurrentWindow</name>
+        <qualifiedname>Dali::Ui::LayoutController::ReplaceCurrentWindow</qualifiedname>
+        <param>
+          <type>Dali::Window</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Replaces the current window with a new one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the layout controller to manage a different window instance. This is called when a window object has been replaced but the same <ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> instance should continue managing layouts for the new window. The method reconnects the window resize signal to ensure layout invalidation continues to work correctly.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new window to manage </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="167" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.cpp" bodystart="451" bodyend="454"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Ui_1_1Layout" kindref="compound">Layout</ref> controller manages layout invalidation and processing. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The layout controller is responsible for scheduling layout passes when layouts become invalid and processing them during the render loop. It integrates with the DALi adaptor system as a processor.</para>
+<para>Each Window has its own <ref refid="classDali_1_1Ui_1_1LayoutController" kindref="compound">LayoutController</ref> instance. The controller batches layout requests and processes them once per frame to optimize performance. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" line="51" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/layouts/layout-controller.h" bodystart="52" bodyend="171"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a596146c9f8667b6234f98e2e653ea911" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>Get</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1ac687838157d88785f1a2e62846cda460" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>GetCurrentWindow</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a13612af5816fb22de29606e75230ae21" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>LayoutController</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a317738b4f00c88f757b580ea7eec4e12" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>LayoutController</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1acb62c8e92f0ed6f6f37f71e39f73c9f5" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>LayoutController</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1abc0a319afe1cbefb8be8048910aae6f4" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>mImpl</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a5653473d9fdec94acfdfd31d97d60c18" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>OnWindowResize</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a6f0f4abf6ebe3e46942a5961b73bbedf" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a2d82fb638d9421653fdbdfadd4b7aa27" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a49cd87d153debe0ec1b62ed8008c0e6e" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>ProcessLayouts</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a6138ccbae4623d69d91567f97f10ab67" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>Remove</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a34cbb29a7faa8ad6a4deaf14e3b0b9b0" prot="private" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>ReplaceCurrentWindow</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1ae2d1d9a1d066310386873101ba96d84c" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>RequestLayout</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a4b248e9100c8065576d62600a1d94406" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>UnregisterFromAll</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a4db6fc84e541c869a72d7ed2538d73e6" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>UnregisterView</name></member>
+      <member refid="classDali_1_1Ui_1_1LayoutController_1a566e0f006189ef5a3e9bd7fe7b838884" prot="public" virt="non-virtual"><scope>Dali::Ui::LayoutController</scope><name>~LayoutController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

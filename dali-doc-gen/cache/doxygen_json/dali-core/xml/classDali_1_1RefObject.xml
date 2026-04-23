@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1RefObject" kind="class" language="C++" prot="public">
+    <compoundname>Dali::RefObject</compoundname>
+    <derivedcompoundref refid="classDali_1_1BaseObject" prot="public" virt="non-virtual">Dali::BaseObject</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1CustomActorImpl" prot="public" virt="non-virtual">Dali::CustomActorImpl</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1NativeImageInterface" prot="public" virt="non-virtual">Dali::NativeImageInterface</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1RefCountedVector" prot="public" virt="non-virtual">Dali::RefCountedVector&lt; T &gt;</derivedcompoundref>
+    <includes refid="ref-object_8h" local="no">ref-object.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1RefObject_1a0c0599515ec5fff31481aa19768d0cf5" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::RefObject::mCount</definition>
+        <argsstring></argsstring>
+        <name>mCount</name>
+        <qualifiedname>Dali::RefObject::mCount</qualifiedname>
+        <initializer>{0u}</initializer>
+        <briefdescription>
+<para>Reference count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="117" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" bodystart="117" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1RefObject_1a704b3658a61345abe6f087976b844373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RefObject::Reference</definition>
+        <argsstring>()</argsstring>
+        <name>Reference</name>
+        <qualifiedname>Dali::RefObject::Reference</qualifiedname>
+        <briefdescription>
+<para>Increments the object&apos;s reference count. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="51" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::RefObject::Unreference</definition>
+        <argsstring>()</argsstring>
+        <name>Unreference</name>
+        <qualifiedname>Dali::RefObject::Unreference</qualifiedname>
+        <briefdescription>
+<para>Decrements the object&apos;s reference count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When the reference count drops to zero, the object will self-destruct. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="59" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="57" bodyend="66"/>
+        <references refid="classDali_1_1RefObject_1a8d4561eff5738e0adc27df94b1a885ca" compoundref="ref-object_8cpp" startline="73" endline="75">OnDestroy</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1a76ddae6672a3a475600afbf11c1de4e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::RefObject::ReferenceCount</definition>
+        <argsstring>() const</argsstring>
+        <name>ReferenceCount</name>
+        <qualifiedname>Dali::RefObject::ReferenceCount</qualifiedname>
+        <briefdescription>
+<para>Retrieves the object&apos;s reference count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The reference count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="67" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1RefObject_1ac16c6f0e745027ae9e003a1ad454f37b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RefObject::RefObject</definition>
+        <argsstring>()</argsstring>
+        <name>RefObject</name>
+        <qualifiedname>Dali::RefObject::RefObject</qualifiedname>
+        <briefdescription>
+<para>Default constructor. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="74" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1ace8513a27ef2d48383da36ce9d1931f7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Dali::RefObject::~RefObject</definition>
+        <argsstring>()</argsstring>
+        <name>~RefObject</name>
+        <qualifiedname>Dali::RefObject::~RefObject</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> is intended as a base class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> may only be deleted when its reference count is zero. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="82" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="36" bodyend="44"/>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1a8d4561eff5738e0adc27df94b1a885ca" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::RefObject::OnDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>OnDestroy</name>
+        <qualifiedname>Dali::RefObject::OnDestroy</qualifiedname>
+        <reimplementedby refid="classDali_1_1BaseObject_1a64644c5b792f3796230c24b9124b32cc">OnDestroy</reimplementedby>
+        <briefdescription>
+<para>Pre-destructor method for derived class. It will be called when the reference count become zero. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.39 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="90" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="73" bodyend="75"/>
+        <referencedby refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" compoundref="ref-object_8cpp" startline="57" endline="66">Unreference</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1acbaa8edefcb9bec5689d3a7506e4fc5e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RefObject::RefObject</definition>
+        <argsstring>(const RefObject &amp;rhs)</argsstring>
+        <name>RefObject</name>
+        <qualifiedname>Dali::RefObject::RefObject</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The newly copied object will have a reference count of zero. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="99" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1a840c6388ec1e12b1a8cc4cdb77232589" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> &amp;</type>
+        <definition>RefObject &amp; Dali::RefObject::operator=</definition>
+        <argsstring>(const RefObject &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::RefObject::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The newly copied object will have a reference count of zero. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="109" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.cpp" bodystart="46" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDali_1_1RefObject_1a7fcf05432e5e0337042a71c3c0d42721" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::RefObject::RefObject</definition>
+        <argsstring>(RefObject &amp;&amp;rhs)=delete</argsstring>
+        <name>RefObject</name>
+        <qualifiedname>Dali::RefObject::RefObject</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="113" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1RefObject_1ab54bc9991cf314070f89edec784f7d93" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> &amp;</type>
+        <definition>RefObject &amp; Dali::RefObject::operator=</definition>
+        <argsstring>(RefObject &amp;&amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::RefObject::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1RefObject" kindref="compound">RefObject</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="114" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for reference counted objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Typically this should be used with an intrusive pointer, instead of calling <ref refid="classDali_1_1RefObject_1a704b3658a61345abe6f087976b844373" kindref="member">Reference()</ref> and <ref refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" kindref="member">Unreference()</ref> methods directly. @SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::BaseObject</label>
+        <link refid="classDali_1_1BaseObject"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dali::CustomActorImpl</label>
+        <link refid="classDali_1_1CustomActorImpl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Dali::NativeImageInterface</label>
+        <link refid="classDali_1_1NativeImageInterface"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Dali::RefCountedVector&lt; T &gt;</label>
+        <link refid="classDali_1_1RefCountedVector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" line="44" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/ref-object.h" bodystart="45" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classDali_1_1RefObject_1a0c0599515ec5fff31481aa19768d0cf5" prot="private" virt="non-virtual"><scope>Dali::RefObject</scope><name>mCount</name></member>
+      <member refid="classDali_1_1RefObject_1a8d4561eff5738e0adc27df94b1a885ca" prot="protected" virt="virtual"><scope>Dali::RefObject</scope><name>OnDestroy</name></member>
+      <member refid="classDali_1_1RefObject_1a840c6388ec1e12b1a8cc4cdb77232589" prot="protected" virt="non-virtual"><scope>Dali::RefObject</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RefObject_1ab54bc9991cf314070f89edec784f7d93" prot="private" virt="non-virtual"><scope>Dali::RefObject</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RefObject_1a704b3658a61345abe6f087976b844373" prot="public" virt="non-virtual"><scope>Dali::RefObject</scope><name>Reference</name></member>
+      <member refid="classDali_1_1RefObject_1a76ddae6672a3a475600afbf11c1de4e0" prot="public" virt="non-virtual"><scope>Dali::RefObject</scope><name>ReferenceCount</name></member>
+      <member refid="classDali_1_1RefObject_1ac16c6f0e745027ae9e003a1ad454f37b" prot="protected" virt="non-virtual"><scope>Dali::RefObject</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1RefObject_1acbaa8edefcb9bec5689d3a7506e4fc5e" prot="protected" virt="non-virtual"><scope>Dali::RefObject</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1RefObject_1a7fcf05432e5e0337042a71c3c0d42721" prot="private" virt="non-virtual"><scope>Dali::RefObject</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" prot="public" virt="non-virtual"><scope>Dali::RefObject</scope><name>Unreference</name></member>
+      <member refid="classDali_1_1RefObject_1ace8513a27ef2d48383da36ce9d1931f7" prot="protected" virt="virtual"><scope>Dali::RefObject</scope><name>~RefObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

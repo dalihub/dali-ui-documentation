@@ -1,0 +1,1379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1CustomActorImpl" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::CustomActorImpl</compoundname>
+    <basecompoundref refid="classDali_1_1RefObject" prot="public" virt="non-virtual">Dali::RefObject</basecompoundref>
+    <includes refid="custom-actor-impl_8h" local="no">custom-actor-impl.h</includes>
+    <sectiondef kind="protected-type">
+      <memberdef kind="enum" id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0" prot="protected" static="no" strong="no">
+        <type></type>
+        <name>ActorFlags</name>
+        <qualifiedname>Dali::CustomActorImpl::ActorFlags</qualifiedname>
+        <enumvalue id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a9b5fd7441f43e289bc61cef07eca8545" prot="protected">
+          <name>ACTOR_BEHAVIOUR_DEFAULT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Use to provide default behaviour (size negotiation is on, event callbacks are not called). @SINCE_1_2_10. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a1e80bb93beb6ade743d0276346c39913" prot="protected">
+          <name>DISABLE_SIZE_NEGOTIATION</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>True if control does not need size negotiation, i.e. it can be skipped in the algorithm @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a894734b6d2735f58f8b83b57e0fd5df8" prot="protected">
+          <name>NOT_IN_USE_1</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a7cab7d6e3659d5bd33961727f561d750" prot="protected">
+          <name>NOT_IN_USE_2</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0ae2925f98f4e9868e351ebbda42d11658" prot="protected">
+          <name>NOT_IN_USE_3</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a78b4fb619167750ef1502a1149cd41d2" prot="protected">
+          <name>LAST_ACTOR_FLAG</name>
+          <briefdescription>
+<para>Special marker for last actor flag @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the constructor flags. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="386" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="387" bodyend="395"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classDali_1_1CustomActorImpl_1aded210c48cc556e8134f71eb226e67d2" prot="protected" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr int32_t</type>
+        <definition>constexpr int32_t Dali::CustomActorImpl::ACTOR_FLAG_COUNT</definition>
+        <argsstring></argsstring>
+        <name>ACTOR_FLAG_COUNT</name>
+        <qualifiedname>Dali::CustomActorImpl::ACTOR_FLAG_COUNT</qualifiedname>
+        <initializer>= <ref refid="structDali_1_1Log" kindref="compound">Log</ref>&lt;<ref refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a78b4fb619167750ef1502a1149cd41d2" kindref="member">LAST_ACTOR_FLAG</ref> - 1&gt;::value + 1</initializer>
+        <briefdescription>
+<para>Value for deriving classes to continue on the flag enum. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="397" column="28" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="397" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDali_1_1CustomActorImpl_1a3eaacfd6f9cbf18b0694c576f57cade6" prot="private" static="no" mutable="no">
+        <type>Internal::CustomActor *</type>
+        <definition>Internal::CustomActor* Dali::CustomActorImpl::mOwner</definition>
+        <argsstring></argsstring>
+        <name>mOwner</name>
+        <qualifiedname>Dali::CustomActorImpl::mOwner</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespaceDali_1_1Internal" kindref="compound">Internal</ref> owner of this custom actor implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="486" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="486" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDali_1_1CustomActorImpl_1aa8384e030c70737b2498fa7508f87f31" prot="private" static="no" mutable="no">
+        <type><ref refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0" kindref="member">ActorFlags</ref></type>
+        <definition>ActorFlags Dali::CustomActorImpl::mFlags</definition>
+        <argsstring></argsstring>
+        <name>mFlags</name>
+        <qualifiedname>Dali::CustomActorImpl::mFlags</qualifiedname>
+        <briefdescription>
+<para>ActorFlags flags to determine behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="487" column="26" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="487" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1abd4eb1ecbca0f58f35d0a3f31d530026" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CustomActorImpl::~CustomActorImpl</definition>
+        <argsstring>() override</argsstring>
+        <name>~CustomActorImpl</name>
+        <qualifiedname>Dali::CustomActorImpl::~CustomActorImpl</qualifiedname>
+        <briefdescription>
+<para>Forward declare future extension interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual destructor @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="79" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a4e2a0ec725105b7e0cd0bd394b8d257d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::CustomActorImpl::CustomActorImpl</definition>
+        <argsstring>(ActorFlags flags)</argsstring>
+        <name>CustomActorImpl</name>
+        <qualifiedname>Dali::CustomActorImpl::CustomActorImpl</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0" kindref="member">ActorFlags</ref></type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bitfield of ActorFlags to define behaviour </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="404" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="62" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a4be77359d65746c58124918398096d42" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::RelayoutRequest</definition>
+        <argsstring>()</argsstring>
+        <name>RelayoutRequest</name>
+        <qualifiedname>Dali::CustomActorImpl::RelayoutRequest</qualifiedname>
+        <briefdescription>
+<para>Requests a relayout, which means performing a size negotiation on this actor, its parent and children (and potentially whole scene). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method can also be called from a derived class every time it needs a different size. At the end of event processing, the relayout process starts and all controls which requested Relayout will have their sizes (re)negotiated.</para>
+<para>@SINCE_1_0.0 <simplesect kind="note"><para><ref refid="classDali_1_1CustomActorImpl_1a4be77359d65746c58124918398096d42" kindref="member">RelayoutRequest()</ref> can be called multiple times; the size negotiation is still only performed once, i.e. there is no need to keep track of this in the calling side. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="419" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ada3efea45ccb9402f1336b0b112102c0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::CustomActorImpl::GetHeightForWidthBase</definition>
+        <argsstring>(float width)</argsstring>
+        <name>GetHeightForWidthBase</name>
+        <qualifiedname>Dali::CustomActorImpl::GetHeightForWidthBase</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+<para>Provides the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> implementation of GetHeightForWidth. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The height based on the width </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="427" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1aa20ebe819416c1d56d0b50af8d679928" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::CustomActorImpl::GetWidthForHeightBase</definition>
+        <argsstring>(float height)</argsstring>
+        <name>GetWidthForHeightBase</name>
+        <qualifiedname>Dali::CustomActorImpl::GetWidthForHeightBase</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Provides the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> implementation of GetWidthForHeight. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The width based on the height </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="435" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ac4b67a720150327b49bcbae84f293afb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::CustomActorImpl::CalculateChildSizeBase</definition>
+        <argsstring>(const Dali::Actor &amp;child, Dimension::Type dimension)</argsstring>
+        <name>CalculateChildSizeBase</name>
+        <qualifiedname>Dali::CustomActorImpl::CalculateChildSizeBase</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Actor" kindref="compound">Dali::Actor</ref> &amp;</type>
+          <declname>child</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the size for a child using the base actor object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child actor to calculate the size for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension to calculate the size for. E.g. width or height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return the calculated size for the given dimension. If more than one dimension is requested, just return the first one found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="445" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1aed96564fc7475d9df0fbb677aedd9e52" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CustomActorImpl::RelayoutDependentOnChildrenBase</definition>
+        <argsstring>(Dimension::Type dimension=Dimension::ALL_DIMENSIONS)</argsstring>
+        <name>RelayoutDependentOnChildrenBase</name>
+        <qualifiedname>Dali::CustomActorImpl::RelayoutDependentOnChildrenBase</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+          <defval><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8baff7e6288296be82e318d915fbb5c09ab" kindref="member">Dimension::ALL_DIMENSIONS</ref></defval>
+        </param>
+        <briefdescription>
+<para>Determines if this actor is dependent on its children for relayout from the base class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension(s) to check for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return if the actor is dependent on it&apos;s children </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="454" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1affc7d9be7ed865b15d11e22d51a83c0f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref></type>
+        <definition>CustomActor Dali::CustomActorImpl::Self</definition>
+        <argsstring>() const</argsstring>
+        <name>Self</name>
+        <qualifiedname>Dali::CustomActorImpl::Self</qualifiedname>
+        <briefdescription>
+<para>Used by derived <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> instances, to access the public <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>A pointer to self, or an uninitialized pointer if the <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> is not owned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="88" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a0df6f7fda359c1827faab828e531380d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnSceneConnection</definition>
+        <argsstring>(int32_t depth)=0</argsstring>
+        <name>OnSceneConnection</name>
+        <qualifiedname>Dali::CustomActorImpl::OnSceneConnection</qualifiedname>
+        <param>
+          <type>int32_t</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+<para>Called after the actor has been connected to the Scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When an actor is connected, it will be directly or indirectly parented to the root <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. @SINCE_1_9.24 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The depth in the hierarchy for the actor</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The root <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> is provided automatically by the Scene, and is always considered to be connected. When the parent of a set of actors is connected to the scene, then all of the children will received this callback. For the following actor tree, the callback order will be A, B, D, E, C, and finally F.</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>(parent)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>/<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>B<sp/><sp/><sp/>C</highlight></codeline>
+<codeline><highlight class="normal"><sp/>/<sp/>\<sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal">D<sp/><sp/><sp/>E<sp/><sp/><sp/>F</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="112" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a5e4b9bdad16bf86e0ad7c31818697c4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnSceneDisconnection</definition>
+        <argsstring>()=0</argsstring>
+        <name>OnSceneDisconnection</name>
+        <qualifiedname>Dali::CustomActorImpl::OnSceneDisconnection</qualifiedname>
+        <briefdescription>
+<para>Called after the actor has been disconnected from the Scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If an actor is disconnected, it either has no parent or is parented to a disconnected actor.</para>
+<para>@SINCE_1_9.24 <simplesect kind="note"><para>When the parent of a set of actors is disconnected to the scene, then all of the children will received this callback, starting with the leaf actors. For the following actor tree, the callback order will be D, E, B, F, C, and finally A.</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>A<sp/>(parent)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>/<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>B<sp/><sp/><sp/>C</highlight></codeline>
+<codeline><highlight class="normal"><sp/>/<sp/>\<sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal">D<sp/><sp/><sp/>E<sp/><sp/><sp/>F</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="134" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a48fc850baf671d741e298031eb751189" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnChildAdd</definition>
+        <argsstring>(Actor &amp;child)=0</argsstring>
+        <name>OnChildAdd</name>
+        <qualifiedname>Dali::CustomActorImpl::OnChildAdd</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Called after a child has been added to the owning actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child which has been added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="142" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a226bf02b8034673eb4e39163dfe9834e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnChildRemove</definition>
+        <argsstring>(Actor &amp;child)=0</argsstring>
+        <name>OnChildRemove</name>
+        <qualifiedname>Dali::CustomActorImpl::OnChildRemove</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> &amp;</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Called after the owning actor has attempted to remove a child (regardless of whether it succeeded or not). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child being removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="150" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a78c000ba1bae7703a7b5155f9a8a1add" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::OnPropertySet</definition>
+        <argsstring>(Property::Index index, const Property::Value &amp;propertyValue)</argsstring>
+        <name>OnPropertySet</name>
+        <qualifiedname>Dali::CustomActorImpl::OnPropertySet</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>propertyValue</declname>
+        </param>
+        <briefdescription>
+<para>Called when the owning actor property is set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1Property" kindref="compound">Property</ref> index that was set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="159" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1aab4d2767ea89c41931b0bf56e96a749a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnSizeSet</definition>
+        <argsstring>(const Vector3 &amp;targetSize)=0</argsstring>
+        <name>OnSizeSet</name>
+        <qualifiedname>Dali::CustomActorImpl::OnSizeSet</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>targetSize</declname>
+        </param>
+        <briefdescription>
+<para>Called when the owning actor&apos;s size is set e.g. using Actor::SetSize(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">targetSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target size. Note that this target size may not match the size returned via <ref refid="classDali_1_1Actor_1a2fd83eafcdce7283f77774e719f52abb" kindref="member">Actor::GetTargetSize</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="167" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a3c36214b032f2fbbe7c77565cd5d12f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnSizeAnimation</definition>
+        <argsstring>(Animation &amp;animation, const Vector3 &amp;targetSize)=0</argsstring>
+        <name>OnSizeAnimation</name>
+        <qualifiedname>Dali::CustomActorImpl::OnSizeAnimation</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;</type>
+          <declname>animation</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>targetSize</declname>
+        </param>
+        <briefdescription>
+<para>Called when the owning actor&apos;s size is animated e.g. using Animation::AnimateTo( Property( actor, Actor::Property::SIZE ), ... ). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">animation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object which is animating the owning actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">targetSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target size. Note that this target size may not match the size returned via <ref refid="classDali_1_1Actor_1a2fd83eafcdce7283f77774e719f52abb" kindref="member">Actor::GetTargetSize</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="176" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a74d344e6882eead00836622d758ee4e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnAnimateAnimatableProperty</definition>
+        <argsstring>(Animation &amp;animation, Property::Index index, Dali::Animation::State state)</argsstring>
+        <name>OnAnimateAnimatableProperty</name>
+        <qualifiedname>Dali::CustomActorImpl::OnAnimateAnimatableProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Animation" kindref="compound">Animation</ref> &amp;</type>
+          <declname>animation</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Animation_1aef1f63329eb806be72deab31c3c29362" kindref="member">Dali::Animation::State</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Called when animating the owning actor&apos;s animatable property. @SINCE_2_4.27. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">animation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object which is animating the owning actor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The animatable property index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current animation state </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="185" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="185" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a94cebd08a096cc8d52e7412b285b88c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnConstraintAnimatableProperty</definition>
+        <argsstring>(Constraint &amp;constraint, Property::Index index, bool applied)</argsstring>
+        <name>OnConstraintAnimatableProperty</name>
+        <qualifiedname>Dali::CustomActorImpl::OnConstraintAnimatableProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> &amp;</type>
+          <declname>constraint</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>applied</declname>
+        </param>
+        <briefdescription>
+<para>Called when apply constraint property or removed. @SINCE_2_4.41. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">constraint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The constraint constrainting the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The animatable property index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">applied</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether it is applied or not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="196" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="196" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1aa43b6f96c6068051714167a6b3fe9f82" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::GetOffScreenRenderTasks</definition>
+        <argsstring>(Dali::Vector&lt; Dali::RenderTask &gt; &amp;tasks, bool isForward)=0</argsstring>
+        <name>GetOffScreenRenderTasks</name>
+        <qualifiedname>Dali::CustomActorImpl::GetOffScreenRenderTasks</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Vector" kindref="compound">Dali::Vector</ref>&lt; <ref refid="classDali_1_1RenderTask" kindref="compound">Dali::RenderTask</ref> &gt; &amp;</type>
+          <declname>tasks</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isForward</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the off-screen RenderTasks associated with the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. This method returns the internal RenderTasks held by the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. This tasks are used for off-screen rendering, and the system will assign order index to each tasks based on the render order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> with a non-NONE OffScreenRenderableType should override this method to provide their render tasks.</para>
+<para>@SINCE_2_3.43 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">tasks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of RenderTasks to be populated with the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>&apos;s forward or backward off-screen <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">isForward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether to retrieve forward (true) or backward (false) RenderTasks. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="215" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ad8571d3e718c99a7c6b7173de25a3020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::SetOffScreenRenderableType</definition>
+        <argsstring>(OffScreenRenderable::Type offScreenRenderableType)</argsstring>
+        <name>SetOffScreenRenderableType</name>
+        <qualifiedname>Dali::CustomActorImpl::SetOffScreenRenderableType</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1OffScreenRenderable_1aa219e978a053c014302ae0873a2f4362" kindref="member">OffScreenRenderable::Type</ref></type>
+          <declname>offScreenRenderableType</declname>
+        </param>
+        <briefdescription>
+<para>Sets OffScreenRenderableType of this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. This method is called by child class to set type itself. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.43 @DEPRECATED_2_4.17 Use <ref refid="classDali_1_1CustomActorImpl_1aff9f22ba5815f72deb8a9933a56b7d7e" kindref="member">RegisterOffScreenRenderableType()</ref> instead. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">offScreenRenderableType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OffScreenRenderableType for this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. It could be one of NONE, FORWARD, BACKWARD, and BOTH. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="226" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="37" bodyend="40"/>
+        <references refid="classDali_1_1CustomActorImpl_1aff9f22ba5815f72deb8a9933a56b7d7e" compoundref="custom-actor-impl_8cpp" startline="42" endline="45">RegisterOffScreenRenderableType</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1aff9f22ba5815f72deb8a9933a56b7d7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::RegisterOffScreenRenderableType</definition>
+        <argsstring>(OffScreenRenderable::Type offScreenRenderableType)</argsstring>
+        <name>RegisterOffScreenRenderableType</name>
+        <qualifiedname>Dali::CustomActorImpl::RegisterOffScreenRenderableType</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1OffScreenRenderable_1aa219e978a053c014302ae0873a2f4362" kindref="member">OffScreenRenderable::Type</ref></type>
+          <declname>offScreenRenderableType</declname>
+        </param>
+        <briefdescription>
+<para>Register OffScreenRenderableType of this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. This method is called by child class to set type itself. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.17 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">offScreenRenderableType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OffScreenRenderableType for this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. It could be one of NONE, FORWARD, BACKWARD, and BOTH. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Each FORWARD / BACKWARD type could be added maxium 15 times. </para>
+</simplesect>
+<simplesect kind="post"><para>Call <ref refid="classDali_1_1CustomActorImpl_1ae6ba08babc5a11d4b5110dd2e27650e8" kindref="member">UnregisterOffScreenRenderableType()</ref> to unregister the type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="238" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="42" bodyend="45"/>
+        <referencedby refid="classDali_1_1CustomActorImpl_1ad8571d3e718c99a7c6b7173de25a3020" compoundref="custom-actor-impl_8cpp" startline="37" endline="40">SetOffScreenRenderableType</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ae6ba08babc5a11d4b5110dd2e27650e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::UnregisterOffScreenRenderableType</definition>
+        <argsstring>(OffScreenRenderable::Type offScreenRenderableType)</argsstring>
+        <name>UnregisterOffScreenRenderableType</name>
+        <qualifiedname>Dali::CustomActorImpl::UnregisterOffScreenRenderableType</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1OffScreenRenderable_1aa219e978a053c014302ae0873a2f4362" kindref="member">OffScreenRenderable::Type</ref></type>
+          <declname>offScreenRenderableType</declname>
+        </param>
+        <briefdescription>
+<para>Unregister OffScreenRenderableType of this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. This method is called by child class to set type itself. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.17 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">offScreenRenderableType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OffScreenRenderableType for this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. It could be one of NONE, FORWARD, BACKWARD, and BOTH. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>Call <ref refid="classDali_1_1CustomActorImpl_1aff9f22ba5815f72deb8a9933a56b7d7e" kindref="member">RegisterOffScreenRenderableType()</ref> before unregister the type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="249" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a2a99ae7aa042eabf5a7eec6b2b22d1d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1OffScreenRenderable_1aa219e978a053c014302ae0873a2f4362" kindref="member">OffScreenRenderable::Type</ref></type>
+        <definition>OffScreenRenderable::Type Dali::CustomActorImpl::GetOffScreenRenderableType</definition>
+        <argsstring>()</argsstring>
+        <name>GetOffScreenRenderableType</name>
+        <qualifiedname>Dali::CustomActorImpl::GetOffScreenRenderableType</qualifiedname>
+        <briefdescription>
+<para>Retrieves OffScreenRenderableType of this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.43 <simplesect kind="return"><para>OffScreenRenderableType for this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="257" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a8625da1bb6dfd2babcd98d7fdd44d25c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::RequestRenderTaskReorder</definition>
+        <argsstring>()</argsstring>
+        <name>RequestRenderTaskReorder</name>
+        <qualifiedname>Dali::CustomActorImpl::RequestRenderTaskReorder</qualifiedname>
+        <briefdescription>
+<para>Requests <ref refid="classDali_1_1RenderTask" kindref="compound">RenderTask</ref> reordering when the offscreen properties of this <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> are changed. @SINCE_2_3.43. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="263" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a39e1bc3ed48b988cc118d9cdf4eae7fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnRelayout</definition>
+        <argsstring>(const Vector2 &amp;size, RelayoutContainer &amp;container)=0</argsstring>
+        <name>OnRelayout</name>
+        <qualifiedname>Dali::CustomActorImpl::OnRelayout</qualifiedname>
+        <param>
+          <type>const <ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1RelayoutContainer" kindref="compound">RelayoutContainer</ref> &amp;</type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+<para>Called after the size negotiation has been finished for this control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The control is expected to assign this given size to itself/its children.</para>
+<para>Should be overridden by derived classes if they need to layout actors differently after certain operations like add or remove actors, resize or after changing specific properties.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The allocated size </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The control should add actors to this container that it is not able to allocate a size for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>As this function is called from inside the size negotiation algorithm, you cannot call RequestRelayout (the call would just be ignored). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="281" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1aa425a3a6d54524dcbb705d36cc16677d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnSetResizePolicy</definition>
+        <argsstring>(ResizePolicy::Type policy, Dimension::Type dimension)=0</argsstring>
+        <name>OnSetResizePolicy</name>
+        <qualifiedname>Dali::CustomActorImpl::OnSetResizePolicy</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1ResizePolicy_1a8c47ec1e0b9c73e0fa8e40cfdd99276a" kindref="member">ResizePolicy::Type</ref></type>
+          <declname>policy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Notification for deriving classes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">policy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The policy being set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension the policy is being set for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="290" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ac479b33807179484b2bd670968768927" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structDali_1_1Vector3" kindref="compound">Vector3</ref></type>
+        <definition>virtual Vector3 Dali::CustomActorImpl::GetNaturalSize</definition>
+        <argsstring>()=0</argsstring>
+        <name>GetNaturalSize</name>
+        <qualifiedname>Dali::CustomActorImpl::GetNaturalSize</qualifiedname>
+        <briefdescription>
+<para>Returns the natural size of the actor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The actor&apos;s natural size </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="298" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1afae537e0dd777ad4eecda1cb390e795f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float Dali::CustomActorImpl::CalculateChildSize</definition>
+        <argsstring>(const Dali::Actor &amp;child, Dimension::Type dimension)=0</argsstring>
+        <name>CalculateChildSize</name>
+        <qualifiedname>Dali::CustomActorImpl::CalculateChildSize</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Actor" kindref="compound">Dali::Actor</ref> &amp;</type>
+          <declname>child</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the size for a child. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child actor to calculate the size for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension to calculate the size for. E.g. width or height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return the calculated size for the given dimension </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="308" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ac19d289f2c550492f69709dce66c52a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float Dali::CustomActorImpl::GetHeightForWidth</definition>
+        <argsstring>(float width)=0</argsstring>
+        <name>GetHeightForWidth</name>
+        <qualifiedname>Dali::CustomActorImpl::GetHeightForWidth</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+<para>This method is called during size negotiation when a height is required for a given width. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Derived classes should override this if they wish to customize the height returned.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The height based on the width </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="319" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a418b435d1417f653aead1c4e469f34bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float Dali::CustomActorImpl::GetWidthForHeight</definition>
+        <argsstring>(float height)=0</argsstring>
+        <name>GetWidthForHeight</name>
+        <qualifiedname>Dali::CustomActorImpl::GetWidthForHeight</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>This method is called during size negotiation when a width is required for a given height. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Derived classes should override this if they wish to customize the width returned.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The width based on the width </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="330" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a96e73a7e1a960962d12c78dd219ef448" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::CustomActorImpl::RelayoutDependentOnChildren</definition>
+        <argsstring>(Dimension::Type dimension=Dimension::ALL_DIMENSIONS)=0</argsstring>
+        <name>RelayoutDependentOnChildren</name>
+        <qualifiedname>Dali::CustomActorImpl::RelayoutDependentOnChildren</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+          <defval><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8baff7e6288296be82e318d915fbb5c09ab" kindref="member">Dimension::ALL_DIMENSIONS</ref></defval>
+        </param>
+        <briefdescription>
+<para>Determines if this actor is dependent on its children for relayout. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension(s) to check for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Return if the actor is dependent on it&apos;s children </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="339" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a8e999f0927e07c9ddc24afcf7f50f7bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnCalculateRelayoutSize</definition>
+        <argsstring>(Dimension::Type dimension)=0</argsstring>
+        <name>OnCalculateRelayoutSize</name>
+        <qualifiedname>Dali::CustomActorImpl::OnCalculateRelayoutSize</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Virtual method to notify deriving classes that relayout dependencies have been met and the size for this object is about to be calculated for the given dimension. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension that is about to be calculated </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="348" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1abcacaa54ba7c4f8f272182b4584f0911" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::CustomActorImpl::OnLayoutNegotiated</definition>
+        <argsstring>(float size, Dimension::Type dimension)=0</argsstring>
+        <name>OnLayoutNegotiated</name>
+        <qualifiedname>Dali::CustomActorImpl::OnLayoutNegotiated</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Dimension_1a4e123928ac3109e971b70874653d1b8b" kindref="member">Dimension::Type</ref></type>
+          <declname>dimension</declname>
+        </param>
+        <briefdescription>
+<para>Virtual method to notify deriving classes that the size for a dimension has just been negotiated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size for the given dimension </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dimension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimension that was just negotiated </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="358" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ab5f343eef8dbc8bc07700cd90e573684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::SetTransparent</definition>
+        <argsstring>(bool transparent)</argsstring>
+        <name>SetTransparent</name>
+        <qualifiedname>Dali::CustomActorImpl::SetTransparent</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>transparent</declname>
+        </param>
+        <briefdescription>
+<para>Set this <ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref> is transparent or not without any affection on the child Actors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="363" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a61892845689fd091ee4dae1743aef842" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CustomActorImpl::IsTransparent</definition>
+        <argsstring>() const</argsstring>
+        <name>IsTransparent</name>
+        <qualifiedname>Dali::CustomActorImpl::IsTransparent</qualifiedname>
+        <briefdescription>
+<para>Get this <ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref> is transparent or not. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="368" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a7056d98f9ce3f1d6fbaa4b870313dbb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Extension *</type>
+        <definition>virtual Extension * Dali::CustomActorImpl::GetExtension</definition>
+        <argsstring>()</argsstring>
+        <name>GetExtension</name>
+        <qualifiedname>Dali::CustomActorImpl::GetExtension</qualifiedname>
+        <briefdescription>
+<para>Retrieves the extension for this control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>The extension if available, NULL otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="376" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="376" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1ac966e14d40c694b6f43184dbd6cded65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::CustomActorImpl::Initialize</definition>
+        <argsstring>(Internal::CustomActor &amp;owner)</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>Dali::CustomActorImpl::Initialize</qualifiedname>
+        <param>
+          <type>Internal::CustomActor &amp;</type>
+          <declname>owner</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">owner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The owning object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> is not already owned. </para>
+</simplesect>
+<simplesect kind="note"><para>Called when ownership of the <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> is passed to a <ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="464" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="70" bodyend="75"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1abf31bbc9c9ac062be3a0af17050f8c83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Internal::CustomActor *</type>
+        <definition>Internal::CustomActor * Dali::CustomActorImpl::GetOwner</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOwner</name>
+        <qualifiedname>Dali::CustomActorImpl::GetOwner</qualifiedname>
+        <briefdescription>
+<para>Gets the owner. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is needed when creating additional handle objects to existing objects. Owner is the Dali::Internal::CustomActor that owns the implementation of the custom actor inside core. Creation of a handle to <ref refid="namespaceDali" kindref="compound">Dali</ref> public API <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> requires this pointer. @SINCE_1_0.0 <simplesect kind="return"><para>A pointer to the <ref refid="classDali_1_1Actor" kindref="compound">Actor</ref> implementation that owns this custom actor implementation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="475" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="77" bodyend="80"/>
+        <referencedby refid="namespaceDali_1_1DevelCustomActor_1adcae9ba657b8d5ba469d4880f2a13fd9" compoundref="custom-actor-devel_8cpp" startline="28" endline="31">Dali::DevelCustomActor::GetTypeInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1CustomActorImpl_1a2241e777a1aa1a102e619ea5c46e10cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::CustomActorImpl::IsRelayoutEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>IsRelayoutEnabled</name>
+        <qualifiedname>Dali::CustomActorImpl::IsRelayoutEnabled</qualifiedname>
+        <briefdescription>
+<para>Returns whether relayout is enabled. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return true if relayout is enabled on the custom actor </para>
+</simplesect>
+<simplesect kind="note"><para>Called when ownership of the <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> is passed to a <ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="483" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp" bodystart="82" bodyend="85"/>
+        <references refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a1e80bb93beb6ade743d0276346c39913" compoundref="custom-actor-impl_8h" startline="389">DISABLE_SIZE_NEGOTIATION</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> is an abstract base class for custom control implementations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This provides a series of pure virtual methods, which are called when actor-specific events occur. And <ref refid="classDali_1_1CustomActorImpl" kindref="compound">CustomActorImpl</ref> is typically owned by a single <ref refid="classDali_1_1CustomActor" kindref="compound">CustomActor</ref> instance; see also <ref refid="classDali_1_1CustomActor_1ab9a35c892600f54672f33a43ae2d8c31" kindref="member">CustomActor::CustomActor( CustomActorImpl &amp;implementation )</ref>. @SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dali::CustomActorImpl</label>
+        <link refid="classDali_1_1CustomActorImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Dali::CustomActorImpl</label>
+        <link refid="classDali_1_1CustomActorImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::RefObject</label>
+        <link refid="classDali_1_1RefObject"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" line="69" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h" bodystart="70" bodyend="488"/>
+    <listofallmembers>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a9b5fd7441f43e289bc61cef07eca8545" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>ACTOR_BEHAVIOUR_DEFAULT</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aded210c48cc556e8134f71eb226e67d2" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>ACTOR_FLAG_COUNT</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>ActorFlags</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1afae537e0dd777ad4eecda1cb390e795f" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>CalculateChildSize</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ac4b67a720150327b49bcbae84f293afb" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>CalculateChildSizeBase</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a4e2a0ec725105b7e0cd0bd394b8d257d" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>CustomActorImpl</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a1e80bb93beb6ade743d0276346c39913" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>DISABLE_SIZE_NEGOTIATION</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a7056d98f9ce3f1d6fbaa4b870313dbb7" prot="public" virt="virtual"><scope>Dali::CustomActorImpl</scope><name>GetExtension</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ac19d289f2c550492f69709dce66c52a6" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>GetHeightForWidth</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ada3efea45ccb9402f1336b0b112102c0" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>GetHeightForWidthBase</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ac479b33807179484b2bd670968768927" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>GetNaturalSize</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a2a99ae7aa042eabf5a7eec6b2b22d1d0" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>GetOffScreenRenderableType</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aa43b6f96c6068051714167a6b3fe9f82" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>GetOffScreenRenderTasks</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1abf31bbc9c9ac062be3a0af17050f8c83" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>GetOwner</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a418b435d1417f653aead1c4e469f34bf" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>GetWidthForHeight</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aa20ebe819416c1d56d0b50af8d679928" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>GetWidthForHeightBase</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ac966e14d40c694b6f43184dbd6cded65" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>Initialize</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a2241e777a1aa1a102e619ea5c46e10cf" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>IsRelayoutEnabled</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a61892845689fd091ee4dae1743aef842" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>IsTransparent</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a78b4fb619167750ef1502a1149cd41d2" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>LAST_ACTOR_FLAG</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aa8384e030c70737b2498fa7508f87f31" prot="private" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>mFlags</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a3eaacfd6f9cbf18b0694c576f57cade6" prot="private" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>mOwner</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a894734b6d2735f58f8b83b57e0fd5df8" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>NOT_IN_USE_1</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0a7cab7d6e3659d5bd33961727f561d750" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>NOT_IN_USE_2</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a16365e44f9cbc99db1a07d9504dc8cb0ae2925f98f4e9868e351ebbda42d11658" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>NOT_IN_USE_3</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a74d344e6882eead00836622d758ee4e4" prot="public" virt="virtual"><scope>Dali::CustomActorImpl</scope><name>OnAnimateAnimatableProperty</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a8e999f0927e07c9ddc24afcf7f50f7bf" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnCalculateRelayoutSize</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a48fc850baf671d741e298031eb751189" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnChildAdd</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a226bf02b8034673eb4e39163dfe9834e" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnChildRemove</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a94cebd08a096cc8d52e7412b285b88c7" prot="public" virt="virtual"><scope>Dali::CustomActorImpl</scope><name>OnConstraintAnimatableProperty</name></member>
+      <member refid="classDali_1_1RefObject_1a8d4561eff5738e0adc27df94b1a885ca" prot="protected" virt="virtual"><scope>Dali::CustomActorImpl</scope><name>OnDestroy</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1abcacaa54ba7c4f8f272182b4584f0911" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnLayoutNegotiated</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a78c000ba1bae7703a7b5155f9a8a1add" prot="public" virt="virtual"><scope>Dali::CustomActorImpl</scope><name>OnPropertySet</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a39e1bc3ed48b988cc118d9cdf4eae7fd" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnRelayout</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a0df6f7fda359c1827faab828e531380d" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnSceneConnection</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a5e4b9bdad16bf86e0ad7c31818697c4f" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnSceneDisconnection</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aa425a3a6d54524dcbb705d36cc16677d" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnSetResizePolicy</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a3c36214b032f2fbbe7c77565cd5d12f5" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnSizeAnimation</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aab4d2767ea89c41931b0bf56e96a749a" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>OnSizeSet</name></member>
+      <member refid="classDali_1_1RefObject_1a840c6388ec1e12b1a8cc4cdb77232589" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>operator=</name></member>
+      <member refid="classDali_1_1RefObject_1a704b3658a61345abe6f087976b844373" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>Reference</name></member>
+      <member refid="classDali_1_1RefObject_1a76ddae6672a3a475600afbf11c1de4e0" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>ReferenceCount</name></member>
+      <member refid="classDali_1_1RefObject_1ac16c6f0e745027ae9e003a1ad454f37b" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1RefObject_1acbaa8edefcb9bec5689d3a7506e4fc5e" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>RefObject</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aff9f22ba5815f72deb8a9933a56b7d7e" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>RegisterOffScreenRenderableType</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a96e73a7e1a960962d12c78dd219ef448" prot="public" virt="pure-virtual"><scope>Dali::CustomActorImpl</scope><name>RelayoutDependentOnChildren</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1aed96564fc7475d9df0fbb677aedd9e52" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>RelayoutDependentOnChildrenBase</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a4be77359d65746c58124918398096d42" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>RelayoutRequest</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1a8625da1bb6dfd2babcd98d7fdd44d25c" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>RequestRenderTaskReorder</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1affc7d9be7ed865b15d11e22d51a83c0f" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>Self</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ad8571d3e718c99a7c6b7173de25a3020" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>SetOffScreenRenderableType</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ab5f343eef8dbc8bc07700cd90e573684" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>SetTransparent</name></member>
+      <member refid="classDali_1_1RefObject_1ab8ba86af237343c5169487f121b17a53" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>Unreference</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1ae6ba08babc5a11d4b5110dd2e27650e8" prot="public" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>UnregisterOffScreenRenderableType</name></member>
+      <member refid="classDali_1_1CustomActorImpl_1abd4eb1ecbca0f58f35d0a3f31d530026" prot="protected" virt="non-virtual"><scope>Dali::CustomActorImpl</scope><name>~CustomActorImpl</name></member>
+      <member refid="classDali_1_1RefObject_1ace8513a27ef2d48383da36ce9d1931f7" prot="protected" virt="virtual"><scope>Dali::CustomActorImpl</scope><name>~RefObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

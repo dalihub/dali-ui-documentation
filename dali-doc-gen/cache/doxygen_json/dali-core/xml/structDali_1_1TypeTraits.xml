@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structDali_1_1TypeTraits" kind="struct" language="C++" prot="public">
+    <compoundname>Dali::TypeTraits</compoundname>
+    <basecompoundref refid="structDali_1_1BasicTypes" prot="public" virt="non-virtual">Dali::BasicTypes&lt; Type &gt;</basecompoundref>
+    <includes refid="type-traits_8h" local="no">type-traits.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Type</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Type traits. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An example of overriding a traits flag for a custom type can be done by:</para>
+<para><programlisting><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">TypeTraits&lt;<sp/><ref refid="namespaceDali" kindref="compound">Dali</ref>::Matrix<sp/>&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BasicTypes&lt;<sp/>Dali::Matrix<sp/>&gt;<sp/>{<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/>IS_TRIVIAL_TYPE<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>};<sp/>};</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>@SINCE_1_0.0 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::BasicTypes&lt; Type &gt;</label>
+        <link refid="structDali_1_1BasicTypes"/>
+      </node>
+      <node id="1">
+        <label>Dali::TypeTraits&lt; Type &gt;</label>
+        <link refid="structDali_1_1TypeTraits"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::BasicTypes&lt; Type &gt;</label>
+        <link refid="structDali_1_1BasicTypes"/>
+      </node>
+      <node id="1">
+        <label>Dali::TypeTraits&lt; Type &gt;</label>
+        <link refid="structDali_1_1TypeTraits"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" line="68" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/common/type-traits.h" bodystart="69" bodyend="70"/>
+    <listofallmembers>
+      <member refid="structDali_1_1BasicTypes_1a6f0ae269d7db2eb396e42bea75cf2919a6341d72bffa3d4b094b164d9d1367573" prot="public" virt="non-virtual"><scope>Dali::TypeTraits</scope><name>IS_TRIVIAL_TYPE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

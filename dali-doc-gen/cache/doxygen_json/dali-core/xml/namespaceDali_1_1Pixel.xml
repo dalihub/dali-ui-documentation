@@ -1,0 +1,976 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Pixel" kind="namespace" language="C++">
+    <compoundname>Dali::Pixel</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Format</name>
+        <qualifiedname>Dali::Pixel::Format</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ab1706e2387a5cee71278a814ed31b145" prot="public">
+          <name>INVALID</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Used to represent an unsupported format. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a405034b4c992eb8631b8815ecd6dd186" prot="public">
+          <name>A8</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>color depth 8-bit, alpha @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a91175b36d02ca46620964849c26526cc" prot="public">
+          <name>L8</name>
+          <briefdescription>
+<para>color depth 8-bit, luminance @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af526390c4fc2cdb4b62d6a0da0f1dffb" prot="public">
+          <name>LA88</name>
+          <briefdescription>
+<para>color depth 16-bit, luminance with 8 bit alpha @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acf43314cda70164b911404f2272eb5ac" prot="public">
+          <name>RGB565</name>
+          <briefdescription>
+<para>color depth 16 bit, 5-6-5 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a53dd495e5c09880d42e3d4c42642c392" prot="public">
+          <name>BGR565</name>
+          <briefdescription>
+<para>color depth 16 bit, 5-6-5 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a15e412a5084cea454dd6ba73c498811a" prot="public">
+          <name>RGBA4444</name>
+          <briefdescription>
+<para>color depth 16 bit with alpha, 4-4-4-4 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aedac8cb957e6386a9178673e10a7e74d" prot="public">
+          <name>BGRA4444</name>
+          <briefdescription>
+<para>color depth 16 bit with alpha, 4-4-4-4 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a2b8fa86eb714421be16789e68aae531a" prot="public">
+          <name>RGBA5551</name>
+          <briefdescription>
+<para>color depth 16 bit with alpha, 5-5-5-1 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae312301ac1b88507efcfb3fa25c9b4c8" prot="public">
+          <name>BGRA5551</name>
+          <briefdescription>
+<para>color depth 16 bit with alpha, 5-5-5-1 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7e58f91649f061d836d0be5ede49066c" prot="public">
+          <name>RGB888</name>
+          <briefdescription>
+<para>color depth 24 bit, 8-8-8 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa0aa7df945bc2e349d13e549369791e8" prot="public">
+          <name>RGB8888</name>
+          <briefdescription>
+<para>color depth 32 bit, alpha is reserved but not used, 8-8-8-8# @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ab28beabbf67c5e112adf8738736ef5d4" prot="public">
+          <name>BGR8888</name>
+          <briefdescription>
+<para>color depth 32 bit, alpha is reserved but not used, 8-8-8-8# @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afd8f9fdde8838472a59796b448240bdf" prot="public">
+          <name>RGBA8888</name>
+          <briefdescription>
+<para>color depth 32 bit with alpha, 8-8-8-8 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af837e83e7a919652500efd14ae610ada" prot="public">
+          <name>BGRA8888</name>
+          <briefdescription>
+<para>color depth 32 bit with alpha, 8-8-8-8 @SINCE_1_0.0 </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8e4fac719d913bf8bdc2e9fc8995eb5a" prot="public">
+          <name>COMPRESSED_R11_EAC</name>
+          <briefdescription>
+<para>ETC2 / EAC single-channel, unsigned @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3bc61565055ffe269b97a119c79719e9" prot="public">
+          <name>COMPRESSED_SIGNED_R11_EAC</name>
+          <briefdescription>
+<para>ETC2 / EAC single-channel, signed @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a62714a4f5837c0613df2a554ff209179" prot="public">
+          <name>COMPRESSED_RG11_EAC</name>
+          <briefdescription>
+<para>ETC2 / EAC dual-channel, unsigned @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aaf5edc2f0caece6e29f1e2807766095c" prot="public">
+          <name>COMPRESSED_SIGNED_RG11_EAC</name>
+          <briefdescription>
+<para>ETC2 / EAC dual-channel, signed @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a4a377c5c06fd6b6beec1d5478497986a" prot="public">
+          <name>COMPRESSED_RGB8_ETC2</name>
+          <briefdescription>
+<para>ETC2 / EAC RGB @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8f9ff501682fce67ee732566eb59ed8e" prot="public">
+          <name>COMPRESSED_SRGB8_ETC2</name>
+          <briefdescription>
+<para>ETC2 / EAC RGB using sRGB colourspace. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26b8d6bf4f487b9dd9b9ffd9c4fc46f9" prot="public">
+          <name>COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2</name>
+          <briefdescription>
+<para>ETC2 / EAC RGB with single bit per pixel alpha mask. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a29317d234d4f71ffc11113424f749dd4" prot="public">
+          <name>COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2</name>
+          <briefdescription>
+<para>ETC2 / EAC RGB using sRGB colourspace, with single bit per pixel alpha mask. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a24cf0d094a69b563449bac6d8da89260" prot="public">
+          <name>COMPRESSED_RGBA8_ETC2_EAC</name>
+          <briefdescription>
+<para>ETC2 / EAC RGB plus separate alpha channel. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad28752920e703f164535a41054232838" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ETC2_EAC</name>
+          <briefdescription>
+<para>ETC2 / EAC RGB using sRGB colourspace, plus separate alpha channel. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a10445f9a3dccf74d86957bc0ceebf572" prot="public">
+          <name>COMPRESSED_RGB8_ETC1</name>
+          <briefdescription>
+<para>ETC1 RGB as defined by GLES 2 extension OES_compressed_ETC1_RGB8_texture: <ulink url="http://www.khronos.org/registry/gles/extensions/OES/OES_compressed_ETC1_RGB8_texture.txt">http://www.khronos.org/registry/gles/extensions/OES/OES_compressed_ETC1_RGB8_texture.txt</ulink> @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a70ef9bf31c7b1ffa7cdada390beaf339" prot="public">
+          <name>COMPRESSED_RGB_PVRTC_4BPPV1</name>
+          <briefdescription>
+<para>PowerVR 4bpp RGB format (v1) as defined by extension IMG_texture_compression_pvrtc: <ulink url="http://www.khronos.org/registry/gles/extensions/IMG/IMG_texture_compression_pvrtc.txt">http://www.khronos.org/registry/gles/extensions/IMG/IMG_texture_compression_pvrtc.txt</ulink> @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a00ece7d30f5154eeb9450a16e8cc1c01" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_4x4_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 4x4 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3ab4e12131da44193dd2a8cb3377f5ff" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_5x4_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 5x4 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad30c4a37ef582dc80ca09f32a60dd7c7" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_5x5_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 5x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adf8584f184642a5ddf15f4d686db1d22" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_6x5_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 6x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad4188ad03e33766529b38642ecb568c9" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_6x6_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 6x6 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a944dfb118524bdfc506b2aff90a87d20" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_8x5_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 8x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ace404b8bdebc064610ff2d54fb0965fd" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_8x6_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 8x6 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a5daba6ad185450e9c2950fbfbd9d6491" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_8x8_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 8x8 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a0849d09a82a4a435d3b4952b53f65f09" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_10x5_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 10x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acb4be81e988388c27227c0e8c7d28f72" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_10x6_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 10x6 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a623a0674294ac0b1770dda2acd93120b" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_10x8_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 10x8 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a85729d01ec3d1e7affe8e4c5fb07150f" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_10x10_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 10x10 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a352d3b2bf4262539841a53cf9ce66499" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_12x10_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 12x10 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb1198207829e062e51c212f3715333f" prot="public">
+          <name>COMPRESSED_RGBA_ASTC_12x12_KHR</name>
+          <briefdescription>
+<para>ASTC Linear color space with a 12x12 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a817fc6f5fea8ba106dec2474dbc0961e" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 4x4 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb101752dfc228dfc87d2514b12e9508" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 5x4 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a791c73964240ce7b2927f3d4a4312149" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 5x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae4960ea1e4c0592e30f68892d22992e6" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 6x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aff0213d11590e5ddf938542a8f82b551" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 6x6 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a35124dae310acbaf589759dd087d9f47" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 8x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a260b2adb7dbf2e993e2ac5899ef8e28c" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 8x6 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902abbfadd7656cc555255d00134aae43aec" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 8x8 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adc4e7e2f77363623946b7d52cf2c810e" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 10x5 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26d8627f2f6843e3fa2b502fd693c014" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 10x6 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae8e03dd26d2a8199a512cf2f767d9285" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 10x8 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a77cb83e0f03535a76c01cae7faddfd75" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 10x10 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a9732deb177869797673dce929ed60b65" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 12x10 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a794e33288bc8ee2614334a44b02a1725" prot="public">
+          <name>COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</name>
+          <briefdescription>
+<para>ASTC Non-linear (gamma-corrected) color space with a 12x12 block-size. @SINCE_1_1.17. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aede727273f2bce5d8b364195f7b2cf43" prot="public">
+          <name>RGB16F</name>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Color" kindref="compound">Color</ref> depth 48-bit, 16-16-16 half floating point. @SINCE_1_2.60. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa275c880d7e2e23f74c5a2fa1e442e1d" prot="public">
+          <name>RGB32F</name>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Color" kindref="compound">Color</ref> depth 96-bit, 32-32-32 floating point. @SINCE_1_2.60. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7345bd8eaf44ec5c62f2b4a42635e2ef" prot="public">
+          <name>DEPTH_UNSIGNED_INT</name>
+          <briefdescription>
+<para>Unsigned int depth format 32-bit. @SINCE_1_9.9. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a508208e60d1f29737541e29693837c16" prot="public">
+          <name>DEPTH_FLOAT</name>
+          <briefdescription>
+<para>Float depth format 32-bit. @SINCE_1_9.9. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7c5f93a5553833590272488a17186613" prot="public">
+          <name>DEPTH_STENCIL</name>
+          <briefdescription>
+<para>Depth stencil 32-bit, 24 bit for depth, 8 bit for stencil. @SINCE_1_9.9. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae5686a515fbb948a5f9e37edee21e004" prot="public">
+          <name>R11G11B10F</name>
+          <briefdescription>
+<para>Packed 32-bit, 11-11-10 unsigned floating point. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a88cb4918cf6f933a42a4d6052c14eb2d" prot="public">
+          <name>CHROMINANCE_U</name>
+          <briefdescription>
+<para><ref refid="namespaceDali_1_1Color" kindref="compound">Color</ref> depth 8-bit, chrominance U. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acdf11793da2fcaeaad36011ab2cd18e9" prot="public">
+          <name>CHROMINANCE_V</name>
+          <briefdescription>
+<para>! Update LAST_VALID_PIXEL_FORMAT below if you add an enum value here. </para>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="namespaceDali_1_1Color" kindref="compound">Color</ref> depth 8-bit, chrominance V </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for <ref refid="namespaceDali_1_1Pixel" kindref="compound">Pixel</ref> formats. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="namespaceDali_1_1Pixel" kindref="compound">Pixel</ref> format, default color depth is RGBA 32 bit with alpha. @SINCE_1_0.0 <simplesect kind="note"><para>BufferImage::Update might not work with BGR/BGRA formats! </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="47" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" bodystart="48" bodyend="127"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceDali_1_1Pixel_1a2751010e830a954bdd41d0d1171691ae" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Format</ref></type>
+        <definition>const Format Dali::Pixel::FIRST_VALID_PIXEL_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>FIRST_VALID_PIXEL_FORMAT</name>
+        <qualifiedname>Dali::Pixel::FIRST_VALID_PIXEL_FORMAT</qualifiedname>
+        <initializer>= <ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a405034b4c992eb8631b8815ecd6dd186" kindref="member">A8</ref></initializer>
+        <briefdescription>
+<para>For asserting that a variable has a valid pixel format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sync it to the first value above. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="134" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceDali_1_1Pixel_1a1ae9c9b8729eb4864b9a14e541a92aba" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Format</ref></type>
+        <definition>const Format Dali::Pixel::LAST_VALID_PIXEL_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>LAST_VALID_PIXEL_FORMAT</name>
+        <qualifiedname>Dali::Pixel::LAST_VALID_PIXEL_FORMAT</qualifiedname>
+        <initializer>= <ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acdf11793da2fcaeaad36011ab2cd18e9" kindref="member">CHROMINANCE_V</ref></initializer>
+        <briefdescription>
+<para>For asserting that a variable has a valid pixel format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sync it to the last value above. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="141" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Pixel_1acad44a68b87e0555df5ea6954ef74119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref> bool</type>
+        <definition>bool Dali::Pixel::IsCompressed</definition>
+        <argsstring>(Format pixelFormat)</argsstring>
+        <name>IsCompressed</name>
+        <qualifiedname>Dali::Pixel::IsCompressed</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Format</ref></type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+<para>Whether specified pixel format is compressed or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.33 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixel format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pixel format is compressed type. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="150" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.cpp" bodystart="27" bodyend="102" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" declline="150" declcolumn="20"/>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a405034b4c992eb8631b8815ecd6dd186" compoundref="pixel_8h" startline="52">A8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a53dd495e5c09880d42e3d4c42642c392" compoundref="pixel_8h" startline="56">BGR565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ab28beabbf67c5e112adf8738736ef5d4" compoundref="pixel_8h" startline="63">BGR8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aedac8cb957e6386a9178673e10a7e74d" compoundref="pixel_8h" startline="58">BGRA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae312301ac1b88507efcfb3fa25c9b4c8" compoundref="pixel_8h" startline="60">BGRA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af837e83e7a919652500efd14ae610ada" compoundref="pixel_8h" startline="65">BGRA8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a88cb4918cf6f933a42a4d6052c14eb2d" compoundref="pixel_8h" startline="124">CHROMINANCE_U</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acdf11793da2fcaeaad36011ab2cd18e9" compoundref="pixel_8h" startline="125">CHROMINANCE_V</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8e4fac719d913bf8bdc2e9fc8995eb5a" compoundref="pixel_8h" startline="68">COMPRESSED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a62714a4f5837c0613df2a554ff209179" compoundref="pixel_8h" startline="70">COMPRESSED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a10445f9a3dccf74d86957bc0ceebf572" compoundref="pixel_8h" startline="80">COMPRESSED_RGB8_ETC1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a4a377c5c06fd6b6beec1d5478497986a" compoundref="pixel_8h" startline="72">COMPRESSED_RGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26b8d6bf4f487b9dd9b9ffd9c4fc46f9" compoundref="pixel_8h" startline="74">COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a70ef9bf31c7b1ffa7cdada390beaf339" compoundref="pixel_8h" startline="81">COMPRESSED_RGB_PVRTC_4BPPV1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a24cf0d094a69b563449bac6d8da89260" compoundref="pixel_8h" startline="76">COMPRESSED_RGBA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a85729d01ec3d1e7affe8e4c5fb07150f" compoundref="pixel_8h" startline="95">COMPRESSED_RGBA_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a0849d09a82a4a435d3b4952b53f65f09" compoundref="pixel_8h" startline="92">COMPRESSED_RGBA_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acb4be81e988388c27227c0e8c7d28f72" compoundref="pixel_8h" startline="93">COMPRESSED_RGBA_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a623a0674294ac0b1770dda2acd93120b" compoundref="pixel_8h" startline="94">COMPRESSED_RGBA_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a352d3b2bf4262539841a53cf9ce66499" compoundref="pixel_8h" startline="96">COMPRESSED_RGBA_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb1198207829e062e51c212f3715333f" compoundref="pixel_8h" startline="97">COMPRESSED_RGBA_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a00ece7d30f5154eeb9450a16e8cc1c01" compoundref="pixel_8h" startline="84">COMPRESSED_RGBA_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3ab4e12131da44193dd2a8cb3377f5ff" compoundref="pixel_8h" startline="85">COMPRESSED_RGBA_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad30c4a37ef582dc80ca09f32a60dd7c7" compoundref="pixel_8h" startline="86">COMPRESSED_RGBA_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adf8584f184642a5ddf15f4d686db1d22" compoundref="pixel_8h" startline="87">COMPRESSED_RGBA_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad4188ad03e33766529b38642ecb568c9" compoundref="pixel_8h" startline="88">COMPRESSED_RGBA_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a944dfb118524bdfc506b2aff90a87d20" compoundref="pixel_8h" startline="89">COMPRESSED_RGBA_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ace404b8bdebc064610ff2d54fb0965fd" compoundref="pixel_8h" startline="90">COMPRESSED_RGBA_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a5daba6ad185450e9c2950fbfbd9d6491" compoundref="pixel_8h" startline="91">COMPRESSED_RGBA_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3bc61565055ffe269b97a119c79719e9" compoundref="pixel_8h" startline="69">COMPRESSED_SIGNED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aaf5edc2f0caece6e29f1e2807766095c" compoundref="pixel_8h" startline="71">COMPRESSED_SIGNED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a77cb83e0f03535a76c01cae7faddfd75" compoundref="pixel_8h" startline="109">COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adc4e7e2f77363623946b7d52cf2c810e" compoundref="pixel_8h" startline="106">COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26d8627f2f6843e3fa2b502fd693c014" compoundref="pixel_8h" startline="107">COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae8e03dd26d2a8199a512cf2f767d9285" compoundref="pixel_8h" startline="108">COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a9732deb177869797673dce929ed60b65" compoundref="pixel_8h" startline="110">COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a794e33288bc8ee2614334a44b02a1725" compoundref="pixel_8h" startline="111">COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a817fc6f5fea8ba106dec2474dbc0961e" compoundref="pixel_8h" startline="98">COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb101752dfc228dfc87d2514b12e9508" compoundref="pixel_8h" startline="99">COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a791c73964240ce7b2927f3d4a4312149" compoundref="pixel_8h" startline="100">COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae4960ea1e4c0592e30f68892d22992e6" compoundref="pixel_8h" startline="101">COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aff0213d11590e5ddf938542a8f82b551" compoundref="pixel_8h" startline="102">COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a35124dae310acbaf589759dd087d9f47" compoundref="pixel_8h" startline="103">COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a260b2adb7dbf2e993e2ac5899ef8e28c" compoundref="pixel_8h" startline="104">COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902abbfadd7656cc555255d00134aae43aec" compoundref="pixel_8h" startline="105">COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad28752920e703f164535a41054232838" compoundref="pixel_8h" startline="77">COMPRESSED_SRGB8_ALPHA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8f9ff501682fce67ee732566eb59ed8e" compoundref="pixel_8h" startline="73">COMPRESSED_SRGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a29317d234d4f71ffc11113424f749dd4" compoundref="pixel_8h" startline="75">COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a508208e60d1f29737541e29693837c16" compoundref="pixel_8h" startline="118">DEPTH_FLOAT</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7c5f93a5553833590272488a17186613" compoundref="pixel_8h" startline="120">DEPTH_STENCIL</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7345bd8eaf44ec5c62f2b4a42635e2ef" compoundref="pixel_8h" startline="117">DEPTH_UNSIGNED_INT</references>
+        <references refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8accc0377a8afbf50e7094f5c23a8af223">Dali::INVALID</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a91175b36d02ca46620964849c26526cc" compoundref="pixel_8h" startline="53">L8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af526390c4fc2cdb4b62d6a0da0f1dffb" compoundref="pixel_8h" startline="54">LA88</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae5686a515fbb948a5f9e37edee21e004" compoundref="pixel_8h" startline="122">R11G11B10F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aede727273f2bce5d8b364195f7b2cf43" compoundref="pixel_8h" startline="114">RGB16F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa275c880d7e2e23f74c5a2fa1e442e1d" compoundref="pixel_8h" startline="115">RGB32F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acf43314cda70164b911404f2272eb5ac" compoundref="pixel_8h" startline="55">RGB565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7e58f91649f061d836d0be5ede49066c" compoundref="pixel_8h" startline="61">RGB888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa0aa7df945bc2e349d13e549369791e8" compoundref="pixel_8h" startline="62">RGB8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a15e412a5084cea454dd6ba73c498811a" compoundref="pixel_8h" startline="57">RGBA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a2b8fa86eb714421be16789e68aae531a" compoundref="pixel_8h" startline="59">RGBA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afd8f9fdde8838472a59796b448240bdf" compoundref="pixel_8h" startline="64">RGBA8888</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Pixel_1a8b3b5a4dcc4632968e7d5d980d6f3d7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref> bool</type>
+        <definition>bool Dali::Pixel::HasAlpha</definition>
+        <argsstring>(Format pixelformat)</argsstring>
+        <name>HasAlpha</name>
+        <qualifiedname>Dali::Pixel::HasAlpha</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Format</ref></type>
+          <declname>pixelformat</declname>
+        </param>
+        <briefdescription>
+<para>Whether specified pixel format contains an alpha value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelformat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="namespaceDali_1_1Pixel" kindref="compound">Pixel</ref> format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if format has alpha, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="159" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.cpp" bodystart="104" bodyend="182" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" declline="159" declcolumn="20"/>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a405034b4c992eb8631b8815ecd6dd186" compoundref="pixel_8h" startline="52">A8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a53dd495e5c09880d42e3d4c42642c392" compoundref="pixel_8h" startline="56">BGR565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ab28beabbf67c5e112adf8738736ef5d4" compoundref="pixel_8h" startline="63">BGR8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aedac8cb957e6386a9178673e10a7e74d" compoundref="pixel_8h" startline="58">BGRA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae312301ac1b88507efcfb3fa25c9b4c8" compoundref="pixel_8h" startline="60">BGRA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af837e83e7a919652500efd14ae610ada" compoundref="pixel_8h" startline="65">BGRA8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a88cb4918cf6f933a42a4d6052c14eb2d" compoundref="pixel_8h" startline="124">CHROMINANCE_U</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acdf11793da2fcaeaad36011ab2cd18e9" compoundref="pixel_8h" startline="125">CHROMINANCE_V</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8e4fac719d913bf8bdc2e9fc8995eb5a" compoundref="pixel_8h" startline="68">COMPRESSED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a62714a4f5837c0613df2a554ff209179" compoundref="pixel_8h" startline="70">COMPRESSED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a10445f9a3dccf74d86957bc0ceebf572" compoundref="pixel_8h" startline="80">COMPRESSED_RGB8_ETC1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a4a377c5c06fd6b6beec1d5478497986a" compoundref="pixel_8h" startline="72">COMPRESSED_RGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26b8d6bf4f487b9dd9b9ffd9c4fc46f9" compoundref="pixel_8h" startline="74">COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a70ef9bf31c7b1ffa7cdada390beaf339" compoundref="pixel_8h" startline="81">COMPRESSED_RGB_PVRTC_4BPPV1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a24cf0d094a69b563449bac6d8da89260" compoundref="pixel_8h" startline="76">COMPRESSED_RGBA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a85729d01ec3d1e7affe8e4c5fb07150f" compoundref="pixel_8h" startline="95">COMPRESSED_RGBA_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a0849d09a82a4a435d3b4952b53f65f09" compoundref="pixel_8h" startline="92">COMPRESSED_RGBA_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acb4be81e988388c27227c0e8c7d28f72" compoundref="pixel_8h" startline="93">COMPRESSED_RGBA_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a623a0674294ac0b1770dda2acd93120b" compoundref="pixel_8h" startline="94">COMPRESSED_RGBA_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a352d3b2bf4262539841a53cf9ce66499" compoundref="pixel_8h" startline="96">COMPRESSED_RGBA_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb1198207829e062e51c212f3715333f" compoundref="pixel_8h" startline="97">COMPRESSED_RGBA_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a00ece7d30f5154eeb9450a16e8cc1c01" compoundref="pixel_8h" startline="84">COMPRESSED_RGBA_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3ab4e12131da44193dd2a8cb3377f5ff" compoundref="pixel_8h" startline="85">COMPRESSED_RGBA_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad30c4a37ef582dc80ca09f32a60dd7c7" compoundref="pixel_8h" startline="86">COMPRESSED_RGBA_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adf8584f184642a5ddf15f4d686db1d22" compoundref="pixel_8h" startline="87">COMPRESSED_RGBA_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad4188ad03e33766529b38642ecb568c9" compoundref="pixel_8h" startline="88">COMPRESSED_RGBA_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a944dfb118524bdfc506b2aff90a87d20" compoundref="pixel_8h" startline="89">COMPRESSED_RGBA_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ace404b8bdebc064610ff2d54fb0965fd" compoundref="pixel_8h" startline="90">COMPRESSED_RGBA_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a5daba6ad185450e9c2950fbfbd9d6491" compoundref="pixel_8h" startline="91">COMPRESSED_RGBA_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3bc61565055ffe269b97a119c79719e9" compoundref="pixel_8h" startline="69">COMPRESSED_SIGNED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aaf5edc2f0caece6e29f1e2807766095c" compoundref="pixel_8h" startline="71">COMPRESSED_SIGNED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a77cb83e0f03535a76c01cae7faddfd75" compoundref="pixel_8h" startline="109">COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adc4e7e2f77363623946b7d52cf2c810e" compoundref="pixel_8h" startline="106">COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26d8627f2f6843e3fa2b502fd693c014" compoundref="pixel_8h" startline="107">COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae8e03dd26d2a8199a512cf2f767d9285" compoundref="pixel_8h" startline="108">COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a9732deb177869797673dce929ed60b65" compoundref="pixel_8h" startline="110">COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a794e33288bc8ee2614334a44b02a1725" compoundref="pixel_8h" startline="111">COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a817fc6f5fea8ba106dec2474dbc0961e" compoundref="pixel_8h" startline="98">COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb101752dfc228dfc87d2514b12e9508" compoundref="pixel_8h" startline="99">COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a791c73964240ce7b2927f3d4a4312149" compoundref="pixel_8h" startline="100">COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae4960ea1e4c0592e30f68892d22992e6" compoundref="pixel_8h" startline="101">COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aff0213d11590e5ddf938542a8f82b551" compoundref="pixel_8h" startline="102">COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a35124dae310acbaf589759dd087d9f47" compoundref="pixel_8h" startline="103">COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a260b2adb7dbf2e993e2ac5899ef8e28c" compoundref="pixel_8h" startline="104">COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902abbfadd7656cc555255d00134aae43aec" compoundref="pixel_8h" startline="105">COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad28752920e703f164535a41054232838" compoundref="pixel_8h" startline="77">COMPRESSED_SRGB8_ALPHA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8f9ff501682fce67ee732566eb59ed8e" compoundref="pixel_8h" startline="73">COMPRESSED_SRGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a29317d234d4f71ffc11113424f749dd4" compoundref="pixel_8h" startline="75">COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a508208e60d1f29737541e29693837c16" compoundref="pixel_8h" startline="118">DEPTH_FLOAT</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7c5f93a5553833590272488a17186613" compoundref="pixel_8h" startline="120">DEPTH_STENCIL</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7345bd8eaf44ec5c62f2b4a42635e2ef" compoundref="pixel_8h" startline="117">DEPTH_UNSIGNED_INT</references>
+        <references refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8accc0377a8afbf50e7094f5c23a8af223">Dali::INVALID</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a91175b36d02ca46620964849c26526cc" compoundref="pixel_8h" startline="53">L8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af526390c4fc2cdb4b62d6a0da0f1dffb" compoundref="pixel_8h" startline="54">LA88</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae5686a515fbb948a5f9e37edee21e004" compoundref="pixel_8h" startline="122">R11G11B10F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aede727273f2bce5d8b364195f7b2cf43" compoundref="pixel_8h" startline="114">RGB16F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa275c880d7e2e23f74c5a2fa1e442e1d" compoundref="pixel_8h" startline="115">RGB32F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acf43314cda70164b911404f2272eb5ac" compoundref="pixel_8h" startline="55">RGB565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7e58f91649f061d836d0be5ede49066c" compoundref="pixel_8h" startline="61">RGB888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa0aa7df945bc2e349d13e549369791e8" compoundref="pixel_8h" startline="62">RGB8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a15e412a5084cea454dd6ba73c498811a" compoundref="pixel_8h" startline="57">RGBA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a2b8fa86eb714421be16789e68aae531a" compoundref="pixel_8h" startline="59">RGBA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afd8f9fdde8838472a59796b448240bdf" compoundref="pixel_8h" startline="64">RGBA8888</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Pixel_1af2f62e3d5fe75736e4fb6ef7fc08da6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref> uint32_t</type>
+        <definition>uint32_t Dali::Pixel::GetBytesPerPixel</definition>
+        <argsstring>(Format pixelFormat)</argsstring>
+        <name>GetBytesPerPixel</name>
+        <qualifiedname>Dali::Pixel::GetBytesPerPixel</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Format</ref></type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+<para>Returns The number of bytes per pixel for the specified pixel format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixel format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of bytes per pixel </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="168" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.cpp" bodystart="184" bodyend="281" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" declline="168" declcolumn="24"/>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a405034b4c992eb8631b8815ecd6dd186" compoundref="pixel_8h" startline="52">A8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a53dd495e5c09880d42e3d4c42642c392" compoundref="pixel_8h" startline="56">BGR565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ab28beabbf67c5e112adf8738736ef5d4" compoundref="pixel_8h" startline="63">BGR8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aedac8cb957e6386a9178673e10a7e74d" compoundref="pixel_8h" startline="58">BGRA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae312301ac1b88507efcfb3fa25c9b4c8" compoundref="pixel_8h" startline="60">BGRA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af837e83e7a919652500efd14ae610ada" compoundref="pixel_8h" startline="65">BGRA8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a88cb4918cf6f933a42a4d6052c14eb2d" compoundref="pixel_8h" startline="124">CHROMINANCE_U</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acdf11793da2fcaeaad36011ab2cd18e9" compoundref="pixel_8h" startline="125">CHROMINANCE_V</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8e4fac719d913bf8bdc2e9fc8995eb5a" compoundref="pixel_8h" startline="68">COMPRESSED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a62714a4f5837c0613df2a554ff209179" compoundref="pixel_8h" startline="70">COMPRESSED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a10445f9a3dccf74d86957bc0ceebf572" compoundref="pixel_8h" startline="80">COMPRESSED_RGB8_ETC1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a4a377c5c06fd6b6beec1d5478497986a" compoundref="pixel_8h" startline="72">COMPRESSED_RGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26b8d6bf4f487b9dd9b9ffd9c4fc46f9" compoundref="pixel_8h" startline="74">COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a70ef9bf31c7b1ffa7cdada390beaf339" compoundref="pixel_8h" startline="81">COMPRESSED_RGB_PVRTC_4BPPV1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a24cf0d094a69b563449bac6d8da89260" compoundref="pixel_8h" startline="76">COMPRESSED_RGBA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a85729d01ec3d1e7affe8e4c5fb07150f" compoundref="pixel_8h" startline="95">COMPRESSED_RGBA_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a0849d09a82a4a435d3b4952b53f65f09" compoundref="pixel_8h" startline="92">COMPRESSED_RGBA_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acb4be81e988388c27227c0e8c7d28f72" compoundref="pixel_8h" startline="93">COMPRESSED_RGBA_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a623a0674294ac0b1770dda2acd93120b" compoundref="pixel_8h" startline="94">COMPRESSED_RGBA_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a352d3b2bf4262539841a53cf9ce66499" compoundref="pixel_8h" startline="96">COMPRESSED_RGBA_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb1198207829e062e51c212f3715333f" compoundref="pixel_8h" startline="97">COMPRESSED_RGBA_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a00ece7d30f5154eeb9450a16e8cc1c01" compoundref="pixel_8h" startline="84">COMPRESSED_RGBA_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3ab4e12131da44193dd2a8cb3377f5ff" compoundref="pixel_8h" startline="85">COMPRESSED_RGBA_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad30c4a37ef582dc80ca09f32a60dd7c7" compoundref="pixel_8h" startline="86">COMPRESSED_RGBA_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adf8584f184642a5ddf15f4d686db1d22" compoundref="pixel_8h" startline="87">COMPRESSED_RGBA_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad4188ad03e33766529b38642ecb568c9" compoundref="pixel_8h" startline="88">COMPRESSED_RGBA_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a944dfb118524bdfc506b2aff90a87d20" compoundref="pixel_8h" startline="89">COMPRESSED_RGBA_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ace404b8bdebc064610ff2d54fb0965fd" compoundref="pixel_8h" startline="90">COMPRESSED_RGBA_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a5daba6ad185450e9c2950fbfbd9d6491" compoundref="pixel_8h" startline="91">COMPRESSED_RGBA_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3bc61565055ffe269b97a119c79719e9" compoundref="pixel_8h" startline="69">COMPRESSED_SIGNED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aaf5edc2f0caece6e29f1e2807766095c" compoundref="pixel_8h" startline="71">COMPRESSED_SIGNED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a77cb83e0f03535a76c01cae7faddfd75" compoundref="pixel_8h" startline="109">COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adc4e7e2f77363623946b7d52cf2c810e" compoundref="pixel_8h" startline="106">COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26d8627f2f6843e3fa2b502fd693c014" compoundref="pixel_8h" startline="107">COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae8e03dd26d2a8199a512cf2f767d9285" compoundref="pixel_8h" startline="108">COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a9732deb177869797673dce929ed60b65" compoundref="pixel_8h" startline="110">COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a794e33288bc8ee2614334a44b02a1725" compoundref="pixel_8h" startline="111">COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a817fc6f5fea8ba106dec2474dbc0961e" compoundref="pixel_8h" startline="98">COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb101752dfc228dfc87d2514b12e9508" compoundref="pixel_8h" startline="99">COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a791c73964240ce7b2927f3d4a4312149" compoundref="pixel_8h" startline="100">COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae4960ea1e4c0592e30f68892d22992e6" compoundref="pixel_8h" startline="101">COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aff0213d11590e5ddf938542a8f82b551" compoundref="pixel_8h" startline="102">COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a35124dae310acbaf589759dd087d9f47" compoundref="pixel_8h" startline="103">COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a260b2adb7dbf2e993e2ac5899ef8e28c" compoundref="pixel_8h" startline="104">COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902abbfadd7656cc555255d00134aae43aec" compoundref="pixel_8h" startline="105">COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad28752920e703f164535a41054232838" compoundref="pixel_8h" startline="77">COMPRESSED_SRGB8_ALPHA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8f9ff501682fce67ee732566eb59ed8e" compoundref="pixel_8h" startline="73">COMPRESSED_SRGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a29317d234d4f71ffc11113424f749dd4" compoundref="pixel_8h" startline="75">COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a508208e60d1f29737541e29693837c16" compoundref="pixel_8h" startline="118">DEPTH_FLOAT</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7c5f93a5553833590272488a17186613" compoundref="pixel_8h" startline="120">DEPTH_STENCIL</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7345bd8eaf44ec5c62f2b4a42635e2ef" compoundref="pixel_8h" startline="117">DEPTH_UNSIGNED_INT</references>
+        <references refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8accc0377a8afbf50e7094f5c23a8af223">Dali::INVALID</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a91175b36d02ca46620964849c26526cc" compoundref="pixel_8h" startline="53">L8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af526390c4fc2cdb4b62d6a0da0f1dffb" compoundref="pixel_8h" startline="54">LA88</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae5686a515fbb948a5f9e37edee21e004" compoundref="pixel_8h" startline="122">R11G11B10F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aede727273f2bce5d8b364195f7b2cf43" compoundref="pixel_8h" startline="114">RGB16F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa275c880d7e2e23f74c5a2fa1e442e1d" compoundref="pixel_8h" startline="115">RGB32F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acf43314cda70164b911404f2272eb5ac" compoundref="pixel_8h" startline="55">RGB565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7e58f91649f061d836d0be5ede49066c" compoundref="pixel_8h" startline="61">RGB888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa0aa7df945bc2e349d13e549369791e8" compoundref="pixel_8h" startline="62">RGB8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a15e412a5084cea454dd6ba73c498811a" compoundref="pixel_8h" startline="57">RGBA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a2b8fa86eb714421be16789e68aae531a" compoundref="pixel_8h" startline="59">RGBA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afd8f9fdde8838472a59796b448240bdf" compoundref="pixel_8h" startline="64">RGBA8888</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Pixel_1a1be1f60f0349a611ec501f571015acd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref> void</type>
+        <definition>void Dali::Pixel::GetAlphaOffsetAndMask</definition>
+        <argsstring>(Format pixelFormat, int &amp;byteOffset, int &amp;bitMask)</argsstring>
+        <name>GetAlphaOffsetAndMask</name>
+        <qualifiedname>Dali::Pixel::GetAlphaOffsetAndMask</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Format</ref></type>
+          <declname>pixelFormat</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>byteOffset</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>bitMask</declname>
+        </param>
+        <briefdescription>
+<para>Returns the offset of the byte containing the alpha value from the start of the pixel data and the bitmask of that byte to get the alpha value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example, in case of <ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a15e412a5084cea454dd6ba73c498811a" kindref="member">Pixel::RGBA4444</ref>, byteOffset value is 1 and bitMask value is 0x0f. It means the second byte contains the alpha value and the last 4 bits of the byte is the alpha value.</para>
+<para>Bitmask is zero if the pixelFormat does not support alpha. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixel format </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">byteOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte offset of the byte containing the alpha value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">bitMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bitmask of the byte to get the alpha value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="184" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.cpp" bodystart="283" bodyend="393" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" declline="184" declcolumn="20"/>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a405034b4c992eb8631b8815ecd6dd186" compoundref="pixel_8h" startline="52">A8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a53dd495e5c09880d42e3d4c42642c392" compoundref="pixel_8h" startline="56">BGR565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ab28beabbf67c5e112adf8738736ef5d4" compoundref="pixel_8h" startline="63">BGR8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aedac8cb957e6386a9178673e10a7e74d" compoundref="pixel_8h" startline="58">BGRA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae312301ac1b88507efcfb3fa25c9b4c8" compoundref="pixel_8h" startline="60">BGRA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af837e83e7a919652500efd14ae610ada" compoundref="pixel_8h" startline="65">BGRA8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a88cb4918cf6f933a42a4d6052c14eb2d" compoundref="pixel_8h" startline="124">CHROMINANCE_U</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acdf11793da2fcaeaad36011ab2cd18e9" compoundref="pixel_8h" startline="125">CHROMINANCE_V</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8e4fac719d913bf8bdc2e9fc8995eb5a" compoundref="pixel_8h" startline="68">COMPRESSED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a62714a4f5837c0613df2a554ff209179" compoundref="pixel_8h" startline="70">COMPRESSED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a10445f9a3dccf74d86957bc0ceebf572" compoundref="pixel_8h" startline="80">COMPRESSED_RGB8_ETC1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a4a377c5c06fd6b6beec1d5478497986a" compoundref="pixel_8h" startline="72">COMPRESSED_RGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26b8d6bf4f487b9dd9b9ffd9c4fc46f9" compoundref="pixel_8h" startline="74">COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a70ef9bf31c7b1ffa7cdada390beaf339" compoundref="pixel_8h" startline="81">COMPRESSED_RGB_PVRTC_4BPPV1</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a24cf0d094a69b563449bac6d8da89260" compoundref="pixel_8h" startline="76">COMPRESSED_RGBA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a85729d01ec3d1e7affe8e4c5fb07150f" compoundref="pixel_8h" startline="95">COMPRESSED_RGBA_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a0849d09a82a4a435d3b4952b53f65f09" compoundref="pixel_8h" startline="92">COMPRESSED_RGBA_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acb4be81e988388c27227c0e8c7d28f72" compoundref="pixel_8h" startline="93">COMPRESSED_RGBA_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a623a0674294ac0b1770dda2acd93120b" compoundref="pixel_8h" startline="94">COMPRESSED_RGBA_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a352d3b2bf4262539841a53cf9ce66499" compoundref="pixel_8h" startline="96">COMPRESSED_RGBA_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb1198207829e062e51c212f3715333f" compoundref="pixel_8h" startline="97">COMPRESSED_RGBA_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a00ece7d30f5154eeb9450a16e8cc1c01" compoundref="pixel_8h" startline="84">COMPRESSED_RGBA_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3ab4e12131da44193dd2a8cb3377f5ff" compoundref="pixel_8h" startline="85">COMPRESSED_RGBA_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad30c4a37ef582dc80ca09f32a60dd7c7" compoundref="pixel_8h" startline="86">COMPRESSED_RGBA_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adf8584f184642a5ddf15f4d686db1d22" compoundref="pixel_8h" startline="87">COMPRESSED_RGBA_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad4188ad03e33766529b38642ecb568c9" compoundref="pixel_8h" startline="88">COMPRESSED_RGBA_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a944dfb118524bdfc506b2aff90a87d20" compoundref="pixel_8h" startline="89">COMPRESSED_RGBA_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ace404b8bdebc064610ff2d54fb0965fd" compoundref="pixel_8h" startline="90">COMPRESSED_RGBA_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a5daba6ad185450e9c2950fbfbd9d6491" compoundref="pixel_8h" startline="91">COMPRESSED_RGBA_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a3bc61565055ffe269b97a119c79719e9" compoundref="pixel_8h" startline="69">COMPRESSED_SIGNED_R11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aaf5edc2f0caece6e29f1e2807766095c" compoundref="pixel_8h" startline="71">COMPRESSED_SIGNED_RG11_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a77cb83e0f03535a76c01cae7faddfd75" compoundref="pixel_8h" startline="109">COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902adc4e7e2f77363623946b7d52cf2c810e" compoundref="pixel_8h" startline="106">COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a26d8627f2f6843e3fa2b502fd693c014" compoundref="pixel_8h" startline="107">COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae8e03dd26d2a8199a512cf2f767d9285" compoundref="pixel_8h" startline="108">COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a9732deb177869797673dce929ed60b65" compoundref="pixel_8h" startline="110">COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a794e33288bc8ee2614334a44b02a1725" compoundref="pixel_8h" startline="111">COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a817fc6f5fea8ba106dec2474dbc0961e" compoundref="pixel_8h" startline="98">COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afb101752dfc228dfc87d2514b12e9508" compoundref="pixel_8h" startline="99">COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a791c73964240ce7b2927f3d4a4312149" compoundref="pixel_8h" startline="100">COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae4960ea1e4c0592e30f68892d22992e6" compoundref="pixel_8h" startline="101">COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aff0213d11590e5ddf938542a8f82b551" compoundref="pixel_8h" startline="102">COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a35124dae310acbaf589759dd087d9f47" compoundref="pixel_8h" startline="103">COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a260b2adb7dbf2e993e2ac5899ef8e28c" compoundref="pixel_8h" startline="104">COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902abbfadd7656cc555255d00134aae43aec" compoundref="pixel_8h" startline="105">COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ad28752920e703f164535a41054232838" compoundref="pixel_8h" startline="77">COMPRESSED_SRGB8_ALPHA8_ETC2_EAC</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a8f9ff501682fce67ee732566eb59ed8e" compoundref="pixel_8h" startline="73">COMPRESSED_SRGB8_ETC2</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a29317d234d4f71ffc11113424f749dd4" compoundref="pixel_8h" startline="75">COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2</references>
+        <references refid="debug_8h_1aab74e1713e401aebe0a35a9ebf936d54" compoundref="debug_8h" startline="147">DALI_LOG_ERROR</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a508208e60d1f29737541e29693837c16" compoundref="pixel_8h" startline="118">DEPTH_FLOAT</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7c5f93a5553833590272488a17186613" compoundref="pixel_8h" startline="120">DEPTH_STENCIL</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7345bd8eaf44ec5c62f2b4a42635e2ef" compoundref="pixel_8h" startline="117">DEPTH_UNSIGNED_INT</references>
+        <references refid="namespaceDali_1a61a0fdd1f1b2b0f6873e69b7793348c8accc0377a8afbf50e7094f5c23a8af223">Dali::INVALID</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a91175b36d02ca46620964849c26526cc" compoundref="pixel_8h" startline="53">L8</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902af526390c4fc2cdb4b62d6a0da0f1dffb" compoundref="pixel_8h" startline="54">LA88</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902ae5686a515fbb948a5f9e37edee21e004" compoundref="pixel_8h" startline="122">R11G11B10F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aede727273f2bce5d8b364195f7b2cf43" compoundref="pixel_8h" startline="114">RGB16F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa275c880d7e2e23f74c5a2fa1e442e1d" compoundref="pixel_8h" startline="115">RGB32F</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902acf43314cda70164b911404f2272eb5ac" compoundref="pixel_8h" startline="55">RGB565</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a7e58f91649f061d836d0be5ede49066c" compoundref="pixel_8h" startline="61">RGB888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902aa0aa7df945bc2e349d13e549369791e8" compoundref="pixel_8h" startline="62">RGB8888</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a15e412a5084cea454dd6ba73c498811a" compoundref="pixel_8h" startline="57">RGBA4444</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902a2b8fa86eb714421be16789e68aae531a" compoundref="pixel_8h" startline="59">RGBA5551</references>
+        <references refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902afd8f9fdde8838472a59796b448240bdf" compoundref="pixel_8h" startline="64">RGBA8888</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="namespaceDali_1_1Pixel" kindref="compound">Pixel</ref> format types and their properties. @SINCE_1_0.0. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/images/pixel.h" line="38" column="1"/>
+  </compounddef>
+</doxygen>

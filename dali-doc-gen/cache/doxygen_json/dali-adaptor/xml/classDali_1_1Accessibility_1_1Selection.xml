@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1Selection" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Accessibility::Selection</compoundname>
+    <basecompoundref refid="structDali_1_1Accessibility_1_1IAccessibilityFeature" prot="public" virt="non-virtual">Dali::Accessibility::IAccessibilityFeature</basecompoundref>
+    <includes refid="selection_8h" local="no">selection.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1a6bad915d37be9a2733aaefd641f2ec61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Dali::Accessibility::Selection::GetSelectedChildrenCount</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetSelectedChildrenCount</name>
+        <qualifiedname>Dali::Accessibility::Selection::GetSelectedChildrenCount</qualifiedname>
+        <briefdescription>
+<para>Gets the number of selected children. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of selected children (zero if none) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="37" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1ae997ac1f8c328221b8aaa63603dfbfec" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> *</type>
+        <definition>virtual Accessible * Dali::Accessibility::Selection::GetSelectedChild</definition>
+        <argsstring>(int selectedChildIndex)=0</argsstring>
+        <name>GetSelectedChild</name>
+        <qualifiedname>Dali::Accessibility::Selection::GetSelectedChild</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>selectedChildIndex</declname>
+        </param>
+        <briefdescription>
+<para>Gets a specific selected child. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>selectedChildIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the selected child</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>selectedChildIndex</computeroutput> refers to the list of selected children, not the list of all children</para>
+</simplesect>
+<simplesect kind="return"><para>The selected child or nullptr if index is invalid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="49" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1a24330718159956319d5812c9fbfecf19" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Selection::SelectChild</definition>
+        <argsstring>(int childIndex)=0</argsstring>
+        <name>SelectChild</name>
+        <qualifiedname>Dali::Accessibility::Selection::SelectChild</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>childIndex</declname>
+        </param>
+        <briefdescription>
+<para>Selects a child. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>childIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the child</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="58" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1a9ef09a2d5b9453940fd03951a77e10bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Selection::DeselectSelectedChild</definition>
+        <argsstring>(int selectedChildIndex)=0</argsstring>
+        <name>DeselectSelectedChild</name>
+        <qualifiedname>Dali::Accessibility::Selection::DeselectSelectedChild</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>selectedChildIndex</declname>
+        </param>
+        <briefdescription>
+<para>Deselects a selected child. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>selectedChildIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the selected child</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>selectedChildIndex</computeroutput> refers to the list of selected children, not the list of all children</para>
+</simplesect>
+<simplesect kind="return"><para>true on success, false otherwise</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Selection_1a0a3961cfd20b29ea45b05c76927b0c71" kindref="member">Dali::Accessibility::Selection::DeselectChild</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="72" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1adee798a0a21fb137344a3e95501a7fec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Selection::IsChildSelected</definition>
+        <argsstring>(int childIndex) const =0</argsstring>
+        <name>IsChildSelected</name>
+        <qualifiedname>Dali::Accessibility::Selection::IsChildSelected</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>childIndex</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether a child is selected. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>childIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the child</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if given child is selected, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="81" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1acef9fdf9705477b276c72d7ad0c77ce3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Selection::SelectAll</definition>
+        <argsstring>()=0</argsstring>
+        <name>SelectAll</name>
+        <qualifiedname>Dali::Accessibility::Selection::SelectAll</qualifiedname>
+        <briefdescription>
+<para>Selects all children. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true on success, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="88" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1afe93c712513ee35732d24ea908d07300" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Selection::ClearSelection</definition>
+        <argsstring>()=0</argsstring>
+        <name>ClearSelection</name>
+        <qualifiedname>Dali::Accessibility::Selection::ClearSelection</qualifiedname>
+        <briefdescription>
+<para>Deselects all children. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true on success, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="95" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Selection_1a0a3961cfd20b29ea45b05c76927b0c71" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Selection::DeselectChild</definition>
+        <argsstring>(int childIndex)=0</argsstring>
+        <name>DeselectChild</name>
+        <qualifiedname>Dali::Accessibility::Selection::DeselectChild</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>childIndex</declname>
+        </param>
+        <briefdescription>
+<para>Deselects a child. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>childIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the child.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false otherwise</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Accessibility_1_1Selection_1a9ef09a2d5b9453940fd03951a77e10bd" kindref="member">Dali::Accessibility::Selection::DeselectSelectedChild</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="106" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface representing objects which can store a set of selected items. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Selection</label>
+        <link refid="classDali_1_1Accessibility_1_1Selection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::Accessibility::IAccessibilityFeature</label>
+        <link refid="structDali_1_1Accessibility_1_1IAccessibilityFeature"/>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Selection</label>
+        <link refid="classDali_1_1Accessibility_1_1Selection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" line="29" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/selection.h" bodystart="30" bodyend="107"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1afe93c712513ee35732d24ea908d07300" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>ClearSelection</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1a0a3961cfd20b29ea45b05c76927b0c71" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>DeselectChild</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1a9ef09a2d5b9453940fd03951a77e10bd" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>DeselectSelectedChild</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1ae997ac1f8c328221b8aaa63603dfbfec" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>GetSelectedChild</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1a6bad915d37be9a2733aaefd641f2ec61" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>GetSelectedChildrenCount</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1adee798a0a21fb137344a3e95501a7fec" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>IsChildSelected</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1acef9fdf9705477b276c72d7ad0c77ce3" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>SelectAll</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Selection_1a24330718159956319d5812c9fbfecf19" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Selection</scope><name>SelectChild</name></member>
+      <member refid="structDali_1_1Accessibility_1_1IAccessibilityFeature_1a6e182386d889c026bb3337b7863104d7" prot="public" virt="virtual"><scope>Dali::Accessibility::Selection</scope><name>~IAccessibilityFeature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

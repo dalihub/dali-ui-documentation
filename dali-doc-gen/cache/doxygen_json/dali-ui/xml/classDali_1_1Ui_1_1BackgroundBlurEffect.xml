@@ -1,0 +1,601 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Ui_1_1BackgroundBlurEffect" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Ui::BackgroundBlurEffect</compoundname>
+    <basecompoundref refid="classDali_1_1Ui_1_1RenderEffect" prot="public" virt="non-virtual">Dali::Ui::RenderEffect</basecompoundref>
+    <includes refid="background-blur-effect_8h" local="no">background-blur-effect.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab4723d683b9ec29c22feaf28977a01f3" prot="public" static="no">
+        <type>Signal&lt; void()&gt;</type>
+        <definition>typedef Signal&lt;void()&gt; Dali::Ui::BackgroundBlurEffect::FinishedSignalType</definition>
+        <argsstring></argsstring>
+        <name>FinishedSignalType</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::FinishedSignalType</qualifiedname>
+        <briefdescription>
+<para>Typedef for finished signals sent by this class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="57" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab17aebf2077d82e0e554c036f7a74d20" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref></type>
+        <definition>BackgroundBlurEffect Dali::Ui::BackgroundBlurEffect::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::New</qualifiedname>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref>, using default settings. As default, blur radius is set to 10u. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="63" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="38" bodyend="42"/>
+        <references refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1adececde29565f4545e1037fe17120f24">BackgroundBlurEffect</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a355151dae839b6dbac189176d4f70d52" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref></type>
+        <definition>BackgroundBlurEffect Dali::Ui::BackgroundBlurEffect::New</definition>
+        <argsstring>(uint32_t blurRadius)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::New</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>blurRadius</declname>
+        </param>
+        <briefdescription>
+<para>Creates an initialized <ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of Gaussian kernel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</simplesect>
+<simplesect kind="note"><para>Due to the downscale factor and kernel optimizations, the actual applied blur changes only in fixed increments. </para>
+</simplesect>
+<simplesect kind="note"><para>The increment size is (2 / downscaleFactor). For example, with downscaleFactor = 0.25, the effective blur radius changes in steps of 8 pixels, so small adjustments below that threshold will have no visual effect. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="74" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="44" bodyend="48"/>
+        <references refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1adececde29565f4545e1037fe17120f24">BackgroundBlurEffect</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1adececde29565f4545e1037fe17120f24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::BackgroundBlurEffect::BackgroundBlurEffect</definition>
+        <argsstring>()</argsstring>
+        <name>BackgroundBlurEffect</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::BackgroundBlurEffect</qualifiedname>
+        <briefdescription>
+<para>Creates an uninitialized blur effect. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="79" column="3"/>
+        <referencedby refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab17aebf2077d82e0e554c036f7a74d20" compoundref="background-blur-effect_8cpp" startline="38" endline="42">New</referencedby>
+        <referencedby refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a355151dae839b6dbac189176d4f70d52" compoundref="background-blur-effect_8cpp" startline="44" endline="48">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a5d3fac2ad49425ce8db71051033c82db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::BackgroundBlurEffect::BackgroundBlurEffect</definition>
+        <argsstring>(const BackgroundBlurEffect &amp;handle)</argsstring>
+        <name>BackgroundBlurEffect</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::BackgroundBlurEffect</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="84" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a976b23fb2ef149a079b58e1c6616bf5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Ui::BackgroundBlurEffect::~BackgroundBlurEffect</definition>
+        <argsstring>()</argsstring>
+        <name>~BackgroundBlurEffect</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::~BackgroundBlurEffect</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="89" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a635ee33d1b94b17c6dd9f423aeeefbef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::SetBlurOnce</definition>
+        <argsstring>(bool blurOnce)</argsstring>
+        <name>SetBlurOnce</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::SetBlurOnce</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>blurOnce</declname>
+        </param>
+        <briefdescription>
+<para>Set whether to refresh effect once or every frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurOnce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, renders effect once, else updates effect rendering every frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="95" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1aab3295b491f0bbb7a7169435c0287e96" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Ui::BackgroundBlurEffect::GetBlurOnce</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlurOnce</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::GetBlurOnce</qualifiedname>
+        <briefdescription>
+<para>Retrives whether effect rendering is done once(true) or every frame(false) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether blur is rendered once or every frame. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="101" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1aa9f5a6b646094d2bc3453a94eb7558db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::SetBlurRadius</definition>
+        <argsstring>(uint32_t blurRadius)</argsstring>
+        <name>SetBlurRadius</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::SetBlurRadius</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>blurRadius</declname>
+        </param>
+        <briefdescription>
+<para>Set blur radius value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of Gaussian kernel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Due to the downscale factor and kernel optimizations, the actual applied blur changes only in fixed increments. </para>
+</simplesect>
+<simplesect kind="note"><para>The increment size is (2 / downscaleFactor). For example, with downscaleFactor = 0.25, the effective blur radius changes in steps of 8 pixels, so small adjustments below that threshold will have no visual effect. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="111" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1ac1493680efee474152a8177660979fec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Ui::BackgroundBlurEffect::GetBlurRadius</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlurRadius</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::GetBlurRadius</qualifiedname>
+        <briefdescription>
+<para>Retrieves blur radius value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The blur radius. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="117" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a107db9fe42ca3d31dafb38f65cffcd36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::SetBlurDownscaleFactor</definition>
+        <argsstring>(float downscaleFactor)</argsstring>
+        <name>SetBlurDownscaleFactor</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::SetBlurDownscaleFactor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>downscaleFactor</declname>
+        </param>
+        <briefdescription>
+<para>Set blur downscale factor. The value resides between 0.0f to 1.0f. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">downscaleFactor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The downscale factor for input texture. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="123" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a1343fb38a905d1266616def3dadf7e26" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Dali::Ui::BackgroundBlurEffect::GetBlurDownscaleFactor</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBlurDownscaleFactor</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::GetBlurDownscaleFactor</qualifiedname>
+        <briefdescription>
+<para>Retrives blur downscale factor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The blur downscale factor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="129" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a5b381c829425ad8b47f2f52cee01c931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::AddBlurStrengthAnimation</definition>
+        <argsstring>(Animation &amp;animation, AlphaFunction alphaFunction, TimePeriod timePeriod, float fromValue, float toValue)</argsstring>
+        <name>AddBlurStrengthAnimation</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::AddBlurStrengthAnimation</qualifiedname>
+        <param>
+          <type>Animation &amp;</type>
+          <declname>animation</declname>
+        </param>
+        <param>
+          <type>AlphaFunction</type>
+          <declname>alphaFunction</declname>
+        </param>
+        <param>
+          <type>TimePeriod</type>
+          <declname>timePeriod</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fromValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>toValue</declname>
+        </param>
+        <briefdescription>
+<para>Adds blur strength animation. Blurifies clear texture within given animation parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">animation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Animation instance to which we add blur strength animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alphaFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>AlphaFunction of blur strength animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timePeriod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TimePeriod of blur strength animation. Default value is animation&apos;s duration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fromValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting value of blur strength. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">toValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End value of blur strength. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>If toValue is smaller than fromValue, animation would show reversed(blurred-&gt;clarified) animation. </para>
+</simplesect>
+<simplesect kind="note"><para>When choosing alpha function, note that gaussian curve itself is innately non-linear. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="141" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1aaf087d7bd27a296f06ec02a3e6ba6336" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::AddBlurOpacityAnimation</definition>
+        <argsstring>(Animation &amp;animation, AlphaFunction alphaFunction, TimePeriod timePeriod, float fromValue, float toValue)</argsstring>
+        <name>AddBlurOpacityAnimation</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::AddBlurOpacityAnimation</qualifiedname>
+        <param>
+          <type>Animation &amp;</type>
+          <declname>animation</declname>
+        </param>
+        <param>
+          <type>AlphaFunction</type>
+          <declname>alphaFunction</declname>
+        </param>
+        <param>
+          <type>TimePeriod</type>
+          <declname>timePeriod</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fromValue</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>toValue</declname>
+        </param>
+        <briefdescription>
+<para>Adds blur opacity animation. Blurifies clear texture within given animation parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">animation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Animation instance to which we add blur opacity animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alphaFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>AlphaFunction of blur opacity animation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">timePeriod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TimePeriod of blur opacity animation. Default value is animation&apos;s duration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fromValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Starting value of blur opacity. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">toValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End value of blur opacity. Must be in range of [0.0f, 1.0f] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>If toValue is smaller than fromValue, animation would show reversed(blurred-&gt;clarified) animation. </para>
+</simplesect>
+<simplesect kind="note"><para>When choosing alpha function, note that gaussian curve itself is innately non-linear. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="154" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1ac47a26fc8b1e7a735c3b1d8664e9d497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::SetSourceActor</definition>
+        <argsstring>(Dali::Actor sourceActor)</argsstring>
+        <name>SetSourceActor</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::SetSourceActor</qualifiedname>
+        <param>
+          <type>Dali::Actor</type>
+          <declname>sourceActor</declname>
+        </param>
+        <briefdescription>
+<para>Set specific source actor of background blur effects. If empty handle, works same as normal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>If given source actor is not a parent of source view, it has no efforts. </para>
+</simplesect>
+<simplesect kind="warning"><para><ref refid="classDali_1_1Ui_1_1RenderEffect" kindref="compound">RenderEffect</ref> didn&apos;t hold source actor reference. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sourceActor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source actor of background blur effects. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="163" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1af79dc0b823178068d3c51f514304bab7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Ui::BackgroundBlurEffect::SetStopperActor</definition>
+        <argsstring>(Dali::Actor stopperActor)</argsstring>
+        <name>SetStopperActor</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::SetStopperActor</qualifiedname>
+        <param>
+          <type>Dali::Actor</type>
+          <declname>stopperActor</declname>
+        </param>
+        <briefdescription>
+<para>Set specific stopper actor of background blur effects. If empty handle, works same as normal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para><ref refid="classDali_1_1Ui_1_1RenderEffect" kindref="compound">RenderEffect</ref> didn&apos;t hold stopper actor reference. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stopperActor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stopper actor of background blur effects. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="170" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Ui_1_1BackgroundBlurEffect_1a3f0e01fe042fd93ff4d0b7a9a866e4d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab4723d683b9ec29c22feaf28977a01f3" kindref="member">FinishedSignalType</ref> &amp;</type>
+        <definition>BackgroundBlurEffect::FinishedSignalType &amp; Dali::Ui::BackgroundBlurEffect::FinishedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>FinishedSignal</name>
+        <qualifiedname>Dali::Ui::BackgroundBlurEffect::FinishedSignal</qualifiedname>
+        <briefdescription>
+<para>If blurOnce is true and effect is activated, then connect to this signal to be notified when the target actor has been rendered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The finished signal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="178" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.cpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref> is a visual effect that blurs owner view&apos;s background. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1adececde29565f4545e1037fe17120f24" kindref="member">BackgroundBlurEffect</ref><sp/>effect<sp/>=<sp/><ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab17aebf2077d82e0e554c036f7a74d20" kindref="member">BackgroundBlurEffect::New</ref>();</highlight></codeline>
+<codeline><highlight class="normal">view.SetRenderEffect(effect);<sp/></highlight><highlight class="comment">//<sp/>Activate</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">effect.Deactivate();</highlight></codeline>
+<codeline><highlight class="normal">effect.Activate();</highlight></codeline>
+<codeline><highlight class="normal">view.ClearRenderEffect();<sp/></highlight><highlight class="comment">//<sp/>Deactivate</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>The owner view owns at most one render effect. </para>
+</simplesect>
+<simplesect kind="note"><para>Tree hierarchy matters for <ref refid="classDali_1_1Ui_1_1BackgroundBlurEffect" kindref="compound">BackgroundBlurEffect</ref>. You should determine &quot;what is the background&quot;. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::BackgroundBlurEffect</label>
+        <link refid="classDali_1_1Ui_1_1BackgroundBlurEffect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Ui::RenderEffect</label>
+        <link refid="classDali_1_1Ui_1_1RenderEffect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Ui::BackgroundBlurEffect</label>
+        <link refid="classDali_1_1Ui_1_1BackgroundBlurEffect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::Ui::RenderEffect</label>
+        <link refid="classDali_1_1Ui_1_1RenderEffect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" line="51" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/public-api/render-effects/background-blur-effect.h" bodystart="52" bodyend="188"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a06bfd8f08981e19872a7c56e1dae0c9e" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>Activate</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1aaf087d7bd27a296f06ec02a3e6ba6336" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>AddBlurOpacityAnimation</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a5b381c829425ad8b47f2f52cee01c931" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>AddBlurStrengthAnimation</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1adececde29565f4545e1037fe17120f24" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>BackgroundBlurEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a5d3fac2ad49425ce8db71051033c82db" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>BackgroundBlurEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a0f4f92a1e2757322f0a6655d9526bcab" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>Deactivate</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a3f0e01fe042fd93ff4d0b7a9a866e4d1" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>FinishedSignal</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab4723d683b9ec29c22feaf28977a01f3" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>FinishedSignalType</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a1343fb38a905d1266616def3dadf7e26" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>GetBlurDownscaleFactor</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1aab3295b491f0bbb7a7169435c0287e96" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>GetBlurOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ac1493680efee474152a8177660979fec" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>GetBlurRadius</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1aab7d084c4e9f8fe0f01331d52d6b588c" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>IsActivated</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ab17aebf2077d82e0e554c036f7a74d20" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>New</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a355151dae839b6dbac189176d4f70d52" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>New</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1acc5addb128e22b57d2b953d5f2131da8" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>Refresh</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a5ff85ac14ffda9ea84917c03948d61ed" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>RenderEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a13c67c62b3ba858caaec2f376c71d681" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>RenderEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a107db9fe42ca3d31dafb38f65cffcd36" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>SetBlurDownscaleFactor</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a635ee33d1b94b17c6dd9f423aeeefbef" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>SetBlurOnce</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1aa9f5a6b646094d2bc3453a94eb7558db" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>SetBlurRadius</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1ac47a26fc8b1e7a735c3b1d8664e9d497" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>SetSourceActor</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1af79dc0b823178068d3c51f514304bab7" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>SetStopperActor</name></member>
+      <member refid="classDali_1_1Ui_1_1BackgroundBlurEffect_1a976b23fb2ef149a079b58e1c6616bf5d" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>~BackgroundBlurEffect</name></member>
+      <member refid="classDali_1_1Ui_1_1RenderEffect_1a4bf86a7291e7e4fa09c3915f2f0c1fa8" prot="public" virt="non-virtual"><scope>Dali::Ui::BackgroundBlurEffect</scope><name>~RenderEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

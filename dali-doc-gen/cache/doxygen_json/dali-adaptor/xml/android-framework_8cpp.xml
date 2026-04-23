@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="android-framework_8cpp" kind="file" language="C++">
+    <compoundname>android-framework.cpp</compoundname>
+    <includes refid="android-framework_8h" local="no">dali/integration-api/adaptor-framework/android/android-framework.h</includes>
+    <includes local="no">dali/integration-api/debug.h</includes>
+    <includes local="no">dali/internal/adaptor/android/android-framework-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/android/android-framework.cpp</label>
+        <link refid="android-framework_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/integration-api/adaptor-framework/android/android-framework.h</label>
+        <link refid="android-framework_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>android/asset_manager.h</label>
+      </node>
+      <node id="5">
+        <label>android/asset_manager_jni.h</label>
+      </node>
+      <node id="6">
+        <label>android/configuration.h</label>
+      </node>
+      <node id="7">
+        <label>android/native_window.h</label>
+      </node>
+      <node id="8">
+        <label>android/native_window_jni.h</label>
+      </node>
+      <node id="12">
+        <label>dali/integration-api/debug.h</label>
+      </node>
+      <node id="13">
+        <label>dali/internal/adaptor/android/android-framework-impl.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="9">
+        <label>jni.h</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration">Dali::Integration</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="android-framework_8h" kindref="compound">dali/integration-api/adaptor-framework/android/android-framework.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/debug.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/adaptor/android/android-framework-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Integration</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31" refid="classDali_1_1Integration_1_1AndroidFramework_1a434ecb01b0bbfab9a42868635c858ece" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1AndroidFramework" kindref="compound">AndroidFramework</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a434ecb01b0bbfab9a42868635c858ece" kindref="member">AndroidFramework::New</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Internal::Adaptor::AndroidFramework::New();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1Integration_1_1AndroidFramework_1aa8f2885084a77844771c44f8f0d94bce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1aa8f2885084a77844771c44f8f0d94bce" kindref="member">AndroidFramework::Delete</ref>()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>Internal::Adaptor::AndroidFramework::Delete();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classDali_1_1Integration_1_1AndroidFramework_1ae183ec8f6cf0a0823063829faced3544" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1ae183ec8f6cf0a0823063829faced3544" kindref="member">AndroidFramework::SetNativeApplication</ref>(android_app*<sp/>application)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>mImpl-&gt;SetNativeApplication(application);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classDali_1_1Integration_1_1AndroidFramework_1ac6af9c49c1308aee0474a05f67d3c6f0" refkind="member"><highlight class="normal">android_app*<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1ac6af9c49c1308aee0474a05f67d3c6f0" kindref="member">AndroidFramework::GetNativeApplication</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="47"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;GetNativeApplication();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classDali_1_1Integration_1_1AndroidFramework_1a80cd6124ace758c7253319a21fa9d4e5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a80cd6124ace758c7253319a21fa9d4e5" kindref="member">AndroidFramework::SetJVM</ref>(JavaVM*<sp/>jvm)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>mImpl-&gt;SetJVM(jvm);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1Integration_1_1AndroidFramework_1a7a1ce939fec089acad01a6143d3e1a0c" refkind="member"><highlight class="normal">JavaVM*<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a7a1ce939fec089acad01a6143d3e1a0c" kindref="member">AndroidFramework::GetJVM</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="57"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;GetJVM();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classDali_1_1Integration_1_1AndroidFramework_1a74fe481c352a36f0ed94dcb20d83e4a7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a74fe481c352a36f0ed94dcb20d83e4a7" kindref="member">AndroidFramework::SetApplicationAssets</ref>(AAssetManager*<sp/>assets)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>mImpl-&gt;SetApplicationAssets(assets);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classDali_1_1Integration_1_1AndroidFramework_1ab9aa125e2e8f65c221b35b16a53a43e3" refkind="member"><highlight class="normal">AAssetManager*<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1ab9aa125e2e8f65c221b35b16a53a43e3" kindref="member">AndroidFramework::GetApplicationAssets</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="67"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;GetApplicationAssets();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classDali_1_1Integration_1_1AndroidFramework_1ad61151216adf142dce72a3f01c9ee7bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1ad61151216adf142dce72a3f01c9ee7bf" kindref="member">AndroidFramework::SetInternalDataPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>mImpl-&gt;SetInternalDataPath(path);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classDali_1_1Integration_1_1AndroidFramework_1a23dccab47a9f31a4305d78cdde6962dd" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a23dccab47a9f31a4305d78cdde6962dd" kindref="member">AndroidFramework::GetInternalDataPath</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="77"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;GetInternalDataPath();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classDali_1_1Integration_1_1AndroidFramework_1a6b673933016426297bd33454b85906eb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a6b673933016426297bd33454b85906eb" kindref="member">AndroidFramework::SetApplicationConfiguration</ref>(AConfiguration*<sp/>configuration)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>mImpl-&gt;SetApplicationConfiguration(configuration);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classDali_1_1Integration_1_1AndroidFramework_1a4eb025808c29fd2a6d82713b6dff67ef" refkind="member"><highlight class="normal">AConfiguration*<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a4eb025808c29fd2a6d82713b6dff67ef" kindref="member">AndroidFramework::GetApplicationConfiguration</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;GetApplicationConfiguration();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classDali_1_1Integration_1_1AndroidFramework_1a2c20a06640bad38f4b32881f02da09f6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a2c20a06640bad38f4b32881f02da09f6" kindref="member">AndroidFramework::SetApplicationWindow</ref>(ANativeWindow*<sp/>window)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>mImpl-&gt;SetApplicationWindow(window);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classDali_1_1Integration_1_1AndroidFramework_1a7b9a432f4354e3b2983f19c206fa2be8" refkind="member"><highlight class="normal">ANativeWindow*<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a7b9a432f4354e3b2983f19c206fa2be8" kindref="member">AndroidFramework::GetApplicationWindow</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="97"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl-&gt;GetApplicationWindow();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classDali_1_1Integration_1_1AndroidFramework_1af71a04308c5819c422dff70619cde921" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1af71a04308c5819c422dff70619cde921" kindref="member">AndroidFramework::OnTerminate</ref>()</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>mImpl-&gt;OnTerminate();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classDali_1_1Integration_1_1AndroidFramework_1a428a929b4f3a09951fdced9daa97c907" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a428a929b4f3a09951fdced9daa97c907" kindref="member">AndroidFramework::OnPause</ref>()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>mImpl-&gt;OnPause();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classDali_1_1Integration_1_1AndroidFramework_1a6bec464164c8d7c71f6d234c5eb9d400" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a6bec464164c8d7c71f6d234c5eb9d400" kindref="member">AndroidFramework::OnResume</ref>()</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>mImpl-&gt;OnResume();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classDali_1_1Integration_1_1AndroidFramework_1aae2c91bdbd5146dcd00e26fc37fd3205" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1aae2c91bdbd5146dcd00e26fc37fd3205" kindref="member">AndroidFramework::OnWindowCreated</ref>(ANativeWindow*<sp/>window)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>mImpl-&gt;OnWindowCreated(window);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classDali_1_1Integration_1_1AndroidFramework_1a37b9c7e5d08a90fada31ecda91538ad8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a37b9c7e5d08a90fada31ecda91538ad8" kindref="member">AndroidFramework::OnWindowDestroyed</ref>(ANativeWindow*<sp/>window)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>mImpl-&gt;OnWindowDestroyed(window);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classDali_1_1Integration_1_1AndroidFramework_1abd2e4a4ac651dfe6460c1d5b71bc6152" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1AndroidFramework_1abd2e4a4ac651dfe6460c1d5b71bc6152" kindref="member">AndroidFramework::~AndroidFramework</ref>()</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>mImpl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="classDali_1_1Integration_1_1AndroidFramework_1a950d136491c44006fa7f5be09915cf75" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1AndroidFramework" kindref="compound">AndroidFramework</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a950d136491c44006fa7f5be09915cf75" kindref="member">AndroidFramework::Get</ref>()</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Internal::Adaptor::AndroidFramework::Get();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1AndroidFramework_1a23a52152ef1cdaec26ac9909c58b40f3" kindref="member">AndroidFramework::AndroidFramework</ref>()</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">:<sp/>mImpl(nullptr)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Integration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/integration-api/adaptor-framework/android/android-framework.cpp"/>
+  </compounddef>
+</doxygen>

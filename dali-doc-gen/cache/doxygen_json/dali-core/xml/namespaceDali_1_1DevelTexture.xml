@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1DevelTexture" kind="namespace" language="C++">
+    <compoundname>Dali::DevelTexture</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1DevelTexture_1ac8f44146060f72662a56c1e7614c91f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DALI_CORE_API Dali::DevelTexture::IsNative</definition>
+        <argsstring>(Dali::Texture texture)</argsstring>
+        <name>IsNative</name>
+        <qualifiedname>Dali::DevelTexture::IsNative</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+<para>Function to determine if a texture is backed by a native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the texture is a native image. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" line="24" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" bodystart="24" bodyend="28" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.h" declline="36" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelTexture_1ad558af49f44caf122fea480ba3917bd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DALI_CORE_API Dali::DevelTexture::ApplyNativeFragmentShader</definition>
+        <argsstring>(Dali::Texture texture, std::string &amp;shader, int mask=1)</argsstring>
+        <name>ApplyNativeFragmentShader</name>
+        <qualifiedname>Dali::DevelTexture::ApplyNativeFragmentShader</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Converts shader for native image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Applies any specific native shader prefix and sampler code to the given shader.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture the shader will apply to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fragment shader code to modify </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mask of samplers those uses native image. For example, if mask = 0x5, 1st and 3rd samplers become native samplers. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the shader code was modified </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" line="30" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" bodystart="30" bodyend="34" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.h" declline="50" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelTexture_1af1d9c2ae233e051cdfe653d9dffcf134" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DALI_CORE_API Dali::DevelTexture::UploadSubPixelData</definition>
+        <argsstring>(Dali::Texture texture, Dali::PixelData pixelData, uint32_t dataXOffset, uint32_t dataYOffset, uint32_t dataWidth, uint32_t dataHeight)</argsstring>
+        <name>UploadSubPixelData</name>
+        <qualifiedname>Dali::DevelTexture::UploadSubPixelData</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref></type>
+          <declname>pixelData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataXOffset</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataYOffset</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataWidth</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataHeight</declname>
+        </param>
+        <briefdescription>
+<para>Uploads data to the texture from a <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Compressed type doesn&apos;t support this API. </para>
+</simplesect>
+<simplesect kind="note"><para>Upload does not upsample or downsample pixel data to fit the specified rectangular area in the texture.</para>
+</simplesect>
+@SINCE_2_1.33 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture will be uploaded </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixelData object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataXOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies an horizontal offset of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataYOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies a vertical offset of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the width of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the height of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object has compatible pixel format and fits within the texture, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" line="36" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" bodystart="36" bodyend="45" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.h" declline="66" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelTexture_1a447e2d3922dd525f29427119adbc739c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DALI_CORE_API Dali::DevelTexture::UploadSubPixelData</definition>
+        <argsstring>(Dali::Texture texture, Dali::PixelData pixelData, uint32_t dataXOffset, uint32_t dataYOffset, uint32_t dataWidth, uint32_t dataHeight, uint32_t layer, uint32_t mipmap, uint32_t xOffset, uint32_t yOffset, uint32_t width, uint32_t height)</argsstring>
+        <name>UploadSubPixelData</name>
+        <qualifiedname>Dali::DevelTexture::UploadSubPixelData</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref></type>
+          <declname>pixelData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataXOffset</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataYOffset</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataWidth</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>dataHeight</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>layer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>mipmap</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>xOffset</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>yOffset</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Uploads data to the texture from a <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Compressed type doesn&apos;t support this API. </para>
+</simplesect>
+<simplesect kind="note"><para>Upload does not upsample or downsample pixel data to fit the specified rectangular area in the texture.</para>
+</simplesect>
+@SINCE_2_1.33 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture will be uploaded </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixelData object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataXOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies an horizontal offset of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataYOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies a vertical offset of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the width of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dataHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the height of the rectangular area in the pixelData that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the layer of a cube map or array texture (Unused for 2D textures). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1CubeMapLayer" kindref="compound">CubeMapLayer</ref> </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mipmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">xOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies an horizontal offset of the rectangular area in the texture that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">yOffset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies a vertical offset of the rectangular area in the texture that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the width of the rectangular area in the texture that will be updated </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the height of the rectangular area in the texture that will be updated </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object has compatible pixel format and fits within the texture, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" line="47" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" bodystart="47" bodyend="62" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.h" declline="93" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/texture-devel.cpp" line="22" column="1"/>
+  </compounddef>
+</doxygen>

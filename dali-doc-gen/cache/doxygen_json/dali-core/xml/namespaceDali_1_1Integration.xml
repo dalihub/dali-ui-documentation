@@ -1,0 +1,2804 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1Integration" kind="namespace" language="C++">
+    <compoundname>Dali::Integration</compoundname>
+    <innerclass refid="classDali_1_1Integration_1_1AddOnManager" prot="public">Dali::Integration::AddOnManager</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1ContextNotifierInterface" prot="public">Dali::Integration::ContextNotifierInterface</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1Core" prot="public">Dali::Integration::Core</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1Event" prot="public">Dali::Integration::Event</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1GlAbstraction" prot="public">Dali::Integration::GlAbstraction</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1GraphicsConfig" prot="public">Dali::Integration::GraphicsConfig</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction" prot="public">Dali::Integration::GraphicsSyncAbstraction</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1HoverEvent" prot="public">Dali::Integration::HoverEvent</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1KeyEvent" prot="public">Dali::Integration::KeyEvent</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1LocklessBuffer" prot="public">Dali::Integration::LocklessBuffer</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1MultiPointEvent" prot="public">Dali::Integration::MultiPointEvent</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1OpenHashMap" prot="public">Dali::Integration::OpenHashMap</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1OpenHashMapTraits" prot="public">Dali::Integration::OpenHashMapTraits</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1OrderedSet" prot="public">Dali::Integration::OrderedSet</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1PixelDataBuffer" prot="public">Dali::Integration::PixelDataBuffer</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1PlatformAbstraction" prot="public">Dali::Integration::PlatformAbstraction</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1Point" prot="public">Dali::Integration::Point</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1Processor" prot="public">Dali::Integration::Processor</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1RenderController" prot="public">Dali::Integration::RenderController</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1RenderStatus" prot="public">Dali::Integration::RenderStatus</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1Scene" prot="public">Dali::Integration::Scene</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1ScenePreRenderStatus" prot="public">Dali::Integration::ScenePreRenderStatus</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1TouchEvent" prot="public">Dali::Integration::TouchEvent</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1TouchEventCombiner" prot="public">Dali::Integration::TouchEventCombiner</innerclass>
+    <innerclass refid="classDali_1_1Integration_1_1UpdateStatus" prot="public">Dali::Integration::UpdateStatus</innerclass>
+    <innerclass refid="structDali_1_1Integration_1_1WheelEvent" prot="public">Dali::Integration::WheelEvent</innerclass>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1KeepUpdating">Dali::Integration::KeepUpdating</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1Log">Dali::Integration::Log</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1Profiling">Dali::Integration::Profiling</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1RenderTaskList">Dali::Integration::RenderTaskList</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1Test">Dali::Integration::Test</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1TextureContextTypeHint">Dali::Integration::TextureContextTypeHint</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1TimeChecker">Dali::Integration::TimeChecker</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1Trace">Dali::Integration::Trace</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1Integration_1a88e3210acf6d833a6ffed428fb9930f0" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>RenderToFrameBuffer</name>
+        <qualifiedname>Dali::Integration::RenderToFrameBuffer</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Integration_1a88e3210acf6d833a6ffed428fb9930f0a946003f97ccc52d5d3b54ac0ec31bbfc" prot="public">
+          <name>FALSE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1a88e3210acf6d833a6ffed428fb9930f0ac0d83f0b82a6b30de8811e69e6d95c61" prot="public">
+          <name>TRUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerations to specify whether we should render to the frame-buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" line="36" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Integration_1abe571eed3527cdbb64741838bd200215" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DepthBufferAvailable</name>
+        <qualifiedname>Dali::Integration::DepthBufferAvailable</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Integration_1abe571eed3527cdbb64741838bd200215a946003f97ccc52d5d3b54ac0ec31bbfc" prot="public">
+          <name>FALSE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1abe571eed3527cdbb64741838bd200215ac0d83f0b82a6b30de8811e69e6d95c61" prot="public">
+          <name>TRUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerations to specify whether the depth buffer is available. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" line="45" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Integration_1a173a4f7c5e532d2b7f6bc08f9658f943" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>StencilBufferAvailable</name>
+        <qualifiedname>Dali::Integration::StencilBufferAvailable</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Integration_1a173a4f7c5e532d2b7f6bc08f9658f943a946003f97ccc52d5d3b54ac0ec31bbfc" prot="public">
+          <name>FALSE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1a173a4f7c5e532d2b7f6bc08f9658f943ac0d83f0b82a6b30de8811e69e6d95c61" prot="public">
+          <name>TRUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerations to specify whether the stencil buffer is available. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" line="54" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Integration_1adf7a4dd4b0fa58d8e832674567c7b469" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PartialUpdateAvailable</name>
+        <qualifiedname>Dali::Integration::PartialUpdateAvailable</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Integration_1adf7a4dd4b0fa58d8e832674567c7b469a946003f97ccc52d5d3b54ac0ec31bbfc" prot="public">
+          <name>FALSE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1adf7a4dd4b0fa58d8e832674567c7b469ac0d83f0b82a6b30de8811e69e6d95c61" prot="public">
+          <name>TRUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerations to specify whether the partial update is available. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" line="63" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Integration_1af93d17cb7c634114d0476566fe2978d7" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CorePolicyFlags</name>
+        <qualifiedname>Dali::Integration::CorePolicyFlags</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Integration_1af93d17cb7c634114d0476566fe2978d7a5b39c8b553c821e7cddc6da64b5bd2ee" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Zero means that no additional policy is set. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1af93d17cb7c634114d0476566fe2978d7a28a6ea9240e9d7372ba1ac567ec6a9b2" prot="public">
+          <name>RENDER_TO_FRAME_BUFFER</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>Whether we should render to the frame-buffer or not. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1af93d17cb7c634114d0476566fe2978d7a6fa5b852a416d1c7ea9ebedb07c054a4" prot="public">
+          <name>DEPTH_BUFFER_AVAILABLE</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>Whether the depth buffer is available or not. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1af93d17cb7c634114d0476566fe2978d7ae21dba6075f8e88c5161e9d9b68b1da2" prot="public">
+          <name>STENCIL_BUFFER_AVAILABLE</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Whether the stencil buffer is available or not. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1af93d17cb7c634114d0476566fe2978d7a1afc70e06bde4d873cd76a43e88b0b0d" prot="public">
+          <name>PARTIAL_UPDATE_AVAILABLE</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>Whether the partial update is available or not. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The additional policy of core update / rendering process. <simplesect kind="note"><para>Policy cannot be changed after the <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref> initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" line="73" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core-enumerations.h" bodystart="74" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ProfilingType</name>
+        <qualifiedname>Dali::Integration::ProfilingType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba0408a46dc3cc3512ede00ae40f44e6a6" prot="public">
+          <name>PROFILING_TYPE_PAN_GESTURE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba04da6ee3fc8eed4d2ca596b69b758793" prot="public">
+          <name>PROFILING_TYPE_END</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.h" bodystart="33" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1Integration_1aa4d50025e948df9b5c98257e80c442cd" prot="public" static="no">
+        <type>std::vector&lt; <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Point</ref> &gt;</type>
+        <definition>using Dali::Integration::PointContainer = typedef std::vector&lt;Point&gt;</definition>
+        <argsstring></argsstring>
+        <name>PointContainer</name>
+        <qualifiedname>Dali::Integration::PointContainer</qualifiedname>
+        <briefdescription>
+<para>Container of points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h" line="30" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Integration_1ac4d834521dec59e457aa04480fc81c53" prot="public" static="no">
+        <type>PointContainer::iterator</type>
+        <definition>using Dali::Integration::PointContainerIterator = typedef PointContainer::iterator</definition>
+        <argsstring></argsstring>
+        <name>PointContainerIterator</name>
+        <qualifiedname>Dali::Integration::PointContainerIterator</qualifiedname>
+        <briefdescription>
+<para>Iterator for <ref refid="namespaceDali_1_1Integration_1aa4d50025e948df9b5c98257e80c442cd" kindref="member">Dali::Integration::PointContainer</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h" line="31" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDali_1_1Integration_1adfbf22eda98baef55dfab52a96bfe264" prot="public" static="no">
+        <type>PointContainer::const_iterator</type>
+        <definition>using Dali::Integration::PointContainerConstIterator = typedef PointContainer::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>PointContainerConstIterator</name>
+        <qualifiedname>Dali::Integration::PointContainerConstIterator</qualifiedname>
+        <briefdescription>
+<para>Const iterator for <ref refid="namespaceDali_1_1Integration_1aa4d50025e948df9b5c98257e80c442cd" kindref="member">Dali::Integration::PointContainer</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1af39691d02fbeeafab2918e5c1d0779c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::ConstraintSetInternalTag</definition>
+        <argsstring>(Dali::Constraint &amp;constraint, const uint32_t tag)</argsstring>
+        <name>ConstraintSetInternalTag</name>
+        <qualifiedname>Dali::Integration::ConstraintSetInternalTag</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Constraint" kindref="compound">Dali::Constraint</ref> &amp;</type>
+          <declname>constraint</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+<para>Set tag number for given constraint. It should be called only for internal repositories. Have exclusive relation with SetTag(). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Assert if we set internal tags which alread set some custom tag by application.</para>
+</simplesect>
+@SINCE_2_4.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">constraint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The constraint that want to set tag. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" line="27" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" bodystart="27" bodyend="31" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.h" declline="37" declcolumn="20"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88af574727fa54370e06f852a57c9fadf94" compoundref="constraint-tag-ranges_8h" startline="53">Dali::INTERNAL_CONSTRAINT_TAG_MAX</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a362885ae979a675ed4c1c7c6c4a595b7" compoundref="constraint-tag-ranges_8h" startline="46">Dali::INTERNAL_CONSTRAINT_TAG_START</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a6327e8fa39bef6fc0b54e2bcf0a01de7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::HandleRemoveAllConstraints</definition>
+        <argsstring>(Dali::Handle &amp;handle)</argsstring>
+        <name>HandleRemoveAllConstraints</name>
+        <qualifiedname>Dali::Integration::HandleRemoveAllConstraints</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Removes all the constraint from the Object include custom and internal. It should be called only for internal repositories. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle that want to remove all constraints. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" line="33" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" bodystart="33" bodyend="36" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.h" declline="46" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a27d2493a69e1d08ac7228abf55152971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::HandleRemoveConstraints</definition>
+        <argsstring>(Dali::Handle &amp;handle, uint32_t tag)</argsstring>
+        <name>HandleRemoveConstraints</name>
+        <qualifiedname>Dali::Integration::HandleRemoveConstraints</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+<para>Removes all the constraint from the Object with a matching tag. It should be called only for internal repositories. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle that want to remove constraint by tag. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag of the constraints which will be removed. Only internal tag be allowed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" line="38" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" bodystart="38" bodyend="42" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.h" declline="56" declcolumn="20"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88af574727fa54370e06f852a57c9fadf94" compoundref="constraint-tag-ranges_8h" startline="53">Dali::INTERNAL_CONSTRAINT_TAG_MAX</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a362885ae979a675ed4c1c7c6c4a595b7" compoundref="constraint-tag-ranges_8h" startline="46">Dali::INTERNAL_CONSTRAINT_TAG_START</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ae51dc0e6c25fb5b9e4eb4e206b172096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::HandleRemoveConstraints</definition>
+        <argsstring>(Dali::Handle &amp;handle, uint32_t tagBegin, uint32_t tagEnd)</argsstring>
+        <name>HandleRemoveConstraints</name>
+        <qualifiedname>Dali::Integration::HandleRemoveConstraints</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tagBegin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tagEnd</declname>
+        </param>
+        <briefdescription>
+<para>Removes all the constraint from the Object with a range of tags [tagBegin tagEnd). It should be called only for internal repositories. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle that want to remove constraint by tag. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tagBegin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The begin tag of the constraints which will be removed. Only internal tag be allowed. (include) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tagEnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end tag of the constraints which will be removed. Only internal tag be allowed. (exclusived) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" line="44" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp" bodystart="44" bodyend="48" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.h" declline="67" declcolumn="20"/>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88af574727fa54370e06f852a57c9fadf94" compoundref="constraint-tag-ranges_8h" startline="53">Dali::INTERNAL_CONSTRAINT_TAG_MAX</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a362885ae979a675ed4c1c7c6c4a595b7" compoundref="constraint-tag-ranges_8h" startline="46">Dali::INTERNAL_CONSTRAINT_TAG_START</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1acebe4f7ba34710d86c0a3a9cea57d4c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1TouchEvent" kindref="compound">Dali::TouchEvent</ref></type>
+        <definition>DALI_CORE_API Dali::TouchEvent Dali::Integration::NewTouchEvent</definition>
+        <argsstring>(uint32_t timeStamp, const TouchPoint &amp;point)</argsstring>
+        <name>NewTouchEvent</name>
+        <qualifiedname>Dali::Integration::NewTouchEvent</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeStamp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1TouchPoint" kindref="compound">TouchPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new touch data handle from timestamp and touch point.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeStamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time stamp of the touch event. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point on screen where the touch occurred. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new touch data handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" line="25" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" bodystart="25" bodyend="28" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.h" declline="38" declcolumn="32"/>
+        <references refid="namespaceDali_1_1Integration_1acebe4f7ba34710d86c0a3a9cea57d4c0" compoundref="touch-integ_8cpp" startline="25" endline="28">NewTouchEvent</references>
+        <referencedby refid="namespaceDali_1_1Integration_1acebe4f7ba34710d86c0a3a9cea57d4c0" compoundref="touch-integ_8cpp" startline="25" endline="28">NewTouchEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a84d52dec8b39e69220be8a215a8bff6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1TouchEvent" kindref="compound">Dali::TouchEvent</ref></type>
+        <definition>DALI_CORE_API Dali::TouchEvent Dali::Integration::NewTouchEvent</definition>
+        <argsstring>(uint32_t timeStamp, const Dali::Integration::Point &amp;point)</argsstring>
+        <name>NewTouchEvent</name>
+        <qualifiedname>Dali::Integration::NewTouchEvent</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeStamp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Dali::Integration::Point</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new touch data handle from timestamp and point.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeStamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time stamp of the touch event. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point on screen where the touch occurred. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new touch data handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" line="30" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" bodystart="30" bodyend="36" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.h" declline="47" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a5b6ae08fed36cbd1bc88a95f60222a90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1HoverEvent" kindref="compound">Dali::HoverEvent</ref></type>
+        <definition>DALI_CORE_API Dali::HoverEvent Dali::Integration::NewHoverEvent</definition>
+        <argsstring>(uint32_t timeStamp, const TouchPoint &amp;point)</argsstring>
+        <name>NewHoverEvent</name>
+        <qualifiedname>Dali::Integration::NewHoverEvent</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeStamp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1TouchPoint" kindref="compound">TouchPoint</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new hover data handle from timestamp and point.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeStamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time stamp of the hover event. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point on screen where the hover occurred. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new hover data handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" line="38" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" bodystart="38" bodyend="41" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.h" declline="56" declcolumn="32"/>
+        <references refid="namespaceDali_1_1Integration_1a5b6ae08fed36cbd1bc88a95f60222a90" compoundref="touch-integ_8cpp" startline="38" endline="41">NewHoverEvent</references>
+        <referencedby refid="namespaceDali_1_1Integration_1a5b6ae08fed36cbd1bc88a95f60222a90" compoundref="touch-integ_8cpp" startline="38" endline="41">NewHoverEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a2a5f87542436d8a890bc383bb754401c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1HoverEvent" kindref="compound">Dali::HoverEvent</ref></type>
+        <definition>DALI_CORE_API Dali::HoverEvent Dali::Integration::NewHoverEvent</definition>
+        <argsstring>(uint32_t timeStamp, const Dali::Integration::Point &amp;point)</argsstring>
+        <name>NewHoverEvent</name>
+        <qualifiedname>Dali::Integration::NewHoverEvent</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeStamp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structDali_1_1Integration_1_1Point" kindref="compound">Dali::Integration::Point</ref> &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new hover data handle from timestamp and point.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeStamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time stamp of the hpver event. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point on screen where the hover occurred. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new hover data handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" line="43" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp" bodystart="43" bodyend="49" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.h" declline="65" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ae49a5cd3e288b6a862765f6cb35559f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGesturePredictionMode</definition>
+        <argsstring>(int mode)</argsstring>
+        <name>SetPanGesturePredictionMode</name>
+        <qualifiedname>Dali::Integration::SetPanGesturePredictionMode</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Called by adaptor to set the pan gesture prediction mode from an environment variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>Should be called after <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref> creation. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pan gesture prediction mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="13" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="13" bodyend="17" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="38" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a466410e1e103c7079616a17ef936d622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGesturePredictionAmount</definition>
+        <argsstring>(unsigned int amount)</argsstring>
+        <name>SetPanGesturePredictionAmount</name>
+        <qualifiedname>Dali::Integration::SetPanGesturePredictionAmount</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>Called by adaptor to set the prediction amount of the pan gesture from an environment variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prediction amount in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="19" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="19" bodyend="23" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="46" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a5a7ad382801ba2d0fbc0a7e3af4f6bf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureMaximumPredictionAmount</definition>
+        <argsstring>(unsigned int amount)</argsstring>
+        <name>SetPanGestureMaximumPredictionAmount</name>
+        <qualifiedname>Dali::Integration::SetPanGestureMaximumPredictionAmount</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>Sets the upper bound of the prediction amount for clamping from an environment variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prediction amount in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="25" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="25" bodyend="29" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="54" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a74f5a3bfa7ac121625ccd6b0219b5d0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureMinimumPredictionAmount</definition>
+        <argsstring>(unsigned int amount)</argsstring>
+        <name>SetPanGestureMinimumPredictionAmount</name>
+        <qualifiedname>Dali::Integration::SetPanGestureMinimumPredictionAmount</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>Sets the lower bound of the prediction amount for clamping from an environment variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prediction amount in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="31" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="31" bodyend="35" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="62" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a0b85b43af18da2aeeec7f896d65bf122" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGesturePredictionAmountAdjustment</definition>
+        <argsstring>(unsigned int amount)</argsstring>
+        <name>SetPanGesturePredictionAmountAdjustment</name>
+        <qualifiedname>Dali::Integration::SetPanGesturePredictionAmountAdjustment</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>Sets the prediction amount to adjust when the pan velocity is changed from an environment variable. If the pan velocity is accelerating, the prediction amount will be increased by the specified amount until it reaches the upper bound. If the pan velocity is decelerating, the prediction amount will be decreased by the specified amount until it reaches the lower bound. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prediction amount in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="37" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="37" bodyend="41" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="73" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1aa110598e1aa849da8337ff62514c7afd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureSmoothingMode</definition>
+        <argsstring>(int mode)</argsstring>
+        <name>SetPanGestureSmoothingMode</name>
+        <qualifiedname>Dali::Integration::SetPanGestureSmoothingMode</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Called to set how pan gestures smooth input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The smoothing mode to use </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="43" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="43" bodyend="47" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="80" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a5c60beb2955e3360b78274d6dd7530c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureSmoothingAmount</definition>
+        <argsstring>(float amount)</argsstring>
+        <name>SetPanGestureSmoothingAmount</name>
+        <qualifiedname>Dali::Integration::SetPanGestureSmoothingAmount</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+<para>Sets the smoothing amount of the pan gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">amount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The smoothing amount [0.0f,1.0f] - 0.0f would be no smoothing, 1.0f maximum smoothing </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="49" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="49" bodyend="53" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="87" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ac95e899bf5b7ee2af4a46104cd4893c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureUseActualTimes</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetPanGestureUseActualTimes</name>
+        <qualifiedname>Dali::Integration::SetPanGestureUseActualTimes</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether to use actual times of the real gesture and frames or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True = use actual times, False = use perfect values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="55" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="55" bodyend="59" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="94" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ae9e8cf4172ea3caa4983ae12f2b68987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureInterpolationTimeRange</definition>
+        <argsstring>(int value)</argsstring>
+        <name>SetPanGestureInterpolationTimeRange</name>
+        <qualifiedname>Dali::Integration::SetPanGestureInterpolationTimeRange</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the interpolation time range (ms) of past points to use (with weights) when interpolating. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time range in ms </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="61" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="61" bodyend="65" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="101" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a6ccb58d466699de9188e6f3e5c7a29ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureScalarOnlyPredictionEnabled</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetPanGestureScalarOnlyPredictionEnabled</name>
+        <qualifiedname>Dali::Integration::SetPanGestureScalarOnlyPredictionEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether to use scalar only prediction, which when enabled, ignores acceleration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True = use scalar prediction only </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="67" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="67" bodyend="71" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="108" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a5e73b24c71086eb5fc025fc7cfe373f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureTwoPointPredictionEnabled</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetPanGestureTwoPointPredictionEnabled</name>
+        <qualifiedname>Dali::Integration::SetPanGestureTwoPointPredictionEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether to use two point prediction. This combines two interpolated points to get more steady acceleration and velocity values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True = use two point prediction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="73" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="73" bodyend="77" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="115" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a5127dd5369d0ef60ab1c1a5d08b18b07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureTwoPointInterpolatePastTime</definition>
+        <argsstring>(int value)</argsstring>
+        <name>SetPanGestureTwoPointInterpolatePastTime</name>
+        <qualifiedname>Dali::Integration::SetPanGestureTwoPointInterpolatePastTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the time in the past to interpolate the second point when using two point interpolation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time in past in ms </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="79" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="79" bodyend="83" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="122" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a7bb2637caa96932cf1609ddfed6827e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureTwoPointVelocityBias</definition>
+        <argsstring>(float value)</argsstring>
+        <name>SetPanGestureTwoPointVelocityBias</name>
+        <qualifiedname>Dali::Integration::SetPanGestureTwoPointVelocityBias</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the two point velocity bias. This is the ratio of first and second points to use for velocity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0.0f = 100% first point. 1.0f = 100% of second point. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="85" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="85" bodyend="89" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="129" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ada3087c113e891b5e044c3848a14d7bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureTwoPointAccelerationBias</definition>
+        <argsstring>(float value)</argsstring>
+        <name>SetPanGestureTwoPointAccelerationBias</name>
+        <qualifiedname>Dali::Integration::SetPanGestureTwoPointAccelerationBias</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the two point acceleration bias. This is the ratio of first and second points to use for acceleration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0.0f = 100% first point. 1.0f = 100% of second point. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="91" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="91" bodyend="95" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="136" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab3787bfdfcc1ef5c60fd1854f61a79ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureMultitapSmoothingRange</definition>
+        <argsstring>(int value)</argsstring>
+        <name>SetPanGestureMultitapSmoothingRange</name>
+        <qualifiedname>Dali::Integration::SetPanGestureMultitapSmoothingRange</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the range of time (ms) of points in the history to perform multitap smoothing with (if enabled). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time in past in ms </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="97" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="97" bodyend="101" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="143" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1af8cd658775b12878008af15b8c76b368" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureMinimumDistance</definition>
+        <argsstring>(int value)</argsstring>
+        <name>SetPanGestureMinimumDistance</name>
+        <qualifiedname>Dali::Integration::SetPanGestureMinimumDistance</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum distance required to start a pan gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distance to move </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="103" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="103" bodyend="107" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="150" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a41474ba71b9fb7b2cc253b4e5ae1b0ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPanGestureMinimumPanEvents</definition>
+        <argsstring>(int value)</argsstring>
+        <name>SetPanGestureMinimumPanEvents</name>
+        <qualifiedname>Dali::Integration::SetPanGestureMinimumPanEvents</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum number of touch events to start a pan. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of pan events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="109" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="109" bodyend="113" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="157" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ac778c28bac86bb3d6610e2afe511ac98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPinchGestureMinimumDistance</definition>
+        <argsstring>(float value)</argsstring>
+        <name>SetPinchGestureMinimumDistance</name>
+        <qualifiedname>Dali::Integration::SetPinchGestureMinimumDistance</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum distance required to start a pinch gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distance to move in pixels </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="115" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="115" bodyend="119" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="164" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab574a984bda8a35b20b5c8335fc211ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPinchGestureMinimumTouchEvents</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>SetPinchGestureMinimumTouchEvents</name>
+        <qualifiedname>Dali::Integration::SetPinchGestureMinimumTouchEvents</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum touch events required before a pinch can be started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of touch events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="121" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="121" bodyend="125" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="171" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a3fa55a81e8088ca2256ec1828c2b009f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetPinchGestureMinimumTouchEventsAfterStart</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>SetPinchGestureMinimumTouchEventsAfterStart</name>
+        <qualifiedname>Dali::Integration::SetPinchGestureMinimumTouchEventsAfterStart</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum touch events required after a pinch started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of touch events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="127" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="127" bodyend="131" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="178" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a94c4b038dc1ec000d212fd2583a6ea38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetRotationGestureMinimumTouchEvents</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>SetRotationGestureMinimumTouchEvents</name>
+        <qualifiedname>Dali::Integration::SetRotationGestureMinimumTouchEvents</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum touch events required before a rotation can be started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of touch events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="133" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="133" bodyend="137" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="185" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ae4b38227c4bad60a2f643b46e2f4efc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetRotationGestureMinimumTouchEventsAfterStart</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>SetRotationGestureMinimumTouchEventsAfterStart</name>
+        <qualifiedname>Dali::Integration::SetRotationGestureMinimumTouchEventsAfterStart</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum touch events required after a rotation started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of touch events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="139" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="139" bodyend="143" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="192" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1aea125b4cd194b502d9ec02275b153831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetLongPressMinimumHoldingTime</definition>
+        <argsstring>(unsigned int value)</argsstring>
+        <name>SetLongPressMinimumHoldingTime</name>
+        <qualifiedname>Dali::Integration::SetLongPressMinimumHoldingTime</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the minimum holding time required to be recognized as a long press gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time value in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="145" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="145" bodyend="149" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="199" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a61005488ddce5c529d4ae2b8d9f4feb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetTapMaximumAllowedTime</definition>
+        <argsstring>(uint32_t time)</argsstring>
+        <name>SetTapMaximumAllowedTime</name>
+        <qualifiedname>Dali::Integration::SetTapMaximumAllowedTime</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Sets the maximum allowed time required to be recognized as a multi tap gesture (millisecond) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the maximum allowable time interval to recognize as multi-tap. If taps come in within this time, they are recognized as multi-tap.</para>
+<para><simplesect kind="note"><para>If it&apos;s a double tap, it&apos;s like this: |(touch down &lt;<ndash/>recognizerTime--&gt; touch up) &lt;<ndash/> wihtin maximumAllowedTime --&gt; (touch down &lt;<ndash/>recognizerTime--&gt; touch up)|</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Integration_1a599cba2a07194c5dc90a509ee2aba697" kindref="member">SetTapRecognizerTime()</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time value in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="151" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="151" bodyend="155" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="214" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a599cba2a07194c5dc90a509ee2aba697" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetTapRecognizerTime</definition>
+        <argsstring>(uint32_t time)</argsstring>
+        <name>SetTapRecognizerTime</name>
+        <qualifiedname>Dali::Integration::SetTapRecognizerTime</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Sets the recognizer time required to be recognized as a tap gesture (millisecond) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This time is from touch down to touch up to recognize the tap gesture.</para>
+<para><simplesect kind="note"><para>The tab is like below: touch down &lt;<ndash/>recognizerTime--&gt; touch up If the time between touch down and touch up is longer than recognizer time, it is not recognized as a tap gesture.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Integration_1a61005488ddce5c529d4ae2b8d9f4feb9" kindref="member">SetTapMaximumAllowedTime()</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time value in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="157" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="157" bodyend="161" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="229" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ac39746d7fa208c89f2a42e58e13dac2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetTapMaximumMotionAllowedDistance</definition>
+        <argsstring>(float distance)</argsstring>
+        <name>SetTapMaximumMotionAllowedDistance</name>
+        <qualifiedname>Dali::Integration::SetTapMaximumMotionAllowedDistance</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>distance</declname>
+        </param>
+        <briefdescription>
+<para>Sets the recognizer distance required to be recognized as a tap gesture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This distance is from touch down to touch up to recognize the tap gesture.</para>
+<para><simplesect kind="note"><para>The tab is like below: touch down &lt;<ndash/>distance--&gt; touch up If the distance between touch down and touch up is longer than distance, it is not recognized as a tap gesture. Default value is 20</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Integration_1ac39746d7fa208c89f2a42e58e13dac2e" kindref="member">SetTapMaximumMotionAllowedDistance()</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">distance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The distance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" line="163" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.cpp" bodystart="163" bodyend="167" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/input-options.h" declline="245" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1abebfa652b725faaab3f23d9d18d7dc7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::ReleasePixelDataBuffer</definition>
+        <argsstring>(Dali::PixelData pixelData)</argsstring>
+        <name>ReleasePixelDataBuffer</name>
+        <qualifiedname>Dali::Integration::ReleasePixelDataBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref></type>
+          <declname>pixelData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release the buffer from a pixel data object, zero it in the pixel data object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixel data object to take the buffer from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" line="26" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" bodystart="26" bodyend="30" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.h" declline="63" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a1bbacee881eb3061b9f135eda4aaf25b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structDali_1_1Integration_1_1PixelDataBuffer" kindref="compound">PixelDataBuffer</ref></type>
+        <definition>DALI_CORE_API PixelDataBuffer Dali::Integration::GetPixelDataBuffer</definition>
+        <argsstring>(const Dali::PixelData &amp;pixelData)</argsstring>
+        <name>GetPixelDataBuffer</name>
+        <qualifiedname>Dali::Integration::GetPixelDataBuffer</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref> &amp;</type>
+          <declname>pixelData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the buffer from a pixel data object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixel data object to get the buffer from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the buffer of pixelData. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" line="32" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" bodystart="32" bodyend="37" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.h" declline="70" declcolumn="31"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a537aa3c4b69a1a5a505fdae3acfa6893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref></type>
+        <definition>DALI_CORE_API Dali::PixelData Dali::Integration::NewPixelDataWithReleaseAfterUpload</definition>
+        <argsstring>(uint8_t *buffer, uint32_t bufferSize, uint32_t width, uint32_t height, uint32_t strideBytes, Pixel::Format pixelFormat, PixelData::ReleaseFunction releaseFunction)</argsstring>
+        <name>NewPixelDataWithReleaseAfterUpload</name>
+        <qualifiedname>Dali::Integration::NewPixelDataWithReleaseAfterUpload</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>strideBytes</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Pixel::Format</ref></type>
+          <declname>pixelFormat</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1PixelData_1a2510d89caad20376ceb391021c9d2689" kindref="member">PixelData::ReleaseFunction</ref></type>
+          <declname>releaseFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object which will release the buffer automatically after upload to texture. <simplesect kind="return"><para>The pixel data object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" line="39" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" bodystart="39" bodyend="49" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.h" declline="76" declcolumn="31"/>
+        <references refid="classDali_1_1IntrusivePtr_1a647cf4e37511456329f9c3b663a5a5c1" compoundref="intrusive-ptr_8h" startline="140" endline="143">Dali::IntrusivePtr&lt; T &gt;::Get</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab57c8c03858a4a1b7830ebd3f62e13db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::Integration::IsPixelDataReleaseAfterUpload</definition>
+        <argsstring>(const Dali::PixelData &amp;pixelData)</argsstring>
+        <name>IsPixelDataReleaseAfterUpload</name>
+        <qualifiedname>Dali::Integration::IsPixelDataReleaseAfterUpload</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref> &amp;</type>
+          <declname>pixelData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get whether we need to release pixel data after texture upload or not. <simplesect kind="note"><para>This function can be called from another thread. Be careful about thread safety. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixel data object to get the release policy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if we need to release pixel data after texture upload. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" line="51" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.cpp" bodystart="51" bodyend="55" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/pixel-data-integ.h" declline="90" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a69e4e4b828d8ef7fbd7a1a5b08a7614a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::EnableProfiling</definition>
+        <argsstring>(ProfilingType type)</argsstring>
+        <name>EnableProfiling</name>
+        <qualifiedname>Dali::Integration::EnableProfiling</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8b" kindref="member">ProfilingType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called by adaptor to provide profiling information.</para>
+<para><simplesect kind="pre"><para>Should be called after <ref refid="classDali_1_1Integration_1_1Core" kindref="compound">Core</ref> creation. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of profiling information to output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.cpp" line="61" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.cpp" bodystart="61" bodyend="78" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.h" declline="45" declcolumn="20"/>
+        <references refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba04da6ee3fc8eed4d2ca596b69b758793" compoundref="profiling_8h" startline="36">PROFILING_TYPE_END</references>
+        <references refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba0408a46dc3cc3512ede00ae40f44e6a6" compoundref="profiling_8h" startline="34">PROFILING_TYPE_PAN_GESTURE</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a735069eb5ad881e8fb6b03818071ea77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Dali::Shader</ref></type>
+        <definition>DALI_CORE_API Dali::Shader Dali::Integration::ShaderNewWithUniformBlock</definition>
+        <argsstring>(Dali::StringView vertexShader, Dali::StringView fragmentShader, Shader::Hint::Value hints, Dali::StringView shaderName, std::vector&lt; Dali::UniformBlock &gt; uniformBlocks, bool strongConnection=false)</argsstring>
+        <name>ShaderNewWithUniformBlock</name>
+        <qualifiedname>Dali::Integration::ShaderNewWithUniformBlock</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>vertexShader</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>fragmentShader</declname>
+        </param>
+        <param>
+          <type><ref refid="structDali_1_1Shader_1_1Hint_1ab0bfa42ce7c44f151b3783d207295d4a" kindref="member">Shader::Hint::Value</ref></type>
+          <declname>hints</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref></type>
+          <declname>shaderName</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classDali_1_1UniformBlock" kindref="compound">Dali::UniformBlock</ref> &gt;</type>
+          <declname>uniformBlocks</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>strongConnection</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> and connect by given uniform blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">vertexShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertex shader code for the effect. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fragmentShader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fragment <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> code for the effect. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">hints</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hints to define the geometry of the rendered object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">shaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of this shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uniformBlocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform blocks to be connected to shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">strongConnection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether we connect uniform blocks to shader strong or weak. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a shader effect </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp" line="26" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp" bodystart="26" bodyend="30" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.h" declline="45" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1afc8e94fec9ef035f84158c986181be6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Shader" kindref="compound">Dali::Shader</ref></type>
+        <definition>DALI_CORE_API Dali::Shader Dali::Integration::ShaderNewWithUniformBlock</definition>
+        <argsstring>(Dali::Property::Value shaderMap, std::vector&lt; Dali::UniformBlock &gt; uniformBlocks, bool strongConnection=false)</argsstring>
+        <name>ShaderNewWithUniformBlock</name>
+        <qualifiedname>Dali::Integration::ShaderNewWithUniformBlock</qualifiedname>
+        <param>
+          <type>Dali::Property::Value</type>
+          <declname>shaderMap</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classDali_1_1UniformBlock" kindref="compound">Dali::UniformBlock</ref> &gt;</type>
+          <declname>uniformBlocks</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>strongConnection</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classDali_1_1Shader" kindref="compound">Shader</ref> and connect by given uniform blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.31 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">shaderMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Property::Map of shader data or Property::Array of Property::Map. Property::Map format is {&quot;renderPassTag&quot;:&quot;&quot;, &quot;vertex&quot;:&quot;&quot;, &quot;fragment&quot;:&quot;&quot;, &quot;hints&quot;:&quot;&quot;} shaderMap can be Property::Array of Property::Map for multi pass shading. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">uniformBlocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uniform blocks to be connected to shader. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">strongConnection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether we connect uniform blocks to shader strong or weak. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a shader effect </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp" line="32" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp" bodystart="32" bodyend="36" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.h" declline="58" declcolumn="28"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab29223f116e058b31a3b3794a4e108bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>DALI_CORE_API std::string Dali::Integration::GenerateTaggedShaderPrefix</definition>
+        <argsstring>(const std::string &amp;shaderPrefix)</argsstring>
+        <name>GenerateTaggedShaderPrefix</name>
+        <qualifiedname>Dali::Integration::GenerateTaggedShaderPrefix</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>shaderPrefix</declname>
+        </param>
+        <briefdescription>
+<para>Generates tag &apos;legacy-prefix-end&apos; with end position of prefix text to make shader code parsing easier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_3.43 <simplesect kind="return"><para>Generated string with tag. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp" line="38" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp" bodystart="38" bodyend="41" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.h" declline="67" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>DALI_CORE_API std::string Dali::Integration::ToStdString</definition>
+        <argsstring>(String &amp;&amp;string)</argsstring>
+        <name>ToStdString</name>
+        <qualifiedname>Dali::Integration::ToStdString</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;&amp;</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> to a std::string by moving. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This moves the string data without copying. The source <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> will be left in a valid but empty state. For internal use where the implementation needs to work with std::string efficiently.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::string containing the moved data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" line="24" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" bodystart="24" bodyend="27" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" declline="60" declcolumn="27"/>
+        <references refid="classDali_1_1Internal_1_1StringImpl_1a334bd27506cdac2dc4ac2765e6755813" compoundref="dali-string-impl_8cpp" startline="71" endline="77">Dali::Internal::StringImpl::Extract</references>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">ToStdString</references>
+        <referencedby refid="classDali_1_1BaseObject_1a6472c9976b4614373a756cb094d32590" compoundref="base-object_8cpp" startline="72" endline="82">Dali::BaseObject::DoAction</referencedby>
+        <referencedby refid="classDali_1_1BaseObject_1ab17b75a9f7726a0f3568f26a0fd664af" compoundref="base-object_8cpp" startline="118" endline="128">Dali::BaseObject::DoConnectSignal</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ab652579778656c982e878f9ab5284b56" compoundref="texture-integ_8cpp" startline="53" endline="57">TextureUploadWithContent</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ab84cbf033793332625bd35cdb3a48d98" compoundref="string-utils_8cpp" startline="29" endline="38">ToStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a1117f88c40894d94d6f3307f8d4a83be" compoundref="string-utils_8h" startline="45" endline="48">ToStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a76f77ecc8afafb672b203125aeac2e06" compoundref="string-utils_8h" startline="71" endline="75">ToStdString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">ToStdString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab84cbf033793332625bd35cdb3a48d98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>DALI_CORE_API std::string Dali::Integration::ToStdString</definition>
+        <argsstring>(const Property::Value &amp;value)</argsstring>
+        <name>ToStdString</name>
+        <qualifiedname>Dali::Integration::ToStdString</qualifiedname>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Convert a Dali::Property::Value to a std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Extracts the string from a Property::Value without copying the Property::Value wrapper itself. The string data is still copied internally (no const-ref getter exists on Property::Value).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Property::Value (must be of type STRING) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::string containing the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" line="29" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" bodystart="29" bodyend="38" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" declline="87" declcolumn="27"/>
+        <references refid="dali-common_8h_1adeca4642d49a048ecfd4b8e328dd1696" compoundref="dali-common_8h" startline="207">DALI_ASSERT_DEBUG</references>
+        <references refid="classDali_1_1Internal_1_1StringImpl_1a334bd27506cdac2dc4ac2765e6755813" compoundref="dali-string-impl_8cpp" startline="71" endline="77">Dali::Internal::StringImpl::Extract</references>
+        <references refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da1554fbf61f4d3bbbfaaa914612cf12cb" compoundref="property-key_8h" startline="50">Dali::Property::STRING</references>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">ToStdString</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a77a2fdb0143a9dc15fb3307af532f373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::Integration::GetStdString</definition>
+        <argsstring>(const Property::Value &amp;value, std::string &amp;out)</argsstring>
+        <name>GetStdString</name>
+        <qualifiedname>Dali::Integration::GetStdString</qualifiedname>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+<para>Extract a std::string from a Property::Value conditionally. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Restores the one-liner <computeroutput>if(value.Get(str))</computeroutput> pattern that existed before the <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> migration. Returns true if the value was a string and was extracted successfully.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Property::Value to extract from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string to write to on success </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the value was a string and was extracted </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" line="40" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" bodystart="40" bodyend="49" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" declline="116" declcolumn="20"/>
+        <references refid="classDali_1_1Internal_1_1StringImpl_1a334bd27506cdac2dc4ac2765e6755813" compoundref="dali-string-impl_8cpp" startline="71" endline="77">Dali::Internal::StringImpl::Extract</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">String</ref></type>
+        <definition>DALI_CORE_API String Dali::Integration::ToDaliString</definition>
+        <argsstring>(std::string &amp;&amp;string)</argsstring>
+        <name>ToDaliString</name>
+        <qualifiedname>Dali::Integration::ToDaliString</qualifiedname>
+        <param>
+          <type>std::string &amp;&amp;</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::string to a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> by moving. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This moves the string data without copying. The source std::string will be left in a valid but empty state.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string to move from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> containing the moved data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" line="51" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.cpp" bodystart="51" bodyend="54" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" declline="297" declcolumn="22"/>
+        <references refid="classDali_1_1Internal_1_1StringImpl_1a2fa72e6661e7f70318b2a2a80d64fcb3" compoundref="dali-string-impl_8cpp" startline="89" endline="101">Dali::Internal::StringImpl::ToDaliString</references>
+        <references refid="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" compoundref="string-utils_8cpp" startline="51" endline="54">ToDaliString</references>
+        <referencedby refid="namespaceDali_1_1Integration_1a517fa66bcccd26e5809df984a7ea2557" compoundref="string-utils_8h" startline="270" endline="273">ToDaliString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a3c4c149ea67376baad291ddf91a254a3" compoundref="string-utils_8h" startline="308" endline="311">ToDaliString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" compoundref="string-utils_8cpp" startline="51" endline="54">ToDaliString</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1aa2e233db2d23dc91c6c7256e5029ca4c" compoundref="string-utils_8h" startline="283" endline="286">ToDaliString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a1117f88c40894d94d6f3307f8d4a83be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Integration::ToStdString</definition>
+        <argsstring>(const String &amp;string)</argsstring>
+        <name>ToStdString</name>
+        <qualifiedname>Dali::Integration::ToStdString</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> to a std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This creates a copy of the string data. For internal use where the implementation needs to work with std::string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::string containing the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="45" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="45" bodyend="48"/>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">ToStdString</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a76f77ecc8afafb672b203125aeac2e06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::Integration::ToStdString</definition>
+        <argsstring>(const StringView &amp;view)</argsstring>
+        <name>ToStdString</name>
+        <qualifiedname>Dali::Integration::ToStdString</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">StringView</ref> &amp;</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> to a std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This creates a copy of the viewed data. For internal use where the implementation needs to work with std::string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::string containing the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="71" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="71" bodyend="75"/>
+        <references refid="classDali_1_1StringView_1a39cfe10cff4b164eaf874f9edb9560b3" compoundref="dali-string-view_8cpp" startline="111" endline="114">Dali::StringView::Data</references>
+        <references refid="classDali_1_1StringView_1a4fc1f244189e2056e8bbb0b46a5eba7c" compoundref="dali-string-view_8cpp" startline="101" endline="104">Dali::StringView::Size</references>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">ToStdString</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1afa6dbe718d28b1bcfa71eb0cf119be12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Property::Value</type>
+        <definition>Property::Value Dali::Integration::ToPropertyValue</definition>
+        <argsstring>(std::string str)</argsstring>
+        <name>ToPropertyValue</name>
+        <qualifiedname>Dali::Integration::ToPropertyValue</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::string to a Dali::Property::Value of type STRING. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This creates a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> from the std::string and wraps it in a Property::Value. For internal use where the implementation needs to produce Property::Value from std::string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string to convert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Property::Value containing the string data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="99" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab2f1a8f567e21c87a978bb0833108242" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Property::Array &amp;</type>
+        <definition>Property::Array &amp; Dali::Integration::AddToArray</definition>
+        <argsstring>(Property::Array &amp;array, const std::string &amp;str)</argsstring>
+        <name>AddToArray</name>
+        <qualifiedname>Dali::Integration::AddToArray</qualifiedname>
+        <param>
+          <type>Property::Array &amp;</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Add a std::string to a Property::Array. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Wraps the recurring <computeroutput>array.Add(ToDaliStringView(str))</computeroutput> pattern.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array to append to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="127" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="127" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a19a4dcce9d15b0cd71ae7a6f38ae624c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Property::Map &amp;</type>
+        <definition>Property::Map &amp; Dali::Integration::InsertToMap</definition>
+        <argsstring>(Property::Map &amp;map, const std::string &amp;key, const std::string &amp;value)</argsstring>
+        <name>InsertToMap</name>
+        <qualifiedname>Dali::Integration::InsertToMap</qualifiedname>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Add string key, string value pair to a Property::Map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This converts the key and the value to a <ref refid="classDali_1_1String" kindref="compound">String</ref> type, and adds them to the map. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string key to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to use as a value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the map </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="143" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="143" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a7fa01e4b164c130b7fa9fe4a60390072" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Property::Map &amp;</type>
+        <definition>Property::Map &amp; Dali::Integration::InsertToMap</definition>
+        <argsstring>(Property::Map &amp;map, const std::string &amp;key, Property::Value value)</argsstring>
+        <name>InsertToMap</name>
+        <qualifiedname>Dali::Integration::InsertToMap</qualifiedname>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Add string key, string value pair to a Property::Map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This converts the key and the value to a <ref refid="classDali_1_1String" kindref="compound">String</ref> type, and adds them to the map. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string key to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to use as a value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the map </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="161" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="161" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab09c91704642bc70c742fbaba90d4ede" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Property::Map &amp;</type>
+        <definition>Property::Map &amp; Dali::Integration::InsertToMap</definition>
+        <argsstring>(Property::Map &amp;map, std::string_view key, const std::string &amp;value)</argsstring>
+        <name>InsertToMap</name>
+        <qualifiedname>Dali::Integration::InsertToMap</qualifiedname>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Add string_view key, string value pair to a Property::Map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Overload for std::string_view keys. Useful when keys are compile-time constants or std::string_view variables.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string_view key to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to use as a value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the map </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="179" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="179" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1acb45edbc3e5a861f57f8c5932ba441aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Property::Map &amp;</type>
+        <definition>Property::Map &amp; Dali::Integration::InsertToMap</definition>
+        <argsstring>(Property::Map &amp;map, std::string_view key, Property::Value value)</argsstring>
+        <name>InsertToMap</name>
+        <qualifiedname>Dali::Integration::InsertToMap</qualifiedname>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Add string_view key, Property::Value pair to a Property::Map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Overload for std::string_view keys. Useful when keys are compile-time constants or std::string_view variables.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">map</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to modify. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string_view key to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Property::Value to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the map </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="198" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="198" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a8d1e3f0b1f1238dad46597ca30ef33c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view Dali::Integration::ToStdStringView</definition>
+        <argsstring>(const StringView &amp;view)</argsstring>
+        <name>ToStdStringView</name>
+        <qualifiedname>Dali::Integration::ToStdStringView</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1StringView" kindref="compound">StringView</ref> &amp;</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> to a std::string_view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a lightweight operation that creates a view over the same data without copying.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::string_view over the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="214" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="214" bodyend="218"/>
+        <references refid="classDali_1_1StringView_1a39cfe10cff4b164eaf874f9edb9560b3" compoundref="dali-string-view_8cpp" startline="111" endline="114">Dali::StringView::Data</references>
+        <references refid="classDali_1_1StringView_1a4fc1f244189e2056e8bbb0b46a5eba7c" compoundref="dali-string-view_8cpp" startline="101" endline="104">Dali::StringView::Size</references>
+        <references refid="namespaceDali_1_1Integration_1a8d1e3f0b1f1238dad46597ca30ef33c4" compoundref="string-utils_8h" startline="214" endline="218">ToStdStringView</references>
+        <referencedby refid="structDali_1_1Property_1_1Value_1_1Impl_1ac5d38772932818d3f95cb241a448f21f" compoundref="property-value_8cpp" startline="614" endline="720">Dali::Property::Value::Impl::GetHash</referencedby>
+        <referencedby refid="group__dali__core__common_1ga3d5565cb989bb125d0c2d3309c99e763" compoundref="stream-operators_8cpp" startline="25" endline="29">Dali::operator&lt;&lt;</referencedby>
+        <referencedby refid="group__dali__core__common_1ga962a97819bad19ac691ae93b710834d0" compoundref="stream-operators_8cpp" startline="31" endline="35">Dali::operator&lt;&lt;</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1ae840dfe7cb306313a82f26338f42c4b0" compoundref="string-utils_8h" startline="229" endline="232">ToStdStringView</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a8d1e3f0b1f1238dad46597ca30ef33c4" compoundref="string-utils_8h" startline="214" endline="218">ToStdStringView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ae840dfe7cb306313a82f26338f42c4b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view Dali::Integration::ToStdStringView</definition>
+        <argsstring>(const String &amp;string)</argsstring>
+        <name>ToStdStringView</name>
+        <qualifiedname>Dali::Integration::ToStdStringView</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Convert a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> to a std::string_view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a lightweight operation that creates a view over the <ref refid="classDali_1_1String" kindref="compound">String</ref>&apos;s data without copying.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A std::string_view over the string&apos;s data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="229" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="229" bodyend="232"/>
+        <references refid="namespaceDali_1_1Integration_1a8d1e3f0b1f1238dad46597ca30ef33c4" compoundref="string-utils_8h" startline="214" endline="218">ToStdStringView</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a20e9814fe4569628a3e79ec3ed957f49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1StringView" kindref="compound">StringView</ref></type>
+        <definition>StringView Dali::Integration::ToDaliStringView</definition>
+        <argsstring>(const std::string &amp;string)</argsstring>
+        <name>ToDaliStringView</name>
+        <qualifiedname>Dali::Integration::ToDaliStringView</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> from a std::string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a lightweight operation that creates a view over the std::string&apos;s data without copying.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> over the string&apos;s data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="243" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="243" bodyend="246"/>
+        <references refid="namespaceDali_1_1Integration_1a20e9814fe4569628a3e79ec3ed957f49" compoundref="string-utils_8h" startline="243" endline="246">ToDaliStringView</references>
+        <referencedby refid="namespaceDali_1_1Integration_1a20e9814fe4569628a3e79ec3ed957f49" compoundref="string-utils_8h" startline="243" endline="246">ToDaliStringView</referencedby>
+        <referencedby refid="namespaceDali_1_1Integration_1a7d95cc4b4da910dc170df840db1e54cb" compoundref="string-utils_8h" startline="257" endline="260">ToDaliStringView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a7d95cc4b4da910dc170df840db1e54cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1StringView" kindref="compound">StringView</ref></type>
+        <definition>StringView Dali::Integration::ToDaliStringView</definition>
+        <argsstring>(std::string_view view)</argsstring>
+        <name>ToDaliStringView</name>
+        <qualifiedname>Dali::Integration::ToDaliStringView</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> from a std::string_view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a lightweight operation that creates a view over the same data without copying.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string_view </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classDali_1_1StringView" kindref="compound">Dali::StringView</ref> over the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="257" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="257" bodyend="260"/>
+        <references refid="namespaceDali_1_1Integration_1a20e9814fe4569628a3e79ec3ed957f49" compoundref="string-utils_8h" startline="243" endline="246">ToDaliStringView</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a517fa66bcccd26e5809df984a7ea2557" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">String</ref></type>
+        <definition>String Dali::Integration::ToDaliString</definition>
+        <argsstring>(const std::string &amp;string)</argsstring>
+        <name>ToDaliString</name>
+        <qualifiedname>Dali::Integration::ToDaliString</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::string to a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This creates a copy of the string data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> containing the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="270" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="270" bodyend="273"/>
+        <references refid="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" compoundref="string-utils_8cpp" startline="51" endline="54">ToDaliString</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1aa2e233db2d23dc91c6c7256e5029ca4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">String</ref></type>
+        <definition>String Dali::Integration::ToDaliString</definition>
+        <argsstring>(std::string_view view)</argsstring>
+        <name>ToDaliString</name>
+        <qualifiedname>Dali::Integration::ToDaliString</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>view</declname>
+        </param>
+        <briefdescription>
+<para>Convert a std::string_view to a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This creates a copy of the viewed data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The std::string_view </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> containing the same data </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="283" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="283" bodyend="286"/>
+        <references refid="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" compoundref="string-utils_8cpp" startline="51" endline="54">ToDaliString</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a3c4c149ea67376baad291ddf91a254a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">String</ref></type>
+        <definition>String Dali::Integration::ToDaliString</definition>
+        <argsstring>(const String &amp;str)</argsstring>
+        <name>ToDaliString</name>
+        <qualifiedname>Dali::Integration::ToDaliString</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1String" kindref="compound">String</ref> &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Copy a <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> (no-op conversion for convenience). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a convenience overload that allows code to work with <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> without checking if conversion is needed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A copy of the <ref refid="classDali_1_1String" kindref="compound">Dali::String</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" line="308" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/string-utils.h" bodystart="308" bodyend="311"/>
+        <references refid="namespaceDali_1_1Integration_1a76eadd9c0cdb9640df472f558460c39f" compoundref="string-utils_8cpp" startline="51" endline="54">ToDaliString</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a72aa4c12711f77f844e0e19364ee582d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+        <definition>DALI_CORE_API Dali::Texture Dali::Integration::NewTextureWithResourceId</definition>
+        <argsstring>(Dali::TextureType::Type type, uint32_t resourceId)</argsstring>
+        <name>NewTextureWithResourceId</name>
+        <qualifiedname>Dali::Integration::NewTextureWithResourceId</qualifiedname>
+        <param>
+          <type><ref refid="namespaceDali_1_1TextureType_1af297c650cfe40ed88b1ef776db05aa70" kindref="member">Dali::TextureType::Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>resourceId</declname>
+        </param>
+        <briefdescription>
+<para>Create new <ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref> with resourceId that Graphics::Controller can use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the texture </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">resourceId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique id of this texture combinded with Graphics::Controller. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a newly allocated <ref refid="classDali_1_1Texture" kindref="compound">Texture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" line="27" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" bodystart="27" bodyend="31" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.h" declline="36" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a5deb38e57fcf49f69edb7558d768b131" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>DALI_CORE_API uint32_t Dali::Integration::GetTextureResourceId</definition>
+        <argsstring>(Dali::Texture texture)</argsstring>
+        <name>GetTextureResourceId</name>
+        <qualifiedname>Dali::Integration::GetTextureResourceId</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+<para>Get the resource id for this texture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to get resource id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The resource id what given texture has. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" line="33" column="10" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" bodystart="33" bodyend="36" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.h" declline="44" declcolumn="24"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1aaef97ce9266c1f26f39b7f42e71a3201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceDali_1_1TextureType_1af297c650cfe40ed88b1ef776db05aa70" kindref="member">Dali::TextureType::Type</ref></type>
+        <definition>DALI_CORE_API Dali::TextureType::Type Dali::Integration::GetTextureType</definition>
+        <argsstring>(Dali::Texture texture)</argsstring>
+        <name>GetTextureType</name>
+        <qualifiedname>Dali::Integration::GetTextureType</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+<para>Get the type for this texture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to get texture type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The texture type what given texture has. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" line="38" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" bodystart="38" bodyend="41" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.h" declline="52" declcolumn="39"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a6f57cd5502e0096a5552b8bc8b764153" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetTextureSize</definition>
+        <argsstring>(Dali::Texture texture, uint16_t width, uint16_t height)</argsstring>
+        <name>SetTextureSize</name>
+        <qualifiedname>Dali::Integration::SetTextureSize</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Set the size of texture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to set size. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of texture to set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of texture to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" line="43" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" bodystart="43" bodyend="46" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.h" declline="61" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1a29f343871a8bd1df1ac05798b05a750c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::Integration::SetTexturePixelFormat</definition>
+        <argsstring>(Dali::Texture texture, Dali::Pixel::Format format)</argsstring>
+        <name>SetTexturePixelFormat</name>
+        <qualifiedname>Dali::Integration::SetTexturePixelFormat</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Pixel_1aca82caf380d934981f77a83211a63902" kindref="member">Dali::Pixel::Format</ref></type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+<para>Set the pixel format of texture. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to set format. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The format of texture to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" line="48" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" bodystart="48" bodyend="51" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.h" declline="69" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1Integration_1ab652579778656c982e878f9ab5284b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::Integration::TextureUploadWithContent</definition>
+        <argsstring>(Dali::Texture texture, Dali::PixelData pixelData, Dali::String context, TextureContextTypeHint::Type typeHint=TextureContextTypeHint::UNKNOWN)</argsstring>
+        <name>TextureUploadWithContent</name>
+        <qualifiedname>Dali::Integration::TextureUploadWithContent</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Texture" kindref="compound">Dali::Texture</ref></type>
+          <declname>texture</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1PixelData" kindref="compound">Dali::PixelData</ref></type>
+          <declname>pixelData</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Integration_1_1TextureContextTypeHint_1aaac168ef40dca8e5fcf25e4809b76c4b" kindref="member">TextureContextTypeHint::Type</ref></type>
+          <declname>typeHint</declname>
+          <defval><ref refid="namespaceDali_1_1Integration_1_1TextureContextTypeHint_1aaac168ef40dca8e5fcf25e4809b76c4bad807b4d4fc63482eed970f2c5ad067b6" kindref="member">TextureContextTypeHint::UNKNOWN</ref></defval>
+        </param>
+        <briefdescription>
+<para>Uploads data to the texture from a <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object, include context informations for profiling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>If texture is native or fast track case, we don&apos;t actual upload. Just update the context. In that case, pixelData only be used for get BytesPerPixel value.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to upload data to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pixelData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pixelData object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The context of the uploaded data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">typeHint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies hint for the texture which kind of image uploaded (optional) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the <ref refid="classDali_1_1PixelData" kindref="compound">PixelData</ref> object has compatible pixel format and fits within the texture, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" line="53" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.cpp" bodystart="53" bodyend="57" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/texture-integ.h" declline="127" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="namespaceDali_1_1Integration_1a739dc9ddfff65db1b845dc482b8c853d" compoundref="string-utils_8cpp" startline="24" endline="27">ToStdString</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>&lt; for uint32_t </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/addon-manager.cpp" line="22" column="1"/>
+  </compounddef>
+</doxygen>

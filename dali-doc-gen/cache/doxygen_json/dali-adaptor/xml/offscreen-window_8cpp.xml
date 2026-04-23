@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="offscreen-window_8cpp" kind="file" language="C++">
+    <compoundname>offscreen-window.cpp</compoundname>
+    <includes refid="offscreen-window_8h" local="no">dali/devel-api/adaptor-framework/offscreen-window.h</includes>
+    <includes local="no">dali/public-api/actors/actor.h</includes>
+    <includes local="no">dali/public-api/actors/layer.h</includes>
+    <includes local="no">dali/internal/adaptor/common/adaptor-impl.h</includes>
+    <includes local="no">dali/internal/offscreen/common/offscreen-window-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/offscreen-window.cpp</label>
+        <link refid="offscreen-window_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/offscreen-window.h</label>
+        <link refid="offscreen-window_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>dali/internal/adaptor/common/adaptor-impl.h</label>
+      </node>
+      <node id="13">
+        <label>dali/internal/offscreen/common/offscreen-window-impl.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="11">
+        <label>dali/public-api/actors/layer.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="9">
+        <label>dali/public-api/images/native-image-interface.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/math/uint-16-pair.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/signals/callback.h</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="offscreen-window_8h" kindref="compound">dali/devel-api/adaptor-framework/offscreen-window.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTENRAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/actors/actor.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/public-api/actors/layer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/adaptor/common/adaptor-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/offscreen/common/offscreen-window-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31" refid="classDali_1_1OffscreenWindow_1ae4678a955ec0bafdd8bd49ccbbae764f" refkind="member"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref><sp/><ref refid="classDali_1_1OffscreenWindow_1ae4678a955ec0bafdd8bd49ccbbae764f" kindref="member">OffscreenWindow::New</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref><sp/>newWindow;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAdaptorAvailable<sp/>=<sp/><ref refid="classDali_1_1Adaptor_1ad10ea884fef5da0d7b903c6de68737ad" kindref="member">Dali::Adaptor::IsAvailable</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isNewWindowAllowed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isAdaptorAvailable)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Adaptor" kindref="compound">Dali::Adaptor</ref>&amp;<sp/>adaptor<sp/>=<sp/>Internal::Adaptor::Adaptor::Get();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>isNewWindowAllowed<sp/><sp/><sp/><sp/><sp/>=<sp/>Internal::Adaptor::Adaptor::GetImplementation(adaptor).IsMultipleWindowSupported();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isNewWindowAllowed)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>IntrusivePtr&lt;Internal::Adaptor::OffscreenWindow&gt;<sp/>window<sp/>=<sp/>Internal::Adaptor::OffscreenWindow::New();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">Integration::SceneHolder</ref><sp/>sceneHolder<sp/>=<sp/><ref refid="classDali_1_1Integration_1_1SceneHolder" kindref="compound">Integration::SceneHolder</ref>(window.Get());</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isAdaptorAvailable)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDali_1_1Adaptor" kindref="compound">Dali::Adaptor</ref>&amp;<sp/>adaptor<sp/>=<sp/>Internal::Adaptor::Adaptor::Get();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Internal::Adaptor::Adaptor::GetImplementation(adaptor).AddWindow(sceneHolder);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>newWindow<sp/>=<sp/><ref refid="classDali_1_1OffscreenWindow_1a04e5da3c7f4640efa591c79949d7af71" kindref="member">OffscreenWindow</ref>(window.Get());</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>DALI_LOG_ERROR(</highlight><highlight class="stringliteral">&quot;This<sp/>device<sp/>can&apos;t<sp/>support<sp/>multiple<sp/>windows.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newWindow;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow_1a04e5da3c7f4640efa591c79949d7af71" kindref="member">OffscreenWindow::OffscreenWindow</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow_1a04e5da3c7f4640efa591c79949d7af71" kindref="member">OffscreenWindow::OffscreenWindow</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref>&amp;<sp/>window)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref>&amp;<sp/><ref refid="classDali_1_1OffscreenWindow_1a5c1fdc238e041adae41f5936d8c2e956" kindref="member">OffscreenWindow::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref>&amp;<sp/>window)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow_1a04e5da3c7f4640efa591c79949d7af71" kindref="member">OffscreenWindow::OffscreenWindow</ref>(<ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref>&amp;&amp;<sp/>window)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref>&amp;<sp/><ref refid="classDali_1_1OffscreenWindow_1a5c1fdc238e041adae41f5936d8c2e956" kindref="member">OffscreenWindow::operator=</ref>(<ref refid="classDali_1_1OffscreenWindow" kindref="compound">OffscreenWindow</ref>&amp;&amp;<sp/>window)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow_1a232d43d324e7e1f563e8e224b06c71a2" kindref="member">OffscreenWindow::~OffscreenWindow</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classDali_1_1OffscreenWindow_1a32ba7715847618f9e46ef32f87d5183b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow_1a32ba7715847618f9e46ef32f87d5183b" kindref="member">OffscreenWindow::SetNativeImage</ref>(Dali::NativeImageInterfacePtr<sp/>nativeImage)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).SetNativeImage(nativeImage);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classDali_1_1OffscreenWindow_1a8cd3e0f5af12e8f8ad9636f6f635ecf6" refkind="member"><highlight class="normal">Dali::NativeImageInterfacePtr<sp/><ref refid="classDali_1_1OffscreenWindow_1a8cd3e0f5af12e8f8ad9636f6f635ecf6" kindref="member">OffscreenWindow::GetNativeImage</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="83"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).GetNativeImage();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classDali_1_1OffscreenWindow_1a4eec0294bc07a46af59bd1a203609498" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow_1a4eec0294bc07a46af59bd1a203609498" kindref="member">OffscreenWindow::Add</ref>(Actor<sp/>actor)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).Add(actor);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classDali_1_1OffscreenWindow_1a6b5df251f390ee5cd433250ecc391043" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow_1a6b5df251f390ee5cd433250ecc391043" kindref="member">OffscreenWindow::Remove</ref>(Actor<sp/>actor)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).Remove(actor);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classDali_1_1OffscreenWindow_1a213d39c8783e5ab873b00dbca6e5f763" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow_1a213d39c8783e5ab873b00dbca6e5f763" kindref="member">OffscreenWindow::SetBackgroundColor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector4&amp;<sp/>color)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).SetBackgroundColor(color);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classDali_1_1OffscreenWindow_1adc38015bb5218cf5b2289ca423ae09fd" refkind="member"><highlight class="normal">Vector4<sp/><ref refid="classDali_1_1OffscreenWindow_1adc38015bb5218cf5b2289ca423ae09fd" kindref="member">OffscreenWindow::GetBackgroundColor</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="103"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).GetBackgroundColor();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classDali_1_1OffscreenWindow_1afb2ff13fc9d0a8c1d12bd0e7c0c2ba75" refkind="member"><highlight class="normal">Layer<sp/><ref refid="classDali_1_1OffscreenWindow_1afb2ff13fc9d0a8c1d12bd0e7c0c2ba75" kindref="member">OffscreenWindow::GetRootLayer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="108"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).GetRootLayer();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classDali_1_1OffscreenWindow_1a150f67d7900e7f9ab0f02a0b0a886c5a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow_1a65bc1c12ab33499657b103bfbdb4b1e0" kindref="member">OffscreenWindow::WindowSize</ref><sp/><ref refid="classDali_1_1OffscreenWindow_1a150f67d7900e7f9ab0f02a0b0a886c5a" kindref="member">OffscreenWindow::GetSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="113"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).GetSize();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classDali_1_1OffscreenWindow_1ab09224ed8bb99c9f25cff7381fc33205" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow_1ab09224ed8bb99c9f25cff7381fc33205" kindref="member">OffscreenWindow::AddPostRenderSyncCallback</ref>(std::unique_ptr&lt;CallbackBase&gt;<sp/>callback)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).AddPostRenderSyncCallback(std::move(callback));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="classDali_1_1OffscreenWindow_1aaed369094d88b9b455cceee519ab70d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1OffscreenWindow_1aaed369094d88b9b455cceee519ab70d0" kindref="member">OffscreenWindow::AddPostRenderAsyncCallback</ref>(std::unique_ptr&lt;CallbackBase&gt;<sp/>callback)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).AddPostRenderAsyncCallback(std::move(callback));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classDali_1_1OffscreenWindow_1a1cbd5bdbc7681e49825184f024ab1dc6" refkind="member"><highlight class="normal"><ref refid="classDali_1_1OffscreenWindow_1a04e5da3c7f4640efa591c79949d7af71" kindref="member">OffscreenWindow::OffscreenWindow</ref>(Internal::Adaptor::OffscreenWindow*<sp/>window)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">:<sp/>BaseHandle(window)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/offscreen-window.cpp"/>
+  </compounddef>
+</doxygen>

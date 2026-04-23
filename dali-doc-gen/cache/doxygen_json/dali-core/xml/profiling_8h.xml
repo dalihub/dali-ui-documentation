@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="profiling_8h" kind="file" language="C++">
+    <compoundname>profiling.h</compoundname>
+    <includes local="no">cstddef</includes>
+    <includes local="no">string</includes>
+    <includes refid="dali-common_8h" local="no">dali/public-api/common/dali-common.h</includes>
+    <includedby refid="profiling_8cpp" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.h</label>
+        <link refid="profiling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="2">
+        <label>cstddef</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.cpp</label>
+        <link refid="profiling_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.h</label>
+        <link refid="profiling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration">Dali::Integration</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration_1_1Profiling">Dali::Integration::Profiling</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_INTEGRATION_PROFILING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_INTEGRATION_PROFILING_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-common_8h" kindref="compound">dali/public-api/common/dali-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Integration</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32" refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8b" kindref="member">ProfilingType</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34" refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba0408a46dc3cc3512ede00ae40f44e6a6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba0408a46dc3cc3512ede00ae40f44e6a6" kindref="member">PROFILING_TYPE_PAN_GESTURE</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba04da6ee3fc8eed4d2ca596b69b758793" kindref="member">PROFILING_TYPE_END</ref></highlight></codeline>
+<codeline lineno="37" refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8ba04da6ee3fc8eed4d2ca596b69b758793" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Integration_1a69e4e4b828d8ef7fbd7a1a5b08a7614a" kindref="member">EnableProfiling</ref>(<ref refid="namespaceDali_1_1Integration_1a9e4906335f42cac3645f25976f66ca8b" kindref="member">ProfilingType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Profiling</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1af0d6c2c661789bc1fddd059b08610483" kindref="member">ANIMATION_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a431af0ca41a1912c5ba1449495b7b9fc" kindref="member">CONSTRAINT_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1aa36f2b0d606302fdf17b55e92b0611da" kindref="member">ACTOR_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1aee8d95b468d7a1ba1cf3334533dbd477" kindref="member">CAMERA_ACTOR_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a7226b9ba25dfb4ca8c5352328e5bb1a3" kindref="member">IMAGE_ACTOR_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a356077cee84840bd5c6af1b9ab1862db" kindref="member">LAYER_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1af0726ffc9e2d735a45731ba79007697c" kindref="member">IMAGE_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a6d9c6b71b4e3120b84feb1989515fcbc" kindref="member">RENDERER_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a9beaa7e80e48cc176bbd884c8a596b8a" kindref="member">GEOMETRY_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a1908209f91d46eb383c50b7100c1162d" kindref="member">PROPERTY_BUFFER_MEMORY_SIZE</ref>;<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a67d9be1aa196a8fe731ac9bb77c8f632" kindref="member">TEXTURE_SET_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a9bbe3d49a568b9ebe6bae3d77525f8c7" kindref="member">SAMPLER_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1ad6540af58d73595a6cc35f90dbe4c0f9" kindref="member">SHADER_MEMORY_SIZE</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="dali-common_8h_1acc3ba08e02626c6134e68443f86b48ea" kindref="member">DALI_CORE_API</ref><sp/>std::string<sp/><ref refid="namespaceDali_1_1Integration_1_1Profiling_1a55a63469153361dfd6cb0d365dd63ce8" kindref="member">LogMemoryPools</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Profiling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Integration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_INTEGRATION_PROFILING_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/profiling.h"/>
+  </compounddef>
+</doxygen>

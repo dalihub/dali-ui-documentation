@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="builder_8cpp" kind="file" language="C++">
+    <compoundname>builder.cpp</compoundname>
+    <includes refid="builder_8h" local="yes">builder.h</includes>
+    <includes local="no">dali-ui-foundation/internal/builder/builder-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/builder.cpp</label>
+        <link refid="builder_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>builder.h</label>
+        <link refid="builder_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali-ui-foundation/public-api/dali-ui-common.h</label>
+        <link refid="dali-ui-common_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>dali-ui-foundation/internal/builder/builder-impl.h</label>
+      </node>
+      <node id="3">
+        <label>dali/devel-api/animation/path-constrainer.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/actors/actor.h</label>
+      </node>
+      <node id="5">
+        <label>dali/public-api/animation/animation.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/animation/linear-constrainer.h</label>
+      </node>
+      <node id="8">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Ui">Dali::Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="builder_8h" kindref="compound">builder.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali-ui-foundation/internal/builder/builder-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32" refid="classDali_1_1Ui_1_1Builder_1a8942b3fac54ebade207dc34acee31795" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Builder_1a8942b3fac54ebade207dc34acee31795" kindref="member">Builder::Builder</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classDali_1_1Ui_1_1Builder_1aaf3799c6bd8664ef2f90cbfbebbf040a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Builder_1aaf3799c6bd8664ef2f90cbfbebbf040a" kindref="member">Builder::~Builder</ref>()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classDali_1_1Ui_1_1Builder_1ad8f441b1794e109ef092d49df61f0c27" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Builder" kindref="compound">Builder</ref><sp/><ref refid="classDali_1_1Ui_1_1Builder_1ad8f441b1794e109ef092d49df61f0c27" kindref="member">Builder::New</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1a8942b3fac54ebade207dc34acee31795" kindref="member">Builder</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Internal::Builder());</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Builder_1a8942b3fac54ebade207dc34acee31795" kindref="member">Builder::Builder</ref>(Internal::Builder*<sp/>impl)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">:<sp/>BaseHandle(impl)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classDali_1_1Ui_1_1Builder_1a4fcfac1fd6437a8a873fb6baa06b4d94" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1a4fcfac1fd6437a8a873fb6baa06b4d94" kindref="member">Builder::LoadFromString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>data,<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a7435f99f6db9bc7f376a6d4efa0e6aea" kindref="member">UiFormat</ref><sp/>rep)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).LoadFromString(data);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classDali_1_1Ui_1_1Builder_1aca8f391fa52920fa7cce3c1a33a319d5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1aca8f391fa52920fa7cce3c1a33a319d5" kindref="member">Builder::AddConstants</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>map)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).AddConstants(map);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classDali_1_1Ui_1_1Builder_1a4c2afd8c20a986e9fd37cf3a3f3ad876" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1a4c2afd8c20a986e9fd37cf3a3f3ad876" kindref="member">Builder::AddConstant</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Value&amp;<sp/>value)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).AddConstant(key,<sp/>value);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classDali_1_1Ui_1_1Builder_1acbfebb30dbee6e5528080d02724de391" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/><ref refid="classDali_1_1Ui_1_1Builder_1acbfebb30dbee6e5528080d02724de391" kindref="member">Builder::GetConfigurations</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="66"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetConfigurations();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classDali_1_1Ui_1_1Builder_1af1e13a653e170506ec7de80c9d1ad76a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/><ref refid="classDali_1_1Ui_1_1Builder_1af1e13a653e170506ec7de80c9d1ad76a" kindref="member">Builder::GetConstants</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetConstants();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classDali_1_1Ui_1_1Builder_1ace44caaf4a3d5852af2f68d8b80c7ac6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Value&amp;<sp/><ref refid="classDali_1_1Ui_1_1Builder_1ace44caaf4a3d5852af2f68d8b80c7ac6" kindref="member">Builder::GetConstant</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetConstant(key);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classDali_1_1Ui_1_1Builder_1a9b1c5a5f553f2e3cb49a7dc08d616426" refkind="member"><highlight class="normal">Animation<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a9b1c5a5f553f2e3cb49a7dc08d616426" kindref="member">Builder::CreateAnimation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>animationName)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).CreateAnimation(animationName);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classDali_1_1Ui_1_1Builder_1a6848882c8d0e021c1acf63b48b98da65" refkind="member"><highlight class="normal">Animation<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a9b1c5a5f553f2e3cb49a7dc08d616426" kindref="member">Builder::CreateAnimation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>animationName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>map)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).CreateAnimation(animationName,<sp/>map);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classDali_1_1Ui_1_1Builder_1a0b6106421c8801ea733b18ef2f56c4d2" refkind="member"><highlight class="normal">Animation<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a9b1c5a5f553f2e3cb49a7dc08d616426" kindref="member">Builder::CreateAnimation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>animationName,<sp/>Dali::Actor<sp/>sourceActor)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).CreateAnimation(animationName,<sp/>sourceActor);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classDali_1_1Ui_1_1Builder_1af2fff20feb0263256d82a269605de657" refkind="member"><highlight class="normal">Animation<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a9b1c5a5f553f2e3cb49a7dc08d616426" kindref="member">Builder::CreateAnimation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>animationName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>map,<sp/>Dali::Actor<sp/>sourceActor)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).CreateAnimation(animationName,<sp/>map,<sp/>sourceActor);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classDali_1_1Ui_1_1Builder_1a66ab21744cfbdd86395b17e1d954d480" refkind="member"><highlight class="normal">BaseHandle<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a66ab21744cfbdd86395b17e1d954d480" kindref="member">Builder::Create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>templateName)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).Create(templateName);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classDali_1_1Ui_1_1Builder_1a70f32f46bae6ed390dfb58fb8e0ea77c" refkind="member"><highlight class="normal">BaseHandle<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a66ab21744cfbdd86395b17e1d954d480" kindref="member">Builder::Create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>templateName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Property::Map&amp;<sp/>map)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).Create(templateName,<sp/>map);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classDali_1_1Ui_1_1Builder_1a187fa44980ba6719e7dfec2b3af03c13" refkind="member"><highlight class="normal">BaseHandle<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a187fa44980ba6719e7dfec2b3af03c13" kindref="member">Builder::CreateFromJson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>json)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).CreateFromJson(json);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classDali_1_1Ui_1_1Builder_1a89323c31e1443299076ffa0dfdc18a6b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1a89323c31e1443299076ffa0dfdc18a6b" kindref="member">Builder::ApplyStyle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>styleName,<sp/>Handle&amp;<sp/>handle)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).ApplyStyle(styleName,<sp/>handle);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classDali_1_1Ui_1_1Builder_1a15376d7d793f63d96cb4190119fb180e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1a15376d7d793f63d96cb4190119fb180e" kindref="member">Builder::ApplyFromJson</ref>(Handle&amp;<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>json)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).ApplyFromJson(handle,<sp/>json);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classDali_1_1Ui_1_1Builder_1adefffe3c4732efde18ff446dfefb9ed3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1adefffe3c4732efde18ff446dfefb9ed3" kindref="member">Builder::AddActors</ref>(Actor<sp/>toActor)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).AddActors(toActor);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classDali_1_1Ui_1_1Builder_1a8f6eed50b3347d52478c42b5174ca6e6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1adefffe3c4732efde18ff446dfefb9ed3" kindref="member">Builder::AddActors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>sectionName,<sp/>Actor<sp/>toActor)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).AddActors(sectionName,<sp/>toActor);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="classDali_1_1Ui_1_1Builder_1aafc2965214ad04c96bc5e6fac54f9985" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Ui_1_1Builder_1aafc2965214ad04c96bc5e6fac54f9985" kindref="member">Builder::CreateRenderTask</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).CreateRenderTask(name);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="classDali_1_1Ui_1_1Builder_1a843aa586c7a0a5ce202bfed43d104bce" refkind="member"><highlight class="normal">Path<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a843aa586c7a0a5ce202bfed43d104bce" kindref="member">Builder::GetPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetPath(name);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="classDali_1_1Ui_1_1Builder_1ae8761b2ffb3cf2d3cebdc038b0c5d382" refkind="member"><highlight class="normal">PathConstrainer<sp/><ref refid="classDali_1_1Ui_1_1Builder_1ae8761b2ffb3cf2d3cebdc038b0c5d382" kindref="member">Builder::GetPathConstrainer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>pathConstrainerName)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetPathConstrainer(pathConstrainerName);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classDali_1_1Ui_1_1Builder_1af21b5d1bd6726a778a9e7bd707ba6827" refkind="member"><highlight class="normal">LinearConstrainer<sp/><ref refid="classDali_1_1Ui_1_1Builder_1af21b5d1bd6726a778a9e7bd707ba6827" kindref="member">Builder::GetLinearConstrainer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>linearConstrainerName)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).GetLinearConstrainer(linearConstrainerName);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="classDali_1_1Ui_1_1Builder_1a105ff5cf34115680ac9d401fb66a1202" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Ui_1_1Builder_1a4d27eb005e92ed47fa035f1b142bf78b" kindref="member">Builder::BuilderSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Ui_1_1Builder_1a105ff5cf34115680ac9d401fb66a1202" kindref="member">Builder::QuitSignal</ref>()</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Ui_1a0989f830eadedbcea09552fa0beb401b" kindref="member">GetImpl</ref>(*this).QuitSignal();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ui</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-ui/dali-ui-foundation/devel-api/builder/builder.cpp"/>
+  </compounddef>
+</doxygen>

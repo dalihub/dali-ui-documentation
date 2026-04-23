@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="tilt-sensor_8cpp" kind="file" language="C++">
+    <compoundname>tilt-sensor.cpp</compoundname>
+    <includes refid="tilt-sensor_8h" local="no">dali/devel-api/adaptor-framework/tilt-sensor.h</includes>
+    <includes local="no">dali/internal/adaptor/common/adaptor-impl.h</includes>
+    <includes local="no">dali/internal/sensor/common/tilt-sensor-factory.h</includes>
+    <includes local="no">dali/internal/sensor/common/tilt-sensor-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tilt-sensor.cpp</label>
+        <link refid="tilt-sensor_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/devel-api/adaptor-framework/tilt-sensor.h</label>
+        <link refid="tilt-sensor_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>dali/internal/adaptor/common/adaptor-impl.h</label>
+      </node>
+      <node id="8">
+        <label>dali/internal/sensor/common/tilt-sensor-factory.h</label>
+      </node>
+      <node id="9">
+        <label>dali/internal/sensor/common/tilt-sensor-impl.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="4">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2020<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="tilt-sensor_8h" kindref="compound">dali/devel-api/adaptor-framework/tilt-sensor.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/adaptor/common/adaptor-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/sensor/common/tilt-sensor-factory.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/sensor/common/tilt-sensor-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a43e022035ff587f6cdcebd379ea9dfed" kindref="member">TiltSensor::DEFAULT_UPDATE_FREQUENCY</ref><sp/>=<sp/>60.0f;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classDali_1_1TiltSensor_1aa8b076387451f890abb56e35d95bb2ea" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TiltSensor_1aa8b076387451f890abb56e35d95bb2ea" kindref="member">TiltSensor::TiltSensor</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classDali_1_1TiltSensor_1a62a7b8ed2900aea3e1474eb3a3c2d46e" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TiltSensor" kindref="compound">TiltSensor</ref><sp/><ref refid="classDali_1_1TiltSensor_1a62a7b8ed2900aea3e1474eb3a3c2d46e" kindref="member">TiltSensor::Get</ref>()</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Internal::Adaptor::TiltSensorFactory::Get();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classDali_1_1TiltSensor_1abbf32b04f85c3e3fba0bc28014375879" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TiltSensor_1abbf32b04f85c3e3fba0bc28014375879" kindref="member">TiltSensor::~TiltSensor</ref>()</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classDali_1_1TiltSensor_1a15ed75b0507cafe7fc457032d4599a91" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a15ed75b0507cafe7fc457032d4599a91" kindref="member">TiltSensor::Start</ref>()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Start();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classDali_1_1TiltSensor_1a10044c40eeb6f406e7f97a424a8be24c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a10044c40eeb6f406e7f97a424a8be24c" kindref="member">TiltSensor::Stop</ref>()</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).Stop();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classDali_1_1TiltSensor_1a55f7d41fce7dca14edbe4a5bc833031e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a55f7d41fce7dca14edbe4a5bc833031e" kindref="member">TiltSensor::IsStarted</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="54"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).IsStarted();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classDali_1_1TiltSensor_1a867f795e25516a0b0325d13772c823ea" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a867f795e25516a0b0325d13772c823ea" kindref="member">TiltSensor::GetRoll</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="59"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetRoll();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classDali_1_1TiltSensor_1a9e4d82767d2319db9b937352ee8c8004" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a9e4d82767d2319db9b937352ee8c8004" kindref="member">TiltSensor::GetPitch</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="64"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetPitch();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classDali_1_1TiltSensor_1a00045defcd6f87dddab08fc3eb971942" refkind="member"><highlight class="normal">Quaternion<sp/><ref refid="classDali_1_1TiltSensor_1a00045defcd6f87dddab08fc3eb971942" kindref="member">TiltSensor::GetRotation</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="69"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetRotation();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classDali_1_1TiltSensor_1a11212674252746adf8ec6a34e495b903" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TiltSensor_1a4da7cbef7cb0ccb2d64e53483550b5d5" kindref="member">TiltSensor::TiltedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1TiltSensor_1a11212674252746adf8ec6a34e495b903" kindref="member">TiltSensor::TiltedSignal</ref>()</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).TiltedSignal();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classDali_1_1TiltSensor_1ab8f592f1ea6a9599fd9d83dfd4cb154c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1ab8f592f1ea6a9599fd9d83dfd4cb154c" kindref="member">TiltSensor::SetUpdateFrequency</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>frequencyHertz)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetUpdateFrequency(frequencyHertz);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classDali_1_1TiltSensor_1ad12f8bbc47b8ba20638638dde64d0607" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1ad12f8bbc47b8ba20638638dde64d0607" kindref="member">TiltSensor::GetUpdateFrequency</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="84"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetUpdateFrequency();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classDali_1_1TiltSensor_1a0e331c74a91292cdea76ccfef06a38fc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1TiltSensor_1a0e331c74a91292cdea76ccfef06a38fc" kindref="member">TiltSensor::SetRotationThreshold</ref>(Radian<sp/>rotationThreshold)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).SetRotationThreshold(rotationThreshold);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classDali_1_1TiltSensor_1a3fe29c5f45f6d777d77412d5232f7206" refkind="member"><highlight class="normal">Radian<sp/><ref refid="classDali_1_1TiltSensor_1a3fe29c5f45f6d777d77412d5232f7206" kindref="member">TiltSensor::GetRotationThreshold</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="94"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" kindref="member">GetImplementation</ref>(*this).GetRotationThreshold();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classDali_1_1TiltSensor_1a2050f31dba9352b019125dafcd6c9c48" refkind="member"><highlight class="normal"><ref refid="classDali_1_1TiltSensor_1aa8b076387451f890abb56e35d95bb2ea" kindref="member">TiltSensor::TiltSensor</ref>(Internal::Adaptor::TiltSensor*<sp/>sensor)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">:<sp/>BaseHandle(sensor)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/tilt-sensor.cpp"/>
+  </compounddef>
+</doxygen>

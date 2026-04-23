@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="ui-context_8cpp" kind="file" language="C++">
+    <compoundname>ui-context.cpp</compoundname>
+    <includes refid="ui-context_8h" local="no">dali/public-api/adaptor-framework/ui-context.h</includes>
+    <includes local="no">dali/integration-api/string-utils.h</includes>
+    <includes local="no">dali/internal/adaptor/common/ui-context-impl.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/ui-context.cpp</label>
+        <link refid="ui-context_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/public-api/adaptor-framework/ui-context.h</label>
+        <link refid="ui-context_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>dali/public-api/adaptor-framework/window-data.h</label>
+        <link refid="window-data_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/adaptor-framework/window-enumerations.h</label>
+        <link refid="window-enumerations_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>dali/public-api/adaptor-framework/window.h</label>
+        <link refid="window_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dali/public-api/dali-adaptor-common.h</label>
+        <link refid="dali-adaptor-common_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>dali/integration-api/string-utils.h</label>
+      </node>
+      <node id="20">
+        <label>dali/internal/adaptor/common/ui-context-impl.h</label>
+      </node>
+      <node id="12">
+        <label>dali/public-api/common/dali-common.h</label>
+      </node>
+      <node id="10">
+        <label>dali/public-api/common/dali-string.h</label>
+      </node>
+      <node id="6">
+        <label>dali/public-api/common/unique-ptr.h</label>
+      </node>
+      <node id="13">
+        <label>dali/public-api/math/int-pair.h</label>
+      </node>
+      <node id="7">
+        <label>dali/public-api/math/rect.h</label>
+      </node>
+      <node id="14">
+        <label>dali/public-api/math/uint-16-pair.h</label>
+      </node>
+      <node id="15">
+        <label>dali/public-api/math/vector2.h</label>
+      </node>
+      <node id="16">
+        <label>dali/public-api/math/vector4.h</label>
+      </node>
+      <node id="17">
+        <label>dali/public-api/object/any.h</label>
+      </node>
+      <node id="3">
+        <label>dali/public-api/object/base-handle.h</label>
+      </node>
+      <node id="18">
+        <label>dali/public-api/signals/dali-signal.h</label>
+      </node>
+      <node id="9">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="ui-context_8h" kindref="compound">dali/public-api/adaptor-framework/ui-context.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/integration-api/string-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/adaptor/common/ui-context-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Dali::Integration::ToStdString;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classDali_1_1UiContext_1aaf4d5ae8fc614b7ac997a63477c2599b" refkind="member"><highlight class="normal"><ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref><sp/><ref refid="classDali_1_1UiContext_1aaf4d5ae8fc614b7ac997a63477c2599b" kindref="member">UiContext::Get</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Internal::Adaptor::UiContext::Get();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classDali_1_1UiContext_1a0e936f340a7f44f82f881e22d5265554" refkind="member"><highlight class="normal"><ref refid="classDali_1_1UiContext_1af743ec0de32da4605b719915fefeef4f" kindref="member">UiContext::UiContext</ref>(Internal::Adaptor::UiContext*<sp/>uiContext)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">:<sp/>BaseHandle(uiContext)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><ref refid="classDali_1_1UiContext_1af743ec0de32da4605b719915fefeef4f" kindref="member">UiContext::UiContext</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="classDali_1_1UiContext_1a506827af52fa5b8e8288e9da3229f25e" kindref="member">UiContext::~UiContext</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="classDali_1_1UiContext_1af743ec0de32da4605b719915fefeef4f" kindref="member">UiContext::UiContext</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref>&amp;<sp/>copy)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref>&amp;<sp/><ref refid="classDali_1_1UiContext_1a2efeb8217eeda5389ef55cd98f18762b" kindref="member">UiContext::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref>&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="classDali_1_1UiContext_1af743ec0de32da4605b719915fefeef4f" kindref="member">UiContext::UiContext</ref>(<ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref>&amp;<sp/><ref refid="classDali_1_1UiContext_1a2efeb8217eeda5389ef55cd98f18762b" kindref="member">UiContext::operator=</ref>(<ref refid="classDali_1_1UiContext" kindref="compound">UiContext</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classDali_1_1UiContext_1ab6b405b5415ec0ea7318fec0198a3d01" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Window" kindref="compound">Window</ref><sp/><ref refid="classDali_1_1UiContext_1ab6b405b5415ec0ea7318fec0198a3d01" kindref="member">UiContext::GetDefaultWindow</ref>()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).GetDefaultWindow();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classDali_1_1UiContext_1a4d9d739eb02a3bd08e059eb150f1e1bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1UiContext_1a4d9d739eb02a3bd08e059eb150f1e1bf" kindref="member">UiContext::AddIdle</ref>(CallbackBase*<sp/>callback)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).AddIdle(callback);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classDali_1_1UiContext_1a69448bd9935afac1c06f410db184cd41" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1UiContext_1a69448bd9935afac1c06f410db184cd41" kindref="member">UiContext::FlushUpdateMessages</ref>()</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).FlushUpdateMessages();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classDali_1_1UiContext_1adab3517fbe62978cda06dc0d837ec552" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1UiContext_1adab3517fbe62978cda06dc0d837ec552" kindref="member">UiContext::SetApplicationLocale</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Dali::String&amp;<sp/>locale)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><ref refid="namespaceDali_1_1Internal_1_1Adaptor_1ac86a49f5b412040ecb5aa6bd7f385d89" kindref="member">Internal::Adaptor::GetImplementation</ref>(*this).SetApplicationLocale(ToStdString(locale));</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/public-api/adaptor-framework/ui-context.cpp"/>
+  </compounddef>
+</doxygen>

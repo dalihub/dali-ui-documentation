@@ -1,0 +1,1832 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1InputMethodContext" kind="class" language="C++" prot="public">
+    <compoundname>Dali::InputMethodContext</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseHandle</basecompoundref>
+    <includes refid="input-method-context_8h" local="no">input-method-context.h</includes>
+    <innerclass refid="structDali_1_1InputMethodContext_1_1CallbackData" prot="public">Dali::InputMethodContext::CallbackData</innerclass>
+    <innerclass refid="structDali_1_1InputMethodContext_1_1EventData" prot="public">Dali::InputMethodContext::EventData</innerclass>
+    <innerclass refid="structDali_1_1InputMethodContext_1_1PreeditAttributeData" prot="public">Dali::InputMethodContext::PreeditAttributeData</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83" prot="public" static="no" strong="no">
+        <type></type>
+        <name>TextDirection</name>
+        <qualifiedname>Dali::InputMethodContext::TextDirection</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83afad3f11e29076f62115ac98565fa688e" prot="public">
+          <name>LEFT_TO_RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83acc3e8a30454fe9247e36f06d0a12937c" prot="public">
+          <name>RIGHT_TO_LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The direction of text. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="53" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EventType</name>
+        <qualifiedname>Dali::InputMethodContext::EventType</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9abe4a317e5efd7b4716b2ac5c8d5f797e" prot="public">
+          <name>VOID</name>
+          <briefdescription>
+<para>No event. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9aa8c9d954ffc460adb989152d8687ef79" prot="public">
+          <name>PRE_EDIT</name>
+          <briefdescription>
+<para>Pre-Edit changed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9a2684f359d3d710907810112405aba9b5" prot="public">
+          <name>COMMIT</name>
+          <briefdescription>
+<para>Commit recieved. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9af63df2f43d321f73184ea8044133511a" prot="public">
+          <name>DELETE_SURROUNDING</name>
+          <briefdescription>
+<para>Event to delete a range of characters from the string. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9a37dc1d6556debc0aa719b62117874ceb" prot="public">
+          <name>GET_SURROUNDING</name>
+          <briefdescription>
+<para>Event to query string and cursor position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9aa3da422b88fe778b4431f7c678b538e1" prot="public">
+          <name>PRIVATE_COMMAND</name>
+          <briefdescription>
+<para>Private command sent from the input panel. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9ad8ba1b0ecacefba6b66f7f7a003a7ba1" prot="public">
+          <name>SELECTION_SET</name>
+          <briefdescription>
+<para>input method needs to set the selection </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Events that are generated by the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="62" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="63" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>State</name>
+        <qualifiedname>Dali::InputMethodContext::State</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3a1b838c835a6a92ac6f51cfdcf38eb95f" prot="public">
+          <name>DEFAULT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Unknown state. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3adbb71b9ae1ba98f106613a27c1a823a5" prot="public">
+          <name>SHOW</name>
+          <briefdescription>
+<para>Input panel is shown. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3a1a082fbb276b43ddddf2afd15862bdff" prot="public">
+          <name>HIDE</name>
+          <briefdescription>
+<para>Input panel is hidden. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3a4c3e6ad6cdbe4312c0ed2591a9106c12" prot="public">
+          <name>WILL_SHOW</name>
+          <briefdescription>
+<para>Input panel in process of being shown. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for state of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="76" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="77" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623" prot="public" static="no" strong="no">
+        <type></type>
+        <name>KeyboardType</name>
+        <qualifiedname>Dali::InputMethodContext::KeyboardType</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623a21bb7d79d6e3a96b763a191acba2bc88" prot="public">
+          <name>SOFTWARE_KEYBOARD</name>
+          <briefdescription>
+<para>Software keyboard (Virtual keyboard) is default. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623a39fcf617a0a0d42e7c7a22a732647322" prot="public">
+          <name>HARDWARE_KEYBOARD</name>
+          <briefdescription>
+<para>Hardware keyboard. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the type of <ref refid="namespaceDali_1_1Keyboard" kindref="compound">Keyboard</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="87" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1a45c0c9684a0a13976955bea85a091b9b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>InputPanelLanguage</name>
+        <qualifiedname>Dali::InputMethodContext::InputPanelLanguage</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1a45c0c9684a0a13976955bea85a091b9ba008f6cdd0c190839e9885cf9f9e2a652" prot="public">
+          <name>AUTOMATIC</name>
+          <briefdescription>
+<para>IME Language automatically set depending on the system display. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a45c0c9684a0a13976955bea85a091b9ba3ce354fef0eb353eb26454bbe32941e4" prot="public">
+          <name>ALPHABET</name>
+          <briefdescription>
+<para>Latin alphabet(default). It can be changed according to OSD(On Screen Display) language. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the language mode of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="96" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>InputPanelAlign</name>
+        <qualifiedname>Dali::InputMethodContext::InputPanelAlign</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a747385047b85ae751f83adb36435a3c1" prot="public">
+          <name>TOP_LEFT</name>
+          <briefdescription>
+<para>The top-left corner. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74ae4e8367937db13de78dd9a710df92164" prot="public">
+          <name>TOP_CENTER</name>
+          <briefdescription>
+<para>The top-center position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a901d87dedda8db733f5e6d34c4eb5fe0" prot="public">
+          <name>TOP_RIGHT</name>
+          <briefdescription>
+<para>The top-right corner. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a9d4989e254422a15442ed8c59c600f1a" prot="public">
+          <name>MIDDLE_LEFT</name>
+          <briefdescription>
+<para>The middle-left position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a86f1955e79bb2163d3c32a6024f420e6" prot="public">
+          <name>MIDDLE_CENTER</name>
+          <briefdescription>
+<para>The middle-center position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a0a22e84ed1c4062d7ac11d80bbed3876" prot="public">
+          <name>MIDDLE_RIGHT</name>
+          <briefdescription>
+<para>The middle-right position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a8d81ac82421d1b03da58fccb9174892e" prot="public">
+          <name>BOTTOM_LEFT</name>
+          <briefdescription>
+<para>The bottom-left corner. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a3480601794fd3b5473219ae158219fd4" prot="public">
+          <name>BOTTOM_CENTER</name>
+          <briefdescription>
+<para>The bottom-center position. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74a341b72aaab1308a3e6667af1e52f5def" prot="public">
+          <name>BOTTOM_RIGHT</name>
+          <briefdescription>
+<para>The bottom-right corner. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for defining the types of Ecore_IMF Input Panel align. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="105" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="106" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="enum" id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PreeditStyle</name>
+        <qualifiedname>Dali::InputMethodContext::PreeditStyle</qualifiedname>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04ab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <briefdescription>
+<para>None style. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04a0086c73c90c261db630b4dc8aea09bcf" prot="public">
+          <name>UNDERLINE</name>
+          <briefdescription>
+<para>Underline substring style. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04a642e0b6684e6165e142c074f1cd8d55c" prot="public">
+          <name>REVERSE</name>
+          <briefdescription>
+<para>Reverse substring style. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04a57830ad692fb15d7a396d61f7bd9ccc7" prot="public">
+          <name>HIGHLIGHT</name>
+          <briefdescription>
+<para>Highlight substring style. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04aeb8461d9c2e4beb403658bcea16b44b8" prot="public">
+          <name>CUSTOM_PLATFORM_STYLE_1</name>
+          <briefdescription>
+<para>Custom style for platform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04a21954407621e91f1a6611aaf971053be" prot="public">
+          <name>CUSTOM_PLATFORM_STYLE_2</name>
+          <briefdescription>
+<para>Custom style for platform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04a331a8c3f14b2b8ece0c071c96fc4b143" prot="public">
+          <name>CUSTOM_PLATFORM_STYLE_3</name>
+          <briefdescription>
+<para>Custom style for platform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04a5a22bd89d3936f5a7a4998a4c243ab99" prot="public">
+          <name>CUSTOM_PLATFORM_STYLE_4</name>
+          <briefdescription>
+<para>Custom style for platform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the preedit style types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="121" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="122" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a18c404d91725bdb70f3f03357cc8a2b8" prot="public" static="no">
+        <type>Signal&lt; void(<ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> &amp;)&gt;</type>
+        <definition>typedef Signal&lt;void(InputMethodContext&amp;)&gt; Dali::InputMethodContext::ActivatedSignalType</definition>
+        <argsstring></argsstring>
+        <name>ActivatedSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::ActivatedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespaceDali_1_1Keyboard" kindref="compound">Keyboard</ref> actived signal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="247" column="57" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a7fd19adf8e05bc9136db7b40967dbe10" prot="public" static="no">
+        <type>Signal&lt; <ref refid="structDali_1_1InputMethodContext_1_1CallbackData" kindref="compound">CallbackData</ref>(<ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> &amp;, const <ref refid="structDali_1_1InputMethodContext_1_1EventData" kindref="compound">EventData</ref> &amp;)&gt;</type>
+        <definition>typedef Signal&lt;CallbackData(InputMethodContext&amp;, const EventData&amp;)&gt; Dali::InputMethodContext::KeyboardEventSignalType</definition>
+        <argsstring></argsstring>
+        <name>KeyboardEventSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::KeyboardEventSignalType</qualifiedname>
+        <briefdescription>
+<para>keyboard events </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="248" column="31" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1aff57098c6c5daa1422f632386d1a13e5" prot="public" static="no">
+        <type>Signal&lt; void()&gt;</type>
+        <definition>typedef Signal&lt;void()&gt; Dali::InputMethodContext::VoidSignalType</definition>
+        <argsstring></argsstring>
+        <name>VoidSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::VoidSignalType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="249" column="76" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a66b473e79ccc6df0ec66d3664fba8092" prot="public" static="no">
+        <type>Signal&lt; void(bool)&gt;</type>
+        <definition>typedef Signal&lt;void(bool)&gt; Dali::InputMethodContext::StatusSignalType</definition>
+        <argsstring></argsstring>
+        <name>StatusSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::StatusSignalType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="250" column="72" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a1647cb0afd351b98b11303fc4e916716" prot="public" static="no">
+        <type>Signal&lt; void(<ref refid="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623" kindref="member">KeyboardType</ref>)&gt;</type>
+        <definition>typedef Signal&lt;void(KeyboardType)&gt; Dali::InputMethodContext::KeyboardTypeSignalType</definition>
+        <argsstring></argsstring>
+        <name>KeyboardTypeSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::KeyboardTypeSignalType</qualifiedname>
+        <briefdescription>
+<para>keyboard type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="251" column="64" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a79102846f2114587c9f5cc8287ab0530" prot="public" static="no">
+        <type>Signal&lt; void(int)&gt;</type>
+        <definition>typedef Signal&lt;void(int)&gt; Dali::InputMethodContext::KeyboardResizedSignalType</definition>
+        <argsstring></argsstring>
+        <name>KeyboardResizedSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::KeyboardResizedSignalType</qualifiedname>
+        <briefdescription>
+<para><ref refid="namespaceDali_1_1Keyboard" kindref="compound">Keyboard</ref> resized signal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="252" column="73" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1ac728fa3f47802412bff0415d62c3b8d2" prot="public" static="no">
+        <type>Signal&lt; void(int)&gt;</type>
+        <definition>typedef Signal&lt;void(int)&gt; Dali::InputMethodContext::LanguageChangedSignalType</definition>
+        <argsstring></argsstring>
+        <name>LanguageChangedSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::LanguageChangedSignalType</qualifiedname>
+        <briefdescription>
+<para>Language changed signal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="253" column="73" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a52347de499a74fb13cc2d542bfa8b8c2" prot="public" static="no">
+        <type>Signal&lt; void(const std::string &amp;, const std::string &amp;, const std::string &amp;)&gt;</type>
+        <definition>typedef Signal&lt;void(const std::string&amp;, const std::string&amp;, const std::string&amp;)&gt; Dali::InputMethodContext::ContentReceivedSignalType</definition>
+        <argsstring></argsstring>
+        <name>ContentReceivedSignalType</name>
+        <qualifiedname>Dali::InputMethodContext::ContentReceivedSignalType</qualifiedname>
+        <briefdescription>
+<para>Content received signal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="254" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1InputMethodContext_1a7a124000dc85b793a5cd98a88fcb798f" prot="public" static="no">
+        <type>Vector&lt; <ref refid="structDali_1_1InputMethodContext_1_1PreeditAttributeData" kindref="compound">Dali::InputMethodContext::PreeditAttributeData</ref> &gt;</type>
+        <definition>using Dali::InputMethodContext::PreEditAttributeDataContainer =  Vector&lt;Dali::InputMethodContext::PreeditAttributeData&gt;</definition>
+        <argsstring></argsstring>
+        <name>PreEditAttributeDataContainer</name>
+        <qualifiedname>Dali::InputMethodContext::PreEditAttributeDataContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="256" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a7c2a445f65644a3aefd586f5ba601568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::InputMethodContext::InputMethodContext</definition>
+        <argsstring>()</argsstring>
+        <name>InputMethodContext</name>
+        <qualifiedname>Dali::InputMethodContext::InputMethodContext</qualifiedname>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="262" column="3"/>
+        <referencedby refid="classDali_1_1InputMethodContext_1a9b6a022723c236995d5e352b36655343" compoundref="input-method-context_8cpp" startline="63" endline="66">DownCast</referencedby>
+        <referencedby refid="classDali_1_1InputMethodContext_1a2bce82a502f01b2b316f30aaa6d8c350" compoundref="input-method-context_8cpp" startline="37" endline="47">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a72706d36bbb1a35e9aadc0e35f90adef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::InputMethodContext::~InputMethodContext</definition>
+        <argsstring>()</argsstring>
+        <name>~InputMethodContext</name>
+        <qualifiedname>Dali::InputMethodContext::~InputMethodContext</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived Handle types must not contain data or virtual methods. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="269" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1af7357994610ef0ade7826d4e016d3155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::InputMethodContext::InputMethodContext</definition>
+        <argsstring>(const InputMethodContext &amp;inputMethodContext)</argsstring>
+        <name>InputMethodContext</name>
+        <qualifiedname>Dali::InputMethodContext::InputMethodContext</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> &amp;</type>
+          <declname>inputMethodContext</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">inputMethodContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> to copy. The copied inputMethodContext will point at the same implementation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="288" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a57d262b0f540ab3f3a456ae5f8be7244" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> &amp;</type>
+        <definition>InputMethodContext &amp; Dali::InputMethodContext::operator=</definition>
+        <argsstring>(const InputMethodContext &amp;inputMethodContext)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::InputMethodContext::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> &amp;</type>
+          <declname>inputMethodContext</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">inputMethodContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> to assign from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The updated <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="296" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a3731f56c18423266c807ff17084dbcec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::Finalize</definition>
+        <argsstring>()</argsstring>
+        <name>Finalize</name>
+        <qualifiedname>Dali::InputMethodContext::Finalize</qualifiedname>
+        <briefdescription>
+<para>Finalize the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It means that the context will be deleted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="315" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ac01d51c7501c08308902cd26a38d5b7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::Activate</definition>
+        <argsstring>()</argsstring>
+        <name>Activate</name>
+        <qualifiedname>Dali::InputMethodContext::Activate</qualifiedname>
+        <briefdescription>
+<para>Activate the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It means that the text editing is started at somewhere. If the H/W keyboard isn&apos;t connected then it will show the virtual keyboard. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="323" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ac6365498264eb2d3b08e4195f85599a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::Deactivate</definition>
+        <argsstring>()</argsstring>
+        <name>Deactivate</name>
+        <qualifiedname>Dali::InputMethodContext::Deactivate</qualifiedname>
+        <briefdescription>
+<para>Deactivate the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It means that the text editing is finished at somewhere. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="330" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ac83e789e12c6e88c3e0e5b42106a61a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::InputMethodContext::RestoreAfterFocusLost</definition>
+        <argsstring>() const</argsstring>
+        <name>RestoreAfterFocusLost</name>
+        <qualifiedname>Dali::InputMethodContext::RestoreAfterFocusLost</qualifiedname>
+        <briefdescription>
+<para>Get the restoration status, which controls if the keyboard is restored after the focus lost then regained. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If true then keyboard will be restored (activated) after focus is regained. <simplesect kind="return"><para>restoration status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="338" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1adf5f65f9aafd4a575fc0d4e0a92e8adc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetRestoreAfterFocusLost</definition>
+        <argsstring>(bool toggle)</argsstring>
+        <name>SetRestoreAfterFocusLost</name>
+        <qualifiedname>Dali::InputMethodContext::SetRestoreAfterFocusLost</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>toggle</declname>
+        </param>
+        <briefdescription>
+<para>Set status whether the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> has to restore the keyboard after losing focus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">toggle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True means that keyboard should be restored after focus lost and regained. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="345" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a45e0ff7478262fed0e50f99b95d7435f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Dali::InputMethodContext::Reset</qualifiedname>
+        <briefdescription>
+<para>Send message reset the pred-edit state / <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> module. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used to interupt pre-edit state maybe due to a touch input. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="352" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aedc671cd81beb76c7e0069efb15f64f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::NotifyCursorPosition</definition>
+        <argsstring>()</argsstring>
+        <name>NotifyCursorPosition</name>
+        <qualifiedname>Dali::InputMethodContext::NotifyCursorPosition</qualifiedname>
+        <briefdescription>
+<para>Notifies <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> that the cursor position has changed, required for features like auto-capitalisation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="357" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a12232b0a3656598e04ef8d25aeb53e11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetCursorPosition</definition>
+        <argsstring>(unsigned int cursorPosition)</argsstring>
+        <name>SetCursorPosition</name>
+        <qualifiedname>Dali::InputMethodContext::SetCursorPosition</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>cursorPosition</declname>
+        </param>
+        <briefdescription>
+<para>Sets cursor position stored in <ref refid="namespaceDali_1_1VirtualKeyboard" kindref="compound">VirtualKeyboard</ref>, this is required by the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cursorPosition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position of cursor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="364" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="103" bodyend="106"/>
+        <references refid="classDali_1_1InputMethodContext_1a12232b0a3656598e04ef8d25aeb53e11" compoundref="input-method-context_8cpp" startline="103" endline="106">SetCursorPosition</references>
+        <referencedby refid="classDali_1_1InputMethodContext_1a12232b0a3656598e04ef8d25aeb53e11" compoundref="input-method-context_8cpp" startline="103" endline="106">SetCursorPosition</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aa61dcbd03081c53606336ec375e9fc2b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Dali::InputMethodContext::GetCursorPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCursorPosition</name>
+        <qualifiedname>Dali::InputMethodContext::GetCursorPosition</qualifiedname>
+        <briefdescription>
+<para>Gets cursor position stored in <ref refid="namespaceDali_1_1VirtualKeyboard" kindref="compound">VirtualKeyboard</ref>, this is required by the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>current position of cursor </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="371" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ae07552fd6dc1426120cc9099f8a5a06b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetSurroundingText</definition>
+        <argsstring>(const std::string &amp;text)</argsstring>
+        <name>SetSurroundingText</name>
+        <qualifiedname>Dali::InputMethodContext::SetSurroundingText</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Method to store the string required by the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>, this is used to provide predictive word suggestions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text string surrounding the current cursor point. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="378" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a301d9239df0ef92b47b2dad5a206278a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; Dali::InputMethodContext::GetSurroundingText</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSurroundingText</name>
+        <qualifiedname>Dali::InputMethodContext::GetSurroundingText</qualifiedname>
+        <briefdescription>
+<para>Gets current text string set within the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>, this is used to offer predictive suggestions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>current position of cursor </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="385" column="21" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a0fbdc24fa6403abd4d5039f0ba20fddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::NotifyTextInputMultiLine</definition>
+        <argsstring>(bool multiLine)</argsstring>
+        <name>NotifyTextInputMultiLine</name>
+        <qualifiedname>Dali::InputMethodContext::NotifyTextInputMultiLine</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>multiLine</declname>
+        </param>
+        <briefdescription>
+<para>Notifies <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> that text input is set to multi line or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">multiLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if multiline text input is used </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="392" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="123" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aa2a3d8e4dd2599851f34d65b890c84fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83" kindref="member">TextDirection</ref></type>
+        <definition>InputMethodContext::TextDirection Dali::InputMethodContext::GetTextDirection</definition>
+        <argsstring>()</argsstring>
+        <name>GetTextDirection</name>
+        <qualifiedname>Dali::InputMethodContext::GetTextDirection</qualifiedname>
+        <briefdescription>
+<para>Returns text direction of the keyboard&apos;s current input language. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The direction of the text. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="398" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a09b78d3bdd7e6a5393e9cdfa7212d996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::Rect&lt; int &gt;</type>
+        <definition>Rect&lt; int &gt; Dali::InputMethodContext::GetInputMethodArea</definition>
+        <argsstring>()</argsstring>
+        <name>GetInputMethodArea</name>
+        <qualifiedname>Dali::InputMethodContext::GetInputMethodArea</qualifiedname>
+        <briefdescription>
+<para>Provides size and position of keyboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Position is relative to whether keyboard is visible or not. If keyboard is not visible then position will be off the screen. If keyboard is not being shown when this method is called the keyboard is partially setup (IMFContext) to get the values then taken down. So ideally <ref refid="classDali_1_1InputMethodContext_1a09b78d3bdd7e6a5393e9cdfa7212d996" kindref="member">GetInputMethodArea()</ref> should be called after Show(). <simplesect kind="return"><para>rect which is keyboard panel x, y, width, height </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="409" column="14" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a2cd7dc7910c47fad56c15bc622960ec2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::ApplyOptions</definition>
+        <argsstring>(const InputMethodOptions &amp;options)</argsstring>
+        <name>ApplyOptions</name>
+        <qualifiedname>Dali::InputMethodContext::ApplyOptions</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1InputMethodOptions" kindref="compound">InputMethodOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+<para>Set one or more of the Input Method options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The options to be applied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="415" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ac337554a4df0f445b45c51b0589417a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetInputPanelData</definition>
+        <argsstring>(const std::string &amp;data)</argsstring>
+        <name>SetInputPanelData</name>
+        <qualifiedname>Dali::InputMethodContext::SetInputPanelData</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Sets up the input-panel specific data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The specific data to be set to the input panel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="421" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aa027e7cd4c77998b5a1dc6b5987bc6f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::GetInputPanelData</definition>
+        <argsstring>(std::string &amp;data)</argsstring>
+        <name>GetInputPanelData</name>
+        <qualifiedname>Dali::InputMethodContext::GetInputPanelData</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Gets the specific data of the current active input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Input Panel Data is not always the data which is set by <ref refid="classDali_1_1InputMethodContext_1ac337554a4df0f445b45c51b0589417a7" kindref="member">SetInputPanelData()</ref>. Data can be changed internally in the input panel. It is just used to get a specific data from the input panel to an application. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The specific data to be got from the input panel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="431" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ac7c0dfce384055ff52dbeece2a2bede4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3" kindref="member">State</ref></type>
+        <definition>Dali::InputMethodContext::State Dali::InputMethodContext::GetInputPanelState</definition>
+        <argsstring>()</argsstring>
+        <name>GetInputPanelState</name>
+        <qualifiedname>Dali::InputMethodContext::GetInputPanelState</qualifiedname>
+        <briefdescription>
+<para>Gets the state of the current active input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The state of the input panel. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="437" column="9" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ad0af510dffa81f1528e217c7b24cf0c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetReturnKeyState</definition>
+        <argsstring>(bool visible)</argsstring>
+        <name>SetReturnKeyState</name>
+        <qualifiedname>Dali::InputMethodContext::SetReturnKeyState</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>visible</declname>
+        </param>
+        <briefdescription>
+<para>Sets the return key on the input panel to be visible or invisible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default is true. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">visible</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if the return key is visible(enabled), false otherwise. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="445" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a3a5c38b6e04e4d43bf2f1abe2d6b9e88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::AutoEnableInputPanel</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>AutoEnableInputPanel</name>
+        <qualifiedname>Dali::InputMethodContext::AutoEnableInputPanel</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Enable to show the input panel automatically when focused. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the input panel will be shown when focused </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="451" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="163" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a0a6f7e8897fbf35f1c61dc72747e6e82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::ShowInputPanel</definition>
+        <argsstring>()</argsstring>
+        <name>ShowInputPanel</name>
+        <qualifiedname>Dali::InputMethodContext::ShowInputPanel</qualifiedname>
+        <briefdescription>
+<para>Shows the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="456" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ab6118749f30faf46896a77664ff0957e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::HideInputPanel</definition>
+        <argsstring>()</argsstring>
+        <name>HideInputPanel</name>
+        <qualifiedname>Dali::InputMethodContext::HideInputPanel</qualifiedname>
+        <briefdescription>
+<para>Hides the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="461" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aecc088b3445a7315f3ee43f4da378763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623" kindref="member">KeyboardType</ref></type>
+        <definition>Dali::InputMethodContext::KeyboardType Dali::InputMethodContext::GetKeyboardType</definition>
+        <argsstring>()</argsstring>
+        <name>GetKeyboardType</name>
+        <qualifiedname>Dali::InputMethodContext::GetKeyboardType</qualifiedname>
+        <briefdescription>
+<para>Gets the keyboard type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default keyboard type is SOFTWARE_KEYBOARD. <simplesect kind="return"><para>The keyboard type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="469" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ad3bb4d33b836525f4c24a69d5bcd14ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Dali::InputMethodContext::GetInputPanelLocale</definition>
+        <argsstring>()</argsstring>
+        <name>GetInputPanelLocale</name>
+        <qualifiedname>Dali::InputMethodContext::GetInputPanelLocale</qualifiedname>
+        <briefdescription>
+<para>Gets the current language locale of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ex) en_US, en_GB, en_PH, fr_FR, ... <simplesect kind="return"><para>The current language locale of the input panel </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="477" column="15" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1adab62e64f4c7f8f240959fc293f0d183" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetContentMIMETypes</definition>
+        <argsstring>(const std::string &amp;mimeTypes)</argsstring>
+        <name>SetContentMIMETypes</name>
+        <qualifiedname>Dali::InputMethodContext::SetContentMIMETypes</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>mimeTypes</declname>
+        </param>
+        <briefdescription>
+<para>Sets the allowed MIME Types to deliver to the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ex) std::string mimeTypes = &quot;text/plain,image/png,image/gif,application/pdf&quot;;</para>
+<para>You can receive a media content URI and its MIME type from <ref refid="classDali_1_1InputMethodContext_1a5c068bbe839058418014b4201c9b95b3" kindref="member">ContentReceivedSignal()</ref>. <simplesect kind="see"><para><ref refid="classDali_1_1InputMethodContext_1a5c068bbe839058418014b4201c9b95b3" kindref="member">ContentReceivedSignal</ref> </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mimeTypes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The allowed MIME types </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="487" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="188" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ac9a221f5d8f4d798c301845c4d0bad49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::InputMethodContext::FilterEventKey</definition>
+        <argsstring>(const Dali::KeyEvent &amp;keyEvent)</argsstring>
+        <name>FilterEventKey</name>
+        <qualifiedname>Dali::InputMethodContext::FilterEventKey</qualifiedname>
+        <param>
+          <type>const Dali::KeyEvent &amp;</type>
+          <declname>keyEvent</declname>
+        </param>
+        <briefdescription>
+<para>Process event key down or up, whether filter a key to isf. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event key to be handled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the event key is handled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="495" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="193" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a12a7025567d12f6f8f596f7275fc02be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::AllowTextPrediction</definition>
+        <argsstring>(bool prediction)</argsstring>
+        <name>AllowTextPrediction</name>
+        <qualifiedname>Dali::InputMethodContext::AllowTextPrediction</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>prediction</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the IM context should allow to use the text prediction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">prediction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to allow text prediction or not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="502" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="198" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ab8a95d528c5ce570845ae0975e123139" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::InputMethodContext::IsTextPredictionAllowed</definition>
+        <argsstring>() const</argsstring>
+        <name>IsTextPredictionAllowed</name>
+        <qualifiedname>Dali::InputMethodContext::IsTextPredictionAllowed</qualifiedname>
+        <briefdescription>
+<para>Gets whether the IM context allow to use the text prediction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the IM allow text prediction or not. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="509" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a3caf3a1deab363c0f08e439d95a87d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetFullScreenMode</definition>
+        <argsstring>(bool fullScreen)</argsstring>
+        <name>SetFullScreenMode</name>
+        <qualifiedname>Dali::InputMethodContext::SetFullScreenMode</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>fullScreen</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the IM context should be shown in fullscreen mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fullScreen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to fullscreen mode or not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="516" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ab728237d36df3c62625015e87ea55893" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::InputMethodContext::IsFullScreenMode</definition>
+        <argsstring>() const</argsstring>
+        <name>IsFullScreenMode</name>
+        <qualifiedname>Dali::InputMethodContext::IsFullScreenMode</qualifiedname>
+        <briefdescription>
+<para>Gets whether the IM context should be shown in fullscreen mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the IM fullscreen mode or not. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="523" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a5cabb736b472c06a6f68163dcd57590e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetInputPanelLanguage</definition>
+        <argsstring>(InputPanelLanguage language)</argsstring>
+        <name>SetInputPanelLanguage</name>
+        <qualifiedname>Dali::InputMethodContext::SetInputPanelLanguage</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1InputMethodContext_1a45c0c9684a0a13976955bea85a091b9b" kindref="member">InputPanelLanguage</ref></type>
+          <declname>language</declname>
+        </param>
+        <briefdescription>
+<para>Sets the language of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method can be used when you want to show the English keyboard. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">language</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The language to be set to the input panel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="531" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a8bac855c3267809544e389237f69369d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a45c0c9684a0a13976955bea85a091b9b" kindref="member">InputPanelLanguage</ref></type>
+        <definition>Dali::InputMethodContext::InputPanelLanguage Dali::InputMethodContext::GetInputPanelLanguage</definition>
+        <argsstring>() const</argsstring>
+        <name>GetInputPanelLanguage</name>
+        <qualifiedname>Dali::InputMethodContext::GetInputPanelLanguage</qualifiedname>
+        <briefdescription>
+<para>Gets the language of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The language of the input panel </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="538" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="223" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ad14f1733871ea74348ec6b9e1ed0b497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::SetInputPanelPosition</definition>
+        <argsstring>(unsigned int x, unsigned int y)</argsstring>
+        <name>SetInputPanelPosition</name>
+        <qualifiedname>Dali::InputMethodContext::SetInputPanelPosition</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Sets the x,y coordinates of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The top-left x coordinate of the input panel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The top-left y coordinate of the input panel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="546" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="228" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a45b7a85a0757a8bd2ad93cbf43b34af6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::InputMethodContext::SetInputPanelPositionAlign</definition>
+        <argsstring>(int x, int y, InputPanelAlign align)</argsstring>
+        <name>SetInputPanelPositionAlign</name>
+        <qualifiedname>Dali::InputMethodContext::SetInputPanelPositionAlign</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74" kindref="member">InputPanelAlign</ref></type>
+          <declname>align</declname>
+        </param>
+        <briefdescription>
+<para>Sets the alignment and its x, y coordinates of the input panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Regardless of the rotation degree, the x, y values of the top-left corner on the screen are based on 0, 0. When the IME size is changed, its size will change according to the set alignment.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x coordinate of the InputPanelAlign value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y coordinate of the InputPanelAlign value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">align</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>one of the InputPanelAlign values specifying the desired alignment. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false otherwise. </para>
+</simplesect>
+<simplesect kind="remark"><para>This API can be used to set the alignment of a floating IME. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="560" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a1314e0d8801914020d8f1710500ca38c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::InputMethodContext::GetPreeditStyle</definition>
+        <argsstring>(PreEditAttributeDataContainer &amp;attrs) const</argsstring>
+        <name>GetPreeditStyle</name>
+        <qualifiedname>Dali::InputMethodContext::GetPreeditStyle</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1InputMethodContext_1a7a124000dc85b793a5cd98a88fcb798f" kindref="member">PreEditAttributeDataContainer</ref> &amp;</type>
+          <declname>attrs</declname>
+        </param>
+        <briefdescription>
+<para>Gets the preedit attributes data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">attrs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preedit attributes data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="567" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a278c4ba62943c6eeab7cd0ce603359ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a18c404d91725bdb70f3f03357cc8a2b8" kindref="member">ActivatedSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::ActivatedSignalType &amp; Dali::InputMethodContext::ActivatedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>ActivatedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::ActivatedSignal</qualifiedname>
+        <briefdescription>
+<para>This is emitted when the virtual keyboard is connected to or the hardware keyboard is activated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> Activated signal. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="577" column="23" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="244" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a31f1d5317721946ac34a699a941de16d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a7fd19adf8e05bc9136db7b40967dbe10" kindref="member">KeyboardEventSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::KeyboardEventSignalType &amp; Dali::InputMethodContext::EventReceivedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>EventReceivedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::EventReceivedSignal</qualifiedname>
+        <briefdescription>
+<para>This is emitted when the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> receives an event from the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This signal is the same as <ref refid="classDali_1_1InputMethodContext_1a40ad171fa6db54fecebc813774794f94" kindref="member">KeyboardEventReceivedSignal()</ref>. This signal is bound to dali-csharp-binder and can be used in external apps.</para>
+</simplesect>
+<simplesect kind="return"><para>The Event signal containing the event data. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="586" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="249" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a40ad171fa6db54fecebc813774794f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a7fd19adf8e05bc9136db7b40967dbe10" kindref="member">KeyboardEventSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::KeyboardEventSignalType &amp; Dali::InputMethodContext::KeyboardEventReceivedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>KeyboardEventReceivedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::KeyboardEventReceivedSignal</qualifiedname>
+        <briefdescription>
+<para>This is emitted when the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> receives an event from the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This signal is the same as <ref refid="classDali_1_1InputMethodContext_1a31f1d5317721946ac34a699a941de16d" kindref="member">EventReceivedSignal()</ref>. This signal is only used by dali.</para>
+</simplesect>
+The EventReceivedSignal combines different kinds of events triggered by the IMF into a single signal, which it then emits. These events often happen during text entry through S/W keyboard and Applications depend on this signal to perform various actions. There exists a situation where further emissions take place inside the emitted signal. Unfortunately, these events are already exposed publicly and cannot be segregated separately. As a workaround, we keep the original signal intact but separate signals meant exclusively for usage within dali.</para>
+<para><simplesect kind="return"><para>The Event signal containing the event data. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="601" column="27" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="254" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aa4d38fabe12602d542e1c25f939158ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a66b473e79ccc6df0ec66d3664fba8092" kindref="member">StatusSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::StatusSignalType &amp; Dali::InputMethodContext::StatusChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>StatusChangedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::StatusChangedSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when the virtual keyboard is shown or hidden. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>keyboardShown);</highlight></codeline>
+</programlisting> If the parameter keyboardShown is true, then the keyboard has just shown, if it is false, then it has just been hidden. <simplesect kind="return"><para>The signal to connect to. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="614" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="259" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ae8c624dbb149d42ce7738029f87e4bfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a79102846f2114587c9f5cc8287ab0530" kindref="member">KeyboardResizedSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::KeyboardResizedSignalType &amp; Dali::InputMethodContext::ResizedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>ResizedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::ResizedSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when the virtual keyboard is resized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resolvedResize<sp/>);</highlight></codeline>
+</programlisting> The parameter sends the resolved resize defined by the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>.</para>
+<para>User can get changed size by using <ref refid="classDali_1_1InputMethodContext_1a09b78d3bdd7e6a5393e9cdfa7212d996" kindref="member">GetInputMethodArea()</ref> in the callback <simplesect kind="return"><para>The signal to connect to. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="628" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="264" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a80bb9bba8a6d87797775fe1ae0936277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1ac728fa3f47802412bff0415d62c3b8d2" kindref="member">LanguageChangedSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::LanguageChangedSignalType &amp; Dali::InputMethodContext::LanguageChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>LanguageChangedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::LanguageChangedSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when the virtual keyboard&apos;s language is changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>resolvedLanguage<sp/>);</highlight></codeline>
+</programlisting> The parameter sends the resolved language defined by the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>.</para>
+<para>User can get the text direction of the language by calling <ref refid="classDali_1_1InputMethodContext_1aa2a3d8e4dd2599851f34d65b890c84fe" kindref="member">GetTextDirection()</ref> in the callback. <simplesect kind="return"><para>The signal to connect to. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="642" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1ad8c919f6b46cbb2ae001c061f6af4675" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a1647cb0afd351b98b11303fc4e916716" kindref="member">KeyboardTypeSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::KeyboardTypeSignalType &amp; Dali::InputMethodContext::KeyboardTypeChangedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>KeyboardTypeChangedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::KeyboardTypeChangedSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when the keyboard type is changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/><ref refid="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623" kindref="member">KeyboardType</ref><sp/>keyboard<sp/>);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The signal to connect to. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="654" column="26" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="274" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a5c068bbe839058418014b4201c9b95b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext_1a52347de499a74fb13cc2d542bfa8b8c2" kindref="member">ContentReceivedSignalType</ref> &amp;</type>
+        <definition>InputMethodContext::ContentReceivedSignalType &amp; Dali::InputMethodContext::ContentReceivedSignal</definition>
+        <argsstring>()</argsstring>
+        <name>ContentReceivedSignal</name>
+        <qualifiedname>Dali::InputMethodContext::ContentReceivedSignal</qualifiedname>
+        <briefdescription>
+<para>Connect to this signal to be notified when the content, such as images, of input method is received. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback of the following type may be connected: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>YourCallbackName(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentUri,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>description,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>contentMIMEType<sp/>);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The signal to connect to. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="666" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="279" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1aba6e71ff52808091a9cf8a3854d9d717" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::InputMethodContext::InputMethodContext</definition>
+        <argsstring>(Internal::Adaptor::InputMethodContext *inputMethodContext)</argsstring>
+        <name>InputMethodContext</name>
+        <qualifiedname>Dali::InputMethodContext::InputMethodContext</qualifiedname>
+        <param>
+          <type>Internal::Adaptor::InputMethodContext *</type>
+          <declname>inputMethodContext</declname>
+        </param>
+        <briefdescription>
+<para>This constructor is used by <ref refid="classDali_1_1InputMethodContext_1a8af7100cb6ecf542127557b72de25fae" kindref="member">InputMethodContext::New()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">inputMethodContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="674" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="284" bodyend="287"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a8af7100cb6ecf542127557b72de25fae" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref></type>
+        <definition>InputMethodContext Dali::InputMethodContext::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::InputMethodContext::New</qualifiedname>
+        <briefdescription>
+<para>Create a new instance of an <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="274" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="32" bodyend="35"/>
+        <references refid="classDali_1_1InputMethodContext_1a8af7100cb6ecf542127557b72de25fae" compoundref="input-method-context_8cpp" startline="32" endline="35">New</references>
+        <referencedby refid="classDali_1_1InputMethodContext_1a8af7100cb6ecf542127557b72de25fae" compoundref="input-method-context_8cpp" startline="32" endline="35">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a2bce82a502f01b2b316f30aaa6d8c350" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref></type>
+        <definition>InputMethodContext Dali::InputMethodContext::New</definition>
+        <argsstring>(Actor actor)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::InputMethodContext::New</qualifiedname>
+        <param>
+          <type>Actor</type>
+          <declname>actor</declname>
+        </param>
+        <briefdescription>
+<para>Create a new instance of an <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">actor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The actor that uses the new <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="281" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="37" bodyend="47"/>
+        <references refid="classDali_1_1InputMethodContext_1a7c2a445f65644a3aefd586f5ba601568">InputMethodContext</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1InputMethodContext_1a9b6a022723c236995d5e352b36655343" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref></type>
+        <definition>InputMethodContext Dali::InputMethodContext::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::InputMethodContext::DownCast</qualifiedname>
+        <param>
+          <type>BaseHandle</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcast a handle to <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If handle points to an <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> the downcast produces valid handle. If not the returned handle is left uninitialized.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handle to an object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Handle to an <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> or an uninitialized handle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="307" column="29" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.cpp" bodystart="63" bodyend="66"/>
+        <references refid="classDali_1_1InputMethodContext_1a7c2a445f65644a3aefd586f5ba601568">InputMethodContext</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classDali_1_1InputMethodContext" kindref="compound">InputMethodContext</ref> class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Specifically manages the ecore input method framework which enables the virtual or hardware keyboards. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::InputMethodContext</label>
+        <link refid="classDali_1_1InputMethodContext"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::InputMethodContext</label>
+        <link refid="classDali_1_1InputMethodContext"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" line="47" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/input-method-context.h" bodystart="48" bodyend="675"/>
+    <listofallmembers>
+      <member refid="classDali_1_1InputMethodContext_1ac01d51c7501c08308902cd26a38d5b7f" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>Activate</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a278c4ba62943c6eeab7cd0ce603359ec" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ActivatedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a18c404d91725bdb70f3f03357cc8a2b8" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ActivatedSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a12a7025567d12f6f8f596f7275fc02be" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>AllowTextPrediction</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a2cd7dc7910c47fad56c15bc622960ec2" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ApplyOptions</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a3a5c38b6e04e4d43bf2f1abe2d6b9e88" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>AutoEnableInputPanel</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9a2684f359d3d710907810112405aba9b5" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>COMMIT</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a5c068bbe839058418014b4201c9b95b3" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ContentReceivedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a52347de499a74fb13cc2d542bfa8b8c2" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ContentReceivedSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ac6365498264eb2d3b08e4195f85599a4" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>Deactivate</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3a1b838c835a6a92ac6f51cfdcf38eb95f" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>DEFAULT</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9af63df2f43d321f73184ea8044133511a" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>DELETE_SURROUNDING</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a9b6a022723c236995d5e352b36655343" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a31f1d5317721946ac34a699a941de16d" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>EventReceivedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>EventType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ac9a221f5d8f4d798c301845c4d0bad49" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>FilterEventKey</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a3731f56c18423266c807ff17084dbcec" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>Finalize</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9a37dc1d6556debc0aa719b62117874ceb" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GET_SURROUNDING</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aa61dcbd03081c53606336ec375e9fc2b" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetCursorPosition</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a09b78d3bdd7e6a5393e9cdfa7212d996" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetInputMethodArea</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aa027e7cd4c77998b5a1dc6b5987bc6f0" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetInputPanelData</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8bac855c3267809544e389237f69369d" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetInputPanelLanguage</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ad3bb4d33b836525f4c24a69d5bcd14ef" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetInputPanelLocale</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ac7c0dfce384055ff52dbeece2a2bede4" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetInputPanelState</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aecc088b3445a7315f3ee43f4da378763" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetKeyboardType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a1314e0d8801914020d8f1710500ca38c" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetPreeditStyle</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a301d9239df0ef92b47b2dad5a206278a" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetSurroundingText</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aa2a3d8e4dd2599851f34d65b890c84fe" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>GetTextDirection</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623a39fcf617a0a0d42e7c7a22a732647322" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>HARDWARE_KEYBOARD</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3a1a082fbb276b43ddddf2afd15862bdff" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>HIDE</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ab6118749f30faf46896a77664ff0957e" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>HideInputPanel</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a7c2a445f65644a3aefd586f5ba601568" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>InputMethodContext</name></member>
+      <member refid="classDali_1_1InputMethodContext_1af7357994610ef0ade7826d4e016d3155" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>InputMethodContext</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aba6e71ff52808091a9cf8a3854d9d717" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>InputMethodContext</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a770c6c4e1a9892e7d900195eca52ea74" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>InputPanelAlign</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a45c0c9684a0a13976955bea85a091b9b" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>InputPanelLanguage</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ab728237d36df3c62625015e87ea55893" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>IsFullScreenMode</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ab8a95d528c5ce570845ae0975e123139" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>IsTextPredictionAllowed</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a40ad171fa6db54fecebc813774794f94" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>KeyboardEventReceivedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a7fd19adf8e05bc9136db7b40967dbe10" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>KeyboardEventSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a79102846f2114587c9f5cc8287ab0530" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>KeyboardResizedSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>KeyboardType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ad8c919f6b46cbb2ae001c061f6af4675" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>KeyboardTypeChangedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a1647cb0afd351b98b11303fc4e916716" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>KeyboardTypeSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a80bb9bba8a6d87797775fe1ae0936277" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>LanguageChangedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ac728fa3f47802412bff0415d62c3b8d2" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>LanguageChangedSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83afad3f11e29076f62115ac98565fa688e" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>LEFT_TO_RIGHT</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8af7100cb6ecf542127557b72de25fae" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>New</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a2bce82a502f01b2b316f30aaa6d8c350" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>New</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aedc671cd81beb76c7e0069efb15f64f6" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>NotifyCursorPosition</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a0fbdc24fa6403abd4d5039f0ba20fddc" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>NotifyTextInputMultiLine</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a57d262b0f540ab3f3a456ae5f8be7244" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>operator=</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9aa8c9d954ffc460adb989152d8687ef79" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>PRE_EDIT</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a7a124000dc85b793a5cd98a88fcb798f" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>PreEditAttributeDataContainer</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aed138b761f1960b83b6772b70d52ff04" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>PreeditStyle</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9aa3da422b88fe778b4431f7c678b538e1" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>PRIVATE_COMMAND</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a45e0ff7478262fed0e50f99b95d7435f" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>Reset</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ae8c624dbb149d42ce7738029f87e4bfe" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ResizedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ac83e789e12c6e88c3e0e5b42106a61a1" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>RestoreAfterFocusLost</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83acc3e8a30454fe9247e36f06d0a12937c" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>RIGHT_TO_LEFT</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9ad8ba1b0ecacefba6b66f7f7a003a7ba1" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SELECTION_SET</name></member>
+      <member refid="classDali_1_1InputMethodContext_1adab62e64f4c7f8f240959fc293f0d183" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetContentMIMETypes</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a12232b0a3656598e04ef8d25aeb53e11" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetCursorPosition</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a3caf3a1deab363c0f08e439d95a87d94" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetFullScreenMode</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ac337554a4df0f445b45c51b0589417a7" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetInputPanelData</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a5cabb736b472c06a6f68163dcd57590e" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetInputPanelLanguage</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ad14f1733871ea74348ec6b9e1ed0b497" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetInputPanelPosition</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a45b7a85a0757a8bd2ad93cbf43b34af6" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetInputPanelPositionAlign</name></member>
+      <member refid="classDali_1_1InputMethodContext_1adf5f65f9aafd4a575fc0d4e0a92e8adc" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetRestoreAfterFocusLost</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ad0af510dffa81f1528e217c7b24cf0c5" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetReturnKeyState</name></member>
+      <member refid="classDali_1_1InputMethodContext_1ae07552fd6dc1426120cc9099f8a5a06b" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SetSurroundingText</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3adbb71b9ae1ba98f106613a27c1a823a5" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SHOW</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a0a6f7e8897fbf35f1c61dc72747e6e82" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>ShowInputPanel</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a26156e8b584d17ca3ecabd4902b38623a21bb7d79d6e3a96b763a191acba2bc88" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>SOFTWARE_KEYBOARD</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>State</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aa4d38fabe12602d542e1c25f939158ef" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>StatusChangedSignal</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a66b473e79ccc6df0ec66d3664fba8092" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>StatusSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afa1560144cfb945e078ab629c20f3d83" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>TextDirection</name></member>
+      <member refid="classDali_1_1InputMethodContext_1afe5f2a8546b5e5db1abf6dcdcfaf5ef9abe4a317e5efd7b4716b2ac5c8d5f797e" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>VOID</name></member>
+      <member refid="classDali_1_1InputMethodContext_1aff57098c6c5daa1422f632386d1a13e5" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>VoidSignalType</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a8242b1af185053897f6117fad51e70d3a4c3e6ad6cdbe4312c0ed2591a9106c12" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>WILL_SHOW</name></member>
+      <member refid="classDali_1_1InputMethodContext_1a72706d36bbb1a35e9aadc0e35f90adef" prot="public" virt="non-virtual"><scope>Dali::InputMethodContext</scope><name>~InputMethodContext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

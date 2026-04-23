@@ -1,0 +1,1861 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Handle" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Handle</compoundname>
+    <basecompoundref refid="classDali_1_1BaseHandle" prot="public" virt="non-virtual">Dali::BaseHandle</basecompoundref>
+    <derivedcompoundref refid="classDali_1_1Actor" prot="public" virt="non-virtual">Dali::Actor</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1GestureDetector" prot="public" virt="non-virtual">Dali::GestureDetector</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1LinearConstrainer" prot="public" virt="non-virtual">Dali::LinearConstrainer</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1Path" prot="public" virt="non-virtual">Dali::Path</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1PathConstrainer" prot="public" virt="non-virtual">Dali::PathConstrainer</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1RenderTask" prot="public" virt="non-virtual">Dali::RenderTask</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1Renderer" prot="public" virt="non-virtual">Dali::Renderer</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1Shader" prot="public" virt="non-virtual">Dali::Shader</derivedcompoundref>
+    <derivedcompoundref refid="classDali_1_1UniformBlock" prot="public" virt="non-virtual">Dali::UniformBlock</derivedcompoundref>
+    <includes refid="handle_8h" local="no">handle.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Capability</name>
+        <qualifiedname>Dali::Handle::Capability</qualifiedname>
+        <enumvalue id="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9ba5284559df1a09b2167bdfde50c8418f4" prot="public">
+          <name>DYNAMIC_PROPERTIES</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+<para>Some objects support dynamic property creation at run-time. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>New properties are registered by calling <ref refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" kindref="member">RegisterProperty()</ref> with an unused property name. @SINCE_1_0.0 </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref>&apos;s capabilities that can be queried using <ref refid="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" kindref="member">Handle::Supports()</ref>. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="64" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1Handle_1acca920cad56d4b14b12d2f4c00c0e555" prot="public" static="no">
+        <type><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt; void(<ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;handle, <ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref> index, const Property::Value &amp;value)&gt;</type>
+        <definition>using Dali::Handle::PropertySetSignalType =  Signal&lt;void(Handle&amp; handle, Property::Index index, const Property::Value&amp; value)&gt;</definition>
+        <argsstring></argsstring>
+        <name>PropertySetSignalType</name>
+        <qualifiedname>Dali::Handle::PropertySetSignalType</qualifiedname>
+        <briefdescription>
+<para>PropertySetSignal function prototype for signal handler. Called when a property is set on this object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="78" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Handle_1a78b34f83f7c54495d9f3d0d69df56e1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Handle::Handle</definition>
+        <argsstring>(Dali::Internal::Object *handle)</argsstring>
+        <name>Handle</name>
+        <qualifiedname>Dali::Handle::Handle</qualifiedname>
+        <param>
+          <type>Dali::Internal::Object *</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This constructor is used by <ref refid="namespaceDali" kindref="compound">Dali</ref> <ref refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" kindref="member">New()</ref> methods. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a newly allocated <ref refid="namespaceDali" kindref="compound">Dali</ref> resource </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="87" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Handle::Handle</definition>
+        <argsstring>()</argsstring>
+        <name>Handle</name>
+        <qualifiedname>Dali::Handle::Handle</qualifiedname>
+        <briefdescription>
+<para>This constructor provides an uninitialized <ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This should be initialized with a <ref refid="namespaceDali" kindref="compound">Dali</ref> <ref refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" kindref="member">New()</ref> method before use. Methods called on an uninitialized <ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref> will assert. <programlisting><codeline><highlight class="normal"><ref refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335" kindref="member">Handle</ref><sp/>handle;<sp/></highlight><highlight class="comment">//<sp/>uninitialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">handle.SomeMethod();<sp/></highlight><highlight class="comment">//<sp/>unsafe!<sp/>This<sp/>will<sp/>assert</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">handle<sp/>=<sp/>SomeClass::New();<sp/></highlight><highlight class="comment">//<sp/>now<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">handle.SomeMethod();<sp/></highlight><highlight class="comment">//<sp/>safe</highlight></codeline>
+</programlisting> @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="103" column="3"/>
+        <referencedby refid="classDali_1_1Handle_1aa7af169c4e1394a5dadffb7aae22aaa8" compoundref="handle_8cpp" startline="57" endline="60">DownCast</referencedby>
+        <referencedby refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" compoundref="handle_8cpp" startline="42" endline="45">New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1abf54df186713c711c2db1a389f1ff700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Handle::~Handle</definition>
+        <argsstring>()</argsstring>
+        <name>~Handle</name>
+        <qualifiedname>Dali::Handle::~Handle</qualifiedname>
+        <briefdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref> is intended as a base class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is non-virtual since derived <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> types must not contain data or virtual methods. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="135" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1ac2e8233e0958c65d5b70ed277223ada9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Handle::Handle</definition>
+        <argsstring>(const Handle &amp;handle)</argsstring>
+        <name>Handle</name>
+        <qualifiedname>Dali::Handle::Handle</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="143" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a5709270eb2cf5cdefc0de5979066922d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;</type>
+        <definition>Handle &amp; Dali::Handle::operator=</definition>
+        <argsstring>(const Handle &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Handle::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="152" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a305afca954732fe963f55c7d1dd152a9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Handle::Handle</definition>
+        <argsstring>(Handle &amp;&amp;rhs) noexcept</argsstring>
+        <name>Handle</name>
+        <qualifiedname>Dali::Handle::Handle</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="160" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a6cba3d10b340f93975fabf2d5138caab" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;</type>
+        <definition>Handle &amp; Dali::Handle::operator=</definition>
+        <argsstring>(Handle &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Handle::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.22 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="169" column="10"/>
+        <references refid="group__dali__core__object_1ga480707cf73af440d19258dd2cb373ddd" compoundref="base-handle_8h" startline="274" endline="277">Dali::DownCast</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Handle::Supports</definition>
+        <argsstring>(Capability capability) const</argsstring>
+        <name>Supports</name>
+        <qualifiedname>Dali::Handle::Supports</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9b" kindref="member">Capability</ref></type>
+          <declname>capability</declname>
+        </param>
+        <briefdescription>
+<para>Queries whether an handle supports a given capability. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">capability</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The queried capability </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the capability is supported </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="188" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="62" bodyend="65"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a3deffc1e9d3236c50140b37e2b6cf8db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Handle::GetPropertyCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPropertyCount</name>
+        <qualifiedname>Dali::Handle::GetPropertyCount</qualifiedname>
+        <briefdescription>
+<para>Queries how many properties are provided by an handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This may vary between instances of a class, if dynamic properties are supported. @SINCE_1_0.0 <simplesect kind="return"><para>The number of properties </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="199" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="67" bodyend="70"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+        <definition>Dali::String Dali::Handle::GetPropertyName</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>GetPropertyName</name>
+        <qualifiedname>Dali::Handle::GetPropertyName</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Queries the name of a property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The name of the property </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="208" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="72" bodyend="75"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">Dali::Scripting::CreatePropertyMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+        <definition>Property::Index Dali::Handle::GetPropertyIndex</definition>
+        <argsstring>(Property::Key key) const</argsstring>
+        <name>GetPropertyIndex</name>
+        <qualifiedname>Dali::Handle::GetPropertyIndex</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1aed6726c073594fc5119f52d681e1324d" kindref="member">Property::Key</ref></type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Query the index of a property using the given key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.27 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key of the property to search for. (The name or integer key provided to <ref refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" kindref="member">RegisterProperty()</ref>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the matching property index of the key, or <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if no property matches the given key. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="219" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="77" bodyend="80"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" compoundref="scripting_8cpp" startline="108" endline="173">Dali::Scripting::NewActor</referencedby>
+        <referencedby refid="classDali_1_1Handle_1aec4050cb13dc0b68853017a769eb51fd" compoundref="handle_8cpp" startline="213" endline="217">operator[]</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a46074ae35e8390eaa75ad5fc94b7a103" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Handle::IsPropertyWritable</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>IsPropertyWritable</name>
+        <qualifiedname>Dali::Handle::IsPropertyWritable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Queries whether a property can be set using <ref refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" kindref="member">SetProperty()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the property is writable </para>
+</simplesect>
+<simplesect kind="pre"><para><ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> &lt; index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="229" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="82" bodyend="85"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1ac72ed10ef62da831eca7085c956e77f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Handle::IsPropertyAnimatable</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>IsPropertyAnimatable</name>
+        <qualifiedname>Dali::Handle::IsPropertyAnimatable</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Queries whether a writable property can be the target of an animation or constraint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the property is animatable </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="238" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="87" bodyend="90"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a025ccafe4d792290ba52c2acfc60f853" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Handle::IsPropertyAConstraintInput</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>IsPropertyAConstraintInput</name>
+        <qualifiedname>Dali::Handle::IsPropertyAConstraintInput</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Queries whether a property can be used as in input to a constraint. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the property can be used as a constraint input </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="247" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="92" bodyend="95"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a775f97600cedf0798fea5c8cca5a0512" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1acb569f557811bc94d2e98b5c880d759c" kindref="member">Property::Type</ref></type>
+        <definition>Property::Type Dali::Handle::GetPropertyType</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>GetPropertyType</name>
+        <qualifiedname>Dali::Handle::GetPropertyType</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Queries the type of a property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The type of the property </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="256" column="18" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="97" bodyend="100"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::SetProperty</definition>
+        <argsstring>(Property::Index index, Property::Value propertyValue)</argsstring>
+        <name>SetProperty</name>
+        <qualifiedname>Dali::Handle::SetProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>propertyValue</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of an existing property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Property" kindref="compound">Property</ref> should be write-able. Setting a read-only property is a no-op. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The property types match i.e. propertyValue.GetType() is equal to GetPropertyType(index). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="267" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="102" bodyend="105"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a94783455b6275d9980972ab180ee8c50" compoundref="scripting_8cpp" startline="108" endline="173">Dali::Scripting::NewActor</referencedby>
+        <referencedby refid="classDali_1_1IndirectValue_1a6eea5efd5ba43f67c36ac994f0bf54d2" compoundref="indirect-value_8cpp" startline="30" endline="33">Dali::IndirectValue::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a5a8165e0f22ebefd82742b95e21cce67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::ReserveCustomProperties</definition>
+        <argsstring>(int propertyCount)</argsstring>
+        <name>ReserveCustomProperties</name>
+        <qualifiedname>Dali::Handle::ReserveCustomProperties</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>propertyCount</declname>
+        </param>
+        <briefdescription>
+<para>Reserves a number of custom properties. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Saves automatic re-allocation of vectors for properties when we know in advance how many there will be.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The total number of initial properties. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="277" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="107" bodyend="110"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+        <definition>Property::Index Dali::Handle::RegisterProperty</definition>
+        <argsstring>(Dali::String name, Property::Value propertyValue)</argsstring>
+        <name>RegisterProperty</name>
+        <qualifiedname>Dali::Handle::RegisterProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>propertyValue</declname>
+        </param>
+        <briefdescription>
+<para>Registers a new animatable property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the property or <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed </para>
+</simplesect>
+<simplesect kind="pre"><para>The object supports dynamic properties i.e. Supports(Handle::DYNAMIC_PROPERTIES) returns true. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> names are expected to be unique, but this is not enforced. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> indices are unique to each registered custom property in a given object. returns <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed. This can happen if you try to register animatable property on an object that does not have scene graph object. </para>
+</simplesect>
+<simplesect kind="note"><para>Only the following types can be animated:<itemizedlist>
+<listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da538a12b1a95a82f6dae06b9cf7835df7" kindref="member">Property::BOOLEAN</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" kindref="member">Property::FLOAT</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" kindref="member">Property::INTEGER</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa5153e9670e8eeb32160ada6e41469a2" kindref="member">Property::VECTOR2</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da61265bdf25f65c089b1aed5f25d9b336" kindref="member">Property::VECTOR3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" kindref="member">Property::VECTOR4</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0bada199f2b111eab4f90804e91873c8" kindref="member">Property::MATRIX3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da80bed9c63b894010f9514d17f3e67f69" kindref="member">Property::MATRIX</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dad7b0246e879ecd1fb0cbbef3ed4bf6dd" kindref="member">Property::ROTATION</ref> </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>If a property with the desired name already exists, then the value given is just set. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="303" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="112" bodyend="115"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1WeightObject_1aff089af40be9efb2be600ce8bcdc454a" compoundref="handle_8cpp" startline="228" endline="235">Dali::WeightObject::New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aabccabf7e4551a684c7b97f39a973284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+        <definition>Property::Index Dali::Handle::RegisterUniqueProperty</definition>
+        <argsstring>(Dali::String name, Property::Value propertyValue)</argsstring>
+        <name>RegisterUniqueProperty</name>
+        <qualifiedname>Dali::Handle::RegisterUniqueProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>propertyValue</declname>
+        </param>
+        <briefdescription>
+<para>Registers a new animatable property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.6 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the property or <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed </para>
+</simplesect>
+<simplesect kind="pre"><para>The object supports dynamic properties i.e. Supports(Handle::DYNAMIC_PROPERTIES) returns true. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> names are expected to be unique, but this is DEFINITELY not enforced. It is up to the caller to enforce uniqueness.</para>
+</simplesect>
+<ref refid="classDali_1_1Property" kindref="compound">Property</ref> indices are unique to each registered custom property in a given object. returns <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed. This can happen if you try to register animatable property on an object that does not have scene graph object. <simplesect kind="note"><para>Only the following types can be animated:<itemizedlist>
+<listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da538a12b1a95a82f6dae06b9cf7835df7" kindref="member">Property::BOOLEAN</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" kindref="member">Property::FLOAT</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" kindref="member">Property::INTEGER</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa5153e9670e8eeb32160ada6e41469a2" kindref="member">Property::VECTOR2</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da61265bdf25f65c089b1aed5f25d9b336" kindref="member">Property::VECTOR3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" kindref="member">Property::VECTOR4</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0bada199f2b111eab4f90804e91873c8" kindref="member">Property::MATRIX3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da80bed9c63b894010f9514d17f3e67f69" kindref="member">Property::MATRIX</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dad7b0246e879ecd1fb0cbbef3ed4bf6dd" kindref="member">Property::ROTATION</ref> </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>If a property with the desired name already exists, then this creates a secondary entry to a different scene graph property; Access by index works as expected, but uniform values will use the last registered version, not the existing version, so things may break. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="333" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="127" bodyend="130"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <references refid="classDali_1_1Property_1a0e163c463a42e8330ed77551336a7f66" compoundref="property_8h" startline="53" endline="53">Dali::Property::INVALID_KEY</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1acf96c21cba52bbcdeb7342592ca3e2e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+        <definition>Property::Index Dali::Handle::RegisterProperty</definition>
+        <argsstring>(Property::Index key, Dali::String name, Property::Value propertyValue)</argsstring>
+        <name>RegisterProperty</name>
+        <qualifiedname>Dali::Handle::RegisterProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>propertyValue</declname>
+        </param>
+        <briefdescription>
+<para>Register a new animatable property with an integer key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.27 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integer key of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text key of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the property.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the property or <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed</para>
+</simplesect>
+<simplesect kind="pre"><para>The object supports dynamic properties i.e. Supports(Handle::DYNAMIC_PROPERTIES) returns true. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> names and keys are expected to be unique, but this is not enforced. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> indices are unique to each registered custom property in a given object. </para>
+</simplesect>
+<xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>CHECK THIS!</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="note"><para>Returns <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed. This can happen if you try to register animatable property on an object that does not have scene graph object.</para>
+</simplesect>
+<simplesect kind="note"><para>The returned property index is not the same as the integer key (though it shares a type)</para>
+</simplesect>
+This version of RegisterProperty associates both an integer key and the text key with the property, allowing for lookup of the property index by either key or name ( which is useful when other classes know the key but not the name )</para>
+<para><simplesect kind="note"><para>Only the following types can be animated:<itemizedlist>
+<listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da538a12b1a95a82f6dae06b9cf7835df7" kindref="member">Property::BOOLEAN</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" kindref="member">Property::FLOAT</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" kindref="member">Property::INTEGER</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa5153e9670e8eeb32160ada6e41469a2" kindref="member">Property::VECTOR2</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da61265bdf25f65c089b1aed5f25d9b336" kindref="member">Property::VECTOR3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" kindref="member">Property::VECTOR4</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0bada199f2b111eab4f90804e91873c8" kindref="member">Property::MATRIX3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da80bed9c63b894010f9514d17f3e67f69" kindref="member">Property::MATRIX</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dad7b0246e879ecd1fb0cbbef3ed4bf6dd" kindref="member">Property::ROTATION</ref> </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>If a property with the desired name already exists, then the value given is just set. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="374" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="117" bodyend="120"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1ad75eb7b366ebc913701058b1e5575581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+        <definition>Property::Index Dali::Handle::RegisterUniqueProperty</definition>
+        <argsstring>(Property::Index key, Dali::String name, Property::Value propertyValue)</argsstring>
+        <name>RegisterUniqueProperty</name>
+        <qualifiedname>Dali::Handle::RegisterUniqueProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>propertyValue</declname>
+        </param>
+        <briefdescription>
+<para>Register a new animatable property with an integer key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.6 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integer key of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text key of the property. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the property.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the property or <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed It is up to the caller to guarantee that the property is unique. This allows many checks to be skipped.</para>
+</simplesect>
+<simplesect kind="pre"><para>The object supports dynamic properties i.e. Supports(Handle::DYNAMIC_PROPERTIES) returns true. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> names and keys are expected to be unique, and are therefore just added without any checks. <ref refid="classDali_1_1Property" kindref="compound">Property</ref> indices are unique to each registered custom property in a given object.</para>
+</simplesect>
+<simplesect kind="note"><para>Returns <ref refid="classDali_1_1Property_1a4ec8bb3b74d1b3e4df59bea0d842d448" kindref="member">Property::INVALID_INDEX</ref> if registration failed. This can happen if you try to register animatable property on an object that does not have scene graph object.</para>
+</simplesect>
+<simplesect kind="note"><para>The returned property index is not the same as the integer key (though it shares a type)</para>
+</simplesect>
+This version of RegisterProperty associates both an integer key and the text key with the property, allowing for lookup of the property index by either key or name ( which is useful when other classes know the key but not the name )</para>
+<para><simplesect kind="note"><para>Only the following types can be animated:<itemizedlist>
+<listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da538a12b1a95a82f6dae06b9cf7835df7" kindref="member">Property::BOOLEAN</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" kindref="member">Property::FLOAT</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" kindref="member">Property::INTEGER</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa5153e9670e8eeb32160ada6e41469a2" kindref="member">Property::VECTOR2</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da61265bdf25f65c089b1aed5f25d9b336" kindref="member">Property::VECTOR3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" kindref="member">Property::VECTOR4</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0bada199f2b111eab4f90804e91873c8" kindref="member">Property::MATRIX3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da80bed9c63b894010f9514d17f3e67f69" kindref="member">Property::MATRIX</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dad7b0246e879ecd1fb0cbbef3ed4bf6dd" kindref="member">Property::ROTATION</ref></para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>If a property with the desired name already exists, then this will create a second entry with the same name, and may cause problems. It is up to the caller to prevent this happening. Possible side effects are: lookup by name always finds the first such property, not the second; whereas, writing uniform value to shader will use the second, not the first; Using the returned <ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref> for future reference will always access the correct property. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="423" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="132" bodyend="135"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1afece056319aaa0d1507c8d777908dcea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+        <definition>Property::Index Dali::Handle::RegisterProperty</definition>
+        <argsstring>(Dali::String name, Property::Value propertyValue, Property::AccessMode accessMode)</argsstring>
+        <name>RegisterProperty</name>
+        <qualifiedname>Dali::Handle::RegisterProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Property::Value</type>
+          <declname>propertyValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a1dd5c37231680d1687161ccc6426f605" kindref="member">Property::AccessMode</ref></type>
+          <declname>accessMode</declname>
+        </param>
+        <briefdescription>
+<para>Registers a new property. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Properties can be set as non animatable using property attributes. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">accessMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The property access mode (writable, animatable etc) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the property </para>
+</simplesect>
+<simplesect kind="pre"><para>The handle supports dynamic properties i.e. Supports(Handle::DYNAMIC_PROPERTIES) returns true. </para>
+</simplesect>
+<simplesect kind="pre"><para>name is unused i.e. GetPropertyIndex(name) returns PropertyIndex::INVALID. </para>
+</simplesect>
+<simplesect kind="note"><para>Only the following types can be animated:<itemizedlist>
+<listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da538a12b1a95a82f6dae06b9cf7835df7" kindref="member">Property::BOOLEAN</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daec08fcd8f68e1cfaa91a533f434d50d1" kindref="member">Property::FLOAT</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dac3c145c2e414f3ec168a6f4fb8968c5b" kindref="member">Property::INTEGER</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565daa5153e9670e8eeb32160ada6e41469a2" kindref="member">Property::VECTOR2</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da61265bdf25f65c089b1aed5f25d9b336" kindref="member">Property::VECTOR3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0229a22169799c1ebe54c9677c40ddaf" kindref="member">Property::VECTOR4</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da0bada199f2b111eab4f90804e91873c8" kindref="member">Property::MATRIX3</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565da80bed9c63b894010f9514d17f3e67f69" kindref="member">Property::MATRIX</ref></para>
+</listitem><listitem><para><ref refid="classDali_1_1Property_1ab466e94d7adc55576e8e86ee96db565dad7b0246e879ecd1fb0cbbef3ed4bf6dd" kindref="member">Property::ROTATION</ref> </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="note"><para>If a property with the desired name already exists, then the value given is just set. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="450" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="122" bodyend="125"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Property::Value</type>
+        <definition>Property::Value Dali::Handle::GetProperty</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>GetProperty</name>
+        <qualifiedname>Dali::Handle::GetProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves a property value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The property value </para>
+</simplesect>
+<simplesect kind="note"><para>This returns the value set by <ref refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" kindref="member">SetProperty()</ref> or the animation target value if it is being animated. </para>
+</simplesect>
+<simplesect kind="note"><para>To get the current value on the scene-graph, use <ref refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" kindref="member">GetCurrentProperty()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="461" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="137" bodyend="140"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">Dali::Scripting::CreatePropertyMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a872eda34f826c5525392e91b6d28770f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T Dali::Handle::GetProperty</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>GetProperty</name>
+        <qualifiedname>Dali::Handle::GetProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Convenience function for obtaining a property of a known type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The property value </para>
+</simplesect>
+<simplesect kind="pre"><para>The property types match i.e. <ref refid="namespaceDali_1_1PropertyTypes_1a3d47d5c70e33a3d9e97f91ada2193f82" kindref="member">PropertyTypes::Get&lt;T&gt;()</ref> is equal to GetPropertyType(index). </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" kindref="member">GetProperty()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="473" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" bodystart="473" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Property::Value</type>
+        <definition>Property::Value Dali::Handle::GetCurrentProperty</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>GetCurrentProperty</name>
+        <qualifiedname>Dali::Handle::GetCurrentProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the latest value of the property from the scene-graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.41 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The property value </para>
+</simplesect>
+<simplesect kind="note"><para>This returns the value of the property in the last rendered frame so can be different to that set by <ref refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" kindref="member">SetProperty()</ref> if the set-message has not been processed by the scene-graph yet. </para>
+</simplesect>
+<simplesect kind="note"><para>To retrieve the value set by <ref refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" kindref="member">SetProperty()</ref>, use <ref refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" kindref="member">GetProperty()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="490" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="142" bodyend="145"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aa8324c9784866e5fe757ad12794a9f13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T Dali::Handle::GetCurrentProperty</definition>
+        <argsstring>(Property::Index index) const</argsstring>
+        <name>GetCurrentProperty</name>
+        <qualifiedname>Dali::Handle::GetCurrentProperty</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Convenience function for obtaining the current value of a property of a known type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.41 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The property value </para>
+</simplesect>
+<simplesect kind="pre"><para>The property types match i.e. <ref refid="namespaceDali_1_1PropertyTypes_1a3d47d5c70e33a3d9e97f91ada2193f82" kindref="member">PropertyTypes::Get&lt;T&gt;()</ref> is equal to GetPropertyType(index). </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" kindref="member">GetCurrentProperty()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="502" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" bodystart="502" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a3c9f3a03e463cf3efec254b86ae9d1ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::SetProperties</definition>
+        <argsstring>(const Property::Map &amp;properties)</argsstring>
+        <name>SetProperties</name>
+        <qualifiedname>Dali::Handle::SetProperties</qualifiedname>
+        <param>
+          <type>const Property::Map &amp;</type>
+          <declname>properties</declname>
+        </param>
+        <briefdescription>
+<para>Sets all the properties in the given property map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.27 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">properties</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The properties to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="515" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="147" bodyend="150"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a020bfa4dfb5213a5e782853d8fe84306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::GetProperties</definition>
+        <argsstring>(Property::Map &amp;properties)</argsstring>
+        <name>GetProperties</name>
+        <qualifiedname>Dali::Handle::GetProperties</qualifiedname>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>properties</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves all the properties and the values for this object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.27 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">properties</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A map which is populated with the index-value pairs</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The properties map will be cleared by this method first. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="525" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="152" bodyend="155"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::GetPropertyIndices</definition>
+        <argsstring>(Property::IndexContainer &amp;indices) const</argsstring>
+        <name>GetPropertyIndices</name>
+        <qualifiedname>Dali::Handle::GetPropertyIndices</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1aba220c45076c8f2d93a5552f198f31c2" kindref="member">Property::IndexContainer</ref> &amp;</type>
+          <declname>indices</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves all the property indices for this object (including custom properties). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">indices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A container of property indices for this object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The added container is cleared. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="534" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="157" bodyend="160"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+        <referencedby refid="namespaceDali_1_1Scripting_1a4571d6065d796b0f379546abf564114a" compoundref="scripting_8cpp" startline="175" endline="207">Dali::Scripting::CreatePropertyMap</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1abc9b975d5af192c527dce432a0258713" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Handle::DoesCustomPropertyExist</definition>
+        <argsstring>(Property::Index index)</argsstring>
+        <name>DoesCustomPropertyExist</name>
+        <qualifiedname>Dali::Handle::DoesCustomPropertyExist</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Determine if the custom property index exists on this object without throwing a Dali::Exception. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.27 <simplesect kind="note"><para>This does not check default properties. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property to test for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="543" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="162" bodyend="165"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a9e6e041bcd7f7bc6a9af6196346d6886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1PropertyNotification" kindref="compound">PropertyNotification</ref></type>
+        <definition>Dali::PropertyNotification Dali::Handle::AddPropertyNotification</definition>
+        <argsstring>(Property::Index index, const PropertyCondition &amp;condition)</argsstring>
+        <name>AddPropertyNotification</name>
+        <qualifiedname>Dali::Handle::AddPropertyNotification</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDali_1_1PropertyCondition" kindref="compound">PropertyCondition</ref> &amp;</type>
+          <declname>condition</declname>
+        </param>
+        <briefdescription>
+<para>Adds a property notification to this object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">condition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The notification will be triggered when this condition is satisfied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to the newly created <ref refid="classDali_1_1PropertyNotification" kindref="compound">PropertyNotification</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="553" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="167" bodyend="171"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aaf59eab452181c2bd072716362b84e19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1PropertyNotification" kindref="compound">PropertyNotification</ref></type>
+        <definition>Dali::PropertyNotification Dali::Handle::AddPropertyNotification</definition>
+        <argsstring>(Property::Index index, int componentIndex, const PropertyCondition &amp;condition)</argsstring>
+        <name>AddPropertyNotification</name>
+        <qualifiedname>Dali::Handle::AddPropertyNotification</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>componentIndex</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classDali_1_1PropertyCondition" kindref="compound">PropertyCondition</ref> &amp;</type>
+          <declname>condition</declname>
+        </param>
+        <briefdescription>
+<para>Adds a property notification to this object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">componentIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index to the component of a complex property such as a <ref refid="classDali_1_1Vector" kindref="compound">Vector</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">condition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The notification will be triggered when this condition is satisfied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to the newly created <ref refid="classDali_1_1PropertyNotification" kindref="compound">PropertyNotification</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="565" column="24" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="173" bodyend="178"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a9acc036ef41721cc3779976afb26da4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::RemovePropertyNotification</definition>
+        <argsstring>(Dali::PropertyNotification propertyNotification)</argsstring>
+        <name>RemovePropertyNotification</name>
+        <qualifiedname>Dali::Handle::RemovePropertyNotification</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1PropertyNotification" kindref="compound">Dali::PropertyNotification</ref></type>
+          <declname>propertyNotification</declname>
+        </param>
+        <briefdescription>
+<para>Removes a property notification from this object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">propertyNotification</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The propertyNotification to be removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="575" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="180" bodyend="183"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a9a2be7d760f27124d0bd992040748abd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::RemovePropertyNotifications</definition>
+        <argsstring>()</argsstring>
+        <name>RemovePropertyNotifications</name>
+        <qualifiedname>Dali::Handle::RemovePropertyNotifications</qualifiedname>
+        <briefdescription>
+<para>Removes all property notifications from this object. @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="581" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="185" bodyend="188"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::RemoveConstraints</definition>
+        <argsstring>()</argsstring>
+        <name>RemoveConstraints</name>
+        <qualifiedname>Dali::Handle::RemoveConstraints</qualifiedname>
+        <briefdescription>
+<para>Removes all default tag constraints and custom constraints from an Object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="pre"><para>The object has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="591" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="190" bodyend="193"/>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a5421df6e623b25b4c489c610ab70b65b" compoundref="constraint-tag-ranges_8h" startline="44">Dali::CUSTOM_CONSTRAINT_TAG_MAX</references>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a860d55870911a2deedb8eecca43b33cd" compoundref="constraint-tag-ranges_8h" startline="41">Dali::DEFAULT_TAG</references>
+        <references refid="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" compoundref="handle_8cpp" startline="190" endline="193">RemoveConstraints</references>
+        <referencedby refid="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" compoundref="handle_8cpp" startline="190" endline="193">RemoveConstraints</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aa5007b6000fcf922580a0895d5fc8755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::RemoveConstraints</definition>
+        <argsstring>(uint32_t tag)</argsstring>
+        <name>RemoveConstraints</name>
+        <qualifiedname>Dali::Handle::RemoveConstraints</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+<para>Removes all the constraint from the Object with a matching tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>We can only use tag between [<ref refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88aed823409abbdbd044f6148dc5987c37f" kindref="member">ConstraintTagRanges::CUSTOM_CONSTRAINT_TAG_START</ref> ConstraintTagRanges::CUSTOM_CONSTRAINT_TAG_END] or <ref refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a860d55870911a2deedb8eecca43b33cd" kindref="member">ConstraintTagRanges::DEFAULT_TAG</ref></para>
+</simplesect>
+@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag of the constraints which will be removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The Object has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="602" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="195" bodyend="199"/>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a5421df6e623b25b4c489c610ab70b65b" compoundref="constraint-tag-ranges_8h" startline="44">Dali::CUSTOM_CONSTRAINT_TAG_MAX</references>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a13b771d88af488b89cd649ae1f161fb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Handle::RemoveConstraints</definition>
+        <argsstring>(uint32_t tagBegin, uint32_t tagEnd)</argsstring>
+        <name>RemoveConstraints</name>
+        <qualifiedname>Dali::Handle::RemoveConstraints</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>tagBegin</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>tagEnd</declname>
+        </param>
+        <briefdescription>
+<para>Removes all the constraint from the Object with a range of tags [tagBegin tagEnd). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>We can only use tag between [<ref refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88aed823409abbdbd044f6148dc5987c37f" kindref="member">ConstraintTagRanges::CUSTOM_CONSTRAINT_TAG_START</ref> ConstraintTagRanges::CUSTOM_CONSTRAINT_TAG_END] or <ref refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a860d55870911a2deedb8eecca43b33cd" kindref="member">ConstraintTagRanges::DEFAULT_TAG</ref></para>
+</simplesect>
+@SINCE_2_4.14 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tagBegin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The begin tag of the constraints which will be removed (include) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tagEnd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end tag of the constraints which will be removed (exclusived) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>The Object has been initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="614" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="201" bodyend="205"/>
+        <references refid="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a5421df6e623b25b4c489c610ab70b65b" compoundref="constraint-tag-ranges_8h" startline="44">Dali::CUSTOM_CONSTRAINT_TAG_MAX</references>
+        <references refid="dali-common_8h_1a550a48b0ff2614d8e4b06ab11bbf2712" compoundref="dali-common_8h" startline="185" endline="190">DALI_ASSERT_ALWAYS</references>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aac3062e4424159de0392f27fbf6ec9c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1IndirectValue" kindref="compound">IndirectValue</ref></type>
+        <definition>IndirectValue Dali::Handle::operator[]</definition>
+        <argsstring>(Property::Index index)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>Dali::Handle::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Property_1a43372e1616731f7663e090d8074df2a2" kindref="member">Property::Index</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Index operator, using integer lookup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an object that can be assigned to or cast from, enabling the indexed property to be either read or written.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the property to access. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>indirect value. Should have shorter scope than the handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="625" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="207" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aec4050cb13dc0b68853017a769eb51fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1IndirectValue" kindref="compound">IndirectValue</ref></type>
+        <definition>IndirectValue Dali::Handle::operator[]</definition>
+        <argsstring>(Dali::String name)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>Dali::Handle::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1String" kindref="compound">Dali::String</ref></type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Index operator, using name lookup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an object that can be assigned to or cast from, enabling the named property to be either read or written.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the property to access. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>indirect value. Should have shorter scope than the handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="636" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="213" bodyend="217"/>
+        <references refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" compoundref="handle_8cpp" startline="77" endline="80">GetPropertyIndex</references>
+        <references refid="classDali_1_1Property_1aed6726c073594fc5119f52d681e1324d">Dali::Property::Key</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aa264a86e930a78db250bbb92511dbc9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Handle_1acca920cad56d4b14b12d2f4c00c0e555" kindref="member">PropertySetSignalType</ref> &amp;</type>
+        <definition>Handle::PropertySetSignalType &amp; Dali::Handle::PropertySetSignal</definition>
+        <argsstring>()</argsstring>
+        <name>PropertySetSignal</name>
+        <qualifiedname>Dali::Handle::PropertySetSignal</qualifiedname>
+        <briefdescription>
+<para>Get a signal when a property is set on this object through the API (i.e. not when animating) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_9.27 <simplesect kind="return"><para>The signal to attach a connection to. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="645" column="25" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="219" bodyend="222"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+        <definition>Handle Dali::Handle::New</definition>
+        <argsstring>()</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Handle::New</qualifiedname>
+        <briefdescription>
+<para>Creates a new object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_0.0 <simplesect kind="return"><para>A handle to a newly allocated object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="111" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="42" bodyend="45"/>
+        <references refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335">Handle</references>
+        <referencedby refid="namespaceDali_1_1WeightObject_1aff089af40be9efb2be600ce8bcdc454a" compoundref="handle_8cpp" startline="228" endline="235">Dali::WeightObject::New</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1a2d33ee5b5d4efdf0681c0094d7c3a3ff" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Type</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="dali-common_8h_1a4ae10afad52aa39cd4acdacbc6cfa54b" kindref="member">DALI_NO_EXPORT_API</ref> Type</type>
+        <definition>static DALI_NO_EXPORT_API Type Dali::Handle::New</definition>
+        <argsstring>(const Property::Map &amp;properties)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Handle::New</qualifiedname>
+        <param>
+          <type>const Property::Map &amp;</type>
+          <declname>properties</declname>
+        </param>
+        <briefdescription>
+<para>Template to create a derived handle and set properties on it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Marked as DALI_NO_EXPORT_API to prevent internal usage exporting symbols. @SINCE_1_9.27 <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derived class to create </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">properties</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The properties to set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="122" column="34" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" bodystart="122" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Handle_1aa7af169c4e1394a5dadffb7aae22aaa8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Handle" kindref="compound">Handle</ref></type>
+        <definition>Handle Dali::Handle::DownCast</definition>
+        <argsstring>(BaseHandle handle)</argsstring>
+        <name>DownCast</name>
+        <qualifiedname>Dali::Handle::DownCast</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>Downcasts to a handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If not, the returned handle is left uninitialized. @SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>handle or an uninitialized handle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="179" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp" bodystart="57" bodyend="60"/>
+        <references refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" compoundref="base-handle_8cpp" startline="94" endline="97">Dali::BaseHandle::GetObjectPtr</references>
+        <references refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335">Handle</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classDali_1_1Handle" kindref="compound">Dali::Handle</ref> is a handle to an internal property owning <ref refid="namespaceDali" kindref="compound">Dali</ref> object that can have constraints applied to it. @SINCE_1_0.0. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Dali::Actor</label>
+        <link refid="classDali_1_1Actor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="4">
+        <label>Dali::CameraActor</label>
+        <link refid="classDali_1_1CameraActor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Dali::CustomActor</label>
+        <link refid="classDali_1_1CustomActor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Dali::DecoratedVisualRenderer</label>
+        <link refid="classDali_1_1DecoratedVisualRenderer"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Dali::DrawableActor</label>
+        <link refid="classDali_1_1DrawableActor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Dali::GestureDetector</label>
+        <link refid="classDali_1_1GestureDetector"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Dali::Layer</label>
+        <link refid="classDali_1_1Layer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Dali::LinearConstrainer</label>
+        <link refid="classDali_1_1LinearConstrainer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Dali::LongPressGestureDetector</label>
+        <link refid="classDali_1_1LongPressGestureDetector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Dali::PanGestureDetector</label>
+        <link refid="classDali_1_1PanGestureDetector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Dali::Path</label>
+        <link refid="classDali_1_1Path"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Dali::PathConstrainer</label>
+        <link refid="classDali_1_1PathConstrainer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Dali::PinchGestureDetector</label>
+        <link refid="classDali_1_1PinchGestureDetector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Dali::RenderTask</label>
+        <link refid="classDali_1_1RenderTask"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Dali::Renderer</label>
+        <link refid="classDali_1_1Renderer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Dali::RotationGestureDetector</label>
+        <link refid="classDali_1_1RotationGestureDetector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Dali::Shader</label>
+        <link refid="classDali_1_1Shader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Dali::TapGestureDetector</label>
+        <link refid="classDali_1_1TapGestureDetector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Dali::UniformBlock</label>
+        <link refid="classDali_1_1UniformBlock"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Dali::VisualRenderer</label>
+        <link refid="classDali_1_1VisualRenderer"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Dali::BaseHandle</label>
+        <link refid="classDali_1_1BaseHandle"/>
+      </node>
+      <node id="1">
+        <label>Dali::Handle</label>
+        <link refid="classDali_1_1Handle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" line="57" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h" bodystart="58" bodyend="646"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Handle_1a9e6e041bcd7f7bc6a9af6196346d6886" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1aaf59eab452181c2bd072716362b84e19" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>AddPropertyNotification</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5f8ed70ea2b41ee6688d36a151db3a89" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a4d20f8da3b790d10870efd9b405d1da9" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1a7f37219117d462a97a13bfea683e4b2f" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa0a0145fb6d2df4a969f3227c1ba84cd" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9b" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Capability</name></member>
+      <member refid="classDali_1_1BaseHandle_1ac85e91d6057e82b30b6f02122315af18" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>ConnectSignal</name></member>
+      <member refid="classDali_1_1BaseHandle_1aad66f16591deae1511f6a63b3a237698" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>DoAction</name></member>
+      <member refid="classDali_1_1Handle_1abc9b975d5af192c527dce432a0258713" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>DoesCustomPropertyExist</name></member>
+      <member refid="classDali_1_1Handle_1aa7af169c4e1394a5dadffb7aae22aaa8" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>DownCast</name></member>
+      <member refid="classDali_1_1Handle_1adb58147b2bd2ed4543f173a090f6ca9ba5284559df1a09b2167bdfde50c8418f4" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>DYNAMIC_PROPERTIES</name></member>
+      <member refid="classDali_1_1BaseHandle_1ab9ddfc2ec83f1fd9c19ea411ec8f3ad4" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1BaseHandle_1a296fabe05877b4407aa750c57db06d6e" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetBaseObject</name></member>
+      <member refid="classDali_1_1Handle_1aadcaa9ec8f7902ceb81625c64cf5b553" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1Handle_1aa8324c9784866e5fe757ad12794a9f13" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetCurrentProperty</name></member>
+      <member refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetObjectPtr</name></member>
+      <member refid="classDali_1_1Handle_1a020bfa4dfb5213a5e782853d8fe84306" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetProperties</name></member>
+      <member refid="classDali_1_1Handle_1aaba5b7c5a8e7c8f6d19bc5f88ecf0e50" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a872eda34f826c5525392e91b6d28770f" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetProperty</name></member>
+      <member refid="classDali_1_1Handle_1a3deffc1e9d3236c50140b37e2b6cf8db" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetPropertyCount</name></member>
+      <member refid="classDali_1_1Handle_1a3ddf18b579e32031e73dedc89d6e5053" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetPropertyIndex</name></member>
+      <member refid="classDali_1_1Handle_1ac970117d148b383a445f759ab3370a3b" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetPropertyIndices</name></member>
+      <member refid="classDali_1_1Handle_1a51d6baf65f391911e1b80534bb635ebd" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetPropertyName</name></member>
+      <member refid="classDali_1_1Handle_1a775f97600cedf0798fea5c8cca5a0512" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetPropertyType</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa51d0af7150b90c14983f3276321d13f" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetTypeInfo</name></member>
+      <member refid="classDali_1_1BaseHandle_1a3e9ccd49ee5b05783b2ad2084ad8f444" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>GetTypeName</name></member>
+      <member refid="classDali_1_1Handle_1a78b34f83f7c54495d9f3d0d69df56e1d" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a008d31d091b16288ec201a74cb3dd335" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1ac2e8233e0958c65d5b70ed277223ada9" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a305afca954732fe963f55c7d1dd152a9" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Handle</name></member>
+      <member refid="classDali_1_1Handle_1a025ccafe4d792290ba52c2acfc60f853" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>IsPropertyAConstraintInput</name></member>
+      <member refid="classDali_1_1Handle_1ac72ed10ef62da831eca7085c956e77f4" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>IsPropertyAnimatable</name></member>
+      <member refid="classDali_1_1Handle_1a46074ae35e8390eaa75ad5fc94b7a103" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>IsPropertyWritable</name></member>
+      <member refid="classDali_1_1Handle_1a926e0f98165ba6944dda286f5293c00b" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>New</name></member>
+      <member refid="classDali_1_1Handle_1a2d33ee5b5d4efdf0681c0094d7c3a3ff" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>New</name></member>
+      <member refid="classDali_1_1BaseHandle_1a8e4b713b35084c152825b9499aecf7fd" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator bool</name></member>
+      <member refid="classDali_1_1BaseHandle_1ada6ea5d8549aa30dd74caa93de9c6146" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator!=</name></member>
+      <member refid="classDali_1_1Handle_1a5709270eb2cf5cdefc0de5979066922d" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Handle_1a6cba3d10b340f93975fabf2d5138caab" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a0d6a186f82f487acd1c1c566e0c93665" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Handle</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1aa4069c62694c8f36761c47e713d824ca" prot="public" virt="non-virtual" ambiguityscope="Dali::BaseHandle::"><scope>Dali::Handle</scope><name>operator=</name></member>
+      <member refid="classDali_1_1BaseHandle_1a5c86c3c1ba001320d1edd174bcffcc20" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator==</name></member>
+      <member refid="classDali_1_1Handle_1aac3062e4424159de0392f27fbf6ec9c8" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aec4050cb13dc0b68853017a769eb51fd" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>operator[]</name></member>
+      <member refid="classDali_1_1Handle_1aa264a86e930a78db250bbb92511dbc9d" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>PropertySetSignal</name></member>
+      <member refid="classDali_1_1Handle_1acca920cad56d4b14b12d2f4c00c0e555" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>PropertySetSignalType</name></member>
+      <member refid="classDali_1_1Handle_1a9183ba94af52588e5713a60817fbe27e" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1acf96c21cba52bbcdeb7342592ca3e2e5" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1afece056319aaa0d1507c8d777908dcea" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RegisterProperty</name></member>
+      <member refid="classDali_1_1Handle_1aabccabf7e4551a684c7b97f39a973284" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1ad75eb7b366ebc913701058b1e5575581" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RegisterUniqueProperty</name></member>
+      <member refid="classDali_1_1Handle_1a43a806a99e1ade1183e2b70e31c19b6c" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1aa5007b6000fcf922580a0895d5fc8755" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a13b771d88af488b89cd649ae1f161fb7" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RemoveConstraints</name></member>
+      <member refid="classDali_1_1Handle_1a9acc036ef41721cc3779976afb26da4b" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RemovePropertyNotification</name></member>
+      <member refid="classDali_1_1Handle_1a9a2be7d760f27124d0bd992040748abd" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>RemovePropertyNotifications</name></member>
+      <member refid="classDali_1_1Handle_1a5a8165e0f22ebefd82742b95e21cce67" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>ReserveCustomProperties</name></member>
+      <member refid="classDali_1_1BaseHandle_1afc7aeb02fbfaf78f2aad2dd1b20b7926" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Reset</name></member>
+      <member refid="classDali_1_1Handle_1a3c9f3a03e463cf3efec254b86ae9d1ad" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>SetProperties</name></member>
+      <member refid="classDali_1_1Handle_1a5785113e2869597bd7da03b36aab2fbf" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>SetProperty</name></member>
+      <member refid="classDali_1_1Handle_1acf41c51fb19dd98b10af46ad993da2fa" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>Supports</name></member>
+      <member refid="classDali_1_1BaseHandle_1a67903928d775e41d4f3c1bc329e3bdbc" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>~BaseHandle</name></member>
+      <member refid="classDali_1_1Handle_1abf54df186713c711c2db1a389f1ff700" prot="public" virt="non-virtual"><scope>Dali::Handle</scope><name>~Handle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

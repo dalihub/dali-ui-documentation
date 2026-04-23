@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Accessibility_1_1Component" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Accessibility::Component</compoundname>
+    <derivedcompoundref refid="classDali_1_1Accessibility_1_1Accessible" prot="public" virt="non-virtual">Dali::Accessibility::Accessible</derivedcompoundref>
+    <includes refid="component_8h" local="no">component.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1af1680911115cbff6d0fc414c5a04d12c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>Rect&lt; float &gt;</type>
+        <definition>virtual Rect&lt; float &gt; Dali::Accessibility::Component::GetExtents</definition>
+        <argsstring>(CoordinateType type) const =0</argsstring>
+        <name>GetExtents</name>
+        <qualifiedname>Dali::Accessibility::Component::GetExtents</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a6c8039c21941856203584a0192845cb1">GetExtents</reimplementedby>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1a78a8a6fd4fa6ba21b6109faf99d43b4f">GetExtents</reimplementedby>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3b" kindref="member">CoordinateType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Gets rectangle describing size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration with type of coordinate systems</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rect&lt;float&gt; object</para>
+</simplesect>
+<simplesect kind="see"><para>Dali::Rect&lt;float&gt; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="44" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1a57da62cc2b9ba6dcd8877426bb658599" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9" kindref="member">ComponentLayer</ref></type>
+        <definition>virtual ComponentLayer Dali::Accessibility::Component::GetLayer</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetLayer</name>
+        <qualifiedname>Dali::Accessibility::Component::GetLayer</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a561bea8a02b8158b4b1964ea16db8a33">GetLayer</reimplementedby>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1a47ef3fceb5dee362c128e2182054c2d2">GetLayer</reimplementedby>
+        <briefdescription>
+<para>Gets layer current object is localized on. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The enumeration pointing layer</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespaceDali_1_1Accessibility_1acda82ea70e3560b88bef8d8568c90be9" kindref="member">Dali::Accessibility::ComponentLayer</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="53" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1a3bb356b27a8aac72f0070d6accaa0530" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int16_t</type>
+        <definition>virtual int16_t Dali::Accessibility::Component::GetMdiZOrder</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetMdiZOrder</name>
+        <qualifiedname>Dali::Accessibility::Component::GetMdiZOrder</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1a3398bf402e749e7fe3d54a473bec0e69">GetMdiZOrder</reimplementedby>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1a83fb69ed74129e4cd76874c37f9c7da8">GetMdiZOrder</reimplementedby>
+        <briefdescription>
+<para>Gets value of z-order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of z-order </para>
+</simplesect>
+<simplesect kind="remark"><para>MDI means &quot;Multi Document Interface&quot; (<ulink url="https://en.wikipedia.org/wiki/Multiple-document_interface">https://en.wikipedia.org/wiki/Multiple-document_interface</ulink>) which in short means that many stacked windows can be displayed within a single application. In such model, the concept of z-order of UI element became important to deal with element overlapping. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="63" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1adf11344bc47bff0fd4943c3c6e99702c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Component::GrabFocus</definition>
+        <argsstring>()=0</argsstring>
+        <name>GrabFocus</name>
+        <qualifiedname>Dali::Accessibility::Component::GrabFocus</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1a6079b00699983e9e6afb71c9e51cf729">GrabFocus</reimplementedby>
+        <briefdescription>
+<para>Sets current object as &quot;focused&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true on success, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="70" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1aebcaf350ede82ffe1d5695891839532f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Dali::Accessibility::Component::GetAlpha</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetAlpha</name>
+        <qualifiedname>Dali::Accessibility::Component::GetAlpha</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1ad12ae8878b56514ce0297389b5af5df8">GetAlpha</reimplementedby>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1a994cc25fe7a7b7fa7f9d10984801cd59">GetAlpha</reimplementedby>
+        <briefdescription>
+<para>Gets value of alpha channel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The alpha channel value in range [0.0, 1.0] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="77" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1ad9688f239993c75a72dd7bf7e5876977" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Component::GrabHighlight</definition>
+        <argsstring>()=0</argsstring>
+        <name>GrabHighlight</name>
+        <qualifiedname>Dali::Accessibility::Component::GrabHighlight</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1afd710b24d6248c9bc6b933a18f153712">GrabHighlight</reimplementedby>
+        <briefdescription>
+<para>Sets current object as &quot;highlighted&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method assings &quot;highlighted&quot; state, simultaneously removing it from currently highlighted object.</para>
+<para><simplesect kind="return"><para>true on success, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="87" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1ad2df2cb938ddd361a935068c0b2ed108" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Component::ClearHighlight</definition>
+        <argsstring>()=0</argsstring>
+        <name>ClearHighlight</name>
+        <qualifiedname>Dali::Accessibility::Component::ClearHighlight</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1ad5422317adfac5d72ffb30f0b1d0d4d4">ClearHighlight</reimplementedby>
+        <briefdescription>
+<para>Sets current object as &quot;unhighlighted&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method removes &quot;highlighted&quot; state from object.</para>
+<para><simplesect kind="return"><para>true on success, false otherwise</para>
+</simplesect>
+<simplesect kind="see"><para>Dali:Accessibility::<ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" kindref="member">State</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="98" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1acc904b188de8a2afa806e2228abff435" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Component::IsScrollable</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsScrollable</name>
+        <qualifiedname>Dali::Accessibility::Component::IsScrollable</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ActorAccessible_1aee502586efa695e7909e507b79cf4a91">IsScrollable</reimplementedby>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1ProxyAccessible_1a3902dfd7f8dd0b5b8a7cb11ebc731869">IsScrollable</reimplementedby>
+        <briefdescription>
+<para>Checks whether object can be scrolled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if object is scrollable, false otherwise</para>
+</simplesect>
+<simplesect kind="see"><para>Dali:Accessibility::<ref refid="namespaceDali_1_1Accessibility_1a00f4c22eafcc7a28e3db55e8e3d08b3c" kindref="member">State</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="107" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1a5dfa136352b28e7e034e8fa453f6a486" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> *</type>
+        <definition>virtual Accessible * Dali::Accessibility::Component::GetAccessibleAtPoint</definition>
+        <argsstring>(Point point, CoordinateType type)=0</argsstring>
+        <name>GetAccessibleAtPoint</name>
+        <qualifiedname>Dali::Accessibility::Component::GetAccessibleAtPoint</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1Accessible_1a98266e6ab454ea6e1259b954281193b6">GetAccessibleAtPoint</reimplementedby>
+        <param>
+          <type><ref refid="structDali_1_1Accessibility_1_1Point" kindref="compound">Point</ref></type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3b" kindref="member">CoordinateType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Gets <ref refid="classDali_1_1Accessibility_1_1Accessible" kindref="compound">Accessible</ref> object containing given point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The two-dimensional point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration with type of coordinate system</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The handle to last child of current object which contains given point</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structDali_1_1Accessibility_1_1Point" kindref="compound">Dali::Accessibility::Point</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="119" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Accessibility_1_1Component_1a44650fc98717dff8003c7e55e077941d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Dali::Accessibility::Component::IsAccessibleContainingPoint</definition>
+        <argsstring>(Point point, CoordinateType type) const =0</argsstring>
+        <name>IsAccessibleContainingPoint</name>
+        <qualifiedname>Dali::Accessibility::Component::IsAccessibleContainingPoint</qualifiedname>
+        <reimplementedby refid="classDali_1_1Accessibility_1_1Accessible_1a6c8ab542d2ca653c1be5e2a0299cc74f">IsAccessibleContainingPoint</reimplementedby>
+        <param>
+          <type><ref refid="structDali_1_1Accessibility_1_1Point" kindref="compound">Point</ref></type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1Accessibility_1ae16ee42c8f8ea06c181f579d49fcfa3b" kindref="member">CoordinateType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the current object contains the given point inside. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The two-dimensional point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration with type of coordinate system</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if accessible contains in point, otherwise false.</para>
+</simplesect>
+<simplesect kind="remark"><para>This method is <computeroutput>Contains</computeroutput> in DBus method. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structDali_1_1Accessibility_1_1Point" kindref="compound">Dali::Accessibility::Point</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="132" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface representing objects having screen coordinates. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dali::Accessibility::Accessible</label>
+        <link refid="classDali_1_1Accessibility_1_1Accessible"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dali::Accessibility::ActorAccessible</label>
+        <link refid="classDali_1_1Accessibility_1_1ActorAccessible"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Dali::Accessibility::Component</label>
+        <link refid="classDali_1_1Accessibility_1_1Component"/>
+      </node>
+      <node id="4">
+        <label>Dali::Accessibility::ProxyAccessible</label>
+        <link refid="classDali_1_1Accessibility_1_1ProxyAccessible"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/atspi-interfaces/component.h" bodystart="33" bodyend="133"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Accessibility_1_1Component_1ad2df2cb938ddd361a935068c0b2ed108" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>ClearHighlight</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1a5dfa136352b28e7e034e8fa453f6a486" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GetAccessibleAtPoint</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1aebcaf350ede82ffe1d5695891839532f" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GetAlpha</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1af1680911115cbff6d0fc414c5a04d12c" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GetExtents</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1a57da62cc2b9ba6dcd8877426bb658599" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GetLayer</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1a3bb356b27a8aac72f0070d6accaa0530" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GetMdiZOrder</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1adf11344bc47bff0fd4943c3c6e99702c" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GrabFocus</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1ad9688f239993c75a72dd7bf7e5876977" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>GrabHighlight</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1a44650fc98717dff8003c7e55e077941d" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>IsAccessibleContainingPoint</name></member>
+      <member refid="classDali_1_1Accessibility_1_1Component_1acc904b188de8a2afa806e2228abff435" prot="public" virt="pure-virtual"><scope>Dali::Accessibility::Component</scope><name>IsScrollable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

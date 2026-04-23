@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1FileLoader" kind="namespace" language="C++">
+    <compoundname>Dali::FileLoader</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FileType</name>
+        <qualifiedname>Dali::FileLoader::FileType</qualifiedname>
+        <enumvalue id="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76fa3d5296bc7a05a881cdc3f425a6c1b9bb" prot="public">
+          <name>BINARY</name>
+          <briefdescription>
+<para>File will be loaded as a binary. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76fae5c0cdc1a2c34e2aea83ae5b1645aa81" prot="public">
+          <name>TEXT</name>
+          <briefdescription>
+<para>File will be loaded as text. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>File type formats The default format is binary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; FileType format </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" line="35" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" bodystart="36" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1FileLoader_1ac374ec70462092ab69ce2f283d8ae4e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DALI_ADAPTOR_API int Dali::FileLoader::ReadFile</definition>
+        <argsstring>(const std::string &amp;filename, Dali::Vector&lt; char &gt; &amp;memblock, FileLoader::FileType fileType=BINARY)</argsstring>
+        <name>ReadFile</name>
+        <qualifiedname>Dali::FileLoader::ReadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>Dali::Vector&lt; char &gt; &amp;</type>
+          <declname>memblock</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76f" kindref="member">FileLoader::FileType</ref></type>
+          <declname>fileType</declname>
+          <defval><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76fa3d5296bc7a05a881cdc3f425a6c1b9bb" kindref="member">BINARY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Load the file. It will load it either as a binary or as a text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to load. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">memblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dali::Vector containing the buffer loaded </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fileType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to load the file. Binary or Text. Binary default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>error code. 0 - Error, 1 - Ok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="39" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" bodystart="39" bodyend="42" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" declline="51" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1FileLoader_1a2b0ef95e77a23a80c26fbd0c4e4b608c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DALI_ADAPTOR_API int Dali::FileLoader::ReadFile</definition>
+        <argsstring>(const std::string &amp;filename, Dali::Vector&lt; uint8_t &gt; &amp;memblock, FileLoader::FileType fileType=BINARY)</argsstring>
+        <name>ReadFile</name>
+        <qualifiedname>Dali::FileLoader::ReadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>Dali::Vector&lt; uint8_t &gt; &amp;</type>
+          <declname>memblock</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76f" kindref="member">FileLoader::FileType</ref></type>
+          <declname>fileType</declname>
+          <defval><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76fa3d5296bc7a05a881cdc3f425a6c1b9bb" kindref="member">BINARY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Load the file. It will load it either as a binary or as a text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to load. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">memblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dali::Vector containing the buffer loaded </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fileType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to load the file. Binary or Text. Binary default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>error code. 0 - Error, 1 - Ok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="44" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" bodystart="44" bodyend="47" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" declline="63" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1FileLoader_1aebd46539c9afe0af2eeb33d169e96a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DALI_ADAPTOR_API int Dali::FileLoader::ReadFile</definition>
+        <argsstring>(const std::string &amp;filename, std::streampos &amp;fileSize, Dali::Vector&lt; char &gt; &amp;memblock, FileLoader::FileType fileType=BINARY)</argsstring>
+        <name>ReadFile</name>
+        <qualifiedname>Dali::FileLoader::ReadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>std::streampos &amp;</type>
+          <declname>fileSize</declname>
+        </param>
+        <param>
+          <type>Dali::Vector&lt; char &gt; &amp;</type>
+          <declname>memblock</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76f" kindref="member">FileLoader::FileType</ref></type>
+          <declname>fileType</declname>
+          <defval><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76fa3d5296bc7a05a881cdc3f425a6c1b9bb" kindref="member">BINARY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Load the file. It will load it either as a binary or as a text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to load. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fileSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the loaded file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">memblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dali::Vector containing the buffer loaded </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fileType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to load the file. Binary or Text. Binary default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>error code. 0 - Error, 1 - Ok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="49" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" bodystart="49" bodyend="52" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" declline="75" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1FileLoader_1ad138c6690eeee916dd4a49833f86dafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>DALI_ADAPTOR_API int Dali::FileLoader::ReadFile</definition>
+        <argsstring>(const std::string &amp;filename, std::streampos &amp;fileSize, Dali::Vector&lt; uint8_t &gt; &amp;memblock, FileLoader::FileType fileType=BINARY)</argsstring>
+        <name>ReadFile</name>
+        <qualifiedname>Dali::FileLoader::ReadFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>std::streampos &amp;</type>
+          <declname>fileSize</declname>
+        </param>
+        <param>
+          <type>Dali::Vector&lt; uint8_t &gt; &amp;</type>
+          <declname>memblock</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76f" kindref="member">FileLoader::FileType</ref></type>
+          <declname>fileType</declname>
+          <defval><ref refid="namespaceDali_1_1FileLoader_1aef222fe7ef9080d05785a10ba302c76fa3d5296bc7a05a881cdc3f425a6c1b9bb" kindref="member">BINARY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Load the file. It will load it either as a binary or as a text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to load. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fileSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the loaded file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">memblock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dali::Vector containing the buffer loaded </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fileType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How we want to load the file. Binary or Text. Binary default </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>error code. 0 - Error, 1 - Ok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="54" column="5" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" bodystart="54" bodyend="57" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" declline="87" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1FileLoader_1adf11b4f1f2afde38803a064304569040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::streampos</type>
+        <definition>DALI_ADAPTOR_API std::streampos Dali::FileLoader::GetFileSize</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>GetFileSize</name>
+        <qualifiedname>Dali::FileLoader::GetFileSize</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Get the file size of a file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to load. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the size of the file or 0 if file not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="59" column="16" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" bodystart="59" bodyend="62" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" declline="95" declcolumn="33"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1FileLoader_1a81c91b1d75b913b7d39c9cecfc5d1bc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_ADAPTOR_API bool Dali::FileLoader::DownloadFileSynchronously</definition>
+        <argsstring>(const std::string &amp;filename, Dali::Vector&lt; uint8_t &gt; &amp;dataBuffer)</argsstring>
+        <name>DownloadFileSynchronously</name>
+        <qualifiedname>Dali::FileLoader::DownloadFileSynchronously</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>Dali::Vector&lt; uint8_t &gt; &amp;</type>
+          <declname>dataBuffer</declname>
+        </param>
+        <briefdescription>
+<para>Download a requested file into a memory buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filename of the file to download. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">dataBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A memory buffer object to be written with downloaded file data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>error code. false - Error, true - Ok </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="64" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" bodystart="64" bodyend="68" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.h" declline="104" declcolumn="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/file-loader.cpp" line="37" column="1"/>
+  </compounddef>
+</doxygen>

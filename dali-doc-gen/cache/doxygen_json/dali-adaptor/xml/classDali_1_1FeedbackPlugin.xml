@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1FeedbackPlugin" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::FeedbackPlugin</compoundname>
+    <includes refid="feedback-plugin_8h" local="no">feedback-plugin.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classDali_1_1FeedbackPlugin_1a09e4b05ccbf498fbd282406911350161" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* Dali::FeedbackPlugin::SoundStopCallBack) (void *ptr)</definition>
+        <argsstring>)(void *ptr)</argsstring>
+        <name>SoundStopCallBack</name>
+        <qualifiedname>Dali::FeedbackPlugin::SoundStopCallBack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="37" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classDali_1_1FeedbackPlugin_1a46e418327828fe4a9c102385c8b207dd" prot="public" static="no">
+        <type><ref refid="classDali_1_1FeedbackPlugin" kindref="compound">FeedbackPlugin</ref> *</type>
+        <definition>typedef FeedbackPlugin * Dali::FeedbackPlugin::CreateFeedbackPlugin(void)</definition>
+        <argsstring>(void)</argsstring>
+        <name>CreateFeedbackPlugin</name>
+        <qualifiedname>Dali::FeedbackPlugin::CreateFeedbackPlugin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function pointer called in adaptor to create a feedback plugin instance. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pluginName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the plugin to load. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the newly created plugin object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="90" column="26" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1ad366c995b5186780cbe7fa9ee9c27335" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::FeedbackPlugin::~FeedbackPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>~FeedbackPlugin</name>
+        <qualifiedname>Dali::FeedbackPlugin::~FeedbackPlugin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="42" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1ab30feeafd327d3519b551030b2bcb7f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::FeedbackPlugin::PlayHaptic</definition>
+        <argsstring>(const std::string &amp;filePath)=0</argsstring>
+        <name>PlayHaptic</name>
+        <qualifiedname>Dali::FeedbackPlugin::PlayHaptic</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Plays vibration in predefined patterns. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the file containing the effect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="50" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1a0df89baabe9caac0d93de4a5049b6e81" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::FeedbackPlugin::PlayHapticMonotone</definition>
+        <argsstring>(unsigned int duration)=0</argsstring>
+        <name>PlayHapticMonotone</name>
+        <qualifiedname>Dali::FeedbackPlugin::PlayHapticMonotone</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Plays a monotone vibration. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">duration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The duration of the vibration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="56" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1a007779e42de89c259d75f076210f9550" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::FeedbackPlugin::StopHaptic</definition>
+        <argsstring>()=0</argsstring>
+        <name>StopHaptic</name>
+        <qualifiedname>Dali::FeedbackPlugin::StopHaptic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops the currently playing vibration effects. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="61" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1a42d4c4c16e5b045e2df051d7a14ab729" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Dali::FeedbackPlugin::PlaySound</definition>
+        <argsstring>(const std::string &amp;fileName)=0</argsstring>
+        <name>PlaySound</name>
+        <qualifiedname>Dali::FeedbackPlugin::PlaySound</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Plays a sound file. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the sound file to play. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle which can be used to stop the sound playback. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="68" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1a5de75e04640c628014316dacc272669e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::FeedbackPlugin::StopSound</definition>
+        <argsstring>(int handle)=0</argsstring>
+        <name>StopSound</name>
+        <qualifiedname>Dali::FeedbackPlugin::StopSound</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops a currently playing sound. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A handle to the currently playing sound. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="74" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1FeedbackPlugin_1a0c04252bb69fe0ee8a9357b1a04c9dca" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::FeedbackPlugin::PlayFeedbackPattern</definition>
+        <argsstring>(int type, int pattern)=0</argsstring>
+        <name>PlayFeedbackPattern</name>
+        <qualifiedname>Dali::FeedbackPlugin::PlayFeedbackPattern</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Plays a feedback pattern. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of feedback. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the pattern to play. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="81" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classDali_1_1FeedbackPlugin" kindref="compound">FeedbackPlugin</ref> is an abstract interface, used by Dali-adaptor to access haptic and audio feedback. A concrete implementation must be created for each platform and provided as a dynamic library which will be loaded at run time by the adaptor. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" line="34" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/feedback-plugin.h" bodystart="35" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classDali_1_1FeedbackPlugin_1a46e418327828fe4a9c102385c8b207dd" prot="public" virt="non-virtual"><scope>Dali::FeedbackPlugin</scope><name>CreateFeedbackPlugin</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1a0c04252bb69fe0ee8a9357b1a04c9dca" prot="public" virt="pure-virtual"><scope>Dali::FeedbackPlugin</scope><name>PlayFeedbackPattern</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1ab30feeafd327d3519b551030b2bcb7f5" prot="public" virt="pure-virtual"><scope>Dali::FeedbackPlugin</scope><name>PlayHaptic</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1a0df89baabe9caac0d93de4a5049b6e81" prot="public" virt="pure-virtual"><scope>Dali::FeedbackPlugin</scope><name>PlayHapticMonotone</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1a42d4c4c16e5b045e2df051d7a14ab729" prot="public" virt="pure-virtual"><scope>Dali::FeedbackPlugin</scope><name>PlaySound</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1a09e4b05ccbf498fbd282406911350161" prot="public" virt="non-virtual"><scope>Dali::FeedbackPlugin</scope><name>SoundStopCallBack</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1a007779e42de89c259d75f076210f9550" prot="public" virt="pure-virtual"><scope>Dali::FeedbackPlugin</scope><name>StopHaptic</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1a5de75e04640c628014316dacc272669e" prot="public" virt="pure-virtual"><scope>Dali::FeedbackPlugin</scope><name>StopSound</name></member>
+      <member refid="classDali_1_1FeedbackPlugin_1ad366c995b5186780cbe7fa9ee9c27335" prot="public" virt="virtual"><scope>Dali::FeedbackPlugin</scope><name>~FeedbackPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

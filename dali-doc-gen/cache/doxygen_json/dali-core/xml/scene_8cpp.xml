@@ -1,0 +1,997 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="scene_8cpp" kind="file" language="C++">
+    <compoundname>scene.cpp</compoundname>
+    <includes refid="scene_8h" local="no">dali/integration-api/scene.h</includes>
+    <includes local="no">dali/graphics-api/graphics-render-target.h</includes>
+    <includes refid="layer_8h" local="no">dali/public-api/actors/layer.h</includes>
+    <includes refid="render-task-list_8h" local="no">dali/public-api/render-tasks/render-task-list.h</includes>
+    <includes local="no">dali/internal/event/common/scene-impl.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>dali/devel-api/common/vector-wrapper.h</label>
+        <link refid="vector-wrapper_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp</label>
+        <link refid="scene_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>dali/integration-api/scene.h</label>
+        <link refid="scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>dali/public-api/actors/actor-enumerations.h</label>
+        <link refid="actor-enumerations_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>dali/public-api/actors/actor.h</label>
+        <link refid="actor_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>dali/public-api/actors/draw-mode.h</label>
+        <link refid="draw-mode_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>dali/public-api/actors/layer.h</label>
+        <link refid="layer_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>dali/public-api/common/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="44">
+        <label>dali/public-api/common/dali-pair.h</label>
+        <link refid="dali-pair_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>dali/public-api/common/dali-string-view.h</label>
+        <link refid="dali-string-view_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>dali/public-api/common/dali-string.h</label>
+        <link refid="dali-string_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>dali/public-api/common/dali-utility.h</label>
+        <link refid="dali-utility_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>dali/public-api/common/dali-vector-base.h</label>
+        <link refid="dali-vector-base_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>dali/public-api/common/dali-vector-complex-types.h</label>
+        <link refid="dali-vector-complex-types_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>dali/public-api/common/dali-vector-trivial-types.h</label>
+        <link refid="dali-vector-trivial-types_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>dali/public-api/common/dali-vector.h</label>
+        <link refid="dali-vector_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>dali/public-api/common/extents.h</label>
+        <link refid="extents_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>dali/public-api/common/intrusive-ptr.h</label>
+        <link refid="intrusive-ptr_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="53">
+        <label>dali/public-api/common/unique-ptr.h</label>
+        <link refid="unique-ptr_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/events/gesture-enumerations.h</label>
+        <link refid="gesture-enumerations_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>dali/public-api/math/angle-axis.h</label>
+        <link refid="angle-axis_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>dali/public-api/math/compile-time-math.h</label>
+        <link refid="compile-time-math_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>dali/public-api/math/degree.h</label>
+        <link refid="degree_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>dali/public-api/math/math-utils.h</label>
+        <link refid="math-utils_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>dali/public-api/math/matrix.h</label>
+        <link refid="matrix_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>dali/public-api/math/matrix3.h</label>
+        <link refid="matrix3_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>dali/public-api/math/quaternion.h</label>
+        <link refid="quaternion_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>dali/public-api/math/radian.h</label>
+        <link refid="radian_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>dali/public-api/math/rect.h</label>
+        <link refid="rect_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>dali/public-api/math/vector2.h</label>
+        <link refid="vector2_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dali/public-api/math/vector3.h</label>
+        <link refid="vector3_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>dali/public-api/math/vector4.h</label>
+        <link refid="vector4_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>dali/public-api/object/base-handle.h</label>
+        <link refid="base-handle_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/object/handle.h</label>
+        <link refid="handle_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>dali/public-api/object/indirect-value.h</label>
+        <link refid="indirect-value_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>dali/public-api/object/property-index-ranges.h</label>
+        <link refid="property-index-ranges_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>dali/public-api/object/property-key.h</label>
+        <link refid="property-key_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>dali/public-api/object/property-notification-declarations.h</label>
+        <link refid="property-notification-declarations_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>dali/public-api/object/property-types.h</label>
+        <link refid="property-types_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>dali/public-api/object/property-value.h</label>
+        <link refid="property-value_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>dali/public-api/object/property.h</label>
+        <link refid="property_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>dali/public-api/object/ref-object.h</label>
+        <link refid="ref-object_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>dali/public-api/render-tasks/render-task-list.h</label>
+        <link refid="render-task-list_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>dali/public-api/signals/base-signal.h</label>
+        <link refid="base-signal_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>dali/public-api/signals/callback.h</label>
+        <link refid="callback_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>dali/public-api/signals/connection-tracker-interface.h</label>
+        <link refid="connection-tracker-interface_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>dali/public-api/signals/connection-tracker.h</label>
+        <link refid="connection-tracker_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>dali/public-api/signals/dali-signal.h</label>
+        <link refid="dali-signal_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>dali/public-api/signals/functor-delegate.h</label>
+        <link refid="functor-delegate_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>dali/public-api/signals/signal-connection-pool.h</label>
+        <link refid="signal-connection-pool_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>dali/public-api/signals/signal-slot-connections.h</label>
+        <link refid="signal-slot-connections_8h"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>dali/public-api/signals/signal-slot-observers.h</label>
+        <link refid="signal-slot-observers_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>dali/public-api/signals/slot-delegate.h</label>
+        <link refid="slot-delegate_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>cfloat</label>
+      </node>
+      <node id="16">
+        <label>cstddef</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="24">
+        <label>cstdlib</label>
+      </node>
+      <node id="6">
+        <label>dali/graphics-api/graphics-controller.h</label>
+      </node>
+      <node id="7">
+        <label>dali/graphics-api/graphics-render-target-create-info.h</label>
+      </node>
+      <node id="63">
+        <label>dali/graphics-api/graphics-render-target.h</label>
+      </node>
+      <node id="70">
+        <label>dali/internal/event/common/scene-impl.h</label>
+      </node>
+      <node id="55">
+        <label>list</label>
+      </node>
+      <node id="21">
+        <label>math.h</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="50">
+        <label>sstream</label>
+      </node>
+      <node id="43">
+        <label>type_traits</label>
+      </node>
+      <node id="36">
+        <label>utility</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <innernamespace refid="namespaceDali_1_1Integration">Dali::Integration</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CLASS<sp/>HEADER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="scene_8h" kindref="compound">dali/integration-api/scene.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/graphics-api/graphics-render-target.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="layer_8h" kindref="compound">dali/public-api/actors/layer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="render-task-list_8h" kindref="compound">dali/public-api/render-tasks/render-task-list.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dali/internal/event/common/scene-impl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Integration</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33" refid="classDali_1_1Integration_1_1Scene_1a01874fe0908bb41a64c1572de0664eee" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a01874fe0908bb41a64c1572de0664eee" kindref="member">Scene::New</ref>(<ref refid="structDali_1_1Vector2" kindref="compound">Size</ref><sp/>size,<sp/>int32_t<sp/>windowOrientation,<sp/>int32_t<sp/>screenOrientation)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>Internal::ScenePtr<sp/>internal<sp/>=<sp/>Internal::Scene::New(size,<sp/>windowOrientation,<sp/>screenOrientation);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" kindref="member">Scene</ref>(internal.Get());</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classDali_1_1Integration_1_1Scene_1abe169bc5d37460cd14a47cd61411cbf5" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1abe169bc5d37460cd14a47cd61411cbf5" kindref="member">Scene::DownCast</ref>(<ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref><sp/>handle)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" kindref="member">Scene</ref>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">Dali::Internal::Scene*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(handle.<ref refid="classDali_1_1BaseHandle_1aefca742f25a69c19809f062ed9ec9044" kindref="member">GetObjectPtr</ref>()));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" kindref="member">Scene::Scene</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene_1abe6831b294e8e1925a5b6232f5629e98" kindref="member">Scene::~Scene</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" kindref="member">Scene::Scene</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&amp;<sp/>handle)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1aaa173819c5508f28c63e225a4d7de52c" kindref="member">Scene::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&amp;<sp/>rhs)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" kindref="member">Scene::Scene</ref>(<ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&amp;&amp;<sp/>handle)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1aaa173819c5508f28c63e225a4d7de52c" kindref="member">Scene::operator=</ref>(<ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Scene</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classDali_1_1Integration_1_1Scene_1ac1b3bea8390641922e92008a6e56cbe8" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene_1a711acdb8f3855715cc575434d7ade0d1" kindref="member">Scene::Scene</ref>(Internal::Scene*<sp/>internal)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">:<sp/><ref refid="classDali_1_1BaseHandle" kindref="compound">BaseHandle</ref>(internal)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classDali_1_1Integration_1_1Scene_1a56eef5d1c770f5e37b75f396cc6ea44f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a56eef5d1c770f5e37b75f396cc6ea44f" kindref="member">Scene::Add</ref>(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).Add(<ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(actor));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classDali_1_1Integration_1_1Scene_1ac3f4a9ba66aef3b4642334e6a053ead1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ac3f4a9ba66aef3b4642334e6a053ead1" kindref="member">Scene::Remove</ref>(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).Remove(<ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(actor));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="classDali_1_1Integration_1_1Scene_1ab3889f9c3778d677dc445c6288d11f2b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ab3889f9c3778d677dc445c6288d11f2b" kindref="member">Scene::Show</ref>()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).Show();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classDali_1_1Integration_1_1Scene_1add118f346bfa9a7c02ed48bc63f21c13" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1add118f346bfa9a7c02ed48bc63f21c13" kindref="member">Scene::Hide</ref>()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).Hide();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classDali_1_1Integration_1_1Scene_1a7a228fda3ad0844dbdeef451c2bdc67a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a7a228fda3ad0844dbdeef451c2bdc67a" kindref="member">Scene::IsVisible</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="82"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).IsVisible();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classDali_1_1Integration_1_1Scene_1ae96c46b67bbf78230595d54767b5b56c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ae96c46b67bbf78230595d54767b5b56c" kindref="member">Scene::RequestFullUpdate</ref>()</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).RequestFullUpdate();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classDali_1_1Integration_1_1Scene_1ad6088fca4c728ffb04a742365430a846" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ad6088fca4c728ffb04a742365430a846" kindref="member">Scene::SetForceRendering</ref>(uint32_t<sp/>frameCount)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetForceRendering(frameCount);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classDali_1_1Integration_1_1Scene_1a118e40207b6720c5c42f4487787f4d51" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector2" kindref="compound">Size</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a118e40207b6720c5c42f4487787f4d51" kindref="member">Scene::GetSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="97"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetSize();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="classDali_1_1Integration_1_1Scene_1a1839d9fb95932b6bc889b72c0423c56f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a1839d9fb95932b6bc889b72c0423c56f" kindref="member">Scene::SetDpi</ref>(<ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref><sp/>dpi)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetDpi(dpi);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classDali_1_1Integration_1_1Scene_1af9f9e9d69c9b1fd2f726fffc33afd311" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector2" kindref="compound">Vector2</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1af9f9e9d69c9b1fd2f726fffc33afd311" kindref="member">Scene::GetDpi</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="107"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetDpi();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classDali_1_1Integration_1_1Scene_1ab6b88fad4fb673ad84874130053fb289" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ab6b88fad4fb673ad84874130053fb289" kindref="member">Scene::SetBackgroundColor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref>&amp;<sp/>color)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetBackgroundColor(color);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="classDali_1_1Integration_1_1Scene_1a78bf456d307607ca5b20c0f79df302c5" refkind="member"><highlight class="normal"><ref refid="structDali_1_1Vector4" kindref="compound">Vector4</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a78bf456d307607ca5b20c0f79df302c5" kindref="member">Scene::GetBackgroundColor</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="117"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetBackgroundColor();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classDali_1_1Integration_1_1Scene_1a8377729b4a94254e4edeefbaf215a056" refkind="member"><highlight class="normal"><ref refid="classDali_1_1RenderTaskList" kindref="compound">RenderTaskList</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a8377729b4a94254e4edeefbaf215a056" kindref="member">Scene::GetRenderTaskList</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="122"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1RenderTaskList" kindref="compound">RenderTaskList</ref>(&amp;<ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetRenderTaskList());</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="classDali_1_1Integration_1_1Scene_1a4919d56bf71020ca76aba87454eed31a" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a4919d56bf71020ca76aba87454eed31a" kindref="member">Scene::GetRootLayer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetRootLayer();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classDali_1_1Integration_1_1Scene_1ac28e9b6d9a66ef629d58671f2eabf8e6" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ac28e9b6d9a66ef629d58671f2eabf8e6" kindref="member">Scene::GetOverlayLayer</ref>()</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetOverlayLayer();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="classDali_1_1Integration_1_1Scene_1af9deb4168e421ff5153defd4da1f2da6" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Integration_1_1Scene_1af9deb4168e421ff5153defd4da1f2da6" kindref="member">Scene::GetLayerCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="137"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetLayerCount();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="classDali_1_1Integration_1_1Scene_1af89306a10441a5d644edbf43922d2f44" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Layer" kindref="compound">Layer</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1af89306a10441a5d644edbf43922d2f44" kindref="member">Scene::GetLayer</ref>(uint32_t<sp/>depth)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="142"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetLayer(depth);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classDali_1_1Integration_1_1Scene_1a148239a158a5449aa7fbfc09d29f417b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a148239a158a5449aa7fbfc09d29f417b" kindref="member">Scene::SurfaceResized</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SurfaceResized(width,<sp/>height);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="classDali_1_1Integration_1_1Scene_1a1006198ce259710cfb580ef913a15a7a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a1006198ce259710cfb580ef913a15a7a" kindref="member">Scene::SurfaceReplaced</ref>()</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SurfaceReplaced();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classDali_1_1Integration_1_1Scene_1aa10f7d860ac0388c4a21dc853e5bcc2f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1aa10f7d860ac0388c4a21dc853e5bcc2f" kindref="member">Scene::RemoveSceneObject</ref>()</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).RemoveSceneObject();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="classDali_1_1Integration_1_1Scene_1a3e8f229698ad11142983e039f9a6f862" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a3e8f229698ad11142983e039f9a6f862" kindref="member">Scene::Discard</ref>()</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).Discard();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classDali_1_1Integration_1_1Scene_1a66f95b2eae7a2a21aba448bfffe59242" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a66f95b2eae7a2a21aba448bfffe59242" kindref="member">Scene::SetSurfaceRenderTarget</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Graphics::RenderTargetCreateInfo&amp;<sp/>renderTargetCreateInfo)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetSurfaceRenderTarget(renderTargetCreateInfo);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classDali_1_1Integration_1_1Scene_1a725572aa620859e2d025778d05f1c3ae" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Integration::Scene</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a725572aa620859e2d025778d05f1c3ae" kindref="member">Scene::Get</ref>(<ref refid="classDali_1_1Actor" kindref="compound">Actor</ref><sp/>actor)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene" kindref="compound">Dali::Integration::Scene</ref>(&amp;<ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(actor).GetScene());</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="classDali_1_1Integration_1_1Scene_1aef530d0afa35c5149e1e5078a934530e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1aef530d0afa35c5149e1e5078a934530e" kindref="member">Scene::QueueEvent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Integration_1_1Event" kindref="compound">Integration::Event</ref>&amp;<sp/>event)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).QueueEvent(event);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="classDali_1_1Integration_1_1Scene_1a3a08f31250c31f92da813dcb086bbea1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a3a08f31250c31f92da813dcb086bbea1" kindref="member">Scene::ProcessEvents</ref>()</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).ProcessEvents();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="classDali_1_1Integration_1_1Scene_1a3ecdc109ac39f63f518b810ee292c66f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a3ecdc109ac39f63f518b810ee292c66f" kindref="member">Scene::AddFrameRenderedCallback</ref>(std::unique_ptr&lt;CallbackBase&gt;<sp/>callback,<sp/>int32_t<sp/>frameId)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).AddFrameRenderedCallback(std::move(callback),<sp/>frameId);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="classDali_1_1Integration_1_1Scene_1a3f7de49f55dfa78d8db6924062f00ae4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a3f7de49f55dfa78d8db6924062f00ae4" kindref="member">Scene::AddFramePresentedCallback</ref>(std::unique_ptr&lt;CallbackBase&gt;<sp/>callback,<sp/>int32_t<sp/>frameId)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).AddFramePresentedCallback(std::move(callback),<sp/>frameId);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="classDali_1_1Integration_1_1Scene_1aba5314555d810829cd813a3cf3fbfed8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1aba5314555d810829cd813a3cf3fbfed8" kindref="member">Scene::GetFrameRenderedCallback</ref>(<ref refid="classDali_1_1Integration_1_1Scene_1a271aab1cb392b11e4ae546d8648268ed" kindref="member">FrameCallbackContainer</ref>&amp;<sp/>callbacks)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetFrameRenderedCallback(callbacks);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="classDali_1_1Integration_1_1Scene_1a5c96ef8a2a47f53ed28931193be35f60" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a5c96ef8a2a47f53ed28931193be35f60" kindref="member">Scene::GetFramePresentedCallback</ref>(<ref refid="classDali_1_1Integration_1_1Scene_1a271aab1cb392b11e4ae546d8648268ed" kindref="member">FrameCallbackContainer</ref>&amp;<sp/>callbacks)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetFramePresentedCallback(callbacks);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="classDali_1_1Integration_1_1Scene_1a0d1e38b628b2f5128bf3db002b56c1f9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a0d1e38b628b2f5128bf3db002b56c1f9" kindref="member">Scene::SurfaceRotated</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height,<sp/>int32_t<sp/>windowOrientation,<sp/>int32_t<sp/>screenOrientation)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SurfaceRotated(width,<sp/>height,<sp/>windowOrientation,<sp/>screenOrientation);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="classDali_1_1Integration_1_1Scene_1ab8132a13527cfbc6ea11db2d9a2382ed" refkind="member"><highlight class="normal">int32_t<sp/><ref refid="classDali_1_1Integration_1_1Scene_1ab8132a13527cfbc6ea11db2d9a2382ed" kindref="member">Scene::GetCurrentSurfaceOrientation</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="212"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetCurrentSurfaceOrientation();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216" refid="classDali_1_1Integration_1_1Scene_1ab9a90b9c03de00ffe421416a26ff32cc" refkind="member"><highlight class="normal">int32_t<sp/><ref refid="classDali_1_1Integration_1_1Scene_1ab9a90b9c03de00ffe421416a26ff32cc" kindref="member">Scene::GetCurrentScreenOrientation</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="217"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetCurrentScreenOrientation();</highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="classDali_1_1Integration_1_1Scene_1a8f0bf5e7129bf0f9fa8a0f62cb7d66a8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structDali_1_1Rect" kindref="compound">Rect&lt;int32_t&gt;</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a8f0bf5e7129bf0f9fa8a0f62cb7d66a8" kindref="member">Scene::GetCurrentSurfaceRect</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="222"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetCurrentSurfaceRect();</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="classDali_1_1Integration_1_1Scene_1aae8e18e75b838aa76c7651474bfd8d41" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="classDali_1_1Integration_1_1Scene_1aae8e18e75b838aa76c7651474bfd8d41" kindref="member">Scene::GetSurfaceRectChangedCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="227"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetSurfaceRectChangedCount();</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="classDali_1_1Integration_1_1Scene_1acb5368dd2e971845867eeba138b92784" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1acb5368dd2e971845867eeba138b92784" kindref="member">Scene::SetRotationCompletedAcknowledgement</ref>()</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetRotationCompletedAcknowledgement();</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="classDali_1_1Integration_1_1Scene_1a753bef9318726a6774a65fdff1bc46bd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a753bef9318726a6774a65fdff1bc46bd" kindref="member">Scene::IsRotationCompletedAcknowledgementSet</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="237"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).IsRotationCompletedAcknowledgementSet();</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241" refid="classDali_1_1Integration_1_1Scene_1a5b1b3c60962ec89d3dda156683ca6aa4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a5b1b3c60962ec89d3dda156683ca6aa4" kindref="member">Scene::KeepRendering</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>durationSeconds)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).KeepRendering(durationSeconds);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="classDali_1_1Integration_1_1Scene_1af262775e03371d376efba74b30bab9f8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1af262775e03371d376efba74b30bab9f8" kindref="member">Scene::SetPartialUpdateEnabled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetPartialUpdateEnabled(enabled);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="classDali_1_1Integration_1_1Scene_1a96b45918527cb7c6c2782a9ffd8c7120" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a96b45918527cb7c6c2782a9ffd8c7120" kindref="member">Scene::IsPartialUpdateEnabled</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="252"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).IsPartialUpdateEnabled();</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="classDali_1_1Integration_1_1Scene_1ae682f0679e9076efb66a7b4ff4027158" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ae682f0679e9076efb66a7b4ff4027158" kindref="member">Scene::SetGeometryHittestEnabled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetGeometryHittestEnabled(enabled);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="classDali_1_1Integration_1_1Scene_1aed99764baf7a7f47df4c45bbf28c2f5f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1aed99764baf7a7f47df4c45bbf28c2f5f" kindref="member">Scene::IsGeometryHittestEnabled</ref>()</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).IsGeometryHittestEnabled();</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="classDali_1_1Integration_1_1Scene_1ada1f2059cca2aee588e71a55a011c050" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Integration_1_1Scene_1a595caf006e8514ec418f5ee25e5df338" kindref="member">Scene::TouchPropagationType</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1ada1f2059cca2aee588e71a55a011c050" kindref="member">Scene::GetTouchPropagationType</ref>()</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetTouchPropagationType();</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="classDali_1_1Integration_1_1Scene_1a42dbea9081d38a4b645512c64070355c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a42dbea9081d38a4b645512c64070355c" kindref="member">Scene::SetNativeId</ref>(int32_t<sp/>nativeId)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).SetNativeId(nativeId);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="classDali_1_1Integration_1_1Scene_1a0c77f732ffcb69b32b378eb727f2ea64" refkind="member"><highlight class="normal">int32_t<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a0c77f732ffcb69b32b378eb727f2ea64" kindref="member">Scene::GetNativeId</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="277"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetNativeId();</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="classDali_1_1Integration_1_1Scene_1a7ce8fa5a875b0528c3d9e3e27f48ef03" refkind="member"><highlight class="normal"><ref refid="namespaceDali_1a1c7153324546349d2a60223f6e1895af" kindref="member">Dali::GestureState</ref><sp/><ref refid="classDali_1_1Integration_1_1Scene_1a7ce8fa5a875b0528c3d9e3e27f48ef03" kindref="member">Scene::GetLastPanGestureState</ref>()</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).GetLastPanGestureState();</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286" refid="classDali_1_1Integration_1_1Scene_1aceb3ea379d18f3e55153b73d6a9d5fd8" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal_3_01void_07_08_4" kindref="compound">Scene::EventProcessingFinishedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1aceb3ea379d18f3e55153b73d6a9d5fd8" kindref="member">Scene::EventProcessingFinishedSignal</ref>()</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).EventProcessingFinishedSignal();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291" refid="classDali_1_1Integration_1_1Scene_1a0cc263e021f2bd37b659c4e950e19158" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::KeyEventSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a0cc263e021f2bd37b659c4e950e19158" kindref="member">Scene::KeyEventSignal</ref>()</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).KeyEventSignal();</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="classDali_1_1Integration_1_1Scene_1a6182cc25936d3337fadf6e0b33f4ad2e" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::KeyEventGeneratedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a6182cc25936d3337fadf6e0b33f4ad2e" kindref="member">Scene::KeyEventGeneratedSignal</ref>()</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).KeyEventGeneratedSignal();</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301" refid="classDali_1_1Integration_1_1Scene_1a336548acce09c1e45450c42e68bd3783" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::KeyEventGeneratedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a336548acce09c1e45450c42e68bd3783" kindref="member">Scene::InterceptKeyEventSignal</ref>()</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).InterceptKeyEventSignal();</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306" refid="classDali_1_1Integration_1_1Scene_1a1999d7dd1e7f3e73d35d380aa0a068e2" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::KeyEventSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a1999d7dd1e7f3e73d35d380aa0a068e2" kindref="member">Scene::KeyEventMonitorSignal</ref>()</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).KeyEventMonitorSignal();</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311" refid="classDali_1_1Integration_1_1Scene_1a63fead98f30f10f6c68ae844f5e26ee4" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::TouchEventSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a63fead98f30f10f6c68ae844f5e26ee4" kindref="member">Scene::TouchedSignal</ref>()</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).TouchedSignal();</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316" refid="classDali_1_1Integration_1_1Scene_1a430b9daf18937b05bbb61e547f2f6587" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::WheelEventSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1a430b9daf18937b05bbb61e547f2f6587" kindref="member">Scene::WheelEventSignal</ref>()</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).WheelEventSignal();</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321" refid="classDali_1_1Integration_1_1Scene_1afb566285e6ddc9beca8293e5ae60fd30" refkind="member"><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Scene::WheelEventGeneratedSignalType</ref>&amp;<sp/><ref refid="classDali_1_1Integration_1_1Scene_1afb566285e6ddc9beca8293e5ae60fd30" kindref="member">Scene::WheelEventGeneratedSignal</ref>()</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" kindref="member">GetImplementation</ref>(*this).WheelEventGeneratedSignal();</highlight></codeline>
+<codeline lineno="324"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Integration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp"/>
+  </compounddef>
+</doxygen>

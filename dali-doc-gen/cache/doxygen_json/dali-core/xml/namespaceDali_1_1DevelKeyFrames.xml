@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceDali_1_1DevelKeyFrames" kind="namespace" language="C++">
+    <compoundname>Dali::DevelKeyFrames</compoundname>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDali_1_1DevelKeyFrames_1a6e93e21ffbc2007481fabaded095d16c" prot="public" static="no">
+        <type>Property::Value(*)(const Property::Value &amp;input)</type>
+        <definition>using Dali::DevelKeyFrames::ValueConvertor = typedef Property::Value (*)(const Property::Value&amp; input)</definition>
+        <argsstring></argsstring>
+        <name>ValueConvertor</name>
+        <qualifiedname>Dali::DevelKeyFrames::ValueConvertor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.h" line="29" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDali_1_1DevelKeyFrames_1af255c7272978e868dc7829efe4a66bcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>DALI_CORE_API std::size_t Dali::DevelKeyFrames::GetKeyFrameCount</definition>
+        <argsstring>(KeyFrames keyFrames)</argsstring>
+        <name>GetKeyFrameCount</name>
+        <qualifiedname>Dali::DevelKeyFrames::GetKeyFrameCount</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <briefdescription>
+<para>Get the number of key frames. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref> object to perform this operation on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Total number of key frames </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" line="26" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" bodystart="26" bodyend="29" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.h" declline="36" declcolumn="27"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelKeyFrames_1a8eb731f8b1836220359afa60fe4db1bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::DevelKeyFrames::GetKeyFrame</definition>
+        <argsstring>(KeyFrames keyFrames, std::size_t index, float &amp;time, Property::Value &amp;value)</argsstring>
+        <name>GetKeyFrame</name>
+        <qualifiedname>Dali::DevelKeyFrames::GetKeyFrame</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>Property::Value &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a key frame. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref> object to perform this operation on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the key frame to fetch </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The progress of the given key frame </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the given key frame </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" line="31" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" bodystart="31" bodyend="34" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.h" declline="45" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelKeyFrames_1a4960bd5d492b8d5625bc77442d977542" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>DALI_CORE_API void Dali::DevelKeyFrames::SetKeyFrameValue</definition>
+        <argsstring>(KeyFrames keyFrames, std::size_t index, const Property::Value &amp;value)</argsstring>
+        <name>SetKeyFrameValue</name>
+        <qualifiedname>Dali::DevelKeyFrames::SetKeyFrameValue</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const Property::Value &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a key frame. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref> object to perform this operation on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the key frame to set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the given key frame </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" line="36" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" bodystart="36" bodyend="39" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.h" declline="53" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDali_1_1DevelKeyFrames_1a51a15092949fe42805dfabac1f2b59f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>DALI_CORE_API bool Dali::DevelKeyFrames::OptimizeKeyFramesLinear</definition>
+        <argsstring>(KeyFrames keyFrames)</argsstring>
+        <name>OptimizeKeyFramesLinear</name>
+        <qualifiedname>Dali::DevelKeyFrames::OptimizeKeyFramesLinear</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref></type>
+          <declname>keyFrames</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Optimize keyframes. Remove some frames what we can remove that might show same result. If two keyframe has same progress, we will remain only latest one. <simplesect kind="warning"><para>It will be works well only if we use keyFrames animate as <ref refid="classDali_1_1Animation_1a0335a833af951ca0b7aa9d8d35b93791a84344ede3e1ad1339efdf4aaf92065ce" kindref="member">Dali::Animation::LINEAR</ref> interpolation </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">keyFrames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classDali_1_1KeyFrames" kindref="compound">KeyFrames</ref> object to perform this operation on. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if keyframe optimized. False otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" line="41" column="6" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" bodystart="41" bodyend="44" declfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.h" declline="62" declcolumn="20"/>
+        <references refid="group__dali__core__object_1ga0d57823d1547f501a30c1935399eb6eb" compoundref="base-object_8h" startline="145" endline="150">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/key-frames-devel.cpp" line="24" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1653 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dali-signal_8h" kind="file" language="C++">
+    <compoundname>dali-signal.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes refid="dali-common_8h" local="no">dali/public-api/common/dali-common.h</includes>
+    <includes refid="unique-ptr_8h" local="no">dali/public-api/common/unique-ptr.h</includes>
+    <includes refid="base-signal_8h" local="no">dali/public-api/signals/base-signal.h</includes>
+    <includes refid="callback_8h" local="no">dali/public-api/signals/callback.h</includes>
+    <includes refid="signal-slot-connections_8h" local="no">dali/public-api/signals/signal-slot-connections.h</includes>
+    <includes refid="slot-delegate_8h" local="no">dali/public-api/signals/slot-delegate.h</includes>
+    <includedby refid="stage_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/stage.h</includedby>
+    <includedby refid="actor_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h</includedby>
+    <includedby refid="animation_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h</includedby>
+    <includedby refid="dali-core_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/dali-core.h</includedby>
+    <includedby refid="long-press-gesture-detector_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/long-press-gesture-detector.h</includedby>
+    <includedby refid="pan-gesture-detector_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/pan-gesture-detector.h</includedby>
+    <includedby refid="pinch-gesture-detector_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/pinch-gesture-detector.h</includedby>
+    <includedby refid="rotation-gesture-detector_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/rotation-gesture-detector.h</includedby>
+    <includedby refid="tap-gesture-detector_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/tap-gesture-detector.h</includedby>
+    <includedby refid="handle_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h</includedby>
+    <includedby refid="object-registry_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/object-registry.h</includedby>
+    <includedby refid="property-notification-declarations_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-notification-declarations.h</includedby>
+    <includedby refid="render-task_8h" local="no">/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>dali/public-api/common/dali-common.h</label>
+        <link refid="dali-common_8h"/>
+      </node>
+      <node id="5">
+        <label>dali/public-api/common/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+      </node>
+      <node id="4">
+        <label>dali/public-api/common/unique-ptr.h</label>
+        <link refid="unique-ptr_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>dali/public-api/signals/base-signal.h</label>
+        <link refid="base-signal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>dali/public-api/signals/callback.h</label>
+        <link refid="callback_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>dali/public-api/signals/connection-tracker-interface.h</label>
+        <link refid="connection-tracker-interface_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>dali/public-api/signals/connection-tracker.h</label>
+        <link refid="connection-tracker_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/dali-signal.h</label>
+        <link refid="dali-signal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>dali/public-api/signals/functor-delegate.h</label>
+        <link refid="functor-delegate_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dali/public-api/signals/signal-connection-pool.h</label>
+        <link refid="signal-connection-pool_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>dali/public-api/signals/signal-slot-connections.h</label>
+        <link refid="signal-slot-connections_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>dali/public-api/signals/signal-slot-observers.h</label>
+        <link refid="signal-slot-observers_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>dali/public-api/signals/slot-delegate.h</label>
+        <link refid="slot-delegate_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>cstddef</label>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="15">
+        <label>cstdlib</label>
+      </node>
+      <node id="7">
+        <label>list</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.cpp</label>
+        <link refid="actor-devel_8cpp"/>
+      </node>
+      <node id="9">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/actor-devel.h</label>
+        <link refid="actor-devel_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/camera-actor-devel.cpp</label>
+        <link refid="camera-actor-devel_8cpp"/>
+      </node>
+      <node id="36">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/camera-actor-devel.h</label>
+        <link refid="camera-actor-devel_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/custom-actor-devel.cpp</label>
+        <link refid="custom-actor-devel_8cpp"/>
+      </node>
+      <node id="44">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/custom-actor-devel.h</label>
+        <link refid="custom-actor-devel_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/drawable-actor.cpp</label>
+        <link refid="drawable-actor_8cpp"/>
+      </node>
+      <node id="11">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/drawable-actor.h</label>
+        <link refid="drawable-actor_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/actors/layer-devel.h</label>
+        <link refid="layer-devel_8h"/>
+      </node>
+      <node id="14">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/animation-data.cpp</label>
+        <link refid="animation-data_8cpp"/>
+      </node>
+      <node id="13">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/animation-data.h</label>
+        <link refid="animation-data_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/animation-devel.cpp</label>
+        <link refid="animation-devel_8cpp"/>
+      </node>
+      <node id="57">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/animation-devel.h</label>
+        <link refid="animation-devel_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/path-constrainer.cpp</label>
+        <link refid="path-constrainer_8cpp"/>
+      </node>
+      <node id="73">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/animation/path-constrainer.h</label>
+        <link refid="path-constrainer_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/capabilities.cpp</label>
+        <link refid="capabilities_8cpp"/>
+      </node>
+      <node id="107">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/capabilities.h</label>
+        <link refid="capabilities_8h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/stage-devel.cpp</label>
+        <link refid="stage-devel_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/stage-devel.h</label>
+        <link refid="stage-devel_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/stage.cpp</label>
+        <link refid="stage_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/common/stage.h</label>
+        <link refid="stage_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.cpp</label>
+        <link refid="hit-test-algorithm_8cpp"/>
+      </node>
+      <node id="6">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/hit-test-algorithm.h</label>
+        <link refid="hit-test-algorithm_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/long-press-gesture-detector-devel.cpp</label>
+        <link refid="long-press-gesture-detector-devel_8cpp"/>
+      </node>
+      <node id="61">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/long-press-gesture-detector-devel.h</label>
+        <link refid="long-press-gesture-detector-devel_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/touch-event-devel.cpp</label>
+        <link refid="touch-event-devel_8cpp"/>
+      </node>
+      <node id="100">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/touch-event-devel.h</label>
+        <link refid="touch-event-devel_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/touch-point.cpp</label>
+        <link refid="touch-point_8cpp"/>
+      </node>
+      <node id="18">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/events/touch-point.h</label>
+        <link refid="touch-point_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/handle-devel.cpp</label>
+        <link refid="handle-devel_8cpp"/>
+      </node>
+      <node id="75">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/object/handle-devel.h</label>
+        <link refid="handle-devel_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/renderer-devel.cpp</label>
+        <link refid="renderer-devel_8cpp"/>
+      </node>
+      <node id="106">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/renderer-devel.h</label>
+        <link refid="renderer-devel_8h"/>
+        <childnode refid="107" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/vertex-buffer-devel.cpp</label>
+        <link refid="vertex-buffer-devel_8cpp"/>
+      </node>
+      <node id="128">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/rendering/vertex-buffer-devel.h</label>
+        <link refid="vertex-buffer-devel_8h"/>
+        <childnode refid="129" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/enum-helper.h</label>
+        <link refid="enum-helper_8h"/>
+      </node>
+      <node id="17">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.cpp</label>
+        <link refid="scripting_8cpp"/>
+      </node>
+      <node id="15">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/scripting/scripting.h</label>
+        <link refid="scripting_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/signal-delegate.cpp</label>
+        <link refid="signal-delegate_8cpp"/>
+      </node>
+      <node id="32">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/devel-api/signals/signal-delegate.h</label>
+        <link refid="signal-delegate_8h"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.cpp</label>
+        <link refid="constraint-integ_8cpp"/>
+      </node>
+      <node id="77">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/constraint-integ.h</label>
+        <link refid="constraint-integ_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/core.cpp</label>
+        <link refid="core_8cpp"/>
+      </node>
+      <node id="23">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/hover-event-integ.cpp</label>
+        <link refid="hover-event-integ_8cpp"/>
+      </node>
+      <node id="22">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/hover-event-integ.h</label>
+        <link refid="hover-event-integ_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.cpp</label>
+        <link refid="multi-point-event-integ_8cpp"/>
+      </node>
+      <node id="21">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/multi-point-event-integ.h</label>
+        <link refid="multi-point-event-integ_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/point.cpp</label>
+        <link refid="point_8cpp"/>
+      </node>
+      <node id="20">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/point.h</label>
+        <link refid="point_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.cpp</label>
+        <link refid="touch-event-combiner_8cpp"/>
+      </node>
+      <node id="29">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-combiner.h</label>
+        <link refid="touch-event-combiner_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-integ.cpp</label>
+        <link refid="touch-event-integ_8cpp"/>
+      </node>
+      <node id="26">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-event-integ.h</label>
+        <link refid="touch-event-integ_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.cpp</label>
+        <link refid="touch-integ_8cpp"/>
+      </node>
+      <node id="30">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/events/touch-integ.h</label>
+        <link refid="touch-integ_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/gl-abstraction.h</label>
+        <link refid="gl-abstraction_8h"/>
+      </node>
+      <node id="111">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-config.h</label>
+        <link refid="graphics-config_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/rendering/decorated-visual-renderer.cpp</label>
+        <link refid="decorated-visual-renderer_8cpp"/>
+      </node>
+      <node id="113">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/rendering/decorated-visual-renderer.h</label>
+        <link refid="decorated-visual-renderer_8h"/>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/rendering/visual-renderer.cpp</label>
+        <link refid="visual-renderer_8cpp"/>
+      </node>
+      <node id="112">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/rendering/visual-renderer.h</label>
+        <link refid="visual-renderer_8h"/>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene-pre-render-status.h</label>
+        <link refid="scene-pre-render-status_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.cpp</label>
+        <link refid="scene_8cpp"/>
+      </node>
+      <node id="80">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/scene.h</label>
+        <link refid="scene_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.cpp</label>
+        <link refid="shader-integ_8cpp"/>
+      </node>
+      <node id="122">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/shader-integ.h</label>
+        <link refid="shader-integ_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.cpp</label>
+        <link refid="actor_8cpp"/>
+      </node>
+      <node id="8">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/actor.h</label>
+        <link refid="actor_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/camera-actor.cpp</label>
+        <link refid="camera-actor_8cpp"/>
+      </node>
+      <node id="35">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/camera-actor.h</label>
+        <link refid="camera-actor_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.cpp</label>
+        <link refid="custom-actor-impl_8cpp"/>
+      </node>
+      <node id="40">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor-impl.h</label>
+        <link refid="custom-actor-impl_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor.cpp</label>
+        <link refid="custom-actor_8cpp"/>
+      </node>
+      <node id="43">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/custom-actor.h</label>
+        <link refid="custom-actor_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/layer.cpp</label>
+        <link refid="layer_8cpp"/>
+      </node>
+      <node id="48">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/actors/layer.h</label>
+        <link refid="layer_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.cpp</label>
+        <link refid="animation_8cpp"/>
+      </node>
+      <node id="56">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/animation.h</label>
+        <link refid="animation_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint-source.cpp</label>
+        <link refid="constraint-source_8cpp"/>
+      </node>
+      <node id="81">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint-source.h</label>
+        <link refid="constraint-source_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.cpp</label>
+        <link refid="constraint_8cpp"/>
+      </node>
+      <node id="83">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h</label>
+        <link refid="constraint_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraints.h</label>
+        <link refid="constraints_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/linear-constrainer.cpp</label>
+        <link refid="linear-constrainer_8cpp"/>
+      </node>
+      <node id="87">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/linear-constrainer.h</label>
+        <link refid="linear-constrainer_8h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/path.cpp</label>
+        <link refid="path_8cpp"/>
+      </node>
+      <node id="89">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/path.h</label>
+        <link refid="path_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/dali-core.h</label>
+        <link refid="dali-core_8h"/>
+      </node>
+      <node id="92">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/gesture-detector.cpp</label>
+        <link refid="gesture-detector_8cpp"/>
+      </node>
+      <node id="91">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/gesture-detector.h</label>
+        <link refid="gesture-detector_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/hover-event.cpp</label>
+        <link refid="hover-event_8cpp"/>
+      </node>
+      <node id="63">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/long-press-gesture-detector.cpp</label>
+        <link refid="long-press-gesture-detector_8cpp"/>
+      </node>
+      <node id="60">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/long-press-gesture-detector.h</label>
+        <link refid="long-press-gesture-detector_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/pan-gesture-detector.cpp</label>
+        <link refid="pan-gesture-detector_8cpp"/>
+      </node>
+      <node id="64">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/pan-gesture-detector.h</label>
+        <link refid="pan-gesture-detector_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/pinch-gesture-detector.cpp</label>
+        <link refid="pinch-gesture-detector_8cpp"/>
+      </node>
+      <node id="66">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/pinch-gesture-detector.h</label>
+        <link refid="pinch-gesture-detector_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/rotation-gesture-detector.cpp</label>
+        <link refid="rotation-gesture-detector_8cpp"/>
+      </node>
+      <node id="68">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/rotation-gesture-detector.h</label>
+        <link refid="rotation-gesture-detector_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/tap-gesture-detector.cpp</label>
+        <link refid="tap-gesture-detector_8cpp"/>
+      </node>
+      <node id="70">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/tap-gesture-detector.h</label>
+        <link refid="tap-gesture-detector_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/touch-event.cpp</label>
+        <link refid="touch-event_8cpp"/>
+      </node>
+      <node id="99">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/events/touch-event.h</label>
+        <link refid="touch-event_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.cpp</label>
+        <link refid="handle_8cpp"/>
+      </node>
+      <node id="72">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/handle.h</label>
+        <link refid="handle_8h"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/indirect-value.cpp</label>
+        <link refid="indirect-value_8cpp"/>
+      </node>
+      <node id="95">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/object-registry.cpp</label>
+        <link refid="object-registry_8cpp"/>
+      </node>
+      <node id="94">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/object-registry.h</label>
+        <link refid="object-registry_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-notification-declarations.h</label>
+        <link refid="property-notification-declarations_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-notification.cpp</label>
+        <link refid="property-notification_8cpp"/>
+      </node>
+      <node id="132">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property-notification.h</label>
+        <link refid="property-notification_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/property.cpp</label>
+        <link refid="property_8cpp"/>
+      </node>
+      <node id="47">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/weak-handle.cpp</label>
+        <link refid="weak-handle_8cpp"/>
+      </node>
+      <node id="46">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/object/weak-handle.h</label>
+        <link refid="weak-handle_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.cpp</label>
+        <link refid="render-task_8cpp"/>
+      </node>
+      <node id="98">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/render-tasks/render-task.h</label>
+        <link refid="render-task_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/geometry.cpp</label>
+        <link refid="geometry_8cpp"/>
+      </node>
+      <node id="103">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/geometry.h</label>
+        <link refid="geometry_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/renderer.cpp</label>
+        <link refid="renderer_8cpp"/>
+      </node>
+      <node id="105">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="106" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/sampler.cpp</label>
+        <link refid="sampler_8cpp"/>
+      </node>
+      <node id="117">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/sampler.h</label>
+        <link refid="sampler_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.cpp</label>
+        <link refid="shader_8cpp"/>
+      </node>
+      <node id="121">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/texture-set.cpp</label>
+        <link refid="texture-set_8cpp"/>
+      </node>
+      <node id="119">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/texture-set.h</label>
+        <link refid="texture-set_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/uniform-block.cpp</label>
+        <link refid="uniform-block_8cpp"/>
+      </node>
+      <node id="125">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/uniform-block.h</label>
+        <link refid="uniform-block_8h"/>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/vertex-buffer.cpp</label>
+        <link refid="vertex-buffer_8cpp"/>
+      </node>
+      <node id="127">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/rendering/vertex-buffer.h</label>
+        <link refid="vertex-buffer_8h"/>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/dali-signal.h</label>
+        <link refid="dali-signal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/size-negotiation/relayout-container.h</label>
+        <link refid="relayout-container_8h"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classDali_1_1Signal" prot="public">Dali::Signal</innerclass>
+    <innerclass refid="classDali_1_1SignalMixin" prot="public">Dali::SignalMixin</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01void_07_08_4" prot="public">Dali::Signal&lt; void()&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01Ret_07_08_4" prot="public">Dali::Signal&lt; Ret()&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01void_07Arg0_08_4" prot="public">Dali::Signal&lt; void(Arg0)&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4" prot="public">Dali::Signal&lt; Ret(Arg0)&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4" prot="public">Dali::Signal&lt; void(Arg0, Arg1)&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4" prot="public">Dali::Signal&lt; Ret(Arg0, Arg1)&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4" prot="public">Dali::Signal&lt; void(Arg0, Arg1, Arg2)&gt;</innerclass>
+    <innerclass refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4" prot="public">Dali::Signal&lt; Ret(Arg0, Arg1, Arg2)&gt;</innerclass>
+    <innernamespace refid="namespaceDali">Dali</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DALI_SIGNAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DALI_SIGNAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2026<sp/>Samsung<sp/>Electronics<sp/>Co.,<sp/>Ltd.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>for<sp/>uint32_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//<sp/>INTERNAL<sp/>INCLUDES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="dali-common_8h" kindref="compound">dali/public-api/common/dali-common.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="unique-ptr_8h" kindref="compound">dali/public-api/common/unique-ptr.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="base-signal_8h" kindref="compound">dali/public-api/signals/base-signal.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="callback_8h" kindref="compound">dali/public-api/signals/callback.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="signal-slot-connections_8h" kindref="compound">dali/public-api/signals/signal-slot-connections.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="slot-delegate_8h" kindref="compound">dali/public-api/signals/slot-delegate.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceDali" kindref="compound">Dali</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>_Signature&gt;</highlight></codeline>
+<codeline lineno="140" refid="classDali_1_1Signal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="classDali_1_1SignalMixin" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="153" refid="classDali_1_1SignalMixin_1ac1d247b2dbfa763086ede0f90d1e5753" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin_1ac1d247b2dbfa763086ede0f90d1e5753" kindref="member">Empty</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="154"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl<sp/>?<sp/>mImpl-&gt;<ref refid="classDali_1_1BaseSignal_1afdf65ca76a5e9a5f8c183338a036375d" kindref="member">Empty</ref>()<sp/>:<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="classDali_1_1SignalMixin_1af732f37a8b4e4b78b0cd740c6a5f456e" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="classDali_1_1SignalMixin_1af732f37a8b4e4b78b0cd740c6a5f456e" kindref="member">GetConnectionCount</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="165"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mImpl<sp/>?<sp/>mImpl-&gt;<ref refid="classDali_1_1BaseSignal_1a3b789126fe89e0181cee068c1589cd7b" kindref="member">GetConnectionCount</ref>()<sp/>:<sp/>0;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="170" refid="classDali_1_1SignalMixin_1a52efc2f076632179485776f841164b7d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1SignalMixin_1a52efc2f076632179485776f841164b7d" kindref="member">SignalMixin</ref>()</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>:<sp/>mImpl(nullptr)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="classDali_1_1SignalMixin_1a5d46a57c61e0229f725ece1060c4adaf" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1SignalMixin_1a5d46a57c61e0229f725ece1060c4adaf" kindref="member">~SignalMixin</ref>()</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>mImpl;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="181" refid="classDali_1_1SignalMixin_1adf852d9961d7682f868a18306332eb95" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref>&amp;<sp/><ref refid="classDali_1_1SignalMixin_1adf852d9961d7682f868a18306332eb95" kindref="member">Impl</ref>()</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!mImpl)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>mImpl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref>();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*mImpl;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><ref refid="classDali_1_1BaseSignal" kindref="compound">BaseSignal</ref>*<sp/>mImpl;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;&gt;</highlight></codeline>
+<codeline lineno="199" refid="classDali_1_1Signal_3_01void_07_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;void()&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="208" refid="classDali_1_1Signal_3_01void_07_08_4_1ae77b325ad4d7a67d3f503797a2d7c7c8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1ae77b325ad4d7a67d3f503797a2d7c7c8" kindref="member">Connect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)())</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="classDali_1_1Signal_3_01void_07_08_4_1a46efde336eb4b3293b1a916ee54d45a4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1a46efde336eb4b3293b1a916ee54d45a4" kindref="member">Disconnect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)())</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="232" refid="classDali_1_1Signal_3_01void_07_08_4_1a5742a34b627cdeabf895b68c925e5201" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1a5742a34b627cdeabf895b68c925e5201" kindref="member">Connect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="245" refid="classDali_1_1Signal_3_01void_07_08_4_1a0c8254e57b773d10d995e51474e24175" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1a0c8254e57b773d10d995e51474e24175" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="258" refid="classDali_1_1Signal_3_01void_07_08_4_1ae43b9a7c85cb30cd07316051f9f1eb88" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1ae43b9a7c85cb30cd07316051f9f1eb88" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="271" refid="classDali_1_1Signal_3_01void_07_08_4_1a1dcb6fc5c5bade32e7c8a8891937a9d6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1a1dcb6fc5c5bade32e7c8a8891937a9d6" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="284" refid="classDali_1_1Signal_3_01void_07_08_4_1af490d2f333fe39abd07cd438f94184de" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1af490d2f333fe39abd07cd438f94184de" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctor0" kindref="compound">CallbackFunctor0&lt;X&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="classDali_1_1Signal_3_01void_07_08_4_1a718297c39410cd58d4629d23cc786fd1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1a718297c39410cd58d4629d23cc786fd1" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegate0" kindref="compound">CallbackFunctorDelegate0</ref>(delegate));</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305" refid="classDali_1_1Signal_3_01void_07_08_4_1a0560b5a9a6458586c6c37e6c5b26bb03" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07_08_4_1a0560b5a9a6458586c6c37e6c5b26bb03" kindref="member">Emit</ref>()</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().Emit();</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Ret&gt;</highlight></codeline>
+<codeline lineno="316" refid="classDali_1_1Signal_3_01Ret_07_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;Ret()&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="325" refid="classDali_1_1Signal_3_01Ret_07_08_4_1a9a3993c09b8be3182719bb875713b46c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1a9a3993c09b8be3182719bb875713b46c" kindref="member">Connect</ref>(Ret<sp/>(*func)())</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336" refid="classDali_1_1Signal_3_01Ret_07_08_4_1a4efd6671b4aeeae3c3213e42abcebb84" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1a4efd6671b4aeeae3c3213e42abcebb84" kindref="member">Disconnect</ref>(Ret<sp/>(*func)())</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="349" refid="classDali_1_1Signal_3_01Ret_07_08_4_1abcac6a37f7dac63141df73c1f02e9998" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1abcac6a37f7dac63141df73c1f02e9998" kindref="member">Connect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="362" refid="classDali_1_1Signal_3_01Ret_07_08_4_1a4ea1a6f9c180b793a184e4aa9f632c20" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1a4ea1a6f9c180b793a184e4aa9f632c20" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="375" refid="classDali_1_1Signal_3_01Ret_07_08_4_1a16ac303794fd9adcf3af8e518ce7295f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1a16ac303794fd9adcf3af8e518ce7295f" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="388" refid="classDali_1_1Signal_3_01Ret_07_08_4_1aa6eb4d8e759b8d097a49a1dc27fd6509" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1aa6eb4d8e759b8d097a49a1dc27fd6509" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)())</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="401" refid="classDali_1_1Signal_3_01Ret_07_08_4_1a21d0442fd793ed1ab8214134dd55d01f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1a21d0442fd793ed1ab8214134dd55d01f" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorReturn0" kindref="compound">CallbackFunctorReturn0&lt;X, Ret&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="413" refid="classDali_1_1Signal_3_01Ret_07_08_4_1aa14ea65bf5124bfb4d048e2824c3a44c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1aa14ea65bf5124bfb4d048e2824c3a44c" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegateReturn0" kindref="compound">CallbackFunctorDelegateReturn0&lt;Ret&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="424" refid="classDali_1_1Signal_3_01Ret_07_08_4_1a49120aad0e866b42ab5fb45a35818bdb" refkind="member"><highlight class="normal"><sp/><sp/>Ret<sp/><ref refid="classDali_1_1Signal_3_01Ret_07_08_4_1a49120aad0e866b42ab5fb45a35818bdb" kindref="member">Emit</ref>()</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Impl().template<sp/>EmitReturn&lt;Ret&gt;();</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="428"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg0&gt;</highlight></codeline>
+<codeline lineno="435" refid="classDali_1_1Signal_3_01void_07Arg0_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;void(Arg0)&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="436"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="444" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a3ee351cde9d1599ed6f3f0ce298a874c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a3ee351cde9d1599ed6f3f0ce298a874c" kindref="member">Connect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="455" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a0f94923549fca4c3667fe7ec9cf5199c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a0f94923549fca4c3667fe7ec9cf5199c" kindref="member">Disconnect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="468" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a64fcb6273cfb2813fb4925a3d3920b22" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a64fcb6273cfb2813fb4925a3d3920b22" kindref="member">Connect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="481" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a7e70c6012a260bd48404eea7227af09e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a7e70c6012a260bd48404eea7227af09e" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="494" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a0b25c874b7a09b35019ba0780fe6169c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a0b25c874b7a09b35019ba0780fe6169c" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="507" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1aa86bd39643404b7c732c75d00698440d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1aa86bd39643404b7c732c75d00698440d" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="520" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1ac8b27b554beaa3313e70f7bffa56a417" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1ac8b27b554beaa3313e70f7bffa56a417" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctor1" kindref="compound">CallbackFunctor1&lt;X, Arg0&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="532" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a6cc69f008b48443ce6ad55f06e569283" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a6cc69f008b48443ce6ad55f06e569283" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegate1" kindref="compound">CallbackFunctorDelegate1&lt;Arg0&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543" refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a4b370252fa2390e19ab33f09efc54a3d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_08_4_1a4b370252fa2390e19ab33f09efc54a3d" kindref="member">Emit</ref>(Arg0<sp/>arg0)</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().template<sp/>Emit&lt;Arg0&gt;(arg0);</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight></codeline>
+<codeline lineno="553"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Ret,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg0&gt;</highlight></codeline>
+<codeline lineno="554" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;Ret(Arg0)&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="555"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="563" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a8b527385476c73b99a26386bdfe6c815" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a8b527385476c73b99a26386bdfe6c815" kindref="member">Connect</ref>(Ret<sp/>(*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="574" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a54fcccd20f8c73b1d0de8df4721b0ce6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a54fcccd20f8c73b1d0de8df4721b0ce6" kindref="member">Disconnect</ref>(Ret<sp/>(*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="587" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a406e73fcf26e2677bb73c1115ba8baf2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a406e73fcf26e2677bb73c1115ba8baf2" kindref="member">Connect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="600" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a0ef278db4ab448f1431d132926ed42cb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a0ef278db4ab448f1431d132926ed42cb" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"></highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="613" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a64d445d71ed7ae0d07ae8b544ae59393" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a64d445d71ed7ae0d07ae8b544ae59393" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="626" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a71571b54b3d420631be2b4b812677820" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a71571b54b3d420631be2b4b812677820" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0))</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="639" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1af82a71021d88698c62c4eef46f692261" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1af82a71021d88698c62c4eef46f692261" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorReturn1" kindref="compound">CallbackFunctorReturn1&lt;X, Arg0, Ret&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"></highlight></codeline>
+<codeline lineno="651" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a21bb09c17489dace39af639557b8d739" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1a21bb09c17489dace39af639557b8d739" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegateReturn1" kindref="compound">CallbackFunctorDelegateReturn1&lt;Arg0, Ret&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"></highlight></codeline>
+<codeline lineno="663" refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1ae2059eb56be7f3b7f58a76f389e9d2ea" refkind="member"><highlight class="normal"><sp/><sp/>Ret<sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_08_4_1ae2059eb56be7f3b7f58a76f389e9d2ea" kindref="member">Emit</ref>(Arg0<sp/>arg0)</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Impl().template<sp/>EmitReturn&lt;Ret,<sp/>Arg0&gt;(arg0);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="667"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"></highlight></codeline>
+<codeline lineno="674"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg0,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg1&gt;</highlight></codeline>
+<codeline lineno="675" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;void(Arg0,<sp/>Arg1)&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="676"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="684" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a9dd2be4fd5754b3e5eeaa4d2c8bd4ad4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a9dd2be4fd5754b3e5eeaa4d2c8bd4ad4" kindref="member">Connect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"></highlight></codeline>
+<codeline lineno="695" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a204460d7470856e098cc39fb52af54b7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a204460d7470856e098cc39fb52af54b7" kindref="member">Disconnect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"></highlight></codeline>
+<codeline lineno="707"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="708" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a3db1154b0beb8727712fffdd8af507ce" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a3db1154b0beb8727712fffdd8af507ce" kindref="member">Connect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"></highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="721" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1af6c635bbcfc3b33fe97478f9f6644c87" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1af6c635bbcfc3b33fe97478f9f6644c87" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"></highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="734" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1ad0a8baa9c07bd927c2699ac4e2ab5281" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1ad0a8baa9c07bd927c2699ac4e2ab5281" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"></highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="747" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a9db8e196f8e8fb7ab4d2610ff8a04e11" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a9db8e196f8e8fb7ab4d2610ff8a04e11" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"></highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="760" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a80f224922f4b6eada90ff887d9c37a21" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a80f224922f4b6eada90ff887d9c37a21" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctor2" kindref="compound">CallbackFunctor2&lt;X, Arg0, Arg1&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"></highlight></codeline>
+<codeline lineno="772" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1aa676e272fb111d721f084176e44166d3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1aa676e272fb111d721f084176e44166d3" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegate2" kindref="compound">CallbackFunctorDelegate2&lt;Arg0, Arg1&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"></highlight></codeline>
+<codeline lineno="784" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a7294eeb1216e7be551585166de9af477" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_08_4_1a7294eeb1216e7be551585166de9af477" kindref="member">Emit</ref>(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1)</highlight></codeline>
+<codeline lineno="785"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().template<sp/>Emit&lt;Arg0,<sp/>Arg1&gt;(arg0,<sp/>arg1);</highlight></codeline>
+<codeline lineno="787"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="788"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"></highlight></codeline>
+<codeline lineno="794"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Ret,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg0,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg1&gt;</highlight></codeline>
+<codeline lineno="795" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;Ret(Arg0,<sp/>Arg1)&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="796"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="803" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1af2efaa1bde870cc2462bad5a139d871b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1af2efaa1bde870cc2462bad5a139d871b" kindref="member">Connect</ref>(Ret<sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="806"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"></highlight></codeline>
+<codeline lineno="814" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1abe1c84da95ea37e99a197e31d3f60914" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1abe1c84da95ea37e99a197e31d3f60914" kindref="member">Disconnect</ref>(Ret<sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="818"><highlight class="normal"></highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="827" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a86971fecd7ce25708b6368bbd0a07f29" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a86971fecd7ce25708b6368bbd0a07f29" kindref="member">Connect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"></highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="840" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1ada977f03b22cf36489d0c32d9eabf6fd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1ada977f03b22cf36489d0c32d9eabf6fd" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="844"><highlight class="normal"></highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="853" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a2191fe71afb00b06acd2520cf346de43" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a2191fe71afb00b06acd2520cf346de43" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="854"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"></highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="866" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a15b00fcb185865c7977f746fc710d570" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a15b00fcb185865c7977f746fc710d570" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1))</highlight></codeline>
+<codeline lineno="867"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="869"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"></highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="879" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a6e2c1078886cc5dd68c3cb42f84a7776" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a6e2c1078886cc5dd68c3cb42f84a7776" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorReturn2" kindref="compound">CallbackFunctorReturn2&lt;X, Arg0, Arg1, Ret&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"></highlight></codeline>
+<codeline lineno="891" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1aab01c1aa67ade833df51a905daee1164" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1aab01c1aa67ade833df51a905daee1164" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegateReturn2" kindref="compound">CallbackFunctorDelegateReturn2&lt;Arg0, Arg1, Ret&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"></highlight></codeline>
+<codeline lineno="904" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a86061256211e0d9251c7feda5ea76e8e" refkind="member"><highlight class="normal"><sp/><sp/>Ret<sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1a86061256211e0d9251c7feda5ea76e8e" kindref="member">Emit</ref>(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1)</highlight></codeline>
+<codeline lineno="905"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Impl().template<sp/>EmitReturn&lt;Ret,<sp/>Arg0,<sp/>Arg1&gt;(arg0,<sp/>arg1);</highlight></codeline>
+<codeline lineno="907"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"></highlight></codeline>
+<codeline lineno="918" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1abe0b190f21091a88960bc18bd1fa24dd" refkind="member"><highlight class="normal"><sp/><sp/>Ret<sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_08_4_1abe0b190f21091a88960bc18bd1fa24dd" kindref="member">EmitOr</ref>(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1)</highlight></codeline>
+<codeline lineno="919"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Impl().template<sp/>EmitReturnOr&lt;Ret,<sp/>Arg0,<sp/>Arg1&gt;(arg0,<sp/>arg1);</highlight></codeline>
+<codeline lineno="921"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="922"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"></highlight></codeline>
+<codeline lineno="928"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg0,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg1,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg2&gt;</highlight></codeline>
+<codeline lineno="929" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;void(Arg0,<sp/>Arg1,<sp/>Arg2)&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="930"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="931"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="938" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a3c8c1736ab8464fbbceb0aa530bdf7e8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a3c8c1736ab8464fbbceb0aa530bdf7e8" kindref="member">Connect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="941"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="942"><highlight class="normal"></highlight></codeline>
+<codeline lineno="949" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a38258199bbe694bc459395d7d0e14429" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a38258199bbe694bc459395d7d0e14429" kindref="member">Disconnect</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"></highlight></codeline>
+<codeline lineno="961"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="962" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1ab7edad56cc21d3f1f05a4111f659ce20" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1ab7edad56cc21d3f1f05a4111f659ce20" kindref="member">Connect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="963"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="964"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="965"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="966"><highlight class="normal"></highlight></codeline>
+<codeline lineno="974"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="975" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a6b2b3ee21e79838a45d502851de0b482" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a6b2b3ee21e79838a45d502851de0b482" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="976"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="978"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="979"><highlight class="normal"></highlight></codeline>
+<codeline lineno="987"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="988" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a82e04b576176e2039559f07602f9f6ab" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a82e04b576176e2039559f07602f9f6ab" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="989"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="991"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="992"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1000"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1001" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a2f07caf20176b15b0b1b31e36453e5ff" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a2f07caf20176b15b0b1b31e36453e5ff" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1003"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="1004"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1005"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1013"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1014" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a9530181efbf98a55f0cb2eb6e0e52db0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a9530181efbf98a55f0cb2eb6e0e52db0" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="1015"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctor3" kindref="compound">CallbackFunctor3&lt;X, Arg0, Arg1, Arg2&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="1017"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1018"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1026" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a3883b72984387e7111946390a80550a5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a3883b72984387e7111946390a80550a5" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="1027"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1028"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegate3" kindref="compound">CallbackFunctorDelegate3&lt;Arg0, Arg1, Arg2&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="1029"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1030"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1039" refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a7bc33cfa17b9beb89208731709e83404" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01void_07Arg0_00_01Arg1_00_01Arg2_08_4_1a7bc33cfa17b9beb89208731709e83404" kindref="member">Emit</ref>(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2)</highlight></codeline>
+<codeline lineno="1040"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1041"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().template<sp/>Emit&lt;Arg0,<sp/>Arg1,<sp/>Arg2&gt;(arg0,<sp/>arg1,<sp/>arg2);</highlight></codeline>
+<codeline lineno="1042"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1043"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1044"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1049"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Ret,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg0,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg1,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arg2&gt;</highlight></codeline>
+<codeline lineno="1050" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classDali_1_1Signal" kindref="compound">Signal</ref>&lt;Ret(Arg0,<sp/>Arg1,<sp/>Arg2)&gt;<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1SignalMixin" kindref="compound">SignalMixin</ref></highlight></codeline>
+<codeline lineno="1051"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1052"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="1059" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1ad4848f72f5dff218e5b4996fb1d9973b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1ad4848f72f5dff218e5b4996fb1d9973b" kindref="member">Connect</ref>(Ret<sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1060"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1061"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="1062"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1063"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1070" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1aba65638b7e0b033a6efa5af78d391d5e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1aba65638b7e0b033a6efa5af78d391d5e" kindref="member">Disconnect</ref>(Ret<sp/>(*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1071"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1072"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(<ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(func));</highlight></codeline>
+<codeline lineno="1073"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1074"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1082"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1083" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1aa3ce2961ce384deed77c621bcd338614" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1aa3ce2961ce384deed77c621bcd338614" kindref="member">Connect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1084"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1085"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="1086"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1087"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1095"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1096" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a32271ec62b89cf4c2323919d2198026c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a32271ec62b89cf4c2323919d2198026c" kindref="member">Disconnect</ref>(X*<sp/>obj,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1097"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1098"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(obj,<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(obj,<sp/>func));</highlight></codeline>
+<codeline lineno="1099"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1109" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a1ff2b033be04a92997354bdcf468c789" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a1ff2b033be04a92997354bdcf468c789" kindref="member">Connect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1110"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1111"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="1112"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1122" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a6167cca68ee13510f846d332fcc38872" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a6167cca68ee13510f846d332fcc38872" kindref="member">Disconnect</ref>(<ref refid="classDali_1_1SlotDelegate" kindref="compound">SlotDelegate&lt;X&gt;</ref>&amp;<sp/>delegate,<sp/>Ret<sp/>(X::*func)(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2))</highlight></codeline>
+<codeline lineno="1123"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1124"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnDisconnect(delegate.<ref refid="classDali_1_1SlotDelegate_1a7eaba9db40df9829b33740ce04696fcb" kindref="member">GetConnectionTracker</ref>(),<sp/><ref refid="group__dali__core__signals_1gaaccef1b596c435319b659702496cd597" kindref="member">MakeCallback</ref>(delegate.<ref refid="classDali_1_1SlotDelegate_1a376e132ddd45248f74b6d11c419a9479" kindref="member">GetSlot</ref>(),<sp/>func));</highlight></codeline>
+<codeline lineno="1125"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>X&gt;</highlight></codeline>
+<codeline lineno="1135" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a70eed58d3c268733517e2067c3d65ac7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a70eed58d3c268733517e2067c3d65ac7" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>X&amp;<sp/>func)</highlight></codeline>
+<codeline lineno="1136"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1137"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorReturn3" kindref="compound">CallbackFunctorReturn3&lt;X, Arg0, Arg1, Arg2, Ret&gt;</ref>(func));</highlight></codeline>
+<codeline lineno="1138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1147" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a219c25678ac38b3fc31936d8c2a4ad6f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1a219c25678ac38b3fc31936d8c2a4ad6f" kindref="member">Connect</ref>(<ref refid="classDali_1_1ConnectionTrackerInterface" kindref="compound">ConnectionTrackerInterface</ref>*<sp/>connectionTracker,<sp/><ref refid="classDali_1_1FunctorDelegate" kindref="compound">FunctorDelegate</ref>*<sp/>delegate)</highlight></codeline>
+<codeline lineno="1148"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1149"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl().OnConnect(connectionTracker,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classDali_1_1CallbackFunctorDelegateReturn3" kindref="compound">CallbackFunctorDelegateReturn3&lt;Arg0, Arg1, Arg2, Ret&gt;</ref>(delegate));</highlight></codeline>
+<codeline lineno="1150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1161" refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1ad2bdb95d0b3caf2bf515c418221fd974" refkind="member"><highlight class="normal"><sp/><sp/>Ret<sp/><ref refid="classDali_1_1Signal_3_01Ret_07Arg0_00_01Arg1_00_01Arg2_08_4_1ad2bdb95d0b3caf2bf515c418221fd974" kindref="member">Emit</ref>(Arg0<sp/>arg0,<sp/>Arg1<sp/>arg1,<sp/>Arg2<sp/>arg2)</highlight></codeline>
+<codeline lineno="1162"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Impl().template<sp/>EmitReturn&lt;Ret,<sp/>Arg0,<sp/>Arg1,<sp/>Arg2&gt;(arg0,<sp/>arg1,<sp/>arg2);</highlight></codeline>
+<codeline lineno="1164"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1165"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1170"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Dali</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1172"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>DALI_SIGNAL_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/signals/dali-signal.h"/>
+  </compounddef>
+</doxygen>

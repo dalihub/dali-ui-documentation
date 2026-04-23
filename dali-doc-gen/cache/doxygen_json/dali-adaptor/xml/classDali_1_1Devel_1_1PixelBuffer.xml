@@ -1,0 +1,848 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Devel_1_1PixelBuffer" kind="class" language="C++" prot="public">
+    <compoundname>Dali::Devel::PixelBuffer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseHandle</basecompoundref>
+    <includes refid="pixel-buffer_8h" local="no">pixel-buffer.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1ae8a2352ff170012070870c48978615e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref></type>
+        <definition>PixelBuffer Dali::Devel::PixelBuffer::New</definition>
+        <argsstring>(uint32_t width, uint32_t height, Dali::Pixel::Format pixelFormat)</argsstring>
+        <name>New</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::New</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>Dali::Pixel::Format</type>
+          <declname>pixelFormat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> with it&apos;s own data buffer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="64" column="22" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="31" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PixelData</type>
+        <definition>Dali::PixelData Dali::Devel::PixelBuffer::Convert</definition>
+        <argsstring>(PixelBuffer &amp;pixelBuffer)</argsstring>
+        <name>Convert</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::Convert</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;</type>
+          <declname>pixelBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convert to a pixel data and release the pixelBuffer&apos;s object. This handle is left empty.</para>
+<para><simplesect kind="warning"><para>Any other handles that keep a reference to this object will be left with no buffer, trying to access it will return NULL.</para>
+</simplesect>
+@SINCE_1_2.46 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pixelBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new PixelData which takes ownership of the <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&apos;s buffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="128" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="40" bodyend="43"/>
+        <references refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" compoundref="pixel-buffer_8cpp" startline="40" endline="43">Convert</references>
+        <referencedby refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" compoundref="pixel-buffer_8cpp" startline="40" endline="43">Convert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a9f80db20ac810add3aa96f375ace0c30" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PixelData</type>
+        <definition>Dali::PixelData Dali::Devel::PixelBuffer::Convert</definition>
+        <argsstring>(PixelBuffer &amp;pixelBuffer, bool releaseAfterUpload)</argsstring>
+        <name>Convert</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::Convert</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;</type>
+          <declname>pixelBuffer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>releaseAfterUpload</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convert to a pixel data and release the pixelBuffer&apos;s object. This handle is left empty.</para>
+<para><simplesect kind="warning"><para>Any other handles that keep a reference to this object will be left with no buffer, trying to access it will return NULL.</para>
+</simplesect>
+@SINCE_2_3.6 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pixelBuffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">releaseAfterUpload</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether converted PixelData released after upload or not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a new PixelData which takes ownership of the <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref>&apos;s buffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="142" column="20" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="45" bodyend="50"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Devel::PixelBuffer::PixelBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>PixelBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::PixelBuffer</qualifiedname>
+        <briefdescription>
+<para>Creates an empty handle. Use <ref refid="classDali_1_1Devel_1_1PixelBuffer_1ae8a2352ff170012070870c48978615e3" kindref="member">PixelBuffer::New()</ref> to create an initialized object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="74" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a34470be345320831acd2f66b929bf221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Devel::PixelBuffer::~PixelBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~PixelBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::~PixelBuffer</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="81" column="3" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1afa2b9d5eb3b7eec40bf6472e8d8ecdbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Devel::PixelBuffer::PixelBuffer</definition>
+        <argsstring>(const PixelBuffer &amp;handle)</argsstring>
+        <name>PixelBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::PixelBuffer</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This copy constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="89" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1aebca1aba0b7c0a1eb3447081040cedd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;</type>
+        <definition>PixelBuffer &amp; Dali::Devel::PixelBuffer::operator=</definition>
+        <argsstring>(const PixelBuffer &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the copied handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="98" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a0d1af000229deaf1dffd1fc09a66a1ad" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Devel::PixelBuffer::PixelBuffer</definition>
+        <argsstring>(PixelBuffer &amp;&amp;handle) noexcept</argsstring>
+        <name>PixelBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::PixelBuffer</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;&amp;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+<para>This move constructor is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.45 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="106" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a724bb22e36c8499c143fc0b0ccabdd26" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;</type>
+        <definition>PixelBuffer &amp; Dali::Devel::PixelBuffer::operator=</definition>
+        <argsstring>(PixelBuffer &amp;&amp;rhs) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>This move assignment operator is required for (smart) pointer semantics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.45 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A reference to the moved handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to this object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="115" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1ad19af6c5198694f03486d83cdef95ea9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Dali::PixelData</type>
+        <definition>Dali::PixelData Dali::Devel::PixelBuffer::CreatePixelData</definition>
+        <argsstring>() const</argsstring>
+        <name>CreatePixelData</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::CreatePixelData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy the data from this object into a new PixelData object, which could be used for uploading to a texture. <simplesect kind="return"><para>a new PixelData object containing a copy of this pixel buffer&apos;s data. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="149" column="19" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="52" bodyend="55"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a2211c123343fa12d2e46d1437065c297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * Dali::Devel::PixelBuffer::GetBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>GetBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetBuffer</qualifiedname>
+        <briefdescription>
+<para>Gets the pixel buffer. This is a pointer to the internal pixel buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>If there is no pixel buffer (e.g. this object has been converted to a PixelData), this method will return NULL.</para>
+</simplesect>
+@SINCE_1_2.46 <simplesect kind="return"><para>The pixel buffer, or NULL. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="161" column="11" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="103" bodyend="106"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a9ca9feba3517f56fae95f03aed927754" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t * Dali::Devel::PixelBuffer::GetBuffer</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetBuffer</qualifiedname>
+        <briefdescription>
+<para>Gets the pixel buffer. This is a pointer to the internal pixel buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>If there is no pixel buffer (e.g. this object has been converted to a PixelData), this method will return NULL.</para>
+</simplesect>
+<simplesect kind="return"><para>The pixel buffer, or NULL. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="172" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="108" bodyend="111"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a4ea781032d91a1b4038d2ed115469ce7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Devel::PixelBuffer::GetWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetWidth</qualifiedname>
+        <briefdescription>
+<para>Gets the width of the buffer in pixels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <simplesect kind="return"><para>The width of the buffer in pixels </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="180" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="78" bodyend="81"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a181938e30e9761f4a6beada168cb4293" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Devel::PixelBuffer::GetHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetHeight</qualifiedname>
+        <briefdescription>
+<para>Gets the height of the buffer in pixels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <simplesect kind="return"><para>The height of the buffer in pixels </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="188" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="83" bodyend="86"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1ad40dee567c6d03e5fcf64a4f87dbfe58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Devel::PixelBuffer::GetStride</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStride</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetStride</qualifiedname>
+        <briefdescription>
+<para>Gets the stride of the buffer in pixels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_1.17 @DEPRECATED_2_4.8 Use <ref refid="classDali_1_1Devel_1_1PixelBuffer_1a41b19beab812f4ac1b30c48574390f54" kindref="member">GetStrideBytes()</ref> instead. <simplesect kind="return"><para>The stride of the buffer in pixels. 0 means the buffer is tightly packed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="197" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="88" bodyend="91"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a41b19beab812f4ac1b30c48574390f54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Devel::PixelBuffer::GetStrideBytes</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStrideBytes</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetStrideBytes</qualifiedname>
+        <briefdescription>
+<para>Gets the stride of the buffer in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_2_4.8 <simplesect kind="return"><para>The stride of the buffer in bytes. 0 means the buffer is tightly packed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="205" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="93" bodyend="96"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a1b48ae046989a07e4b06fdd0899eec4e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Pixel::Format</type>
+        <definition>Pixel::Format Dali::Devel::PixelBuffer::GetPixelFormat</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPixelFormat</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetPixelFormat</qualifiedname>
+        <briefdescription>
+<para>Gets the pixel format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>@SINCE_1_2.46 <simplesect kind="return"><para>The pixel format </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="213" column="17" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="98" bodyend="101"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a4b3c63901c49e88ba38eb3f523d7a44d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Devel::PixelBuffer::ApplyMask</definition>
+        <argsstring>(PixelBuffer mask, float contentScale=1.0f, bool cropToMask=false)</argsstring>
+        <name>ApplyMask</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::ApplyMask</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref></type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>contentScale</declname>
+          <defval>1.0f</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cropToMask</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Apply the mask to this pixel data, and return a new pixel data containing the masked image. If this <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> doesn&apos;t have an alpha channel, then the resultant <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> will be converted to a format that supports at least the width of the color channels and the alpha channel from the mask.</para>
+<para>If cropToMask is set to true, then the contentScale is applied first to this buffer, and the target buffer is cropped to the size of the mask. If it&apos;s set to false, then the mask is scaled to match this buffer&apos;s size before the mask is applied.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mask to apply. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">contentScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scaling factor to apply to the content </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cropToMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to crop the output to the mask size (true) or scale the mask to the content size (false) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="231" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="113" bodyend="116"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1ad42e6cab409c9e105e5aaea60f5477a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Devel::PixelBuffer::ApplyGaussianBlur</definition>
+        <argsstring>(float blurRadius)</argsstring>
+        <name>ApplyGaussianBlur</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::ApplyGaussianBlur</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>blurRadius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Apply a Gaussian blur to this pixel data with the given radius.</para>
+<para><simplesect kind="note"><para>A bigger radius will yield a blurrier image.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">blurRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius for Gaussian blur. A value of 0 or negative value indicates no blur.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><emphasis>false</emphasis> if the gaussian blur fails (invalid pixel format or memory issues). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="242" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="118" bodyend="121"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a7ff6f20a0dd330b9b7e56e178731bcce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Devel::PixelBuffer::Crop</definition>
+        <argsstring>(uint16_t x, uint16_t y, uint16_t width, uint16_t height)</argsstring>
+        <name>Crop</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::Crop</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Crops this buffer to the given crop rectangle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The crop rectangle will be clamped to the edges of the buffer if it is larger. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The top left corner&apos;s X </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The top left corner&apos;s y </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The crop width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The crop height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="253" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="123" bodyend="126"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1abd69580afe2b0c9fa170a2237b810544" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Devel::PixelBuffer::Resize</definition>
+        <argsstring>(uint16_t width, uint16_t height)</argsstring>
+        <name>Resize</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::Resize</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Resizes the buffer to the given dimensions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses either Lanczos4 for downscaling or Mitchell for upscaling <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="262" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="128" bodyend="131"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1aeb2b0de54ccc609406238a248c7ec5b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Devel::PixelBuffer::GetMetadata</definition>
+        <argsstring>(Property::Map &amp;metadata) const</argsstring>
+        <name>GetMetadata</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetMetadata</qualifiedname>
+        <param>
+          <type>Property::Map &amp;</type>
+          <declname>metadata</declname>
+        </param>
+        <briefdescription>
+<para>Returns Exif metadata as a property map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">metadata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Property map object to write into </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True on success </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="270" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="138" bodyend="141"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1aad0427178d461088c4bfa6630d913049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::Devel::PixelBuffer::MultiplyColorByAlpha</definition>
+        <argsstring>()</argsstring>
+        <name>MultiplyColorByAlpha</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::MultiplyColorByAlpha</qualifiedname>
+        <briefdescription>
+<para>Multiplies the image&apos;s color values by the alpha value. This provides better blending capability. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Compressed pixel format doesn&apos;t have any efforts. </para>
+</simplesect>
+<simplesect kind="note"><para>Even if pixel format doesn&apos;t have an alpha channel, it will be marked as PreMultiplied. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="278" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="133" bodyend="136"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1adf68f34f1b1c58d501438149ddfe184a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Devel::PixelBuffer::Rotate</definition>
+        <argsstring>(Degree angle)</argsstring>
+        <name>Rotate</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::Rotate</qualifiedname>
+        <param>
+          <type>Degree</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+<para>Rotates the pixel buffer by the given angle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Operation valid for pixel formats: A8, L8, LA88, RGB888, RGB8888, BGR8888, RGBA8888 and BGRA8888. Fails otherwise. </para>
+</simplesect>
+<simplesect kind="note"><para>The operation does nothing for angles equivalent to 0 degrees: -360, 360, 720, etc. </para>
+</simplesect>
+<simplesect kind="note"><para>If the pixel buffer does rotate, all the pointers to the internal pixel buffer retrieved by the method GetPixelBuffer() become invalid.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle in degrees.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><emphasis>false</emphasis> if the rotation fails (invalid pixel format or memory issues). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="291" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="143" bodyend="146"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a100f90baf40b8d47ed001f39814c6cae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Dali::Devel::PixelBuffer::IsAlphaPreMultiplied</definition>
+        <argsstring>() const</argsstring>
+        <name>IsAlphaPreMultiplied</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::IsAlphaPreMultiplied</qualifiedname>
+        <briefdescription>
+<para>Returns pixel-buffer is premultiplied or not. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if alpha is pre-multiplied. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="297" column="8" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="148" bodyend="151"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a38bc2b100eb6be9114bc9879fa9c88a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Dali::Devel::PixelBuffer::GetBrightness</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBrightness</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::GetBrightness</qualifiedname>
+        <briefdescription>
+<para>Get the brightness of the pixel buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The range is 255 to 0. The closer to 255, the brighter. 0 is not bright. </para>
+</simplesect>
+<simplesect kind="return"><para>brightness of the pixel buffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="304" column="12" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="153" bodyend="156"/>
+        <references refid="namespaceDali_1a18b0c008920df8bd84e864be999a7c29" compoundref="scene-holder-impl_8h" startline="476" endline="481">Dali::GetImplementation</references>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Devel_1_1PixelBuffer_1a0c95b1a95b73124e8f9472d6e16437a2" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dali::Devel::PixelBuffer::PixelBuffer</definition>
+        <argsstring>(Internal::Adaptor::PixelBuffer *pointer)</argsstring>
+        <name>PixelBuffer</name>
+        <qualifiedname>Dali::Devel::PixelBuffer::PixelBuffer</qualifiedname>
+        <param>
+          <type>Internal::Adaptor::PixelBuffer *</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+<para>The constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Not intended for application developers. @SINCE_1_2.46 </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a newly allocated <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="313" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> object holds a pixel buffer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> keeps ownership of it&apos;s initial buffer however, the user is free to modify the pixel data, either directly, or via image operations.</para>
+<para>In order to upload the pixel data to texture memory, there are two possibilities - either convert it back to a PixelData object, which releases the <ref refid="classDali_1_1Devel_1_1PixelBuffer" kindref="compound">PixelBuffer</ref> object, leaving the user with an empty handle (ideal for one-time indirect image manipulation), or create a new PixelData object from this object, leaving the buffer intact (ideal for continuous manipulation)</para>
+<para>@SINCE_1_2.46 </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Devel::PixelBuffer</label>
+        <link refid="classDali_1_1Devel_1_1PixelBuffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BaseHandle</label>
+      </node>
+      <node id="1">
+        <label>Dali::Devel::PixelBuffer</label>
+        <link refid="classDali_1_1Devel_1_1PixelBuffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" line="58" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-adaptor/dali/devel-api/adaptor-framework/pixel-buffer.h" bodystart="59" bodyend="314"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1ad42e6cab409c9e105e5aaea60f5477a7" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>ApplyGaussianBlur</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a4b3c63901c49e88ba38eb3f523d7a44d" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>ApplyMask</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a3e189cf7b7e8f4ad8f157eacea4846d4" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>Convert</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a9f80db20ac810add3aa96f375ace0c30" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>Convert</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1ad19af6c5198694f03486d83cdef95ea9" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>CreatePixelData</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a7ff6f20a0dd330b9b7e56e178731bcce" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>Crop</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a38bc2b100eb6be9114bc9879fa9c88a6" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetBrightness</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a2211c123343fa12d2e46d1437065c297" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetBuffer</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a9ca9feba3517f56fae95f03aed927754" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetBuffer</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a181938e30e9761f4a6beada168cb4293" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetHeight</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1aeb2b0de54ccc609406238a248c7ec5b8" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetMetadata</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a1b48ae046989a07e4b06fdd0899eec4e" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetPixelFormat</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1ad40dee567c6d03e5fcf64a4f87dbfe58" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetStride</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a41b19beab812f4ac1b30c48574390f54" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetStrideBytes</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a4ea781032d91a1b4038d2ed115469ce7" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>GetWidth</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a100f90baf40b8d47ed001f39814c6cae" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>IsAlphaPreMultiplied</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1aad0427178d461088c4bfa6630d913049" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>MultiplyColorByAlpha</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1ae8a2352ff170012070870c48978615e3" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>New</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1aebca1aba0b7c0a1eb3447081040cedd5" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a724bb22e36c8499c143fc0b0ccabdd26" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>operator=</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a4b958a3bf2ac1762f94dc97fc79288cc" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>PixelBuffer</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1afa2b9d5eb3b7eec40bf6472e8d8ecdbb" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>PixelBuffer</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a0d1af000229deaf1dffd1fc09a66a1ad" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>PixelBuffer</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a0c95b1a95b73124e8f9472d6e16437a2" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>PixelBuffer</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1abd69580afe2b0c9fa170a2237b810544" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>Resize</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1adf68f34f1b1c58d501438149ddfe184a" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>Rotate</name></member>
+      <member refid="classDali_1_1Devel_1_1PixelBuffer_1a34470be345320831acd2f66b929bf221" prot="public" virt="non-virtual"><scope>Dali::Devel::PixelBuffer</scope><name>~PixelBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

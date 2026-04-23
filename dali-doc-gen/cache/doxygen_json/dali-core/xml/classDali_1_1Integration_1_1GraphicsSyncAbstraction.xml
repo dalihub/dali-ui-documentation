@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1GraphicsSyncAbstraction" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Integration::GraphicsSyncAbstraction</compoundname>
+    <includes refid="graphics-sync-abstraction_8h" local="no">graphics-sync-abstraction.h</includes>
+    <innerclass refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject" prot="public">Dali::Integration::GraphicsSyncAbstraction::SyncObject</innerclass>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1a5c94dfdc36ff6c317efba4e98c9bcc3d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::Integration::GraphicsSyncAbstraction::~GraphicsSyncAbstraction</definition>
+        <argsstring>()=default</argsstring>
+        <name>~GraphicsSyncAbstraction</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::~GraphicsSyncAbstraction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual protected destructor, no deletion through this interface </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="38" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1ad0d761177fca82f50d3182e1971dfa08" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject" kindref="compound">SyncObject</ref> *</type>
+        <definition>virtual SyncObject * Dali::Integration::GraphicsSyncAbstraction::CreateSyncObject</definition>
+        <argsstring>(SyncObject::SyncType type)=0</argsstring>
+        <name>CreateSyncObject</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::CreateSyncObject</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject_1a0cb490c8ed11478ee971029f1af873d0" kindref="member">SyncObject::SyncType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a synchronisation object based on the resource id, typically that of a framebuffer texture. It can then be polled using the same resource id. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of sync object to create (FENCE_SYNC or NATIVE_FENCE_SYNC) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to an opaque sync object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="91" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1a0062086d36361af0a94aea349f874c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Integration::GraphicsSyncAbstraction::DestroySyncObject</definition>
+        <argsstring>(SyncObject *syncObject)=0</argsstring>
+        <name>DestroySyncObject</name>
+        <qualifiedname>Dali::Integration::GraphicsSyncAbstraction::DestroySyncObject</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1_1SyncObject" kindref="compound">SyncObject</ref> *</type>
+          <declname>syncObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy the synchronisation object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">syncObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sync object to destroy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="97" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This abstraction defines an API for syncing CPU with GPU. A typical use case is to determine when GL draw calls have finished drawing to a framebuffer. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" line="32" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/graphics-sync-abstraction.h" bodystart="33" bodyend="98"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1ad0d761177fca82f50d3182e1971dfa08" prot="public" virt="pure-virtual"><scope>Dali::Integration::GraphicsSyncAbstraction</scope><name>CreateSyncObject</name></member>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1a0062086d36361af0a94aea349f874c79" prot="public" virt="pure-virtual"><scope>Dali::Integration::GraphicsSyncAbstraction</scope><name>DestroySyncObject</name></member>
+      <member refid="classDali_1_1Integration_1_1GraphicsSyncAbstraction_1a5c94dfdc36ff6c317efba4e98c9bcc3d" prot="protected" virt="virtual"><scope>Dali::Integration::GraphicsSyncAbstraction</scope><name>~GraphicsSyncAbstraction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

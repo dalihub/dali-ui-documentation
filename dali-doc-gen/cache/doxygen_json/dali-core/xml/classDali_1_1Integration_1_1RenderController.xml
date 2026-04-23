@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classDali_1_1Integration_1_1RenderController" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dali::Integration::RenderController</compoundname>
+    <includes refid="render-controller_8h" local="no">render-controller.h</includes>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1RenderController_1a11effe556270640121d44dad000c76c1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Dali::Integration::RenderController::~RenderController</definition>
+        <argsstring>()=default</argsstring>
+        <name>~RenderController</name>
+        <qualifiedname>Dali::Integration::RenderController::~RenderController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual protected destructor, no deletion through this interface </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/render-controller.h" line="35" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDali_1_1Integration_1_1RenderController_1ad9ca7d621bb1dab517b566af6bd2d51e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Integration::RenderController::RequestUpdate</definition>
+        <argsstring>()=0</argsstring>
+        <name>RequestUpdate</name>
+        <qualifiedname>Dali::Integration::RenderController::RequestUpdate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Requests a future call to <ref refid="classDali_1_1Integration_1_1Core_1aa459cd6c2772d727586546c7b3763a34" kindref="member">Dali::Integration::Core::Update()</ref>. This is called when <ref refid="namespaceDali" kindref="compound">Dali</ref> has new content, typically in response to Actors/Animations being added. Multi-threading note: this method will be called from the main thread only. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">forceUpdate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to update forcely. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/render-controller.h" line="44" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDali_1_1Integration_1_1RenderController_1a72754bbfcfdd93e44ebff12ba3f206ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dali::Integration::RenderController::RequestProcessEventsOnIdle</definition>
+        <argsstring>()=0</argsstring>
+        <name>RequestProcessEventsOnIdle</name>
+        <qualifiedname>Dali::Integration::RenderController::RequestProcessEventsOnIdle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Requests a future call to <ref refid="classDali_1_1Integration_1_1Core_1a3e8db24361435d0b3407ba286c9e0533" kindref="member">Dali::Integration::Core::ProcessEvents()</ref>, when the application is idle. Multi-threading note: this method will be called from the main thread only. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">forceProcess</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to process events forcely. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/render-controller.h" line="51" column="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Abstract interface for an object which controls rendering. This will be informed when <ref refid="namespaceDali" kindref="compound">Dali</ref> has new content to render. </para>
+    </detaileddescription>
+    <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/render-controller.h" line="29" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/integration-api/render-controller.h" bodystart="30" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classDali_1_1Integration_1_1RenderController_1a72754bbfcfdd93e44ebff12ba3f206ac" prot="public" virt="pure-virtual"><scope>Dali::Integration::RenderController</scope><name>RequestProcessEventsOnIdle</name></member>
+      <member refid="classDali_1_1Integration_1_1RenderController_1ad9ca7d621bb1dab517b566af6bd2d51e" prot="public" virt="pure-virtual"><scope>Dali::Integration::RenderController</scope><name>RequestUpdate</name></member>
+      <member refid="classDali_1_1Integration_1_1RenderController_1a11effe556270640121d44dad000c76c1" prot="protected" virt="virtual"><scope>Dali::Integration::RenderController</scope><name>~RenderController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

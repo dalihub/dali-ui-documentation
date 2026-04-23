@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="group__dali__core__animation" kind="group">
+    <compoundname>dali_core_animation</compoundname>
+    <title>Dali_core_animation</title>
+    <innerclass refid="classDali_1_1AlphaFunction" prot="public">Dali::AlphaFunction</innerclass>
+    <innerclass refid="classDali_1_1Animation" prot="public">Dali::Animation</innerclass>
+    <innerclass refid="structDali_1_1LocalSource" prot="public">Dali::LocalSource</innerclass>
+    <innerclass refid="structDali_1_1ParentSource" prot="public">Dali::ParentSource</innerclass>
+    <innerclass refid="structDali_1_1Source" prot="public">Dali::Source</innerclass>
+    <innerclass refid="structDali_1_1ConstraintSource" prot="public">Dali::ConstraintSource</innerclass>
+    <innerclass refid="classDali_1_1Constraint" prot="public">Dali::Constraint</innerclass>
+    <innerclass refid="structDali_1_1EqualToConstraint" prot="public">Dali::EqualToConstraint</innerclass>
+    <innerclass refid="structDali_1_1RelativeToConstraint" prot="public">Dali::RelativeToConstraint</innerclass>
+    <innerclass refid="structDali_1_1RelativeToConstraintFloat" prot="public">Dali::RelativeToConstraintFloat</innerclass>
+    <innerclass refid="classDali_1_1KeyFrames" prot="public">Dali::KeyFrames</innerclass>
+    <innerclass refid="classDali_1_1LinearConstrainer" prot="public">Dali::LinearConstrainer</innerclass>
+    <innerclass refid="classDali_1_1Path" prot="public">Dali::Path</innerclass>
+    <innerclass refid="classDali_1_1SpringData" prot="public">Dali::SpringData</innerclass>
+    <innerclass refid="structDali_1_1TimePeriod" prot="public">Dali::TimePeriod</innerclass>
+    <innernamespace refid="namespaceDali_1_1Internal">Dali::Internal</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__dali__core__animation_1ga8cfc6bb2707f804ef36d8c48c1c509e9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SourceType</name>
+        <qualifiedname>Dali::SourceType</qualifiedname>
+        <enumvalue id="group__dali__core__animation_1gga8cfc6bb2707f804ef36d8c48c1c509e9a5b2d9c0d8b3670ebffa634021d72ff0a" prot="public">
+          <name>OBJECT_PROPERTY</name>
+          <briefdescription>
+<para>The property comes from an arbitrary object. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1gga8cfc6bb2707f804ef36d8c48c1c509e9a1d87cb6975f239505d02dee19590f59a" prot="public">
+          <name>LOCAL_PROPERTY</name>
+          <briefdescription>
+<para>The property comes from the object which the constraint is applied to. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1gga8cfc6bb2707f804ef36d8c48c1c509e9aaefd5fd6a72371d0059eb179cf568166" prot="public">
+          <name>PARENT_PROPERTY</name>
+          <briefdescription>
+<para>The property comes from the parent of the object, which the constraint is applied to. @SINCE_1_0.0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for constraint source types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This specifies the location of a property, which is used as an input for a constraint function. @SINCE_1_0.0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint-source.h" line="38" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint-source.h" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__dali__core__animation_1gaf842eb1af09be97eb6689e74337edd88" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ConstraintTagRanges</name>
+        <qualifiedname>Dali::ConstraintTagRanges</qualifiedname>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a860d55870911a2deedb8eecca43b33cd" prot="public">
+          <name>DEFAULT_TAG</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Special tag that we don&apos;t set any tags @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88aed823409abbdbd044f6148dc5987c37f" prot="public">
+          <name>CUSTOM_CONSTRAINT_TAG_START</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Minimum tag for application @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a5421df6e623b25b4c489c610ab70b65b" prot="public">
+          <name>CUSTOM_CONSTRAINT_TAG_MAX</name>
+          <initializer>= 999999999</initializer>
+          <briefdescription>
+<para>Maximum tag for application @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a362885ae979a675ed4c1c7c6c4a595b7" prot="public">
+          <name>INTERNAL_CONSTRAINT_TAG_START</name>
+          <initializer>= CUSTOM_CONSTRAINT_TAG_MAX + 1</initializer>
+          <briefdescription>
+<para>Minimum tag for internal @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a15ab698b2e42ff0443d37608f4a9ea3f" prot="public">
+          <name>INTERNAL_TAG_MAX_COUNT_PER_DERIVATION</name>
+          <initializer>= 1000000</initializer>
+          <briefdescription>
+<para>The range of tag number for each sub-repository could be used @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88ad5558b3ceb3b127be0ee651355257350" prot="public">
+          <name>CORE_CONSTRAINT_TAG_START</name>
+          <initializer>= INTERNAL_CONSTRAINT_TAG_START</initializer>
+          <briefdescription>
+<para>Minimum tag that Core can uses up to @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88a60b991bbf3f7ded939f1a9712ea1801a" prot="public">
+          <name>CORE_CONSTRAINT_TAG_MAX</name>
+          <initializer>= CORE_CONSTRAINT_TAG_START + INTERNAL_TAG_MAX_COUNT_PER_DERIVATION - 1u</initializer>
+          <briefdescription>
+<para>Maximum tag that Core can uses up to @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__dali__core__animation_1ggaf842eb1af09be97eb6689e74337edd88af574727fa54370e06f852a57c9fadf94" prot="public">
+          <name>INTERNAL_CONSTRAINT_TAG_MAX</name>
+          <initializer>= INTERNAL_CONSTRAINT_TAG_START + 999999999</initializer>
+          <briefdescription>
+<para>Maximum tag for internal @SINCE_2_4.14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration for the constraint tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enumerations are being used here rather than static constants so that switch statements can be used to compare property indices. @SINCE_2_4.14 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint-tag-ranges.h" line="39" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint-tag-ranges.h" bodystart="40" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__dali__core__animation_1ga63324c452b524c1a0045e68197626188" prot="public" static="no">
+        <type>float(*)(float)</type>
+        <definition>using Dali::AlphaFunctionPrototype = typedef float (*)(float)</definition>
+        <argsstring></argsstring>
+        <name>AlphaFunctionPrototype</name>
+        <qualifiedname>Dali::AlphaFunctionPrototype</qualifiedname>
+        <briefdescription>
+<para>Prototype of an alpha function @SINCE_1_0.0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/alpha-function.h" line="40" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/alpha-function.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__dali__core__animation_1ga1c94a23de25e69f6ac033e72af7847ac" prot="public" static="no">
+        <type>Vector&lt; PropertyInput * &gt;</type>
+        <definition>using Dali::PropertyInputContainer = typedef Vector&lt;PropertyInput*&gt;</definition>
+        <argsstring></argsstring>
+        <name>PropertyInputContainer</name>
+        <qualifiedname>Dali::PropertyInputContainer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" line="47" column="1" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraint.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__dali__core__animation_1gadb78df1bef0f647bf5b99494a0613121" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dali::LookAt</definition>
+        <argsstring>(Dali::Quaternion &amp;current, const Dali::PropertyInputContainer &amp;inputs)</argsstring>
+        <name>LookAt</name>
+        <qualifiedname>Dali::LookAt</qualifiedname>
+        <param>
+          <type><ref refid="classDali_1_1Quaternion" kindref="compound">Dali::Quaternion</ref> &amp;</type>
+          <declname>current</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group__dali__core__animation_1ga1c94a23de25e69f6ac033e72af7847ac" kindref="member">Dali::PropertyInputContainer</ref> &amp;</type>
+          <declname>inputs</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> function to aim a camera at a target. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classDali_1_1Constraint" kindref="compound">Constraint</ref> which sets camera&apos;s orientation given camera world position and a target world position. Uses target&apos;s up vector to orient the constrained actor along the vector between camera position and target position.</para>
+<para>@SINCE_1_0.0 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">current</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current orientation property value, the constrained value is set </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inputs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Contains the world position of the target, the world position of the camera, and the world orientation of the target </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraints.h" line="228" column="13" bodyfile="/home/bshsqa/Shared/DALi/dali-ui-documentation/dali-doc-gen/repos/dali-core/dali/public-api/animation/constraints.h" bodystart="228" bodyend="251"/>
+        <references refid="structDali_1_1Vector3_1ae40d1597f58ab7932b78061e1f370829" compoundref="vector3_8cpp" startline="124" endline="131">Dali::Vector3::Cross</references>
+        <references refid="classDali_1_1PropertyInput_1a8db534676f68494a265ac67a95dcdd2f">Dali::PropertyInput::GetQuaternion</references>
+        <references refid="classDali_1_1PropertyInput_1a9ed9069419902efea469f9ac0dbad9c1">Dali::PropertyInput::GetVector3</references>
+        <references refid="structDali_1_1Vector3_1a25af70ee25f3c18371f81ba538cd5e51" compoundref="vector3_8cpp" startline="147" endline="159">Dali::Vector3::Normalize</references>
+        <references refid="classDali_1_1Quaternion_1aa2dc1345b87369036ca94111c9dc809a" compoundref="quaternion_8cpp" startline="471" endline="477">Dali::Quaternion::Rotate</references>
+        <references refid="structDali_1_1Vector3_1a3b9bd58eb5605e7a4ba8fd2fd76985fb" compoundref="vector3_8h" startline="110">Dali::Vector3::YAXIS</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
