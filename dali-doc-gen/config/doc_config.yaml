@@ -69,11 +69,20 @@ token_overflow:
 
 models:
   internal:
+#    api_base: "https://inference-webtrial-api.shuttle.sr-cloud.com"
+#    think_endpoint: "gauss2-3-37b-think"
+#    instruct_endpoint: "gauss2-3-37b-instruct"
+#    think: "gauss2.3-37b-think"
+#    instruct: "gauss2.3-37b"
+#    api_key_env: "INTERNAL_API_KEY" # Base64 encoded "ACCESS_KEY:SECRET_KEY"
+#    auth_type: "basic" # Shuttle API uses Basic Auth
+#    rate_limit_delay_sec: 4 # ~15 RPM for safety (API limit: 20 RPM)
+#    max_retries: 10
     api_base: "https://inference-webtrial-api.shuttle.sr-cloud.com"
-    think_endpoint: "gauss2-3-37b-think"
-    instruct_endpoint: "gauss2-3-37b-instruct"
-    think: "gauss2.3-37b-think"
-    instruct: "gauss2.3-37b"
+    think_endpoint: "gauss-o4-think"
+    instruct_endpoint: "gauss-o4-instruct"
+    think: "GaussO4_Think_250902-fp8"
+    instruct: "GaussO4_Instruct_250902-fp8"
     api_key_env: "INTERNAL_API_KEY" # Base64 encoded "ACCESS_KEY:SECRET_KEY"
     auth_type: "basic" # Shuttle API uses Basic Auth
     rate_limit_delay_sec: 4 # ~15 RPM for safety (API limit: 20 RPM)
