@@ -42,7 +42,7 @@ on:
 
 jobs:
   e2e-test:
-    runs-on: code-large
+    runs-on: ${{ github.event.inputs.environment == 'internal' && 'code-large' || 'ubuntu-latest' }}
 
     steps:
       - name: Checkout dali-guide repository
@@ -90,6 +90,7 @@ jobs:
       - name: Run Full Generation
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
         run: |
           cd dali-doc-gen
           ARGS="--mode full --tier ${{ github.event.inputs.tier }} --skip-pull"
@@ -124,6 +125,7 @@ jobs:
       - name: Run Incremental Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
         run: |
           cd dali-doc-gen
           ARGS="--mode update --tier ${{ github.event.inputs.tier }}"

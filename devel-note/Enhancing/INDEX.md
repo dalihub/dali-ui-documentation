@@ -163,6 +163,16 @@ Feature 재구조화(분할/통합)와 전체 일괄 Taxonomy Tree 설계를 자
 
 ---
 
+## 12단계 — GitHub Actions Workflow 수정
+
+CI/CD 파이프라인 정상화 및 runner 환경 분리.
+
+| # | 파일 | 주제 | 구현 상태 |
+|---|------|------|-----------|
+| ENH-27 | [ENH-27_github_actions_workflow_fix.md](ENH-27_github_actions_workflow_fix.md) | Workflow 수정 4종 — `pip install` 누락(블로커), `e2e` INTERNAL_API_KEY secret 누락, `environment`별 runner 분기(internal→code-large / external→ubuntu-latest), 변경없음 시 PR skip | 🔴 미구현 |
+
+---
+
 ## 전체 진행 현황 요약
 
 | 단계 | 범위 | 상태 |
@@ -179,3 +189,4 @@ Feature 재구조화(분할/통합)와 전체 일괄 Taxonomy Tree 설계를 자
 | 9단계 심볼 DB 커버리지 및 잔여 환각 수정 | ENH-21~23 | ✅ 전체 완료 |
 | 10단계 Taxonomy Reviewer 트리 재설계 | ENH-24 | ✅ 완료 |
 | 11단계 Taxonomy Tree 품질 및 문서 생성 품질 개선 | ENH-25~26 | ✅ 전체 완료 |
+| 12단계 GitHub Actions Workflow 수정 | ENH-27 | 🔴 미구현 |

@@ -26,7 +26,7 @@ on:
 
 jobs:
   update-docs:
-    runs-on: code-large
+    runs-on: ${{ (github.event.inputs.environment == 'internal' || (github.event.inputs.environment == '' && vars.DEFAULT_ENVIRONMENT == 'internal')) && 'code-large' || 'ubuntu-latest' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -60,18 +60,58 @@ jobs:
           cd dali-doc-gen
           python src/pipeline.py --mode update --tier $TIER
 
-      - name: Create Pull Request
+      - name: Push docs to dali-guide_auto and create PR
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
+          DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
         run: |
+          DOCS_REPO_URL="https://x-access-token:${DOCS_REPO_TOKEN}@github.com/dalihub/dali-guide_auto.git"
+          BRANCH="docs/weekly-update"
+
+          # docs 레포 클론 (빈 레포면 git init으로 대체)
+          if git clone --depth 1 "$DOCS_REPO_URL" docs-output; then
+            echo "[docs] Cloned dali-guide_auto"
+          else
+            echo "[docs] Empty repo or clone failed — initializing"
+            mkdir -p docs-output
+            git -C docs-output init
+            git -C docs-output remote add origin "$DOCS_REPO_URL"
+          fi
+
+          # 기존 docs 제거 후 새 docs 복사 (삭제된 피처 반영)
+          rm -rf docs-output/app-guide docs-output/platform-guide
+          [ -d app-guide/ ]      && cp -r app-guide/      docs-output/
+          [ -d platform-guide/ ] && cp -r platform-guide/ docs-output/
+
+          cd docs-output
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b docs/weekly-update
-          git add app-guide/ platform-guide/ || echo "No guide directories to add"
-          git commit -m "docs(auto): weekly incremental update" || echo "No changes to commit"
-          git push origin docs/weekly-update --force || echo "Branch already exists or push failed"
-          gh pr create --title "docs(auto): Weekly Incremental Update Sync" \
-            --body "Automated PR from weekly-update pipeline. This captures API deltas and newly generated structural documentation." \
-            --base main \
-            --head docs/weekly-update \
-            || echo "PR may already exist"
+
+          git add .
+
+          # 변경사항 없으면 skip
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "[skip] No changes to docs. Skipping PR creation."
+            exit 0
+          fi
+
+          # main 없으면 직접 push, 있으면 브랜치 + PR
+          if git ls-remote --heads origin | grep -q 'refs/heads/main'; then
+            git switch -C "$BRANCH"
+            git commit -m "docs(auto): weekly incremental update"
+            git push origin "$BRANCH" --force
+            gh pr create \
+              --repo dalihub/dali-guide_auto \
+              --title "docs(auto): Weekly Incremental Update Sync" \
+              --body "Automated PR from weekly-update pipeline. This captures API deltas and newly generated structural documentation." \
+              --base main \
+              --head "$BRANCH" \
+            || gh pr edit "$BRANCH" \
+              --repo dalihub/dali-guide_auto \
+              --body "Automated PR from weekly-update pipeline. (updated: $(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          else
+            echo "[docs] main branch not found — pushing directly to main"
+            git switch -C main
+            git commit -m "docs(auto): weekly incremental update"
+            git push origin main
+          fi
