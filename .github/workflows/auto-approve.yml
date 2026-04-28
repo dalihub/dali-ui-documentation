@@ -10,25 +10,25 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto-merge pending docs/weekly-update PR
+      - name: Auto-merge pending docs/weekly-update PR in dali-guide_auto
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
         run: |
           PR_NUMBER=$(gh pr list \
-            --repo dalihub/dali-ui-documentation \
+            --repo dalihub/dali-guide_auto \
             --head docs/weekly-update \
             --state open \
             --json number \
             --jq '.[0].number')
 
           if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
-            echo "[skip] No open docs/weekly-update PR found."
+            echo "[skip] No open docs/weekly-update PR found in dali-guide_auto."
             exit 0
           fi
 
-          echo "[auto-merge] Merging PR #${PR_NUMBER}..."
+          echo "[auto-merge] Merging PR #${PR_NUMBER} in dali-guide_auto..."
           gh pr merge "$PR_NUMBER" \
-            --repo dalihub/dali-ui-documentation \
+            --repo dalihub/dali-guide_auto \
             --squash \
             --subject "docs(auto): weekly update auto-merge" \
             --delete-branch
