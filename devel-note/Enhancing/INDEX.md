@@ -169,7 +169,8 @@ CI/CD 파이프라인 정상화 및 runner 환경 분리.
 
 | # | 파일 | 주제 | 구현 상태 |
 |---|------|------|-----------|
-| ENH-27 | [ENH-27_github_actions_workflow_fix.md](ENH-27_github_actions_workflow_fix.md) | Workflow 수정 4종 — `pip install` 누락(블로커), `e2e` INTERNAL_API_KEY secret 누락, `environment`별 runner 분기(internal→code-large / external→ubuntu-latest), 변경없음 시 PR skip | 🔴 미구현 |
+| ENH-27 | [ENH-27_github_actions_workflow_fix.md](ENH-27_github_actions_workflow_fix.md) | Workflow 수정 3종 — `e2e` INTERNAL_API_KEY secret 누락, `environment`별 runner 분기(internal→code-large / external→ubuntu-latest), docs 레포(dali-guide_auto) 분리 + PR 로직 개선 | ✅ 완료 |
+| ENH-28 | [ENH-28_workflow_state_management_and_auto_merge.md](ENH-28_workflow_state_management_and_auto_merge.md) | Workflow 상태 관리 재설계 — cache 보존을 위해 PR 대상을 dali-ui-documentation으로 변경, 머지 시 dali-guide_auto 반영(on-docs-merged), 미승인 PR 자동 머지(auto-approve) | 🔴 미구현 |
 
 ---
 
@@ -189,4 +190,5 @@ CI/CD 파이프라인 정상화 및 runner 환경 분리.
 | 9단계 심볼 DB 커버리지 및 잔여 환각 수정 | ENH-21~23 | ✅ 전체 완료 |
 | 10단계 Taxonomy Reviewer 트리 재설계 | ENH-24 | ✅ 완료 |
 | 11단계 Taxonomy Tree 품질 및 문서 생성 품질 개선 | ENH-25~26 | ✅ 전체 완료 |
-| 12단계 GitHub Actions Workflow 수정 | ENH-27 | 🔴 미구현 |
+| 12단계 GitHub Actions Workflow 수정 | ENH-27 | ✅ 완료 |
+| 13단계 Workflow 상태 관리 및 자동 머지 | ENH-28 | 🔴 미구현 |

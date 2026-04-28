@@ -1,0 +1,34 @@
+name: "Auto-merge Pending Docs PR"
+
+# weekly-update(월 00:00 UTC) 실행 1시간 전, 미머지 docs PR 자동 머지
+on:
+  schedule:
+    - cron: '0 23 * * 0'   # 매주 일요일 23:00 UTC
+  workflow_dispatch:        # 수동 테스트용
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-merge pending docs/weekly-update PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=$(gh pr list \
+            --repo dalihub/dali-ui-documentation \
+            --head docs/weekly-update \
+            --state open \
+            --json number \
+            --jq '.[0].number')
+
+          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
+            echo "[skip] No open docs/weekly-update PR found."
+            exit 0
+          fi
+
+          echo "[auto-merge] Merging PR #${PR_NUMBER}..."
+          gh pr merge "$PR_NUMBER" \
+            --repo dalihub/dali-ui-documentation \
+            --squash \
+            --subject "docs(auto): weekly update auto-merge" \
+            --delete-branch

@@ -23,6 +23,10 @@ on:
         - app
         - platform
         - all
+      target_features:
+        description: 'Comma-separated feature list to process (e.g. view,animation,image-view). Leave empty for all features.'
+        required: false
+        default: ''
 
 jobs:
   update-docs:
@@ -55,63 +59,47 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
         run: |
+          # input 우선, 없으면 Repository Variable fallback, 그것도 없으면 기본값
           TIER="${{ github.event.inputs.tier }}"
+          TIER="${TIER:-${{ vars.WEEKLY_TIER }}}"
           TIER="${TIER:-all}"
-          cd dali-doc-gen
-          python src/pipeline.py --mode update --tier $TIER
 
-      - name: Push docs to dali-guide_auto and create PR
+          FEATURES="${{ github.event.inputs.target_features }}"
+          FEATURES="${FEATURES:-${{ vars.WEEKLY_FEATURES }}}"
+
+          cd dali-doc-gen
+          ARGS="--mode update --tier $TIER"
+          if [ -n "$FEATURES" ]; then
+            ARGS="$ARGS --features $FEATURES"
+          fi
+          echo "Running: python src/pipeline.py $ARGS"
+          python src/pipeline.py $ARGS
+
+      - name: Create PR to dali-ui-documentation
         env:
-          GH_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
-          DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DOCS_REPO_URL="https://x-access-token:${DOCS_REPO_TOKEN}@github.com/dalihub/dali-guide_auto.git"
           BRANCH="docs/weekly-update"
 
-          # docs 레포 클론 (빈 레포면 git init으로 대체)
-          if git clone --depth 1 "$DOCS_REPO_URL" docs-output; then
-            echo "[docs] Cloned dali-guide_auto"
-          else
-            echo "[docs] Empty repo or clone failed — initializing"
-            mkdir -p docs-output
-            git -C docs-output init
-            git -C docs-output remote add origin "$DOCS_REPO_URL"
-          fi
-
-          # 기존 docs 제거 후 새 docs 복사 (삭제된 피처 반영)
-          rm -rf docs-output/app-guide docs-output/platform-guide
-          [ -d app-guide/ ]      && cp -r app-guide/      docs-output/
-          [ -d platform-guide/ ] && cp -r platform-guide/ docs-output/
-
-          cd docs-output
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add .
+          git add dali-doc-gen/cache/ app-guide/ platform-guide/
 
           # 변경사항 없으면 skip
           if [ -z "$(git status --porcelain)" ]; then
-            echo "[skip] No changes to docs. Skipping PR creation."
+            echo "[skip] No changes. Skipping PR creation."
             exit 0
           fi
 
-          # main 없으면 직접 push, 있으면 브랜치 + PR
-          if git ls-remote --heads origin | grep -q 'refs/heads/main'; then
-            git switch -C "$BRANCH"
-            git commit -m "docs(auto): weekly incremental update"
-            git push origin "$BRANCH" --force
-            gh pr create \
-              --repo dalihub/dali-guide_auto \
-              --title "docs(auto): Weekly Incremental Update Sync" \
-              --body "Automated PR from weekly-update pipeline. This captures API deltas and newly generated structural documentation." \
-              --base main \
-              --head "$BRANCH" \
-            || gh pr edit "$BRANCH" \
-              --repo dalihub/dali-guide_auto \
-              --body "Automated PR from weekly-update pipeline. (updated: $(date -u +%Y-%m-%dT%H:%M:%SZ))"
-          else
-            echo "[docs] main branch not found — pushing directly to main"
-            git switch -C main
-            git commit -m "docs(auto): weekly incremental update"
-            git push origin main
-          fi
+          git switch -C "$BRANCH"
+          git commit -m "docs(auto): weekly incremental update"
+          git push origin "$BRANCH" --force
+
+          gh pr create \
+            --title "docs(auto): Weekly Incremental Update Sync" \
+            --body "Generated docs + cache state. Review and merge to publish to dali-guide_auto." \
+            --base main \
+            --head "$BRANCH" \
+          || gh pr edit "$BRANCH" \
+            --body "Generated docs + cache state. (updated: $(date -u +%Y-%m-%dT%H:%M:%SZ))"

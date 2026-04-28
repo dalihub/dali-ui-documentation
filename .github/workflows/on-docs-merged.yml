@@ -1,0 +1,69 @@
+name: "Sync Docs to dali-guide_auto on PR Merge"
+
+# docs/weekly-update 또는 docs/initial-full-* 브랜치의 PR이 main에 머지될 때만 실행
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  sync-to-guide:
+    if: >
+      github.event.pull_request.merged == true &&
+      (startsWith(github.event.pull_request.head.ref, 'docs/weekly-update') ||
+       startsWith(github.event.pull_request.head.ref, 'docs/initial-full-'))
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dali-ui-documentation (merged state)
+        uses: actions/checkout@v4
+
+      - name: Checkout dali-guide_auto
+        uses: actions/checkout@v4
+        with:
+          repository: dalihub/dali-guide_auto
+          token: ${{ secrets.DOCS_REPO_TOKEN }}
+          path: docs-output
+
+      - name: Copy docs and create PR to dali-guide_auto
+        env:
+          GH_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
+          DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          # app-guide, platform-guide만 복사 (cache는 dali-ui-documentation에만 보관)
+          rm -rf docs-output/app-guide docs-output/platform-guide
+          [ -d app-guide/ ]      && cp -r app-guide/      docs-output/
+          [ -d platform-guide/ ] && cp -r platform-guide/ docs-output/
+
+          cd docs-output
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add .
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "[skip] No changes to docs."
+            exit 0
+          fi
+
+          # main 없으면 직접 push (빈 레포 초기화), 있으면 브랜치 + PR
+          if git ls-remote --heads origin | grep -q 'refs/heads/main'; then
+            git switch -C "$PR_BRANCH"
+            git commit -m "docs(auto): sync from dali-ui-documentation (${PR_BRANCH})"
+            git push origin "$PR_BRANCH" --force
+            gh pr create \
+              --repo dalihub/dali-guide_auto \
+              --title "docs: Sync from dali-ui-documentation (${PR_BRANCH})" \
+              --body "Synced from merged PR in dali-ui-documentation." \
+              --base main \
+              --head "$PR_BRANCH" \
+            || gh pr edit "$PR_BRANCH" \
+              --repo dalihub/dali-guide_auto \
+              --body "Synced from merged PR in dali-ui-documentation. (updated: $(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          else
+            echo "[docs] main branch not found — pushing directly to main"
+            git switch -C main
+            git commit -m "docs(auto): initial sync from dali-ui-documentation"
+            git push origin main
+          fi
