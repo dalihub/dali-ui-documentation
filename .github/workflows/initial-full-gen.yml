@@ -69,7 +69,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add dali-doc-gen/cache/ app-guide/ platform-guide/
+          git add -f dali-doc-gen/cache/ app-guide/ platform-guide/
 
           # 변경사항 없으면 skip
           if [ -z "$(git status --porcelain)" ]; then
